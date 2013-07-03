@@ -28,8 +28,7 @@
     <link href="{{ ASSET_PATH }}/css/style.css?body=1" rel="stylesheet" type="text/css" media="all">
 
     <link rel="shortcut icon" href="/favicon.png">
-    <link rel="canonical" href="{{ BASE_PATH }}{{ post.url }}" />
-
+    <link rel="canonical" href="{{ site.production_url }}{{ page.url | replace:'index.html','' }}" />
     <!-- fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.png">
