@@ -2,6 +2,7 @@
 layout: post
 title: "为 Jekyll 添加多说评论系统"
 description: "为 Jekyll 添加多说评论系统"
+keywords: jekyll, 添加, 多说, 评论
 category: Internet
 tags: [Jekyll, duoshuo]
 ---

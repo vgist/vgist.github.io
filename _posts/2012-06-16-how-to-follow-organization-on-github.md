@@ -2,6 +2,7 @@
 layout: post
 title: "GitHub 中 Follow Organization"
 description: "在 GitHub 中 Follow Organization"
+keywords: github, follow, organization, javascript
 category: Linux
 tags: [GitHub]
 ---

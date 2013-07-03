@@ -2,6 +2,7 @@
 layout: post
 title: "Deepin-screenshot ebuild"
 description: "gentoo 的 ebuild 还是不丰富啊，凡事总得自己动手才能丰衣足食"
+keywords: deepin, screenshot, ebuild, gentoo
 category: Linux
 tags: [Screenshot, Gentoo, Ebuild, Deepin]
 ---

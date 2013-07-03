@@ -2,6 +2,7 @@
 layout: post
 title: "Linux 中配置安装 rtorrent + rutorrent"
 description: "Linux 中配置安装 rtorrent + rutorrent"
+keywords: linux, rtorrent, rutorrent, pt, 盒子
 category: Linux
 tags: [Rtorrent, Rutorrent, PT]
 ---
