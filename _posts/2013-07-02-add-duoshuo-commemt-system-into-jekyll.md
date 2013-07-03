@@ -21,9 +21,9 @@ tags: [Jekyll, duoshuo]
 
 <!-- more -->
 
-其次进入 `_includes/JB/comments-providers/` 目录创建文件 `duoshuo`
+其次进入 `_includes/` 目录创建目录 `custom` 以及在刚创建的 `custom` 目录下创建文件 `duoshuo`
 
-    $ cd _includes/JB/comments-providers && touch duoshuo
+    $ cd _includes; mkdir custom; cd custom ; touch duoshuo
 
 填充如下内容
 
@@ -46,25 +46,4 @@ var duoshuoQuery = {short_name:'{{ site.JB.comments.duoshuo.short_name }}'};
 ```
 {% endraw %}
 
-最后，编辑 `_includes/JB/comments` 文件
-
-在
-
-{% raw %}
-```
-{% if site.JB.comments.provider and page.comments != false %}
-
-{% case site.JB.comments.provider %}
-```
-{% endraw %}
-
-下添加
-
-{% raw %}
-```
-{% when "duoshuo" %}
-  {% include JB/comments-providers/duoshuo %}
-```
-{% endraw %}
-
-OK，完工。
+最后，没有最后了，已经完工了。
