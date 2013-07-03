@@ -5,7 +5,7 @@ permalink: /:categories/:year-:month/:title.html
 exclude: [".rvmrc", ".rbenv-version", "README.md", "Rakefile", "changelog.md"]
 auto: true
 pygments: true
-paginate: 18
+paginate: 16
 
 markdown: redcarpet
 
@@ -98,13 +98,7 @@ JB :
       width: 580
       colorscheme: light
     duoshuo : 
-      short_name : havanna
-      asides_num : 10
-      asides_avatars : 0
-      asides_time : 0
-      asides_title : 0
-      asides_admin : 0
-      asides_length : 18
+      name : havanna
    
   # Settings for analytics helper
   # Set 'provider' to the analytics provider you want to use.
