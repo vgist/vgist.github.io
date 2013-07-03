@@ -1,0 +1,50 @@
+<div class="row">
+
+  <article class="col-md-12 main-contenter">
+    <div id="search-loader" style="display:none;text-align:center">
+      <img src="/assets/themes/havee/images/loading.gif">
+    </div>
+    <div class="page-header">
+      <h2>
+        {{ page.title }}
+        {% if page.tagline %}
+        <small>{{ page.tagline }}</small>
+        {% endif %}
+      </h2>
+	  <div class="bottom">
+		<span class="glyphicon glyphicon-user"></span><p>{{ site.author.name }}</p>
+	    <span class="glyphicon glyphicon-calendar"></span><p>{{ page.date | date_to_string }}</p>
+		<span class="glyphicon glyphicon-folder-open"></span> {% if page.categories %}{% for category in page.categories %}<a href="/categories.html#{{ category }}-ref" title="{{ category }}"><p>{{ category }}</p></a>{% endfor %}{% endif %}
+		<span class="glyphicon glyphicon-tags"></span> {% if page.tags %}{% for tag in page.tags %}<a href="/tags.html#{{ tag }}-ref" title="{{ tag }}"><p>{{ tag }}</p></a>{% endfor %}{% endif %}
+      </div>
+    </div>
+    <div class="wrapper">{{ content }}</div>
+    <div class="cc">
+      <a target="_blank" href="http://creativecommons.org/licenses/by-nc-sa/4.0/deed.zh">
+        <img title="署名-非商业性使用-相同方式共享 4.0 国际" src="/assets/images/CC.png" alt="License"></img>
+      </a>
+    </div>
+    <div class="row status">
+      <div class="col-md-6">
+        <div class="btn-group">
+          {% if page.previous %}
+          <a class="btn btn-primary btn-sm" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&laquo; Prev</a>
+          {% else %}
+          <a class="btn btn-primary btn-sm disabled">&laquo; Prev</a>
+          {% endif %}
+          <a class="btn btn-primary btn-sm" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+          {% if page.next %}
+          <a class="btn btn-primary btn-sm" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &raquo;</a>
+          {% else %}
+          <a class="btn btn-primary btn-sm disabled">Next &raquo;</a>
+          {% endif %}
+        </div>
+      </div>
+      <div class="col-md-6 visible-lg visible-md">
+      {% include custom/sharing %}
+      </div>
+    </div>
+    {% include custom/comments %}
+  </article>
+
+</div>
