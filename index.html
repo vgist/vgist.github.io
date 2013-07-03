@@ -18,8 +18,8 @@ tagline: 聪明难，难的是如何耍聪明，糊涂难，要想装糊涂难�
   {% if paginator.previous_page %}
   {% if paginator.page == 2 %}
     <a class="btn prev" href="/" >&larr; Previous</a>
-  {% else if paginator.page == 1 %}
-    <a class="btn disabled prev">&larr; Previous</a>
+  <!--{% else if paginator.page == 1 %}
+    <a class="btn disabled prev">&larr; Previous</a>-->
   {% else %}
     <a class="btn prev" href="/page{{ paginator.previous_page }}">&larr; Previous</a>
     {% endif %}{% endif %}
