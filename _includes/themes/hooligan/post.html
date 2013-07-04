@@ -33,14 +33,16 @@
       <h3>Published</h3>
       <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
     </section>
+      <hr></hr>
     {% if page.category %}
-      <section>
-        <h3>Category</h3>
-        <span class="category">
-          {{ page.category }}
-        </span>
-      </section>
-    {% endif %}     
+    <section>
+    <h3>Category</h3>
+    <span class="category">
+      {{ page.category }}
+    </span>
+    </section>
+      <hr></hr>
+    {% endif %}
     {% unless page.tags == empty %}
       <section>
         <h3>Tags</h3>
@@ -49,6 +51,7 @@
           {% include JB/tags_list %}
         </ul>
       </section>
+      <hr></hr>
     {% endunless %}
       <!--<section>
         <h3>Related Posts</h3>
@@ -62,6 +65,7 @@
         <h3>Recently Visitors</h3>
         <ul class="ds-recent-visitors" data-num-items="9" data-avatar-size="45" style="margin-top:10px; margin-left: -4px;"></ul>
       </section>
+      <hr></hr>
       <section style="width:250px;">
         <h3>License</h3>
         <span>
