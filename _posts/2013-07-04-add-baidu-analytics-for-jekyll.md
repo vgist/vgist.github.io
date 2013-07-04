@@ -8,7 +8,7 @@ tags: [Jekyll, Baidu]
 ---
 {% include JB/setup %}
 
-虽然现在众多统计平台都宣传因为采用异步传输技术，所以不会影响打开网站的速度。不过俺最后还是添加了百度的统计。一句话，查看 [Google Analytics]() 时打开页面太慢了。
+虽然现在众多统计平台都宣传因为采用异步传输技术，所以不会影响打开网站的速度。不过俺最后还是添加了百度的统计。一句话，查看 [Google Analytics](https://www.google.com/analytics/settings/) 时打开页面太慢了。
 
 其实也非常的简单，修改 `_config.yml` 成如下
 
