@@ -11,8 +11,15 @@ tagline: 聪明难，难的是如何耍聪明，糊涂难，要想装糊涂难�
     <div class="entry-meta" style="width:250px; float:right; margin: -20px 5px 0px 0px;">
       <em>Post by: <a href="{{ site.production_url }}">{{ site.author.name }}</a> in {{ post.date | date:"%Y.%m.%d" }}</em>
     </div>
-    {{ post.content | split:'<!-- more -->' |first }}
-    <p><a class="btn btn-inverse" href="{{ post.url }}" class="more-link"><span class="readmore">Read More &raquo; </span></a></p>
+    {% if post.content contains "<!-- more -->" %}
+      {{ post.content | split:'<!-- more -->' |first }}
+    {% else %}
+      {{ post.content | strip_html | truncatewords:50 }}
+    {% endif %}
+
+    {% if post.content contains "<!-- more -->" %}
+      <p><a class="btn btn-inverse" href="{{ post.url }}" class="more-link"><span class="readmore">Read More &raquo; </span></a></p>
+    {% endif %}
 </div>
 {% endfor %}
 
