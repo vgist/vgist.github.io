@@ -35,10 +35,11 @@ tags: [Jekyll, duoshuo]
 
 由于同一页面调用多个多说系统的数据，其 js 只需加载一次即可。所以相关的 javascript 我们放到默认的 default 中，编辑 `_includes/themes/hooligan/default` 文件，在
 
-
+{% raw %}
 ```
     {% include JB/analytics %}
 ```
+{% endraw %}
 
 上面添加多说的 js 代码
 
