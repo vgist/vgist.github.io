@@ -16,6 +16,7 @@ tags: [KVM, Virtual]
 如果没有指定 "guestaddr", 那么默认转到 10.0.2.15
 
 通过指定 "hostaddr"，可以绑定到主机某个特点的接口上
+
 <!-- more -->
 例如
 
