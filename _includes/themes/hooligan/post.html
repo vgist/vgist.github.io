@@ -1,6 +1,6 @@
 <div class="page-header">
   <h1>
-    {{ page.title }} 
+    <a href="{{ BASE_PATH }}{{ page.url }} title="{{ page.title }}"">{{ page.title }}</a> 
     {% if page.tagline %}
       <small>{{ page.tagline }}</small>
     {% endif %}
@@ -57,7 +57,7 @@
       <section style="width:200px;">
         <h4>License</h4>
         <span class="category">
-          <img width="88px" height="31px" alt="License" src="{{ BASE_PATH }}assets/images/CC.png">
+          <img width="88px" height="31px" alt="License" src="{{ site.production_url }}assets/images/CC.png">
           <p>本站所有作品采用 <a href="http://www.creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">署名-非商业性使用-相同方式共享 3.0 中国大陆</a> 进行协议授权，转载请注明出处。</p>
         </span>
       </section>
