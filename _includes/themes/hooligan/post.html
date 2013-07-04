@@ -11,8 +11,6 @@
   <div class="span8">
     {{ content }}
     <hr>
-    <p>注：本站所有作品采用 <a href="http://www.creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh" target="_blank">署名-非商业性使用-相同方式共享 3.0 中国大陆</a> 进行协议授权，转载请注明出处。</P>
-    <hr>
     <div class="pagination btn-group">
       {% if page.previous %}
         <a class="btn prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
@@ -54,7 +52,14 @@
     {% endunless %}
       <section style="width:200px;">
         <h4>Recently Visitors</h4>
-          <ul class="ds-recent-visitors" data-num-items="9" data-avatar-size="45" style="margin-top:10px; margin-left: -4px;"></ul>
+        <ul class="ds-recent-visitors" data-num-items="9" data-avatar-size="45" style="margin-top:10px; margin-left: -4px;"></ul>
+      </section>
+      <section style="width:200px;">
+        <h4>License</h4>
+        <span class="category">
+          <img width="88px" height="31px" alt="License" src="assets/images/CC.png">
+          <p>本站所有作品采用 [署名-非商业性使用-相同方式共享 3.0 中国大陆](http://www.creativecommons.org/licenses/by-nc-sa/3.0/cn/deed.zh) 进行协议授权，转载请注明出处。</p>
+        </span>
       </section>
   </div>
 </div>
