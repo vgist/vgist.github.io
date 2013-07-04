@@ -20,6 +20,7 @@ UPDATE wp_comments SET comment_content = replace(comment_content, 'blog.bnci.cn'
 UPDATE wp_comments SET comment_author_url = replace(comment_author_url, 'blog.bnci.cn', 'ihavanna.org') ;
 ```
 
+<!-- more -->
 ok 了，基本解决，下面对搜索引擎友好点了，毕竟蜘蛛可不知道你更换了域名
 
 nginx配置文件

@@ -16,7 +16,8 @@ tags: [Nginx]
      include fastcgi_params;
      }
 
-这个方式只能连接到一组 `spawn-fcgi` 开启的 `fastcgi`，在服务器负载稍高时常常出现 `502 bad gateway` 错误。<!-- more -->
+<!-- more -->
+这个方式只能连接到一组 `spawn-fcgi` 开启的 `fastcgi`，在服务器负载稍高时常常出现 `502 bad gateway` 错误。
 
 起先怀疑这是 `php-cgi` 的进程开得太少，增加后仍然有反映时常有错，偶然间发现 `php-cgi` 会报出这样的错误：
 

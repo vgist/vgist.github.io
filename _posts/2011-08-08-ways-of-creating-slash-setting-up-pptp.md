@@ -14,8 +14,9 @@ tags: [pptp, Configuration, CLI]
 
     # pptpsetup --create vpncup --server f.vpncup.com --username havanna --password 123456 --encrypt
 
-![pptp 1](/assets/images/2011/08/1.png "pptp 1")<!-- more -->
+![pptp 1](/assets/images/2011/08/1.png "pptp 1")
 
+<!-- more -->
 完毕后的配置文件类似于
 
     # cat /etc/ppp/peers/vpncup

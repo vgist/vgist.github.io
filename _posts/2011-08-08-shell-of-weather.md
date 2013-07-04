@@ -14,6 +14,7 @@ tags: [CLI, weather]
 
     chmod +x weather.sh
 
+<!-- more -->
 然后 `./weather.sh` 上海
 
 即能得到上海近两天的天气预报
