@@ -12,6 +12,7 @@ tags: [Screenshot, Gentoo, Ebuild, Deepin]
 
 gentoo 的 ebuild 还是不丰富啊，凡事总得自己动手才能丰衣足食。
 
+<!-- more -->
 deepin-screenshot 是 deepin ( 深度 ) 出品的采用 python 写的截图工具。
 
 主要特性：
@@ -21,7 +22,6 @@ deepin-screenshot 是 deepin ( 深度 ) 出品的采用 python 写的截图工�
 - 简洁截图编辑
 - 延迟截图功能
 
-<!-- more -->
 使用方法：
 
     Usage: deepin-screenshot [options] [arg]
