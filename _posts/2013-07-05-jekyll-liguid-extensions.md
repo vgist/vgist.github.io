@@ -127,11 +127,11 @@ Jekyll 通过 [Pygments](http://pygments.org/) 内建支持了代码高亮，支
 
 {% raw %}
 ```ruby
-{ % highlight ruby % }
+{% highlight ruby %}
 def foo
 	puts 'foo'
 end
-{ % endhighlight % }
+{% endhighlight %}
 {% endhighlight %}
 ```
 {% endraw %}
@@ -144,11 +144,11 @@ end
 
 {% raw %}
 ```ruby
-{ % highlight ruby linenos % }
+{% highlight ruby linenos %}
 def foo
 	puts 'foo'
 end
-{ % endhighlight % }
+{% endhighlight %}
 ```
 {% endraw %}
 
