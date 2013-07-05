@@ -132,7 +132,6 @@ def foo
 	puts 'foo'
 end
 {% endhighlight %}
-{% endhighlight %}
 ```
 {% endraw %}
 
