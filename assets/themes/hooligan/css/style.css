@@ -1,5 +1,5 @@
 @import url(http://fonts.googleapis.com/css?family=Trocchi);
-@import url(http://fonts.googleapis.com/css?family=Oxygen+Mono);
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic);
 
 /* Partials */
 /* Theme Vars */
@@ -16,7 +16,7 @@ body {
   color: #bbb;
   text-shadow: 1px 1px 1px #000;
   height: 100%;
-  font-family: 'Oxygen Mono', sans-serif;
+  font-family: 'Open Sans', sans-serif;
   font-size: 14px;
 }
 
