@@ -4,7 +4,7 @@ title: "Aliedit -- 支付宝Linux版插件"
 description: "Aliedit -- 支付宝Linux版插件"
 keywords: aliedit, linux, gentoo, ebuild, 插件, 支付宝
 category: Linux
-tags: [aliedit, Gentoo, Ebuild, Plugin,]
+tags: [aliedit, Gentoo, Ebuild, Plugin]
 ---
 {% include JB/setup %}
 
