@@ -8,10 +8,10 @@
   src: local('Oxygen'), local('Oxygen-Regular'), url('Oxygen.woff') format('woff');
 }
 @font-face {
-  font-family: 'Advent Pro';
+  font-family: 'Trocchi';
   font-style: normal;
   font-weight: 400;
-  src: local('Advent Pro Regular'), local('AdventPro-Regular'), url('Advent.woff') format('woff');
+  src: local('Trocchi'), url('Trocchi.woff') format('woff');
 }
 
 /* Partials */
@@ -39,7 +39,7 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: normal;
   color: #999;
   text-rendering: optimizelegibility;
-  font-family: 'Advent Pro', sans-serif;
+  font-family: 'Trocchi', sans-serif;
   /*font-family: 'Pontano Sans', sans-serif;*/
 }
 
