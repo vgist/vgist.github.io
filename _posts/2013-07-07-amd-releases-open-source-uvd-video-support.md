@@ -13,7 +13,7 @@ tags: [Radeon, Kernel, Firmware]
 主要步骤如下：
 
 1. `emerge --sync` 同步你的 portage 树
-2. 确保 `/etc/portage/make.conf` 中的 `VIDEO_CARDS` 为 **radeon**，而非**fglrx**
+2. 确保 `/etc/portage/make.conf` 中的 `VIDEO_CARDS` 为 **radeon**，而非 **fglrx**
 3. 用 `x11-drivers/xf86-video-ati` 替换你原来的 `x11-drivers/ati-drivers`
 4. 安装最新版 `media-libs/mesa`、`x11-drivers/radeon-ucode`
 5. 最后编译 portage 中最新版 kernel
