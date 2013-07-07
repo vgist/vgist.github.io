@@ -17,6 +17,7 @@ Jekyll 默认的 sitemap.txt 功能有些羸弱，在我开启 _config.yml 中�
 填充以下内容
 
 <!-- more -->
+{% raw %}
 ```xml
 ---
 # Remember to set production_url in your _config.yml file!
@@ -43,5 +44,6 @@ title : Sitemap
     {% endfor %}
 </urlset>
 ```
+{% endraw %}
 
 OK，完美
