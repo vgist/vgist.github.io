@@ -46,7 +46,7 @@ Device Drivers  --->
             [*]   Enable firmware EDID
 ```
 
-其中，**Include in-kernel firmware blobs in kernel binary**需要的文件按 [这里](http://wiki.gentoo.org/wiki/Radeon#Firmware) 来选择
+其中，`Include in-kernel firmware blobs in kernel binary` 需要的文件按 [这里](http://wiki.gentoo.org/wiki/Radeon#Firmware) 来选择
 
 譬如我的 **Radeon HD 7850** 就是 (radeon/PITCAIRN_ce.bin radeon/PITCAIRN_mc.bin radeon/PITCAIRN_me.bin radeon/PITCAIRN_pfp.bin radeon/PITCAIRN_rlc.bin radeon/PITCAIRN_smc.bin radeon/TAHITI_uvd.bin)
 
@@ -55,5 +55,7 @@ Device Drivers  --->
 > [drm] UVD initialized successfully.
 
 参考：
+
 [http://wiki.gentoo.org/wiki/Radeon#Firmware](http://wiki.gentoo.org/wiki/Radeon#Firmware)
+
 [http://chithanh.blogspot.com/2013/04/new-mesa-features-for-adventurous.html](http://chithanh.blogspot.com/2013/04/new-mesa-features-for-adventurous.html)
