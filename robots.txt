@@ -1,2 +1,5 @@
 User-Agent: *
 Disallow: /page*
+Allow: /
+
+Sitemap: http://ihavanna.org/sitemap.xml
