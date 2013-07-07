@@ -14,7 +14,7 @@ title : Sitemap
     {% if page.layout != nil %}
     {% if page.layout != 'feed' %}
     <url>
-      <loc>{{ site.production_url }}{{ page.url | remove: 'page' }}</loc>
+      <loc>{{ site.production_url }}{{ page.url | remove: 'index.html' }}</loc>
     </url>
     {% endif %}
     {% endif %}
