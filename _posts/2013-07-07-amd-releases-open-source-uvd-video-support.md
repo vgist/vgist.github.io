@@ -56,6 +56,5 @@ Device Drivers  --->
 
 参考：
 
-[http://wiki.gentoo.org/wiki/Radeon#Firmware](http://wiki.gentoo.org/wiki/Radeon#Firmware)
-
-[http://chithanh.blogspot.com/2013/04/new-mesa-features-for-adventurous.html](http://chithanh.blogspot.com/2013/04/new-mesa-features-for-adventurous.html)
+- [http://wiki.gentoo.org/wiki/Radeon#Firmware](http://wiki.gentoo.org/wiki/Radeon#Firmware)
+- [http://chithanh.blogspot.com/2013/04/new-mesa-features-for-adventurous.html](http://chithanh.blogspot.com/2013/04/new-mesa-features-for-adventurous.html)
