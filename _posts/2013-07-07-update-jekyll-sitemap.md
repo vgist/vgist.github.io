@@ -63,3 +63,7 @@ title : Sitemap
 {% endraw %}
 
 OK，完美
+
+参考：
+
+[http://www.sitemaps.org/protocol.html](http://www.sitemaps.org/protocol.html)
