@@ -10,29 +10,39 @@
   </div>
 
   <div class="span4">
-      <h3>Sina Weibo</h3>
-      <section>
+      <!--<section>
+        <h3>Sina Weibo</h3>
         <span>
         <iframe width="300" height="450" class="share_self"  frameborder="0" scrolling="no" src="http://widget.weibo.com/weiboshow/index.php?&width=300&height=450&fansRow=2&ptype=1&speed=0&skin=10&isTitle=0&noborder=0&isWeibo=1&isFans=0&uid=2074421551&verifier=8aeb337e&colors=282828,282828,bbbbbb,4CB4E8,262626&dpc=1"></iframe>
         </span>
       </section>
+      <hr></hr>-->
 
-      <hr></hr>
-
-      <!--<section>
+      <section>
         <h3>Categories</h3>
-        <span class="category">
+        <span class="tag_box">
           <ul>
           {% assign categories_list = site.categories %}
           {% include JB/categories_list %} 
           </ul>
         </span>
       </section>
-
-      <hr></hr>-->
+      <hr></hr>
 
       <section>
-        <h3>Latest Comments</h3>
+       <h3>Recently Posts</h3>
+       <span class="category">
+         <ul>
+           {% for post in site.posts limit:10 %}
+           <li><a href="{{ BASE_PATH }}{{ post.url }}">{{ post.title }}</a></li>
+           {% endfor %}
+         </ul>
+       </span>
+      </section>
+      <hr></hr>
+
+      <section>
+        <h3>Recently Comments</h3>
         <span class="category">
           <ul class="ds-recent-comments" data-num-items="10" data-show-avatars="0" data-show-time="0" data-show-title="0" data-show-admin="0" data-excerpt-length="18"></ul>
         </span>
@@ -42,7 +52,6 @@
         <h3>Recently Visitors</h3>
           <ul class="ds-recent-visitors" data-num-items="4" data-avatar-size="45" style="margin-top:10px;"></ul>
       </section>
-
       <hr></hr>
 
       <section>
