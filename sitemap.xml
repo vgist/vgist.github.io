@@ -6,7 +6,7 @@ title : Sitemap
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
     {% for post in site.posts %}
     <url>
-        <loc>http://foo.com{{ post.url | remove: 'index.html' }}</loc>
+      <loc>{{site.production_url}}{{ post.url }}</loc>
     </url>
     {% endfor %}
 
@@ -14,7 +14,7 @@ title : Sitemap
     {% if page.layout != nil %}
     {% if page.layout != 'feed' %}
     <url>
-        <loc>http://foo.com{{ page.url | remove: 'index.html' }}</loc>
+      <loc>{{ site.production_url }}{{ page.url | remove: 'page' }}</loc>
     </url>
     {% endif %}
     {% endif %}
