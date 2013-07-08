@@ -1,6 +1,10 @@
 @import url(http://fonts.googleapis.com/css?family=Trocchi);
 @import url(http://fonts.googleapis.com/css?family=Open+Sans:400,400italic);
-
+@media (min-width: 981px) {
+  body {
+    padding-top: 40px;
+  }
+}
 /* Partials */
 /* Theme Vars */
 /* Compass Vars */
