@@ -24,24 +24,17 @@ Jekyll 默认的 sitemap.txt 功能有些羸弱，在我开启 _config.yml 中�
 # Remember to set production_url in your _config.yml file!
 title : Sitemap
 ---
-<?xml version="1.0" encoding="UTF-8"?>
-<urlset
-      xmlns="http://www.sitemaps.org/schemas/sitemap/0.9"
-      xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-      xsi:schemaLocation="http://www.sitemaps.org/schemas/sitemap/0.9
-            http://www.sitemaps.org/schemas/sitemap/0.9/sitemap.xsd">
 
-    <url>
-      <loc>{{ site.production_url }}</loc>
-      <changefreq>daily</changefreq>
-      <priority>1.00</priority>
-    </url>
+<?xml version="1.0" encoding="UTF-8"?>
+<urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
 
     {% for post in site.posts %}
     <url>
       <loc>{{ site.production_url }}{{ post.url }}</loc>
-      <changefreq>weekly</changefreq>
-      <priority>0.9</priority>
+      <changefreq>daily</changefreq>
+      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+
+      <priority>1.0</priority>
     </url>
     {% endfor %}
 
@@ -58,6 +51,12 @@ title : Sitemap
     {% endif %}
     {% endif %}
     {% endfor %}
+
+    <url>
+      <loc>{{ site.production_url }}</loc>
+      <changefreq>daily</changefreq>
+      <priority>0.6</priority>
+    </url>
 </urlset>
 ```
 {% endraw %}
