@@ -48,7 +48,7 @@ Device Drivers  --->
 
 其中，`Include in-kernel firmware blobs in kernel binary` 需要的文件按 [这里](http://wiki.gentoo.org/wiki/Radeon#Firmware) 来选择
 
-譬如我的 **Radeon HD 7850** 就是 (radeon/PITCAIRN_ce.bin radeon/PITCAIRN_mc.bin radeon/PITCAIRN_me.bin radeon/PITCAIRN_pfp.bin radeon/PITCAIRN_rlc.bin radeon/PITCAIRN_smc.bin radeon/TAHITI_uvd.bin)
+譬如我的 **Radeon HD 7850** 就是 `(radeon/PITCAIRN_ce.bin radeon/PITCAIRN_mc.bin radeon/PITCAIRN_me.bin radeon/PITCAIRN_pfp.bin radeon/PITCAIRN_rlc.bin radeon/PITCAIRN_smc.bin radeon/TAHITI_uvd.bin)`
 
 如果你的 Kernel 已经编译完成，并且选择了正确的 firmware，那么在启动过程中会出现
 
