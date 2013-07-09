@@ -1,10 +1,10 @@
     <!-- Baidu Button BEGIN -->
-    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;mini=1&amp;uid=1539895" ></script>
+    <script type="text/javascript" id="bdshare_js" data="type=tools&mini=1" ></script> 
     <script type="text/javascript" id="bdshell_js"></script>
     <script type="text/javascript">
       var bds_config = {
         'wbUid':2074421551,
-        'review':'normal'
+        'review':'normal',
         'snsKey':{
           'tsina':'438197117',
           'tqq':'bcfc706c5f86e72f410ffa2c668a04ce'
