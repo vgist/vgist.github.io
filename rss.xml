@@ -1,9 +1,9 @@
 ---
-layout: none
-title: {{ page.title | xml_escscape
+layout: nil
+title: {{ page.title | xml_escscape }}
 ---
 <?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom">
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<channel>
 		<title>{{ site.title }}</title>
 		<description>{{ site.description }}</description>
@@ -15,7 +15,7 @@ title: {{ page.title | xml_escscape
 				<description>{{ post.content | xml_escape }}</description>
 				<pubDate>{{ post.date | date_to_xmlschema }}</pubDate>
 				<link>{{ site.production_url }}{{ post.url }}</link>
-				<guid isPermaLink="true">{{ site.production_url }}{{ post.id }}</guid>
+				<guid isPermaLink="true">{{ site.production_url }}{{ post.id }}.html</guid>
 			</item>
 		{% endfor %}
 	</channel>
