@@ -8,7 +8,7 @@ tags: [Radeon, Kernel, Firmware]
 ---
 {% include JB/setup %}
 
-早在今年4月2号，[Phoronix](http://www.phoronix.com/scan.php?page=article&item=amd_opensource_uvd&num=1) 就放爆出了 AMD 开源 UVD 驱动支持的新闻，懒惰的我直到这个周末，才开始正式开始加入这次变动，也很顺利的将自己的 Kernel 加入了 **Radeon HD 7850** 的 UVD 支持。
+早在今年4月2号，[Phoronix](http://www.phoronix.com/scan.php?page=article&item=amd_opensource_uvd&num=1) 就爆出了 AMD 开源 UVD 驱动支持的新闻，懒惰的我直到这个周末，才开始正式开始加入这次变动，也很顺利的将自己的 Kernel 加入了 **Radeon HD 7850** 的 UVD 支持。
 
 主要步骤如下：
 
