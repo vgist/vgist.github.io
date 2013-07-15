@@ -7,7 +7,8 @@
         'review':'normal',
         'snsKey':{
           'tsina':'438197117',
-          'tqq':'bcfc706c5f86e72f410ffa2c668a04ce'
+          'tqq':'801384402',
+          't163':'CqC03sHkQ0Yoajki'
         }
       };
       document.getElementById("bdshell_js").src = "http://bdimg.share.baidu.com/static/js/shell_v2.js?cdnversion=" + Math.ceil(new Date()/3600000)

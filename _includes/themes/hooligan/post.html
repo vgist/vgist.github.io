@@ -45,7 +45,7 @@
       <h3>Published</h3>
       <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
     </section>
-      <hr></hr>
+      <hr>
     {% if page.category %}
     <section>
     <h3>Category</h3>
@@ -53,7 +53,7 @@
       {{ page.category }}
     </span>
     </section>
-      <hr></hr>
+      <hr>
     {% endif %}
     {% unless page.tags == empty %}
       <section>
@@ -63,7 +63,7 @@
           {% include JB/tags_list %}
         </ul>
       </section>
-      <hr></hr>
+      <hr>
     {% endunless %}
     <!--{% include custom/asides/recently_posts %}-->
     {% include custom/asides/recently_visitors %}
