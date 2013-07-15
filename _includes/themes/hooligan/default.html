@@ -118,6 +118,9 @@
                 </li>
               {% endif %}
             </ul>
+            <form class="navbar-search pull-right" onsubmit="tmtxt_search_google()" >
+              <input type="text" id="tmtxt-google-search" class="search-query" placeholder="Search">
+            </form>
           </div>
         </div>
       </div>
@@ -170,6 +173,7 @@
     </script>
     <!-- Baidu Button END -->
 
+    {% include custom/search %}
     {% include JB/analytics %}
   </body>
 </html>
