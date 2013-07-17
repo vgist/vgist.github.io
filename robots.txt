@@ -1,1 +1,3 @@
 Disallow: /page*
+
+Sitemap: http://ihavanna.org/sitemap.xml
