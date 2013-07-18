@@ -35,13 +35,18 @@ tags: [Joomla]
 ```bash
 # 重启 iptables，系统路径可能有所不同
 /etc/init.d/iptables restart
+
 [[ -f /tmp/block ]] && rm /tmp/block
+
 # 取 error.php 第四个字段，排序后，打印序号大于 4 的行到 /tmp/black
-awk '{print $4}' /var/www/YOURPATH/error.php | sort | uniq -c | sort -r | awk '($1>4) {print $2}' >> /tmp/block
+awk '{print $4}' /var/www/YOURPATH/error.php | sort | uniq -c | sort -r \
+    | awk '($1>4) {print $2}' >> /tmp/block
+
 # for 循环加入 ip 到 iptables
 for i in `awk '{print $1}' /tmp/block`; do
     iptables -I INPUT -p tcp -s $i -j DROP
 done
+
 # 一些清理工作
 rm /tmp/block
 echo "" > /var/www/YOURPATH/error.php
