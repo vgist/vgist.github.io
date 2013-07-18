@@ -21,11 +21,11 @@ tags: [Joomla]
 ……
 ```
 
+<!-- more -->
 传统的 netstat 统计 IP 再屏蔽方式已经不适用，考虑到 **Joomla** 平台 本身就有 logs 系统，为何不就对 **error.php** 动一些脑筋呢
 
 思路明确了，那么就开始，awk 取第四个字段，统计排序，取次数大于 4 的 IP 加入到 iptables 中加以屏蔽，配合 Linux 系统计划任务，5 小时执行一次，5 小时后释放
 
-<!-- more -->
 ```
 /etc/init.d/iptables restart; [[ -f /tmp/block ]] && rm /tmp/block; awk '{print $4}' /var/www/YOURPATH/error.php | sort | uniq -c | sort -r | awk '($1>4) {print $2}' >> /tmp/block; for i in `awk '{print $1}' /tmp/block`;do iptables -I INPUT -p tcp -s $i -j DROP; done; rm /tmp/block; echo "" > /var/www/YOURPATH/error.php
 ```
