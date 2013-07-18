@@ -1,4 +1,7 @@
 User-agent: *
 Disallow: /page*
+DISallow: /*.png$
+DISallow: /*.gif$
+DISallow: /*.jpg$
 
 sitemap: http://ihavanna.org/sitemap.xml
