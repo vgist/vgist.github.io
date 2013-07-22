@@ -17,7 +17,7 @@ tags: [Git, Usage]
 ### 增加一个 Submodule 到你的项目
 
 ```
-$ git submodule add git@domain.com:another_project.git your_project/another_project
+$ git submodule add git@domain.com:another_project.git another_project
 ```
 
 <!-- more -->
@@ -30,13 +30,13 @@ $ git status
 #   (use "git reset HEAD ..." to unstage)
 #
 #       new file:   .gitmodules
-#       new file:   your_project/another_project
+#       new file:   another_project
 ```
 
 你可能会注意到，git 只记录了 submodule 目录，而没有记录目录下的文件。实际上，git 是按照 commit id 来比对 submodule 变动的
 
 ```
-$ git add .gitmodules your_project/another_project
+$ git add .gitmodules another_project
 $ git commit -m "Add another_project submodule"
 $ git submodule init
 ```
@@ -44,7 +44,7 @@ $ git submodule init
 ### 更新你项目中的 Submodule
 
 ```
-$ cd your_project/another_project
+$ cd another_project
 $ git pull origin master
 $ cd your_project
 $ git add another_project
@@ -57,7 +57,7 @@ $ git push
 如果你恰巧拥有 Submodule 远程 commit 权限，进入你的 Submodule 目录，作些修改，提交
 
 ```
-$ cd your_project/another_project
+$ cd another_project
 ...make your changes...
 $ git commit -a -m "fixed a bug"
 $ git push origin master
