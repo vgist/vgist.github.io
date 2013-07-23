@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "关于我"
+title: "About"
 description: "由于工作圈子，Havanna，让人多次误认为 Havana (古巴首都名)"
 group: navigation
 ---
