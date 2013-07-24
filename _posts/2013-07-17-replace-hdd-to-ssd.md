@@ -63,6 +63,8 @@ grub2-install --no-floppy /dev/sda
 
 这里由于我的目录结构无变化，所以直接写分区表即 OK，如果你的分区表或文件系统有变化，那么调整下 `/etc/fstab` 即可。
 
+一些小优化 Gentoo wiki 上基本都有譬如挂载参数 `relatime`，譬如计划任务 `/sbin/fstrim -v`等等
+
 期间也发生了些意外
 
 譬如莫名其妙的将 **/boot** 下的 boot 软链接给删除了。导致开机启动找不到内核，最后重新加上就OK了：`mount /boot; cd /boot; ln -s . boot`。handbook上写的是非独立/boot目录才需要这个软链接，而我是/boot挂载到/dev/sda1的，为什么也需要，不懂......
