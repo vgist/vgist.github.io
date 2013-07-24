@@ -63,12 +63,13 @@ grub2-install --no-floppy /dev/sda
 
 这里由于我的目录结构无变化，所以直接写分区表即 OK，如果你的分区表或文件系统有变化，那么调整下 `/etc/fstab` 即可。
 
-一些小优化 Gentoo wiki 上基本都有譬如挂载参数 `relatime`，譬如计划任务 `/sbin/fstrim -v`等等
+一些小优化 [Gentoo wiki](http://wiki.gentoo.org/wiki/SSD) 上基本都有譬如挂载参数 `relatime`，譬如计划任务 `/sbin/fstrim -v`等等
 
 期间也发生了些意外
 
-譬如莫名其妙的将 **/boot** 下的 boot 软链接给删除了。导致开机启动找不到内核，最后重新加上就OK了：`mount /boot; cd /boot; ln -s . boot`。handbook上写的是非独立/boot目录才需要这个软链接，而我是/boot挂载到/dev/sda1的，为什么也需要，不懂......
+譬如莫名其妙的将 **/boot** 下的 **boot**
+软链接给删除了。导致开机启动找不到内核，最后重新加上就OK了：`mount /boot; cd /boot; ln -s . boot`。handbook 上写的是非独立 `/boot` 目录才需要这个软链接，而我是 `/boot` 挂载到 `/dev/sda1` 的，为什么也需要，不懂......
 
-剩下的就是针对固态硬盘的优化了,trim嘛一个月一次估计差不多了，discard就不需要的，据说影响性能，/var/tmp/portage挂到tmpfs上，等等....
+剩下的嘛就是 `/var/tmp/portage` 挂到 **tmpfs** 上，等等....
 
 速度嘛，老实说，在 **Gentoo** 下感觉不出来，原来各种优化后就已经很快了- -!，不过启动 **Windows 7** 时，logo 还没闪现就已经启动到登录界面了，速度提升不少。
