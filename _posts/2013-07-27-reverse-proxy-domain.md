@@ -4,7 +4,7 @@ title: "域名反向代理"
 description: "，Nginx 的域名反向代理"
 keywords: "域名, 反向, 代理, nginx"
 category: Internet
-tags: [Nginx]
+tags: [Nginx,Domain]
 ---
 {% include JB/setup %}
 
