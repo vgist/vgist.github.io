@@ -26,6 +26,7 @@ ihavanna.org.           3600    IN      A       111.111.111.111
 <!-- more -->
 将 `www.ihavanna.org` cname 到 `ihavanna.org`。
 
+```
 $ dig www.ihavanna.org +nostats +nocomments +nocmd
 
 ; <<>> DiG 9.9.2-P2 <<>> www.ihavanna.org +nostats +nocomments +nocmd
@@ -33,6 +34,7 @@ $ dig www.ihavanna.org +nostats +nocomments +nocmd
 ;www.ihavanna.org.              IN      A
 www.ihavanna.org.       3600    IN      CNAME   ihavanna.org.
 ihavanna.org.           3600    IN      A       111.111.111.111
+```
 
 同时ssh到阿里云，创建个主机配置文件：
 
