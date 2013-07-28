@@ -12,6 +12,7 @@ gentoo 的ebuild 还是不丰富，很多还是得自己写 ebuild
 
 gentoo-zh 也换到 github 上了，什么时候更新到 gentoo-zh 中去，闲话少说，给出 ebuild
 
+<!-- more -->
 ```bash
 # Copyright 1999-2008 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2

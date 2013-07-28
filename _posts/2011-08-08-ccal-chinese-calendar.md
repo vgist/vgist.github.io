@@ -12,6 +12,7 @@ tags: [ccal, Ebuild, Gentoo]
 
 感觉 Gentoo 用户写脚本的热情实在是不高啊，N多小工具都没得，于是抽空写了个简单的 Ebuild。
 
+<!-- more -->
 ```bash
 # Copyright 1999-2009 Gentoo Foundation
 # Distributed under the terms of the GNU General Public License v2
