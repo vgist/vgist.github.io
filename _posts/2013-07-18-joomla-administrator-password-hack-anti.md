@@ -33,6 +33,8 @@ tags: [Joomla]
 可读性不强，整理下
 
 ```bash
+#!/bin/bash
+
 # 重启 iptables，系统路径可能有所不同
 /etc/init.d/iptables restart
 
@@ -55,8 +57,8 @@ echo "" > /var/www/YOURPATH/error.php
 
 放入计划任务中，编辑 /etc/crontab，在最后加上：
 
-    0 */5 * * * root    sh /YOURPATH/block
+    */5 * * * * root    sh /YOURPATH/block
 
-5 小时 5 次的后台猜解，条件已经设定的很低了，如果自己遗忘密码，那么等 5 小时后再登录吧。
+每5分钟 4 次的后台猜解，条件已经设定的很低了，如果自己遗忘密码，那么等 5 分钟后再登录吧。
 
 肯定还有不完善的地方，给了朋友后同时嘱咐下后面改进改进，一些特殊情况再加一些条件做判断吧，大体不会出问题的了。这里我们抛弃了传统的 netstat，转而采用平台本身的日志来进行 iptables 屏蔽操作。
