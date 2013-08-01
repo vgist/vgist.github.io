@@ -12,7 +12,7 @@ tags: [Nginx,Domain]
 
 由于阿里云的备案复查比较严，时不时给你个电话告诉你，你的域名没解析到备案IP。于是想了个办法，[Nginx](http://nginx.org/) 的域名反向代理。
 
-想到就做，将 `ihavanna.org` 解析到阿里云指定IP，
+想到就做，将 `ihavanna.org` 解析到阿里云指定IP：
 
 ```bash
 $ dig ihavanna.org +nostats +nocomments +nocmd
@@ -24,7 +24,7 @@ ihavanna.org.           3600    IN      A       111.111.111.111
 ```
 
 <!-- more -->
-将 `www.ihavanna.org` cname 到 `ihavanna.org`。
+将 `www.ihavanna.org` cname 到 `ihavanna.org`：
 
 ```bash
 $ dig www.ihavanna.org +nostats +nocomments +nocmd
