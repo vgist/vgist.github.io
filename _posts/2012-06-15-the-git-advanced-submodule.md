@@ -56,9 +56,6 @@ $ git push
 
 ```
 git pull --recurse-submodules
-```
-
-```
 git submodule update --recursive
 ```
 或者
