@@ -2,12 +2,7 @@
 <html lang="en">
   <head>
     <meta charset="utf-8">
-    <title>
-      {% if page.title %}
-        {{ page.title }} - 
-      {% endif %}
-      {{ site.title }}
-    </title>
+    <title>{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}</title>
     {% if page.description %}<meta name="description" content="{{ page.description }}">{% endif %}
     {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{%else%}<meta name="keywords" content="{{ site.keywords }}">{% endif %}
     <meta name="author" content="{{ site.author.name }}">
@@ -81,21 +76,21 @@
                     <span class="hidden-desktop">Google+</span>
                   </a>
                 </li>
-              {% endif %}    
+              {% endif %}
               {% if site.author.twitter %}
                 <li>
                   <a href="https://twitter.com/{{ site.author.twitter }}" class="zocial twitter icon" target="_blank">
                   <span class="hidden-desktop">Twitter</span>
                   </a>
                 </li>
-              {% endif %}                          
+              {% endif %}
               {% if site.author.facebook %}
                 <li>
                   <a href="http://www.facebook.com/{{ site.author.facebook }}" class="zocial facebook icon" target="_blank">
                     <span class="hidden-desktop">Facebook</span>
                   </a>
                 </li>
-              {% endif %}           
+              {% endif %}
               {% if site.author.linkedin %}
                 <li>
                   <a href="http://www.linkedin.com/in/{{ site.author.linkedin }}" class="zocial linkedin icon" target="_blank">
