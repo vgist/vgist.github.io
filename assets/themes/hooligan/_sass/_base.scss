@@ -26,7 +26,6 @@ h1,h2,h3,h4,h5,h6 {
 	color:#999;
 	text-rendering:optimizelegibility;
 	font-family: 'Trocchi', sans-serif;
-	/*font-family: 'Pontano Sans', sans-serif;*/
 } 
 
 a {
@@ -239,4 +238,9 @@ div.content {
 	div#page-index {
 		padding-top:30px !important;
 	}
+}
+
+/* font awesome */
+.navbar .nav > li > a {
+  padding: 12px 10px 11px;
 }
