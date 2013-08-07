@@ -273,29 +273,10 @@ div.content div#page-index {
   padding-top: 30px !important;
 }
 
-/* Zocial Overrides */
-/* line 248, ../_sass/_base.scss */
-.navbar a.zocial {
-  padding-left: 0 !important;
-  padding-right: 0 !important;
-}
+/* font awesome */
 
-/* line 254, ../_sass/_base.scss */
-.zocial.googleplus:focus,
-.zocial.googleplus:hover {
-  color: #e01d30 !important;
-}
-
-/* line 259, ../_sass/_base.scss */
-.zocial.twitter:focus,
-.zocial.twitter:hover {
-  color: #46c0fb !important;
-}
-
-/* line 265, ../_sass/_base.scss */
-.zocial.linkedin:focus,
-.zocial.linkedin:hover {
-  color: #50a1cb !important;
+.navbar .nav > li > a {
+  padding: 12px 10px 11px;
 }
 
 /* Layout */
