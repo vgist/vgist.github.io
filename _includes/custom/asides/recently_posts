@@ -1,5 +1,5 @@
       <section>
-       <h3>Recently Posts</h3>
+       <h4>Recently Posts</h4>
        <span class="category">
          <ul>
            {% for post in site.posts limit:5 %}
