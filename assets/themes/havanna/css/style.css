@@ -7,6 +7,8 @@
  *
  * Designed and built with all the love in the world @twitter by @mdo and @fat.
  */
+.content img {box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);}
+.content div.row div.span9 > img {display: block;margin: 10px auto;}
 .clearfix{*zoom:1;}.clearfix:before,.clearfix:after{display:table;content:"";line-height:0;}
 .clearfix:after{clear:both;}
 .hide-text{font:0/0 a;color:transparent;text-shadow:none;background-color:transparent;border:0;}
