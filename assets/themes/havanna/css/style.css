@@ -1,9 +1,5 @@
-.content img {
+p img {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
-}
-.content div.row div.span9 > img {
-    display: block;
-    margin: 10px auto;
 }
 
 .tag_box a span {
@@ -22,7 +18,7 @@ a {
   -o-transition: all 0.3s;
   transition: all 0.3s;
 }
-a:hover {
+a:hover,a:focus {
   color: #005580;
   text-decoration: none;
 }

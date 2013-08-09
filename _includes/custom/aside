@@ -1,3 +1,5 @@
+      {% include custom/asides/logo %}
+
       {% include custom/asides/recently_posts %}
 
       {% include custom/asides/recently_comments %}
