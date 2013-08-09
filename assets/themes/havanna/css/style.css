@@ -14,3 +14,15 @@
 div.row div.visible-desktop {
     margin-top:20px;
 }
+
+a {
+  color: #08c;
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+a:hover {
+  color: #005580;
+  text-decoration: none;
+}
