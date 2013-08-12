@@ -37,7 +37,7 @@ tags: [style]
 
 以下是关于 SASS 的具体用法，转自：[SASS用法指南 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2012/06/sass.html)
 
-====
+- - -
 
 ### 一、什么是SASS
 
@@ -65,7 +65,7 @@ SASS 文件就是普通的文本文件，里面可以直接使用 CSS 语法。�
 
     sass test.scss
 
-如果要将显示结果保存成文件，后面再跟一个.css文件名。
+如果要将显示结果保存成文件，后面再跟一个 .css 文件名。
 
     sass test.scss test.css
 
@@ -133,7 +133,7 @@ SASS 允许选择器嵌套。比如，下面的 CSS 代码：
       }
     }
 
-属性也可以嵌套，比如 border-color 属性，可以写成：
+属性也可以嵌套，比如 `border-color` 属性，可以写成：
 
     p {
       border: {
