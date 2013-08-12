@@ -2,10 +2,10 @@
 
 # Set this to the root of your project when deployed:
 http_path = "/"
-css_dir = "css"
-sass_dir = "_sass"
-images_dir = "images"
-javascripts_dir = "js"
+css_dir = "assets/themes/havanna/css"
+sass_dir = "assets/themes/havanna/_sass"
+images_dir = "assets/themes/havanna/images"
+javascripts_dir = "assets/themes/havanna/js"
 
 # You can select your preferred output style here (can be overridden via the command line):
 # output_style = :expanded or :nested or :compact or :compressed
