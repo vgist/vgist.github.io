@@ -1,44 +1,41 @@
-/* Partials */
 /* This is for your Custom Content. */
+
 @media (min-width: 979px) {
-  /* line 4, ../_sass/_custom.scss */
   body {
     padding-top: 40px;
   }
 }
+
 @media (max-width: 767px) {
-  /* line 10, ../_sass/_custom.scss */
   body {
     padding-right: 20px;
     padding-left: 20px;
   }
 }
-/* line 17, ../_sass/_custom.scss */
-p img {
-  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+
+p {
+  img {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.8);
+  }
 }
 
-/* line 22, ../_sass/_custom.scss */
 .tag_box a span {
   vertical-align: super;
   font-size: 0.8em;
 }
 
-/* line 27, ../_sass/_custom.scss */
 .row .visible-desktop {
-  margin-top: 20px;
+  margin-top:20px;
 }
 
-/* line 31, ../_sass/_custom.scss */
 a {
   color: #08c;
   -webkit-transition: all 0.3s;
   -moz-transition: all 0.3s;
   -o-transition: all 0.3s;
   transition: all 0.3s;
-}
-/* line 37, ../_sass/_custom.scss */
-a:hover, a:focus {
-  color: #005580;
-  text-decoration: none;
+  &:hover, &:focus {
+    color: #005580;
+    text-decoration: none;
+  }
 }
