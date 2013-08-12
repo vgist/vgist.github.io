@@ -23,10 +23,10 @@ tags: [style]
 其中 config.rb 文件可以对之进行一些修改，譬如输出格式
 
 ```
-:nested		# 嵌套缩进的css代码，它是默认值。
-:expanded	# 没有缩进的、扩展的css代码。
-:compact	# 简洁格式的css代码。
-:compressed	# 压缩后的css代码。
+:nested		# 默认值，嵌套缩进
+:expanded	# 无缩进、扩展
+:compact	# 简洁格式
+:compressed	# 压缩后
 ```
 
 实时监控 Sass 目录，使之修改保存后，即可编译成对应目录的 css 
