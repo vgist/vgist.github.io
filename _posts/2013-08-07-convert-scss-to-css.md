@@ -2,7 +2,7 @@
 layout: post
 title: "CSS 的预处理器 SASS"
 description: "sass 的一些介绍"
-keywords: "scss, css"
+keywords: "scss, css, compass"
 category: Internet
 tags: [style]
 ---
