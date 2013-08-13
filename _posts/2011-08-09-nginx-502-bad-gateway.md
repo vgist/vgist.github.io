@@ -10,11 +10,13 @@ tags: [Nginx]
 
 一般 `nginx` 搭配 `php` 都采用这样的方式：
 
-    location ~ \.php$ {
-     proxy_pass http://localhost:9000;
-     fastcgi_param SCRIPT_FILENAME /data/_hongdou$fastcgi_script_name;
-     include fastcgi_params;
-     }
+```nginx
+location ~ \.php$ {
+    proxy_pass http://localhost:9000;
+    fastcgi_param SCRIPT_FILENAME /data/_hongdou$fastcgi_script_name;
+    include fastcgi_params;
+}
+```
 
 <!-- more -->
 这个方式只能连接到一组 `spawn-fcgi` 开启的 `fastcgi`，在服务器负载稍高时常常出现 `502 bad gateway` 错误。
@@ -38,15 +40,17 @@ tags: [Nginx]
 
 然后把 `fastcgi` 的这段配置改成用 `upstream` 的方式：
 
-    upstream backend {
-     server 127.0.0.1:9000;
-     server 127.0.0.1:9001;
-     }
-    location ~ \.php$ {
-     fastcgi_pass backend;
-     fastcgi_param SCRIPT_FILENAME /data/_hongdou$fastcgi_script_name;
-     include fastcgi_params;
-     }
+```nginx
+upstream backend {
+    server 127.0.0.1:9000;
+    server 127.0.0.1:9001;
+}
+location ~ \.php$ {
+    fastcgi_pass backend;
+    fastcgi_param SCRIPT_FILENAME /data/_hongdou$fastcgi_script_name;
+    include fastcgi_params;
+}
+```
 
 检查配置结果正确，能跑起来；同时在服务器上 `netstat -n|grep 9000` 和 `grep 9001` 都有记录，证明连接无误；在前台查阅页面，一切运行正常。
 

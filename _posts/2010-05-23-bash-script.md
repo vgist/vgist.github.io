@@ -16,7 +16,7 @@ tags: [lnmp, CLI]
 
 <!-- more -->
 
-```bash
+```sh
 #!/bin/bash
 #
     

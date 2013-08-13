@@ -8,7 +8,7 @@ tags: [SQL, CLI]
 ---
 {% include JB/setup %}
 
-## 一、安装后
+### 一、安装后
 
 安装mysql后设置管理员root密码
 
@@ -28,7 +28,7 @@ tags: [SQL, CLI]
     mysql> FLUSH PRIVILEGES;
     mysql> exit
 
-## 二、登录数据库
+### 二、登录数据库
 
     # 连接本地mysql
     mysql -uroot -p
@@ -41,7 +41,7 @@ tags: [SQL, CLI]
     # 退出mysql.
     mysql> exit;
 
-### 数据库操作
+### 三、 数据库操作
 
     # 显示有多少数据库
     mysql> show databases;
@@ -74,7 +74,7 @@ tags: [SQL, CLI]
     # 查看名为molyx的数据库
     mysqlshow -uroot -p molyx
 
-### 数据表操作
+### 四、 数据表操作
 
     # 显示molyx库中的数据表
     mysql> show tables from molyx;
@@ -156,7 +156,7 @@ tags: [SQL, CLI]
     # 删除表
     mysql> drop table tablename;
 
-## 五、权限操作
+### 五、权限操作
 
     # 先创建个molyx库，再创建个可以操作molyx库的用户molyxuser，密码为123456
     mysql> create database molyx;
@@ -170,7 +170,7 @@ tags: [SQL, CLI]
     #创建一个针对molyx库具有所有权限，可从任意IP登录的帐号molyxuser
     mysql> grant all on molyx.* to ‘molyxuser’@'%’ identified by ’123456′;
 
-## 六、备份与还原
+### 六、备份与还原
 
     # 备份molyx到文件molyx.sql
     mysqldump -uroot -p --databases molyx > /your/path/molyx.sql
@@ -197,7 +197,7 @@ tags: [SQL, CLI]
     # 修复所有的.myi
     myisamchk -r /your/path/mysql/*.MYI
 
-## 七、其他
+### 七、其他
 
     #mysql 显示和使用的mysql数据库。前面已经简单的提过用法；比如登录等
     #mysqladmin 用来创建和维护mysql数据库的命令
@@ -205,7 +205,7 @@ tags: [SQL, CLI]
     #mysqldump 是用于备份数据库
     #myisamchk 用来修复.myi后缀的数据库文件
 
-### 字段类型
+#### 1. 字段类型
 
 - INT[(M)] 型： 正常大小整数类型
 - DOUBLE[(M,D)] [ZEROFILL] 型： 正常大小(双精密)浮点数字类型
@@ -219,7 +219,7 @@ tags: [SQL, CLI]
     # emerge --config =dev-db/mysql-5.1.53
     # mysql_upgrade tool
 
-### mysqldump 命令的使用
+#### 2. mysqldump 命令的使用
 
 备份和导出数据库
 
@@ -238,7 +238,7 @@ tags: [SQL, CLI]
     mysqldump -h database_ip -u Username --password=123456 --opt databasename > backup-file.sql
     mysqldump -h database_ip -d -u Username --password=123456 databasename >database_structure.sql
 
-### mysql 命令使用
+#### 3. mysql 命令使用
 
 将查询结果保存到文件
 
