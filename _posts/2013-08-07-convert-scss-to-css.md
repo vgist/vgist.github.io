@@ -55,6 +55,22 @@ output_style = :compressed
 
 由于此过程会生成 **.sass-cache**目录，提交到代码库时，将 **.sass-cache** 写入 **.gitignore**
 
+```
+$ cat .gitignore 
+_site/*
+_theme_packages/*
+
+Thumbs.db
+.DS_Store
+
+!.gitkeep
+
+.rbenv-version
+.rvmrc
+.sass-cache
+
+```
+
 以下是我的目录结构
 
 ```
