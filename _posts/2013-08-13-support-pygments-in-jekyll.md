@@ -12,7 +12,7 @@ tags: [Jekyll, pygments, python]
 
 #### 安装
 
-假设你已经能正常运行 Jekyll ([安装方法](http://ihavanna.org/internet/2013-07/jekyll-install.html))。
+假设你已经能正常运行 Jekyll ([安装方法](/internet/2013-07/jekyll-install.html))。
 
 下面安装pygments
 
