@@ -10,7 +10,7 @@ tags: [style]
 
 最近经常接触 [Jekyll](http://jekyllrb.com/)，进而又认识到 [Sass](http://sass-lang.com/)（从 Sass 3 开始的新语法规则被称为 SCSS，之前的语法规则为 Syntaxes） 这个 CSS 的处理器，同时 [Compass](http://compass-style.org/) 又是一个高效的开发 SASS 的利器。
 
-闲话少说，安装
+闲话少说，Jekyll 下的安装
 
     $ gem install sass
     $ gem install compass
@@ -18,6 +18,7 @@ tags: [style]
 <!-- more -->
 创建一个新项目
 
+    $ cd /your/jekyll/path
     $ compass create .
 
 其中 config.rb 文件可以对之进行一些修改，譬如输出格式
@@ -29,11 +30,47 @@ tags: [style]
 :compressed	# 压缩后
 ```
 
+以下是我的配置
+
+```ruby
+# Require any additional compass plugins here.                                                                                                                       
+
+# Set this to the root of your project when deployed:
+http_path = "/"
+css_dir = "assets/themes/havanna/css"
+sass_dir = "assets/themes/havanna/_sass"
+images_dir = "assets/themes/havanna/images"
+javascripts_dir = "assets/themes/havanna/js"
+
+# You can select your preferred output style here (can be overridden via the command line):
+# output_style = :expanded or :nested or :compact or :compressed
+output_style = :compressed
+```
+
+当然也可以不运行 `compass create .` 来创建目录，只需 `touch config.rb`，且填充以上内容即可
+
 实时监控 Sass 目录，使之修改保存后，即可编译成对应目录的 css 
 
     $ compass watch .
 
-最后，提交到代码库时，将 **.sass-cache** 写入 **.gitignore**
+由于此过程会生成 **.sass-cache**目录，提交到代码库时，将 **.sass-cache** 写入 **.gitignore**
+
+以下是我的目录结构
+
+```
+^_^ ~/Documents/git/jekyll-havanna $ dtree 
+/home/havanna/Documents/git/jekyll-havanna
+.
+| assets
+| | themes
+| | | havanna
+| | | | css
+| | | | js
+| | | | _sass
+| _includes
+| | themes
+| | | havanna
+```
 
 以下是关于 SASS 的具体用法，转自：[SASS用法指南 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2012/06/sass.html)
 
