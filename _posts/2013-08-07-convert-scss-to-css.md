@@ -58,18 +58,19 @@ output_style = :compressed
 以下是我的目录结构
 
 ```
-^_^ ~/Documents/git/jekyll-havanna $ dtree 
-/home/havanna/Documents/git/jekyll-havanna
 .
-| assets
-| | themes
-| | | havanna
-| | | | css
-| | | | js
-| | | | _sass
-| _includes
-| | themes
-| | | havanna
+└── assets
+    └── themes
+        └── havanna
+            ├── _sass
+            │   ├── _custom.scss
+            │   └── style.scss
+            ├── css
+            │   ├── bootstrap-responsive.css
+            │   ├── pygments.css
+            │   └── style.css
+            └── js
+                └── jquery.min.js
 ```
 
 以下是关于 SASS 的具体用法，转自：[SASS用法指南 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2012/06/sass.html)
