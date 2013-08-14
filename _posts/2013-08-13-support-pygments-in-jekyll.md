@@ -36,7 +36,9 @@ tags: [Jekyll, pygments, python]
 
 生成的样式文件加到我们的网页中
 
-    <link rel="stylesheet" href="/your/path/pygments.css">
+```html
+<link rel="stylesheet" href="/your/path/pygments.css">
+```
 
 #### 使用
 
