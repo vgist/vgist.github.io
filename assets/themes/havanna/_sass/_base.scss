@@ -1,0 +1,20 @@
+/* This is for your Custom Content. */
+
+@mixin transition {
+  -webkit-transition: all 0.3s;
+  -moz-transition: all 0.3s;
+  -o-transition: all 0.3s;
+  transition: all 0.3s;
+}
+
+@mixin text-shadow($a: 1px) {
+  text-shadow: 0px 1px 0px rgb(255, 255, 255), 0px 1px $a rgba(170, 170, 170, 0.8);
+}
+
+@mixin box-shadow($a, $b, $c, $d) {
+  box-shadow: $a $b $c rgba(0, 0, 0, $d);
+}
+
+@mixin border($a) {
+  border: 1px solid rgba(0, 0, 0, $a);
+}

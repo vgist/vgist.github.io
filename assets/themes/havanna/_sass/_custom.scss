@@ -2,18 +2,26 @@
 
 p {
   img {
-    box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.6);
+    @include box-shadow(1px, 2px, 4px, 0.6);
     &:hover {
-      box-shadow: 1px 3px 4px rgba(0, 0, 0, 0.8);
-      -webkit-transition: all 0.3s;
-      -moz-transition: all 0.3s;
-      -o-transition: all 0.3s;
-      transition: all 0.3s;
+      @include box-shadow(1px, 3px, 4px, 0.8);
+      @include transition;
     }
   }
   code {
-    box-shadow: 1px 1px 2px rgba(0, 0, 0, 0.067);
+    @include box-shadow(1px, 1px, 2px, 0.067);
   }
+}
+
+h1, h2, h3, h4 {
+  @include text-shadow(2px);
+  small {
+    @include text-shadow;
+  }
+}
+
+h5, h6, strong {
+  @include text-shadow;
 }
 
 .tag_box a span {
@@ -26,76 +34,53 @@ p {
 }
 
 a {
+  @include transition;
   color: #08c;
-  -webkit-transition: all 0.3s;
-  -moz-transition: all 0.3s;
-  -o-transition: all 0.3s;
-  transition: all 0.3s;
   &:hover, &:focus {
     color: #005580;
     text-decoration: none;
-    text-shadow: 0px 1px 0px rgb(255, 255, 255), 0px 1px 1px rgba(170, 170, 170, 0.8);
+    @include text-shadow;
   }
 }
 
 .span9 .wrapper {
-  border: 1px solid rgba(0, 0, 0, 0.067);
+  @include border(0.067);
   border-radius: 15px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.067);
+  @include box-shadow(1px, 2px, 4px, 0.067);
   padding: 5px;
   margin: 5px 0px;
   .entry-title {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
   }
   &:hover {
+    @include transition;
     background-color: rgba(245, 245, 245, 0.7);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    border: 1px solid rgba(0, 0, 0, 0.167);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.167);
+    @include border(0.167);
+    @include box-shadow(2px, 3px, 4px, 0.167);
   }
 }
 
 section {
-  border: 1px solid rgba(0, 0, 0, 0.067);
+  @include border(0.067);
   border-radius: 5px;
-  box-shadow: 1px 2px 4px rgba(0, 0, 0, 0.067);
+  @include box-shadow(1px, 2px, 4px, 0.067);
   padding: 0px 5px;
   margin: 5px 0px;
   h4 {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
   }
   &:hover {
+    @include transition;
     background-color: rgba(245, 245, 245, 0.7);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
-    border: 1px solid rgba(0, 0, 0, 0.167);
-    box-shadow: 2px 3px 4px rgba(0, 0, 0, 0.167);
+    @include border(0.167);
+    @include box-shadow(2px, 3px, 4px, 0.167);
   }
 }
 
 .highlight pre {
   &:hover {
-    border: 1px solid rgba(0, 0, 0, 0.35);
-    box-shadow: 1px 2px 2px rgba(0, 0, 0, 0.167);
-    -webkit-transition: all 0.3s;
-    -moz-transition: all 0.3s;
-    -o-transition: all 0.3s;
-    transition: all 0.3s;
+    @include transition;
+    @include border(0.35);
+    @include box-shadow(1px, 2px, 2px, 0.167);
   }
-}
-
-h1, h2, h3 {
-  text-shadow: 0px 1px 0px rgb(255, 255, 255), 0px 1px 2px rgb(170, 170, 170);
-  small {
-    text-shadow: 0px 1px 0px rgb(255, 255, 255), 0px 1px 1px rgba(170, 170, 170, 0.8);
-  }
-}
-
-h4, h5, h6, strong {
-  text-shadow: 0px 1px 0px rgb(255, 255, 255), 0px 1px 1px rgba(170, 170, 170, 0.8);
 }
