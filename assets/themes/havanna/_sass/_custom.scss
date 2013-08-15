@@ -47,6 +47,13 @@ a {
   .entry-title {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
   }
+  &:hover {
+    background-color: rgba(245, 245, 245, 0.7);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
+  }
 }
 
 section {
@@ -57,6 +64,13 @@ section {
   margin: 5px 0px;
   h4 {
     border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
+  }
+  &:hover {
+    background-color: rgba(245, 245, 245, 0.7);
+    -webkit-transition: all 0.3s;
+    -moz-transition: all 0.3s;
+    -o-transition: all 0.3s;
+    transition: all 0.3s;
   }
 }
 
