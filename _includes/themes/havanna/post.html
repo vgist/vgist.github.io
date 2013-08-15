@@ -41,12 +41,10 @@
   </div>
 
   <div class="span3 visible-desktop" data-spy="affix">
-    {% include custom/asides/logo %}
     <section>
       <h4>Published</h4>
       <div class="date"><span>{{ page.date | date_to_long_string }}</span></div>
     </section>
-      <hr>
     {% if page.category %}
     <section>
     <h4>Categories</h4>
@@ -54,7 +52,6 @@
       {{ page.category }}
     </span>
     </section>
-      <hr>
     {% endif %}
     {% unless page.tags == empty %}
       <section>
@@ -64,7 +61,6 @@
           {% include JB/tags_list %}
         </ul>
       </section>
-      <hr>
     {% endunless %}
     {% include custom/asides/license %}
   </div>
