@@ -94,6 +94,7 @@ Thumbs.db
             └── js
                 └── jquery.min.js
 ```
+这里是本人博客的 scss：[https://github.com/Ihavanna/ihavanna.github.io/tree/master/assets/themes/havanna/_sass](https://github.com/Ihavanna/ihavanna.github.io/tree/master/assets/themes/havanna/_sass)
 
 以下是关于 SASS 的具体用法，转自：[SASS用法指南 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2012/06/sass.html)
 
