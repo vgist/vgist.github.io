@@ -45,7 +45,7 @@ a {
 
 .span9 .wrapper {
   @include border(0.067);
-  border-radius: 15px;
+  @include border-radius(10px);
   @include box-shadow(1px, 2px, 4px, 0.067);
   padding: 5px;
   margin: 5px 0px;
@@ -62,8 +62,8 @@ a {
 
 section {
   @include border(0.067);
-  border-radius: 5px;
-  @include box-shadow(1px, 2px, 4px, 0.067);
+  @include border-radius(5px);
+  @include box-shadow(1px, 2px, 3px, 0.067);
   padding: 0px 5px;
   margin: 5px 0px;
   h4 {
@@ -73,7 +73,7 @@ section {
     @include transition;
     background-color: rgba(245, 245, 245, 0.7);
     @include border(0.167);
-    @include box-shadow(2px, 3px, 4px, 0.167);
+    @include box-shadow(1px, 3px, 4px, 0.167);
   }
 }
 

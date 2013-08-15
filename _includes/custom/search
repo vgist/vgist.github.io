@@ -1,4 +1,4 @@
-    <script language="Javascript" type="text/javascript">
+    <script type="text/javascript">
     function tmtxt_search_google()
     {
       var query = document.getElementById("tmtxt-google-search").value;
