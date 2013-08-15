@@ -1,7 +1,8 @@
     <!-- Baidu Button BEGIN -->
-    <script type="text/javascript" id="bdshare_js" data="type=tools&amp;uid=1539895" ></script>
     <script type="text/javascript" id="bdshell_js"></script>
     <script type="text/javascript">
+    document.write(unescape("%3Cscript type='text/javascript' id='bdshare_js' data='type=tools&amp;uid=1539895'%3E%3C/script%3E"));
+
       var bds_config = {
         'wbUid':2074421551,
         'review':'normal',
