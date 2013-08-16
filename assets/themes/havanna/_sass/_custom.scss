@@ -14,7 +14,7 @@ p {
 }
 
 h1, h2, h3, h4 {
-  @include text-shadow(2px);
+  @include text-shadow(255, 2px, 170);
   small {
     @include text-shadow;
   }
@@ -39,8 +39,20 @@ a {
   &:hover, &:focus {
     color: rgb(0, 85, 128);
     text-decoration: none;
-    @include text-shadow;
+    @include text-shadow(255, 1px, 170);
   }
+}
+
+.navbar .brand, .navbar .nav > li > a {
+  @include text-shadow(255, 0px, 170);
+  &:hover, &:focus {
+    color: rgb(51, 51, 51);
+    @include text-shadow(255, 1px, 170);
+  }
+}
+
+.page-header {
+    border-bottom: 1px dashed rgb(238, 238, 238);
 }
 
 .span9 .wrapper {
@@ -83,8 +95,4 @@ section {
     @include border(0.35);
     @include box-shadow(1px, 2px, 2px, 0.167);
   }
-}
-
-.page-header {
-    border-bottom: 1px dashed rgb(238, 238, 238);
 }
