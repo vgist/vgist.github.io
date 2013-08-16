@@ -35,9 +35,9 @@ h5, h6, strong {
 
 a {
   @include transition;
-  color: #08c;
+  color: rgb(0, 136, 204);
   &:hover, &:focus {
-    color: #005580;
+    color: rgb(0, 85, 128);
     text-decoration: none;
     @include text-shadow;
   }
@@ -83,4 +83,8 @@ section {
     @include border(0.35);
     @include box-shadow(1px, 2px, 2px, 0.167);
   }
+}
+
+.page-header {
+    border-bottom: 1px dashed rgb(238, 238, 238);
 }
