@@ -3,18 +3,18 @@ layout: nil
 title: {{ page.title | xml_escscape }}
 ---
 
-<?xml version="1.0" encoding="UTF-8"?>
-<rss version="2.0">
+<?xml version="1.0" encoding="US-ASCII"?>
+<rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom>
+<atom:link href="http://dallas.example.com/rss.xml" rel="self" type="application/rss+xml" />
 	<channel>
 		<title>{{ site.title }}</title>
 		<description>{{ site.description }}</description>
 		<link>{{ site.production_url }}{{ site.rss_path }}</link>
-		<link>{{ site.production_url }}</link>
-		<lastBuildDate>{{ site.time | date_to_xmlschema }}</lastBuildDate>
-		<pubDate>{{ site.time | date_to_xmlschema }}</pubDate>
+		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
+		<pubDate>{{ site.time | date_to_rfc822 }}</pubDate>
 		<ttl>1800</ttl>
 
-{% for post in site.posts limit:10 %}
+{% for post in site.posts %}
 		<item>
 			<title>{{ post.title }}</title>
 			<description>{{ post.content | xml_escape }}</description>
