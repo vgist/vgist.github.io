@@ -7,7 +7,6 @@ title: {{ page.title | xml_escscape }}
 <rss version="2.0" xmlns:atom="http://www.w3.org/2005/Atom" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:dc="http://purl.org/dc/elements/1.1/" xmlns:rdf="http://www.w3.org/1999/02/22-rdf-syntax-ns#">
 	<channel>
 		<title>{{ site.title }}</title>
-		<atom:link href=">{{ site.production_url }}{{ site.rss_path }}" rel="self" type="application/rss+xml"/>
 		<description>{{ site.description }}</description>
 		<link>{{ site.production_url }}{{ site.rss_path }}</link>
 		<lastBuildDate>{{ site.time | date_to_rfc822 }}</lastBuildDate>
