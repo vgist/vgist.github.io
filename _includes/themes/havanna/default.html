@@ -20,7 +20,6 @@
 
     <link rel="shortcut icon" href="/favicon.png">
     <link rel="canonical" href="{{ site.production_url }}{{ page.url | replace:'index.html','' }}" />
-    <link rel="alternate" type="application/rss+xml" title="Havanna's Space &raquo; Feed" href="{{ site.url }}/rss.xml" />
     <!-- fav and touch icons -->
   <!-- Update these with your own images
     <link rel="shortcut icon" href="images/favicon.png">
@@ -28,6 +27,11 @@
     <link rel="apple-touch-icon" sizes="72x72" href="images/apple-touch-icon-72x72.png">
     <link rel="apple-touch-icon" sizes="114x114" href="images/apple-touch-icon-114x114.png">
   -->
+
+    <!-- atom & rss feed -->
+    <link href="{{ BASE_PATH }}{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="{{ site.title }} ATOM Feed">
+    <link href="{{ BASE_PATH }}{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="{{ site.title }} RSS Feed">
+
   </head>
 
   <body>
