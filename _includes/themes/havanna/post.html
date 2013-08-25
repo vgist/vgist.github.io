@@ -11,19 +11,19 @@
     </div>
     {{ content }}
     <hr>
-    <div class="row-fluid">
+    <div class="row">
       <div class="span8">
         <div class="pagination btn-group">
           {% if page.previous %}
-            <a class="btn prev" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
+            <a class="btn btn-default" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
           {% else %}
-            <a class="btn disabled prev">&larr; Previous</a>
+            <a class="btn btn-default disabled">&larr; Previous</a>
           {% endif %}
-            <a class="btn" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
+            <a class="btn btn-default" href="{{ BASE_PATH }}{{ site.JB.archive_path }}">Archive</a>
           {% if page.next %}
-            <a class="btn next" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a>
+            <a class="btn btn-default" href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a>
           {% else %}
-            <a class="btn next disabled">Next &rarr;</a>
+            <a class="btn btn-default disabled">Next &rarr;</a>
           {% endif %}
         </div>
       </div>
