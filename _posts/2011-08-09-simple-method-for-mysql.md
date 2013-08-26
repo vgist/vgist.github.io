@@ -334,15 +334,15 @@ grant all on molyx.* to 'molyxuser'@'%' identified by '123456';
 
 备份molyx到文件molyx.sql
 
-    mysqldump -uroot -p --databases molyx > /your/path/molyx.sql
+    mysqldump -uroot -p --database molyx > /your/path/molyx.sql
 
 备份全部数据
 
-    mysqldump -uroot -p -all -database > /your/path/backup.sql
+    mysqldump -uroot -p --all-databases > /your/path/backup.sql
 
 备份molyx并压缩
 
-    mysqldump -u root -p --databases molyx | gzip > /your/path/molyx.sql.gz
+    mysqldump -u root -p --database molyx | gzip > /your/path/molyx.sql.gz
 
 将molyx.sql导入到数据库
 
