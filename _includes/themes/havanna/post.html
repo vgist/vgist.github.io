@@ -12,7 +12,7 @@
     {{ content }}
     <hr>
     <div class="row">
-      <div class="span8">
+      <div class="col-md-8">
         <div class="pagination btn-group">
           {% if page.previous %}
             <a class="btn btn-default" href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Previous</a>
@@ -27,7 +27,7 @@
           {% endif %}
         </div>
       </div>
-      <div class="span4">
+      <div class="col-md-4">
         <div id="bdshare" class="bdshare_t bds_tools_32 get-codes-bdshare" style="margin: 20px 0px; float:right;">
           <a class="bds_tsina"></a>
           <a class="bds_tqq"></a>
