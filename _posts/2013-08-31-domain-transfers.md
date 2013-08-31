@@ -19,7 +19,7 @@ tags: [Domain]
 
 最后的备注填写也很简单，网上有现成的模板
 
-1. 
+1.
 >Dear ICANN:
 >
 >I tried to transfer my domain name XXX.COM, domain name registration vendors need I pay not reasonable charge, but to my knowledge transfer a domain name is not to need to pay any fees, but the company has been asked me to pay for domain name transfer fees, or my domain name will be trapped in the company, and I think that their company to cheating.
