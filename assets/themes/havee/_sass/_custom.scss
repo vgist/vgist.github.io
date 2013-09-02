@@ -29,8 +29,21 @@ h5, h6, strong {
   font-size: 0.8em;
 }
 
-.row .visible-desktop {
-  margin-top:20px;
+.row .visible-lg {
+  margin-top:40px;
+}
+
+.col-md-9 {
+  p img {
+    max-width: 100%;
+    margin: 0px auto;
+    display: block;
+  }
+  .wrapper p img {
+    max-width: 30%;
+    margin: 0px auto;
+    display: block;
+  }
 }
 
 .container > .navbar-header, .container > .navbar-collapse {
@@ -60,7 +73,7 @@ a {
     border-bottom: 1px dashed rgb(238, 238, 238);
 }
 
-.span9 .wrapper {
+.col-md-9 .wrapper {
   @include border(0.067);
   @include border-radius(10px);
   @include box-shadow(1px, 2px, 4px, 0.067);
