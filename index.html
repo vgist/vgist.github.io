@@ -14,7 +14,7 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
     {% endif %}
 
     {% if post.content contains "<!-- more -->" %}
-      <p><a class="btn btn-default btn-xs" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a></p>
+      <p><a class="btn btn-default btn-sm" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a></p>
     {% endif %}
 </div>
 {% endfor %}
@@ -23,22 +23,22 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
 <div class="btn pull-right">
   {% if paginator.previous_page %}
     {% if paginator.previous_page == 1 %}
-    <a class="btn btn-default btn-xs" href="/">Home</a>
-    <a class="btn btn-default btn-xs" href="/">&laquo; Prev</a>
+    <a class="btn btn-default btn-sm" href="/">Home</a>
+    <a class="btn btn-default btn-sm" href="/">&laquo; Prev</a>
     {% else %}
-    <a class="btn btn-default btn-xs" href="/">Home</a>
-    <a class="btn btn-default btn-xs" href="/page{{paginator.previous_page}}/">&laquo; Prev</a>
+    <a class="btn btn-default btn-sm" href="/">Home</a>
+    <a class="btn btn-default btn-sm" href="/page{{paginator.previous_page}}/">&laquo; Prev</a>
     {% endif %}
   {% else %}
-    <span><a class="btn btn-default btn-xs disabled" href="/">Home</a></span>
-    <span><a class="btn btn-default btn-xs disabled">&laquo; Prev</a></span>
+    <span><a class="btn btn-default btn-sm disabled" href="/">Home</a></span>
+    <span><a class="btn btn-default btn-sm disabled">&laquo; Prev</a></span>
   {% endif %}
-  <span><a class="btn btn-default btn-xs disabled">Page: {{paginator.page}} of {{paginator.total_pages}}</a></span>
+  <span><a class="btn btn-default btn-sm disabled">Page: {{paginator.page}} of {{paginator.total_pages}}</a></span>
   {% if paginator.next_page %}
-    <a class="btn btn-default btn-xs" href="/page{{paginator.next_page}}/">Next &raquo;</a>
-    <a class="btn btn-default btn-xs" href="/page{{paginator.total_pages}}/">Last</a>
+    <a class="btn btn-default btn-sm" href="/page{{paginator.next_page}}/">Next &raquo;</a>
+    <a class="btn btn-default btn-sm" href="/page{{paginator.total_pages}}/">Last</a>
   {% else if paginator.page == paginator.total_pages %}
-    <span><a class="btn btn-default btn-xs disabled">Next &raquo;</a></span>
-    <span><a class="btn btn-default btn-xs disabled">Last</a></span>
+    <span><a class="btn btn-default btn-sm disabled">Next &raquo;</a></span>
+    <span><a class="btn btn-default btn-sm disabled">Last</a></span>
   {% endif %}
 </div>
