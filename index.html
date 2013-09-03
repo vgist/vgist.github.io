@@ -14,7 +14,8 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
     {% endif %}
 
     {% if post.content contains "<!-- more -->" %}
-      <p><a class="btn btn-default btn-sm" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a></p>
+      <p><a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a></p>
+      <div class="clearfix"></div>
     {% endif %}
 </div>
 {% endfor %}

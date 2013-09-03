@@ -1,18 +1,5 @@
 /* This is for your Custom Content. */
 
-p {
-  img {
-    @include box-shadow(1px, 2px, 4px, 0.6);
-    &:hover {
-      @include box-shadow(1px, 3px, 4px, 0.8);
-      @include transition;
-    }
-  }
-  code {
-    @include box-shadow(1px, 1px, 1px, 0.067);
-  }
-}
-
 h1, h2, h3, h4 {
   @include text-shadow(255, 2px, 170);
   small {
@@ -34,15 +21,25 @@ h5, h6, strong {
 }
 
 .col-md-9 {
-  p img {
-    max-width: 100%;
-    margin: 0px auto;
-    display: block;
-  }
   .wrapper p img {
     max-width: 30%;
     margin: 0px auto;
     display: block;
+  }
+  p {
+    img {
+      max-width: 100%;
+      margin: 0px auto;
+      display: block;
+      @include box-shadow(1px, 2px, 4px, 0.6);
+      &:hover {
+        @include box-shadow(1px, 3px, 4px, 0.8);
+        @include transition;
+      }
+    }
+    code {
+      @include box-shadow(1px, 1px, 1px, 0.067);
+    }
   }
 }
 
