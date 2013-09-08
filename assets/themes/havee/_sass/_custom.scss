@@ -39,6 +39,7 @@ h5, h6, strong {
     }
     code {
       @include box-shadow(1px, 1px, 1px, 0.067);
+      @include border(0.067);
     }
   }
 }

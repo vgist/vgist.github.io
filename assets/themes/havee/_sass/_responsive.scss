@@ -1,7 +1,14 @@
 /* Responsive Overrides */
 
-@media (min-width: 979px) {
+@media (min-width: 767px) {
   body {
-    padding-top: 40px;
+    padding-top: 50px;
+  }
+}
+
+@media (max-width: 767px) {
+  .navbar-fixed-top {
+    position: relative;
+    top: auto;
   }
 }
