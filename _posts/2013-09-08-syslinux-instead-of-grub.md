@@ -104,7 +104,7 @@ LABEL windows
 
 具体的用法，可以参考：[http://git.kernel.org/cgit/boot/syslinux/syslinux.git/tree/doc/menu.txt](http://git.kernel.org/cgit/boot/syslinux/syslinux.git/tree/doc/menu.txt)。
 
-一些问题：
+一些技巧：
 
 1. 无法删除 **ldlinux.sys**
 
