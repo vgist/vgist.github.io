@@ -104,6 +104,17 @@ LABEL windows
 
 具体的用法，可以参考：[http://git.kernel.org/cgit/boot/syslinux/syslinux.git/tree/doc/menu.txt](http://git.kernel.org/cgit/boot/syslinux/syslinux.git/tree/doc/menu.txt)。
 
+一些问题：
+
+1. 无法删除 **ldlinux.sys**
+
+    chattr -i /boot/syslinux/ldlinux.sys
+    rm /boot/syslinux/ldlinux.sys
+
+2. 启动 Syslinux 出错
+
+别急，可以按 `tab` 来编辑你的启动命令，按 `ESC` 再输入 LABEL 来启动，譬如 `boot: gentoo`。
+
 参考：
 
 - [http://www.syslinux.org/wiki/index.php/The_Syslinux_Project](http://www.syslinux.org/wiki/index.php/The_Syslinux_Project)
