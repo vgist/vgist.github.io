@@ -32,9 +32,10 @@ Partition number (1-4): 1
 Command (m for help): p
  ...
    Device Boot      Start         End      Blocks   Id  System
-/dev/sda1   *        2048      133119       65536   83  Linux
-/dev/sda2          133120     4327423     2097152   82  Linux swap / Solaris
-/dev/sda3         4327424  1953525167   974598872   83  Linux
+/dev/sda1   *        2048      206847      102400    83  Linux
+/dev/sda2          206848   122882047    61337600    7   HPFS/NTFS/exFAT
+/dev/sda3       122882048   225282047    51200000    83  Linux
+/dev/sda4       225282048   250066943    12392448    83  Linux
 
 Command (m for help): w
  ...
