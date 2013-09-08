@@ -8,7 +8,7 @@ tags: [Grub, Syslinux]
 ---
 {% include JB/setup %}
 
-自从几个月前的工作机的 Grub2 用 Syslinux 替换掉后，今天也将家用台式机也开始使用 Syslinux 了。主要是因为现在的 Grub2 配置繁琐，功能臃肿，而只是想要个功能简单的引导系统而已。
+自从几个月前的工作机的 Grub2 用 Syslinux 替换掉后，今天也将家用台式机也开始使用 Syslinux 了。主要是因为现在的 Syslinux 配置简单，功能强大，可以引导基于 DOS 的各种工具。
 
 废话不多说，安装：
 
