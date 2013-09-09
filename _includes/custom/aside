@@ -1,5 +1,7 @@
       {% include custom/asides/search_box %}
 
+      {% include custom/asides/sina_weibo %}
+      
       {% include custom/asides/categories %}
 
       {% include custom/asides/recently_posts %}
