@@ -29,7 +29,7 @@ tags: [Jekyll, duoshuo]
 
 ```html
 <!-- Duoshuo Comment BEGIN -->
-    <div id="comments" class="ds-thread"></div>
+    <div id="comments" class="ds-thread" data-title="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}"></div>
 <!-- Duoshuo Comment END -->
 ```
 
@@ -85,3 +85,6 @@ OK，完成手工。
       </section>
 ```
 
+**Update**
+
+多说评论似乎升级了系统，无法自动获取到页面文章标题，所以手动在评论页插入*data-title*.
