@@ -10,17 +10,17 @@ layout: nill
     <link rel="shortcut icon" href="/favicon.png">
 
     <script type="text/javascript">
-    function countDown(secs,surl){
-      //alert(surl);
-      var jumpto = document.getElementById('jumpto');
-      jumpto.innerHTML=secs;
-      if(--secs>0){
-        setTimeout("countDown("+secs+",'"+surl+"')",1000);
-      }
-      else{
-        location.href=surl;
-      }
-     }
+      function countDown(secs,surl){
+        //alert(surl);
+        var jumpto = document.getElementById('jumpto');
+        jumpto.innerHTML=secs;
+        if(--secs>0){
+          setTimeout("countDown("+secs+",'"+surl+"')",1000);
+        }
+        else{
+          location.href=surl;
+        }
+       }
     </script>
 
     <style type="text/css">
