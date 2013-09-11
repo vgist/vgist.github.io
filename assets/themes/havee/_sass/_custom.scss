@@ -1,6 +1,6 @@
 /* This is for your Custom Content. */
 
-h1, h2, h3, h4 {
+h1, h2, h3, h4, h5, h6 ,b, strong {
   @include text-shadow(255, 2px, 170);
   small {
     @include text-shadow;
