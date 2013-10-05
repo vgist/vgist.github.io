@@ -107,7 +107,7 @@ silent! call pathogen#infect()
 silent! colorscheme pablo
 ```
 
-### Try/Catch/If
+#### Try/Catch/If
 
 你也可以使用 **try/catch/endtry** 来配置一些备用的选项，譬如
 
