@@ -8,9 +8,9 @@ tags: [Vim]
 ---
 {% include JB/setup %}
 
-如果你是个 [Vim](http://www.vim.org/) 爱好者，且如果你在各种不同的计算机，不同的操作系统 ( Windows, Linux,  Macos X 以及 BSD 等 )下，不同的 Vim 版本下，以及不同的 Vim 打包下（最小安装或自定义安装），你的 vimrc 可能无法通用，启动 vim 时出现很多错误。当然你也可以保存一个最精简的 vimrc，阉割掉很多实用的功能来忽略这些可能出现的错误。
+如果你是个 [Vim](http://www.vim.org/) 爱好者，且如果你在各种不同的计算机，不同的操作系统 ( Windows, Linux,  Macos X 以及 BSD 等 )下，不同的 **Vim 版本** 下，以及不同的 Vim 打包下（最小安装或自定义安装），你的 vimrc 可能无法通用，启动 vim 时出现很多错误。当然你也可以保存一个最精简的 vimrc，阉割掉很多实用的功能来忽略这些可能出现的错误。
 
-不过实际上完全不必如此，一个兼容性良好的 vimrc 即可，下面几种方法可以有效的解决这些问题。
+不过实际上完全不必如此，一个兼容性良好的 **vimrc** 即可，下面几种方法可以有效的解决这些问题。
 
 #### 功能：
 
@@ -23,9 +23,9 @@ if has("spell")
 endif
 ```
 <!-- more -->
-这里设置 spellang 存在的情况下，配置选项，并定义快捷键。
+这里设置 spelllang 存在的情况下，配置选项，并定义快捷键。
 
-在不同的 Linux 发行版下，vim 被编译成默认包含不同功能的版本，不过你可以通过 `vim --version` 来列出你系统上 vim 的功能列表清单，看看 vim 包含哪些库，譬如：
+在不同的 **Linux** 发行版下，vim 被编译成默认包含不同功能的版本，不过你可以通过 `vim --version` 来列出你系统上 vim 的功能列表清单，看看 Vim 包含哪些库，譬如：
 
 ```
 ^_^ ~ $ vim --version
@@ -58,7 +58,7 @@ if has("statusline")
 endif
 ```
 
-如果你经常在 windows/linux下使用vim，那么可以如此设置：
+如果你经常在 windows/linux 下使用 Vim，那么可以如此设置：
 
 ```vim
 if has("unix")
@@ -78,7 +78,7 @@ if exists("&foldenable")
 endif
 ```
 
-一些功能可能只能存在高版本的 vim 中
+一些功能可能只能存在高版本的 Vim 中
 
 ```vim
 if v:version >= 700
@@ -109,7 +109,7 @@ silent! colorscheme pablo
 
 #### Try/Catch/If
 
-你也可以使用 **try/catch/endtry** 来配置一些备用的选项，譬如
+你也可以使用 `try/catch/endtry` 来配置一些备用的选项，譬如
 
 ```vim
 try
