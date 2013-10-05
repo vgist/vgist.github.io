@@ -25,7 +25,7 @@ endif
 <!-- more -->
 这里设置 spelllang 存在的情况下，配置选项，并定义快捷键。
 
-在不同的 **Linux** 发行版下，vim 被编译成默认包含不同功能的版本，不过你可以通过 `vim --version` 来列出你系统上 vim 的功能列表清单，看看 Vim 包含哪些库，譬如：
+在不同的 **Linux** 发行版下，Vim 被编译成默认包含不同功能的版本，不过你可以通过 `vim --version` 来列出你系统上 Vim 的功能列表清单，看看 Vim 包含哪些库，譬如：
 
 ```
 ^_^ ~ $ vim --version
@@ -58,7 +58,7 @@ if has("statusline")
 endif
 ```
 
-如果你经常在 windows/linux 下使用 Vim，那么可以如此设置：
+如果你经常在 **Windows & Linux** 下使用 Vim，那么可以如此设置：
 
 ```vim
 if has("unix")
