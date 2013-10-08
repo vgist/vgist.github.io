@@ -88,10 +88,11 @@ Fedora 默认分区是采用 [LVM][4](Logical Volume Mnager) 的，由于我给 
 
 #### 一些细微的调整
 
-    # hostnamectl set-hostname Virtio
-    # yum install gnome-tweak-tool
-    # yum install wqy-microhei-fonts
+    # hostnamectl set-hostname Virtio                                   # 设置hostname
+    # yum install gnome-tweak-tool                                      # Gnome必备工具
+    # yum install wqy-microhei-fonts                                    # 文泉驿微米黑字体
     # yum remove wqy-zenhei-fonts
+    # yum localinstall kingsoft-office-9.1.0.4184-0.1.a12p1.i686.rpm    # 自动解决依赖
 
 #### 待续......
 
