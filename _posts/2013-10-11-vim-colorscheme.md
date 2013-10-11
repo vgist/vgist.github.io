@@ -23,7 +23,7 @@ tags: [Vim, Screen, Xterm]
     screen-256color
     256
 
-是 256 色，这是在 screen 下操作 vim ，还是 8 色的。哪怕在 screen 状态下执行 `export XTERM=xterm-256color`，vim 的color 还是 8 色的。
+是 256 色，此时在该 screen 下操作 vim ，还是 8 色的。哪怕在 screen 状态下执行 `export XTERM=xterm-256color`，screen 下 vim 的color 还是 8 色的。
 
 通过 google 得知，需要在进 screen 前 export 才可以，于是
 
