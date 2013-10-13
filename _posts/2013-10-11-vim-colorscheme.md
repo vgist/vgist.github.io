@@ -58,3 +58,6 @@ endif
 ![VIM with NerdTree](/assets/images/2013/10/vim-nerdtree.png "VIM with NerdTree")
 
 ![GVIM with NerdTree](/assets/images/2013/10/gvim-nerdtree.png "GVIM with NerdTree")
+
+你也可以直接 clone 我的配置[https://github.com/Ihavanna/.vim](https://github.com/Ihavanna/.vim)
+
