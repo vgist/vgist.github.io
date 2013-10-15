@@ -18,13 +18,13 @@ tags: [Jekyll, FancyBox, jquery]
 其中有个问题，markdown 中的图片我们一般是如此写法
 
 ```
-![image name](image url)
+![image tag](image url "image name")
 ```
 
-生成的 URL 为
+生成的 html 为
 
 ```html
-<image src="url">
+<image title="image name" alt="image name" src="url">
 ```
 
 我们如果要使用（譬如）FancyBox 的话，则需要如下的链接才可
@@ -35,7 +35,9 @@ tags: [Jekyll, FancyBox, jquery]
 </a>
 ```
 
-动手，首先，下载 [fancybox][3]，解压到你的主题文件夹，譬如我的是 `assets/themes/havee` 下，编辑模板，在head区域添加
+既然目的明确，那么动手
+
+首先下载 [fancybox][3]，解压到你的主题文件夹，譬如我的是 `assets/themes/havee` 下，编辑模板，在 head 区域添加
 
 ```html
 <link href="{{ ASSET_PATH }}/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" media="all" />
