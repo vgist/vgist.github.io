@@ -22,13 +22,13 @@ h5, h6, strong {
 
 .col-md-9 {
   .wrapper p img {
-    max-width: 45%;
+    max-width: 55%;
     margin: 0px auto;
     display: block;
   }
   p {
     img {
-      max-width: 45%;
+      max-width: 55%;
       margin: 0px auto;
       display: block;
       @include box-shadow(1px, 2px, 4px, 0.6);
