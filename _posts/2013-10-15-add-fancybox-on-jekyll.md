@@ -67,7 +67,11 @@ $("#yourid").fancybox({
 ```
 {% endraw %}
 
-如果你模板本身就引用`<script src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>`，则这里不必再次引用。
+如果你模板本身就引用 jquery，则不必再次引用
+
+```html
+<script src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
+```
 
 FancyBox 具体用法：
 
