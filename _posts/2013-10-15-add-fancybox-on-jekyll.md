@@ -35,7 +35,7 @@ tags: [Jekyll, FancyBox, jquery]
 </a>
 ```
 
-既然目的明确，那么动手
+我们当然可以直接在 markdown 文本写 html，但是实在不想这么做（当时从 Wordpress 转到 markdown 时吃尽苦头），还是用 jquery 来替换的好。既然目的明确，那么动手
 
 首先[**下载**][6] fancybox，解压到你的主题文件夹，譬如我的是 `assets/themes/havee` 下，编辑模板，在 head 区域添加
 
