@@ -39,12 +39,15 @@ tags: [Jekyll, FancyBox, jquery]
 
 首先下载 [fancybox][3]，解压到你的主题文件夹，譬如我的是 `assets/themes/havee` 下，编辑模板，在 head 区域添加
 
+{% raw %}
 ```html
 <link href="{{ ASSET_PATH }}/fancybox/jquery.fancybox.css?v=2.1.5" rel="stylesheet" media="all" />
 ```
+{% endraw %}
 
 在 body 区域最下方添加
 
+{% raw %}
 ```html
 <script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
 <script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
@@ -64,6 +67,7 @@ $("#yourid").fancybox({
 });
 </script>
 ```
+{% endraw %}
 
 如果你模板本身就引用`<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>`，则这里不必再次引用。
 
