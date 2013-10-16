@@ -53,7 +53,7 @@ tags: [Jekyll, FancyBox, jquery]
 // 给图片添加链接
 $(document).ready(function() {
   $("p img").each(function() {
-    var strA = "<a id='fancyBox' href='" + this.src + "'></a>";
+    var strA = "<a id='yourid' href='" + this.src + "'></a>";
     $(this).wrapAll(strA);
   });
 });
