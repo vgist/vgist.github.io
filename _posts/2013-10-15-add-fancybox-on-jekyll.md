@@ -47,7 +47,7 @@ tags: [Jekyll, FancyBox, jquery]
 
 {% raw %}
 ```html
-<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>
+<script src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>
 <script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 <script>
 // 给图片添加链接
@@ -67,7 +67,7 @@ $("#yourid").fancybox({
 ```
 {% endraw %}
 
-如果你模板本身就引用`<script src="//netdna.bootstrapcdn.com/bootstrap/3.0.0/js/bootstrap.min.js"></script>`，则这里不必再次引用。
+如果你模板本身就引用`<script src="//libs.baidu.com/jquery/1.8.3/jquery.min.js"></script>`，则这里不必再次引用。
 
 FancyBox 具体用法：
 
