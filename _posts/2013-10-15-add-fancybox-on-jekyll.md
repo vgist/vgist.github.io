@@ -8,14 +8,12 @@ tags: [Jekyll, FancyBox, jquery]
 ---
 {% include JB/setup %}
 
-既然是博客是以 **Jekyll** 来驱动的，那么尽量在本地生成静态页面再推送到服务端，也就是说，尽量不用插件。在这个前提下如果给图片一些特殊的效果，譬如 [**FancyBox**][1]、[**Lightbox2**][2]？
+既然是博客是以 [**Jekyll**][1] 来驱动的，那么尽量不要在本地生成静态页面再推送到服务端，也就是说，尽量不用插件。否则，大可以用 Octopress即可。在这个前提下如何给图片一些特殊的效果呢？这里我们使用 [**jequery**][2] 来实现， 譬如 [**FancyBox**][3]、[**Lightbox2**][4]。
 
 ![FancyBox](/assets/images/2013/10/fancybox.png "FancyBox")
 
-那么如何给 Jekyll 无插件的添加特效呢，[**jquery**][3]！
-
 <!-- more -->
-其中有个问题，markdown 中的图片我们一般是如此写法
+其中有个问题，[**Markdown**][5] 语法中的图片我们一般是如此写法
 
 ```
 ![image tag](image url "image name")
@@ -37,7 +35,7 @@ tags: [Jekyll, FancyBox, jquery]
 
 既然目的明确，那么动手
 
-首先[下载][4] fancybox，解压到你的主题文件夹，譬如我的是 `assets/themes/havee` 下，编辑模板，在 head 区域添加
+首先[**下载**][6] fancybox，解压到你的主题文件夹，譬如我的是 `assets/themes/havee` 下，编辑模板，在 head 区域添加
 
 {% raw %}
 ```html
@@ -75,7 +73,9 @@ FancyBox 具体用法：
 
 - [http://fancyapps.com/fancybox](http://fancyapps.com/fancybox)
 
-[1]: http://fancybox.net/
-[2]: http://lokeshdhakar.com/projects/lightbox2/
-[3]: http://jquery.com/
-[4]: https://github.com/fancyapps/fancyBox/zipball/v2.1.5
+[1]: http://jekyllrb.com/
+[2]: http://jquery.com/
+[3]: http://fancybox.net/
+[4]: http://lokeshdhakar.com/projects/lightbox2/
+[5]: /internet/2013-07/markdown-syntax.html#img
+[6]: https://github.com/fancyapps/fancyBox/zipball/v2.1.5
