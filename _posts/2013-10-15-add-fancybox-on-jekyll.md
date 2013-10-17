@@ -18,20 +18,20 @@ tags: [Jekyll, FancyBox, jquery]
 其中有个问题，[**Markdown**][5] 语法中的图片我们一般是如此写法
 
 ```
-![image tag](image url "image name")
+![tag](url "name")
 ```
 
 生成的 html 为
 
 ```html
-<image title="image name" alt="image name" src="url">
+<image title="name" alt="name" src="url">
 ```
 
 我们如果要使用（譬如）FancyBox 的话，则需要如下的链接才可
 
 ```html
 <a href="url" id="id">
-  <imge src="url">
+  <img src="url">
 </a>
 ```
 
