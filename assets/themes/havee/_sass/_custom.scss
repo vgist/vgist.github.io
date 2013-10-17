@@ -130,3 +130,40 @@ blockquote {
   display: block;
   padding: 10px 15px;
 }
+
+table {
+  margin-bottom: 20px;
+  max-width: 100%;
+  border-collapse: collapse;
+  @include border(0.167);
+  &:hover {
+    @include transition;
+    @include border(0.267);
+    @include box-shadow(1px, 3px, 4px, 0.167);
+  }
+  thead tr th {
+    @include border(0.167);
+    border-top: 0px none;
+    border-bottom-width: 2px;
+    vertical-align: bottom;
+    padding: 8px;
+    text-align: left;
+  }
+  tbody tr td {
+    @include border(0.167);
+    vertical-align: top;
+    padding: 8px;
+  }
+  thead > tr:nth-child(2n+1) > td {
+    background-color: rgba(249, 249, 249, 0.7);
+  }
+  tbody > tr:nth-child(2n+1) > td {
+    background-color: rgba(249, 249, 249, 0.7);
+  }
+  thead tr, tbody tr {
+    &:hover {
+      background-color: rgba(221, 221, 221, 0.7);
+      @include transition;
+    }
+  }
+}
