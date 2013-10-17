@@ -16,8 +16,8 @@ tags: [Markdown, Jekyll, Redcarpet]
 
 ```yaml
 markdown: redcarpet
-    redcarpet: 
-        extensions: ["tables"]
+redcarpet: 
+    extensions: ["tables"]
 ```
 
 <!-- more -->
@@ -49,8 +49,8 @@ redcarpet有很多选项可以开启，譬如我就开启了
 
 ```yaml
 markdown: redcarpet
-    redcarpet: 
-        extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
+redcarpet: 
+    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
 ```
 
 参考：
