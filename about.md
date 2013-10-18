@@ -29,4 +29,5 @@ Havanna，借用03年左右混迹海外论坛时， 看到的一个ID，”Havan
 
 友情链接 linux + server + web 相关的博客，欢迎留言，拒绝一切营销信息。
 
+<hr>
 {% include JB/comments %}
