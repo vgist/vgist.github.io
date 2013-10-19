@@ -32,6 +32,7 @@ h5, h6, strong {
       margin: 0px auto;
       display: block;
       @include box-shadow(1px, 2px, 4px, 0.6);
+      @include transition;
       &:hover {
         @include box-shadow(1px, 3px, 4px, 0.8);
         @include transition;
@@ -56,14 +57,17 @@ a {
     color: rgb(0, 85, 128);
     text-decoration: none;
     @include text-shadow(255, 1px, 170);
+    @include transition;
   }
 }
 
 .navbar .brand, .navbar .nav > li > a {
+  @include transition;
   @include text-shadow(255, 0px, 170);
   &:hover, &:focus {
     color: rgb(51, 51, 51);
     @include text-shadow(255, 1px, 170);
+    @include transition;
   }
 }
 
@@ -72,6 +76,7 @@ a {
 }
 
 .col-md-9 .wrapper {
+  @include transition;
   @include border(0.067);
   @include border-radius(10px);
   @include box-shadow(1px, 2px, 4px, 0.067);
@@ -82,13 +87,14 @@ a {
   }
   &:hover {
     @include transition;
-    background-color: rgba(245, 245, 245, 0.7);
+    @include background-color(0.9);
     @include border(0.167);
     @include box-shadow(2px, 3px, 4px, 0.167);
   }
 }
 
 section {
+  @include transition;
   @include border(0.067);
   @include border-radius(5px);
   @include box-shadow(1px, 2px, 3px, 0.067);
@@ -99,21 +105,25 @@ section {
   }
   &:hover {
     @include transition;
-    background-color: rgba(245, 245, 245, 0.7);
+    @include background-color;
     @include border(0.167);
     @include box-shadow(1px, 3px, 4px, 0.167);
   }
 }
 
 .highlight pre {
+  @include transition;
+  @include background-color;
   &:hover {
     @include transition;
+    @include background-color(0.9);
     @include border(0.35);
     @include box-shadow(1px, 2px, 2px, 0.167);
   }
 }
 
 footer {
+  margin: 20px 0px;
   p {
     line-height: 100%;
   }
@@ -135,11 +145,12 @@ table {
   margin-bottom: 20px;
   max-width: 100%;
   border-collapse: collapse;
+  @include transition;
   @include border(0.167);
   &:hover {
     @include transition;
-    @include border(0.267);
-    @include box-shadow(1px, 3px, 4px, 0.167);
+    @include border(0.35);
+    @include box-shadow(1px, 2px, 2px, 0.167);
   }
   thead tr th {
     @include border(0.167);
@@ -154,15 +165,15 @@ table {
     vertical-align: top;
     padding: 8px;
   }
-  thead > tr:nth-child(2n+1) > td {
-    background-color: rgba(249, 249, 249, 0.7);
+  thead > tr:nth-child(2n+1) > th {
+    @include background-color;
   }
   tbody > tr:nth-child(2n+1) > td {
-    background-color: rgba(249, 249, 249, 0.7);
+    @include background-color;
   }
   thead tr, tbody tr {
     &:hover {
-      background-color: rgba(221, 221, 221, 0.7);
+      @include background-color(0.9);
       @include transition;
     }
   }

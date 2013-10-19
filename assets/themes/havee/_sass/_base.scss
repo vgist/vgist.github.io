@@ -19,3 +19,7 @@
 @mixin border-radius($a) {
   border-radius: $a;
 }
+
+@mixin background-color($a: 0.5) {
+  background-color: rgba(249, 249, 249, $a);
+}
