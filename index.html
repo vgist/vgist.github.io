@@ -14,17 +14,16 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
       {{ post.content | strip_html | truncatewords:50 }}
     {% endif %}
 
-    {% if post.content contains "<!-- more -->" %}
       <div class="bottom">
         <div class="col-md-4 date">
           <span class="glyphicon glyphicon-time"></span> {{ post.date | date_to_string }} | 
           <a href="{{ post.url }}#comments"><span class="glyphicon glyphicon-comment"></span> Comments</a>
         </div>
+        {% if post.content contains "<!-- more -->" %}
         <a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a>
+        {% endif %}
         <div class="clearfix"></div>
       </div>
-
-    {% endif %}
 </div>
 {% endfor %}
 
