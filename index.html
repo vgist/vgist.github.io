@@ -3,6 +3,7 @@ layout: index
 description: Havee Hobbies, Linux Tips Record。
 tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
 ---
+{% include JB/setup %}
 
 {% for post in paginator.posts %}
 <div class="wrapper">
@@ -14,8 +15,15 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
     {% endif %}
 
     {% if post.content contains "<!-- more -->" %}
-      <p><a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a></p>
-      <div class="clearfix"></div>
+      <div class="bottom">
+        <div class="col-md-3 date">
+          <span class="glyphicon glyphicon-time"></span> {{ post.date | date_to_string }} | 
+          <a href="{{ post.url }}/#comments"><span class="glyphicon glyphicon-comment"></span> Comments</a>
+        </div>
+        <a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a>
+        <div class="clearfix"></div>
+      </div>
+
     {% endif %}
 </div>
 {% endfor %}
