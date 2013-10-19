@@ -11,45 +11,6 @@ h5, h6, strong {
   @include text-shadow;
 }
 
-.tag_box a span {
-  vertical-align: super;
-  font-size: 0.8em;
-}
-
-.row .visible-lg {
-  margin-top:40px;
-}
-
-.col-md-9 {
-  .wrapper p img {
-    max-width: 55%;
-    margin: 0px auto;
-    display: block;
-  }
-  p {
-    img {
-      max-width: 55%;
-      margin: 0px auto;
-      display: block;
-      @include box-shadow(1px, 2px, 4px, 0.6);
-      @include transition;
-      &:hover {
-        @include box-shadow(1px, 3px, 4px, 0.8);
-        @include transition;
-      }
-    }
-    code {
-      @include box-shadow(1px, 1px, 1px, 0.067);
-      @include border(0.067);
-    }
-  }
-}
-
-.container > .navbar-header, .container > .navbar-collapse {
-  margin-right: 0px;
-  margin-left: 0px;
-}
-
 a {
   @include transition;
   color: rgb(0, 136, 204);
@@ -71,25 +32,85 @@ a {
   }
 }
 
+.nav > li > form {
+  position: relative;
+  display: block;
+  padding: 10px 15px;
+}
+
+.container > .navbar-header, .container > .navbar-collapse {
+  margin-right: 0px;
+  margin-left: 0px;
+}
+
 .page-header {
     border-bottom: 1px dashed rgb(238, 238, 238);
 }
 
-.col-md-9 .wrapper {
-  @include transition;
-  @include border(0.067);
-  @include border-radius(10px);
-  @include box-shadow(1px, 2px, 4px, 0.067);
-  padding: 5px;
-  margin: 5px 0px;
-  .entry-title {
-    border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
-  }
-  &:hover {
+.tag_box a span {
+  vertical-align: super;
+  font-size: 0.8em;
+}
+
+.row .visible-lg {
+  margin-top:40px;
+}
+
+.col-md-9 {
+  .wrapper {
     @include transition;
-    @include background-color(0.9);
-    @include border(0.167);
-    @include box-shadow(2px, 3px, 4px, 0.167);
+    @include border(0.067);
+    @include border-radius(10px);
+    @include box-shadow(1px, 2px, 4px, 0.067);
+    padding: 5px;
+    margin: 5px 0px;
+    .entry-title {
+      border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
+    }
+    &:hover {
+      @include transition;
+      @include background-color(0.9);
+      @include border(0.167);
+      @include box-shadow(2px, 3px, 4px, 0.167);
+    }
+    p img {
+      max-width: 55%;
+      margin: 0px auto;
+      display: block;
+      @include box-shadow(1px, 2px, 3px, 0.6);
+      @include transition;
+      &:hover {
+        @include box-shadow(1px, 2px, 4px, 0.8);
+        @include transition;
+      }
+    }
+  }
+  p {
+    img {
+      max-width: 55%;
+      margin: 0px auto;
+      display: block;
+      @include box-shadow(1px, 2px, 3px, 0.6);
+      @include transition;
+      &:hover {
+        @include box-shadow(1px, 2px, 4px, 0.8);
+        @include transition;
+      }
+    }
+    code {
+      @include box-shadow(1px, 1px, 1px, 0.067);
+      @include border(0.067);
+    }
+  }
+  .highlight pre {
+    @include transition;
+    @include background-color;
+    &:hover {
+      @include transition;
+      @include background-color(0.9);
+      @include border(0.35);
+      @include box-shadow(1px, 2px, 2px, 0.167);
+    }
   }
 }
 
@@ -111,34 +132,10 @@ section {
   }
 }
 
-.highlight pre {
-  @include transition;
-  @include background-color;
-  &:hover {
-    @include transition;
-    @include background-color(0.9);
-    @include border(0.35);
-    @include box-shadow(1px, 2px, 2px, 0.167);
-  }
-}
-
-footer {
-  margin: 20px 0px;
-  p {
-    line-height: 100%;
-  }
-}
-
 blockquote {
   p {
     font-style: oblique;
   }
-}
-
-.nav > li > form {
-  position: relative;
-  display: block;
-  padding: 10px 15px;
 }
 
 table {
@@ -176,5 +173,12 @@ table {
       @include background-color(0.9);
       @include transition;
     }
+  }
+}
+
+footer {
+  margin: 20px 0px;
+  p {
+    line-height: 100%;
   }
 }
