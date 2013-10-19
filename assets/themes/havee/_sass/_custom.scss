@@ -172,15 +172,15 @@ table {
     vertical-align: top;
     padding: 8px;
   }
-  thead > tr:nth-child(2n+1) > th {
+  thead > tr {
+    @include background-color(1);
+  }
+  tbody > tr:nth-child(2n+1) {
     @include background-color;
   }
-  tbody > tr:nth-child(2n+1) > td {
-    @include background-color;
-  }
-  thead tr, tbody tr {
+  tbody tr {
     &:hover {
-      @include background-color(0.9);
+      @include background-color(1);
       @include transition;
     }
   }
