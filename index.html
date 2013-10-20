@@ -15,9 +15,12 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
     {% endif %}
 
       <div class="bottom">
-        <div class="col-md-4 date">
-          <span class="glyphicon glyphicon-time"></span> {{ post.date | date_to_string }} | 
-          <a href="{{ post.url }}#comments"><span class="glyphicon glyphicon-comment"></span> Comments</a>
+        <div class="col-md-9 date">
+          <ul class="bottom_box list-inline">
+            <li><span class="glyphicon glyphicon-time">&nbsp;</span> {{ post.date | date_to_string }}</li>
+            <li><span class="glyphicon glyphicon-tags"></span></li>{% assign tags_list = post.tags %}{% include JB/tags_list %}
+            <li><span class="glyphicon glyphicon-comment">&nbsp;</span><a href="{{ post.url }}#comments">Comments</a></li>
+          </ul>
         </div>
         {% if post.content contains "<!-- more -->" %}
         <a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a>

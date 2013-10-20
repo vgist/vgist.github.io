@@ -69,7 +69,7 @@ a {
     }
     &:hover {
       @include transition;
-      @include background-color(0.9);
+      @include background-color;
       @include border(0.167);
       @include box-shadow(2px, 3px, 4px, 0.167);
     }
@@ -85,13 +85,16 @@ a {
       }
     }
     .bottom {
-      margin: 5px 0px;
       border-top: 1px dashed rgba(0, 0, 0, 0.067);
-      padding: 5px 10px;
-      line-height: 1.5;
+      padding-top: 10px;
       .date {
+        font-size: 12px;
         padding: 4px 0;
         vertical-align: middle;
+        .bottom_box a span {
+          vertical-align: super;
+          font-size: 0.8em;
+        }
       }
     }
   }
@@ -173,14 +176,14 @@ table {
     padding: 8px;
   }
   thead > tr {
-    @include background-color(1);
+    @include background-color(0.9);
   }
   tbody > tr:nth-child(2n+1) {
     @include background-color;
   }
   tbody tr {
     &:hover {
-      @include background-color(1);
+      @include background-color(0.9);
       @include transition;
     }
   }
