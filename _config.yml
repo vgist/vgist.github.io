@@ -9,7 +9,8 @@ paginate: 5
 
 markdown: redcarpet
 redcarpet: 
-    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
+    extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough", "underline"]
+#    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
 
 # Themes are encouraged to use these universal variables 
 # so be sure to set them if your theme uses them.
