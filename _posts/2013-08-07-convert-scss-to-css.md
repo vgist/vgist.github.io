@@ -208,7 +208,7 @@ div h1 {
 
 ```scss
 div {
-  hi {
+  h1 {
     color:red;
   }
 }
