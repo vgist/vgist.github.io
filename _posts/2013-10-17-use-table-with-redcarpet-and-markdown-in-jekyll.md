@@ -38,12 +38,39 @@ redcarpet:
 
 其最后输出的代码是
 
+```html
+<table>
+  <thead>
+    <tr>
+      <th>head1 head1 head1</th>
+      <th align="left">head2 head2 head2</th>
+      <th align="center">head3 head3 head3</th>
+      <th align="right">head4 head4 head4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>row1text1</td>
+      <td align="left">row1text3</td>
+      <td align="center">row1text3</td>
+      <td align="right">row1text4</td>
+    </tr>
+    <tr>
+      <td>row2text1</td>
+      <td align="left">row2text3</td>
+      <td align="center">row2text3</td>
+      <td align="right">row2text4</td>
+    </tr>
+  </tbody>
+</table>
+```
+
+鄙人博客中添加 `table thead tobody th tr td` 样式后显示的效果是
+
 |head1 head1 head1|head2 head2 head2|head3 head3 head3|head4 head4 head4 |
 |---|:---|:---:|---:|
 |row1text1|row1text3|row1text3|row1text4|
 |row2text1|row2text3|row2text3|row2text4|
-
-最后，当然别忘记给模板中的 `table thead tobody th tr td` 设置样式。
 
 redcarpet有很多选项可以开启，譬如我就开启了
 
