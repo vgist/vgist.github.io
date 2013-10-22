@@ -88,14 +88,17 @@ a {
       border-top: 1px dashed rgba(0, 0, 0, 0.067);
       padding-top: 10px;
       .date {
-        font-size: 12px;
-        padding: 4px 0;
+        padding: 4px 0 0;
         vertical-align: middle;
-        .bottom_box a span {
-          vertical-align: super;
-          font-size: 0.8em;
-        }
       }
+      .visible-lg {
+        margin-top: 0px;
+      }
+    }
+  }
+  .bottom {
+    .visible-lg {
+      margin-top: 0px;
     }
   }
   p {
