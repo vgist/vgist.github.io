@@ -59,7 +59,7 @@
     {% unless page.tags == empty %}
     <section>
       <h4>Tags</h4>
-      <ul>
+      <ul class="tag_box">
         {% assign tags_list = page.tags %}
         {% include JB/tags_list %}
       </ul>
