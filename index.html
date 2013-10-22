@@ -15,9 +15,9 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
     {% endif %}
 
       <div class="bottom">
-        <div class="date col-md-6 visible-lg visible-md">
-            <span class="glyphicon glyphicon-time"></span> {{ post.date | date_to_string }}
-            <span class="glyphicon glyphicon-comment"></span><a href="{{ post.url }}#comments"> Comments</a>
+        <div class="col-md-6 date visible-lg visible-md">
+          <span class="glyphicon glyphicon-time"></span> {{ post.date | date_to_string }}
+          <span class="glyphicon glyphicon-comment"></span><a href="{{ post.url }}#comments"> Comments</a>
         </div>
         {% if post.content contains "<!-- more -->" %}
         <a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a>
