@@ -53,4 +53,4 @@ src_install() {
 }
 ```
 
-更新地址：[https://github.com/Ihavanna/overlay/tree/master/www-plugins/aliedit](https://github.com/Ihavanna/overlay/tree/master/www-plugins/aliedit)
+更新地址：[https://github.com/Ihavee/overlay/tree/master/www-plugins/aliedit](https://github.com/Ihavee/overlay/tree/master/www-plugins/aliedit)

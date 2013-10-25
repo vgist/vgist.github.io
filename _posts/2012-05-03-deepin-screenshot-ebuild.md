@@ -79,4 +79,4 @@ src_install() {
 }
 ```
 
-[https://github.com/Ihavanna/overlay/blob/master/media-gfx/deepin-screenshot](https://github.com/Ihavanna/overlay/blob/master/media-gfx/deepin-screenshot)
+[https://github.com/Ihavee/overlay/blob/master/media-gfx/deepin-screenshot](https://github.com/Ihavee/overlay/blob/master/media-gfx/deepin-screenshot)

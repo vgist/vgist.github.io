@@ -17,4 +17,4 @@ tags: [Awesome, Configuration, WM]
 
 另外，绑了几个笔记本常用的键…
 
-配置在这里：[https://github.com/Ihavanna/dotfiles/blob/master/home/.config/awesome](https://github.com/Ihavanna/dotfiles/blob/master/home/.config/awesome)
+配置在这里：[https://github.com/Ihavee/dotfiles/blob/master/home/.config/awesome](https://github.com/Ihavee/dotfiles/blob/master/home/.config/awesome)
