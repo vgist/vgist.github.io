@@ -28,7 +28,7 @@ tags: [Jekyll, pygments, python]
 在 Jekyll 的配置文件 **_config.yml** 中设置打开 Pygments
 
     pygments: true
-    mardown: redcloth
+    mardown: redcarpet
 
 进到我们的网站目录，运行
 
