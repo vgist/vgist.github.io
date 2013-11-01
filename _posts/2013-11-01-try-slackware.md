@@ -22,7 +22,7 @@ Slackware 官方源的软件包数量实在是太少了点，作为中文用户�
     or
     # installpkg sbopkg-version-noarch-1_cng.tgz
 
-随后运行 `sbopkg` 又有个问题，同步 [源](http://slackbuilds.org/repository/14.0/) 所耗费的时间也实在的太恐怖了点，还是不是同步失败，无语。
+随后运行 `sbopkg` 又有个问题，同步 [源](http://slackbuilds.org/repository/14.0/) 所耗费的时间也实在的太恐怖了点，还时不时的同步失败，无语。
 
 继续放 G 搜，原来 github 上有[镜像](https://github.com/Ponce/slackbuilds)，还好，我本地到 github 的速度不算太慢，方法也很简单
 
