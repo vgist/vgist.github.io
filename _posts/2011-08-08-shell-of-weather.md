@@ -20,5 +20,5 @@ tags: [CLI, weather]
 即能得到上海近两天的天气预报
 
     #!/bin/bash
-    w3m -dump "http://wap.youdao.com/weather?memlocation=1&q=$1" 2>/dev/null | sed '2,5!d'
+    w3m -dump "http://wap.baidu.com/s?word=$1&ssid=0&from=0&bd_page_type=1&ct_6=天气查询" 2>/dev/null | sed '2,5!d'
 
