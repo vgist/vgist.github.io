@@ -23,7 +23,7 @@ redcarpet:
 <!-- more -->
 随后
 
-    gem install redcarpet
+    $ gem install redcarpet
 
 在 Markdwon 文件中可以依据以下语法进行书写
 
