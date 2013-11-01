@@ -17,8 +17,8 @@ Slackware 官方源的软件包数量实在是太少了点，作为中文用户�
 <!-- more -->
 方法：
 
-    $ wget http://sbopkg.googlecode.com/files/sbopkg-0.36.0.tar.gz
-    $ su -l -c "installpkg sbopkg-version-noarch-1_cng.tgz"
+    $ wget http://sbopkg.googlecode.com/files/sbopkg-0.36.0-noarch-1_cng.tgz
+    $ su -l -c "installpkg sbopkg-0.36.0-noarch-1_cng.tgz"
     or
     # installpkg sbopkg-version-noarch-1_cng.tgz
 
