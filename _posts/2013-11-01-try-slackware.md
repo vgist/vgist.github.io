@@ -1,0 +1,45 @@
+---
+layout: post
+title: "初试 Slackware"
+description: "又是周五了，享受没有饭局的时光，不过也着实无聊了点，遂拿起 Slackware 尝试了下，做下记录。"
+keywords: "slackware, sbopkg"
+category: "Linux"
+tags: [Slackware]
+---
+{% include JB/setup %}
+
+又是周五了，享受没有饭局的时光，不过也着实无聊了点，遂拿起 [Slackware](http://www.slackware.com/) 尝试了下，做下记录。
+
+安装就略过了，安装完毕后遇到的一些问题。
+
+Slackware 官方源的软件包数量实在是太少了点，作为中文用户，最基本的 [Fcitx](http://fcitx-im.org/) 也没有，放 [G](https://www.google.com) 搜索了下，都是自己下源码编译安装教程（这也要教程？！），难道古老的 Slackware 到现在都没有一个完善的管理器？再搜，得知，[sbopkg](http://www.sbopkg.org/)，解决了自动下载源码并编译安装的问题，不过弊端是无法自动解决依赖问题，- -!
+
+方法：
+
+    $ wget http://sbopkg.googlecode.com/files/sbopkg-0.36.0.tar.gz
+    $ su -l -c "installpkg sbopkg-version-noarch-1_cng.tgz"
+    or
+    # installpkg sbopkg-version-noarch-1_cng.tgz
+
+随后运行 `sbopkg` 又有个问题，同步源所耗费的时间也实在的太恐怖了点，还是不是同步失败，无语。
+
+继续放 G 搜，原来 github 上有[镜像](https://github.com/Ponce/slackbuilds)，还好，我本地到 github 的速度不算太慢，方法也很简单
+
+编辑 `/etc/sbopkg/sbopkg.conf`，添加如下
+
+    REPO_BRANCH=${REPO_BRANCH:-current}
+    REPO_NAME=${REPO_NAME:-SBo-git}
+
+再同步下
+
+    $ su -l -c "sbopkg -V SBo-git/current -r"
+
+随后安装软件，譬如 Fcitx
+
+    $ su -l -c "sbopkg -i fcitx"
+
+当然，之前说过，sbopkg 无法自动解决依赖问题，所以安装 Fcitx 之前确保你已安装 `cmake`
+
+具体用法参见 [sbopkg wiki](https://github.com/Ponce/slackbuilds/wiki/configuring-the-current-repository-with-sbopkg)
+
+各 Linux 发行版不同的也就是包管理器，认识一个发行版的本质就是认识该发行版的包管理器。至此，`slackpkg` 加上 `sbopkg`，Slackware 也就完全呈现在大家面前了
