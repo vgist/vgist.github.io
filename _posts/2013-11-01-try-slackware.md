@@ -21,7 +21,7 @@ Slackware 官方源的软件包数量实在是太少了点，作为中文用户�
     or
     # installpkg sbopkg-version-noarch-1_cng.tgz
 
-随后运行 `sbopkg` 又有个问题，同步源所耗费的时间也实在的太恐怖了点，还是不是同步失败，无语。
+随后运行 `sbopkg` 又有个问题，同步 [源](http://slackbuilds.org/repository/14.0/) 所耗费的时间也实在的太恐怖了点，还是不是同步失败，无语。
 
 继续放 G 搜，原来 github 上有[镜像](https://github.com/Ponce/slackbuilds)，还好，我本地到 github 的速度不算太慢，方法也很简单
 
@@ -36,10 +36,43 @@ Slackware 官方源的软件包数量实在是太少了点，作为中文用户�
 
 随后安装软件，譬如 Fcitx
 
-    $ su -l -c "sbopkg -i fcitx"
+    $ su -l -c "sbopkg -v SBo-git/current -i fcitx"
 
 当然，之前说过，sbopkg 无法自动解决依赖问题，所以安装 Fcitx 之前确保你已安装 `cmake`
 
-具体用法参见 [sbopkg wiki](https://github.com/Ponce/slackbuilds/wiki/configuring-the-current-repository-with-sbopkg)
+具体用法参见： [sbopkg wiki](https://github.com/Ponce/slackbuilds/wiki/configuring-the-current-repository-with-sbopkg)
 
 各 Linux 发行版不同的也就是包管理器，认识一个发行版的本质就是认识该发行版的包管理器。至此，`slackpkg` 加上 `sbopkg`，Slackware 也就完全呈现在大家面前了
+
+附：
+
+`slackpkg` 常用命令
+
+```
+slackpkg update             #更新软件包数据库
+slackpkg check-update       #检查是否有更新
+slackpkg upgrade package    #升级package软件包
+slackpkg upgrade-all        #升级所有软件包
+slackpkg install package    #安装单个包
+slackpkg reinstall package  #重新安装
+slackpkg remove package     #移除
+slackpkg clean-system       #清理非官方正式的tgz包，慎用
+slackpkg install-new        #安装新包，版本升级
+slackpkg blacklist
+slackpkg download
+slackpkg info package
+slackpkg search file
+slackpkg new-config
+```
+
+`sbopkg` 常用命令
+
+```
+sbopkg -r                   #更新repo
+sbopkg -i package           #安装package
+sbopkg -g name              #搜索是否包含name的包
+sbopkg -c                   #检查已安装包是否有更新
+sbopkg -d package           #只下载package的源码
+sbopkg -V repo/branch
+sbopkg -l                   #显示repo的更新日志
+```
