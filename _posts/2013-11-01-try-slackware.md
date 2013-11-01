@@ -43,7 +43,7 @@ Slackware 官方源的软件包数量实在是太少了点，作为中文用户�
 
 具体用法参见： [sbopkg wiki](https://github.com/Ponce/slackbuilds/wiki/configuring-the-current-repository-with-sbopkg)
 
-各 Linux 发行版不同的也就是包管理器，认识一个发行版的本质就是认识该发行版的包管理器。至此，`slackpkg` 加上 `sbopkg`，Slackware 也就完全呈现在大家面前了
+各 Linux 发行版不同的也就是包管理器，可以这么说，包管理器就是发行版的哲学，就是发行版的灵魂，认识一个发行版的本质就是认识该发行版的包管理器。至此，`slackpkg` 加上 `sbopkg`，Slackware 也就完全呈现在大家面前了
 
 附：
 
