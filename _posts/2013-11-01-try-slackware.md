@@ -45,6 +45,18 @@ Slackware 官方源的软件包数量实在是太少了点，作为中文用户�
 
 各 Linux 发行版不同的也就是包管理器，可以这么说，包管理器就是发行版的哲学，就是发行版的灵魂，认识一个发行版的本质就是认识该发行版的包管理器。至此，`slackpkg` 加上 `sbopkg`，Slackware 也就完全呈现在大家面前了
 
+locale
+
+    # localedef -i en_US -f UTF-8 en_US.UTF-8
+
+edit `/etc/profile.d/lang.sh`
+
+    LANG=en_US.UTF-8
+
+edit `/etc/slackpkg/slackpkg.conf`
+
+    http://mirrors.ustc.edu.cn/slackware/slackware-14.0/
+
 附：
 
 `slackpkg` 常用命令
