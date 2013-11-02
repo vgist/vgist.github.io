@@ -89,3 +89,7 @@ sbopkg -d package           #只下载package的源码
 sbopkg -V repo/branch
 sbopkg -l                   #显示repo的更新日志
 ```
+
+PS：最近弃用海外邮箱，转用163、qq邮箱，再也受不了那鸟速度，放着现成的资源不用，非要去折腾去彰显自己的自由意识？哥过了那年纪了。至于安全问题，这是社会化工程问题，有安全意识更重要。
+
+PS2：什么时候才能将自己的台机转成UEFI + LVM ( Windows8 + Gentoo ) 方案呢，最近在考虑方案中。主要是当前 Gentoo 的N年的数据问题。
