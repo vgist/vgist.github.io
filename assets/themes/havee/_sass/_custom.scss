@@ -88,7 +88,7 @@ a {
         @include transition;
       }
     }
-    .bottom {
+    .status {
       border-top: 1px dashed rgba(0, 0, 0, 0.067);
       padding-top: 10px;
       color: rgb(119, 119, 119);
@@ -107,7 +107,7 @@ a {
       }
     }
   }
-  .bottom {
+  .status {
     .visible-lg {
       margin-top: 0px;
     }
