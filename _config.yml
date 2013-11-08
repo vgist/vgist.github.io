@@ -151,7 +151,7 @@ JB :
   # where [HELPER] is the name of the helper you are overriding.
 
   blogroll : true
-  list :
+  brlist :
     - text : 清风的网络空间
       url : //phpcj.org/
     - text : JoveSky
