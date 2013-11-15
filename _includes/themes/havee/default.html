@@ -105,17 +105,19 @@
     <script type="text/javascript" src="{{ ASSET_PATH }}/fancybox/jquery.fancybox.pack.js?v=2.1.5"></script>
 
     <script>
-    $(document).ready(function() {
-      $("p img").each(function() {
-        var strA = "<a id='fancyBox' href='" + this.src + "'></a>";
-        $(this).wrapAll(strA);
+    (function($){
+      $(document).ready(function() {
+        $("p img").each(function() {
+          var strA = "<a id='fancyBox' href='" + this.src + "'></a>";
+          $(this).wrapAll(strA);
+        });
       });
-    });
 
-    $("#fancyBox").fancybox({
-      openEffect	: 'elastic',
-      closeEffect	: 'elastic',
-    });
+      $("#fancyBox").fancybox({
+        openEffect	: 'elastic',
+        closeEffect	: 'elastic',
+      });
+    })(jQuery);
     </script>
 
     {% include custom/duoshuo %}
