@@ -21,6 +21,10 @@ tags: [freebsd]
 
     127.0.0.1   localhost   localhost.my.domain     hostname
 
+FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 package 两进制安装
+
+#### 源代码方式安装
+
 加速 ports 源，编辑 `/etc/portsnap.conf`
 
     SERVERNAME=portsnap.cn.freebsd.org
@@ -59,7 +63,9 @@ tags: [freebsd]
 
 `make.conf` 配置可以参考示例文件 `/usr/share/examples/etc/make.conf`，Gentoo 用户用起来应该得心应手吧。
 
-当然，也可以通过 `pkg_add -r package` 安装两进制包，嗯，速度一直是国内用户头痛的问题
+#### 两进制包安装
+
+通过 `pkg_add -r package` 安装两进制包，嗯，速度一直是国内用户头痛的问题
 
     setenv PACKAGESITE ftp://ftp.cn.freebsd.org/pub/FreeBSD/releases/i386/9.2-RELEASE/packages/Latest/
     pkg_add -r sudo
@@ -70,13 +76,23 @@ tags: [freebsd]
 
 然后 `. /etc/profile` 更新下环境变量，注意 FreeBSD 的版本
 
-普通用户 sudo pkg_add -r 安装，编辑 sudo 配置文件
+#### sudo 配置
+
+为了使普通用户能通过 sudo pkg_add -r 来安装软件包，编辑 sudo 配置文件
 
     # visudo
 
-下面一行前的 `#`去掉
+下面一行前的 `#` 去掉
 
     Defaults env_keep += "PKG_PATH PKG_DBDIR PKG_TMPDIR TMPDIR PACKAGEROOT PACKAGESITE PKGDIR FTP_PASSIVE_MODE"
+
+将当前用户加入到 wheel 组
+
+    pw groupmod wheel-m name
+
+下面一行前的 `#` 去掉
+
+    %wheel ALL=(ALL) ALL
 
 待续......
 
