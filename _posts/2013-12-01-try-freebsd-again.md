@@ -78,9 +78,7 @@ FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 p
 
 #### 3. sudo 配置
 
-为了使普通用户能通过 sudo pkg_add -r 来安装软件包，编辑 sudo 配置文件
-
-    # visudo
+为了使普通用户能通过 sudo pkg_add -r 来安装软件包，编辑 sudo 配置文件 `# visudo`
 
 下面一行前的 `#` 去掉
 
@@ -90,7 +88,7 @@ FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 p
 
     pw groupmod wheel-m name
 
-下面一行前的 `#` 去掉
+`# visudo`， 将下面一行前的 `#` 去掉
 
     %wheel ALL=(ALL) ALL
 
