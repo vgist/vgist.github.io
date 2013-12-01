@@ -23,7 +23,7 @@ tags: [freebsd]
 
 FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 package 两进制安装
 
-#### 源代码方式安装
+#### 1. 源代码方式安装
 
 加速 ports 源，编辑 `/etc/portsnap.conf`
 
@@ -63,7 +63,7 @@ FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 p
 
 `make.conf` 配置可以参考示例文件 `/usr/share/examples/etc/make.conf`，Gentoo 用户用起来应该得心应手吧。
 
-#### 两进制包安装
+#### 2. 两进制包安装
 
 通过 `pkg_add -r package` 安装两进制包，嗯，速度一直是国内用户头痛的问题
 
@@ -76,7 +76,7 @@ FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 p
 
 然后 `. /etc/profile` 更新下环境变量，注意 FreeBSD 的版本
 
-#### sudo 配置
+#### 3. sudo 配置
 
 为了使普通用户能通过 sudo pkg_add -r 来安装软件包，编辑 sudo 配置文件
 
