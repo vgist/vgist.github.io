@@ -8,7 +8,7 @@ tags: [freebsd]
 ---
 {% include JB/setup %}
 
-自从 06 年初试 FreeBSD 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 portage 系统是由 BSD 家族的 ports 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。
+自从 06 年初试 [FreeBSD](http://www.freebsd.org) 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 portage 系统是由 BSD 家族的 ports 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。
 
 安装过程就不多说了，不论 baidu 亦或 google 都能找到大量的教程。有点英文基础的，不用教程也能一步步安装下去。这里就记录下安装完成后的一些技巧。
 
@@ -66,9 +66,9 @@ tags: [freebsd]
 
 为了便于以后安装二进制包方便，你可以编辑 `/etc/profile` 文件，最后加上
 
-    PACKAGESITE=ftp://ftp.cn.freebsd.org/pub/FreeBSD/releases/i386/9.2-RELEASE/packages/Latest/
+    setenv PACKAGESITE ftp://ftp.cn.freebsd.org/pub/FreeBSD/releases/i386/9.2-RELEASE/packages/Latest/
 
-然后 `. /etc/profile` 更新下环境变量
+然后 `. /etc/profile` 更新下环境变量，注意 FreeBSD 的版本
 
 普通用户 sudo pkg_add -r 安装，编辑 sudo 配置文件
 
@@ -79,3 +79,5 @@ tags: [freebsd]
     Defaults env_keep += "PKG_PATH PKG_DBDIR PKG_TMPDIR TMPDIR PACKAGEROOT PACKAGESITE PKGDIR FTP_PASSIVE_MODE"
 
 待续......
+
+参考：[http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/](http://www.freebsd.org/doc/en_US.ISO8859-1/books/handbook/)
