@@ -10,7 +10,7 @@ tags: [freebsd]
 
 自从 06 年初试 [FreeBSD](http://www.freebsd.org) 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 portage 系统是由 BSD 家族的 port 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。
 
-安装过程就不多说了，不论 baidu 亦或 google 都能找到大量的教程。有点英文基础的，不用教程也能一步步安装下去。这里就记录下安装完成后的一些技巧。
+安装过程就不多说了，不论 baidu 亦或 google 都能找到大量的教程。有点英文基础的，不用教程也能一步步安装下去。这里就安装完成后的设置做下笔记。
 
 启动时出现错误
 
