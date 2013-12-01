@@ -1,14 +1,14 @@
 ---
 layout: post
 title: "再次尝试 freebsd"
-description: "自从 06 年初试 FreeBSD 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 po   rtage 系统是由 BSD 家族的 ports 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。"
+description: "自从 06 年初试 FreeBSD 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 po   rtage 系统是由 BSD 家族的 port 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。"
 keywords: "freebsd"
 category: "BSD"
 tags: [freebsd]
 ---
 {% include JB/setup %}
 
-自从 06 年初试 [FreeBSD](http://www.freebsd.org) 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 portage 系统是由 BSD 家族的 ports 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。
+自从 06 年初试 [FreeBSD](http://www.freebsd.org) 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 portage 系统是由 BSD 家族的 port 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。
 
 安装过程就不多说了，不论 baidu 亦或 google 都能找到大量的教程。有点英文基础的，不用教程也能一步步安装下去。这里就记录下安装完成后的一些技巧。
 
@@ -21,15 +21,15 @@ tags: [freebsd]
 
     127.0.0.1   localhost   localhost.my.domain     hostname
 
-FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 package 两进制安装
+FreeBSD 安装软件包有两种方式，即通过 port 的源代码安装与 package 两进制安装
 
 #### 1. 源代码方式安装
 
-加速 ports 源，编辑 `/etc/portsnap.conf`
+加速 port 源，编辑 `/etc/portsnap.conf`
 
     SERVERNAME=portsnap.cn.freebsd.org
 
-第一次更新 ports
+第一次更新 port
 
     portsnap fetch extract
 
@@ -37,7 +37,7 @@ FreeBSD 安装软件包有两种方式，即通过 ports 的源代码安装与 p
 
     portsnap fetch update
 
-通过 ports 安装是类似与 Gentoo 那样的源代码安装方式，譬如安装 sudo
+通过 port 安装是类似与 Gentoo 那样的源代码安装方式，譬如安装 sudo
 
     cd /usr/ports/security/sudo
     make install clean
