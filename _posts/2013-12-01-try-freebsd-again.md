@@ -31,28 +31,28 @@ FreeBSD 安装软件包有两种方式，即通过 port 的源代码安装与 pa
 
 第一次更新 port
 
-    portsnap fetch extract
+    # portsnap fetch extract
 
 以后
 
-    portsnap fetch update
+    # portsnap fetch update
 
 通过 port 安装是类似与 Gentoo 那样的源代码安装方式，譬如安装 sudo
 
-    cd /usr/ports/security/sudo
-    make install clean
+    # cd /usr/ports/security/sudo
+    # make install clean
 
 升级的话
 
-    cd /usr/ports/security/sudo
-    make deinstall reinstall clean
+    # cd /usr/ports/security/sudo
+    # make deinstall reinstall clean
 
 如果不清楚软件的具体目录可以搜索
 
-    cd /usr/ports
-    make search name=package
+    # cd /usr/ports
+    # make search name=package
     or
-    make search key=package
+    # make search key=package
 
 其中下载 distfiles 时速度可能很慢，那么加速下 package 源，编辑 `/etc/make.conf`，没有的话创建个 `touch /etc/make.conf`
 
@@ -67,14 +67,14 @@ FreeBSD 安装软件包有两种方式，即通过 port 的源代码安装与 pa
 
 通过 `pkg_add -r package` 安装两进制包，嗯，速度一直是国内用户头痛的问题
 
-    setenv PACKAGESITE ftp://ftp.cn.freebsd.org/pub/FreeBSD/releases/i386/9.2-RELEASE/packages/Latest/
+    # setenv PACKAGESITE ftp://ftp.cn.freebsd.org/pub/FreeBSD/releases/i386/9.2-RELEASE/packages/Latest/
     pkg_add -r sudo
 
 为了便于以后安装二进制包方便，你可以编辑 `/etc/profile` 文件，最后加上
 
     setenv PACKAGESITE ftp://ftp.cn.freebsd.org/pub/FreeBSD/releases/i386/9.2-RELEASE/packages/Latest/
 
-然后 `. /etc/profile` 更新下环境变量，注意 FreeBSD 的版本
+然后 `source /etc/profile` 更新下环境变量，注意 FreeBSD 的版本
 
 #### 3. sudo 配置
 
@@ -86,7 +86,7 @@ FreeBSD 安装软件包有两种方式，即通过 port 的源代码安装与 pa
 
 将当前用户加入到 wheel 组
 
-    pw groupmod wheel-m name
+    # pw groupmod wheel-m name
 
 `# visudo`， 将下面一行前的 `#` 去掉
 
