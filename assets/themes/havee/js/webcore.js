@@ -8,7 +8,7 @@ function tmtxt_search_google() {
 (function($){
   $(document).ready(function() {
     $("p img").each(function() {
-      var strA = "<a id='fancyBox' href='" + this.src + "'></a>";
+      var strA = "<div style='max-width:55%;margin:0 auto;'><a id='fancyBox' href='" + this.src + "'></a></div>";
       $(this).wrapAll(strA);
     });
   });
