@@ -205,6 +205,24 @@ footer {
  text-align:center
 }
 
+#back-top {
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  a {
+    width: 54px;
+    height: 54px;
+    display: block;
+    background: #ddd url(../images/bg_up_arrow.png) no-repeat center center;
+    background-color: #aaa;
+    @include border-radius(7px);
+    @include transition(1s);
+    &:hover {
+    background-color: #777;
+    }
+  }
+}
+
 /* baidu share style fixed */
 .bds_more {
     box-sizing: content-box;

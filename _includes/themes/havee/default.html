@@ -58,7 +58,7 @@
           {% include JB/pages_list %}
           <li><a href="{{ HOME_PATH }}vimwiki" target="_blank" title="Vimwiki">Vimwiki</a><li>
           <li>
-            <form id="search-form">
+            <form id="search-form" class="form-inline visible-lg visible-md" role="form">
               <input type="text" class="form-control input-sm" placeholder="Search" id="query">
             </form>
           </li>
@@ -96,6 +96,10 @@
         <p><a href="http://www.miibeian.gov.cn/" target="_blank" title="沪ICP备13026530号-1">沪ICP备13026530号-2</a></p>
       </footer>
     </div> <!-- /container -->
+
+  <div id="back-top">
+    <a href="#top" title="Back Top" class="visible-lg visible-md"></a>
+  </div>
 
     <script src="//libs.baidu.com/jquery/2.0.3/jquery.min.js"></script>
     <script>window.jQuery || document.write('<script src="{{ ASSET_PATH }}/js/jquery.min.js"><\/script>')</script>

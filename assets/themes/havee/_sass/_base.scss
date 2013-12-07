@@ -1,7 +1,7 @@
 /* This is for your Custom Content. */
 
-@mixin transition {
-  transition: all 0.3s;
+@mixin transition($a: 0.3s) {
+  transition: all $a;
 }
 
 @mixin text-shadow($a: 255, $b: 1px, $c: 170) {
