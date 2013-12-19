@@ -14,10 +14,6 @@ tags: [ruby]
     Fetching: liquid-2.5.4.gem (100%)
     ERROR:  While executing gem ... (Gem::FilePermissionError)
     You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
-    CnHaveedeMacBook-Pro:havee.me cnhavee$ gem sources -l
-    *** CURRENT SOURCES ***
-
-    http://ruby.taobao.org/
 
 <!-- more -->
 嗯，我知晓只要 `sudo` 安装即可解决问题，可 Gentoo 下养成的洁癖不是说改就能改的啊，好吧，方法：
