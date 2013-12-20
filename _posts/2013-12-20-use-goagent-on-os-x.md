@@ -16,7 +16,7 @@ tags: [GoAgent,Proxy]
 
 下载最新版的 [GoAgent](https://github.com/goagent/goagent/releases)，解压到你的路径下，编辑好 `proxy.ini` 后，创建一个自启动文件
 
-    touch ~/Library/LaunchAgents/com.googlecode.goagent.plist
+    touch ~/Library/LaunchAgents/com.goagent.localsrv.plist
 
 填充内容如下
 
@@ -48,11 +48,11 @@ tags: [GoAgent,Proxy]
 
 自启动命令
 
-    launchctl load -w ~/Library/LaunchAgents/com.googlecode.goagent.plist
+    launchctl load -w ~/Library/LaunchAgents/com.goagent.localsrv.plist
 
 移除自启动命令
 
-    Launchctl load -w ~/Library/LaunchAgents/com.googlecode.goagent.plist
+    Launchctl load -w ~/Library/LaunchAgents/com.goagent.localsrv.plist
 
 #### 2. 客户端方式
 
