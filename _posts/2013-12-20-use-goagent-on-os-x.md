@@ -14,7 +14,7 @@ tags: [GoAgent,proxy]
 
 #### 1. 源代码方式
 
-下载最新版的 GoAgent，解压到你的路径下，编辑好 `proxy.ini` 后，创建一个自启动文件
+下载最新版的 [GoAgent](https://github.com/goagent/goagent/releases)，解压到你的路径下，编辑好 `proxy.ini` 后，创建一个自启动文件
 
     touch ~/Library/LaunchAgents/com.googlecode.goagent.plist
 
