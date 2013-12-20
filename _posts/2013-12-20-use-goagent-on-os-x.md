@@ -31,7 +31,7 @@ tags: [GoAgent,Proxy]
         <key>KeepAlive</key>
         <true/>
         <key>Label</key>
-        <string>com.googlecode.goagent</string>
+        <string>com.goagent.localsrv</string>
         <key>NetworkState</key>
         <true/>
         <key>ProgramArguments</key>
