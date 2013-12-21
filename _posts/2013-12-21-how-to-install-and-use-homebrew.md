@@ -16,8 +16,11 @@ tags: [Homebrew]
 
 - brew search package   #搜索软件包
 - brew install package  #安装软件包
+- brew remove package   #移除软件包
+- brew cleanup package  #清除旧包
 - brew list             #列出已安装的软件包
 - brew update           #更新 Homebrew
+- brew upgrade          #升级软件包
 - brew home package     #用浏览器打开
 - brew info package     #显示软件内容信息
 - brew deps package     #显示包的依赖
