@@ -24,7 +24,7 @@ tags: [Homebrew]
 - brew home package     #用浏览器打开
 - brew info package     #显示软件内容信息
 - brew deps package     #显示包的依赖
-- brew server           #启动 web 服务器，可以通过浏览器访问 http://localhost:4567 来同网页来管理包
+- brew server           #启动 web 服务器，可以通过浏览器访问 http://localhost:4567 来通过网页来管理包
 - brew -h               #帮助
 
 <!-- more -->
@@ -45,6 +45,7 @@ tags: [Homebrew]
 ```bash
 if [ -f /usr/local/bin/brew ]; then
     export HOMEBREW_GITHUB_API_TOKEN=xxxxxxxxxx
+fi
 ```
 
 最后再 `. ~/.bash_profile` 更新下你的环境变量。
