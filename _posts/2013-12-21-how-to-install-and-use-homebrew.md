@@ -8,7 +8,7 @@ tags: [Homebrew]
 ---
 {% include JB/setup %}
 
-与 MacPorts 类似，OS X 下还有款包管理工具为 Homebrew，安装方法也很简单。
+与 MacPorts 类似，OS X 下还有款包管理工具为 [Homebrew](http://brew.sh)，安装方法也很简单。
 
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
