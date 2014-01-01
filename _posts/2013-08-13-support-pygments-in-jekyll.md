@@ -21,7 +21,7 @@ tags: [Jekyll, pygments, python]
 <!-- more -->
 安装pygments.rb
 
-    $ gem install pygments
+    $ gem install pygments.rb
 
 #### 配置
 
