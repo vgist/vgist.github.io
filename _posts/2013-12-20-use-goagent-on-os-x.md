@@ -52,7 +52,7 @@ tags: [GoAgent,Proxy]
 
 移除自启动命令
 
-    Launchctl load -w ~/Library/LaunchAgents/com.goagent.localsrv.plist
+    Launchctl unload -w ~/Library/LaunchAgents/com.goagent.localsrv.plist
 
 #### 2. 客户端方式
 
