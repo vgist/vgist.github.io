@@ -270,4 +270,6 @@ installation should now be secure.
 Thanks for using MariaDB!
 ```
 
+搞定，收工！
+
 参考: [http://blog.frd.mn/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/](http://blog.frd.mn/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/)
