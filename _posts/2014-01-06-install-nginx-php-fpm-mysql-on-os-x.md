@@ -60,10 +60,9 @@ tags: [Nginx, PHP-FPM, SQL,]
 
 自启动，因为要开 localhost 80 端口，所以给最高权限
 
-    $ ln -sf -sfv /usr/local/opt/nginx/homebrew.mxcl.nginx.plist /Library/LaunchAgents/
-    $ chown root:wheel /Library/LaunchAgents/homebrew.mxcl.nginx.plist
-    $ launchctl load -w /Library/LaunchAgents/homebrew.mxcl.nginx.plist
-    $ launchctl unload -w /Library/LaunchAgents/homebrew.mxcl.nginx.plist
+    $ ln -sfv /usr/local/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
+    $ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+    $ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
 
 测试下
 
