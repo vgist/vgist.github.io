@@ -64,7 +64,7 @@ tags: [Nginx, PHP-FPM, SQL,]
     $ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
     $ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
 
-如果开 80 端口，请链接到系统目录,且，修改下权限
+如果对外开 80 端口，请链接到系统目录，且，修改下权限
 
     $ sudo ln -sfv /usr/local/opt/nginx/homebrew.mxcl.nginx.plist /Library/LaunchAgents/
     $ sudo chown root:wheel /usr/local/opt/nginx/homebrew.mxcl.nginx.plist
