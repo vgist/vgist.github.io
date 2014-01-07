@@ -26,8 +26,8 @@ tags: [Nginx, PHP-FPM, SQL,]
 
 如果你用的到 PHP cli，你需要更新下你的环境变量 `~/.bash_profile`
 
-    if [ -d $(brew --prefix josegonzalez/php/php54/bin) ]; then
-        export PATH=$(brew --prefix josegonzalez/php/php55)/bin:$PATH
+    if [ -d $(brew --prefix josegonzalez/php/php54) ]; then
+        export PATH=$(brew --prefix josegonzalez/php/php54)/bin:$PATH
     fi
 
 自启动，检查有无目录 `~/Library/LaunchAgents`，没有的话新建个目录
