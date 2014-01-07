@@ -58,11 +58,16 @@ tags: [Nginx, PHP-FPM, SQL,]
 
     $ brew install nginx
 
-自启动，因为要开 localhost 80 端口，所以给最高权限
+自启动，这里用的是默认的 localhost 8080 端口
 
     $ ln -sfv /usr/local/opt/nginx/homebrew.mxcl.nginx.plist ~/Library/LaunchAgents/
     $ launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
     $ launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist
+
+如果开 80 端口，请链接到系统目录,且，修改下权限
+
+    $ sudo ln -sfv /usr/local/opt/nginx/homebrew.mxcl.nginx.plist /Library/LaunchAgents/
+    $ sudo chown root:wheel /usr/local/opt/nginx/homebrew.mxcl.nginx.plist
 
 测试下
 
@@ -158,7 +163,7 @@ http {
 
 ```
 server {
-    listen          80;
+    listen          8080;
     server_name     localhost;
     root            html;
     charset         UTF-8;
