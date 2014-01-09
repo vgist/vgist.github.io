@@ -24,6 +24,7 @@ tags: [Tips]
 
 [OS X 上使用 GoAgent](/mac/2013-12/use-goagent-on-os-x.html)
 
+<!-- more -->
 #### 开源软件
 
 可以通过 [MacPorts](http://www.macports.org)、[HomeBrew](/mac/2013-12/how-to-install-and-use-homebrew.html) 等包管理工具来使用开源软件。
