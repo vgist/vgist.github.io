@@ -22,7 +22,7 @@ tags: [Nginx, PHP-FPM, SQL,]
 
     $ brew install --without-apache --with-fpm --with-mysql php54
 
-下面等待几分钟，Homebrew 开始下载 php 源码病开始编译。
+下面等待几分钟，Homebrew 开始下载 php 源码并开始编译。
 
 如果你用的到 PHP cli，你需要更新下你的环境变量 `~/.bash_profile`
 
@@ -90,7 +90,6 @@ Accept-Ranges: bytes
 
     mkdir /usr/local/etc/nignx/conf.d
     touch /usr/local/etc/nignx/conf.d/localhost.conf
-    touch ~/.bash_aliases
 
 编辑 `/usr/local/etc/nginx/nginx.conf`
 
@@ -273,6 +272,49 @@ installation should now be secure.
 
 Thanks for using MariaDB!
 ```
+
+##### 3. aliases
+
+为了后面管理方便，将命令 aliase 下
+
+```
+alias nginx.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+alias nginx.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+alias nginx.restart='nginx.stop && nginx.start'
+alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist"
+alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew-php.josegonzalez.php54.plist"
+alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
+alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
+alias mysql.restart='mysql.stop && mysql.start'
+
+```
+
+接着编辑 `~/.bash_profile` 文件，添加
+
+    [[ -f ~/.bash_aliases ]] && . ~/.bash_aliases
+
+最后打开终端，更新下
+
+    source .bash_profile
+
+然后启动方法
+
+    nginx.start
+    php-fpm.start
+    mysql.start
+
+关闭方法
+
+    nginx.stop
+    php-fpm.stop
+    mysql.stop
+
+重启方法
+
+    nginx.restart
+    php-fpm.restart
+    mysql.restart
 
 搞定，收工！
 
