@@ -275,7 +275,7 @@ Thanks for using MariaDB!
 
 ##### 3. aliases
 
-为了后面管理方便，将命令 aliase 下
+为了后面管理方便，将命令 alias 下
 
 ```
 alias nginx.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
