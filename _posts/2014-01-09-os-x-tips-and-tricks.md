@@ -47,6 +47,8 @@ tags: [Tips]
 
 #### 三. GoAgent
 
+关于 Proxy，有很多开源的解决方案，譬如 Goagent
+
 [OS X 上使用 GoAgent](/mac/2013-12/use-goagent-on-os-x.html)
 
 #### 四. 开源软件
