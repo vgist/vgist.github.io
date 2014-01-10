@@ -23,7 +23,7 @@ tags: [Tips]
 <!-- more -->
 #### 文件和目录的扩展属性问题
 
-在 Mac OS X 下，文件经常会被附加上 OS X 特游的扩展属性 ( extend attributes )，具体表现是用 `ls -l` 查看时会有 `@` 的标记，譬如
+在 Mac OS X 下，文件经常会被附加上 OS X 特有的扩展属性 ( extend attributes )，具体表现是用 `ls -l` 查看时会有 `@` 的标记，譬如
 
     $ ls -l os.pdf
     -rw-r--r--@  1 cnhavee  staff  1518  1 9 14:13 os.pdf
