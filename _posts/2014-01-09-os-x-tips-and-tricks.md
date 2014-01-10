@@ -14,11 +14,35 @@ tags: [Tips]
 
 ##### 显示和隐藏系统文件
 
-    defaults write com.apple.finder AppleShowAllFiles YES/NO
+    $ defaults write com.apple.finder AppleShowAllFiles YES/NO
 
 ##### 显示和隐藏普通文件
 
-    chflags hidden/nohidden file or directory
+    $ chflags hidden/nohidden file or directory
+
+#### 文件和目录的扩展属性问题
+
+在 Mac OS X 下，文件经常会被附加上 OS X 特游的扩展属性 ( extend attributes )，具体表现是用 `ls -l` 查看时会有 `@` 的标记，譬如
+
+    $ ls -l os.pdf
+    -rw-r--r--@  1 cnhavee  staff  1518  1 9 14:13 os.pdf
+
+这个 `@` 属性是用户在 Finder 中对文件进行任意操作后就会被附带上，特别讨厌这个属性，这直接导致在 OS X 下打包后放到 Linux 系统分享文件的时候，会出现莫名其妙的错误，兼因 tar 命令本身并不能区分 **extend attributes**
+
+还好，Mac OS X 下的 cp 有个选项 `-X` 能忽略这个扩展属性
+
+    cp: -X      do not copy extended attributes (eas) or resource forks.
+
+属于处理这个问题，譬如打包，在打包前，请用 `cp -Xr` 拷贝出一份没有扩展属性的文件或目录，然后再 tar 打包处理。
+
+另有个命令 `xattr` 也能做到，不过比较繁琐
+
+    $ xattr -l filename
+    com.apple.ResourceFork:
+    00000000  00 00 01 00 00 00 05 08 00 00 04 08 00 00 00 32  |...............2|
+    ……
+
+    $ xattr -d com.apple.ResourceFork filename
 
 #### GoAgent
 
@@ -33,7 +57,7 @@ tags: [Tips]
 
 #### 重启 Finder
 
-    killall Finder
+    $ killall Finder
 
 或者可以按下 Option 键的同事，右键 Dock 栏上的 Finder 选择重启即可。
 
