@@ -20,6 +20,7 @@ tags: [Tips]
 
     $ chflags hidden/nohidden file or directory
 
+<!-- more -->
 #### 文件和目录的扩展属性问题
 
 在 Mac OS X 下，文件经常会被附加上 OS X 特游的扩展属性 ( extend attributes )，具体表现是用 `ls -l` 查看时会有 `@` 的标记，譬如
@@ -48,7 +49,6 @@ tags: [Tips]
 
 [OS X 上使用 GoAgent](/mac/2013-12/use-goagent-on-os-x.html)
 
-<!-- more -->
 #### 开源软件
 
 可以通过 [MacPorts](http://www.macports.org)、[HomeBrew](/mac/2013-12/how-to-install-and-use-homebrew.html) 等包管理工具来使用开源软件。
