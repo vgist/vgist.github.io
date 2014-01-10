@@ -10,18 +10,18 @@ tags: [Tips]
 
 刚上手 OS X，习惯正在慢慢培养中，下面记录一些使用过程中的小技巧，不断补充
 
-#### 显示和隐藏
+#### 一. 显示和隐藏
 
-##### 显示和隐藏系统文件
+##### 1. 显示和隐藏系统文件
 
     $ defaults write com.apple.finder AppleShowAllFiles YES/NO
 
-##### 显示和隐藏普通文件
+##### 2. 显示和隐藏普通文件
 
     $ chflags hidden/nohidden file or directory
 
 <!-- more -->
-#### 文件和目录的扩展属性问题
+#### 二. 文件和目录的扩展属性问题
 
 在 Mac OS X 下，文件经常会被附加上 OS X 特有的扩展属性 ( extend attributes )，具体表现是用 `ls -l` 查看时会有 `@` 的标记，譬如
 
@@ -45,17 +45,17 @@ tags: [Tips]
 
     $ xattr -d com.apple.ResourceFork filename
 
-#### GoAgent
+#### 三. GoAgent
 
 [OS X 上使用 GoAgent](/mac/2013-12/use-goagent-on-os-x.html)
 
-#### 开源软件
+#### 四. 开源软件
 
 可以通过 [MacPorts](http://www.macports.org)、[HomeBrew](/mac/2013-12/how-to-install-and-use-homebrew.html) 等包管理工具来使用开源软件。
 
 譬如[《OS X 上安装 Nginx + PHP-FPM + MariaDB》](/mac/2014-01/install-nginx-php-fpm-mysql-on-os-x.html)
 
-#### 重启 Finder
+#### 五. 重启 Finder
 
     $ killall Finder
 
@@ -63,6 +63,6 @@ tags: [Tips]
 
 Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，点击无线图标，则可以显示具体的无线网络状况。
 
-#### 关掉调节音量时的提示声
+#### 六. 关掉调节音量时的提示声
 
 按住 Shift 键再调节音量，即可临时静音调节
