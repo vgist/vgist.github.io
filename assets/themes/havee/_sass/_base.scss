@@ -1,5 +1,9 @@
 /* This is for your Custom Content. */
 
+@mixin font {
+  font-family: Tahoma, Arial, Helvetica, sans-serif;
+}
+
 @mixin transition($a: 0.3s) {
   transition: all $a;
 }

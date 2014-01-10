@@ -1,7 +1,7 @@
 /* This is for your Custom Content. */
 
 body {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
+  @include font;
 }
 
 h1, h2, h3, h4, h5, h6 ,b, strong {
@@ -109,6 +109,7 @@ a {
       @include img;
     }
     code {
+      font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
       @include box-shadow(1px, 1px, 1px, 0.067);
       @include border(0.067);
     }
