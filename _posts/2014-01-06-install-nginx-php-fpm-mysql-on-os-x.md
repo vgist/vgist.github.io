@@ -94,6 +94,7 @@ Accept-Ranges: bytes
 编辑 `/usr/local/etc/nginx/nginx.conf`
 
 ```
+user yourname admin
 worker_processes  1;
 
 error_log   /usr/local/var/log/nginx/error.log debug;
@@ -199,6 +200,9 @@ server {
 
     ;listen = 127.0.0.1:9000
     listen = /usr/local/var/run/php-fpm.sock
+
+    user = yourname
+    group = admin
 
 编辑 `/usr/local/etc/php/5.4/php.ini`
 
