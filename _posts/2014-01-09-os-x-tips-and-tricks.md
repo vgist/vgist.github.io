@@ -36,7 +36,7 @@ tags: [Tips]
 
 属于处理这个问题，譬如打包，在打包前，请用 `cp -Xr` 拷贝出一份没有扩展属性的文件或目录，然后再 tar 打包处理。
 
-另有个命令 `xattr` 也能做到，不过比较繁琐
+另有个命令 `xattr` 也能做到
 
     $ xattr -l filename
     com.apple.ResourceFork:
@@ -44,6 +44,14 @@ tags: [Tips]
     ……
 
     $ xattr -d com.apple.ResourceFork filename
+
+你可以一次性清除一个文件的所有 extend attributes
+
+    $ xattr -c filename
+
+你也可以对一个目录及其下的所有文件做清楚操作
+
+    $ xattr -rc directory
 
 #### 三. GoAgent
 
