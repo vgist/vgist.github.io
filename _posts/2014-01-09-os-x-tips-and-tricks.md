@@ -49,7 +49,7 @@ tags: [Tips]
 
     $ xattr -c filename
 
-你也可以对一个目录及其下的所有文件做清楚操作
+你也可以对一个目录及其下的所有文件做清除操作
 
     $ xattr -rc directory
 
