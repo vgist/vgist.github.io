@@ -53,6 +53,14 @@ tags: [Tips]
 
     $ xattr -rc directory
 
+#### 三. 鼠标移动加速
+
+默认的 Mac OS X 下鼠标的加速，实在是不习惯，俺用 OS X 不是来作图的，纯粹是图它的稳定。所以，还是想办法关闭鼠标的移动加速吧。
+
+下载一个 app，[CursorSense](http://plentycom.jp/en/cursorsense/download.php "CursorSense")
+
+![CursorSense](/assets/images/2014/01/CursorSense.png)
+
 #### 三. GoAgent
 
 关于 Proxy，有很多开源的解决方案，譬如 Goagent
