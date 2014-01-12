@@ -14,7 +14,13 @@ tags: [Tips]
 
 ##### 1. 显示和隐藏系统文件
 
+10.8 版本 OS X
+
     $ defaults write com.apple.finder AppleShowAllFiles YES/NO
+
+10.9 版本 OS X
+
+    defaults write ~/Library/Preferences/com.apple.finder.plist AppleShowAllFiles -bool true/false
 
 ##### 2. 显示和隐藏普通文件
 
