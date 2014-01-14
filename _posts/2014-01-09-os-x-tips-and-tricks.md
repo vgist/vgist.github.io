@@ -22,11 +22,11 @@ tags: [Tips]
 
     defaults write ~/Library/Preferences/com.apple.finder.plist AppleShowAllFiles -bool true/false
 
+<!-- more -->
 ##### 2. 显示和隐藏普通文件
 
     $ chflags hidden/nohidden file or directory
 
-<!-- more -->
 #### 二. 文件和目录的扩展属性问题
 
 在 Mac OS X 下，文件经常会被附加上 OS X 特有的扩展属性 ( extend attributes )，具体表现是用 `ls -l` 查看时会有 `@` 的标记，譬如
