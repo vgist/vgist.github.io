@@ -138,7 +138,7 @@ http {
     gzip_http_version 1.1;
     gzip_comp_level 5;
     gzip_proxied any;
-    gzip_types       text/plain application/x-javascript text/css application/xml;
+    gzip_types       text/html text/plain application/x-javascript text/css application/xml;
     gzip_vary on;
     gzip_disable     "MSIE [1-6]\.";
 
