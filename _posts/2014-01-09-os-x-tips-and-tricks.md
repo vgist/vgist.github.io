@@ -20,7 +20,7 @@ tags: [Tips]
 
 10.9 版本 OS X
 
-    defaults write ~/Library/Preferences/com.apple.finder.plist AppleShowAllFiles -bool true/false
+    $ defaults write ~/Library/Preferences/com.apple.finder.plist AppleShowAllFiles -bool true/false
 
 <!-- more -->
 ##### 2. 显示和隐藏普通文件
