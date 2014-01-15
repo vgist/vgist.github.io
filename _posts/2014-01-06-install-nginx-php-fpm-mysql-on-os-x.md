@@ -110,7 +110,6 @@ events {
 http {
     include mime.types;
     default_type application/octet-stream;
-    include vhosts/*.conf;
 
     log_format main
         '$remote_addr - $remote_user [$time_local] '
