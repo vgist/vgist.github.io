@@ -90,3 +90,13 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 #### 六. 关掉调节音量时的提示声
 
 按住 Shift 键再调节音量，即可临时静音调节
+
+#### 七. 刷新 DNS 缓存
+
+针对 OS X 10.6 以及之前
+
+    sudo dscacheutil -flushcache
+
+针对 OS X 10.6 以后
+
+    sudo killall -HUP mDNSResponder
