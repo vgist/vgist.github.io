@@ -323,4 +323,8 @@ alias mysql.restart='mysql.stop && mysql.start'
 
 搞定，收工！
 
+![nginx localhost](/assets/images/2014/01/localhost.png)
+
+![php info](/assets/images/2014/01/phpinfo.png)
+
 参考: [http://blog.frd.mn/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/](http://blog.frd.mn/install-nginx-php-fpm-mysql-and-phpmyadmin-on-os-x-mavericks-using-homebrew/)
