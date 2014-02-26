@@ -8,9 +8,9 @@ tags: [SSL]
 ---
 {% include JB/setup %}
 
-OS X 10.9.2 在经过 7 个测试版后，终于迎来了正式版，在 SSL 安全漏洞引起大家恐慌的时候，苹果适时的退出了更新。不过在 App Store 里面还没有更新提示，可以直接到苹果官网去[下载](http://support.apple.com/kb/DL1725?viewlocale=zh_CN)。
-
 ![00](/assets/images/2014/02/update0.png)
+
+OS X 10.9.2 在经过 7 个测试版后，终于迎来了正式版，在 SSL 安全漏洞引起大家恐慌的时候，苹果适时的退出了更新。不过在 App Store 里面还没有更新提示，可以直接到苹果官网去[下载](http://support.apple.com/kb/DL1725?viewlocale=zh_CN)。
 
 <!-- more -->
 此次的更新包含：
