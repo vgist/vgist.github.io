@@ -45,6 +45,11 @@ a {
 .container > .navbar-header, .container > .navbar-collapse {
   margin-right: 0px;
   margin-left: 0px;
+  font-size: 18px;
+}
+
+.container > .navbar-header > a {
+  font-size: 28px;
 }
 
 .page-header {
