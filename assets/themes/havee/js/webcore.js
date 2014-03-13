@@ -129,9 +129,9 @@ $(document).ready(function () {
 });
 
 /* web font */
-WebFont.load({
+WebFont.load ({
     google: {
-                families: ['Ubuntu:400,400italic', 'Candal']
-            },
+        families: ['Ubuntu:400,400italic', 'Candal']
+    },
     timeout: 3000 // Set the timeout to two seconds
 });
