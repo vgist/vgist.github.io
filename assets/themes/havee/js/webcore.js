@@ -13,6 +13,13 @@
     });
 })(jQuery);
 
+/* google code prettify */
+(function($){
+    $(function(){
+        $("pre").addClass("prettyprint");
+        prettyPrint();
+    });
+})(jQuery);
 
 /* site search */
 $(document).ready(function() {
