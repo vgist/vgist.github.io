@@ -4,7 +4,7 @@ title: "天气预报的超短 Shell"
 description: "天气预报的超短 Shell"
 keywords: shell, 天气预报
 category: Linux
-tags: [CLI, weather]
+tags: [CLI, Weather]
 ---
 {% include JB/setup %}
 
