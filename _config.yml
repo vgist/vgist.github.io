@@ -167,9 +167,6 @@ JB :
     fancybox :
       js : //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
       css : //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
-    prettify :
-      js : //cdn.bootcss.com/prettify/r298/prettify.min.js
-      css : //cdn.bootcss.com/prettify/r298/prettify.min.css
 
   blogroll : true
   brlist :
