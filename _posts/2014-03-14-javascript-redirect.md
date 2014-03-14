@@ -31,7 +31,7 @@ JavaScript:
 ```
 <script>
   var url = "havee.me";
-  var other = "havee.gitcafe.com"||"www.havee.me";
+  var other = "havee.gitcafe.com";
   if( window.location.host == other ) {
       document.location.href = "\/\/" + url + this.location.pathname;
   }
