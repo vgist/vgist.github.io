@@ -1,7 +1,7 @@
 ---
 layout: post
-title: "Ctrl_Alt_Bksp 无法退回 tty"
-description: "Ctrl_Alt_Bksp 无法退回 tty"
+title: "Ctrl_Alt_Bksp 无法退回 TTY"
+description: "Ctrl_Alt_Bksp 无法退回 TTY"
 keywords: "ctrl_alt_bksp, tty"
 category: Linux
 tags: [TTY]
