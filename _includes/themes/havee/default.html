@@ -29,7 +29,6 @@
     <link href="{{ site.JB.atom_path }}" type="application/atom+xml" rel="alternate" title="{{ site.title }} ATOM Feed">
     <link href="{{ site.JB.rss_path }}" type="application/rss+xml" rel="alternate" title="{{ site.title }} RSS Feed">
 
-    {% include JB/analytics %}
   </head>
 
   <body>
@@ -114,6 +113,7 @@
     <script src="{{ ASSET_PATH }}/js/webcore.js"></script>
 
     {% include custom/duoshuo %}
+    {% include JB/analytics %}
     {% include custom/sharing %}
   </body>
 </html>
