@@ -47,6 +47,8 @@ a {
 }
 
 .container > .navbar-header, .container > .navbar-collapse {
+  @include text-shadow(255, 2px, 170);
+  @include transition;
   margin-right: 0px;
   margin-left: 0px;
   font-family: 'Cambo', serif;
