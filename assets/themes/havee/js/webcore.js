@@ -137,7 +137,7 @@ $(document).ready(function() {
 /* web font */
 WebFont.load ({
     google: {
-                families: ['Ubuntu:400,400italic', 'Candal']
+                families: ['Ubuntu:400,400italic', 'Cambo']
             },
     timeout: 3000 // Set the timeout to two seconds
 });
