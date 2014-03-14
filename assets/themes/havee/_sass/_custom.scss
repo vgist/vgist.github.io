@@ -28,7 +28,7 @@ a {
 
 .navbar .brand, .navbar .nav > li > a {
   @include transition;
-  @include text-shadow(255, 0px, 170);
+  /*@include text-shadow(255, 0px, 170);*/
   &:hover, &:focus {
     color: rgb(51, 51, 51);
     @include text-shadow(255, 1px, 170);
