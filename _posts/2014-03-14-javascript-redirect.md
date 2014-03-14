@@ -28,7 +28,7 @@ havee.me.       60      IN          A       117.79.146.98
 
 JavaScript:
 
-```
+```javascript
 <script>
   var url = "havee.me";
   var other = "havee.gitcafe.com";
