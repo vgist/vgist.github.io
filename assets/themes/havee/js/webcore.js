@@ -1,24 +1,41 @@
-/* fancybox */
 (function($){
+
+    /* fancybox */
     $(document).ready(function() {
         $("p img").each(function() {
             var strA = "<div style='max-width:55%;margin:0 auto;'><a id='fancyBox' href='" + this.src + "'></a></div>";
             $(this).wrapAll(strA);
         });
     });
-
     $("#fancyBox").fancybox({
         openEffect	: 'elastic',
         closeEffect	: 'elastic',
     });
-})(jQuery);
 
-/* google code prettify */
-(function($){
+    /* google code pretty */
     $(function(){
         $("pre").addClass("prettyprint");
         prettyPrint();
     });
+
+    /* back to top */
+    $("#back-top").hide();
+    $(document).ready(function () {
+        $(window).scroll(function () {
+            if ($(this).scrollTop() > 100) {
+                $('#back-top').fadeIn();
+            } else {
+                $('#back-top').fadeOut();
+            }
+        });
+        $('#back-top a').click(function () {
+            $('body,html').animate({
+                scrollTop: 0
+            }, 800);
+            return false;
+        });
+    });
+
 })(jQuery);
 
 /* site search */
@@ -116,24 +133,6 @@ $(document).ready(function() {
 
 });
 
-
-/* Back Top */
-$("#back-top").hide();
-$(document).ready(function () {
-    $(window).scroll(function () {
-        if ($(this).scrollTop() > 100) {
-            $('#back-top').fadeIn();
-        } else {
-            $('#back-top').fadeOut();
-        }
-    });
-    $('#back-top a').click(function () {
-        $('body,html').animate({
-            scrollTop: 0
-        }, 800);
-        return false;
-    });
-});
 
 /* web font */
 WebFont.load ({
