@@ -28,7 +28,7 @@ a {
 
 .navbar .brand, .navbar .nav > li > a {
   @include transition;
-  /*@include text-shadow(255, 0px, 170);*/
+  @include text-shadow(255, 0px, 170);
   &:hover, &:focus {
     color: rgb(51, 51, 51);
     @include text-shadow(255, 1px, 170);
@@ -46,7 +46,7 @@ a {
   padding: 10px 15px;
 }
 
-.container > .navbar-header, .container > .navbar-collapse {
+/*.container > .navbar-header, .container > .navbar-collapse {
   margin-right: 0px;
   margin-left: 0px;
   font-family: 'Cambo', serif;
@@ -57,7 +57,7 @@ a {
   font-size: 28px;
   font-family: 'Cambo', serif;
   font-weight: 500;
-}
+}*/
 
 .page-header {
     border-bottom: 1px dashed rgb(238, 238, 238);
