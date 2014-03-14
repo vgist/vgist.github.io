@@ -32,8 +32,8 @@
     <script>
       var url = "havee.me"
       var gitcafe = "havee.gitcafe.com"
-        if( window.location.host == gitcafe ) {
-        document.location.href = "\/\/" + url;
+      if( window.location.host == gitcafe ) {
+        document.location.href = "\/\/" + url + this.location.pathname;
       }
     </script>
   </head>
