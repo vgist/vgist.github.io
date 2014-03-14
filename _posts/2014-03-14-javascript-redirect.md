@@ -37,3 +37,30 @@ JavaScript:
   }
 </script>
 ```
+
+### Update 2014-03-14
+
+今天下午，该问题已经解决
+
+```
+$ curl -IL havee.gitcafe.com
+HTTP/1.1 301 Moved Permanently
+Server: nginx/1.4.5
+Date: Fri, 14 Mar 2014 11:18:00 GMT
+Content-Type: text/html
+Content-Length: 184
+Connection: keep-alive
+Location: http://havee.me/
+Cache-Control: public
+
+HTTP/1.1 200 OK
+Server: nginx/1.4.5
+Date: Fri, 14 Mar 2014 11:18:01 GMT
+Content-Type: text/html
+Content-Length: 17697
+Last-Modified: Fri, 14 Mar 2014 09:23:06 GMT
+Connection: keep-alive
+ETag: "5322ca7a-4521"
+Cache-Control: public
+Accept-Ranges: bytes
+```
