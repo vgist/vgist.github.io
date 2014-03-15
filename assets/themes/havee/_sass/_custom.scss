@@ -103,6 +103,9 @@ a {
       .date {
         padding: 4px 0 0;
         vertical-align: middle;
+        span {
+          padding-left: 5px;
+        }
         a {
           color: rgb(119, 119, 119);
           &:hover, &:focus {
