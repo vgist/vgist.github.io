@@ -40,7 +40,7 @@ JavaScript:
 
 #### Update 2014-03-14
 
-今天下午，该问题已经解决
+今天下午，该问题已被 GitCafe 解决
 
 ```
 $ curl -IL havee.gitcafe.com
