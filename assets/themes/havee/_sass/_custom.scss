@@ -37,7 +37,7 @@ a {
 }
 
 .navbar-default {
-  background-color: rgba(249, 249, 249, 0.8);
+  @include background-color(249, 0.8);
 }
 
 .nav > li > form {
@@ -70,6 +70,14 @@ a {
 .tag_box a span {
   vertical-align: super;
   font-size: 0.8em;
+}
+
+.tag_box a {
+  padding: 3px 6px;
+  margin: 2px;
+  line-height: 180%;
+  border-radius: 3px 3px 3px 3px;
+  @include background-color(238, 0.9);
 }
 
 .row .visible-lg {
@@ -138,7 +146,7 @@ a {
     @include background-color;
     &:hover {
       @include transition;
-      @include background-color(0.9);
+      @include background-color(249, 0.9);
       @include border(0.35);
       @include box-shadow(1px, 2px, 2px, 0.167);
     }
@@ -193,14 +201,14 @@ table {
     padding: 8px;
   }
   thead > tr {
-    @include background-color(0.9);
+    @include background-color(249, 0.9);
   }
   tbody > tr:nth-child(2n+1) {
     @include background-color;
   }
   tbody tr {
     &:hover {
-      @include background-color(0.9);
+      @include background-color(249, 0.9);
       @include transition;
     }
   }
@@ -234,11 +242,11 @@ footer {
     height: 54px;
     display: block;
     background: #ddd url(../images/bg_up_arrow.png) no-repeat center center;
-    background-color: #aaa;
+    @include background-color(222, 0.8);
     @include border-radius(7px);
     @include transition(1s);
     &:hover {
-    background-color: #777;
+    @include background-color(111, 0.8);
     }
   }
 }

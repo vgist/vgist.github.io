@@ -24,8 +24,8 @@
   border-radius: $a;
 }
 
-@mixin background-color($a: 0.5) {
-  background-color: rgba(249, 249, 249, $a);
+@mixin background-color($a: 249, $b: 0.5) {
+  background-color: rgba($a, $a, $a, $b);
 }
 
 @mixin img {
