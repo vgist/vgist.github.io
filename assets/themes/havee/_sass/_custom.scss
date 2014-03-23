@@ -1,7 +1,7 @@
 /* This is for your Custom Content. */
 
 body {
-  @include font;
+  @include sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 ,b, strong {
@@ -9,6 +9,10 @@ h1, h2, h3, h4, h5, h6 ,b, strong {
   small {
     @include text-shadow;
   }
+}
+
+section h4 {
+  @include serif;
 }
 
 h5, h6, strong {
@@ -51,7 +55,7 @@ a {
   @include transition;
   margin-right: 0px;
   margin-left: 0px;
-  font-family: 'Cambo', serif;
+  @include serif;
   font-weight: 500;
 }
 
@@ -136,12 +140,13 @@ a {
       @include img;
     }
     code {
-      font-family: Monaco, "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
+      @include monospace;
       @include box-shadow(1px, 1px, 1px, 0.067);
       @include border(0.067);
     }
   }
   .highlight pre {
+    @include monospace;
     @include transition;
     @include background-color;
     &:hover {
