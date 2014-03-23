@@ -11,10 +11,6 @@ h1, h2, h3, h4, h5, h6 ,b, strong {
   }
 }
 
-section h4 {
-  @include serif;
-}
-
 h5, h6, strong {
   @include text-shadow;
 }
@@ -146,7 +142,6 @@ a {
     }
   }
   .highlight pre {
-    @include monospace;
     @include transition;
     @include background-color;
     &:hover {
@@ -154,6 +149,9 @@ a {
       @include background-color(249, 0.9);
       @include border(0.35);
       @include box-shadow(1px, 2px, 2px, 0.167);
+    }
+    code {
+      @include monospace;
     }
   }
 }
@@ -166,6 +164,7 @@ section {
   padding: 0px 5px;
   margin: 5px 0px;
   h4 {
+    @include serif;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
   }
   &:hover {
