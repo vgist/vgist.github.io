@@ -15,9 +15,10 @@ tagline: 王者不可刚，阴柔三寸力，铁指寸进，劲断霸阳
   {% endif %}
 
   <div class="status">
-    <div class="col-md-6 date visible-lg visible-md">
-      <span class="glyphicon glyphicon-time"></span> {{ post.date | date_to_string }}
-      <span class="glyphicon glyphicon-comment"></span><a href="{{ post.url }}#comments"> (<span class="ds-thread-count" data-thread-key="{{ post.id | split: '/' | last }}" data-count-type="comments"></span>) Comments</a>
+    <div class="col-md-6 meta visible-lg visible-md">
+      <span class="glyphicon glyphicon-calendar"></span><p>{{ post.date | date_to_string }}</p>
+      <span class="glyphicon glyphicon-tags"></span> {% if post.tags %}{% for tag in post.tags %}<a href="/tags.html#{{ tag }}" title="{{ tag }}"><p>{{ tag }}</p></a>{% endfor %}{% endif %}
+      <span class="glyphicon glyphicon-comment"></span><a href="{{ post.url }}#comments"><p>(<span class="ds-thread-count" data-thread-key="{{ post.id | split: '/' | last }}" data-count-type="comments"></span>) Comments</p></a>
     </div>
     {% if post.content contains "<!-- more -->" %}
     <a class="btn btn-default btn-sm pull-right" href="{{ post.url }}"><span class="readmore">Read More &raquo; </span></a>
