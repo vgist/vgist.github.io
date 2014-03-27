@@ -10,10 +10,10 @@ title : Sitemap
 
     {% for post in site.posts %}
     <url>
-      <loc>{{ site.production_url }}{{ post.url }}</loc>
-      <changefreq>daily</changefreq>
-      <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
-      <priority>0.8</priority>
+        <loc>{{ site.production_url }}{{ post.url }}</loc>
+        <changefreq>daily</changefreq>
+        <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
+        <priority>0.8</priority>
     </url>
     {% endfor %}
 
@@ -22,9 +22,9 @@ title : Sitemap
     {% if page.layout != 'feed' %}
     {% if page.group == 'navigation' %}
     <url>
-      <loc>{{ site.production_url }}{{ page.url | remove: 'index.html' }}</loc>
-      <changefreq>monthly</changefreq>
-      <priority>0.6</priority>
+        <loc>{{ site.production_url }}{{ page.url | remove: 'index.html' }}</loc>
+        <changefreq>monthly</changefreq>
+        <priority>0.6</priority>
     </url>
     {% endif %}
     {% endif %}
@@ -32,8 +32,8 @@ title : Sitemap
     {% endfor %}
 
     <url>
-      <loc>{{ site.production_url }}</loc>
-      <changefreq>daily</changefreq>
-      <priority>0.5</priority>
+        <loc>{{ site.production_url }}</loc>
+        <changefreq>daily</changefreq>
+        <priority>0.5</priority>
     </url>
 </urlset>
