@@ -124,6 +124,11 @@ a {
             display: inline;
             margin: 0 4px;
           }
+          span {
+            margin-left: 2px;
+            vertical-align: super;
+            font-size: 0.8em;
+          }
         }
       }
       .visible-lg {
