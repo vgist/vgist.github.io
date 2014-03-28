@@ -21,17 +21,17 @@ tags: [Gentoo]
 很简单，当然 `equery b file` 是在线查询，需要耗费些时间
 
 ```bash
-Exe-file=/path/file/name
+exefile=$1
 
-for so in $(ldd ${Exe-file} | awk '{print $1}' | sort | uniq ); do
-    [[ ! -f $so ]] && echo $so >> /tmp/${Exe-file}.so;
+for so in $(ldd ${exefile} | awk '{print $1}' | sort | uniq ); do
+    [[ ! -f $so ]] && echo $so >> /tmp/${exefile}.so;
 done
 
-for so in $(cat /tmp/${Exe-file}.so); do
-    echo "$so need:"; equery b $so >> /tmp/${Exe-file}.so.result;
+for so in $(cat /tmp/${exefile}.so); do
+    echo "$so need:"; equery b $so >> /tmp/${exefile}.so.result;
 done
 
-rm /tmp/${Exe-file}.so
+rm /tmp/${exefile}.so
 ```
 
 临时写的，上班后修正
