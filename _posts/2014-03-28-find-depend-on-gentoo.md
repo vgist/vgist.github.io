@@ -21,6 +21,14 @@ tags: [Gentoo]
 很简单，当然 `equery b name.so` 是在线查询，有时网络环境不好的时候，需要耗费些时间很长，甚至返回空的查询结果。
 
 ```bash
+#! /usr/bin/env sh
+#
+# depend.sh
+# Copyright (C) 2014 Havee <registerdedicated(at)yeah.net>
+#
+# Distributed under terms of the GPLv3 license.
+#
+
 exefile=$1
 
 for so in $(ldd ${exefile} | awk '{print $1}' | sort | uniq ); do
