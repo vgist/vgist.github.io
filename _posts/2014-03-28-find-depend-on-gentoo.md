@@ -50,5 +50,3 @@ done >> ${tmpfile}
 rm /tmp/${exefile}.so
 cat ${tmpfile}
 ```
-
-临时写的，下班后修正
