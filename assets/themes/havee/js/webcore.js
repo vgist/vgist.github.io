@@ -3,7 +3,7 @@
     /* fancybox */
     $(document).ready(function() {
         $("p img").each(function() {
-            var strA = "<a id='fancyBox' href='" + this.src + "'></a>";
+            var strA = "<div style='max-width: 90%; margin: 0 auto;'><a id='fancyBox' href='" + this.src + "'></a></div>";
             $(this).wrapAll(strA);
         });
     });
