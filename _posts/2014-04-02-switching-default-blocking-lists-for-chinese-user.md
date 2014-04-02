@@ -25,4 +25,4 @@ tags: [Adblock, ChinaList]
 
 一句话，Adblock Plus 改变配置中的预设列表地址。当然作为用户来说，可以去订阅官方列表，用户从来都是被选择的。
 
-有能力的用户，也可以直接去 fork chinalist。也可以启用 Adblock Plus 的民间分支 [Adblock Edge](https://bitbucket.org/adstomper/adblockedge/)。
+如果是对此次事件不爽且有能力的用户，也可以直接去 fork chinalist。也可以启用 Adblock Plus 的民间分支 [Adblock Edge](https://bitbucket.org/adstomper/adblockedge/)，普通用户该干嘛干嘛吧。
