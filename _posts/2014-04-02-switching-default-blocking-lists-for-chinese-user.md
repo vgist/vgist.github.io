@@ -21,8 +21,8 @@ tags: [Adblock, ChinaList]
 
 ![ChinaList issues 44](/assets/images/2014/04/Chinalist-02.png)
 
-在[官方声明](https://adblockplus.org/blog/switching-default-blocking-lists-for-chinese-users)中只是公告了停止启用 ChinaList 为默认的中文用户列表，而没有说明重定向已经订阅用户的列表至官方维护列表 **[EasyList China](https://easylist-downloads.adblockplus.org/chinalist+easylist.txt)**（当然，今天4月2日，我这边没有被重定向，而是直接 404）。这是让人无法理解的，唯一的解释就是，商业上的利益了。至于官方博客中解释的浏览器不会出现白板页面以及更好的过滤视频广告，似乎是欺人之谈。且民间组织有2个作者（30分支）在做贡献，而官方只有3人。官方广告过滤列表的时效性完全没法保障。有多少人去 fork 官方维护的列表不清楚，但清楚的是如果向官方 push， 阻力是肯定存在的。
+在[官方声明](https://adblockplus.org/blog/switching-default-blocking-lists-for-chinese-users)中只是公告了停止启用 ChinaList 为默认的中文用户列表，而没有说明重定向已经订阅用户的列表至官方维护列表 **[EasyList China](https://easylist-downloads.adblockplus.org/chinalist+easylist.txt)**（当然，今天4月2日，我这边没有被重定向，而是直接 404，究竟曾今有无重定向不得而知）。这是让人无法理解的，唯一的解释就是，商业上的利益了。至于官方博客中解释的浏览器不会出现白板页面以及更好的过滤视频广告，似乎是欺人之谈。且民间组织有2个作者（30分支）在做贡献，而官方只有3人。官方广告过滤列表的时效性完全没法保障。有多少人去 fork 官方维护的列表不清楚，但清楚的是如果向官方 push， 阻力是肯定存在的。
 
-一句话，Adblock Plus 已经变质。当然作为用户来说，可以去订阅官方列表，用户从来都是被选择的。
+一句话，Adblock Plus 改变配置中的预设列表地址。当然作为用户来说，可以去订阅官方列表，用户从来都是被选择的。
 
 有能力的用户，也可以直接去 fork chinalist。也可以启用 Adblock Plus 的民间分支 [Adblock Edge](https://bitbucket.org/adstomper/adblockedge/)。
