@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "切换 Adblock Plus 的 ChinaList"
+title: "Adblock Plus 官方切换 ChinaList"
 description: "ChinaList 列表维护中止"
 keywords: "adblock, chinalist"
 category: Internet
