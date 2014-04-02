@@ -25,4 +25,4 @@ tags: [Adblock, ChinaList]
 
 一句话，Adblock Plus 已经变质。当然作为用户来说，可以去订阅官方列表，用户从来都是被选择的。
 
-当然，有能力的用户，也可以直接去 fork chinalist。也可以启用 Adblock Plus 的民间分支 [Adblock Edge](https://bitbucket.org/adstomper/adblockedge/)。
+有能力的用户，也可以直接去 fork chinalist。也可以启用 Adblock Plus 的民间分支 [Adblock Edge](https://bitbucket.org/adstomper/adblockedge/)。
