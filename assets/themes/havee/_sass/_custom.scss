@@ -88,19 +88,13 @@ a {
 .col-md-9 {
   .wrapper {
     @include transition;
-    @include border(0.067);
+    @include border(0.167);
     @include border-radius(10px);
-    @include box-shadow(1px, 2px, 4px, 0.067);
+    @include box-shadow(2px, 3px, 4px, 0.167);
     padding: 5px;
     margin: 5px 0px;
     .entry-title {
       border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
-    }
-    &:hover {
-      @include transition;
-      @include background-color;
-      @include border(0.167);
-      @include box-shadow(2px, 3px, 4px, 0.167);
     }
     p img {
       @include img;
@@ -142,7 +136,7 @@ a {
       margin-top: 0px;
     }
   }
-  p {
+  p, ol {
     img {
       @include img;
     }
@@ -154,13 +148,9 @@ a {
   }
   .highlight pre {
     @include transition;
-    @include background-color;
-    &:hover {
-      @include transition;
-      @include background-color(249, 0.9);
-      @include border(0.35);
-      @include box-shadow(1px, 2px, 2px, 0.167);
-    }
+    @include background-color(249, 0.9);
+    @include border(0.35);
+    @include box-shadow(1px, 2px, 2px, 0.167);
     code {
       @include monospace;
     }
@@ -169,20 +159,15 @@ a {
 
 section {
   @include transition;
-  @include border(0.067);
+  @include border(0.167);
   @include border-radius(5px);
-  @include box-shadow(1px, 2px, 3px, 0.067);
+  @include box-shadow(1px, 3px, 4px, 0.167);
+  @include background-color;
   padding: 0px 5px;
   margin: 5px 0px;
   h4 {
     @include serif;
     border-bottom: 1px dashed rgba(0, 0, 0, 0.067);
-  }
-  &:hover {
-    @include transition;
-    @include background-color;
-    @include border(0.167);
-    @include box-shadow(1px, 3px, 4px, 0.167);
   }
 }
 
