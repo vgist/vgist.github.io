@@ -13,7 +13,7 @@ tags: [Github, Domain]
 - User Pages 下，CNAME 是放置在 master 分支下。
 - Project Pages 下，CNAME 是放置在 gh-pages 分支下。
 
-<!-- more -->
 在同时拥有 User Pages、Project Pages 情况下，http://username.github.io/projectname 将不会转向到 Project Pages 中 gh-pages 分支下设置的域名。而会以 User Pages 中 master 分支下设置的域名，加上 `/projectname` 路径来体现
 
-譬如 http://github.com/zhlist/zhlist.github.io 配置域名 zhlist.org，那么 http://github.com/zhlist/project 的访问 URL 则为 http://zhlist.org/project。
+<!-- more -->
+譬如 http://github.com/zhlist/zhlist.github.io 的 master 分支配置域名 zhlist.org，http://github.com/zhlist/project 的 gh-pages 分支同时配置域名 www.zhlist.org，则 http://github.com/zhlist/project 的访问 URL 则为 http://zhlist.org/project。
