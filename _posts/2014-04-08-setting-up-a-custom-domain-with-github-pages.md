@@ -18,8 +18,8 @@ tags: [GitHub, Domain]
 <!-- more -->
 譬如：
 
-- `zhlist/zhlist.github.io` 的 `master` 分支配置域名 `zhlist.org`；
-- `zhlist/project` 的 `gh-pages` 分支同时配置域名 `www.zhlist.org`。
+1. `zhlist/zhlist.github.io` 的 `master` 分支配置域名 `zhlist.org`；
+2. `zhlist/project` 的 `gh-pages` 分支同时配置域名 `www.zhlist.org`。
 
 则 `zhlist/project` 的访问 URL 则为 `//zhlist.org/project`，而不会是 `//www.zhlist.org`。
 
