@@ -17,3 +17,5 @@ tags: [Github, Domain]
 
 <!-- more -->
 譬如 http://github.com/zhlist/zhlist.github.io 的 master 分支配置域名 zhlist.org，http://github.com/zhlist/project 的 gh-pages 分支同时配置域名 www.zhlist.org，则 http://github.com/zhlist/project 的访问 URL 则为 http://zhlist.org/project。
+
+也就是说，在没有 username.github.io 这个 User pages 情况下，你可以为你的 Project Pages 1，Project Pages 2，Project Pages 3...... 配置不同的域名。一旦建立 username.github.io，则其他所有的 Project Pages 只能通过 http://username.github.io/projectname 来访问了。
