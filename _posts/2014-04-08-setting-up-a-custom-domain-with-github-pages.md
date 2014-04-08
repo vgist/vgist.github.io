@@ -8,7 +8,7 @@ tags: [Github, Domain]
 ---
 {% include JB/setup %}
 
-最近为 [zhlist](http://github.com/zhlist/zhlist)的 gh-pages branch 分支配置了个域名。仔细的阅读了[这篇文章](https://help.github.com/articles/setting-up-a-custom-domain-with-pages)，终于搞清了 **User Pages** 与 **Project Pages** 的区别。
+最近为 [zhlist](http://github.com/zhlist/zhlist)的 branch 分支配置了个域名。仔细的阅读了[这篇文章](https://help.github.com/articles/setting-up-a-custom-domain-with-pages)，终于搞清了 **User Pages** 与 **Project Pages** 的区别。
 
 - User Pages 下，CNAME 是放置在 master 分支下。
 - Project Pages 下，CNAME 是放置在 gh-pages 分支下。
