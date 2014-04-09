@@ -39,7 +39,7 @@ gzip_disable        "MSIE [1-6]\.";
 |**gzip_min_length**|int|`gzip_min_length 1k;`|当返回内容大于此值是才开启 Gzip 进行压缩，以 k 为单位，当值设置为 0 时，所有页面都进行压缩。|
 |**gzip_http_version**|1.0/1.1|`gzip_http+version 1.0;`|用于识别 http 协议的版本，早期的浏览器不支持 Gzip 压缩，用户就会看到乱码，所以为了支持前期版本加上了这个选项，**如果你用了 Nginx 的反向代理并期望也启用 Gzip 压缩的话，由于末端通信是 `http/1.0`，故请设置为 `1.0`**。|
 |**gzip_proxied**|off/expired/no-cache/no-store/private/no_last_modified/no_etag/auth/any|`gzip_proxied no-cache;`|详细说明见下表格。|
-|**gzip_types**|mime-type|gzip_type text/html;|设置需要压缩的 MIME 类型，不设置则不进行压缩。|
+|**gzip_types**|mime-type|`gzip_type text/html;`|设置需要压缩的 MIME 类型，不设置则不进行压缩。|
 |**gzip_vary**|on/off|`gzip_vary on;`|加上 http 头信息`Vary: Accept-Encoding`给后端代理服务器识别是否启用 Gzip 压缩。|
 
 表2：gzip_proxied
