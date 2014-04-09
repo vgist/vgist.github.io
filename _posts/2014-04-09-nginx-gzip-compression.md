@@ -42,7 +42,7 @@ gzip_disable        "MSIE [1-6]\.";
 |**gzip_types**|mime-type|`gzip_type text/html;`|设置需要压缩的 MIME 类型，不设置则不进行压缩。|
 |**gzip_vary**|on/off|`gzip_vary on;`|加上 http 头信息`Vary: Accept-Encoding`给后端代理服务器识别是否启用 Gzip 压缩。|
 
-注：以上所有变量都可以在 http {}, server {}, location {}中使用，是否全局开启起决于你的生产环境。
+注：以上所有变量都可以在 `http {}`, `server {}`, `location {}` 中使用，是否全局开启起决于你的生产环境。
 
 <p id=gzip_proxied>表2：gzip_proxied</p>
 
