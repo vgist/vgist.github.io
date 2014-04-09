@@ -56,9 +56,11 @@ gzip_disable        "MSIE [1-6]\.";
 |auth|启用压缩，如果 Header 中包含 `Authorization` 头信息。|
 |any|无条件压缩所有结果数据。|
 
-可以用以下判断服务器 Nginx 是否开启 Gzip 压缩
+可以用以下命令判断服务器 Nginx 是否开启 Gzip 压缩
 
     curl -IL -H "Accept-Encoding: gzip, deflate" "havee.me"
+
+
 
     参考：http://nginx.org/en/docs/http/ngx_http_gzip_module.html
 
