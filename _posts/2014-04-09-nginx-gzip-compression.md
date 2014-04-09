@@ -19,7 +19,8 @@ gzip_buffers        4 8k;
 gzip_http_version   1.0;
 gzip_comp_level     6;
 gzip_proxied        any;
-gzip_types          text/xml text/html text/css text/javascript text/plain application/json application/x-javascript application/xml application/xml+rss;
+gzip_types          text/xml text/html text/css text/javascript text/plain application/json \
+    application/x-javascript application/xml application/xml+rss;
 gzip_vary           on;
 gzip_disable        "MSIE [1-6]\.";
 ```
@@ -31,15 +32,15 @@ gzip_disable        "MSIE [1-6]\.";
 
 |**Variable**|**Parameter**|**Example**|**Details**|
 |:---|:---|:---|:---|
-|**gzip**|on/off|`gzip on;`|决定是否开启 Gzip 模块。|
-|**gzip_buffers**|param1:int/param2:int(k)|`gzip_buffer 4 8k;`|设置 Gzip 申请内存的大小，其作用是按照块大小的倍数来申请内存空间。|
-|**gzip_comp_level**|1-9|`gzip_com_level 6;`|设置 Gzip 压缩等级，等级越低，压缩速度越快，文件压缩比越小；反之速度越慢，文件压缩比越大。|
-|**gzip_desable**|regex ...|`"MSIE [1-6]\.";`|根据 "User-Agent" 头来关闭 Gzip，可用正则表达式。|
-|**gzip_min_length**|int|`gzip_min_length 1k;`|当返回内容大于此值是才开启 Gzip 进行压缩，以 k 为单位，当值设置为 0 时，所有页面都进行压缩。|
-|**gzip_http_version**|1.0/1.1|`gzip_http+version 1.0;`|用于识别 http 协议的版本，早期的浏览器不支持 Gzip 压缩，用户就会看到乱码，所以为了支持前期版本加上了这个选项，**如果你用了 Nginx 的反向代理并期望也启用 Gzip 压缩的话，由于末端通信是 `http/1.0`，故请设置为 `1.0`**。|
-|**gzip_proxied**|off/expired/no-cache/no-store/private/no_last_modified/no_etag/auth/any|`gzip_proxied no-cache;`|详细说明见下表格。|
-|**gzip_types**|mime-type|gzip_type text/html;|设置需要压缩的 MIME 类型，不设置则不进行压缩。|
-|**gzip_vary**|on/off|`gzip_vary on;`|加上 http 头信息`Vary: Accept-Encoding`给后端代理服务器识别是否启用 Gzip 压缩。|
+|`gzip`|on/off|`gzip on;`|决定是否开启 Gzip 模块。|
+|`gzip_buffers`|param1:int/param2:int(k)|`gzip_buffer 4 8k;`|设置 Gzip 申请内存的大小，其作用是按照块大小的倍数来申请内存空间。|
+|`gzip_comp_level`|1-9|`gzip_com_level 6;`|设置 Gzip 压缩等级，等级越低，压缩速度越快，文件压缩比越小；反之速度越慢，文件压缩比越大。|
+|`gzip_desable`|regex ...|`"MSIE [1-6]\.";`|根据 "User-Agent" 头来关闭 Gzip，可用正则表达式。|
+|`gzip_min_length`|int|`gzip_min_length 1k;`|当返回内容大于此值是才开启 Gzip 进行压缩，以 k 为单位，当值设置为 0 时，所有页面都进行压缩。|
+|`gzip_http_version`|1.0/1.1|`gzip_http+version 1.0;`|用于识别 http 协议的版本，早期的浏览器不支持 Gzip 压缩，用户就会看到乱码，所以为了支持前期版本加上了这个选项，**如果你用了 Nginx 的反向代理并期望也启用 Gzip 压缩的话，由于末端通信是 `http/1.0`，故请设置为 `1.0`**。|
+|`gzip_proxied`|off/expired/no-cache/no-store/private/no_last_modified/no_etag/auth/any|`gzip_proxied no-cache;`|详细说明见下表格。|
+|`gzip_types`|mime-type|gzip_type text/html;|设置需要压缩的 MIME 类型，不设置则不进行压缩。|
+|`gzip_vary`|on/off|`gzip_vary on;`|加上 http 头信息`Vary: Accept-Encoding`给后端代理服务器识别是否启用 Gzip 压缩。|
 
 表2：gzip_proxied
 
@@ -54,5 +55,9 @@ gzip_disable        "MSIE [1-6]\.";
 |no_etag|启用压缩，如果 Header 中包含 `ETag` 头信息。|
 |auth|启用压缩，如果 Header 中包含 `Authorization` 头信息。|
 |any|无条件压缩所有结果数据。|
+
+可以用以下判断服务器 Nginx 是否开启 Gzip 压缩
+
+    curl -IL -H "Accept-Encoding: gzip, deflate" "havee.me"
 
     参考：http://nginx.org/en/docs/http/ngx_http_gzip_module.html
