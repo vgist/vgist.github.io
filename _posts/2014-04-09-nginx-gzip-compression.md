@@ -8,7 +8,7 @@ tags: [Nginx]
 ---
 {% include JB/setup %}
 
-折腾无止境，最近重新看了下之前对 [Nginx](http://nginx.org) 中的 Gzip 的配置，很多参数都是不求甚解。今天整理下，作为笔记来记录。
+折腾无止境，最近重新看了下之前对 [Nginx](http://nginx.org) 中的 Gzip 模块的配置，很多参数都是不求甚解。今天整理下，作为笔记来记录。
 
 首先我对 Nginx 中 Gzip 的配置如下：
 
@@ -61,3 +61,5 @@ gzip_disable        "MSIE [1-6]\.";
     curl -IL -H "Accept-Encoding: gzip, deflate" "havee.me"
 
     参考：http://nginx.org/en/docs/http/ngx_http_gzip_module.html
+
+有关其他模块的详细说明：[http://wiki.nginx.org/Modules](http://wiki.nginx.org/Modules)
