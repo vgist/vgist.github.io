@@ -60,6 +60,19 @@ gzip_disable        "MSIE [1-6]\.";
 
     curl -IL -H "Accept-Encoding: gzip, deflate" "havee.me"
 
+如果包含下列字符串则表示 Gzip压缩开启成功
+
+```
+HTTP/1.1 200 OK
+Server: nginx/1.4.5
+Date: Wed, 09 Apr 2014 03:55:06 GMT
+Content-Type: text/html
+Last-Modified: Wed, 09 Apr 2014 03:54:26 GMT
+Connection: keep-alive
+Cache-Control: public
+Content-Encoding: gzip          # 内容压缩
+```
+
 参考：[http://nginx.org/en/docs/http/ngx_http_gzip_module.html](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
 
 有关其他模块的详细说明：[http://wiki.nginx.org/Modules](http://wiki.nginx.org/Modules)
