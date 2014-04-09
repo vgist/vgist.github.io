@@ -19,7 +19,7 @@ gzip_buffers        4 8k;
 gzip_http_version   1.0;
 gzip_comp_level     6;
 gzip_proxied        any;
-gzip_types          text/xml text/html text/css text/javascript text/plain application/json \
+gzip_types          text/xml text/css text/javascript text/plain application/json \
     application/x-javascript application/xml application/xml+rss;
 gzip_vary           on;
 gzip_disable        "MSIE [1-6]\.";
