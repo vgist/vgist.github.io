@@ -30,7 +30,7 @@ gzip_disable        "MSIE [1-6]\.";
 
 表1：Gzip
 
-|**Variable**|**Parameter**|**Example**|**Details**|
+|Variable|Parameter|Example|Details|
 |:---|:---|:---|:---|
 |**gzip**|on/off|`gzip on;`|决定是否开启 Gzip 模块。|
 |**gzip\_buffers**|param1:int/param2:int(k)|`gzip_buffer 4 8k;`|设置 Gzip 申请内存的大小，其作用是按照块大小的倍数来申请内存空间。|
