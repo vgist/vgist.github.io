@@ -60,7 +60,7 @@ tags: [Windows, Gentoo]
 
 好了，下面可以用 Gentoo 的 LiveUSB 工具去安装 Gentoo 了。
 
-其实以上删除分区的步骤完全没必要做，写下步骤只是为了做下记录(diskpart 用法)。完全可以在安装 Gentoo 的过程中格式化它，并通过 `cfdisk` 来将该隐藏分区设为**非活动分区**。
+其实以上删除分区的步骤完全没必要做，完全可以在安装 Gentoo 的过程中格式化它，并通过 `cfdisk` 来将该隐藏分区设为**非活动分区**。
 
 #### 先 Gentoo 后 Windows 8.1
 
