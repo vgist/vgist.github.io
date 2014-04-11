@@ -18,7 +18,7 @@ tags: [Windows, Gentoo]
 <!-- more -->
 #### 先 Windows 8.1，后 Gentoo
 
-首先需要在 Windows 下打开**命令提示符(管理员)**，将启动分区设为 Windows 8.1 所在的分区。
+首先需要在 Windows 下打开`命令提示符(管理员)`，将启动分区设为 Windows 8.1 所在的分区。
 
     C:\Windows\Ststem32>bcdboot.exe C:\Windows /s C:
     已成功创建启动文件
@@ -60,7 +60,7 @@ tags: [Windows, Gentoo]
 
 好了，下面可以用 Gentoo 的 LiveUSB 工具去安装 Gentoo 了。
 
-其实以上删除分区的步骤完全没必要做，完全可以在安装 Gentoo 的过程中格式化它，并通过 `cfdisk` 来将该隐藏分区设为**非活动分区**。
+其实以上删除分区的步骤完全没必要做，完全可以在安装 Gentoo 的过程中格式化它，并通过 `cfdisk` 来将该隐藏分区设为`非活动分区`。
 
 #### 先 Gentoo 后 Windows 8.1
 
