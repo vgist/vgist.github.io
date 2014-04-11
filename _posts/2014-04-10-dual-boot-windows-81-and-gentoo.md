@@ -16,7 +16,7 @@ tags: [Windows, Gentoo]
 - 先安装 Gentoo，其次安装 Windows 8.1
 
 <!-- more -->
-#### 1. 先 Windows 8.1，后 Gentoo
+#### 一、 先 Windows 8.1，后 Gentoo
 
 首先需要在 Windows 下打开`命令提示符(管理员)`，将启动分区设为 Windows 8.1 所在的分区。
 
@@ -62,7 +62,7 @@ tags: [Windows, Gentoo]
 
 其实以上删除分区的步骤完全没必要做，完全可以在安装 Gentoo 的过程中格式化它，并通过 `cfdisk` 来将该隐藏分区设为`非活动分区`。
 
-#### 2. 先 Gentoo 后 Windows 8.1
+#### 二、 先 Gentoo 后 Windows 8.1
 
 单独安装 Gentoo 与 Windows 8.1 的过程就不多说了。安装好 Windows 8.1 之后，需要 Gentoo 的 LiveUSB 去引导，随后格式化隐藏分区
 
