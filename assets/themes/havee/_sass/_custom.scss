@@ -149,7 +149,7 @@ body > nav.navbar-default {
   }
   .highlight pre {
     @include transition;
-    @include background-color(249, 0.9);
+    @include background-color(249, 0.3);
     @include border(0.35);
     @include box-shadow(1px, 2px, 2px, 0.167);
     code {
