@@ -1,8 +1,8 @@
 ---
 layout: post
 title: "Windows 8.1 和 Gentoo 双启动"
-description: ""
-keywords: ""
+description: "记录 Windows 8.1 和 Gentoo 双启动。"
+keywords: "gentoo, windows, diskpart, syslinux"
 category: Linux
 tags: [Windows, Gentoo]
 ---
@@ -18,12 +18,12 @@ tags: [Windows, Gentoo]
 <!-- more -->
 #### 先 Windows 8.1，后 Gentoo
 
-首先需要在 Windows 下打开**命令提示符（管理员）**，将启动分区设为 Windows 8.1 所在的分区。
+首先需要在 Windows 下打开**命令提示符(管理员)**，将启动分区设为 Windows 8.1 所在的分区。
 
     C:\Windows\Ststem32>bcdboot.exe C:\Windows /s C:
     已成功创建启动文件
 
-好了，启动文件转移到 Windows 8.1 所在分区后，重启电脑。接着需要将隐藏分区干掉。`win+r`快捷键，输入**diskpart**回车。
+好了，启动文件转移到 Windows 8.1 所在分区后，重启电脑。接着需要将隐藏分区干掉。`win+r`快捷键，输入`diskpart`回车。
 
 首先输入 `list disk` 列出可用磁盘
 
