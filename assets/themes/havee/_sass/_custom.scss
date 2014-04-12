@@ -40,7 +40,7 @@ a {
 
 body > nav.navbar-default {
   @include background-color(249, 0.8);
-  @include box-shadow(1px, 2px, 3px, 0.3);
+  @include box-shadow(0px, 0px, 4px, 0.6);
 }
 
 .nav > li > form {
@@ -92,7 +92,7 @@ body > nav.navbar-default {
     @include transition;
     @include border(0.167);
     @include border-radius(10px);
-    @include box-shadow(2px, 3px, 4px, 0.167);
+    @include box-shadow(0px, 0px, 4px, 0.267);
     padding: 5px;
     margin: 5px 0px;
     .entry-title {
@@ -144,7 +144,7 @@ body > nav.navbar-default {
     }
     code {
       @include monospace;
-      @include box-shadow(1px, 1px, 1px, 0.067);
+      @include box-shadow(0px, 0px, 1px, 0.167);
       @include border(0.067);
     }
   }
@@ -152,7 +152,7 @@ body > nav.navbar-default {
     @include transition;
     @include background-color(249, 0.3);
     @include border(0.35);
-    @include box-shadow(1px, 2px, 2px, 0.167);
+    @include box-shadow(0px, 0px, 3px, 0.267);
     code {
       @include monospace;
     }
@@ -163,7 +163,7 @@ section {
   @include transition;
   @include border(0.167);
   @include border-radius(5px);
-  @include box-shadow(1px, 3px, 4px, 0.167);
+  @include box-shadow(0px, 0px, 4px, 0.267);
   @include background-color;
   padding: 0px 5px;
   margin: 5px 0px;
@@ -189,7 +189,7 @@ table {
   &:hover {
     @include transition;
     @include border(0.35);
-    @include box-shadow(1px, 2px, 2px, 0.167);
+    @include box-shadow(0px, 0px, 3px, 0.267);
   }
   thead tr th {
     @include border(0.167);
