@@ -3,12 +3,13 @@
 body {
   color: rgba(51, 51, 51, 0.9);
   background: url("../images/bg.png") repeat scroll left top transparent;
-  @include serif;
+  @include sans-serif;
 }
 
 h1, h2, h3, h4, h5, h6 ,b, strong {
   @include text-shadow(255, 2px, 170);
-  @include sans-serif;
+  /*@include sans-serif;*/
+  font-family: "Helvetica Neue", 'Ubuntu', Tahoma, Arial, Helvetica, SimHei, sans-serif;
   small {
     @include text-shadow;
   }
