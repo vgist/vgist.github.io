@@ -6,9 +6,11 @@ body {
   @include sans-serif;
 }
 
-h1, h2, h3, h4, h5, h6 ,b, strong {
+h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 ,b, strong {
   @include text-shadow(255, 2px, 170);
-  @include sans-serif;
+  font-weight: 500;
+  /*@include sans-serif;*/
+  font-family: "Helvetica Neue", 'Ubuntu', Tahoma, Arial, Helvetica, SimHei, sans-serif;
   small {
     @include text-shadow;
   }
@@ -200,7 +202,7 @@ table {
   }
   tbody tr td {
     @include border(0.167);
-    vertical-align: top;
+    vertical-align: middle;
     padding: 8px;
   }
   thead > tr {
