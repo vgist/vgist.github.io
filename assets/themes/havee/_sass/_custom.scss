@@ -202,7 +202,7 @@ table {
   }
   tbody tr td {
     @include border(0.167);
-    vertical-align: top;
+    vertical-align: middle;
     padding: 8px;
   }
   thead > tr {
