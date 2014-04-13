@@ -17,7 +17,7 @@
     /* External links */
     $(document).ready(function() {
         $('a[href]').each(function() {
-            if (this.href.indexOf(window.location.host) == -1) $(this).attr({target: '_blank', title: this.href });
+            if (this.href.indexOf(window.location.host) == -1) $(this).attr({target: '_blank' });
         });
         $('a[href^=#][href!=#]').click(function() {
             var target = document.getElementById(this.hash.slice(1));

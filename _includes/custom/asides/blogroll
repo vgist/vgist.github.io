@@ -3,7 +3,7 @@
         <h4>Blogroll</h4>
         <ul>
           {% for link in site.JB.brlist %}
-          <li><a href="{{ link.url }}" target="_blank" title="{{ link.text }}">{{ link.text }}</a></li>
+          <li><a href="{{ link.url }}" title="{{ link.text }}">{{ link.text }}</a></li>
           {% endfor %}
         </ul>
       </section>
