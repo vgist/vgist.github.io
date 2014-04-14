@@ -19,7 +19,7 @@ tags: [phpMyAdmin]
     - phpMyAdmin 3.0 以及以后的版本，将不支持低于 4.1.2 版本的 MySQL。
 - MySQL 版本高于 4.1.2，phpMyAdmin 低于 3.0的情况下，使用 `./scripts/create_tables_mysql_4_1_2+.sql`。
 
-由于俺非主流了，运行的是 MariaDB 10.0.10，被识别成低于 4.1.2 版本的 MySQL 了，按照说明照做吧。
+由于俺非主流了，运行的是 MariaDB 10.0.10，不清楚 phpMyAdmin 如何识别我的版本，反正有了以上的提示信息，按照说明照做吧。
 
 1. 找到 `./scripts/create_tables.sql` 或 `./examples/create_tables.sql`，通过 phpMyAdmin 或其他方式导入库。
 
