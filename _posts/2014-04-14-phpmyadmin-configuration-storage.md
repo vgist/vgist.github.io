@@ -3,7 +3,7 @@ layout: post
 title: "phpMyAdmin 扩展功能"
 description: "phpMyAdmin "
 keywords: "phpMyAdmin 的额外特性"
-category: Internet
+category: SQL
 tags: [phpMyAdmin]
 ---
 {% include JB/setup %}
