@@ -89,7 +89,7 @@ body > nav.navbar-default {
   margin-top:40px;
 }
 
-.col-md-9 {
+article {
   .wrapper {
     @include transition;
     @include border(0.167);
