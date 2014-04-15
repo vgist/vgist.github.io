@@ -8,19 +8,16 @@ body {
 
 h1, .h1, h2, .h2, h3, .h3, h4, .h4, h5, .h5, h6, .h6 ,b, strong {
   @include text-shadow(255, 2px, 170);
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
   font-weight: 500;
   /*@include sans-serif;*/
   font-family: "Helvetica Neue", 'Ubuntu', Tahoma, Arial, Helvetica, SimHei, sans-serif;
   small {
     @include text-shadow;
-    behavior: url(/assets/themes/havee/css/ie-css3.htc);
   }
 }
 
 h5, h6, strong {
   @include text-shadow;
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
 }
 
 a {
@@ -36,11 +33,9 @@ a {
 .navbar .brand, .navbar .nav > li > a {
   @include transition;
   @include text-shadow(255, 0px, 170);
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
   &:hover, &:focus {
     color: rgb(51, 51, 51);
     @include text-shadow(255, 1px, 170);
-    behavior: url(/assets/themes/havee/css/ie-css3.htc);
     @include transition;
   }
 }
@@ -48,7 +43,6 @@ a {
 body > nav.navbar-default {
   @include background-color(249, 0.8);
   @include box-shadow(0px, 0px, 4px, 0.6);
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
 }
 
 .nav > li > form {
@@ -59,7 +53,6 @@ body > nav.navbar-default {
 
 .container > .navbar-header, .container > .navbar-collapse {
   @include text-shadow(255, 2px, 170);
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
   @include transition;
   margin-right: 0px;
   margin-left: 0px;
@@ -89,7 +82,6 @@ body > nav.navbar-default {
   margin: 2px;
   line-height: 180%;
   border-radius: 3px;
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
   @include background-color(238, 0.9);
 }
 
@@ -103,7 +95,6 @@ body > nav.navbar-default {
     @include border(0.167);
     @include border-radius(10px);
     @include box-shadow(0px, 0px, 4px, 0.267);
-    behavior: url(/assets/themes/havee/css/ie-css3.htc);
     padding: 5px;
     margin: 5px 0px;
     .entry-title {
@@ -157,7 +148,6 @@ body > nav.navbar-default {
       @include monospace;
       @include box-shadow(0px, 0px, 1px, 0.167);
       @include border(0.067);
-      behavior: url(/assets/themes/havee/css/ie-css3.htc);
     }
   }
   .highlight pre {
@@ -165,7 +155,6 @@ body > nav.navbar-default {
     @include background-color(249, 0.3);
     @include border(0.35);
     @include box-shadow(0px, 0px, 3px, 0.267);
-    behavior: url(/assets/themes/havee/css/ie-css3.htc);
     code {
       @include monospace;
     }
@@ -177,7 +166,6 @@ section {
   @include border(0.167);
   @include border-radius(5px);
   @include box-shadow(0px, 0px, 4px, 0.267);
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
   @include background-color;
   padding: 0px 5px;
   margin: 5px 0px;
@@ -200,16 +188,13 @@ table {
   border-collapse: collapse;
   @include transition;
   @include border(0.167);
-  behavior: url(/assets/themes/havee/css/ie-css3.htc);
   &:hover {
     @include transition;
     @include border(0.35);
     @include box-shadow(0px, 0px, 3px, 0.267);
-    behavior: url(/assets/themes/havee/css/ie-css3.htc);
   }
   thead tr th {
     @include border(0.167);
-    behavior: url(/assets/themes/havee/css/ie-css3.htc);
     border-top: 0px none;
     border-bottom-width: 2px;
     vertical-align: bottom;
@@ -217,7 +202,6 @@ table {
   }
   tbody tr td {
     @include border(0.167);
-    behavior: url(/assets/themes/havee/css/ie-css3.htc);
     vertical-align: middle;
     padding: 8px;
   }
