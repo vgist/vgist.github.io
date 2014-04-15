@@ -30,13 +30,6 @@ a {
   }
 }
 
-.nav > li {
-  &:hover, &:focus {
-    @include transition;
-    background-color: rgb(231, 231, 231);
-  }
-}
-
 .navbar .brand, .navbar .nav > li > a {
   @include transition;
   @include text-shadow(255, 0px, 170);
