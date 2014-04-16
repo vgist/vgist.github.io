@@ -3,7 +3,8 @@
     <a class="bds_tsina"></a>
     <a class="bds_tqq"></a>
     <a class="bds_t163"></a>
-    <a class="bds_renren"></a>
+    <a class="bds_qzone"></a>
+    <a class="bds_weixin"></a>
     <span class="bds_more"></span>
   </div>
 {% endif %}
