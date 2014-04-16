@@ -1,5 +1,5 @@
 {% if site.safe and site.JB.sharing.provider == "baidu" and page.path contains '_posts' %}
-<div class="bdsharebuttonbox">
+<div class="bdsharebuttonbox pull-right">
   <a href="#" class="bds_more" data-cmd="more"></a>
   <a title="分享到新浪微博" href="#" class="bds_tsina" data-cmd="tsina"></a>
   <a title="分享到腾讯微博" href="#" class="bds_tqq" data-cmd="tqq"></a>
