@@ -111,6 +111,6 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 遗憾的是，播放蓝光 ISO 就不那么直观了。
 
-于是再推荐个收费的 [Mac Blu-ray Player](http://www.macblurayplayer.com)，这个在 Mac OS X 下，我个人觉得是播放蓝光最强播放器了，没有之一。
+于是再推荐个收费的 [Mac Blu-ray Player](http://www.macblurayplayer.com)，这个在 Mac OS X 下，我个人觉得是最强的蓝光播放器了，没有之一。
 
 ![Mac Blu-ray Player](/assets/images/2014/01/mac-blu-ray-player.png)
