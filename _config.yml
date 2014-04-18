@@ -82,7 +82,7 @@ JB :
         baseURL : 'myserver.tld/piwik' # Piwik installation address (without protocol)
         idsite : '1'                   # the id of the site on Piwik
     baidu :
-        siteid: 707xxxxxxxxxxxxxxxxxxxxx        # 百度统计 js 代码后的字符串
+        siteid: 707c49682d45342c4abaa7f2fbdd23dd        # 百度统计 js 代码后的字符串
 
   # 一键分享
   sharing :
