@@ -121,11 +121,3 @@
 
 })(jQuery);
 
-
-/* web font */
-WebFont.load ({
-    google: {
-                families: ['Ubuntu:400,400italic::latin', 'Cambo::latin', 'PT+Mono::latin']
-            },
-    timeout: 3000 // Set the timeout to two seconds
-});
