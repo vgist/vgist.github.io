@@ -114,3 +114,17 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 于是再推荐个收费的 [Mac Blu-ray Player](http://www.macblurayplayer.com)，这个在 Mac OS X 下，我个人觉得是最强的蓝光播放器了，没有之一。
 
 ![Mac Blu-ray Player](/assets/images/2014/01/mac-blu-ray-player.png)
+
+#### 九. 生僻的快捷键
+
+- Ctrl + a/e：移动至行首/尾
+- Option + right/left：向右/左移动一个单词
+- Fn + up/down：相当于 Page up/down
+- Ctrl + Command + F：全屏，仅支持右上角双箭头的窗口
+
+#### 十.  特殊符号
+
+版权符号：Option + G = ©
+人名币符号：Option + Y = ￥
+商标符号：Option + 2 = ™
+已注册的商标：Option + R = ®
