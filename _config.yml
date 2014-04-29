@@ -65,7 +65,7 @@ JB :
         title : 0
         admin : 0
         length : 12                 # 最新评论显示的长度
-      visitors :                    # 首页侧边栏最新访客，true 或留空为开，false 为关
+      rvisitors :                   # 首页侧边栏最新访客
         num : 12                    # 最新访客数目
         size : 45                   # 最新访客头像的尺寸
 
