@@ -23,7 +23,18 @@ tags: [pip,Python]
 
     pip install package --user
 
-首先配置下常规的 pip 参数
+当然，这样安装的包，不在用户路径变量中，需要 export 下 PATH。编辑 `~/.bash_profile`，最后加入
+
+```bash
+export PYTHONUSERBASE=$HOME/Library/Python/2.7
+if [ -d $HOME/Library/Python/2.7/bin ]; then
+    export PATH=$HOME/Library/Python/2.7/bin:$PATH
+fi
+```
+
+使用之前别忘记 `source ~/.bash_profile`
+
+顺便也配置下常规的 pip 参数
 
     mkdir -p ~/.pip
     touch ~/.pip/pip.conf
@@ -38,15 +49,6 @@ log-file = ~/.pip/pip.log
 
 [install]
 index-url = http://pypi.douban.com/simple
-```
-
-编辑 `~/.bash_profile`，最后加入
-
-```bash
-export PYTHONUSERBASE=$HOME/Library/Python/2.7
-if [ -d $HOME/Library/Python/2.7/bin ]; then
-    export PATH=$HOME/Library/Python/2.7/bin:$PATH
-fi
 ```
 
 最后，将系统的 `site-packages` 路径加进去
