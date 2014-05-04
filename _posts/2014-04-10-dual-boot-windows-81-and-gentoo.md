@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "Windows 8.1 和 Gentoo 双启动"
-description: "记录 Windows 8.1 和 Gentoo 双启动。"
-keywords: "gentoo, windows, diskpart, syslinux"
 category: Linux
 tags: [Windows, Gentoo]
 ---
-{% include JB/setup %}
 
 昨晚折腾了下 Windows 8.1 与 Gentoo 的双系统启动，采用的是 Syslinux，过程中出现一些问题，主要是记录下 Diskpart 的一些用法。
 
@@ -77,4 +74,4 @@ tags: [Windows, Gentoo]
     # chroot /mnt/gentoo /bin/bash
     # env-udate && source /etc/profile
 
-随后按照文章[《使用 Syslinux 替换掉 Grub》](/linux/2013-09/syslinux-instead-of-grub.html)重装下 Syslinux 就完工。
+随后按照文章[《使用 Syslinux 替换掉 Grub》]({% post_url 2013-09-08-syslinux-instead-of-grub %})重装下 Syslinux 就完工。

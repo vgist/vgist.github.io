@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "Gentoo 中打包确定依赖"
-description: "在 Gentoo 中打包时如何确定依赖"
-keywords: "Gentoo, 依赖"
 category: Linux
 tags: [Gentoo, Packager]
 ---
-{% include JB/setup %}
 
 看到 Maxthon 发布了 Linux 版本，Gentoo 同学速度很快，ebuild 已经提交到 Gentoo-zh 中，不过为了验证依赖是否全部满足，临时写了个脚本去验证。
 
@@ -20,7 +17,7 @@ tags: [Gentoo, Packager]
 <!-- more -->
 很简单，当然 `equery b name.so` 是在线查询，有时网络环境不好的时候，需要耗费些时间很长，甚至返回空的查询结果。
 
-```bash
+```sh
 #! /usr/bin/env sh
 #
 # depend.sh

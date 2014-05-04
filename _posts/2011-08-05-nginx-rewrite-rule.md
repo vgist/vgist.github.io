@@ -1,14 +1,11 @@
 ---
 layout: post
 title: "Nginx 伪静态"
-description: "Nginx 伪静态"
-keywords: nginx, rewrite, wordpress, joomla, uchome, 伪静态
 category: Internet
 tags: [Nginx, Rewrite, Wordpress, Joomla, UChome]
 ---
-{% include JB/setup %}
 
-### wordpress
+#### wordpress
 
 ```nginx
 location / {
@@ -16,7 +13,7 @@ location / {
 }
 ```
 
-### joomla
+#### joomla
 
 <!-- more -->
 
@@ -48,7 +45,7 @@ location / {
 }
 ```
 
-### uchome
+#### uchome
 
 ```nginx
 location / {

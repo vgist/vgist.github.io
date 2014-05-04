@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "Jekyll 的配置"
-description: "Jekyll配置方法的官方Wiki文档，希望对大家有帮助。"
-keywords: "jekyll, 配置"
 category: Internet
 tags: [Jekyll, Configuration, Usage]
 ---
-{% include JB/setup %}
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/configuration](https://github.com/mojombo/jekyll/wiki/configuration)
 
@@ -87,4 +84,4 @@ coderat:
 	caderay_css:style
 ```
 
-转自：[【译文】Jekyll的配置](http://zhouyichu.com/%E7%BF%BB%E8%AF%91/2012/11/28/Jekyll-Wiki-Configuration.html)
+转自：[【译文】Jekyll的配置](http://zhouyichu.com/%E7%BF%BB%E8%AF%91/Jekyll-Wiki-Configuration.html)

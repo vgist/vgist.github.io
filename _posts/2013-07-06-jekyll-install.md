@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "Jekyll 的安装"
-description: "Jekyll 安装方法的官方说明，学习的使用 Jekyll 的起点。这篇文章译自 Jekyll 的官方 Wiki，希望能对不熟悉英文的朋友们有所帮助。"
-keywords: "jekyll, 安装, 方法"
 category: Internet
 tags: [Jekyll, Installation]
 ---
-{% include JB/setup %}
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Install](https://github.com/mojombo/jekyll/wiki/Install "Install")
 
@@ -81,7 +78,7 @@ markdown: rdiscount
 
 ### Pygments
 
-如果你希望在你的文章中通过 `highlight` 标签实现代码高亮，你需要安装 [Pygments](http://pygments.org/)。
+如果你希望在你的文章中通过 `highlight` 标签实现代码高亮，你需要安装 [Pygments]({% post_url 2013-08-13-support-pygments-in-jekyll %})。
 
 **在 OS X Leopard 和 Snow Leopard上 :**
 
@@ -141,4 +138,4 @@ sudo yum install python-pygments
 sudo emerge -av dev-python/pygments
 ```
 
-转自：[【译文】Jekyll的安装](http://zhouyichu.com/%E7%BF%BB%E8%AF%91/2012/11/26/Jekyll-Wiki-Install.html)
+转自：[【译文】Jekyll的安装](http://zhouyichu.com/%E7%BF%BB%E8%AF%91/Jekyll-Wiki-Install.html)

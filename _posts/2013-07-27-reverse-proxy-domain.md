@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "域名反向代理"
-description: "，Nginx 的域名反向代理"
-keywords: "域名, 反向, 代理, nginx"
 category: Internet
 tags: [Nginx,Domain]
 ---
-{% include JB/setup %}
 
 最近，忽然又想重新拿起博客域名，想备案了，拿到阿里云上，等待4天左右，拿到备案号。
 

@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "JavaScript 实现域名跳转"
-description: ""
-keywords: "javascript,重定向"
 category: Internet
 tags: [JavaScript]
 ---
-{% include JB/setup %}
 
 偶尔发送个博客链接给朋友时，得到的回复基本都是，网页打不开，或者网页打开很慢。由于本博客是托管在 GitHub 上的，内地访问速度一直是问题。之前尝试过在内地配台 vps 用来反向代理。但是成本太高，用了段时间后放弃，重拾去年的 GitCafe，决定把博客迁移到 GitCafe 上。
 
@@ -28,7 +25,7 @@ havee.me.       60      IN          A       117.79.146.98
 
 JavaScript:
 
-```javascript
+```html
 <script>
   var url = "havee.me";
   var other = "havee.gitcafe.com";
@@ -42,13 +39,13 @@ JavaScript:
 
 测试 JavaScript 时，可以直接使用浏览器的控制台，譬如 Firefox 中 Web开发者中的 web控制台，就可以使用
 
-![Web Console](/assets/images/2014/03/web-console.png)
+![Web Console](//cdn.09hd.com/images/2014/03/web-console.png)
 
-![Javascript](/assets/images/2014/03/javascript.png)
+![Javascript](//cdn.09hd.com/images/2014/03/javascript.png)
 
 打开 Firefox 的web控制台，可以随心所欲的输入测试，更棒的是，还有自动补全，不怕打错
 
-![Completion](/assets/images/2014/03/completion.png)
+![Completion](//cdn.09hd.com/images/2014/03/completion.png)
 
     print(window.location.host);
     "havee.me"

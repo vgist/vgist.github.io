@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "Fontconfig 升级到 2.10.1 后"
-description: "Fontconfig 升级到 2.10.1 后"
-keywords: fontconfig, archlinux
 category: Linux
 tags: [Fontconfig]
 ---
-{% include JB/setup %}
 
 首先，按照 [https://www.archlinux.org/news/fontconfig-2101-update-manual-intervention-required/](https://www.archlinux.org/news/fontconfig-2101-update-manual-intervention-required/) 提示处理，重新创建一些你使用的字体配置的软链接。
 

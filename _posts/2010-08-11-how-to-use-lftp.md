@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "lftp 使用方法"
-description: "lftp 使用方法"
-keywords: "lftp, 使用, 方法"
 category: Linux
 tags: [Lftp, Usage, Configuration, CLI]
 ---
-{% include JB/setup %}
 
 首先，所有的 lftp 终端内的命令，都可以用
 

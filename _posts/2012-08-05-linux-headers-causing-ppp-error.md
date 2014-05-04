@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "linux-headers 升级到 3.5 后 ppp 问题"
-description: "linux-headers 升级到 3.5 后解决 ppp 编译问题"
-keywords: linux, ppp, patch, 补丁
 category: Linux
 tags: [Patch]
 ---
-{% include JB/setup %}
 
 **ppp-2.4.5-r3已经解决该情况**
 

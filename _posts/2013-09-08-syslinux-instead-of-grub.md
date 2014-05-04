@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "使用 Syslinux 替换掉 Grub"
-description: "自从几个前的工作机中用 Syslinux 替换掉 Grub 后，今天也将家用台式机的 Grub 用 Syslinux 替换掉了。"
-keywords: "syslinux, grub"
 category: Linux
 tags: [Grub, Syslinux]
 ---
-{% include JB/setup %}
 
 自从几个月前的工作机的 Grub2 用 Syslinux 替换掉后，今天家用台式机的 Grub2 也替换成 Syslinux 了。主要是因为现在的 Syslinux 配置简单，功能强大，可以引导基于 DOS 的各种工具。
 
@@ -113,17 +110,17 @@ LABEL windows
 
 1. 无法删除 **ldlinux.sys**
 
-  `chattr -i /boot/syslinux/ldlinux.sys; rm /boot/syslinux/ldlinux.sys`
+    `chattr -i /boot/syslinux/ldlinux.sys; rm /boot/syslinux/ldlinux.sys`
 
 2. 启动 Syslinux 出错
 
-  别急，可以按 `tab` 来编辑你的启动命令，按 `ESC` 再回车来启动。
+    别急，可以按 `tab` 来编辑你的启动命令，按 `ESC` 再回车来启动。
 
 3. 测试新内核
 
-  启动到 Syslinux菜单后，按 `tab`，输入：
+    启动到 Syslinux菜单后，按 `tab`，输入：
 
-  `boot: LINUX /boot/3.11.0-gentoo root=/dev/sda3`
+    `boot: LINUX /boot/3.11.0-gentoo root=/dev/sda3`
 
 #### 参考：
 

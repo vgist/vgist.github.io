@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "为 Octopress 添加多说评论系统"
-description: "自带的 `disqus` 自定义选项很少，不能很好的融入到模板中，主要是加载速度实在是缓慢到无法忍受，于是找了个国内的 `duoshuo` 社会化评论插件来使用。"
-keywords: "Octopress, 多说, 添加, 评论, disqus"
 category: Internet
 tags: [Octopress, duoshuo, Disqus]
 ---
-{% include JB/setup %}
 
 自带的 `disqus` 自定义选项很少，不能很好的融入到模板中，主要是加载速度实在是缓慢到无法忍受，于是找了个国内的 `duoshuo` 社会化评论插件来使用。
 
@@ -55,7 +52,7 @@ duoshuo_short_name: yourname
 {% raw %}
 ```html
 <!-- Duoshuo Comment BEGIN -->
-<div class="ds-thread" data-title="{% if site.titlecase %}{{ post.title | titlecase }}{% else %}{{ post.title }}{% endif %}"></div>
+<div class="ds-thread" data-title="{% if site.titlecase %}{{ page.title | titlecase }}{% else %}{{ page.title }}{% endif %}"></div>
 <script type="text/javascript">
   var duoshuoQuery = {short_name:"{{ site.duoshuo_short_name }}"};
   (function() {
@@ -131,7 +128,7 @@ duoshuo_asides_length: 18   # 侧边栏评论截取的长度
 ```
 {% endraw %}
 
-最后，`_confit.yml` 中的 `blog_index_asides` 行或 `page_asides` 行或 `post_asides` 添加
+最后，`_config.yml` 中的 `blog_index_asides` 行或 `page_asides` 行或 `post_asides` 添加
 
     custom/asides/recent_comments.html
 

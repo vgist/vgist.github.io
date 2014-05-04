@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "OS X 的一些技巧汇总"
-description: "刚上手 OS X，习惯正在慢慢培养中，下面记录一些使用过程中的小技巧"
-keywords: "os x, 技巧"
 category: "Mac"
 tags: [Tips]
 ---
-{% include JB/setup %}
 
 刚上手 OS X，习惯正在慢慢培养中，下面记录一些使用过程中的小技巧，不断补充
 
@@ -40,7 +37,7 @@ tags: [Tips]
 
     cp: -X      do not copy extended attributes (eas) or resource forks.
 
-属于处理这个问题，譬如打包，在打包前，请用 `cp -Xr` 拷贝出一份没有扩展属性的文件或目录，然后再 tar 打包处理。
+处理这个问题，譬如打包，在打包前，请用 `cp -Xr` 拷贝出一份没有扩展属性的文件或目录，然后再 tar 打包处理。
 
 另有个命令 `xattr` 也能做到
 
@@ -65,19 +62,21 @@ tags: [Tips]
 
 下载一个 app，[CursorSense](http://plentycom.jp/en/cursorsense/download.php "CursorSense")
 
-![CursorSense](/assets/images/2014/01/CursorSense.png)
+![CursorSense](//cdn.09hd.com/images/2014/01/CursorSense.png)
 
-#### 三. GoAgent
+#### 四. GoAgent
 
 关于 Proxy，有很多开源的解决方案，譬如 Goagent
 
-[OS X 上使用 GoAgent](/mac/2013-12/use-goagent-on-os-x.html)
+- [Homebrew 脚本 GoAgent ]({% post_url 2014-05-23-homebrew-formula-for-goagent %})
+- [OS X 上使用 GoAgent]({% post_url 2013-12-20-use-goagent-on-os-x %})
+- [CentOS 下打包 shadowsocks-libev]({% post_url 2014-08-20-package-shadowsocks-libev-on-centos %})
 
 #### 四. 开源软件
 
-可以通过 [MacPorts](http://www.macports.org)、[HomeBrew](/mac/2013-12/how-to-install-and-use-homebrew.html) 等包管理工具来使用开源软件。
+可以通过 [MacPorts](http://www.macports.org)、[HomeBrew]({% post_url 2013-12-21-how-to-install-and-use-homebrew %}) 等包管理工具来使用开源软件。
 
-譬如[《OS X 上安装 Nginx + PHP-FPM + MariaDB》](/mac/2014-01/install-nginx-php-fpm-mysql-on-os-x.html)
+譬如[《OS X 上安装 Nginx + PHP-FPM + MariaDB》]({% post_url 2014-01-06-install-nginx-php-fpm-mysql-on-os-x %})
 
 #### 五. 重启 Finder
 
@@ -93,34 +92,67 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 #### 七. 刷新 DNS 缓存
 
-针对 OS X 10.6 以及之前
+针对 OS X 10.4、10.5
 
-    sudo dscacheutil -flushcache
+    $ sudo lookupd -flushcache
 
-针对 OS X 10.6 以后
 
-    sudo killall -HUP mDNSResponder
+针对 OS X 10.6
+
+    $ sudo dscacheutil -flushcache
+
+针对 OS X 10.7、10.8、10.9
+
+    $ sudo killall -HUP mDNSResponder
+
+针对 OS X 10.10
+
+    $ sudo dscacheutil -flushcache
 
 #### 八. 视频播放
 
-尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPlayer OSX Extended](http://mplayerosx.ch)。终于找到了点 Mplayer 的感觉了。
+尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后确定以下几款视频播放器
 
-![MPlayer OSX Extended](/assets/images/2014/01/mplayer-osx.png)
+##### 1. [MPV](//mpv.io)
 
-![MPlayer OSX Preferences](/assets/images/2014/01/mplayer-osx-preferences.png)
+原汁原味的 Linux 下 Mplayer 的使用体验，强烈推荐，fork 自 mplayer2 与 Mplayer。
 
-遗憾的是，播放蓝光 ISO 就不那么直观了。
+![MPV screenshot](//cdn.09hd.com/images/2014/01/mpv.png)
 
-于是再推荐个收费的 [Mac Blu-ray Player](http://www.macblurayplayer.com)，这个在 Mac OS X 下，我个人觉得是最强的蓝光播放器了，没有之一。
+##### 2. [MPlayer OSX Extended](//mplayerosx.ch) 
 
-![Mac Blu-ray Player](/assets/images/2014/01/mac-blu-ray-player.png)
+Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时间。
+
+![MPlayer OSX Extended](//cdn.09hd.com/images/2014/01/mplayer-osx.png)
+
+![MPlayer OSX Preferences](//cdn.09hd.com/images/2014/01/mplayer-osx-preferences.png)
+
+##### 3. [MplayerX](//mplayerx.org)
+
+另一个很好的选择。
+
+##### 4. 蓝光播放
+
+###### a. 收费的 [Mac Blu-ray Player](//www.macblurayplayer.com)
+
+![Mac Blu-ray Player](//cdn.09hd.com/images/2014/01/mac-blu-ray-player.png)
+
+###### b. 免费的 [XBMC](//kodi.tv/)
+
+![XBMC](//cdn.09hd.com/images/2014/01/xbmc.png)
 
 #### 九. 生僻的快捷键
 
 - Ctrl + a/e：移动至行首/尾
+- Ctrl + l：清除屏幕
+- Ctrl + u：清除当前行
+- Ctrl + k：清除至当前行尾
+- Ctrl + w：向前删除一个单词
+- Ctrl + y：粘贴用 Ctrl + w/k/u 删除的单词
 - Option + right/left：向右/左移动一个单词
 - Fn + up/down：相当于 Page up/down
-- Ctrl + Command + F：全屏，仅支持右上角双箭头的窗口
+- Ctrl + Command + f：全屏，仅支持右上角双箭头的窗口
+- Ctrl + Command + d：取词翻译
 
 #### 十.  特殊符号
 
@@ -128,3 +160,42 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 - 人名币符号：Option + Y = ￥
 - 商标符号：Option + 2 = ™
 - 已注册的商标：Option + R = ®
+
+#### 十一. 清理右键菜单
+
+用了段时间后，右键菜单就开始臃肿不堪，有时会冒出重复项，打开终端，输入
+
+    $ /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user; killall Finder
+
+#### 十二. app 归类
+
+用了段时间会发现，app目录存在两个地方，一个是用户家目录 `~/Applications`，一个是根目录 `/Applications`。
+
+我的处理是这样的，app store的软件默认就在根目录下的 `/Applications`，自己下载的 app，我则是放到家目录 `~/Applications`，而不会随便放到 `/Applications` 而默认给于 root 权限。
+
+同样，能直接在 app store 安装的就直接安装，其次使用 HomeBrew 去安装病自动 ln 到 `~/Applications` 目录。
+
+#### 十三. 截屏
+
+系统默认的快捷键 Shift + Command + 3/4 截屏会带上阴影，部分人觉得不爽，要去掉阴影。
+
+    $ defaults write com.apple.screencapture disable-shadow -bool true
+    $ killall SystemUIServer
+
+自带的截屏操作可以修改默认存放的位置
+
+    $ defaults write com.apple.screencapture location /your/path
+
+默认的截屏后保存的格式为 png，当然你可以改为其他格式
+
+    $ defaults write com.apple.screencapture type jpg
+    $ defaults write com.apple.screencapture type gif
+    $ defaults write com.apple.screencapture type png
+    $ defaults write com.apple.screencapture type pdf
+
+#### 十四. Mail.app 撰写邮件附件显示
+
+    $ defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes/no
+    $ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true/false
+
+待更新……

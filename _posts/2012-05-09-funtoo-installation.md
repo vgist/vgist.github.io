@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "Funtoo 快速安装"
-description: "Funtoo 快速安装"
-keywords: funtoo, gentoo, daniel robbins
 category: Linux
 tags: [Funtoo, Installation]
 ---
-{% include JB/setup %}
 
 [Funtoo](http://www.funtoo.org)，由 Gentoo 创始人 Daniel Robbins 亲手定制，是 Gentoo 的变种。它提供了以下不同于 Gentoo 的特点和优势：
 

@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "尝试 Fedora 19"
-description: "重做记录，因上月重做系统的时候，[zim][1] 记录的笔记忘记备份而全部遗失。"
-keywords: "fedora, 升级, 清理, LVM"
 category: Linux
 tags: [Fedora, KVM, LVM]
 ---
-{% include JB/setup %}
 
 重做记录，因上月重做系统的时候，[zim][1] 记录的笔记忘记备份而全部遗失。-_-!!
 
@@ -46,6 +43,11 @@ tags: [Fedora, KVM, LVM]
 然后删除，也可以这样一步到位，多执行几次：
 
     # yum remove $(package-cleanup --leaves)
+
+清理一些缓存
+
+    # yum clean packages
+    # yum clean headers
 
 #### LVM 分区调整
 

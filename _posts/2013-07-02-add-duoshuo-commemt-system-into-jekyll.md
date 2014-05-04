@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "为 Jekyll 添加多说评论系统"
-description: "为 Jekyll 添加多说评论系统"
-keywords: jekyll, 添加, 多说, 评论, duoshuo
 category: Internet
 tags: [Jekyll, duoshuo]
 ---
-{% include JB/setup %}
 
 在做以下步骤之前，先去 [duoshuo.com](http://duoshuo.com) 上注册一个帐号，获取 `short_name`
 
@@ -51,7 +48,7 @@ tags: [Jekyll, duoshuo]
 ```html
     <!--多说js加载开始，一个页面只需要加载一次 -->
     <script type="text/javascript">
-      var duoshuoQuery = {short_name:"{{ site.JB.comments.duoshuo.name }}"};
+      var duoshuoQuery = {short_name:"{{ site.JB.comments.duoshuo.short_name }}"};
       (function() {
         var ds = document.createElement('script');
         ds.type = 'text/javascript';ds.async = true;
@@ -93,3 +90,4 @@ OK，完成手工。
 
 - 多说评论似乎升级了系统，无法自动获取到页面文章标题，所以手动在评论页插入 **data-title**。--2013.09.10
 - 首页调用多说评论数的话，需要插入 **data-thread-key**。--2014.04.01
+- 一处笔误：`site.JB.comments.duoshuo.name` -> `site.JB.comments.duoshuo.short_name`，感谢 [shrimp](http://zhouweicsu.github.io) 指出。-- 2014.12.11

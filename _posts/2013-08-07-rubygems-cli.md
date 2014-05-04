@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "RubyGems 常用命令"
-description: "rubygems一些常用命令"
-keywords: "ruby, gem, 命令"
 category: Linux
 tags: [Usage, Ruby, Gem]
 ---
-{% include JB/setup %}
 
 **查看 ruby 版本**
 

@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "迁移博客至 Jekyll"
-description: "Jekyll迁移方法的官方Wiki文档，希望对大家有帮助。"
-keywords: "blog, 博客, 迁移, jekyll"
 category: Internet
 tags: [Jekyll, Usage]
 ---
-{% include JB/setup %}
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Blog-Migrations](https://github.com/mojombo/jekyll/wiki/Blog-Migrations)
 
@@ -151,4 +148,4 @@ $ pip install html2text
 $ ruby -rubygems -e 'require "jekyll/migrators/tumblr"; Jekyll::Tumblr.process("http://www.your_blog_url.com", format="md")'
 ```
 
-转自：[【译文】Jekyll博客迁移](http://zhouyichu.com/%E7%BF%BB%E8%AF%91/2012/11/28/Jekyll-Wiki-Blog-Migrations.html)
+转自：[【译文】Jekyll博客迁移](http://zhouyichu.com/%E7%BF%BB%E8%AF%91/Jekyll-Wiki-Blog-Migrations.html)

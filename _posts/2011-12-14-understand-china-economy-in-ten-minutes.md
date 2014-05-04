@@ -1,12 +1,9 @@
 ---
 layout: post
 title: "十分钟让你懂得中国经济"
-description: "本文在以下几方面阐述中国经济的真相"
-keywords: 经济, 中国, 发展, 贸易, 通涨
 category: Other
 tags: [Essay]
 ---
-{% include JB/setup %}
 
 ——此为转载，特此批注。
 
