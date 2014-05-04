@@ -55,6 +55,11 @@ index-url = http://pypi.douban.com/simple
 
     $ echo '/usr/local/lib/python2.7/site-packages' > ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
 
+安装 `pip`
+
+    $ curl -o https://bootstrap.pypa.io/get-pip.py
+    $ python get-pip.py --user
+
 完工。
 
 参考：
