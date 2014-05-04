@@ -12,7 +12,7 @@ tags: [pip,Python]
 
 说起来很简单，只需跟参数 `--user` 即可，譬如
 
-    'python setup.py install --user'
+    python setup.py install --user
 
 或
 
@@ -30,7 +30,7 @@ tags: [pip,Python]
 
 编辑 `~/.pip/pip.conf`
 
-```conf
+```
 [global]
 default-timeout = 60
 download-cache = ~/.pip/cache
@@ -42,10 +42,12 @@ index-url = http://pypi.douban.com/simple
 
 编辑 `~/.bash_profile`，最后加入
 
-    export PYTHONUSERBASE=$PATH/Library/Python/2.7
-    if [ -d $HOME/Library/Python/2.7/bin ]; then
-        export PATH=$HOME/Library/Python/2.7/bin:$PATH
-    fi
+```bash
+export PYTHONUSERBASE=$HOME/Library/Python/2.7
+if [ -d $HOME/Library/Python/2.7/bin ]; then
+    export PATH=$HOME/Library/Python/2.7/bin:$PATH
+fi
+```
 
 最后，将系统的 `site-packages` 路径加进去
 
@@ -54,5 +56,6 @@ index-url = http://pypi.douban.com/simple
 完工。
 
 参考：
+
 - [https://docs.python.org/2/install/index.html#alternate-installation-the-user-scheme](https://docs.python.org/2/install/index.html#alternate-installation-the-user-scheme)
 - [http://www.pip-installer.org/en/latest/user_guide.html#user-installs](http://www.pip-installer.org/en/latest/user_guide.html#user-installs)
