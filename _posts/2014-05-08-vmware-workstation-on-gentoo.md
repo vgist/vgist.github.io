@@ -62,3 +62,7 @@ Device Drivers  --->
 之前编译内核时，由于 `x11-drivers/radeon-ucode` 早期版本，缺了 `PITCAIRN_mc2.bin`，补上，最后 VMware Workstation 非常顺利，没遇到其他问题。
 
 记录完毕！
+
+#### Update: 2014-05-09
+
+已用 vmware-player 替换 vmware-workstation，个人使用免费。最大的区别是 vmware player 中 guest os 不能多开，不过，本来就是应急的，无所谓了。
