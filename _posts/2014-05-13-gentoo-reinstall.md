@@ -47,12 +47,9 @@ emerge syslog-ng
 rc-update add syslog-ng default
 emerge mlocate
 emerge dhcpcd
-emerge gentoo-sources
 ```
 
-然后就是按照自己的机子配置，正确配置 cpu、主板芯片组、硬盘、网卡驱动即可，保证重启后能内核顺利跑起来网络OK就行，详细的后面再折腾。
-
-最后安装 syslinux
+然后安装 syslinux
 
 ```
 emerge -av syslinux
@@ -83,7 +80,20 @@ LABEL windows
     APPEND hd0 1
 ```
 
-退出后重启电脑。内核包括网络顺利跑起来
+最后安装内核
+
+    emerge gentoo-sources
+    cd /usr/src/linux
+    make menuconfig
+
+然后就是按照自己的机子配置，正确配置 cpu、主板芯片组、硬盘、网卡驱动即可，保证重启后能内核顺利跑起来网络OK就行，详细的后面再折腾。
+
+编译内核，并 cp 到 /boot/目录
+
+    make && make modules_install
+    cp arch/x86_64/boot/bzImage /boot/3.14.3-gentoo
+
+退出后重启电脑。内核包括网络都顺利跑起来。
 
 然后从 github 上托下 world 与 package.use，当然还有 make.conf
 
