@@ -12,9 +12,9 @@ tags: [Grub, Syslinux]
 
 譬如 grub2-mkconfig 的时候，`/boot` 是单独的分区，且忘记挂载了。
 
-譬如 Gentoo 下 `copy` 新内核到 `/boot` 目录的时候，忘记修改配置了，且手快的删除了旧内核。
+譬如 Gentoo 下 copy 新内核到 `/boot` 目录的时候，忘记修改配置了，且手快的删除了旧内核。
 
-更甚者，直接忘记新内核到 `/boot` 下，就兴冲冲的去修改 Grub2 or Syslinux 的配置去了。- -!
+更甚者，直接忘记 copy 新内核到 `/boot` 下，就兴冲冲的去修改 Grub2 or Syslinux 的配置去了。- -!
 
 等等。
 
