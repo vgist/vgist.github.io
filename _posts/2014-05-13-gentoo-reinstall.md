@@ -97,11 +97,11 @@ LABEL windows
 
 然后从 github 上托下 world 与 package.use，当然还有 make.conf
 
-由于我不喜看满屏的跑代码发呆。所以，make.conf 中我特意加入了以下选项
+由于我不喜看满屏的代码发呆。所以，make.conf 中我特意加入了以下选项
 
     EMERGE_DEFAULT_OPTS="--quiet-build=y --keep-going=y --with-bdeps=y"
 
-由于我以前的 make.conf 有 layman 行，注释掉 layman 行，先 `emerge -av layman`，然后再去掉注释符
+我以前的 make.conf 有 layman 行，注释掉 layman 行，先 `emerge -av layman`，然后再去掉注释符
 
 再看了下 /var/lib/portage/world，虽然是一年前的东东，但是还是蛮全的。
 
@@ -111,7 +111,7 @@ emerge -avuDN world
 
 得益于强劲的 i7 与 16GB 内存。2个半小时所有软件全部安装完工。期间有几次 remerge，不管它，完成后再执行几次 `emerge -avuDN world` 直到全部安装完即可。当然一些软件包依赖 kernel 的 .config 中的配置，按照提示去修改即可。
 
-由于我使用的是 awesome，发现 .xinitrc 文件压根不用我们自己写了，现成的
+我使用的是 awesome，发现 .xinitrc 文件压根不用我们自己写了，现成的
 
 ```
 useradd -m -G users havanna
