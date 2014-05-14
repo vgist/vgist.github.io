@@ -29,7 +29,7 @@ chroot /mnt/gentoo /bin/bash
 env-update && . /etc/profile
 emerge --sync
 eselect profile list
-echo "Europe/Brussels" > /etc/timezone
+echo "Asia/Shanghai" > /etc/timezone
 emerge --config sys-libs/timezone-data
 nano -w /etc/locale.gen
 locale-gen
