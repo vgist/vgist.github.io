@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "grub2 或 syslinux 启动失败"
+title: "grub2 或 syslinux 启动失败后"
 description: ""
 keywords: "grub2, syslinux, 失败"
 category: Linux
