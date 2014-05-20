@@ -58,12 +58,6 @@ $ git push
 $ git submodule foreach git pull
 ```
 
-对于submodule 中含 submodule 的情况，则采用递归参数 --recursive
-
-```sh
-$ git submodule foreach --recursive git pull
-```
-
 #### 3. 修改你项目中的 Submodule
 
 如果你恰巧拥有 Submodule 远程 commit 权限，进入你的 Submodule 目录，作些修改，提交
@@ -98,7 +92,7 @@ $ git commit -a -m 'Remove another_project submodule'
 
 #### 5. 示例
 
-clone 一个含 submodule 的分支，其 submodule 下再含 submodule
+clone 一个含 submodule 的分支，其 submodule 下再含 submodule，可以采用递归参数 `--recursive`
 
 ```sh
 $ git clone git@github.com:Ihavee/dotfiles.git
