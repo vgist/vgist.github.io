@@ -128,3 +128,9 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 - 人名币符号：Option + Y = ￥
 - 商标符号：Option + 2 = ™
 - 已注册的商标：Option + R = ®
+
+#### 十一. 清理右键菜单
+
+用了段时间后，邮件菜单就开始臃肿不堪，有时会冒出重复项，打开终端，输入
+
+    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user; killall Finder
