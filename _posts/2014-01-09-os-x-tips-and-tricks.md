@@ -134,3 +134,11 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 用了段时间后，邮件菜单就开始臃肿不堪，有时会冒出重复项，打开终端，输入
 
     /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user; killall Finder
+
+#### 十二. app 归类
+
+用了段时间会发现，app目录存在两个地方，一个是用户家目录 `~/Applications`，一个是根目录 `/Applications`。
+
+我的处理是这样的，app store的软件默认就在根目录下的 `/Applications`，自己下载的 app，我则是放到家目录 `~/Applications`，而不会随便放到 `/Applications` 而默认给于 root 权限。
+
+同样，能直接在 app store 安装的就直接安装，其次尽量找 app 放到 `~/Applications`目录，实在没有的，再使用 HomeBrew 去安装。
