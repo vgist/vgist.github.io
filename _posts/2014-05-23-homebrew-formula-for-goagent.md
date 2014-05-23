@@ -16,6 +16,8 @@ Mac OS X 下的 GoAgentX 不太好用，也比较吃资源。况且一般情况�
     $ brew install goagent
 
 <!-- more -->
+扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-install-and-use-homebrew.html)
+
 安装完成后，按照说明
 
     $ ln -sfv /usr/local/opt/goagent/*.plist ~/Library/LaunchAgents/
@@ -117,5 +119,14 @@ class Goagent < Formula
 end
 
 ```
+
+**注意**：pip 安装 gevent 过程中可能会出现错误提示
+
+
+    clang: error: unknown argument: '-mno-fused-madd' [-Wunused-command-line-argument-hard-error-in-future]
+
+这是 Xcode 5.1 开始，编译器 LLVM 规定对未知参数的传入，视为错误。解决方法是：
+
+    echo "export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future" >> ~/.bashrc
 
 参考：[https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook](https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook)
