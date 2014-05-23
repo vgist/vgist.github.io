@@ -67,11 +67,13 @@ tags: [Tips]
 
 ![CursorSense](/assets/images/2014/01/CursorSense.png)
 
-#### 三. GoAgent
+#### 四. GoAgent
 
 关于 Proxy，有很多开源的解决方案，譬如 Goagent
 
-[OS X 上使用 GoAgent](/mac/2013-12/use-goagent-on-os-x.html)
+- [Homebrew 脚本 GoAgent ](/mac/2014-05/homebrew-formula-for-goagent.html)
+
+- [OS X 上使用 GoAgent](/mac/2013-12/use-goagent-on-os-x.html)
 
 #### 四. 开源软件
 
