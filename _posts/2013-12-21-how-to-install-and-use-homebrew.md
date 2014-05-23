@@ -12,7 +12,9 @@ tags: [Homebrew]
 
     ruby -e "$(curl -fsSL https://raw.github.com/Homebrew/homebrew/go/install)"
 
-好了，安装完毕，Homebrew 的使用方法也很简单：
+好了，安装完毕，Homebrew 的使用方法也很简单。
+
+#### 基本用法
 
 - brew search formula   # 搜索软件包
 - brew install formula  # 安装软件包
@@ -31,7 +33,9 @@ tags: [Homebrew]
 <!-- more -->
 具体的用法可以 `man brew`。
 
-这里主要说下，brew search package 时有时会出现
+#### brew search formula
+
+这里主要说下，brew search formula 时有时会出现
 
     Error: GitHub API rate limit exceeded for ip. See http://developer.github.com/v3/#rate-limiting for details. You may want to create an API token: http://github.com/settings/applications and then set HOMEBREW_GITHUB_API_TOKEN.
 
@@ -50,6 +54,8 @@ fi
 ```
 
 最后再 `. ~/.bash_profile` 更新下你的环境变量。
+
+#### 多版本共存
 
 另外一个，安装不同版本的 formula 的技巧，比方要安装不同版本的 htop
 
@@ -104,3 +110,8 @@ Uninstalling /usr/local/Cellar/htop-osx/0.8.2.1...
 ```
 
 其实就是 Homebrew 对 git 分支的灵活应用。
+
+#### 删除 formula 时删除依赖
+
+    $ brew remove formula
+    $ brew rm $(join <(brew leaves) <(brew deps formula))
