@@ -16,7 +16,7 @@ Mac OS X 下的 GoAgentX 不太好用，也比较吃资源。况且一般情况�
     $ brew install goagent
 
 <!-- more -->
-扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-install-and-use-homebrew.html)
+Homebrew 扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-install-and-use-homebrew.html)
 
 安装完成后，按照说明
 
@@ -129,6 +129,6 @@ end
 
     echo "export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future" >> ~/.bashrc
 
-[OS X 上的 pip 使用 User Installs](/mac/2014-05/individual-scheme-for-pip.html)
+pip 扩展阅读：[OS X 上的 pip 使用 User Installs](/mac/2014-05/individual-scheme-for-pip.html)
 
 参考：[https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook](https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook)
