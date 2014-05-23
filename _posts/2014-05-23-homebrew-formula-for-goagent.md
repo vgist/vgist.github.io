@@ -129,4 +129,6 @@ end
 
     echo "export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future" >> ~/.bashrc
 
+[OS X 上的 pip 使用 User Installs](/mac/2014-05/individual-scheme-for-pip.html)
+
 参考：[https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook](https://github.com/Homebrew/homebrew/wiki/Formula-Cookbook)
