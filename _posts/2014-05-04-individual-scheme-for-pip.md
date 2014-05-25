@@ -57,7 +57,7 @@ index-url = http://pypi.douban.com/simple
 
 安装 `pip`
 
-    $ curl -o https://bootstrap.pypa.io/get-pip.py
+    $ curl -O https://bootstrap.pypa.io/get-pip.py
     $ python get-pip.py --user
 
 随后你就可以随意的通过 pip 来安装了
