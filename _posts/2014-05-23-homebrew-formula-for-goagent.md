@@ -85,7 +85,7 @@ class Goagent < Formula
     edit:
         vim #{etcfile}
 
-    if you want to [dns].enable = 1, you need install pip, and then run:
+    if you want [dns].enable = 1, you need install pip, and then run:
         pip install dnslib
         pip install gevent
     EOS
