@@ -51,7 +51,7 @@ log-file = ~/.pip/pip.log
 index-url = http://pypi.douban.com/simple
 ```
 
-最后，将系统的 `site-packages` 路径加进去
+如果你通过 homebrew 安装的 python，记得将 homebrew 下的 `site-packages` 路径加进去
 
     $ echo '/usr/local/lib/python2.7/site-packages' > ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
 
