@@ -12,12 +12,12 @@
   font-family: "PT Mono", "Bitstream Vera Sans Mono", "Lucida Console", Terminal, monospace;
 }
 
-@mixin transition($a: 0.3s) {
+@mixin transition($a: .3s) {
   transition: all $a;
 }
 
 @mixin text-shadow($a: 255, $b: 1px, $c: 170) {
-  text-shadow: 0px 1px 0px rgb($a, $a, $a), 0px 1px $b rgba($c, $c, $c, 0.8);
+  text-shadow: 0 1px 0 rgb($a, $a, $a), 0 1px $b rgba($c, $c, $c, .8);
 }
 
 @mixin box-shadow($a, $b, $c, $d) {
@@ -32,19 +32,19 @@
   border-radius: $a;
 }
 
-@mixin background-color($a: 249, $b: 0.5) {
+@mixin background-color($a: 249, $b: .5) {
   background-color: rgba($a, $a, $a, $b);
 }
 
 @mixin img {
   max-width: 100%;
-  margin: 0px auto;
+  margin: 0 auto;
   display: block;
   border-radius: 6px;
   padding: 4px;
   line-height: 1.429;
   @include background-color;
   @include border(0.2);
-  @include box-shadow(1px, 2px, 4px, 0.8);
+  @include box-shadow(1px, 2px, 4px, .8);
   @include transition;
 }
