@@ -39,9 +39,9 @@ require "formula"
 
 class Goagent < Formula
   homepage "https://code.google.com/p/goagent"
-  url "https://github.com/goagent/goagent/archive/v3.1.12.tar.gz"
+  url "https://github.com/goagent/goagent/archive/v3.1.14.tar.gz"
   head "https://github.com/goagent/goagent.git", :branch => "3.0"
-  sha1 "9fc10c58b92c77014f8d6586fb9376b0038798d6"
+  sha1 "e40d9611127ee4f50a9994ec50f152a8c449c108"
 
   option "upload", "install upload scripts"
   depends_on :python2
@@ -62,10 +62,14 @@ class Goagent < Formula
     end
 
     unless etcfile.exist?
-      etcfile.write <<-EOS.undent
+      etcfile.write
+      <<-EOS.undent
       [gae]
       appid = id
       password = password
+      regions = cn|jp
+      keepalive = 1
+      sslversion = SSLv23
 
       [dns]
       enable = 0
@@ -84,6 +88,7 @@ class Goagent < Formula
     <<-EOS.undent
     edit:
         vim #{etcfile}
+        ln -sfv /usr/local/opt/goagent/*.plist ~/Library/LaunchAgents
 
     if you want [dns].enable = 1, you need install pip, and then run:
         pip install dnslib
@@ -112,6 +117,10 @@ class Goagent < Formula
             </array>
             <key>ServiceDescription</key>
             <string>GoAgent Local Service</string>
+            <key>StandardOutPath</key>
+            <string>#{var}/log/goagent.log</string>
+            <key>StandardErrorPath</key>
+            <string>#{var}/log/goagent.log</string>
         </dict>
     </plist>
     EOS
