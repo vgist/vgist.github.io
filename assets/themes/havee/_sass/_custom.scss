@@ -202,7 +202,7 @@ section {
   @include transition;
   @include border(.167);
   @include border-radius(5px);
-  @include box-shadow(0, 0, 4, .267);
+  @include box-shadow(0, 0, 4px, .267);
   @include background-color;
   padding: 0 5px;
   margin: 5px 0;
