@@ -49,6 +49,24 @@ class Goagent < Formula
   head "https://github.com/goagent/goagent.git", :branch => "3.0"
   sha1 "778ab89a67b50d39a9983dd3592b9810f74b9716"
 
+  resource "dnslib" do
+    url "https://pypi.python.org/packages/source/d/dnslib/dnslib-0.9.0.tar.gz"
+    sha1 "245bad6ea99bde2614f4e520fce6ead9e5d99f67"
+  end
+  resource "gevent" do
+    url "https://pypi.python.org/packages/source/g/gevent/gevent-1.0.1.tar.gz"
+    sha1 "2cc1b6e1fa29b30ea881fa6a195e57faaf089ae8"
+  end
+  resource "pygeoip" do
+    url "https://pypi.python.org/packages/source/p/pygeoip/pygeoip-0.3.1.tar.gz"
+    sha1 "474dabb559d1c631a18f01b5e0a042b6f7c74dbe"
+  end
+  resource "pyOpenSSL" do
+    url "https://pypi.python.org/packages/source/p/pyOpenSSL/pyOpenSSL-0.9.tar.gz"
+    sha1 "d39eeb26c73e4b96804e1e403e2136062910b6c2"
+  end
+
+
   option "upload", "install upload scripts"
   depends_on :python2
 
@@ -61,11 +79,25 @@ class Goagent < Formula
   end
 
   def install
+    install_args = [ "setup.py", "install", "--prefix=#{HOMEBREW_PREFIX}" ]
+    res = %w[dnslib gevent pygeoip pyOpenSSL]
+    res.each do |r|
+      resource(r).stage { system "python", *install_args }
+    end
+
     if build.with? "upload"
       prefix.install Dir["local" "server"]
     else
       prefix.install Dir["local"]
     end
+
+    # remove some bin file
+    rm Dir["#{prefix}/local/*.exe"]
+    rm Dir["#{prefix}/local/*.egg"]
+    rm Dir["#{prefix}/local/*.bat"]
+    rm Dir["#{prefix}/local/*.dll"]
+    rm Dir["#{prefix}/local/*.command"]
+    rm Dir["#{prefix}/local/*.manifest"]
 
     unless etcfile.exist?
       etcfile.write
@@ -103,9 +135,6 @@ class Goagent < Formula
     install CA.crt:
         sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "#{opt_prefix}/local/CA.crt"
 
-    if you want [dns].enable = 1, you need install pip, and then run:
-        pip install dnslib
-        pip install gevent
     EOS
   end
 
@@ -140,9 +169,10 @@ class Goagent < Formula
   end
 end
 
+
 ```
 
-**注意**：pip 安装 gevent 过程中可能会出现错误提示
+**注意**：安装 gevent 过程中可能会出现错误提示
 
 
     clang: error: unknown argument: '-mno-fused-madd' [-Wunused-command-line-argument-hard-error-in-future]
