@@ -32,6 +32,12 @@ Homebrew 扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-instal
     $ echo "alias goagent.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
     $ echo "alias goagent.restart='goagent.stop && goagent.start'" >> ~/.bashrc
 
+使用时就可以方便的使用命令行
+
+	$ goagent.start
+	$ goagent.stop
+	$ goagent.restart
+
 源码地址：[https://github.com/Ihavee/homebrew-havee](https://github.com/Ihavee/homebrew-havee)。
 
 ```ruby
@@ -39,9 +45,9 @@ require "formula"
 
 class Goagent < Formula
   homepage "https://code.google.com/p/goagent"
-  url "https://github.com/goagent/goagent/archive/v3.1.14.tar.gz"
+  url "https://github.com/goagent/goagent/archive/v3.1.16.tar.gz"
   head "https://github.com/goagent/goagent.git", :branch => "3.0"
-  sha1 "e40d9611127ee4f50a9994ec50f152a8c449c108"
+  sha1 "778ab89a67b50d39a9983dd3592b9810f74b9716"
 
   option "upload", "install upload scripts"
   depends_on :python2
@@ -78,6 +84,10 @@ class Goagent < Formula
       [pac]
       enable = 0
       listen = 127.0.0.1:8054
+
+      [iplist]
+      google_cn = 203.208.46.200|203.208.46.201|203.208.46.206|203.208.46.208|203.208.46.209|203.208.46.210|203.208.46.211|203.208.46.212|203.208.46.215
+      google_hk = 203.66.124.216|203.66.124.217|203.66.124.221|203.66.124.222|203.66.124.226|203.66.124.227|203.66.124.231|203.66.124.232|203.66.124.236|203.66.124.237|203.66.124.241|203.66.124.242|203.66.124.246|203.66.124.247
       EOS
     end
 
@@ -88,7 +98,10 @@ class Goagent < Formula
     <<-EOS.undent
     edit:
         vim #{etcfile}
-        ln -sfv /usr/local/opt/goagent/*.plist ~/Library/LaunchAgents
+        ln -sfv #{opt_prefix}/*.plist ~/Library/LaunchAgents
+
+    install CA.crt:
+        sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "#{opt_prefix}/local/CA.crt"
 
     if you want [dns].enable = 1, you need install pip, and then run:
         pip install dnslib
