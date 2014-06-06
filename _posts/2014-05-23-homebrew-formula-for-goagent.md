@@ -34,9 +34,13 @@ Homebrew 扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-instal
 
 使用时就可以方便的使用命令行
 
-	$ goagent.start
-	$ goagent.stop
-	$ goagent.restart
+    $ goagent.start
+    $ goagent.stop
+    $ goagent.restart
+
+最后设下 Homebrew 安装的 Python 模块路径变量
+
+    $ echo '/usr/local/lib/python2.7/site-packages' > ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
 
 源码地址：[https://github.com/Ihavee/homebrew-havee](https://github.com/Ihavee/homebrew-havee)。
 
