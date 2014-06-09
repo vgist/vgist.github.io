@@ -38,11 +38,21 @@ Homebrew 扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-instal
     $ goagent.stop
     $ goagent.restart
 
+Safari 以及 google chrome 用户，请直接输入以下命令安装证书
+
+    sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/usr/local/opt/goagent/local/CA.crt"
+
+Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
+
+    首选项 —— 高级 —— 证书 —— 查看证书 —— 证书机构 —— 导入
+
 最后设下 Homebrew 安装的 Python 模块路径变量
 
     $ echo '/usr/local/lib/python2.7/site-packages' > ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
 
 源码地址：[https://github.com/Ihavee/homebrew-havee](https://github.com/Ihavee/homebrew-havee)。
+
+
 
 **注意**：安装过程中可能会出现错误提示
 
