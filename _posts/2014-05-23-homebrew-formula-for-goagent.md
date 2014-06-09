@@ -50,7 +50,7 @@ Homebrew 扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-instal
 
 这是 Xcode 5.1 开始，编译器 LLVM 规定对未知参数的传入，视为错误。解决方法是：
 
-    echo "export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future" >> ~/.bashrc
+    $ echo "export ARCHFLAGS=-Wno-error=unused-command-line-argument-hard-error-in-future" >> ~/.bashrc
 
 pip 扩展阅读：[OS X 上的 pip 使用 User Installs](/mac/2014-05/individual-scheme-for-pip.html)
 
