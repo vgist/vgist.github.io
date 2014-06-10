@@ -15,7 +15,7 @@ tags: [Grub, Syslinux, Windows]
 <!-- more -->
 放狗搜，不停的切换关键字，终于在一个社区找到了解决方案。
 
->You are getting INACCESSIBLE_BOOT_DEVICE when BFSVC AI tries to access the System Partition (the one with bootmgr). Using diskmgmt.msc, verify that the System Partition is marked Active.
+>You are getting INACCESSIBLE\_BOOT\_DEVICE when BFSVC AI tries to access the System Partition (the one with bootmgr). Using diskmgmt.msc, verify that the System Partition is marked Active.
 
 Grub2 用户非常简单简单，配置加一行让系统认为 Windows 8.1 分区是 bootable 分区
 
