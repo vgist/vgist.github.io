@@ -38,7 +38,7 @@ menuentry "Microsoft Windows 8.1" {
 
     sudo cfdisk /dev/sda
 
-将 windows 所在分区设为 boot，重启，装补丁 KB2965065，顺利安装完成。
+将 windows 所在分区设为 bootable，重启，装补丁 KB2965065，顺利安装完成。
 
 最后，用 Gentoo 的 liveusb 启动机子，重新将 Linux 的 /boot 所在目录设为 bootable。
 
