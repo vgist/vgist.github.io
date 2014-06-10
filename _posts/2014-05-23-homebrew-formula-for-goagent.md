@@ -40,7 +40,7 @@ Homebrew 扩展阅读：[Homebrew 的安装与使用](/mac/2013-12/how-to-instal
 
 Safari 以及 google chrome 用户，请直接输入以下命令安装证书
 
-    sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/usr/local/opt/goagent/local/CA.crt"
+    $ sudo security add-trusted-cert -d -r trustRoot -k "/Library/Keychains/System.keychain" "/usr/local/opt/goagent/local/CA.crt"
 
 Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
 
