@@ -4,7 +4,7 @@ title: "在 Windows 8 & Linux 双系统上无法安装微软补丁 KB2965065"
 description: "问题拖了将近一个月，一直无解，查看 Windows 8 的日志，说是启动分区错误导致补丁安装失败，该补丁貌似就是针对 boot 的更新，这让 Linux & Windows 双系统的用户咋搞？ "
 keywords: "windows, kb2965065, linux"
 category: Linux
-tags: [grub, syslinux]
+tags: [Grub, Syslinux, Windows]
 ---
 {% include JB/setup %}
 
