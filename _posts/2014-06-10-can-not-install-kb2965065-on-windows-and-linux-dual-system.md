@@ -48,6 +48,8 @@ menuentry "Microsoft Windows 8.1" {
 
 最后，用 Gentoo 的 liveusb 启动机子，重新将 Linux 的 /boot 目录所在分区设为 bootable。
 
+对了，另一个补丁，KB2962409 也如此处理，都对 boot 有更新。
+
 参考：[http://www.eightforums.com/windows-updates-activation/46487-can-t-install-kb2965065-2.html](http://www.eightforums.com/windows-updates-activation/46487-can-t-install-kb2965065-2.html)
 
 顺便说下，用 syslinux 引导 clover 黑苹果，也很简单。
