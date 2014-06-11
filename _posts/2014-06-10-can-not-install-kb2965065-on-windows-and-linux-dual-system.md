@@ -32,7 +32,13 @@ menuentry "Microsoft Windows 8.1" {
 }
 ```
 
-而我使用 Syslinux，不幸的是没有相关解决方案，翻篇了 syslinux 的 [wiki](http://www.syslinux.org/wiki/index.php/Comboot/chain.c32) 也没有相关的说明。
+然后重新生成下 Grub2 配置文件
+
+    # grub2-mkconfig -o /boot/grub2/grub.cfg
+
+而我使用 Syslinux，不幸的是没有相关解决方案，翻篇了 Syslinux 的 [wiki](http://www.syslinux.org/wiki/index.php/Comboot/chain.c32) 也没有相关的说明。
+
+>An alternate MBR which Syslinux provides is: altmbr.bin. This MBR does not scan for bootable partitions; instead, the last byte of the MBR is set to a value indicating which partition to boot from.
 
 实在是没辙了，只能使用笨办法：
 
@@ -40,7 +46,7 @@ menuentry "Microsoft Windows 8.1" {
 
 将 windows 所在分区设为 bootable，重启，装补丁 KB2965065，顺利安装完成。
 
-最后，用 Gentoo 的 liveusb 启动机子，重新将 Linux 的 /boot 所在目录设为 bootable。
+最后，用 Gentoo 的 liveusb 启动机子，重新将 Linux 的 /boot 目录所在分区设为 bootable。
 
 参考：[http://www.eightforums.com/windows-updates-activation/46487-can-t-install-kb2965065-2.html](http://www.eightforums.com/windows-updates-activation/46487-can-t-install-kb2965065-2.html)
 
