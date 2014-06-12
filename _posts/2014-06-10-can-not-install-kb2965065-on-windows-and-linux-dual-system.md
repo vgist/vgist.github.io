@@ -2,7 +2,7 @@
 layout: post
 title: "在 Windows 8 & Linux 双系统上无法安装微软补丁 KB2965065"
 description: "问题拖了将近一个月，一直无解，查看 Windows 8 的日志，说是启动分区错误导致补丁安装失败，该补丁貌似就是针对 boot 的更新，这让干掉了 Windows 隐藏分区的 Linux & Windows 双系统的用户咋搞？况且我还是三系统。"
-keywords: "windows, kb2965065, linux"
+keywords: "windows, kb2965065， linux"
 category: Linux
 tags: [Grub, Syslinux, Windows]
 ---
@@ -47,6 +47,8 @@ menuentry "Microsoft Windows 8.1" {
 将 windows 所在分区设为 bootable，重启，装补丁 KB2965065，顺利安装完成。
 
 最后，用 Gentoo 的 liveusb 启动机子，重新将 Linux 的 /boot 目录所在分区设为 bootable。
+
+如果你也是 Linux & Windows 双系统，且同时也遇到了个别补丁安装失败的情况，那么你可以尝试按本文说的操作下。
 
 参考：[http://www.eightforums.com/windows-updates-activation/46487-can-t-install-kb2965065-2.html](http://www.eightforums.com/windows-updates-activation/46487-can-t-install-kb2965065-2.html)
 
