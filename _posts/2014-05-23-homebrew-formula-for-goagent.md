@@ -50,6 +50,10 @@ Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
 
     $ echo '/usr/local/lib/python2.7/site-packages' > ~/Library/Python/2.7/lib/python/site-packages/homebrew.pth
 
+查看 log 可以
+
+    $ tail -f /usr/local/var/log/goagent.log
+
 源码地址：[https://github.com/Ihavee/homebrew-havee](https://github.com/Ihavee/homebrew-havee)。
 
 
