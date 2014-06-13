@@ -62,6 +62,8 @@ Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
 
     $ tail -f /usr/local/var/log/goagent.log
 
+![GoAgent Log](/assets/images/2014/05/goagent-log.png)
+
 源码地址：[https://github.com/Ihavee/homebrew-havee](https://github.com/Ihavee/homebrew-havee)。
 
 
