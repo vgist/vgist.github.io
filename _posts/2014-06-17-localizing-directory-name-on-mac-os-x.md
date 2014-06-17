@@ -12,7 +12,7 @@ tags: [Localized]
 
 实际上 OS X 本身就内建了多语言结构，有两个地方可以去自定义
 
-譬如 创建个英文目录 **Virtual Machines**, 想以中文 **虚拟机** 来显示。
+譬如创建个英文目录 "Virtual Machines", 想以中文 "虚拟机" 来显示。
 
 <!-- more -->
 #### 一. 系统级
