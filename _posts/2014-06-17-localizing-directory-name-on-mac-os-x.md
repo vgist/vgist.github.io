@@ -65,4 +65,4 @@ tags: [Localized]
 
 参考：[https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPInternational/Articles/LocalizingPathnames.html](https://developer.apple.com/library/mac/documentation/MacOSX/Conceptual/BPInternational/Articles/LocalizingPathnames.html)
 
-参考文章介绍了汉化 OS X 的一些基础只是点，对自行汉化非常有帮助。
+参考文章介绍了汉化 OS X 的一些基础知识点，对汉化 OS X 的 app 非常有帮助。
