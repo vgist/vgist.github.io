@@ -39,6 +39,8 @@ tags: [Localized]
 
     "Virtual Machines" = "虚拟机";
 
+随后，在 `Virtual Machines` 目录下创建空文件 `.localized`。
+
 最后 `killall Finder` 即可生效
 
 #### 二. 用户级
