@@ -41,7 +41,7 @@ tags: [Localized]
 
 随后，在 `Virtual Machines` 目录下创建空文件 `.localized`，告诉 OS X 该目录是 localizing 目录。
 
-最后 `killall Finder` 即可生效
+最后 `killall Finder` 即可生效。
 
 #### 二. 用户级
 
