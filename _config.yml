@@ -102,9 +102,9 @@ JB :
       #css : //libs.useso.com/js/font-awesome/4.1.0/css/font-awesome.min.css
     bootstrap :
       #js : //cdn.bootcss.com/twitter-bootstrap/3.1.1/js/bootstrap.min.js
-      #css : //cdn.bootcss.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css
+      css : //cdn.bootcss.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css
       js : //libs.useso.com/js/bootstrap/3.1.1/js/bootstrap.min.js
-      css : //libs.useso.com/js/bootstrap/3.1.1/css/bootstrap.min.css
+      #css : //libs.useso.com/js/bootstrap/3.1.1/css/bootstrap.min.css
     fancybox :
       #js : //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.js
       #css : //cdn.bootcss.com/fancybox/2.1.5/jquery.fancybox.min.css
