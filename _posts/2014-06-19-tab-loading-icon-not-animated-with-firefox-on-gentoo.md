@@ -25,7 +25,7 @@ Archlinux 的 bug report 上是在 userChrome.css 中替换个 png 图片，我�
 
 修改好后，tab 上的 loading.png 终于开始转圈了。
 
-顺便给出一个当行显示地址栏下拉的风格，一直觉得地址栏双行显示比较吃资源。
+顺便给出一个当前地址栏下拉的显示风格，一直觉得地址栏双行显示比较吃资源。
 
 ```css
 /* the old urlbar stylish */
