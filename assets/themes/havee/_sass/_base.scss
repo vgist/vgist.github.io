@@ -43,8 +43,8 @@
   border-radius: 6px;
   padding: 4px;
   line-height: 1.429;
-  @include background-color;
-  @include border(0.2);
-  @include box-shadow(1px, 2px, 4px, .8);
-  @include transition;
+  /*@include background-color;*/
+  /*@include border(0.2);*/
+  /*@include box-shadow(1px, 2px, 4px, .8);*/
+  /*@include transition;*/
 }
