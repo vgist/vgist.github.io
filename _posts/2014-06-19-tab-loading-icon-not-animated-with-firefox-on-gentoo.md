@@ -25,13 +25,13 @@ Archlinux 的 bug report 上的解决方案是在 userChrome.css 中替换个 lo
 
 修改好后，tab 上的 loading.png 终于开始转圈了。
 
-顺便给出一个当前地址栏下拉的当行显示风格，一直觉得地址栏双行显示比较吃资源。
+顺便给出一个地址栏下拉的单行显示风格，一直觉得地址栏双行显示比较吃资源。
 
 ```css
 /* the old urlbar stylish */
 #PopupAutoCompleteRichResult {
--moz-binding: url(chrome://browser/content/urlbarBindings.xml#browser-autocomplete-result-popup) !important;
-    }
+  -moz-binding: url(chrome://browser/content/urlbarBindings.xml#browser-autocomplete-result-popup) !important;
+}
 ```
 
 参考：[https://bugs.archlinux.org/task/37576](https://bugs.archlinux.org/task/37576)
