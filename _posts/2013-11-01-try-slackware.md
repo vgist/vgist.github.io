@@ -87,7 +87,7 @@ edit `/etc/slackpkg/slackpkg.conf`
 
 #### prompt:
 
-配置自己常用的 prompt
+配置自己常用的 prompt，单独拿出来说，主要是 Slackware 默认的 git 居然不包含 git-promt.sh。需要单独下载并 source 它
 
     wget https://raw.github.com/git/git/master/conrtib/completion/git-promt.sh -O .bash_git
     echo ". ~/.bash_git" >> ~/.bashrc
@@ -96,6 +96,8 @@ edit `~/.bashrc`
 
     export GIT_PS_SHOWDIRTYSTATE=1
     export PS1='\[\e[1;36m\]→\[\e[m\] \[\e[0;32m\]\w\[\e[0;35m\]$(__git_ps1)\[\e[1;32m\] \$\[\e[m\] '
+
+最后 `source ~/.bashrc` 即可
 
 PS：最近弃用海外邮箱，转用163、qq邮箱，再也受不了那鸟速度，放着现成的资源不用，非要去折腾去彰显自己的自由意识？哥过了那年纪了。至于安全问题，这是社会化工程问题，有安全意识更重要。
 
