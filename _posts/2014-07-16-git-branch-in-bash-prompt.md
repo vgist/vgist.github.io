@@ -26,7 +26,7 @@ if [ -f $(xcode-select -p)/usr/share/git-core/git-completion.bash ]; then
 fi
 ```
 
-最后，`~/.bashrc` 中去组织你的 PS1，譬如我的
+最后，`~/.bashrc` 中去组织你的 PS1，在适当的地方添加上$(__git_ps1)，譬如我的
 
 ```sh
 if [ `id -u` -ne 500 ]; then
