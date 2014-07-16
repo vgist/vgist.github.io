@@ -58,7 +58,4 @@ curl -o ~/.git-prompt.sh \
 
 在一些发行版中的 screen 下可能会提示 `-bash: __git_ps1: command not found`。
 
-这是因为 bash 需要运行在 login 模式下，可以在 `~/.screenrc` 中配置如下一行即可：
-
-    shell -bash
-
+这是因为在 screen 下， `$(__git_ps1)` 需要 bash 运行，可以在 `~/.screenrc` 中配置如下一行  `shell -bash` 即可。
