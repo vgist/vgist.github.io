@@ -1,10 +1,10 @@
 ---
 layout: post
 title: "让 Bash Prompt 显示 Git Branch"
-description: ""
-keywords: ""
-category: 
-tags: []
+description: "配置 bash prompt 显示 git branch"
+keywords: "bash, prompt, git, branch"
+category: Linux
+tags: [Git, CLI]
 ---
 {% include JB/setup %}
 
@@ -53,3 +53,12 @@ curl -o ~/.git-prompt.sh \
 ```
 
 最后 `~/.bashrc` 中编辑你的 PS1，在其中某处添加 `$(__git_ps1)` 即可。
+
+#### screen
+
+在一些发行版中的 screen 下可能会提示 `-bash: __git_ps1: command not found`。
+
+这是因为 bash 需要运行在 login 模式下，可以在 `~/.screenrc` 中配置如下一行即可：
+
+    shell -bash
+
