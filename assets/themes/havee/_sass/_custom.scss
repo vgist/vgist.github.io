@@ -42,7 +42,7 @@ a {
 
 body > nav.navbar-default {
   @include background-color(249, .8);
-  @include box-shadow(0, 0, 4px, .6);
+  @include box-shadow(0, 0, 12px, .8);
 }
 
 .nav > li > form {
@@ -73,30 +73,6 @@ body > nav.navbar-default {
 
 .page-header {
   border-bottom: 1px dashed rgba(50, 118, 177, .067);
-  .bottom {
-    padding: 4px 0 0;
-    vertical-align: middle;
-    color: rgba(169, 169, 169,1);
-    p {
-      display: inline;
-      margin: 0 4px;
-    }
-    a {
-      color: rgba(169, 169, 169, 1);
-      &:hover, &:focus {
-        color: rgb(51, 51, 51);
-      }
-      p {
-        display: inline;
-        margin: 0 4px;
-      }
-      span {
-        margin-left: 2px;
-        vertical-align: super;
-        font-size: .8em;
-      }
-    }
-  }
 }
 
 .tag_box a span {
@@ -120,8 +96,7 @@ article {
   .wrapper {
     @include transition;
     @include border(.167);
-    @include border-radius(10px);
-    @include box-shadow(0, 0, 4px, .267);
+    @include box-shadow(0, 0, 6px, .567);
     padding:10px;
     margin: 10px 0;
     .entry-title {
@@ -179,21 +154,11 @@ article {
   }
   .highlight pre {
     @include transition;
-    @include background-color(249, .3);
+    @include background-color(249, .9);
     @include border(.35);
     @include box-shadow(0, 0, 3px, .267);
     code {
       @include monospace;
-    }
-  }
-  .cc {
-    padding:0 0 10px 0;
-    img {
-      position: absolute;
-      left: 50%;
-      margin-top: -25px;
-      margin-left: -44px;
-      @include box-shadow(0, 0, 4px, .8);
     }
   }
 }
@@ -201,8 +166,7 @@ article {
 section {
   @include transition;
   @include border(.167);
-  @include border-radius(5px);
-  @include box-shadow(0, 0, 4px, .267);
+  @include box-shadow(0, 0, 4px, .467);
   @include background-color;
   padding: 0 5px;
   margin: 5px 0;
