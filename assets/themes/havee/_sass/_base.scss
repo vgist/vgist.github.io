@@ -9,7 +9,7 @@
 }
 
 @mixin monospace {
-  font-family: Terminal, monospace;
+  font-family: Monaco, Consolas, Terminal, monospace;
 }
 
 @mixin transition($a: .3s) {
