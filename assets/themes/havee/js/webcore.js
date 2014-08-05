@@ -1,19 +1,4 @@
 (function($){
-
-
-    /* fancybox */
-    $(document).ready(function() {
-        $("p img").each(function() {
-            var strA = "<div style='margin: 0 auto; text-align: center'><a id='fancyBox' href='" + this.src + "'></a></div>";
-            $(this).wrapAll(strA);
-        });
-    });
-    $("#fancyBox").fancybox({
-        openEffect	: 'elastic',
-        closeEffect	: 'elastic',
-    });
-
-
     /* External links */
     $(document).ready(function() {
         $('a[href]').each(function() {
