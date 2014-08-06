@@ -30,6 +30,8 @@ tags: [Jekyll, Pygments, Python]
     pygments: true
     mardown: redcarpet
 
+> 注意：新版本 Jekyll 中，`pygments: true` 替换为 `highlighter: pygments`。
+
 进到我们的网站目录，运行下面代码生成 [pygments 样式](#pygments)
 
     $ pygmentize -S default -f html > your/path/pygments.css
