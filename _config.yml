@@ -91,20 +91,6 @@ JB :
   sharing :
     provider : baidu
 
-  # CDN 加速资源
-  cdn :
-    jquery :
-      #js : //cdn.bootcss.com/jquery/2.1.1/jquery.min.js
-      js : //libs.useso.com/js/jquery/2.1.1/jquery.min.js
-    font-awesome :
-      css : //cdn.bootcss.com/font-awesome/4.1.0/css/font-awesome.min.css
-      #css : //libs.useso.com/js/font-awesome/4.1.0/css/font-awesome.min.css
-    bootstrap :
-      #js : //cdn.bootcss.com/twitter-bootstrap/3.1.1/js/bootstrap.min.js
-      css : //cdn.bootcss.com/twitter-bootstrap/3.1.1/css/bootstrap.min.css
-      js : //libs.useso.com/js/bootstrap/3.1.1/js/bootstrap.min.js
-      #css : //libs.useso.com/js/bootstrap/3.1.1/css/bootstrap.min.css
-
   # 友情链接
   blogroll : true                   # true 开启，留空或 false 关闭
   brlist :
