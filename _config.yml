@@ -29,7 +29,7 @@ author :
 production_url : http://havee.me
 
 # 七牛云，http://<Bucket>.qiniudn.com
-qiniudn : http://havanna.qiniudn.com
+qiniudn : http://havee.qiniudn.com
 
 # Jekyll Bootstrap
 JB :
