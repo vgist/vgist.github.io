@@ -28,8 +28,8 @@ author :
 # 域名连接
 production_url : http://havee.me
 
-# 七牛云
-qiniudn : http://cloudimage.qiniudn.com
+# 七牛云，http://<Bucket>.qiniudn.com
+qiniudn : http://havanna.qiniudn.com
 
 # Jekyll Bootstrap
 JB :
