@@ -8,7 +8,7 @@ tags: [CLI, Weather]
 ---
 {% include JB/setup %}
 
-![Weather](/assets/images/2011/08/11.png "weather")
+![Weather]({{ site.qiniudn }}/images/2011/08/11.png "weather")
 
 保存为weather.sh
 

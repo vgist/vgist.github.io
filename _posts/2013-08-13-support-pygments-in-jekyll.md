@@ -96,79 +96,79 @@ int main(int argc, char **argv)
 
 - monokai
 
-![monokai](/assets/images/2013/08/pygments-monokai.png)
+![monokai]({{ site.qiniudn }}/images/2013/08/pygments-monokai.png)
 
 - manni
 
-![manni](/assets/images/2013/08/pygments-manni.png)
+![manni]({{ site.qiniudn }}/images/2013/08/pygments-manni.png)
 
 - rrt
 
-![rrt](/assets/images/2013/08/pygments-rrt.png)
+![rrt]({{ site.qiniudn }}/images/2013/08/pygments-rrt.png)
 
 - perldoc
 
-![perldoc](/assets/images/2013/08/pygments-perldoc.png)
+![perldoc]({{ site.qiniudn }}/images/2013/08/pygments-perldoc.png)
 
 - borland
 
-![borland](/assets/images/2013/08/pygments-borland.png)
+![borland]({{ site.qiniudn }}/images/2013/08/pygments-borland.png)
 
 - colorful
 
-![colorful](/assets/images/2013/08/pygments-colorful.png)
+![colorful]({{ site.qiniudn }}/images/2013/08/pygments-colorful.png)
 
 - default
 
-![default](/assets/images/2013/08/pygments-default.png)
+![default]({{ site.qiniudn }}/images/2013/08/pygments-default.png)
 
 - murphy
 
-![murphy](/assets/images/2013/08/pygments-murphy.png)
+![murphy]({{ site.qiniudn }}/images/2013/08/pygments-murphy.png)
 
 - vs
 
-![vs](/assets/images/2013/08/pygments-vs.png)
+![vs]({{ site.qiniudn }}/images/2013/08/pygments-vs.png)
 
 - trac
 
-![trac](/assets/images/2013/08/pygments-trac.png)
+![trac]({{ site.qiniudn }}/images/2013/08/pygments-trac.png)
 
 - tango
 
-![tango](/assets/images/2013/08/pygments-tango.png)
+![tango]({{ site.qiniudn }}/images/2013/08/pygments-tango.png)
 
 - fruity
 
-![fruity](/assets/images/2013/08/pygments-fruity.png)
+![fruity]({{ site.qiniudn }}/images/2013/08/pygments-fruity.png)
 
 - autumn
 
-![autumn](/assets/images/2013/08/pygments-autumn.png)
+![autumn]({{ site.qiniudn }}/images/2013/08/pygments-autumn.png)
 
 - bw
 
-![bw](/assets/images/2013/08/pygments-bw.png)
+![bw]({{ site.qiniudn }}/images/2013/08/pygments-bw.png)
 
 - emacs
 
-![emacs](/assets/images/2013/08/pygments-emacs.png)
+![emacs]({{ site.qiniudn }}/images/2013/08/pygments-emacs.png)
 
 - vim
 
-![vim](/assets/images/2013/08/pygments-vim.png)
+![vim]({{ site.qiniudn }}/images/2013/08/pygments-vim.png)
 
 - pastie
 
-![pastie](/assets/images/2013/08/pygments-pastie.png)
+![pastie]({{ site.qiniudn }}/images/2013/08/pygments-pastie.png)
 
 - friendly
 
-![friendly](/assets/images/2013/08/pygments-friendly.png)
+![friendly]({{ site.qiniudn }}/images/2013/08/pygments-friendly.png)
 
 - native
 
-![native](/assets/images/2013/08/pygments-native.png)
+![native]({{ site.qiniudn }}/images/2013/08/pygments-native.png)
 
 参考：
 

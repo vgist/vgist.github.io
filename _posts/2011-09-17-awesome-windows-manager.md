@@ -8,7 +8,7 @@ tags: [Awesome, WM]
 ---
 {% include JB/setup %}
 
-![Awesome](/assets/images/2011/09/awesome.png "awesome")
+![Awesome]({{ site.qiniudn }}/images/2011/09/awesome.png "awesome")
 
 <!-- more -->
 当然是自己的本子，公司本子由于工作需求，还是 gnome、kde 这类大集成环境比较理想。下面介绍下 awesome。

@@ -8,7 +8,7 @@ tags: [Octopress, Wordpress, Jekyll]
 ---
 {% include JB/setup %}
 
-![Octopress](/assets/images/2012/06/octopress.png "Octopress")
+![Octopress]({{ site.qiniudn }}/images/2012/06/octopress.png "Octopress")
 
 WordPress 的功能非常强大，但是也臃肿无比，最近看到 Octopress 博客程序，考虑后面有时间的话，准备将 WordPress 转移到 Octopress。
 

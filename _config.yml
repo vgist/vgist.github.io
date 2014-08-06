@@ -28,6 +28,9 @@ author :
 # 域名连接
 production_url : http://havee.me
 
+# 七牛云
+qiniudn : http://cloudimage.qiniudn.com
+
 # Jekyll Bootstrap
 JB :
   version : 0.3.0
