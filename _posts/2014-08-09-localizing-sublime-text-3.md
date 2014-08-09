@@ -33,3 +33,5 @@ Github: [https://github.com/Ihavee/st3-zh_CN](https://github.com/Ihavee/st3-zh_C
 显然，要提交到 Package Control Channel 起名 `Default` 是不现实的（虽然完全可以这么做），于是放弃。
 
 最后，感谢 [朽木汉化](http://www.xiumu.org/technology/sublime-text-hand-finished-method.shtml)。
+
+参考：[http://docs.sublimetext.info/en/latest/extensibility/packages.html](http://docs.sublimetext.info/en/latest/extensibility/packages.html)
