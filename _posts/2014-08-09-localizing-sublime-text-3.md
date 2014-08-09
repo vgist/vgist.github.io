@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Sublime Text 中文化"
+title: "Sublime Text 3 中文化"
 description: "昨晚摸索了下 Sublime Text 3 的一些功能，明确了一些基本的功能，参考了各方面的资料，于是动起了汉化 Sublime Text 的念头"
 keywords: "sublime, sublime text, 汉化, 中文"
 category: Other
