@@ -25,7 +25,8 @@ Github: [https://github.com/Ihavee/st3-zh_CN](https://github.com/Ihavee/st3-zh_C
 
 翻译完成后，Linux 与 OS X 用户，打包成两进制 *.sublime-package 的方法：
 
-    zip -x ".git" -rX9 Default.sublime-package st3-zh_CN
+    cd st3-zh_CN
+    zip -x ".git" -rX9 Default.sublime-package *.*
 
 本来，想将中文 menu 提交到 [Package Control Channel](https://github.com/wbond/package_control_channel)，后来发现 Sublime Text 的用户 Package 是覆盖 默认 Package，如果将 `Default.sublime-package` 更改为 `abcd.sublime-package`，则会出现中文英文两种菜单。
 
