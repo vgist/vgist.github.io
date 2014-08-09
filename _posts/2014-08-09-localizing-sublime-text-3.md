@@ -27,4 +27,8 @@ Github: [https://github.com/Ihavee/st3-zh_CN](https://github.com/Ihavee/st3-zh_C
 
     zip -x ".git" -rX9 Default.sublime-package st3-zh_CN
 
+本来，想将中文 menu 提交到 [Package Control Channel](https://github.com/wbond/package_control_channel)，后来发现 Sublime Text 的用户 Package 是覆盖 默认 Package，如果将 `Default.sublime-package` 更改为 `abcd.sublime-package`，则会出现中文英文两种菜单。
+
+显然，要提交到 Package Control Channel 起名 `Default` 是不现实的（虽然完全可以这么做），于是放弃。
+
 最后，感谢 [朽木汉化](http://www.xiumu.org/technology/sublime-text-hand-finished-method.shtml)。
