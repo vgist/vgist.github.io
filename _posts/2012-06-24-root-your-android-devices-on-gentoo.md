@@ -12,7 +12,7 @@ tags: [Gentoo, Android]
 
 其次，windows 平台下有啥一键 root 的，Linux 下没有，不过操作其实也很简单，下面介绍在 Gentoo 下 root 你的安卓设备。
 
-首先在 Gentoo 下搭建 android sdk 平台，请参阅这篇文章：[Gentoo 下通过 usb 连接 Android](/linux/2012-06/connect-android-with-usb-on-gentoo-and-arch.html)
+首先在 Gentoo 下搭建 android sdk 平台，请参阅这篇文章：[Gentoo 下通过 usb 连接 Android]({% post_url 2012-06-23-connect-android-with-usb-on-gentoo-and-arch %})
 
 <!-- more -->
 
