@@ -121,7 +121,7 @@ Jekyll 总是从你根目录下的 `_include` 目录下寻找需要加载的文�
 
 **代码高亮**
 
-Jekyll 通过 [Pygments](http://pygments.org/) 内建支持了代码高亮，支持超过 [100种语言](http://pygments.org/languages/)。为了使这个机制，你需要安装 Pygments，而且 pygmentize 的可执行文件必须在你 `path` 路径中，当你运行 Jekyll 时，确保以 [Pygments支持](http://flyaway1217.github.com/%E7%BF%BB%E8%AF%91/2012/11/28/Jekyll-Wiki-Configuration.html) 的方式运行。
+Jekyll 通过 [Pygments](http://pygments.org/) 内建支持了代码高亮，支持超过 [100种语言](http://pygments.org/languages/)。为了使这个机制，你需要安装 Pygments，而且 pygmentize 的可执行文件必须在你 `path` 路径中，当你运行 Jekyll 时，确保以 [Pygments支持](/internet/2013-08/support-pygments-in-jekyll.html) 的方式运行。
 
 为了表示一个需要高亮的代码块，你需要：
 
