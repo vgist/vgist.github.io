@@ -12,7 +12,7 @@ tags: [Markdown, Jekyll, Redcarpet]
 
 ![e.g. tables]({{ site.qiniudn }}/images/2013/10/table.png)
 
-在 [Jekyll]({% 2013-07-06-jekyll-install %}) 中使用，请修改 `_config.yml`
+在 [Jekyll]({% post_url 2013-07-06-jekyll-install %}) 中使用，请修改 `_config.yml`
 
 ```yaml
 markdown: redcarpet
