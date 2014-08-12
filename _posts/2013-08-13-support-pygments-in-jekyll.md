@@ -8,11 +8,11 @@ tags: [Jekyll, Pygments, Python]
 ---
 {% include JB/setup %}
 
-[Jekyll](http://jekyllrb.com/) 原生支持语法高亮工具 [Pygments](http://pygments.org/) ，Pygments 支持[多种语言高亮](http://pygments.org/docs/lexers/)。
+Jekyll 原生支持语法高亮工具 [Pygments](http://pygments.org/) ，Pygments 支持[多种语言高亮](http://pygments.org/docs/lexers/)。
 
 #### 安装
 
-假设你已经能正常运行 Jekyll ([安装方法](/internet/2013-07/jekyll-install.html))。
+假设你已经能正常运行 Jekyll ([安装方法]({% post_url 2013-07-06-jekyll-install %}))。
 
 下面安装pygments ( 如果你同样使用archlinux的话 )
 
