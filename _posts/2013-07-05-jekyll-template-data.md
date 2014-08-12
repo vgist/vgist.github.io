@@ -31,7 +31,7 @@ Jekyll 会遍历你的站点，来寻找需要处理的文件。任何具有 [YA
 |site.related_posts|如果当前被处理的页面是一个文章文件，那这个变量是一个包含了最多 10 篇相关文章的列表。默认来说，这些相关文章是低质量但计算快的。为了得到高质量但计算慢的结果，运行 Jekyll 命令时可以加上 --lsi 选项。（潜在语意索引）
 |site.categories.CATEGORY|所有在 CATEGORY 分类中的文章列表
 |site.tags.TAG|所有拥有 TAG 标签的文章的列表
-|site.[CONFIGURATION\_DATA|截止 0.5.2 版本，所有在 `_config.yml` 中的数据都能够通过 site 变量调用。举例来说，如果你有一个这样的选项在你的配置文件中：url: http://mysite.com，那在文章和页面文件中可以这样调用 {% raw %}{{ site.url }}{% endraw %} 。Jekyll 并不会自动解析修改过的 `_config.yml` 文件，你想要启用新的设置选项，你需要重启 Jekyll
+|site.CONFIGURATION\_DATA|截止 0.5.2 版本，所有在 `_config.yml` 中的数据都能够通过 site 变量调用。举例来说，如果你有一个这样的选项在你的配置文件中：url: http://mysite.com，那在文章和页面文件中可以这样调用 {% raw %}{{ site.url }}{% endraw %} 。Jekyll 并不会自动解析修改过的 `_config.yml` 文件，你想要启用新的设置选项，你需要重启 Jekyll
 
 ### Page变量
 
