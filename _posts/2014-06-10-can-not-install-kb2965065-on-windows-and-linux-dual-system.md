@@ -62,3 +62,5 @@ LABLE macosx
 ```
 
 很熟悉是不是，Syslinux 通过 BIOS 引导黑苹果所在硬盘的 mbr，从而启动 clover 来引导黑苹果。UEFI 则没尝试，有谁成功引导 win & mac 的可以告知下。
+
+Update: 2014年8月13号的 KB2975719 可选补丁，也可以采用上面方式解决。
