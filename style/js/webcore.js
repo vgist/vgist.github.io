@@ -78,14 +78,14 @@
                 html += '<section><p>' + htmlEscape(match.content) + '</p></section>';
                 html += '<footer><p>Update: ' + match.date + '</p></footer>';
             }
-            $('.wrapper').html(html);
+            $('.raw').html(html);
             $('#search-loader').hide();
-            $('.wrapper').show();
+            $('.raw').show();
         }
         $('#search-form').submit(function() {
             var query = $('#query').val();
             //$('#query');.blur().attr('disabled', true);
-            $('.wrapper').hide();
+            $('.raw').hide();
             $('#search-loader').show();
             if (entries == null) {
                 $.ajax({url: '/atom.xml?r=' + (Math.random() * 99999999999), dataType: 'xml', success: function(data) {
