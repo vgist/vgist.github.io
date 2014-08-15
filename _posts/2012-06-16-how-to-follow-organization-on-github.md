@@ -6,7 +6,6 @@ keywords: github, follow, organization, javascript
 category: Linux
 tags: [GitHub]
 ---
-{% include JB/setup %}
 
 其实很简单，不过老实说，follow organization 真的没多大意义哈。
 

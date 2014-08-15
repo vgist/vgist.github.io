@@ -6,7 +6,6 @@ keywords: "jekyll, 方法"
 category: Internet
 tags: [Jekyll, Usage]
 ---
-{% include JB/setup %}
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/usage](https://github.com/mojombo/jekyll/wiki/usage)
 

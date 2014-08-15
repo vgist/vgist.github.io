@@ -6,7 +6,6 @@ keywords: uchome, seo, 优化
 category: Internet
 tags: [UChome, SEO, Usage]
 ---
-{% include JB/setup %}
 
 首先在模板 `header.htm` 加上代码：
 

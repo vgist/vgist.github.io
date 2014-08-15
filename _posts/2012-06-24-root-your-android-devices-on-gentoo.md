@@ -6,7 +6,6 @@ keywords: gentoo, android, root
 category: Linux
 tags: [Gentoo, Android]
 ---
-{% include JB/setup %}
 
 购了 Android 设备，当然要 root 了，否则很多功能用不到，譬如简单的截屏也需要 root 后的设备才行，更不要说修改 hosts 等文件了。
 

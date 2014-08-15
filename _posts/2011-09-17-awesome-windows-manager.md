@@ -6,7 +6,6 @@ keywords: awesome, 窗口, 管理器
 category: Linux
 tags: [Awesome, WM]
 ---
-{% include JB/setup %}
 
 ![Awesome]({{ site.qiniudn }}/images/2011/09/awesome.png "awesome")
 

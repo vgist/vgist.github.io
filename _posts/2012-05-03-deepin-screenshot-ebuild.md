@@ -6,7 +6,6 @@ keywords: deepin, screenshot, ebuild, gentoo
 category: Linux
 tags: [Screenshot, Gentoo, Ebuild, Deepin, Packager]
 ---
-{% include JB/setup %}
 
 ![Deapin-Screenshot]({{ site.qiniudn }}/images/2012/05/deepin-screenshot.png "Deapin-Screenshot")
 

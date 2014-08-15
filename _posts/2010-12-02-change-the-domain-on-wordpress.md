@@ -6,7 +6,6 @@ keywords: ihavanna, org, 域名
 category: Internet
 tags: [Wordpress, Domain, SQL, Usage]
 ---
-{% include JB/setup %}
 
 已经完美更换，期间无非是数据库中的域名需更改下而已
 

@@ -6,7 +6,6 @@ keywords: nginx, 502, bad gateway
 category: Internet
 tags: [Nginx]
 ---
-{% include JB/setup %}
 
 一般 `nginx` 搭配 `php` 都采用这样的方式：
 

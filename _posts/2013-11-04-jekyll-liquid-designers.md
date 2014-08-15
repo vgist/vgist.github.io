@@ -6,7 +6,6 @@ keywords: "liquid,jekyll"
 category: "Internet"
 tags: [Liquid,Jekyll]
 ---
-{% include JB/setup %}
 
 > 原文地址：https://github.com/shopify/liquid/wiki/liquid-for-designers
 

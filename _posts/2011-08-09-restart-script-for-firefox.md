@@ -6,7 +6,6 @@ keywords: firefox, restart, 重启, 脚本
 category: Internet
 tags: [Firefox, UserChrome]
 ---
-{% include JB/setup %}
 
 脚本的作用：在 `app menu` 菜单下增加一个 `restart firefox` 项，与快捷键重启 firefox。
 

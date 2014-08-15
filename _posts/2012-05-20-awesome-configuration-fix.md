@@ -6,7 +6,6 @@ keywords: awesome, 配置
 category: Linux
 tags: [Awesome, Configuration, WM]
 ---
-{% include JB/setup %}
 
 ![Awesome]({{ site.qiniudn }}/images/2012/05/awesome.png "Awesome")
 

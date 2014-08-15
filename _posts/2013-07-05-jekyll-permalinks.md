@@ -6,7 +6,6 @@ keywords: "jekyll, permalinks"
 category: Internet
 tags: [Jekyll, Usage]
 ---
-{% include JB/setup %}
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Permalinks](https://github.com/mojombo/jekyll/wiki/Permalinks)
 

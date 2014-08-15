@@ -6,7 +6,6 @@ keywords: "goagent, osx"
 category: "MAC"
 tags: [GoAgent,Proxy]
 ---
-{% include JB/setup %}
 
 陆陆续续的蚂蚁搬家，将工作机 ArchLinux 下的工具都搬到 Mac OS X 下，proxy 是必不可少的。
 

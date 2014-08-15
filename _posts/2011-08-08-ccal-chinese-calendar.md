@@ -6,7 +6,6 @@ keywords: ccal, ebuild, 农历, gentoo
 category: Linux
 tags: [ccal, Ebuild, Gentoo, Packager]
 ---
-{% include JB/setup %}
 
 简单的cli农历显示工具，感谢 [http://ccal.chinesebay.com/ccal/ccal.htm](http://ccal.chinesebay.com/ccal/ccal.htm) 作者。
 

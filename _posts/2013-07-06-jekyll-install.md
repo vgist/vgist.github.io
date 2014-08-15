@@ -6,7 +6,6 @@ keywords: "jekyll, 安装, 方法"
 category: Internet
 tags: [Jekyll, Installation]
 ---
-{% include JB/setup %}
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Install](https://github.com/mojombo/jekyll/wiki/Install "Install")
 

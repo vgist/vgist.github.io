@@ -6,7 +6,6 @@ keywords: "jekyll, 模板"
 category: Internet
 tags: [Jekyll, Usage]
 ---
-{% include JB/setup %}
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Template-Data](https://github.com/mojombo/jekyll/wiki/Template-Data)
 

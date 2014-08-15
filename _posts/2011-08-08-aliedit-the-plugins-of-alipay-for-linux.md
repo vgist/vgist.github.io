@@ -6,7 +6,6 @@ keywords: aliedit, linux, gentoo, ebuild, 插件, 支付宝
 category: Linux
 tags: [aliedit, Gentoo, Ebuild, Plugin]
 ---
-{% include JB/setup %}
 
 gentoo 的ebuild 还是不丰富，很多还是得自己写 ebuild
 

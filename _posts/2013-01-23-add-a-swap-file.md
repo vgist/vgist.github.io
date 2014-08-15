@@ -6,7 +6,6 @@ keywords: swap, 文件
 category: Linux
 tags: [Swap]
 ---
-{% include JB/setup %}
 
 在现在内存大白菜的时代，实在是没有必要单独拿个“分区”给 swap 用，如果文件交换不是太频繁的话，就创建一个 swap 文件来替代吧。
 

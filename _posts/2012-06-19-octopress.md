@@ -6,7 +6,6 @@ keywords: octopress, wordpress, jekyll, 博客
 category: Internet
 tags: [Octopress, Wordpress, Jekyll]
 ---
-{% include JB/setup %}
 
 ![Octopress]({{ site.qiniudn }}/images/2012/06/octopress.png "Octopress")
 

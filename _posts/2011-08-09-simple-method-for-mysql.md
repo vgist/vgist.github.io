@@ -6,7 +6,6 @@ keywords: mysql, root, mysqladmin, 操作
 category: SQL
 tags: [SQL, CLI]
 ---
-{% include JB/setup %}
 
 #### 一、安装后
 

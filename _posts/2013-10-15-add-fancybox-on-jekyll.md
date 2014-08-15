@@ -6,7 +6,6 @@ keywords: "Jekyll, fancybox, jquery, plugins"
 category: Internet 
 tags: [Jekyll, FancyBox, jQuery]
 ---
-{% include JB/setup %}
 
 这是一篇介绍无 jekyll 插件的形式来使用 **FancyBox**。
 

@@ -6,7 +6,6 @@ keywords: "bash, 脚本, lnmp, arch, linux"
 category: Internet
 tags: [lnmp, CLI]
 ---
-{% include JB/setup %}
 
 脚本是关于 lnmp 或者 llmp 的启动相关的，适用于 archlinux。
 

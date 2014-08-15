@@ -6,7 +6,6 @@ keywords: "jekyll, liquid, 模板"
 category: Internet
 tags: [Jekyll, Liquid, Usage]
 ---
-{% include JB/setup %}
 
 > 原文地址:[https://github.com/mojombo/jekyll/wiki/Liquid-Extensions](https://github.com/mojombo/jekyll/wiki/Liquid-Extensions)
 

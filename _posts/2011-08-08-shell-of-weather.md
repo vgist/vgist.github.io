@@ -6,7 +6,6 @@ keywords: shell, 天气预报
 category: Linux
 tags: [CLI, Weather]
 ---
-{% include JB/setup %}
 
 ![Weather]({{ site.qiniudn }}/images/2011/08/11.png "weather")
 
