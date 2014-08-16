@@ -8,7 +8,7 @@ layout: page
 {% assign category_words = site_categories | split:',' | sort %}
 <!-- category_words: {{ category_words }} -->
 
-<ul class="tag-box inline">
+<ul class="tag-box">
   {% for item in (0..site.categories.size) %}{% unless forloop.last %}
   {% capture this_word %}{{ category_words[item] | strip_newlines }}{% endcapture %}
   <li><a href="#{{ this_word | cgi_escape }}">{{ this_word }} <sup>{{ site.categories[this_word].size }}</sup></a></li>
