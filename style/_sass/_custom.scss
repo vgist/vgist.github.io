@@ -98,8 +98,8 @@ h5, h6 {
     border: 1px solid rgba(0, 0, 0, .17);
     box-shadow: 0 1px 10px rgba(0, 0, 0, .37);
     background: rgba(253, 253, 253, .9);
-    padding: 10px;
-    margin: 15px 0;
+    padding: 10px 10px 20px 10px;
+    margin: 20px 0;
     .small {
         color: rgba(119, 119, 119, .8);
     }
@@ -141,10 +141,10 @@ h5, h6 {
 }
 
 .raw {
-    .col-md-8 {
+    .col-md-9 {
         padding-left: 0;
     }
-    .col-md-4 {
+    .col-md-3 {
         padding-right: 0;
     }
 }
