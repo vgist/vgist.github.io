@@ -6,14 +6,14 @@ layout: default
     {{ content }}
     <ul class="pager">
       {% if page.previous %}
-      <li class="previous"><a  href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; 上一篇</a></li>
+      <li class="previous"><a  href="{{ BASE_PATH }}{{ page.previous.url }}" title="{{ page.previous.title }}">&larr; Prev</a></li>
       {% else %}
-      <li class="previous disabled"><a href="#">&larr; 上一篇</a></li>
+      <li class="previous disabled"><a href="#">&larr; Prev</a></li>
       {% endif %}
       {% if page.next %}
-      <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">下一篇 &rarr;</a></li>
+      <li class="next"><a href="{{ BASE_PATH }}{{ page.next.url }}" title="{{ page.next.title }}">Next &rarr;</a></li>
       {% else %}
-      <li class="next disabled"><a href="#">下一篇 &rarr;</a></li>
+      <li class="next disabled"><a href="#">Next &rarr;</a></li>
       {% endif %}
     </ul>
 
