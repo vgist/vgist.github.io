@@ -53,6 +53,8 @@ tags: [GoAgent,Proxy]
 
     Launchctl unload -w ~/Library/LaunchAgents/com.goagent.localsrv.plist
 
+你也可以直接通过 [Homebrew 安装 Goagent]({% post_url 2014-05-23-homebrew-formula-for-goagent %})
+
 #### 2. 客户端方式
 
 这个就不介绍了，目前可供选择的有 [GoAgentX](https://github.com/ohdarling/GoAgentX)、[BreakWall](https://code.google.com/p/breakwall/)
