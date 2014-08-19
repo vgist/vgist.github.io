@@ -11,7 +11,6 @@ letbox 上用优惠卷购置了一款 vps，直接上 CentOS 6.5，想搭建一�
 
 废话不多说，ssh 进去:
 
-<!-- more -->
 #### Nginx
 
 Nginx 的源直接由 nginx.org 来维护
@@ -19,6 +18,7 @@ Nginx 的源直接由 nginx.org 来维护
     # rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
     # yum install -y nginx
 
+<!-- more -->
 顺带说下，两进制包默认的 web 目录为 `/usr/share/nginx/html`，怕麻烦的话直接软连接到 `/var/www` 下
 
     # ln -sf /usr/share/nginx/html /var/www/
