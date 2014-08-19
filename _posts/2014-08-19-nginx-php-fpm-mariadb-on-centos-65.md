@@ -55,7 +55,7 @@ gpgcheck=1
 
     # yum install -y MariaDB-server MariaDB-client
 
-配置就不说了，网上搜索下一大批文章。
+配置就不说了，想来各位应该都有自己的一套备份。
 
 参考：
 
