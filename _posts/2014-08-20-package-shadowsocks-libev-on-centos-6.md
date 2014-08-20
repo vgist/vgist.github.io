@@ -74,7 +74,7 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
 
 或者重新通过 rpm 源码包来打包
 
-rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
+    # rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
 
 
 参考：
