@@ -70,7 +70,7 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
 
 具体的可以下载下面的 rpm 源码包看
 
-![shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/shadowsocks-libev-1.4.6-1.el6.src.rpm)
+[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/shadowsocks-libev-1.4.6-1.el6.src.rpm)
 
 或者重新通过 rpm 源码包来打包
 
