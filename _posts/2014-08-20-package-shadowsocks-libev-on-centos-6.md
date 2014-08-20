@@ -16,9 +16,29 @@ rpm 打包需要特定的目录结构，准备工作：
     # cd ~/rpmbuild/SPEC
     # touch shadowsocks-libev.spec
 
+<!-- more -->
+你也需要特定的一些工具
+
+    # yum install rpm-build rpmdevtools
+
+目录结构
+
+```
+# tree ~/rpmbuild
+/root/rpmbuild
+├── BUILD
+├── BUILDROOT
+├── RPMS
+│   └── i686
+│       ├── shadowsocks-libev-1.4.6-1.el6.i686.rpm
+│       └── shadowsocks-libev-debuginfo-1.4.6-1.el6.i686.rpm
+├── SOURCES
+├── SPECS
+└── SRPMS
+```
+
 打包 rpm 的核心就是 spec 文件，可以通过模板操作，可以通过其他工具来书写。给出 `shadowsocks-libev.spec`
 
-<!-- more -->
 ```spec
 Name:       shadowsocks-libev
 Version:	1.4.6
@@ -72,13 +92,25 @@ rpm 源码包：[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/image
 
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
-    # rpm2cpio shadowsocks-libev-1.4.6-1.el6.src.rpm | cpio -div
+    $ rpm2cpio /path/shadowsocks-libev-1.4.6-1.el6.src.rpm | cpio -div
+
+将 `shadowsocks-libev.json`、`shadowsocks-libev`、`shadowsocks-libev-1.4.6.tar.gz` 放入文件夹 `~/rpmbuild/SOURCES`。将 `shadowsocks-libev.spec` 放入文件夹 `~/rpmbuild/SPECS`。随后
+
+    $ cd ~/rpmbuild/SPECS
+    $ rpmbuild -bb shadowsocks-libev.spec
+
+具体用法可以 `rpmbuild --help` 查看。
 
 
-或者重新通过 rpm 源码包来打包
+或者重新通过 rpm 源码包来制作两进制包
 
-    # rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
+    $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
 
+然后直接安装两进制包
+
+    # rpm -ivh /path/shadowsocks-libev-1.4.6-1.el6.i686.rpm
+    or
+    # yum install /path/shadowsocks-libev-1.4.6-1.el6.i686.rpm
 
 参考：
 
