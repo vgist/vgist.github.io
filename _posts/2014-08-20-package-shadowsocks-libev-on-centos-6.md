@@ -9,6 +9,8 @@ tags: [Packager, Shadowsocks]
 
 为什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，而且一点都不利于扩散嘛。
 
+#### 准备
+
 rpm 打包需要特定的目录结构，准备工作：
 
     # echo "%_topdir %(echo $HOME)/rpmbuild" >> ~/.rpmmacros
@@ -85,6 +87,8 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
 %changelog
 ```
 
+#### 打包
+
 rpm 源码包：[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el6.src.rpm)
 
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
@@ -102,6 +106,8 @@ rpm 源码包：[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/image
 或者直接通过 rpm 源码包来制作两进制包
 
     $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
+
+#### 安装
 
 然后直接安装两进制包
 
