@@ -24,8 +24,8 @@ rpm 打包需要特定的目录结构，准备工作：
 目录结构
 
 ```
-# tree ~/rpmbuild
-/root/rpmbuild
+$ tree ~/rpmbuild
+/home/havanna/rpmbuild
 ├── BUILD
 ├── BUILDROOT
 ├── RPMS
