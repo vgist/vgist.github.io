@@ -107,7 +107,7 @@ style
     ├── jquery.min.js
     └── webcore.js
 ```
-这里是本人博客的 scss：[https://github.com/Ihavee/ihavee.github.io/tree/master/assets/themes/havee/_sass](https://github.com/Ihavee/ihavee.github.io/tree/master/assets/themes/havee/_sass)
+这里是本人博客的 scss：[style/_sass](https://github.com/Ihavee/ihavee.github.io/tree/master/style/_sass)
 
 以下是关于 SASS 的具体用法，转自：[SASS用法指南 - 阮一峰的网络日志](http://www.ruanyifeng.com/blog/2012/06/sass.html)
 
