@@ -99,7 +99,7 @@ rpm 源码包：[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/image
 具体用法可以 `rpmbuild --help` 查看。
 
 
-或者重新通过 rpm 源码包来制作两进制包
+或者直接通过 rpm 源码包来制作两进制包
 
     $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
 
