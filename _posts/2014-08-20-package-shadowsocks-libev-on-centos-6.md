@@ -29,9 +29,6 @@ rpm 打包需要特定的目录结构，准备工作：
 ├── BUILD
 ├── BUILDROOT
 ├── RPMS
-│   └── i686
-│       ├── shadowsocks-libev-1.4.6-1.el6.i686.rpm
-│       └── shadowsocks-libev-debuginfo-1.4.6-1.el6.i686.rpm
 ├── SOURCES
 ├── SPECS
 └── SRPMS
