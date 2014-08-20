@@ -94,8 +94,23 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
     $ rpm2cpio /path/shadowsocks-libev-1.4.6-1.el6.src.rpm | cpio -div
+    shadowsocks-libev
+    shadowsocks-libev-1.4.6.tar.gz
+    shadowsocks-libev.json
+    shadowsocks-libev.spec
+    1888 blocks
 
-将 `shadowsocks-libev.json`、`shadowsocks-libev`、`shadowsocks-libev-1.4.6.tar.gz` 放入文件夹 `~/rpmbuild/SOURCES`。将 `shadowsocks-libev.spec` 放入文件夹 `~/rpmbuild/SPECS`。随后
+将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
+
+- `shadowsocks-libev`
+- `shadowsocks-libev.json`
+- `shadowsocks-libev-1.4.6.tar.gz`
+
+再将下面一个文件放入文件夹 `~/rpmbuild/SPECS`
+
+- `shadowsocks-libev.spec`
+
+进入文件夹 `~/rpmbuild/SPECS` 执行打包操作
 
     $ cd ~/rpmbuild/SPECS
     $ rpmbuild -bb shadowsocks-libev.spec
