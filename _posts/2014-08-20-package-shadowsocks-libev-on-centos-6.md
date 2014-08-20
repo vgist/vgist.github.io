@@ -68,9 +68,12 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
 %changelog
 ```
 
-具体的可以下载下面的 rpm 源码包看
+rpm 源码包：[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el6.src.rpm)
 
-[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/shadowsocks-libev-1.4.6-1.el6.src.rpm)
+具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
+
+    # rpm2cpio shadowsocks-libev-1.4.6-1.el6.src.rpm | cpio -div
+
 
 或者重新通过 rpm 源码包来打包
 
