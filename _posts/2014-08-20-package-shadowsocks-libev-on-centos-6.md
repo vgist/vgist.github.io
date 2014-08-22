@@ -120,7 +120,7 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 
 若版本号变更，修改 spec 文件的版本号以及 commit 后，通过 spectool 重下源码
 
-   spectool -R -g shadowsocks-libev.spec`
+    $ spectool -R -g shadowsocks-libev.spec
 
 ##### 打包法二
 
