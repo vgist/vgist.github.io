@@ -13,10 +13,8 @@ tags: [Packager, Shadowsocks]
 
 rpm 打包需要特定的目录结构，准备工作：
 
-    # echo "%_topdir %(echo $HOME)/rpmbuild" >> ~/.rpmmacros
-    # mkdir -p ~/rpmbuild/{BUILD,RPMS,S{OURCE,PEC,RPM}S}
-    # cd ~/rpmbuild/SPEC
-    # touch shadowsocks-libev.spec
+    $ echo "%_topdir %(echo $HOME)/rpmbuild" >> ~/.rpmmacros
+    $ mkdir -p ~/rpmbuild/{BUILD,RPMS,S{OURCE,PEC,RPM}S}
 
 <!-- more -->
 你也需要特定的一些工具
