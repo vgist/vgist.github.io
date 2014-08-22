@@ -39,14 +39,17 @@ $ tree ~/rpmbuild
 打包 rpm 的核心就是 spec 文件，可以通过模板操作，可以通过其他工具来书写。给出 `shadowsocks-libev.spec`
 
 ```spec
-Name:       shadowsocks-libev
+%global commit e9a530f9dcd3d94e8dcbd341b5e0ccd5bc71cd95
+%global shortcommit %(c=%{commit}; echo ${c:0:7})
+
+Name:           shadowsocks-libev
 Version:	1.4.6
 Release:	1%{?dist}
 License:	GPL-3
 Summary:	a lightweight secured scoks5 proxy for embedded devices and low end boxes.
-Url:		https://github.com/madeye/shadowsocks-libev
+Url:		https://github.com/madeye/%{name}
 Group:		Applications/Internet
-Source0:	https://github.com/madeye/%{name}/archive/v%{version}.tar.gz#/%{name}-%{version}.tar.gz
+Source0:	%{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
 Source1:	%{name}.json
 Source2:	%{name}
 Packager:	Havanna <registerdedicated(at)gmail.com>
@@ -57,7 +60,7 @@ BuildRoot: 	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
 shadowsocks-libev is a lightweight secured scoks5 proxy for embedded devices and low end boxes.
 
 %prep
-%setup -q
+%setup -q %{name}-%{commit}
 
 %build
 %configure --prefix=%{_prefix}
@@ -71,7 +74,7 @@ install -d %{buildroot}%{_sysconfdir}
 install -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}
 
 install -d %{buildroot}%{_initddir}
-install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
+install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 
 %files
 %defattr(-,root,root)
@@ -97,7 +100,7 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
 
     $ rpm2cpio /path/shadowsocks-libev-1.4.6-1.el6.src.rpm | cpio -div
     shadowsocks-libev
-    shadowsocks-libev-1.4.6.tar.gz
+    shadowsocks-libev-1.4.6-e9a530f.tar.gz
     shadowsocks-libev.json
     shadowsocks-libev.spec
     1888 blocks
@@ -106,7 +109,7 @@ install -m 644 %{SOURCE2} %{buildroot}/%{_initddir}
 
 - `shadowsocks-libev`
 - `shadowsocks-libev.json`
-- `shadowsocks-libev-1.4.6.tar.gz`
+- `shadowsocks-libev-1.4.6-e9a530f.tar.gz`
 
 再将下面一个文件放入文件夹 `~/rpmbuild/SPECS`
 
