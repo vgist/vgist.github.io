@@ -9,7 +9,7 @@ tags: [Packager, Shadowsocks]
 
 为什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，而且一点都不利于扩散嘛。
 
-#### 准备
+#### 一、准备
 
 rpm 打包需要特定的目录结构，准备工作：
 
@@ -90,11 +90,12 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 %changelog
 ```
 
-#### 打包
+#### 二、打包
 
 - **rpm 源码包**：[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el6.src.rpm)
 - **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
 
+##### 打包法一
 
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
@@ -111,23 +112,23 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 - `shadowsocks-libev.json`
 - `shadowsocks-libev-1.4.6-e9a530f.tar.gz`
 
-再将下面一个文件放入文件夹 `~/rpmbuild/SPECS`
+随后执行打包操作
 
-- `shadowsocks-libev.spec`
-
-进入文件夹 `~/rpmbuild/SPECS` 执行打包操作
-
-    $ cd ~/rpmbuild/SPECS
     $ rpmbuild -bb shadowsocks-libev.spec
 
 具体用法可以 `rpmbuild --help` 查看。
 
+若版本号变更，修改 spec 文件的版本号以及 commit 后，通过 spectool 重下源码
 
-或者直接通过 rpm 源码包来制作两进制包
+    spectool -R -g shadowsocks-libev.spec
+
+##### 打包法二
+
+直接通过 rpm 源码包来制作两进制包
 
     $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
 
-#### 安装
+#### 三、安装
 
 然后直接安装两进制包
 
