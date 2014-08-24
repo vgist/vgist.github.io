@@ -13,12 +13,12 @@ Jekyll 原生支持语法高亮工具 [Pygments](http://pygments.org/) ，Pygmen
 
 假设你已经能正常运行 Jekyll ([安装方法]({% post_url 2013-07-06-jekyll-install %}))。
 
-下面安装pygments ( 如果你同样使用archlinux的话 )
+下面安装 pygments ( 如果你同样使用 archlinux 的话 )
 
     $ sudo pacman -S python2-pygments
 
 <!-- more -->
-安装pygments.rb
+安装 pygments.rb
 
     $ gem install pygments.rb
 
@@ -31,7 +31,7 @@ Jekyll 原生支持语法高亮工具 [Pygments](http://pygments.org/) ，Pygmen
 
 > 注意：新版本 Jekyll 中，`pygments: true` 替换为 `highlighter: pygments`。
 
-进到我们的网站目录，运行下面代码生成 [pygments 样式](#pygments)
+进到我们的网站目录，运行下面代码生成 [Pygments 样式](#pygments)
 
     $ pygmentize -S default -f html > your/path/pygments.css
 
@@ -89,7 +89,7 @@ int main(int argc, char **argv)
 
 #### pygments 样式
 
-<span id=pygments>pygments 样式</span> 默认提供了 monokai、manni、rrt、perldoc、borland、colorful、default 等等，多种的样式。 可以通过以下命令列出当前 Pygments 支持的样式：
+<span id=pygments>Pygments 样式</span> 默认提供了 monokai、manni、rrt、perldoc、borland、colorful、default 等等，多种的样式。 可以通过以下命令列出当前 Pygments 支持的样式：
 
 ```python
 >>> from pygments.styles import STYLE_MAP
