@@ -89,7 +89,15 @@ int main(int argc, char **argv)
 
 #### pygments 样式
 
-<span id=pygments>pygments 样式</span> 默认提供了 monokai、manni、rrt、perldoc、borland、colorful、default、murphy、vs、trac、tango、fruity、autumn、bw、emacs、vim、pastie、friendly、native 等多重的样式。通过 `-S` 来选择，譬如要生成 monokai 的样式：
+<span id=pygments>pygments 样式</span> 默认提供了 monokai、manni、rrt、perldoc、borland、colorful、default 等等，多种的样式。 可以通过以下命令列出当前 Pygments 支持的样式：
+
+```python
+>>> from pygments.styles import STYLE_MAP
+>>> STYLE_MAP.keys()
+['monokai', 'manni', 'rrt', 'perldoc', 'borland', 'colorful', 'default', 'murphy', 'vs', 'trac', 'tango', 'fruity', 'autumn', 'bw', 'emacs', 'vim', 'pastie', 'friendly', 'native']
+```
+
+通过 `-S` 来选择，譬如要生成 monokai 的样式：
 
     $ pygmentize -S monokai -f html > your/path/pygments.css
 
