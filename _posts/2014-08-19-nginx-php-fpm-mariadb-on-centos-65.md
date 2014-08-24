@@ -33,7 +33,7 @@ Nginx 的源直接由 nginx.org 来维护
 
     # yum install -y php-gd php-mbstring php-xml php-mysql
 
-至于 php-mcrypt 需要 epel
+至于 php-mcrypt 需要 Fedora Project 的 EPEL (Extra Packages for Enterprise Linux) 源
 
     # rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
     # yum install php-mcrypt
