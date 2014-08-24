@@ -33,7 +33,10 @@ Nginx 的源直接由 nginx.org 来维护
 
     # yum install -y php-gd php-mbstring php-xml php-mysql
 
-对了，php-mcrypt 没有，想要的 download 源码编译去。
+至于 php-mcrypt 需要 epel
+
+    # rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
+    # yum install php-mcrypt
 
 #### MariaDB
 
