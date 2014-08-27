@@ -11,19 +11,19 @@ letbox 上用优惠卷购置了一款 vps，最终 **$ 0.01** 成交，直接上
 
 废话不多说，ssh 进去:
 
-#### Nginx
+<!-- more -->
+#### 一. Nginx
 
 Nginx 的源直接由 nginx.org 来维护
 
     # rpm -ivh http://nginx.org/packages/centos/6/noarch/RPMS/nginx-release-centos-6-0.el6.ngx.noarch.rpm
     # yum install -y nginx
 
-<!-- more -->
 顺带说下，两进制包默认的 web 目录为 `/usr/share/nginx/html`，怕麻烦的话直接软链接到 `/var/www` 下
 
     # ln -sf /usr/share/nginx/html /var/www/
 
-#### PHP-FPM
+#### 二. PHP-FPM
 
 可以直接 yum 安装了，由 CentOS 社区维护
 
@@ -38,7 +38,7 @@ Nginx 的源直接由 nginx.org 来维护
     # rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
     # yum install php-mcrypt
 
-#### MariaDB
+#### 三. MariaDB
 
 mariadb.org 社区维护，增加一个 MariaDB.repo
 
