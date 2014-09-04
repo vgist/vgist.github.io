@@ -38,6 +38,10 @@ Nginx 的源直接由 nginx.org 来维护
     # rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
     # yum install php-mcrypt
 
+顺带 php-pecl-apcu 也安装吧
+
+    # yum install php-pecl-apcu
+
 #### 三. MariaDB
 
 mariadb.org 社区维护，增加一个 MariaDB.repo
