@@ -23,7 +23,7 @@ Nginx 的源直接由 nginx.org 来维护
 
     # ln -sf /usr/share/nginx/html /var/www/
 
-**在 CentOS 7 中，也可以使用 epel (Extra Packages for Enterprise Linux) 源**
+**在 CentOS 7 中，也可以使用 Fedora Project 的 epel (Extra Packages for Enterprise Linux) 源**
 
     # rpm -ivh http://dl.fedoraproject.org/pub/epel/7/x86_64/e/epel-release-7-1.noarch.rpm
     # yum install -y nginx
@@ -38,7 +38,7 @@ Nginx 的源直接由 nginx.org 来维护
 
     # yum install -y php-gd php-mbstring php-xml php-mysql
 
-至于 php-mcrypt 需要 Fedora Project 的 EPEL (Extra Packages for Enterprise Linux) 源
+至于 php-mcrypt 同样需要 epel 源，根据你 Centos 版本，安装对应的 epel
 
     # rpm -ivh http://dl.fedoraproject.org/pub/epel/6/x86_64/epel-release-6-8.noarch.rpm
     # yum install php-mcrypt
