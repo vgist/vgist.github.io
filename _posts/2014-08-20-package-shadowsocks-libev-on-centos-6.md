@@ -110,6 +110,12 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 - `shadowsocks-libev.json`
 - `shadowsocks-libev-1.4.6-e9a530f.tar.gz`
 
+安装一些必要的依赖
+
+    # yum install autoconf libtool gcc openssl-devel
+
+在 Centos 6.5 之前的版本，可能需要升级下默认的 gcc
+
 随后执行打包操作
 
     $ rpmbuild -bb shadowsocks-libev.spec
