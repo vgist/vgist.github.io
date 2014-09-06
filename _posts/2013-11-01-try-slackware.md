@@ -15,9 +15,17 @@ tags: [Slackware]
 
     $ xwmconfig
 
-Slackware 官方源的软件包数量实在是太少了点，作为中文用户，最基本的 [Fcitx](http://fcitx-im.org/) 也没有，放 [G](https://www.google.com) 搜索了下，都是自己下源码编译安装教程（这也要教程？！），难道古老的 Slackware 到现在都没有一个完善的管理器？再搜，得知，[sbopkg](http://www.sbopkg.org/)，解决了自动下载源码并编译安装的问题，不过弊端是无法自动解决依赖问题，- -!
+lilo 默认等待 2 分钟，够夸张的，编辑 `/etc/lilo.conf`
+
+    timeout = 30            # 3 秒钟
 
 <!-- more -->
+随后运行以下命令使之生效
+
+    $ su -l -c "/sbin/lilo -v"
+
+Slackware 官方源的软件包数量实在是太少了点，作为中文用户，最基本的 [Fcitx](http://fcitx-im.org/) 也没有，放 [G](https://www.google.com) 搜索了下，都是自己下源码编译安装教程（这也要教程？！），难道古老的 Slackware 到现在都没有一个完善的管理器？再搜，得知，[sbopkg](http://www.sbopkg.org/)，解决了自动下载源码并编译安装的问题，不过弊端是无法自动解决依赖问题，- -!
+
 方法：
 
     $ wget http://sbopkg.googlecode.com/files/sbopkg-0.36.0-noarch-1_cng.tgz
