@@ -114,7 +114,7 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 
     # yum install autoconf libtool gcc openssl-devel
 
-在 Centos 6.5 之前的版本，可能需要升级下默认的 gcc
+在 Centos 6.5 之前的版本，可能需要升级下默认的 gcc，不论你自编译，亦或找第三方源。
 
 随后执行打包操作
 
