@@ -76,3 +76,5 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
     $ vagrant box repackage         # 重新打包
 
 待续……
+
+参考： [https://docs.vagrantup.com/v2/](https://docs.vagrantup.com/v2/)
