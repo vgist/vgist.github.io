@@ -42,6 +42,11 @@ Slackware 官方源的软件包数量实在是太少了点，作为中文用户�
     REPO_BRANCH=${REPO_BRANCH:-14.0}
     REPO_NAME=${REPO_NAME:-SBo}
 
+当然，也可以如此
+
+    REPO_BRANCH=${REPO_BRANCH:-current}
+    REPO_NAME=${REPO_NAME:-SBo-git}
+
 再同步下
 
     $ su -l -c "sbopkg -r"
