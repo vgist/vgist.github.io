@@ -7,6 +7,8 @@ category: Other
 tags: [Vagrant, Virtual]
 ---
 
+#### 一. 安装
+
 Vagrant 本质上来说，是对 virtualbox，vmware，kvm 等镜像的管理操作，是一个中间层技术。使用它的前提是你本机必须有 virtualbox，vmware，kvm 等虚拟机。
 
 Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管理安装，OS X 也可以通过 Homebrew Cask来安装。
@@ -16,14 +18,26 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
 <!-- more -->
 建立你自己的 Vagrant 也非常简单，
 
-    $ mkdir /your/path/vagrant_name; cd /your/path/vagrant_name; vagrant init
+    $ mkdir /your/path/vagrant_name; cd /your/path/vagrant_name
 
 此命令会在 `/your/path/vagrant_name` 目录下建立 `Vagrantfile` 基础配置文件，你可以通过 git 等方式来分享。下面在此目录下执行 `vagrant box add xxx` 去拉一个现成的镜像下来，鄙人还是习惯拉 Gentoo 的一个 vbox 镜像。当然下面例子中的 Gentoo 镜像存放在 dropbox 中，需要一些**你懂得**操作。
 
+    $ vagrant init gentoo
     $ vagrant box add gentoo https://dl.dropboxusercontent.com/s/xfl63k64zliixid/gentoo-20131029-i686.box
     ==> box: Adding box 'gentoo' (v0) for provider:
     box: Downloading: https://dl.dropboxusercontent.com/s/xfl63k64zliixid/gentoo-20131029-i686.box
     ==> box: Successfully added box 'gentoo' (v0) for 'virtualbox'!
+
+除了直接去网址下载，也可以直接下载 **Vagrant Cloud** 中的镜像
+
+    $ vagrant box add d11wtq/gentoo
+
+具体需要什么镜像可以去如下网址：
+
+- <http://www.vagrantbox.es>
+- <https://vagrantcloud.com/discover/featured>
+
+#### 二. 运行
 
 镜像拉下来后，就可以启动了
 
@@ -58,7 +72,75 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
 
 随后，你就可以随意的根据你的习惯，去部署你的一切。当然如果你觉得 vbox 笨重的话，Vagrant + CoreOS + docker 是一个非常好的解决方案。
 
-一些 Vagrant 常用命令
+#### 三. 配置
+
+`Vagrantfile` 文件就是基础配置文件下面列出一些常用的配置项
+
+##### a. 基础设定
+
+    VAGRANTFILE_API_VERSION = "2"
+    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+        config.vm.box = "gentoo"
+        config.vm.box_check_update = false
+        config.vm.network "forwarded_port", guest: 80, host: 8080   # 端口转发
+        config.vm.network "private_network", ip: "192.168.33.10"    # 或 config.vm.network "public_network"，顾名思义
+        config.ssh.forward_agent = true
+        config.vm.synced_folder "../vagrant", "/vagrant"            # 前一个 host 相对于项目文件夹的目录，后一个虚拟机目录
+    end
+
+一目了然的配置，名称，更新，端口转发，网络，ssh 以及共享目录。
+
+##### b. Provider
+
+由于 VirtualBox 免费，且跨平台，安装方便，很多人都使用 VirtualBox。以 VirtualBox 为例：
+
+    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+        ......
+        config.vm.provider "virtualbox" do |vb|
+            vb.gui = true
+            vb.name = "gentoo"
+            vb.memory = 1024
+            vb.cpus = 2
+            vb.customize ["modifyvm", :id, "--cpuexecutioncap", "80"]
+        end
+        ......
+    end
+
+以上配置也是一目了然，VMWare Fusion 呢
+
+    Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
+        ......
+        config.vm.provider "vmware_fusion" do |vb|
+            vb.gui = true
+            vb.vmx["memsize"] = "1024"
+            vb.vmx["numvcpus"] = "2"
+        end
+        ......
+    end
+
+其他的虚拟机，请阅读文档： <http://docs.vagrantup.com/v2/providers/index.html>
+
+##### c. 多机环境
+
+尽管我觉得多个 box 运行一个环境，非常的奢侈，以其跑多个虚拟机，不如 docker 来管理。但谁知道大家的 cpu, ram 是否叼炸天呢。各有所好嘛......
+
+    config.vm.define :app1 do |app1|
+        app1.vm.box = "app1"
+        app1.vm.network "private_network", ip: "192.168.33.10"
+        app1.memory = 512
+        app1.cpus = 2
+        app1.vm.customize [ "modifyvm", :id, "--name", "app1", "--cpuexecutioncap", "50" ]
+    end
+    config.vm.define :app2 do |app2|
+        app2.vm.box = "app2"
+        app2.vm.network "private_network", ip: "192.168.33.11"
+        app2.memory = 512
+        app2.cpus = 1
+        app1.vm.customize [ "modifyvm", :id, "--name", "app2", "--cpuexecutioncap", "40" ]
+    end
+    ......
+
+##### d. 常用命令
 
     $ vagrant init                  # 初始化
     $ vagrant up                    # 启动
@@ -77,4 +159,4 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
 
 待续……
 
-参考： [https://docs.vagrantup.com/v2/](https://docs.vagrantup.com/v2/)
+参考： <https://docs.vagrantup.com/v2/>
