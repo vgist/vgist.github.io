@@ -3,7 +3,7 @@ title: "Havee's Space"
 description: "linux, gentoo, internet, sql, jekyll, BSD, MAC, havee"
 keywords: "Havee Hobbies, Knowledge Records。"
 baseurl: ""
-url: "//havee.me"
+url: "http://havee.me"
 highlighter: pygments
 paginate: 5
 author:
