@@ -157,4 +157,16 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
     $ vagrant box remove name       # 移除镜像
     $ vagrant box repackage         # 重新打包
 
+#### 四. 打包环境
+
+万事俱备，公司内部要统一开发环境，打包出来让员工在统一环境下开发吧，以后不会出现**我机子上没这个问题呀**了
+
+打包，当然是退出你的虚拟机后再操作的。
+
+    $ vagrant package
+    ==> gentoo: Attempting graceful shutdown of VM...
+    ==> gentoo: Clearing any previously set forwarded ports...
+    ==> gentoo: Exporting VM...
+    ==> gentoo: Compressing package to: /Users/Havee/Documents/git/vagrant/package.box
+
 参考： <https://docs.vagrantup.com/v2/>
