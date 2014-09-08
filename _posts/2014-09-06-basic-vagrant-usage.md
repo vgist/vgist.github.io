@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Vagrant 使用"
+title: "Vagrant 简单使用"
 description: "Vagrant 本质上来说，是对 virtualbox，vmware，kvm 等镜像的管理操作，是一个中间层技术。使用它的前提是你本机必须有 virtualbox，vmware，kvm 等虚拟机。"
 keywords: "vagrant, 配置, 使用"
 category: Other
@@ -156,7 +156,5 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
     $ vagrant box list              # 列表
     $ vagrant box remove name       # 移除镜像
     $ vagrant box repackage         # 重新打包
-
-待续……
 
 参考： <https://docs.vagrantup.com/v2/>
