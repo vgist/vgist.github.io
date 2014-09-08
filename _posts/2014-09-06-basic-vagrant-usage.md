@@ -168,7 +168,7 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
     ==> gentoo: Exporting VM...
     ==> gentoo: Compressing package to: /Users/Havee/Documents/git/vagrant/package.box
 
-将 package.box 拿给同事吧，让他们加入该 box，你们的开发环境就完全一直了
+将 package.box 拿给同事吧，让他们加入该 box，你们的开发环境就完全一致了
 
     $ vagrant box add gentoo /path/package.box
 
