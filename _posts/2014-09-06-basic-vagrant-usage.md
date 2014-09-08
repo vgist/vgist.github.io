@@ -20,7 +20,7 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
 
     $ mkdir /your/path/vagrant_name; cd /your/path/vagrant_name; vagrant init gentoo
 
-此命令会在 `/your/path/vagrant_name` 目录下建立 **Vagrantfile** 基础配置文件，你可以通过 git 等方式来分享。下面在此目录下执行 `vagrant box add xxx` 去拉一个现成的镜像下来，鄙人还是习惯拉 Gentoo 的一个 vbox 镜像。当然下面例子中的 Gentoo 镜像存放在 dropbox 中，需要一些**你懂得**操作。
+此命令会在 `/your/path/vagrant_name` 目录下建立 **Vagrantfile** 基础配置文件，你可以通过 git 等方式来分享。下面在此目录下执行 `vagrant box add xxx` 去拉一个现成的镜像下来，鄙人还是习惯拉 Gentoo 的一个 vbox 镜像。当然下面例子中的 Gentoo 镜像存放在 dropbox 中，内地的网络环境**你懂得**，故需要一些**你懂得**操作。
 
     $ vagrant box add gentoo https://dl.dropboxusercontent.com/s/xfl63k64zliixid/gentoo-20131029-i686.box
     ==> box: Adding box 'gentoo' (v0) for provider:
