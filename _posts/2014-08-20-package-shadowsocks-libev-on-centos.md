@@ -155,7 +155,7 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 
     # yum install autoconf libtool gcc openssl-devel
 
-注意：CentOS 6.5 之前的版本，将自己编译个新版本的 GCC 吧。
+注意：CentOS 6.5 之前的版本，自己编译个新版本的 GCC 吧。
 
 随后执行打包操作
 
