@@ -84,7 +84,7 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
         config.vm.network "forwarded_port", guest: 80, host: 8080   # 端口转发
         config.vm.network "private_network", ip: "192.168.33.10"    # 或 config.vm.network "public_network"，顾名思义
         config.ssh.forward_agent = true
-        config.vm.synced_folder "../vagrant", "/vagrant"            # 前一个 host 相对于项目文件夹的目录，后一个虚拟机目录
+        config.vm.synced_folder "./", "/vagrant"
     end
 
 一目了然的配置，名称，更新，端口转发，网络，ssh 以及共享目录。
