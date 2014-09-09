@@ -115,14 +115,6 @@ spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断
     -14: centos_ver     7
     -14: dist           .el7.centos
 
-然后如果你准备写个适配多个发行版时，可以如此操作
-
-    %if 0%{?rhel} >= 7
-        ......
-    %endif
-
-实际上该 spec 文件可以针对 CentOS 7 以及 CentOS 6.5 做处理，CentOS 6 用的是 init script，而 CentOS 7 则改为 systemd。不过鄙人嫌麻烦，就写了个 CentOS 7 的 spec 文件。
-
 #### 二、打包
 
 - **rpm 源码包**：[shadowsocks-libev-1.4.6-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el7.centos.src.rpm)
