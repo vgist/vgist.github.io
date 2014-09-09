@@ -9,7 +9,7 @@ tags: [Packager, Shadowsocks]
 
 为什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，而且一点都不利于扩散嘛。
 
-本教程只针对 CentOS 7，如果是之前的版本，自己写个 init script 吧。
+本篇文章只针对 CentOS 7，如果是之前的版本，自己写个 init script 吧。
 
 #### 一、准备
 
@@ -43,19 +43,19 @@ $ tree ~/rpmbuild
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           shadowsocks-libev
-Version:	1.4.6
-Release:	1%{?dist}
-License:	GPL-3
-Summary:	a lightweight secured scoks5 proxy for embedded devices and low end boxes.
-Url:		https://github.com/madeye/%{name}
-Group:		Applications/Internet
-Source0:	%{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
-Source1:	%{name}.json
-Source2:	ss-local.service
-Source3:	ss-server.service
-Packager:	Havanna <registerdedicated(at)gmail.com>
-BuildRequires:	autoconf libtool gcc openssl-devel
-BuildRoot: 	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
+Version:        1.4.6
+Release:        1%{?dist}
+License:        GPL-3
+Summary:        a lightweight secured scoks5 proxy for embedded devices and low end boxes.
+Url:            https://github.com/madeye/%{name}
+Group:          Applications/Internet
+Source0:        %{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
+Source1:        %{name}.json
+Source2:        ss-local.service
+Source3:        ss-server.service
+Packager:       Havanna <registerdedicated(at)gmail.com>
+BuildRequires:  autoconf libtool gcc openssl-devel
+BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
 
 %description
 shadowsocks-libev is a lightweight secured scoks5 proxy for embedded devices and low end boxes.
