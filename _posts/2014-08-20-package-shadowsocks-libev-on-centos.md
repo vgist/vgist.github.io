@@ -9,6 +9,8 @@ tags: [Packager, Shadowsocks]
 
 为什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，而且一点都不利于扩散嘛。
 
+本教程只针对 CentOS 7，如果是之前的版本，自己写个 init script 吧。
+
 #### 一、准备
 
 rpm 打包需要特定的目录结构，准备工作：
