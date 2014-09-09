@@ -135,17 +135,19 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
     $ rpm2cpio.pl ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
+    shadowsocks-libev
     shadowsocks-libev-1.4.6-e9a530f.tar.gz
     shadowsocks-libev.json
     shadowsocks-libev.spec
     ss-local.service
     ss-server.service
-    1886 blocks
+    1892 blocks
 
 将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
 
 - `ss-local.service`
 - `ss-server.service`
+- `shadowsocks-libev`
 - `shadowsocks-libev.json`
 - `shadowsocks-libev-1.4.6-e9a530f.tar.gz`
 
@@ -153,7 +155,7 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 
     # yum install autoconf libtool gcc openssl-devel
 
-在 CentOS 7 之前的版本，需要自己写个 init script 放入脚本中。CentOS 6.5 之前的版本，将自己编译个新版本的 GCC 吧。
+注意：CentOS 6.5 之前的版本，将自己编译个新版本的 GCC 吧。
 
 随后执行打包操作
 
