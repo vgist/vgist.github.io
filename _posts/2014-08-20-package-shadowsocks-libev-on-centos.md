@@ -9,8 +9,6 @@ tags: [Packager, Shadowsocks]
 
 为什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，而且一点都不利于扩散嘛。
 
-本篇文章只针对 CentOS 7，如果是之前的版本，自己写个 init script 吧。
-
 #### 一、准备
 
 rpm 打包需要特定的目录结构，准备工作：
@@ -43,19 +41,20 @@ $ tree ~/rpmbuild
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:           shadowsocks-libev
-Version:        1.4.6
-Release:        1%{?dist}
-License:        GPL-3
-Summary:        a lightweight secured scoks5 proxy for embedded devices and low end boxes.
-Url:            https://github.com/madeye/%{name}
-Group:          Applications/Internet
-Source0:        %{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
-Source1:        %{name}.json
-Source2:        ss-local.service
-Source3:        ss-server.service
-Packager:       Havanna <registerdedicated(at)gmail.com>
-BuildRequires:  autoconf libtool gcc openssl-devel
-BuildRoot:      %(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
+Version:	1.4.6
+Release:	1%{?dist}
+License:	GPL-3
+Summary:	a lightweight secured scoks5 proxy for embedded devices and low end boxes.
+Url:		https://github.com/madeye/%{name}
+Group:		Applications/Internet
+Source0:	%{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
+Source1:	%{name}.json
+Source2:	ss-local.service
+Source3:	ss-server.service
+Source4:	%{name}
+Packager:	Havanna <registerdedicated(at)gmail.com>
+BuildRequires:	autoconf libtool gcc openssl-devel
+BuildRoot: 	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
 
 %description
 shadowsocks-libev is a lightweight secured scoks5 proxy for embedded devices and low end boxes.
@@ -64,6 +63,7 @@ shadowsocks-libev is a lightweight secured scoks5 proxy for embedded devices and
 %setup -qn %{name}-%{commit}
 
 %build
+export CFLAGS="-O2"
 %configure --prefix=%{_prefix}
 make %{?_smp_mflags}
 
@@ -74,21 +74,36 @@ make DESTDIR=%{buildroot} install
 install -d %{buildroot}%{_sysconfdir}
 install -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}
 
-install -d %{buildroot}%{_unitdir}
-install -m 644 %{SOURCE2} %{buildroot}/%{_unitdir}
-install -m 644 %{SOURCE3} %{buildroot}/%{_unitdir}
+%if 0%{?rhel} >= 7
+	install -d %{buildroot}%{_unitdir}
+	install -m 644 %{SOURCE2} %{buildroot}/%{_unitdir}
+	install -m 644 %{SOURCE3} %{buildroot}/%{_unitdir}
+%endif
+
+%if 0%{?rhel} == 6
+	install -d %{buildroot}%{_initddir}
+	install -m 0755 %{SOURCE4} %{buildroot}%{_initddir}
+%endif
 
 %files
 %defattr(-,root,root)
 %doc Changes README.md COPYING LICENSE
 %config %{_sysconfdir}/shadowsocks-libev.json
-%config %{_unitdir}/ss-local.service
-%config %{_unitdir}/ss-server.service
+
 %{_bindir}/ss-local
 %{_bindir}/ss-redir
 %{_bindir}/ss-server
 %{_bindir}/ss-tunnel
 %{_mandir}/man8/shadowsocks.8.gz
+
+%if 0%{?rhel} >= 7
+	%config %{_unitdir}/ss-local.service
+	%config %{_unitdir}/ss-server.service
+%endif
+
+%if 0%{?rhel} == 6
+	%config %{_initddir}/shadowsocks-libev
+%endif
 
 %changelog
 ```
@@ -112,6 +127,8 @@ spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断
 
 - **rpm 源码包**：[shadowsocks-libev-1.4.6-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el7.centos.src.rpm)
 - **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
+
+rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件打包。
 
 ##### 打包法一
 
