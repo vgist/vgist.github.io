@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CentOS 6 下打包 shadowsocks-libev"
+title: "CentOS 下打包 shadowsocks-libev"
 description: "什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，一点都不利于扩散。"
 keywords: "centos, shadowsocks, libev, rpm, 打包"
 category: Linux
@@ -49,7 +49,8 @@ Url:		https://github.com/madeye/%{name}
 Group:		Applications/Internet
 Source0:	%{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
 Source1:	%{name}.json
-Source2:	%{name}
+Source2:	ss-local.service
+Source3:	ss-server.service
 Packager:	Havanna <registerdedicated(at)gmail.com>
 BuildRequires:	autoconf libtool gcc openssl-devel
 BuildRoot: 	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
@@ -58,7 +59,7 @@ BuildRoot: 	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
 shadowsocks-libev is a lightweight secured scoks5 proxy for embedded devices and low end boxes.
 
 %prep
-%setup -q %{name}-%{commit}
+%setup -qn %{name}-%{commit}
 
 %build
 %configure --prefix=%{_prefix}
@@ -71,14 +72,16 @@ make DESTDIR=%{buildroot} install
 install -d %{buildroot}%{_sysconfdir}
 install -m 644 %{SOURCE1} %{buildroot}/%{_sysconfdir}
 
-install -d %{buildroot}%{_initddir}
-install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
+install -d %{buildroot}%{_unitdir}
+install -m 644 %{SOURCE2} %{buildroot}/%{_unitdir}
+install -m 644 %{SOURCE3} %{buildroot}/%{_unitdir}
 
 %files
 %defattr(-,root,root)
 %doc Changes README.md COPYING LICENSE
 %config %{_sysconfdir}/shadowsocks-libev.json
-%config %{_initddir}/shadowsocks-libev
+%config %{_unitdir}/ss-local.service
+%config %{_unitdir}/ss-server.service
 %{_bindir}/ss-local
 %{_bindir}/ss-redir
 %{_bindir}/ss-server
@@ -86,27 +89,30 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 %{_mandir}/man8/shadowsocks.8.gz
 
 %changelog
+
 ```
 
 #### 二、打包
 
-- **rpm 源码包**：[shadowsocks-libev-1.4.6-1.e16.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el6.src.rpm)
+- **rpm 源码包**：[shadowsocks-libev-1.4.6-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el7.centos.src.rpm)
 - **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
 
 ##### 打包法一
 
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
-    $ rpm2cpio /path/shadowsocks-libev-1.4.6-1.el6.src.rpm | cpio -div
-    shadowsocks-libev
-    shadowsocks-libev-1.4.6-e9a530f.tar.gz
-    shadowsocks-libev.json
-    shadowsocks-libev.spec
-    1888 blocks
+	$ rpm2cpio.pl ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
+	shadowsocks-libev-1.4.6-e9a530f.tar.gz
+	shadowsocks-libev.json
+	shadowsocks-libev.spec
+	ss-local.service
+	ss-server.service
+	1886 blocks
 
 将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
 
-- `shadowsocks-libev`
+- `ss-local.service`
+- `ss-server.service`
 - `shadowsocks-libev.json`
 - `shadowsocks-libev-1.4.6-e9a530f.tar.gz`
 
@@ -114,7 +120,7 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 
     # yum install autoconf libtool gcc openssl-devel
 
-在 Centos 6.5 之前的版本，可能需要升级下默认的 gcc，不论你自编译，亦或找第三方源。
+在 Centos 7 之前的版本，需要自己写个 init script 放入脚本中。
 
 随后执行打包操作
 
@@ -130,15 +136,15 @@ install -m 755 %{SOURCE2} %{buildroot}/%{_initddir}
 
 直接通过 rpm 源码包来制作两进制包
 
-    $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el6.src.rpm
+    $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el7.src.rpm
 
 #### 三、安装
 
 然后直接安装两进制包
 
-    # rpm -ivh /path/shadowsocks-libev-1.4.6-1.el6.i686.rpm
+    # rpm -ivh /path/shadowsocks-libev-1.4.6-1.el7.centos.x86_64.rpm
     or
-    # yum install /path/shadowsocks-libev-1.4.6-1.el6.i686.rpm
+    # yum install /path/shadowsocks-libev-1.4.6-1.el7.centos.x86_64.rpm
 
 参考：
 
