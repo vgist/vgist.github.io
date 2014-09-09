@@ -154,7 +154,7 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
     $ vagrant resume
     $ vagrant ssh                   # ssh 连接到虚拟机
     $ vagrant status                # 虚拟机状态
-    $ vagrant destroy               # 销毁
+    $ vagrant destroy
     $ vagrant package               # 打包
     $ vagrant box add name url      # 添加镜像
     $ vagrant box list              # 列表
