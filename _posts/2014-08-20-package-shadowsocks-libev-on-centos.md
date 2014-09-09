@@ -91,8 +91,22 @@ install -m 644 %{SOURCE3} %{buildroot}/%{_unitdir}
 %{_mandir}/man8/shadowsocks.8.gz
 
 %changelog
-
 ```
+
+spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断系统版本
+
+    $ rpmbuild --showrc | grep centos
+    -14: centos         7
+    -14: centos_ver     7
+    -14: dist           .el7.centos
+
+然后如果你准备写个适配多个发行版时，可以如此操作
+
+    %if 0%{?rhel} >= 7
+        ......
+    %endif
+
+实际上该 spec 文件可以针对 CentOS 7 以及 CentOS 6.5 做处理，CentOS 6 用的是 init script，而 CentOS 7 则改为 systemd。不过鄙人嫌麻烦，就写了个 CentOS 7 的 spec 文件。
 
 #### 二、打包
 
@@ -103,13 +117,13 @@ install -m 644 %{SOURCE3} %{buildroot}/%{_unitdir}
 
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
-	$ rpm2cpio.pl ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
-	shadowsocks-libev-1.4.6-e9a530f.tar.gz
-	shadowsocks-libev.json
-	shadowsocks-libev.spec
-	ss-local.service
-	ss-server.service
-	1886 blocks
+    $ rpm2cpio.pl ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
+    shadowsocks-libev-1.4.6-e9a530f.tar.gz
+    shadowsocks-libev.json
+    shadowsocks-libev.spec
+    ss-local.service
+    ss-server.service
+    1886 blocks
 
 将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
 
@@ -122,7 +136,7 @@ install -m 644 %{SOURCE3} %{buildroot}/%{_unitdir}
 
     # yum install autoconf libtool gcc openssl-devel
 
-在 Centos 7 之前的版本，需要自己写个 init script 放入脚本中。
+在 CentOS 7 之前的版本，需要自己写个 init script 放入脚本中。CentOS 6.5 之前的版本，将自己编译个新版本的 GCC 吧。
 
 随后执行打包操作
 
