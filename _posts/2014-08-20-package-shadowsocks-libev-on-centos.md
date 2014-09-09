@@ -72,12 +72,12 @@ rm -rf %{buildroot}
 make DESTDIR=%{buildroot} install
 
 install -d %{buildroot}%{_sysconfdir}
-install -m 644 %{SOURCE1} %{buildroot}%{_sysconfdir}
+install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}
 
 %if 0%{?rhel} >= 7
 	install -d %{buildroot}%{_unitdir}
-	install -m 644 %{SOURCE2} %{buildroot}%{_unitdir}
-	install -m 644 %{SOURCE3} %{buildroot}%{_unitdir}
+	install -m 0644 %{SOURCE2} %{buildroot}%{_unitdir}
+	install -m 0644 %{SOURCE3} %{buildroot}%{_unitdir}
 %endif
 
 %if 0%{?rhel} == 6
