@@ -85,6 +85,16 @@ install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}
 	install -m 0755 %{SOURCE4} %{buildroot}%{_initddir}
 %endif
 
+%if 0%{?rhel} < 7
+%post
+/sbin/chkconfig --add %{name}
+%preun
+if [$ = 0]; then
+	/sbin/service %{name} stop
+	/sbin/chkconfig --del %{name}
+fi
+%endif
+
 %files
 %defattr(-,root,root)
 %doc Changes README.md COPYING LICENSE
