@@ -125,6 +125,15 @@ spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断
     -14: centos_ver     7
     -14: dist           .el7.centos
 
+小技巧
+
+| |install|upgrade|uninstall|
+|:---|:---:|:---:|:---:|
+|%pre|$1 == 1|$1 == 2|(N/A)|
+|%post|$1 == 1|$1 == 2|(N/A)|
+|%preun|(N/A)|$1 == 1|$1 == 0|
+|postun|(N/A)|$1 == 1|$1 == 0|
+
 #### 二、打包
 
 - **rpm 源码包**：[shadowsocks-libev-1.4.6-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el7.centos.src.rpm)
