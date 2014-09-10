@@ -89,7 +89,7 @@ install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}
 %post
 /sbin/chkconfig --add %{name}
 %preun
-if [$ = 0]; then
+if [$1 = 0]; then
 	/sbin/service %{name} stop
 	/sbin/chkconfig --del %{name}
 fi
