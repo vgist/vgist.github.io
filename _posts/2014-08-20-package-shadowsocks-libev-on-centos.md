@@ -40,7 +40,7 @@ $ tree ~/rpmbuild
 %global commit e9a530f9dcd3d94e8dcbd341b5e0ccd5bc71cd95
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
-Name:           shadowsocks-libev
+Name:		shadowsocks-libev
 Version:	1.4.6
 Release:	1%{?dist}
 License:	GPL-3
