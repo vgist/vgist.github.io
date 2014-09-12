@@ -98,21 +98,17 @@ fi
 %files
 %defattr(-,root,root)
 %doc Changes README.md COPYING LICENSE
-%config %{_sysconfdir}/shadowsocks-libev.json
+%config %{_sysconfdir}
 
-%{_bindir}/ss-local
-%{_bindir}/ss-redir
-%{_bindir}/ss-server
-%{_bindir}/ss-tunnel
-%{_mandir}/man8/shadowsocks.8.gz
+%{_bindir}
+%{_mandir}
 
 %if 0%{?rhel} >= 7
-	%config %{_unitdir}/ss-local.service
-	%config %{_unitdir}/ss-server.service
+	%config %{_unitdir}
 %endif
 
 %if 0%{?rhel} == 6
-	%config %{_initddir}/shadowsocks-libev
+	%config %{_initddir}
 %endif
 
 %changelog
