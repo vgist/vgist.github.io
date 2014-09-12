@@ -16,11 +16,11 @@ rpm 打包需要特定的目录结构，准备工作：
     $ echo "%_topdir %(echo $HOME)/rpmbuild" >> ~/.rpmmacros
     $ mkdir -p ~/rpmbuild/{BUILD,RPMS,S{OURCE,PEC,RPM}S}
 
-<!-- more -->
 你也需要特定的一些工具
 
     # yum install rpm-build rpmdevtools
 
+<!-- more -->
 目录结构
 
 ```
@@ -34,7 +34,11 @@ $ tree ~/rpmbuild
 └── SRPMS
 ```
 
-打包 rpm 的核心就是 spec 文件，可以通过模板操作 `rpmdev-newspec shadowsocks-libev`，也可以通过其他工具来书写。给出 `shadowsocks-libev.spec`
+打包 rpm 的核心就是 spec 文件，可以通过模板操作
+
+    $ rpmdev-newspec shadowsocks-libev
+
+也可以通过其他工具来书写。给出 **shadowsocks-libev.spec** 文件
 
 ```spec
 %global commit d37f8d302532a8d442233d9b752324ffff99bbd0
