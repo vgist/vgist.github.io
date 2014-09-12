@@ -37,11 +37,11 @@ $ tree ~/rpmbuild
 打包 rpm 的核心就是 spec 文件，可以通过模板操作，可以通过其他工具来书写。给出 `shadowsocks-libev.spec`
 
 ```spec
-%global commit e9a530f9dcd3d94e8dcbd341b5e0ccd5bc71cd95
+%global commit d37f8d302532a8d442233d9b752324ffff99bbd0
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:		shadowsocks-libev
-Version:	1.4.6
+Version:	1.4.7
 Release:	1%{?dist}
 License:	GPL-3
 Summary:	a lightweight secured scoks5 proxy for embedded devices and low end boxes.
@@ -132,7 +132,7 @@ spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断
 
 #### 二、打包
 
-- **rpm 源码包**：[shadowsocks-libev-1.4.6-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.6-1.el7.centos.src.rpm)
+- **rpm 源码包**：[shadowsocks-libev-1.4.7-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.7-1.el7.centos.src.rpm)
 - **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
 
 rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件打包。
@@ -141,14 +141,14 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
-    $ rpm2cpio.pl ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
+    $ rpm2cpio ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
     shadowsocks-libev
-    shadowsocks-libev-1.4.6-e9a530f.tar.gz
+    shadowsocks-libev-1.4.7-d37f8d3.tar.gz
     shadowsocks-libev.json
     shadowsocks-libev.spec
     ss-local.service
     ss-server.service
-    1892 blocks
+    1894 blocks
 
 将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
 
@@ -156,7 +156,7 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 - `ss-server.service`
 - `shadowsocks-libev`
 - `shadowsocks-libev.json`
-- `shadowsocks-libev-1.4.6-e9a530f.tar.gz`
+- `shadowsocks-libev-1.4.7-d37f8d3.tar.gz`
 
 安装一些必要的依赖
 
@@ -178,15 +178,15 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 
 直接通过 rpm 源码包来制作两进制包
 
-    $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.6-1.el7.src.rpm
+    $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.7-1.el7.centos.src.rpm
 
 #### 三、安装
 
 然后直接安装两进制包
 
-    # rpm -ivh /path/shadowsocks-libev-1.4.6-1.el7.centos.x86_64.rpm
+    # rpm -ivh /path/shadowsocks-libev-1.4.7-1.el7.centos.x86_64.rpm
     or
-    # yum install /path/shadowsocks-libev-1.4.6-1.el7.centos.x86_64.rpm
+    # yum install /path/shadowsocks-libev-1.4.7-1.el7.centos.x86_64.rpm
 
 参考：
 
