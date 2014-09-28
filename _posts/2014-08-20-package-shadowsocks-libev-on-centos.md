@@ -104,10 +104,7 @@ fi
 %doc Changes README.md COPYING LICENSE
 %config %{_sysconfdir}
 
-%{_bindir}/ss-local
-%{_bindir}/ss-redir
-%{_bindir}/ss-server
-%{_bindir}/ss-tunnel
+%{_bindir}/*
 %{_mandir}
 
 %if 0%{?rhel} >= 7
