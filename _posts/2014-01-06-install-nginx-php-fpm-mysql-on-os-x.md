@@ -326,9 +326,9 @@ alias mysql.restart='mysql.stop && mysql.start'
 
 ![php info]({{ site.qiniudn }}/images/2014/01/phpinfo.jpg)
 
-#### 其他
+#### 五. 其他
 
-##### apache + mod_fastcgi
+##### 1. apache + mod_fastcgi
 
     $ brew tap homebrew/apache
     $ brew install httpd24
