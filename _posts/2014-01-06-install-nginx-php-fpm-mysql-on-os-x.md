@@ -332,7 +332,7 @@ alias mysql.restart='mysql.stop && mysql.start'
 
     $ brew tap homebrew/apache
     $ brew install httpd24
-    $ brew install mod_fastcgi
+    $ brew install mod_fastcgi --with-brewed-httpd24
 
 编辑 `/usr/local/etc/apache2/2.4/httpd.conf`
 
