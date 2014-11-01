@@ -60,11 +60,11 @@ File Commands:
 
 pkgutil 的帮助文件已经说明的很清楚了，步骤：
 
-1. 查找下你需要卸载的软件包ID
+#### 1. 查找下你需要卸载的软件包ID
 
     $ pkgutil --files PKGID
 
-2. 检查下软件包信息，路径
+#### 2. 检查下软件包信息，路径
 
     $ pkgutil --pkg-info PKGID
 
@@ -79,13 +79,13 @@ pkgutil 的帮助文件已经说明的很清楚了，步骤：
 
 从以上我们要获取的信息是，PKGID 为 com.cmbchina.CMBSecurityPlugin.pkg，在根目录 `/` 下的 `Library/Internet Plug-Ins` 目录，也就是 `/Library/Internet Plug-Ins` 目录下，这个下面用得到。
 
-3. 执行删除操作
+#### 3. 执行删除操作
 
 你当然可以通过 `pkgutil --files PKGID` 得到的文件列表，手动的去删除，仍然以招行插件为例：
 
     $ lsbom -fls  /private/var/db/receipts/com.cmbchina.CMBSecurityPlugin.pkg.bom | (cd /Library/Internet\ Plug-Ins; sudo xargs rm)
 
-4. 最后清除包管理数据库中的pkg包信息
+#### 4. 最后清除包管理数据库中的pkg包信息
 
-    # pkgutil --forget PKGID
+    $ sudo pkgutil --forget PKGID
 
