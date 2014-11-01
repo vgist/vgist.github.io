@@ -99,5 +99,5 @@ pkgutil 的帮助文件已经说明的很清楚了，步骤：
 
 参考：
 
-- [Uninstalling packages (.pkg files) on Mac OS X](Uninstalling packages \(.pkg files\) on Mac OS X)
+- [Uninstalling packages (.pkg files) on Mac OS X](https://wincent.com/wiki/Uninstalling_packages_\(.pkg_files\)_on_Mac_OS_X)
 - [Mac OS X Hints 翻译计划:卸载通过.pkg安装的应用程序](http://www.macfans.com.cn/forum.php?mod=viewthread&tid=216065)
