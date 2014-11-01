@@ -4,7 +4,7 @@ title: "OS X 下卸载 pkg 包"
 description: "介绍 OS X 下使用 pkgutil 来卸载 pkg 软件包"
 keywords: "OS X, Mac, pkg, 卸载"
 category: Mac
-tags: [pkgutil]
+tags: [Pkgutil]
 ---
 
 好久没写记录了，昨晚在 OS X 下卸载一堆 pkg 安装的软件包，特意放狗搜了下网络，遂做下记录，免得遗忘。一下所说的只适用于 OS X Yosemite 下，之前的版本不做考虑。
