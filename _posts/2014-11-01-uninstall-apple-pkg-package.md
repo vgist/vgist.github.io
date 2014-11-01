@@ -9,6 +9,8 @@ tags: [pkgutil]
 
 好久没写记录了，昨晚在 OS X 下卸载一堆 pkg 安装的软件包，特意放狗搜了下网络，遂做下记录，免得遗忘。一下所说的只适用于 OS X Yosemite 下，之前的版本不做考虑。
 
+### 一、准备
+
 首先，安装的 pkg 软件包，都记录在以下
 
     /Library/Receipts/InstallHistory.plist
@@ -58,6 +60,8 @@ File Commands:
   --payload-files PATH   List the paths archived within the (m)pkg at PATH
 ```
 
+### 二、方法
+
 pkgutil 的帮助文件已经说明的很清楚了，步骤：
 
 #### 1. 查找下你需要卸载的软件包ID
@@ -89,3 +93,11 @@ pkgutil 的帮助文件已经说明的很清楚了，步骤：
 
     $ sudo pkgutil --forget PKGID
 
+#### 三、App
+
+上面的都是一些基础的介绍，当然如今已经有现成的 app 可以使用，譬如 [PackageUninstaller](https://github.com/hewigovens/PackageUninstaller)、[UninstallPKG](http://www.corecode.at/uninstallpkg/)，前者免费，后者收费。
+
+参考：
+
+- [Uninstalling packages (.pkg files) on Mac OS X](Uninstalling packages \(.pkg files\) on Mac OS X)
+- [Mac OS X Hints 翻译计划:卸载通过.pkg安装的应用程序](http://www.macfans.com.cn/forum.php?mod=viewthread&tid=216065)
