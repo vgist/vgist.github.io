@@ -9,10 +9,10 @@ tags: [pkgutil]
 
 好久没写记录了，昨晚在 OS X 下卸载一堆 pkg 安装的软件包，特意放狗搜了下网络，遂做下记录，免得遗忘。一下所说的只适用于 OS X Yosemite 下，之前的版本不做考虑。
 
-首先，你通过如下方式安装的 pkg 软件包，都记录在一个文件下 `/Library/Receipts/InstallHistory.plist`，
+首先，安装的 pkg 软件包，都记录在以下
 
-- 通过 App Store 安装的软件包
-- 任何方式安装的 pkg 包
+    /Library/Receipts/InstallHistory.plist
+    /private/var/db/receipts
 
 <!-- more -->
 下面介绍的是一个命令工具：**pkgutil**。
