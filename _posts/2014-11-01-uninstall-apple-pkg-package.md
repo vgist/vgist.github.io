@@ -101,7 +101,7 @@ cd 路径，即第 3 步中的目录。
 
 #### 三、App
 
-上面的都是一些基础的介绍，当然如今已经有现成的 app 可以使用，譬如 [PackageUninstaller](https://github.com/hewigovens/PackageUninstaller)、[UninstallPKG](http://www.corecode.at/uninstallpkg/)，前者免费，后者收费。
+上面的都是一些基础的介绍，当然如今已经有现成的 app 可以使用，譬如 <del>[PackageUninstaller](https://github.com/hewigovens/PackageUninstaller)</del>、[UninstallPKG](http://www.corecode.at/uninstallpkg/)，前者免费，后者收费。
 
 参考：
 
