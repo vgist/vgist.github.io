@@ -92,8 +92,11 @@ pkgutil 的帮助文件已经说明的很清楚了，步骤：
 你当然可以通过 `pkgutil --files PKGID` 得到的文件列表，手动的去删除，我们还是读软件包的 bom 文件去删除，仍然以招行插件为例：
 
     $ lsbom -fls  /private/var/db/receipts/com.cmbchina.CMBSecurityPlugin.pkg.bom | (cd /Library/Internet\ Plug-Ins; sudo xargs rm)
+    $ lsbom -dls  /private/var/db/receipts/com.cmbchina.CMBSecurityPlugin.pkg.bom | (cd /Library/Internet\ Plug-Ins; sudo xargs rm -r)
 
 cd 路径，即第 3 步中的目录。
+
+lsbom 的具体用法可以参考 `lsbom --help`。
 
 #### 4. 最后清除包管理数据库中的pkg包信息
 
