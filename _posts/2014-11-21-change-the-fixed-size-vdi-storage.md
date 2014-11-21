@@ -11,9 +11,9 @@ tags: [VirtialBox]
 
 网上爬文，找到解决方法，是通过参数 modifyhd 来修改，记录下：
 
-<!-- more -->
 首先固定大小的虚拟磁盘是不能扩容的
 
+<!-- more -->
 ```
 $ VBoxManage modifyhd Windows\ 8.1.vdi --resize 31480
 0%...
