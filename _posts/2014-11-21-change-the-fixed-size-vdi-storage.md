@@ -15,11 +15,11 @@ tags: [VirtialBox]
 
 <!-- more -->
 ```
-$ VBoxManage modifyhd Windows\ 8.1.vdi --resize 31480
+/Users/cnhavee/Documents/Virtual Machines.localized/Windows 8.1 $ VBoxManage modifyhd Windows\ 8.1.vdi --resize 31480
 0%...
 Progress state: VBOX_E_NOT_SUPPORTED
 VBoxManage: error: Resize hard disk operation for this format is not implemented yet!
-$ VBoxManage showhdinfo Windows\ 8.1.vdi
+/Users/cnhavee/Documents/Virtual Machines.localized/Windows 8.1 $ VBoxManage showhdinfo Windows\ 8.1.vdi
 UUID:           4f58019c-f45e-477a-9f82-2b6377bc956b
 Parent UUID:    base
 State:          created
@@ -35,10 +35,10 @@ In use by VMs:  Windows 8.1 (UUID: 0e44d03f-7824-46f6-855d-81fbf9b31fc5)
 Format variant 为 fixed default，动手转化吧
 
 ```
-$ VBoxManage clonehd Windows\ 8.1.vdi ./Windows\ 8.1_clone.vdi
+/Users/cnhavee/Documents/Virtual Machines.localized/Windows 8.1 $ VBoxManage clonehd Windows\ 8.1.vdi ./Windows\ 8.1_clone.vdi
 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
 Clone hard disk created in format 'VDI'. UUID: 380da4bf-e8fd-40eb-884e-b6a3568739c6
-$ VBoxManage showhdinfo Windows\ 8.1_clone.vdi
+/Users/cnhavee/Documents/Virtual Machines.localized/Windows 8.1 $ VBoxManage showhdinfo Windows\ 8.1_clone.vdi
 UUID:           380da4bf-e8fd-40eb-884e-b6a3568739c6
 Parent UUID:    base
 State:          created
@@ -53,9 +53,9 @@ Size on disk:   20075 MBytes
 好了，现在是 dynamic default，扩容
 
 ```
-$ VBoxManage modifyhd Windows\ 8.1_clone.vdi --resize 31480
+/Users/cnhavee/Documents/Virtual Machines.localized/Windows 8.1 $ VBoxManage modifyhd Windows\ 8.1_clone.vdi --resize 31480
 0%...10%...20%...30%...40%...50%...60%...70%...80%...90%...100%
-$ VBoxManage showhdinfo Windows\ 8.1_clone.vdi
+/Users/cnhavee/Documents/Virtual Machines.localized/Windows 8.1 $ VBoxManage showhdinfo Windows\ 8.1_clone.vdi
 UUID:           380da4bf-e8fd-40eb-884e-b6a3568739c6
 Parent UUID:    base
 State:          created
