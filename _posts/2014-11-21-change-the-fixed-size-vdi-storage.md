@@ -71,4 +71,4 @@ Size on disk:   20075 MBytes
 
 当然，最后还得在虚拟 Windows 8.1 中，扩展下你的 C 盘，否则显示的还是 20GB。
 
-参考：<http://superuser.com/questions/716649/how-to-change-fixed-size-vdi-with-modifyhd-command-in-windows>
+参考：<https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi>
