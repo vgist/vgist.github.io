@@ -71,4 +71,12 @@ Size on disk:   20075 MBytes
 
 当然，最后还得在虚拟 Windows 8.1 中，扩展下你的 C 盘，否则显示的还是 20GB。
 
+顺带提一下如何压缩 VDI 磁盘，需要写零工具 SDelete：<http://technet.microsoft.com/en-us/sysinternals/bb897443.aspx>
+
+下载下来的 sdelete.exe 放入 `%system32%` 下。
+
+1. 首先虚拟机下整理磁盘
+2. 打开 cmd（win7 以后需要管理员权限），`sdelete -z`
+3. VBoxManage modifyhd path/uuid --compact
+
 参考：<https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi>
