@@ -77,6 +77,6 @@ Size on disk:   20075 MBytes
 
 1. 首先虚拟机下整理磁盘
 2. 打开 cmd（win7 以后需要管理员权限），`sdelete -z`
-3. VBoxManage modifyhd path/uuid --compact
+3. `VBoxManage modifyhd path/uuid --compact`
 
 参考：<https://www.virtualbox.org/manual/ch08.html#vboxmanage-modifyvdi>
