@@ -7,6 +7,8 @@ category: Linux
 tags: [Gentoo, CLI, Lerning]
 ---
 
+> 本人曾记录于网易博客，现转回自己博客。
+
 由于是在vbox3中练手，所以只给了4个G的空间
 
 首先从网上下载 install-x86-minimal-20090912.iso
