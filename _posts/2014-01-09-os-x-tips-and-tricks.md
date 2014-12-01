@@ -128,6 +128,9 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 #### 九. 生僻的快捷键
 
 - Ctrl + a/e：移动至行首/尾
+- Ctrl + l：清除屏幕
+- Ctrl + u：清除当前行
+- Ctrl + k：清除至当前行尾
 - Option + right/left：向右/左移动一个单词
 - Fn + up/down：相当于 Page up/down
 - Ctrl + Command + F：全屏，仅支持右上角双箭头的窗口
