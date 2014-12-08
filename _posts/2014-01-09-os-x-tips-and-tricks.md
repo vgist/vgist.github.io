@@ -131,6 +131,8 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 - Ctrl + l：清除屏幕
 - Ctrl + u：清除当前行
 - Ctrl + k：清除至当前行尾
+- Ctrl + w：向前删除一个单词
+- Ctrl + y：粘贴用 Ctrl + w/k/u 删除的单词
 - Option + right/left：向右/左移动一个单词
 - Fn + up/down：相当于 Page up/down
 - Ctrl + Command + F：全屏，仅支持右上角双箭头的窗口
