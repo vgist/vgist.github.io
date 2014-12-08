@@ -156,4 +156,4 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 我的处理是这样的，app store的软件默认就在根目录下的 `/Applications`，自己下载的 app，我则是放到家目录 `~/Applications`，而不会随便放到 `/Applications` 而默认给于 root 权限。
 
-同样，能直接在 app store 安装的就直接安装，其次尽量找 app 放到 `~/Applications`目录，实在没有的，再使用 HomeBrew 去安装。
+同样，能直接在 app store 安装的就直接安装，其次使用 HomeBrew 去安装病自动 ln 到 `~/Applications` 目录。
