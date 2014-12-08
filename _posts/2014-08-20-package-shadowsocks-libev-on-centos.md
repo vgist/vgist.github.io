@@ -136,7 +136,6 @@ spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断
 
 #### 二、打包
 
-- **rpm 源码包**：[shadowsocks-libev-1.4.7-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.4.7-1.el7.centos.src.rpm)
 - **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
 
 rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件打包。
