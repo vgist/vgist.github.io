@@ -96,20 +96,20 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 针对 OS X 10.4、10.5
 
-    sudo lookupd -flushcache
+    $ sudo lookupd -flushcache
 
 
 针对 OS X 10.6
 
-    sudo dscacheutil -flushcache
+    $ sudo dscacheutil -flushcache
 
 针对 OS X 10.7、10.8、10.9
 
-    sudo killall -HUP mDNSResponder
+    $ sudo killall -HUP mDNSResponder
 
 针对 OS X 10.10
 
-    sudo dscacheutil -flushcache
+    $ sudo dscacheutil -flushcache
 
 #### 八. 视频播放
 
@@ -148,7 +148,7 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 用了段时间后，右键菜单就开始臃肿不堪，有时会冒出重复项，打开终端，输入
 
-    /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user; killall Finder
+    $ /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -r -domain local -domain user; killall Finder
 
 #### 十二. app 归类
 
@@ -162,6 +162,6 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 系统默认的快捷键 Shift + Command + 3/4 截屏会带上阴影，部分人觉得不爽，要去掉阴影。
 
-    defaults write com.apple.screencapture disable-shadow -bool true
-    killall SystemUIServer
+    $ defaults write com.apple.screencapture disable-shadow -bool true
+    $ killall SystemUIServer
 
