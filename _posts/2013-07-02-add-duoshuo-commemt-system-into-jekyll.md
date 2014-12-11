@@ -92,4 +92,4 @@ OK，完成手工。
 
 - 多说评论似乎升级了系统，无法自动获取到页面文章标题，所以手动在评论页插入 **data-title**。--2013.09.10
 - 首页调用多说评论数的话，需要插入 **data-thread-key**。--2014.04.01
-- 一处笔误：`site.JB.comments.duoshuo.name` -> `site.JB.comments.duoshuo.short_name`，感谢 [shrimp](http://zhouweicsu.github.io) 指出。
+- 一处笔误：`site.JB.comments.duoshuo.name` -> `site.JB.comments.duoshuo.short_name`，感谢 [shrimp](http://zhouweicsu.github.io) 指出。-- 2014.12.11
