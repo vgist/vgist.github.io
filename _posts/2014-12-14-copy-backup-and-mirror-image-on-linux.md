@@ -3,8 +3,8 @@ layout: post
 title: "Linux 上的复制、备份与镜像"
 description: "在 ＊nix 下的复制、备份与镜像的常规操作"
 keywords: "cp, cpio, tar, dd"
-category: 
-tags: []
+category: Linux
+tags: [CLI]
 ---
 
 今天狂社区，偶尔发现有人询问大量小文件的移动复制与备份的问题，第一反应就是 `cpio`。因为以前备份 Gentoo 的时候，都是直接 `cpio` 来处理的，当然，tar、cp、dd 也可。至于 dump & restore 则由于文件系统适应性基本被放弃。
@@ -54,18 +54,18 @@ tags: []
 
     tar cvf /path/name.tar /path/name
     tar cvjf /path/name.tar.bz2 /path/name
-	tar cvzf /path/name.tar.gz /path/name
-	tar cvJf /path/name.tar.xz /path/name
-	tar cvJf /path/name.tar.lzma /path/name
+    tar cvzf /path/name.tar.gz /path/name
+    tar cvJf /path/name.tar.xz /path/name
+    tar cvJf /path/name.tar.lzma /path/name
 
 常见的解包命令
 
     tar xvf /path/name.tar
-	tar xvjf /path/name.tar.bz2
-	tar xvzf /path/name.tar.gz
-	tar xvJf /path/name.tar.xz
-	tar xvJf /path/name.tar.lzma
-	
+    tar xvjf /path/name.tar.bz2
+    tar xvzf /path/name.tar.gz
+    tar xvJf /path/name.tar.xz
+    tar xvJf /path/name.tar.lzma
+
 详细命令可以使用 `man tar` 来查看
 
 ### dd
@@ -81,11 +81,11 @@ dd 在 Linux 环境下，也是非常有用的一个命令，她可以拷贝一�
 
 常见的命令
 
-    dd if=/dev/sdx of=/path/to/mbr bs=512 count=1  # 备份 mbr
-	dd if=/path/to/mbr of=/dev/sdx bs=512 count=1  # 恢复 mbr
-	dd if=/dev/zero of=/path/swap bs=1M count=1024 # 创建个 1024MB 的文件 swap
-	dd if=/path/to/image of=/dev/sdx bs=1M         # 制作 u 盘启动盘
-	dd if=/dev/cdrom of=/path/to/iso               # 制作 cd 的 iso 镜像
+    dd if=/dev/sdx of=/path/to/mbr bs=512 count=1       # 备份 mbr
+    dd if=/path/to/mbr of=/dev/sdx bs=512 count=1       # 恢复 mbr
+    dd if=/dev/zero of=/path/swap bs=1M count=1024      # 创建个 1024MB 的文件 swap
+    dd if=/path/to/image of=/dev/sdx bs=1M              # 制作 u 盘启动盘
+    dd if=/dev/cdrom of=/path/to/iso                    # 制作 cd 的 iso 镜像
 
 详细使用方法可以 `man dd`。
 
@@ -111,9 +111,9 @@ cpio 可以从 cpio、tar、pax、zip、jar、iso 等等格式的文件中存取
 
 常见的使用场景
 
-    find /path/to/dir | cpio -ocvB > /path/to/name.cpio  # o模式，打包目录成 cpio 档案
-	cpio -ivt < /path/to/name.cpio    # i 模式，列出 name.cpio 的文件
-	find /path/to/dir1 | cpio -vdp /path/to/dir2  # p 模式，直接复制文件到新目录
-	find /. | cpio -ocvBL /path/to/system.cpio   # 备份整个系统
-	cpio -iduvd < /path/to/system.cpio    # i 模式，还原整个系统
-	cpio -iduvd < /path/to/name.cpio    # i 模式，还原 cpio 档案
+    find /path/to/dir | cpio -ocvB > /path/to/name.cpio     # o模式，打包目录成 cpio 档案
+    cpio -ivt < /path/to/name.cpio                          # i 模式，列出 name.cpio 的文件
+    find /path/to/dir1 | cpio -vdp /path/to/dir2            # p 模式，直接复制文件到新目录
+    find /. | cpio -ocvBL /path/to/system.cpio              # 备份整个系统
+    cpio -iduvd < /path/to/system.cpio                      # i 模式，还原整个系统
+    cpio -iduvd < /path/to/name.cpio                        # i 模式，还原 cpio 档案
