@@ -23,7 +23,7 @@ rpm 打包需要特定的目录结构，准备工作：
 <!-- more -->
 目录结构
 
-```
+```console
 $ tree ~/rpmbuild
 /home/havanna/rpmbuild
 ├── BUILD
@@ -120,10 +120,12 @@ fi
 
 spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断系统版本
 
-    $ rpmbuild --showrc | grep centos
-    -14: centos         7
-    -14: centos_ver     7
-    -14: dist           .el7.centos
+```console
+$ rpmbuild --showrc | grep centos
+-14: centos         7
+-14: centos_ver     7
+-14: dist           .el7.centos
+```
 
 小技巧
 
@@ -144,14 +146,16 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 
 具体的下载上面的 rpm 源码包，可以通过以下命令解压来查看
 
-    $ rpm2cpio ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
-    shadowsocks-libev
-    shadowsocks-libev-1.4.7-d37f8d3.tar.gz
-    shadowsocks-libev.json
-    shadowsocks-libev.spec
-    ss-local.service
-    ss-server.service
-    1894 blocks
+```console
+$ rpm2cpio ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
+shadowsocks-libev
+shadowsocks-libev-1.4.7-d37f8d3.tar.gz
+shadowsocks-libev.json
+shadowsocks-libev.spec
+ss-local.service
+ss-server.service
+1894 blocks
+```
 
 将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
 
