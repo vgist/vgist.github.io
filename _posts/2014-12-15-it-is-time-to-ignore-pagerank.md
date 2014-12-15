@@ -17,3 +17,7 @@ tags: []
 Forum discussion at [Google Webmaster Help](https://productforums.google.com/forum/#!msg/webmasters/dKPZID4N3v0/tKI43QpLUWsJ)
 
 PageRank是Google专有的算法，用于衡量特定网页相对于搜索引擎索引中的其他网页而言的重要程度。它由Larry Page 和 Sergey Brin在20世纪90年代后期发明。PageRank实现了将链接价值概念作为排名因素。
+
+关于 PageRank 的详细介绍：
+
+- <http://zh.wikipedia.org/wiki/PageRank>
