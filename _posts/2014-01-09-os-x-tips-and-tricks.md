@@ -119,9 +119,9 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 ![MPlayer OSX Preferences]({{ site.qiniudn }}/images/2014/01/mplayer-osx-preferences.png)
 
-遗憾的是，播放蓝光 ISO 就不那么直观了。
+当然，[MplayerX](//mplayerx.org) 也是另一个很好的选择。遗憾的是，播放蓝光 ISO 就不那么直观了。
 
-于是再推荐个收费的 [Mac Blu-ray Player](http://www.macblurayplayer.com)，与免费的 [XBMC](http://kodi.tv/)。
+于是再推荐个收费的 [Mac Blu-ray Player](//www.macblurayplayer.com)，与免费的 [XBMC](//kodi.tv/)。
 
 ![Mac Blu-ray Player]({{ site.qiniudn }}/images/2014/01/mac-blu-ray-player.png)
 
