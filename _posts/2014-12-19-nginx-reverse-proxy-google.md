@@ -65,6 +65,9 @@ server {
     ssl_certificate /path/to/your.domain.crt;
     ssl_certificate_key /path/to/your.domain.key;
 
+    keepalive_time 60;
+    resolver 8.8.8.8;
+
     location / {
         google on;
     }
