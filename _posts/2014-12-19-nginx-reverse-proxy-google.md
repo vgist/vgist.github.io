@@ -9,7 +9,7 @@ tags: [Nginx, Proxy, Google]
 
 自己编译，无法通过包管理器去安装，去清理，简直就是洁癖杀手，于是也就有了这篇文章了。
 
-去年有介绍过通过 Nginx 来做 [域名反向代理]({% post_url  2013-07-27-reverse-proxy-domain %})，12 月 17 日，wen.lu 的作者开源了一个模块 [ngx\_http\_google\_filter\_module](https://github.com/cuber/ngx_http_google_filter_module)，让大家可以方便的反向代理 Google。
+去年有介绍过通过 Nginx 来做 [域名反向代理]({% post_url  2013-07-27-reverse-proxy-domain %})，12 月 17 日，wen.lu 的作者开源了一个模块 [ngx\_http\_google\_filter\_module](https://github.com/cuber/ngx_http_google_filter_module)，让大家方便的反向代理 Google。
 
 今天我整理了一下，介绍下在 CentOS 下如何方便的打包包含该模块的方法。
 
