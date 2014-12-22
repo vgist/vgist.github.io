@@ -24,7 +24,7 @@ tags: [Nginx, Proxy, Google]
 
     $ git clone git://github.com/Ihavee/ihavee-rpm.git /path/to/ihavee-rpm
 
-将 `/path/to/ihavee-rpm/nginx` 下除 **nginx.spec** 外的所有文件，移动到 `~/rpmbuild/SOURCES` 下，随后执行 `spectool` 将 Nginx 以及两个 module 下载下来。
+将 `/path/to/ihavee-rpm/nginx` 下除 **nginx.spec** 外的所有文件，移动到 `~/rpmbuild/SOURCES` 下，随后执行 `spectool` 将 Nginx 以及两个 module 的源码包下载下来。
 
     $ spectool -R -g /path/to/ihavee-rpm/nginx.spec
 
