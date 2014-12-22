@@ -144,7 +144,7 @@ rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件�
 
 ##### 打包法一
 
-<em>如果有 rpm 源码包，可以通过以下命令解压来查看</em>
+<del>如果有 rpm 源码包，可以通过以下命令解压来查看</del>
 
 ```console
 $ rpm2cpio ./shadowsocks-libev-1.4.6-1.el7.centos.src.rpm | cpio -div
