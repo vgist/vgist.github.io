@@ -158,6 +158,10 @@ ss-server.service
 4716 blocks
 ```
 
+没有的话，就 clone 吧
+
+    $ git clone git://github.com/Ihavee/ihavee-rpm.git ./your/path
+
 将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
 
 - `ss-local.service`
