@@ -69,22 +69,21 @@
           matches.push({'title': title, 'link': link, 'date': updated, 'content': content});
         }
       }
-      var html = '<div class="col-md-12"><h2>Search Result:</h2><br>';
+      var html = '<h2>Search Result:</h2><br>';
       for (var i = 0; i < matches.length; i++) {
         var match = matches[i];
-        html += '<h2><a href="' + match.link + '">' + htmlEscape(match.title) + '</a></h2>';
+        html += '<h3><a href="' + match.link + '">' + htmlEscape(match.title) + '</a></h3>';
         html += '<section><p>' + htmlEscape(match.content) + '</p></section>';
         html += '<footer><p>Update: ' + match.date + '</p></footer>';
       }
-      var html='</div>';
-      $('.row').html(html);
+      $('.raw').html(html);
       $('#search-loader').hide();
-      $('.row').show();
+      $('.raw').show();
       }
       $('#search-form').submit(function() {
         var query = $('#query').val();
         //$('#query');.blur().attr('disabled', true);
-        $('.row').hide();
+        $('.raw').hide();
         $('#search-loader').show();
         if (entries == null) {
           $.ajax({url: '/atom.xml?r=' + (Math.random() * 99999999999), dataType: 'xml', success: function(data) {
