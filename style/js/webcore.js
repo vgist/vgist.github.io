@@ -69,21 +69,21 @@
           matches.push({'title': title, 'link': link, 'date': updated, 'content': content});
         }
       }
-      var html = '<h2>Search Result:</h2><br>';
+      var html = '<h2 style="margin: 0 15px;">Search Result:</h2><br>';
       for (var i = 0; i < matches.length; i++) {
         var match = matches[i];
-        html += '<h3><a href="' + match.link + '">' + htmlEscape(match.title) + '</a></h3>';
-        html += '<section><p>' + htmlEscape(match.content) + '</p></section>';
-        html += '<footer><p>Update: ' + match.date + '</p></footer>';
+        html += '<h3 style="margin: 0 15px;"><a href="' + match.link + '">' + htmlEscape(match.title) + '</a></h3>';
+        html += '<section style="margin: 0 15px;"><p>' + htmlEscape(match.content) + '</p></section>';
+        html += '<footer style="margin: 0 15px;"><p>Update: ' + match.date + '</p></footer>';
       }
-      $('.raw').html(html);
+      $('.row').html(html);
       $('#search-loader').hide();
-      $('.raw').show();
+      $('.row').show();
       }
       $('#search-form').submit(function() {
         var query = $('#query').val();
         //$('#query');.blur().attr('disabled', true);
-        $('.raw').hide();
+        $('.row').hide();
         $('#search-loader').show();
         if (entries == null) {
           $.ajax({url: '/atom.xml?r=' + (Math.random() * 99999999999), dataType: 'xml', success: function(data) {
