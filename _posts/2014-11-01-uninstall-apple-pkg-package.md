@@ -108,7 +108,7 @@ cd 路径，即第 3 步中的目录。
 
 lsbom 的具体用法可以参考 `lsbom --help`。
 
-#### 4. 最后清除包管理数据库中的pkg包信息
+#### 5. 最后清除包管理数据库中的pkg包信息
 
 ```console
 $ sudo pkgutil --forget PKGID
