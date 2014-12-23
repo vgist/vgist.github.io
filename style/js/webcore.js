@@ -51,9 +51,7 @@
   return new Date(utcDate);
     }
     function formatDate(date) {
-      var monthNames = [ "January", "February", "March", "April", "May", "June",
-          "July", "August", "September", "October", "November", "December" ];
-      return date.getDate() + ' ' + monthNames[date.getMonth()] + ' ' + date.getFullYear();
+      return date.getFullYear()+"."+ date.getMonth()+ '.' + date.getDate();
     }
     function findEntries(q) {
       var matches = [];
