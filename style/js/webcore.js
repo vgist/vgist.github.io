@@ -51,12 +51,12 @@
   return new Date(utcDate);
     }
     function formatDate(date) {
-      return date.getFullYear()+"."+ date.getMonth()+ '.' + date.getDate();
+      return date.getFullYear()+"-"+ (date.getMonth()+1)+ '-' + date.getDate();
     }
     function findEntries(q) {
       var matches = [];
       var rq = new RegExp(q, 'im');
-      var rl = /^http:\/\/havee\.me\/(.+)\.html$/;
+      var rl = /^http:\/\/havee\.me\/(.+)$/;
       for (var i = 0; i < entries.length; i++) {
         var entry = entries[i];
         var title = $(entry.getElementsByTagName('title')[0]).text();
