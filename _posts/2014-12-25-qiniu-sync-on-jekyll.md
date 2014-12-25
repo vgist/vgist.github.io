@@ -56,7 +56,7 @@ end
 
     rake qrsync
 
-可能有同学想图片分目录存放，没事，本地 qiniu/images/2014/12/ 目录分类，一图片 `name.jpg`丢进去，`sync_dir` 为 `qiniu`，则远端为 `images/2014/12/name.jpg`，别弄错，远端没有目录，整个 `images/2014/12/name.jpg` 为一文件 ^_^。
+可能有同学想图片分目录存放，没事，本地 `qiniu/images/2014/12/` 目录分类，一图片 `name.jpg`丢进去，`sync_dir` 为 `qiniu`，则远端为 `images/2014/12/name.jpg`，别弄错，远端没有目录，整个 `images/2014/12/name.jpg` 为一文件 ^_^。
 
 甚至，将整个博客静态页面 `_site` 同步上去也可。
 
