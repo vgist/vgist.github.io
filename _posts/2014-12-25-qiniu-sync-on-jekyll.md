@@ -30,6 +30,7 @@ Thumbs.db
 .sass-cache
 qrsync
 qiniu.json
+```
 
 鄙人是创建了个 **qiniu** 目录用来同步图片到七牛的。
 
