@@ -37,6 +37,11 @@ qiniu.json
 接着，配置你的 **Rakefile**，没有的话在 Jekyll 根目录新建个文件，有的话，在适当的位置添加如下几行，很简单：
 
 ```ruby
+require "rubygems"
+require "rake"
+
+......
+
 desc "use qiniu sync tool to sync qiniu folder to remote server"
 task :qrsync do
   name = "qiniu.json"
