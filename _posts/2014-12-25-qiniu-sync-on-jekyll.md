@@ -42,7 +42,7 @@ require "rake"
 
 ......
 
-desc "use qiniu sync tool to sync qiniu folder to remote server"
+desc "synchronize qiniu folder to remote server with qiniu sync tool"
 task :qrsync do
   name = "qiniu.json"
   filename = File.join("#{Dir.pwd}", "#{name}")
