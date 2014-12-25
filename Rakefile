@@ -76,7 +76,7 @@ end # task :preview
 desc "use qiniu sync tool to sync qiniu folder to remote server"
 task :qrsync do
   abort("rake aborted: '#{Dir.pwd}/qrsync' file not found.") unless FileTest.file?("#{Dir.pwd}/qrsync")
-  system "#{Dir.pwd}/qrsync #{Dir.pwd}/qiniu.json"
+  system "#{Dir.pwd}/qrsync /Users/Havee/Documents/git/qiniu.json"
 end
 
 #Load custom rake scripts

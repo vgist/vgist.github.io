@@ -27,8 +27,9 @@ tags: [Jekyll, Usage]
     !.gitkeep
     .sass-cache
     qrsync
+    qiniu.json
 
-Jekyll 根目录下创建七牛同步工具的配置文件，json 格式，`touch /path/qiniu.json`
+Jekyll 根目录下创建七牛同步工具的配置文件，json 格式，`touch /path/qiniu.json`，如果 `qiniu.json` 放入 Jekyll 根目录的话，记得 `.gitignore` 中排除哦，你的一对 key 就在里面哦，别说没提醒哦~~~
 
 ```json
 {
@@ -49,11 +50,11 @@ Jekyll 根目录下创建七牛同步工具的配置文件，json 格式，`touc
 desc "use qiniu sync tool to sync qiniu folder to remote server"
 task :qrsync do
     abort("rake aborted: '#{Dir.pwd}/qrsync' file not found.") unless FileTest.file?("#{Dir.pwd}/qrsync")
-    system "#{Dir.pwd}/qrsync #{Dir.pwd}/qiniu.json"
+    system "#{Dir.pwd}/qrsync /your/path/qiniu.json"
 end
 ```
 
-放入一张图片至同步目录，运行一下命令，即可上传至远端
+`your/path/qiniu.json` 替换成你自己的路径，随后放入一张图片至同步目录，运行一下命令，即可上传至远端
 
     rake qrsync
 
