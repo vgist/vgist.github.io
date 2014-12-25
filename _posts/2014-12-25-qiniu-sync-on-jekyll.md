@@ -29,19 +29,6 @@ tags: [Jekyll, Usage]
     qrsync
     qiniu.json
 
-Jekyll 根目录下创建七牛同步工具的配置文件，json 格式，`touch /path/qiniu.json`，如果 `qiniu.json` 放入 Jekyll 根目录的话，记得 `.gitignore` 中排除哦，你的一对 key 就在里面哦，别说没提醒哦~~~
-
-```json
-{
-    "access_key": "your access key",
-    "secret_key": "your secret key",
-    "bucket": "bucket name",
-    "sync_dir": "local directory to upload",
-    "async_ops": "",
-    "debug_level": 1
-}
-```
-
 鄙人是创建了个 **qiniu** 目录用来同步到七牛的。
 
 接着，配置你的 **Rakefile**，没有的话在 Jekyll 根目录新建个文件，有的话，在适当的位置添加如下几行，很简单：
@@ -49,14 +36,36 @@ Jekyll 根目录下创建七牛同步工具的配置文件，json 格式，`touc
 ```ruby
 desc "use qiniu sync tool to sync qiniu folder to remote server"
 task :qrsync do
-    abort("rake aborted: '#{Dir.pwd}/qrsync' file not found.") unless FileTest.file?("#{Dir.pwd}/qrsync")
-    system "#{Dir.pwd}/qrsync /your/path/qiniu.json"
+  name = "qiniu.json"
+  filename = File.join("#{name}")
+  abort("rake aborted: '#{Dir.pwd}/qrsync' file not found.") unless FileTest.file?("#{Dir.pwd}/qrsync")
+
+  unless FileTest.file?("#{Dir.pwd}/qiniu.json")
+    name = "qiniu.json"
+    filename = File.join("#{Dir.pwd}", "#{name}")
+    open(filename, 'w') do |json|
+      json.puts '{'
+      json.puts '    "access_key": "your access key",'
+      json.puts '    "secret_key": "your secret_key",'
+      json.puts '    "bucket": "your bucket name",'
+      json.puts '    "sync_dir": "local directory to upload",'
+      json.puts '    "async_ops": "",'
+      json.puts '    "debug_level": 1'
+      json.puts '}'
+    end
+    puts "please edit qiniu.json, and add qiniu.json in .gitignore"
+  else
+    system "#{Dir.pwd}/qrsync #{Dir.pwd}/qiniu.json"
+  end
+
 end
 ```
 
-`your/path/qiniu.json` 替换成你自己的路径，随后放入一张图片至同步目录，运行一下命令，即可上传至远端
+注意，`qiniu.json` 记得按提示写入 `.gitignore` 哦，别说没提醒哦。随后放入一张图片至同步目录，运行一下命令
 
     rake qrsync
+
+第一次运行会创建 `qiniu.json`，并提醒你编辑，同时提醒你加入 `.gitignore`。
 
 可能有同学想图片分目录存放，没事，本地 `qiniu/images/2014/12/` 目录分类，一图片 `name.jpg`丢进去，`sync_dir` 为 `qiniu`，则远端为 `images/2014/12/name.jpg`，别弄错，远端没有目录，整个 `images/2014/12/name.jpg` 为一文件 ^_^。
 
