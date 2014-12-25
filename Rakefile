@@ -79,7 +79,7 @@ task :qrsync do
   filename = File.join("#{Dir.pwd}", "#{name}")
   abort("rake aborted: '#{Dir.pwd}/qrsync' file not found.") unless FileTest.file?("#{Dir.pwd}/qrsync")
 
-  unless FileTest.file?("#{filename}")
+  unless FileTest.file?(filename)
     open(filename, 'w') do |json|
       json.puts '{'
       json.puts '    "access_key": "your access key",'
