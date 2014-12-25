@@ -21,13 +21,15 @@ tags: [Jekyll, Usage]
 
 解压开，将 **qrsync** 两进制文件放入你的 Jekyll 根目录下，再在 `.gitignore` 文件中添加 `qrsync`，毕竟，你是不会希望一个 12 MB 大小的两进制包进入你的源代码中吧（嗯，我第一次就上传了 -_-!!）。如下
 
-    _site
-    Thumbs.db
-    .DS_Store
-    !.gitkeep
-    .sass-cache
-    qrsync
-    qiniu.json
+```console
+$ cat .gitignore
+_site
+Thumbs.db
+.DS_Store
+!.gitkeep
+.sass-cache
+qrsync
+qiniu.json
 
 鄙人是创建了个 **qiniu** 目录用来同步图片到七牛的。
 
@@ -61,7 +63,7 @@ end
 
 随后放入一张图片至你的同步目录，运行以下命令
 
-    rake qrsync
+    $ rake qrsync
 
 第一次运行会创建 `qiniu.json`，并提醒你编辑，同时**提醒**你加入 `.gitignore`。没写的泄漏了 key 别怪我哦 ^_^。 编辑好 `qiniu.json` 后第二次运行，如果填写正确，则上传到远端。
 
