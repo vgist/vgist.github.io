@@ -29,7 +29,7 @@ tags: [Jekyll, Usage]
     qrsync
     qiniu.json
 
-鄙人是创建了个 **qiniu** 目录用来同步到七牛的。
+鄙人是创建了个 **qiniu** 目录用来同步图片到七牛的。
 
 接着，配置你的 **Rakefile**，没有的话在 Jekyll 根目录新建个文件，有的话，在适当的位置添加如下几行，很简单：
 
@@ -59,7 +59,7 @@ task :qrsync do
 end
 ```
 
-随后放入一张图片至同步目录，运行以下命令
+随后放入一张图片至你的同步目录，运行以下命令
 
     rake qrsync
 
