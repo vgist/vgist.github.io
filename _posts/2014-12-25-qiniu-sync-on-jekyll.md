@@ -48,6 +48,7 @@ Jekyll 根目录下创建七牛同步工具的配置文件，json 格式，`touc
 ```ruby
 desc "use qiniu sync tool to sync qiniu folder to remote server"
 task :qrsync do
+    abort("rake aborted: '#{Dir.pwd}/qrsync' file not found.") unless FileTest.file?("#{Dir.pwd}/qrsync")
     system "#{Dir.pwd}/qrsync #{Dir.pwd}/qiniu.json"
 end
 ```
