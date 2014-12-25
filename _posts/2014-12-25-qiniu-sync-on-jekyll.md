@@ -37,12 +37,10 @@ tags: [Jekyll, Usage]
 desc "use qiniu sync tool to sync qiniu folder to remote server"
 task :qrsync do
   name = "qiniu.json"
-  filename = File.join("#{name}")
+  filename = File.join("#{Dir.pwd}", "#{name}")
   abort("rake aborted: '#{Dir.pwd}/qrsync' file not found.") unless FileTest.file?("#{Dir.pwd}/qrsync")
 
-  unless FileTest.file?("#{Dir.pwd}/qiniu.json")
-    name = "qiniu.json"
-    filename = File.join("#{Dir.pwd}", "#{name}")
+  unless FileTest.file?("#{filename}")
     open(filename, 'w') do |json|
       json.puts '{'
       json.puts '    "access_key": "your access key",'
@@ -55,7 +53,7 @@ task :qrsync do
     end
     puts "please edit qiniu.json, and add qiniu.json in .gitignore"
   else
-    system "#{Dir.pwd}/qrsync #{Dir.pwd}/qiniu.json"
+    system "#{Dir.pwd}/qrsync #{filename}"
   end
 
 end
