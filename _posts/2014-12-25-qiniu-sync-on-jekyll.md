@@ -59,11 +59,11 @@ task :qrsync do
 end
 ```
 
-注意，`qiniu.json` 记得按提示写入 `.gitignore` 哦，别说没提醒哦。随后放入一张图片至同步目录，运行一下命令
+随后放入一张图片至同步目录，运行以下命令
 
     rake qrsync
 
-第一次运行会创建 `qiniu.json`，并提醒你编辑，同时提醒你加入 `.gitignore`。 编辑好 `qiniu.json` 后第二次运行，如果填写正确，则上传到远端。
+第一次运行会创建 `qiniu.json`，并提醒你编辑，同时**提醒**你加入 `.gitignore`。没写的泄漏了 key 别怪我哦 ^_^。 编辑好 `qiniu.json` 后第二次运行，如果填写正确，则上传到远端。
 
 可能有同学想图片分目录存放，没事，本地 `qiniu/images/2014/12/` 目录分类，一图片 `name.jpg`丢进去，`sync_dir` 为 `qiniu`，则远端为 `images/2014/12/name.jpg`，别弄错，远端没有目录，整个 `images/2014/12/name.jpg` 为一文件 ^_^。
 
