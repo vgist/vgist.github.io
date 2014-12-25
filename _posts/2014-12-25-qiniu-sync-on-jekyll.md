@@ -19,7 +19,7 @@ tags: [Jekyll, Usage]
 
 首先，鄙人使用的工具是七牛提供的：<http://developer.qiniu.com/docs/v6/tools/qrsync.html#download>。根据各自平台去下载响应的同步工具。
 
-解压开，将 **qrsync** 两进制文件放入你的 Jekyll 根目录下，再在 `.gitignore` 文件中添加 `qrsync`，毕竟，你是不会希望一个 12 MB 大小的两进制包进入你的源代码中吧。如下
+解压开，将 **qrsync** 两进制文件放入你的 Jekyll 根目录下，再在 `.gitignore` 文件中添加 `qrsync`，毕竟，你是不会希望一个 12 MB 大小的两进制包进入你的源代码中吧（嗯，我第一次就上传了 -_-!!）。如下
 
     _site
     Thumbs.db
