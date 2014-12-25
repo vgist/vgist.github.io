@@ -56,6 +56,8 @@ end
 
     rake qrsync
 
+可能有同学想图片分目录存放，没事，本地 qiniu/images/2014/12/ 目录分类，一图片 `name.jpg`丢进去，`sync_dir` 为 `qiniu`，则远端为 `images/2014/12/name.jpg`，别弄错，远端没有目录，整个 `images/2014/12/name.jpg` 为一文件 ^_^。
+
 甚至，将整个博客静态页面 `_site` 同步上去也可。
 
 以后，写博客，有新加图片的时候，在 push 之前，先 `rake qrsync` 上传下即可。不过鄙人这里测试，配置 `"deletable":    1,` 无效，就是说，本地删除某图片，远端不会删除，真囧（难道是我姿势不对）。
