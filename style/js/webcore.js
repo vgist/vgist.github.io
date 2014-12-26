@@ -83,7 +83,7 @@
       $('#search-form').submit(function() {
         var query = $('#query').val();
         //$('#query');.blur().attr('disabled', true);
-        //$('.raw').hide();
+        $('.row').hide();
         $('#search-loader').show();
         if (entries == null) {
           $.ajax({url: '/atom.xml?r=' + (Math.random() * 99999999999), dataType: 'xml', success: function(data) {
