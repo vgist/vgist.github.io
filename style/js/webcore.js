@@ -76,14 +76,14 @@
         html += '<section style="margin: 0 15px;"><p>' + htmlEscape(match.content) + '</p></section>';
         html += '<footer style="margin: 0 15px;"><p>Update: ' + match.date + '</p></footer>';
       }
-      $('.row').html(html);
+      $('#result').html(html);
       $('#search-loader').hide();
-      $('.row').show();
+      $('#result').show();
       }
       $('#search-form').submit(function() {
         var query = $('#query').val();
         //$('#query');.blur().attr('disabled', true);
-        $('.row').hide();
+        $('#result').hide();
         $('#search-loader').show();
         if (entries == null) {
           $.ajax({url: '/atom.xml?r=' + (Math.random() * 99999999999), dataType: 'xml', success: function(data) {
