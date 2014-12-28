@@ -85,7 +85,25 @@ end
 
 第一次运行会创建 `qiniu.json`。编辑好 `qiniu.json` 后第二次运行，如果填写正确，则上传到远端。
 
-可能有同学想图片分目录存放，没事，本地 `qiniu/images/2014/12/` 目录分类，一图片 `name.jpg`丢进去，`sync_dir` 为 `qiniu`，则远端为 `images/2014/12/name.jpg`，别弄错，远端没有目录，整个 `images/2014/12/name.jpg` 为一文件 ^_^。
+入过 `qiniu.json` 中配置的 `sync_dir` 为 `qiniu`
+
+则丢在目录 **qiniu** 中的文件会被上传，需要说明的是，七牛没有目录的概念，不管你在目录 **七牛**下分几层目录，远端都是单个文件。譬如本地目录类似于
+
+    qiniu/images/name1.png
+    qiniu/images/name2.png
+    qiniu/images/name3.png
+
+则同步到远端后的文件名则为
+
+    images/name1.png
+    images/name2.png
+    images/name3.png
+
+链接为
+
+    http://bucket.qiniudn.com/images/name1.png
+    http://bucket.qiniudn.com/images/name2.png
+    http://bucket.qiniudn.com/images/name3.png
 
 有同学想整个博客静态页面 `_site` 同步上去，那么文章中老老实实的写本地路径吧
 
