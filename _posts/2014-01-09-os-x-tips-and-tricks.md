@@ -113,11 +113,13 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 #### 八. 视频播放
 
-尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPlayer OSX Extended](http://mplayerosx.ch)。终于找到了点 Mplayer 的感觉了。
+尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPlayer OSX Extended](http://mplayerosx.ch)。
 
 ![MPlayer OSX Extended]({{ site.qiniudn }}/images/2014/01/mplayer-osx.png)
 
 ![MPlayer OSX Preferences]({{ site.qiniudn }}/images/2014/01/mplayer-osx-preferences.png)
+
+最后再推荐个 [MPV](//mpv.io)：a fork of mplayer2 and Mplayer，原滋原味的 Linux 下 Mplayer  的使用体验，
 
 当然，[MplayerX](//mplayerx.org) 也是另一个很好的选择。遗憾的是，播放蓝光 ISO 就不那么直观了。
 
@@ -137,7 +139,8 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 - Ctrl + y：粘贴用 Ctrl + w/k/u 删除的单词
 - Option + right/left：向右/左移动一个单词
 - Fn + up/down：相当于 Page up/down
-- Ctrl + Command + F：全屏，仅支持右上角双箭头的窗口
+- Ctrl + Command + f：全屏，仅支持右上角双箭头的窗口
+- Ctrl + Command + d：取词翻译
 
 #### 十.  特殊符号
 
