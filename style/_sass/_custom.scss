@@ -170,7 +170,7 @@ time.small {
     max-width: 95%;
     margin: 15px auto;
     position: relative;
-    &:before {
+    &:before, &:after {
       color: rgba(102, 102, 102, .7);
       content: "\201C";
       font-family: Times, serif;
@@ -178,7 +178,16 @@ time.small {
       font-weight: bold;
       position: absolute;
       top: 0;
-      left:0;
+      left: 0;
+    }
+    &:before {
+      top: 0;
+      left: 0;
+    }
+    &:after {
+      bottom: 0;
+      right: 0;
+      transform: rotate(180deg);
     }
   }
   hr {
