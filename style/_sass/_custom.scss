@@ -78,6 +78,7 @@ time.small {
   display: inline;
   .title {
     font-size: 36px;
+    padding-left: 15px;
     display: inline;
     @include text-shadow;
     a {
