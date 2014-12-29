@@ -113,7 +113,7 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 #### 八. 视频播放
 
-尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPV](//mpv.io)，原汁原味的 Linux 下 Mplayer 的使用体验，强烈推荐。
+尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPV](//mpv.io)，原汁原味的 Linux 下 Mplayer 的使用体验，强烈推荐，fork 自 mplayer2 与 Mplayer。
 
 ![MPV screenshot]({{ site.qiniudn }}/images/2014/01/mpv.png)
 
@@ -122,8 +122,6 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 ![MPlayer OSX Extended]({{ site.qiniudn }}/images/2014/01/mplayer-osx.png)
 
 ![MPlayer OSX Preferences]({{ site.qiniudn }}/images/2014/01/mplayer-osx-preferences.png)
-
-最后再推荐个 [MPV](//mpv.io)：a fork of mplayer2 and Mplayer，原滋原味的 Linux 下 Mplayer  的使用体验，
 
 当然，[MplayerX](//mplayerx.org) 也是另一个很好的选择。遗憾的是，播放蓝光 ISO 就不那么直观了。
 
