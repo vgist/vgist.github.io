@@ -113,7 +113,11 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 #### 八. 视频播放
 
-尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPlayer OSX Extended](http://mplayerosx.ch)。
+尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPV](//mpv.io)，原汁原味的 Linux 下 Mplayer 的使用体验，强烈推荐。
+
+![MPV screenshot]({{ site.qiniudn }}/images/2014/01/mpv.png)
+
+[MPlayer OSX Extended](http://mplayerosx.ch) 也是个非常不错的视频播放器，使用过一段时间。
 
 ![MPlayer OSX Extended]({{ site.qiniudn }}/images/2014/01/mplayer-osx.png)
 
