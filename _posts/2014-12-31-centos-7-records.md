@@ -17,6 +17,7 @@ tags: [CentOS]
 #### 主机名
 
     hostname yourdomain
+    hostnamectl set-hostname yourdomain
 
 <!-- more -->
 #### adduser
