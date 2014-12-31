@@ -21,7 +21,7 @@ tags: [CentOS]
 <!-- more -->
 #### adduser
 
-不喜 root ssh，于是添加一个用户，因为用得到 sudo，故再添加到 wheel 组
+不喜 root ssh，于是添加一个用户，因为用得到 sudo，故添加到 wheel 组
 
     useradd -m -G users,wheel -G havanna
     passwd havanna
@@ -63,6 +63,20 @@ tags: [CentOS]
 
     timedatectl
 
+#### firewall 防火墙
+
+	systemctl start firewalld
+	systemctl enable firewalld
+
+具体的方法可以 `firewall-cmd --help` 查看，这里只添加基本的对外服务
+
+	firewall-cmd --permanent --zone=public --add-service=http
+	firewall-cmd --permanent --zone=public --add-service=https
+
+确认下
+
+	firewall-cmd --permanent --zone=public --list-services
+
 #### Nginx
 
     rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
@@ -83,15 +97,14 @@ tags: [CentOS]
     systemctl start mariadb
     mysql_secure_installation           # 初始化
 
-源里的版本较老，可以安装上游版本
+源里的版本较老，可以安装上游最新版本
 
     vim /etc/yum.repos.d/MariaDB.repo
     ......
     [Mariadb]
     name = MariaDB
     baseurl = http://yum.mariadb.org/10.1/centos7-amd64
-    gpgkey = http://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+    gpgkey = https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
     gpgcheck = 1
     ......
     yum install MariaDB-server
-
