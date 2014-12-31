@@ -1,8 +1,8 @@
 ---
 layout: post
-title: "CentOS 7 记录"
+title: "CentOS 7 配置记录"
 description: "几个 vps 逐步的升级到 CentOS 7，老是忘记一些配置，于是动手纪录下。"
-keywords: "centos, nginx, php-fpm, mariadb, firewall, timezone, hostname"
+keywords: "centos, config, nginx, php-fpm, mariadb, firewall, timezone, hostname, 配置"
 category: Linux
 tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 ---
