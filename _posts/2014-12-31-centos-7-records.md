@@ -316,6 +316,6 @@ Thanks for using MariaDB!
 
 启动
 
-systemctl start mariadb
-systemctl enable mariadb
+    systemctl start mariadb
+    systemctl enable mariadb
 
