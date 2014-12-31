@@ -2,19 +2,19 @@
 layout: post
 title: "CentOS 7 记录"
 description: "几个 vps 逐步的升级到 CentOS 7，老是忘记一些配置，于是动手纪录下。"
-keywords: "centos, nginx, php-fpm, mariadb"
+keywords: "centos, nginx, php-fpm, mariadb, firewall, timezone, hostname"
 category: Linux
 tags: [CentOS]
 ---
 
 几个 vps 逐步的升级到 CentOS 7，老是忘记一些配置，于是动手纪录下。
 
-#### 必要工具
+#### tools
 
     yum update
     yum install wget unzip bzip2 vim
 
-#### 主机名
+#### hostname
 
     hostname yourdomain
     hostnamectl set-hostname yourdomain
@@ -64,7 +64,7 @@ tags: [CentOS]
 
     timedatectl
 
-#### firewall 防火墙
+#### firewall
 
     systemctl start firewalld
     systemctl enable firewalld
