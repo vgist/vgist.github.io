@@ -58,7 +58,7 @@ mariadb.org 社区维护，增加一个 MariaDB.repo
 ```
 [mariadb]
 name =MariaDB
-baserul = http://yum.mariadb.org/10.0/centos6-x86
+baseurl = http://yum.mariadb.org/10.0/centos6-x86
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```

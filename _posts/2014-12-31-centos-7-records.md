@@ -300,7 +300,11 @@ installation should now be secure.
 Thanks for using MariaDB!
 ```
 
-源里的版本较老，可以安装上游最新版本，创建 **/etc/yum.repos.d/MariaDB.repo** 并编辑
+源里的版本较老，可以安装上游最新版本，创建如下文件并编辑
+
+    # touch /etc/yum.repos.d/MariaDB.repo
+
+编辑 **/etc/yum.repos.d/MariaDB.repo**
 
     [Mariadb]
     name = MariaDB
