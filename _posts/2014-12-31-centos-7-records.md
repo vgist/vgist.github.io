@@ -11,27 +11,25 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 
 #### tools
 
-    yum update
-    yum install wget unzip bzip2 vim
+    # yum update
+    # yum install wget unzip bzip2 vim
 
 #### hostname
 
-    hostname yourdomain
-    hostnamectl set-hostname yourdomain
+    # hostname yourdomain
+    # hostnamectl set-hostname yourdomain
 
 <!-- more -->
 #### adduser
 
 不喜 root ssh，于是添加一个用户，因为用得到 sudo，故添加到 wheel 组
 
-    useradd -m -G users,wheel -G havanna
-    passwd havanna
+    # useradd -m -G users,wheel -G havanna
+    # passwd havanna
 
 #### ssh
 
-调整 sshd 服务，采用 key 登陆
-
-    vim /etc/ssh/sshd_config
+调整 sshd 服务，采用 key 登陆，编辑 **/etc/ssh/sshd_config**
 
     ......
     Protocol 2
@@ -43,45 +41,45 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 
 至 **/home/havanna**
 
-    mkdir .ssh
-    chown havanna:havanna -R .ssh
-    chmod 700 .ssh
+    # mkdir .ssh
+    # chown havanna:havanna -R .ssh
+    # chmod 700 .ssh
 
 上传你的 **pub key** 至 **/home/havanna/.ssh** 目录，改名为 **authorized_keys** 并修改权限
 
-    chown havanna:havanna /home/havanna/authorized_keys
-    chmod 600 /home/havanna/authorized_keys
+    # chown havanna:havanna /home/havanna/authorized_keys
+    # chmod 600 /home/havanna/authorized_keys
 
 然后重启下 sshd 服务
 
-    systemctl restart sshd
+    # systemctl restart sshd
 
 #### Timezone
 
-    timedatectl set-timezone Asia/Shanghai
+    # timedatectl set-timezone Asia/Shanghai
 
 查看时区
 
-    timedatectl
+    # timedatectl
 
 #### firewall
 
-    systemctl start firewalld
-    systemctl enable firewalld
+    # systemctl start firewalld
+    # systemctl enable firewalld
 
 具体的方法可以 `firewall-cmd --help` 查看，这里只添加基本的对外服务
 
-    firewall-cmd --permanent --zone=public --add-service=http
-    firewall-cmd --permanent --zone=public --add-service=https
+    # firewall-cmd --permanent --zone=public --add-service=http
+    # firewall-cmd --permanent --zone=public --add-service=https
 
 确认下
 
-    firewall-cmd --permanent --zone=public --list-services
+    # firewall-cmd --permanent --zone=public --list-services
 
 #### Nginx
 
-    rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
-    yum install nginx
+    # rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+    # yum install nginx
 
 编辑 **/etc/nginx/nginx.conf**
 
@@ -157,8 +155,8 @@ http {
 
 创建 **/etc/nginx/conf.d/**
 
-    mkdir /etc/nginx/conf.d
-    touch /etc/nginx/conf.d/localhost.conf
+    # mkdir /etc/nginx/conf.d
+    # touch /etc/nginx/conf.d/localhost.conf
 
 编辑 **localhost.conf**
 
@@ -204,17 +202,17 @@ server {
 
 启动
 
-    systemctl start nginx
-    systemctl enable nginx
+    # systemctl start nginx
+    # systemctl enable nginx
 
 #### php-fpm
 
-    yum install php-fpm php-gd php-mbstring php-xml php-mysql
+    # yum install php-fpm php-gd php-mbstring php-xml php-mysql
 
 如需要 **php-mcrypt**、**php-pecl-apcu** 则需要 epel 源
 
-    yum install epel-release
-    yum install php-mcrypt php-pecl-apcu
+    # yum install epel-release
+    # yum install php-mcrypt php-pecl-apcu
 
 编辑 **/etc/php-fpm.d/www.conf**
 
@@ -227,18 +225,18 @@ server {
 
 启动
 
-    systemctl start php-fpm
-    systemctl enable php-fpm
+    # systemctl start php-fpm
+    # systemctl enable php-fpm
 
 #### MariaDB
 
-    yum install mariadb-server
-    systemctl start mariadb
+    # yum install mariadb-server
+    # systemctl start mariadb
 
 初始化下，配置 MariaDB 的 root 密码
 
 ```
-mysql_secure_installation
+# mysql_secure_installation
 /bin/mysql_secure_installation: line 379: find_mysql_client: command not found
 
 NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
@@ -302,20 +300,20 @@ installation should now be secure.
 Thanks for using MariaDB!
 ```
 
-源里的版本较老，可以安装上游最新版本
+源里的版本较老，可以安装上游最新版本，创建 **/etc/yum.repos.d/MariaDB.repo** 并编辑
 
-    vim /etc/yum.repos.d/MariaDB.repo
-    ......
     [Mariadb]
     name = MariaDB
     baseurl = http://yum.mariadb.org/10.1/centos7-amd64
     gpgkey = https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
     gpgcheck = 1
-    ......
-    yum install MariaDB-server
+
+随后安装
+
+    # yum install MariaDB-server
 
 启动
 
-    systemctl start mariadb
-    systemctl enable mariadb
+    # systemctl start mariadb
+    # systemctl enable mariadb
 
