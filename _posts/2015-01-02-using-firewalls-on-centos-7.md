@@ -165,3 +165,4 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 以上都是一些常用方法，更多高级方法，请参考：
 
 - <https://access.redhat.com/documentation/en-US/Red_Hat_Enterprise_Linux/7/html/Security_Guide/sec-Using_Firewalls.html>
+- <https://fedoraproject.org/wiki/FirewallD>
