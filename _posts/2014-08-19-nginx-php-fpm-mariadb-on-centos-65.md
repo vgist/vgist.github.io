@@ -4,7 +4,7 @@ title: "CentOS 6.5 上安装 Nginx + PHP-FPM + MariaDB"
 description: "letbox 上用优惠卷购置了一款 vps，直接上 CentOS 6.5，想搭建一个 web 应用，结果发现，终于可以摆脱编译了，社会维护了各种源，一些紧急漏洞也不用担心了，再也不用去 diff 个补丁，然后苦逼的去编译，直接 yum update。"
 keywords: "nginx, php-fpm, mariadb, centos, 6.5"
 category: Linux
-tags: [Nginx, PHP, PHP-FPM, SQL]
+tags: [Nginx, PHP, PHP-FPM, MariaDB]
 ---
 
 letbox 上用优惠卷购置了一款 vps，最终 **$ 0.01** 成交，直接上 CentOS 6.5，想搭建一个 web 应用，结果发现，终于可以摆脱手动编译了，社区维护了各种源，一些紧急漏洞也不用担心了，再也不用去 diff 个补丁，然后苦逼的去编译，直接 yum update。
@@ -58,7 +58,7 @@ mariadb.org 社区维护，增加一个 MariaDB.repo
 ```
 [mariadb]
 name =MariaDB
-baserul = http://yum.mariadb.org/10.0/centos6-x86
+baseurl = http://yum.mariadb.org/10.0/centos6-x86
 gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
 gpgcheck=1
 ```
