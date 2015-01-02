@@ -20,11 +20,9 @@ tags: [Firewall, Usage]
 
     # yum install firewall-config
 
-#### 介绍
+#### 一、介绍
 
 防火墙守护 firewalld 服务引入了一个信任级别的概念来管理与之相关联的连接与接口。它支持 ipv4 与 ipv6，并支持网桥，采用 firewall-cmd (command) 或 firewall-config (gui) 来动态的管理 kernel netfilter 的临时或永久的接口规则，并实时生效而无需重启服务。
-
-#### Network Zones
 
 Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供了以下几个级别
 
@@ -38,7 +36,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 - internal: 同上，范围针对所有互联网用户
 - trusted: 信任所有连接
 
-#### 使用方法
+#### 二、使用方法
 
     # systemctl start firewalld         # 启动,
     # systemctl enable firewalld        # 开机启动
@@ -49,7 +47,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
     $ firewall-cmd --help
 
-##### 查看规则
+##### 1. 查看规则
 
 查看运行状态
 
@@ -92,7 +90,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
     $ firewall-cmd --get-service --permanent
 
-##### 管理规则
+##### 2. 管理规则
 
     # firewall-cmd --panic-on           # 丢弃
     # firewall-cmd --panic-off          # 取消丢弃
@@ -108,7 +106,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
     # firewall-cmd --set-default-zone=public
 
-###### 管理端口
+###### a. 管理端口
 
 列出 dmz 级别的被允许的进入端口
 
@@ -122,7 +120,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
     # firewall-cmd --zome=public --add-port=5060-5059/udp --permanent
 
-###### 管理服务
+###### b. 管理服务
 
 添加 smtp 服务至 work zone
 
@@ -132,7 +130,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
     # firewall-cmd --zone=work --remove service=smtp
 
-###### 配置 ip 地址伪装
+###### c. 配置 ip 地址伪装
 
 查看
 
@@ -146,7 +144,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
     # firewall-cmd --zone=external --remove-masquerade
 
-###### 端口转发
+###### d. 端口转发
 
 要打开端口转发，则需要先
 
