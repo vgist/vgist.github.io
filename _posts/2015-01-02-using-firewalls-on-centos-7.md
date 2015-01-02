@@ -128,7 +128,7 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
 移除 work zone 中的 smtp 服务
 
-    # firewall-cmd --zone=work --remove service=smtp
+    # firewall-cmd --zone=work --remove-service=smtp
 
 ###### c. 配置 ip 地址伪装
 
