@@ -71,6 +71,7 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 
     # firewall-cmd --permanent --zone=public --add-service=http
     # firewall-cmd --permanent --zone=public --add-service=https
+    # firewall-cmd --reload
 
 确认下
 
