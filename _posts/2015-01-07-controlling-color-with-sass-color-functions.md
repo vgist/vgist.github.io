@@ -60,25 +60,25 @@ adjust-hue($base, 20%);
 HSL 相关的函数还有很多，譬如
 
 ```scss
-hsl($hue, $saturation, $lightness)
-hsla($hue, $saturation, $lightness, $alpha)
-hue($color)
-saturation($color)
-lightness($color)
-grayscale($color)
-complement($color)
-invert($color)
+hsl($hue, $saturation, $lightness);
+hsla($hue, $saturation, $lightness, $alpha);
+hue($color);
+saturation($color);
+lightness($color);
+grayscale($color);
+complement($color);
+invert($color);
 ```
 
 除此意外，Sass 提供了其他有趣的函数，譬如 rgb 函数：
 
 ```scss
-rgb($red, $green, $blue)
-rgba($red, $green, $blue, $alpha)
-red($color)
-green($color)
-blue($color)
-mix($color1, $color2, [$weight])
+rgb($red, $green, $blue);
+rgba($red, $green, $blue, $alpha);
+red($color);
+green($color);
+blue($color);
+mix($color1, $color2, [$weight]);
 ```
 
 了解更多：<http://sass-lang.com/documentation/Sass/Script/Functions.html>
