@@ -11,9 +11,9 @@ tags: [Sass]
 
 Sass 色彩相关的函数非常强大，当你定下页面基调色彩变量后，就可以大大的加快了开发速度，特别是对我这种半调子且没有任何色彩搭配概念的人来说，使用起来确实是轻松加愉快的。
 
-<!-- more -->
 废话不多说，下面开始，定下一个基本色，譬如咖啡色，[更多色彩值](//github.com/sass/sass/blob/stable/lib/sass/script/value/color.rb#L28-L180)
 
+<!-- more -->
 ```scss
 $base: chocolate;
 ```
