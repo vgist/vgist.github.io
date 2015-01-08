@@ -14,8 +14,8 @@
 // Import the fonts
 @font-face {
   font-family: 'Glyphicons Halflings';
-  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.eot'), '/style/fonts/#{$icon-font-name}.eot'));
-  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.eot?#iefix'), '/style/fonts/#{$icon-font-name}.eot?#iefix')) format('embedded-opentype'),
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.eot'), '/assets/fonts/#{$icon-font-name}.eot'));
+  src: url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.eot?#iefix'), '/assets/fonts/#{$icon-font-name}.eot?#iefix')) format('embedded-opentype'),
        url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.woff'), '/style/fonts/#{$icon-font-name}.woff')) format('woff'),
        url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.ttf'), '/style/fonts/#{$icon-font-name}.ttf')) format('truetype'),
        url(if($bootstrap-sass-asset-helper, twbs-font-path('#{$icon-font-path}#{$icon-font-name}.svg##{$icon-font-svg-id}'), '/style/fonts/#{$icon-font-name}.svg##{$icon-font-svg-id}')) format('svg');
