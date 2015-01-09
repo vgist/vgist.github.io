@@ -165,10 +165,22 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 同样，能直接在 app store 安装的就直接安装，其次使用 HomeBrew 去安装病自动 ln 到 `~/Applications` 目录。
 
-#### 十三. 截屏影音
+#### 十三. 截屏
 
 系统默认的快捷键 Shift + Command + 3/4 截屏会带上阴影，部分人觉得不爽，要去掉阴影。
 
     $ defaults write com.apple.screencapture disable-shadow -bool true
     $ killall SystemUIServer
 
+自带的截屏操作可以修改默认存放的位置
+
+    $ defaults write com.apple.screencapture location /your/path
+
+默认的截图后保存的格式为 png，当然你可以改为其他格式
+
+    $ defaults write com.apple.screencapture type jpg
+    $ defaults write com.apple.screencapture type gif
+    $ defaults write com.apple.screencapture type png
+    $ defaults write com.apple.screencapture type pdf
+
+待更新……
