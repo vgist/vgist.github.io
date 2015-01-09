@@ -176,7 +176,7 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
     $ defaults write com.apple.screencapture location /your/path
 
-默认的截图后保存的格式为 png，当然你可以改为其他格式
+默认的截屏后保存的格式为 png，当然你可以改为其他格式
 
     $ defaults write com.apple.screencapture type jpg
     $ defaults write com.apple.screencapture type gif
