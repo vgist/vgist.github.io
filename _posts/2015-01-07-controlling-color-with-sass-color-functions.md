@@ -70,7 +70,7 @@ complement($color);
 invert($color);
 ```
 
-除此意外，Sass 提供了其他有趣的函数，譬如 rgb 函数：
+除此以外，Sass 提供了其他有趣的函数，譬如 rgb 函数：
 
 ```scss
 rgb($red, $green, $blue);
