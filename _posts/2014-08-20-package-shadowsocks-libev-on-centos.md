@@ -41,11 +41,11 @@ $ tree ~/rpmbuild
 也可以通过其他工具来书写。给出 **shadowsocks-libev.spec** 文件
 
 ```spec
-%global commit d37f8d302532a8d442233d9b752324ffff99bbd0
+%global commit 2a6c28e185774addcf4d090662886b9433a7cefa
 %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
 Name:		shadowsocks-libev
-Version:	1.4.7
+Version:	1.6.1
 Release:	1%{?dist}
 License:	GPL-3
 Summary:	a lightweight secured scoks5 proxy for embedded devices and low end boxes.
@@ -190,15 +190,15 @@ ss-server.service
 
 直接通过 rpm 源码包来制作两进制包
 
-    $ rpmbuild --rebuild /path/shadowsocks-libev-1.4.7-1.el7.centos.src.rpm
+    $ rpmbuild --rebuild /path/shadowsocks-libev-1.6.1-1.el7.centos.src.rpm
 
 #### 三、安装
 
 然后直接安装两进制包
 
-    # rpm -ivh /path/shadowsocks-libev-1.4.7-1.el7.centos.x86_64.rpm
+    # rpm -ivh /path/shadowsocks-libev-1.6.1-1.el7.centos.x86_64.rpm
     or
-    # yum install /path/shadowsocks-libev-1.4.7-1.el7.centos.x86_64.rpm
+    # yum install /path/shadowsocks-libev-1.6.1-1.el7.centos.x86_64.rpm
 
 参考：
 
