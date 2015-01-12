@@ -24,7 +24,7 @@ tags: [Jekyll, Usage]
 
 Jekyll 相关的介绍本博客里有，可以直接上方输入框输入 Jekyll 来搜索，七牛的话，可以通过以下注册：<https://portal.qiniu.com/signup?code=3ljaarok4jaz6>，如果对推广链接不爽的话，去掉结尾处的 `?code=3ljaarok4jaz6` 吧。
 
-首先，鄙人使用的工具是七牛提供的：<http://developer.qiniu.com/docs/v6/tools/qrsync.html#download>。根据各自平台去下载响应的同步工具。
+其次，鄙人使用的工具是七牛提供的：<http://developer.qiniu.com/docs/v6/tools/qrsync.html#download>。根据各自平台去下载响应的同步工具。
 
 解压开，将 **qrsync** 两进制文件放入你的 **Jekyll** 根目录下，再在 **.gitignore** 文件中添加 `qrsync`，毕竟，你是不会希望一个 12 MB 大小的两进制包进入你的源代码中吧（嗯，我第一次就上传了 -_-!!）。如下
 
