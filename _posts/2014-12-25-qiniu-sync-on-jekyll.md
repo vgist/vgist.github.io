@@ -83,7 +83,11 @@ end
 
     $ rake qrsync
 
-第一次运行会创建 **qiniu.json**。编辑好 **qiniu.json** 后第二次运行，如果填写正确，则上传到远端。
+第一次运行会创建 **qiniu.json**。编辑好 **qiniu.json** 后第二次运行，如果填写正确，则上传到远端。当然，一切的前提是你需拥有一个七牛的账号，通过以下注册
+
+<https://portal.qiniu.com/signup?code=3ljaarok4jaz6>
+
+如果对推广链接不爽的话，去掉结尾处的 `?code=3ljaarok4jaz6` 吧
 
 如果 **qiniu.json** 中配置的 `sync_dir` 为 `qiniu`
 
