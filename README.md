@@ -1,18 +1,18 @@
-#### create new post
+#### Create new post
 
     rake post title='A Title'
     or
     rake post title="A Title" [date="2012-02-09"] [tags=[tag1,tag2]] [category="category"]
 
-#### create new page
+#### Create new page
 
     rake page name='about.html'
 
-#### define your color
+#### Define your color
 
 Edit the file:  `assets/_sass/_custom.scss`
 
-#### use qiniu cdn
+#### Use qiniu cdn
 
     rake qrsync
 
