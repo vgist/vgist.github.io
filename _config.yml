@@ -18,6 +18,9 @@ qiniudn: //static.gentoo.org.cn
 atom_path: /atom.xml
 rss_path: /rss.xml
 
+cdn: //static.gentoo.org.cn
+local: /cdn
+
 # Build settings
 markdown: redcarpet
 redcarpet:

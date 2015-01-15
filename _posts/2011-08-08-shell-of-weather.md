@@ -7,7 +7,7 @@ category: Linux
 tags: [CLI, Weather]
 ---
 
-![Weather]({{ site.qiniudn }}/images/2011/08/11.png "weather")
+![Weather]({{ site.cdn }}/images/2011/08/11.png "weather")
 
 保存为weather.sh
 

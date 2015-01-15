@@ -139,7 +139,7 @@ $ rpmbuild --showrc | grep centos
 #### 二、打包
 
 - **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
-- **srpm** 源码包: [shadowsocks-libev-1.6.1-1.el7.centos.src.rpm]({{ site.qiniudn }}/images/2014/08/shadowsocks-libev-1.6.1-1.el7.centos.src.rpm)  （源码包下载后修改commit与版本号到最新版）
+- **srpm** 源码包: [shadowsocks-libev-1.6.1-1.el7.centos.src.rpm]({{ site.cdn }}/images/2014/08/shadowsocks-libev-1.6.1-1.el7.centos.src.rpm)  （源码包下载后修改commit与版本号到最新版）
 
 rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件打包。
 

@@ -43,7 +43,7 @@ Safari 以及 google chrome 用户，请直接输入以下命令安装证书
 
 以前导入过证书的同学，确保将原 GoAgent 证书删除后，再执行上面的命令，如下图所示
 
-![KeyChain]({{ site.qiniudn }}/images/2014/05/keychain.png)
+![KeyChain]({{ site.cdn }}/images/2014/05/keychain.png)
 
 Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
 
@@ -51,7 +51,7 @@ Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
 
 同样，以前导入过的同学，确保将原证书删除后，再导入
 
-![Cert Manage]({{ site.qiniudn }}/images/2014/05/cert-manage.png)
+![Cert Manage]({{ site.cdn }}/images/2014/05/cert-manage.png)
 
 最后设下 Homebrew 安装的 Python 模块路径变量
 
@@ -61,7 +61,7 @@ Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
 
     $ tail -f /usr/local/var/log/goagent.log
 
-![GoAgent Log]({{ site.qiniudn }}/images/2014/05/goagent-log.png)
+![GoAgent Log]({{ site.cdn }}/images/2014/05/goagent-log.png)
 
 源码地址：[https://github.com/Ihavee/homebrew-havee](https://github.com/Ihavee/homebrew-havee)。
 
