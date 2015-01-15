@@ -17,7 +17,7 @@ author:
 atom_path: /atom.xml
 rss_path: /rss.xml
 
-cdn: //static.gentoo.org.cn
+cdn: //cdn.09hd.com
 local: /cdn
 
 # Build settings
