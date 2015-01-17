@@ -44,33 +44,33 @@ Convert 是 ImageMagick 中的一个常用组件。
     $ convert -size 97×19 null:white ihavanna.png
     $ convert -font dejavu -fill black -pointsize 16 -draw “text 4,14 ‘ihavanna.org’” ihavanna.png ihavanna.png
 
-![Ihavanna](//cdn.09hd.com/images/2011/12/ihavanna.png "ihavanna")
+![Ihavanna](http://cdn.09hd.com/images/2011/12/ihavanna.png "ihavanna")
 
 增加色变
 
     $ convert -bordercolor red -border 2×2 image.jpg image.gif
 
-![ihavanna-border-color](//cdn.09hd.com/images/2011/12/ihavanna-bordercolor.png "ihavanna-bordercolor")
+![ihavanna-border-color](http://cdn.09hd.com/images/2011/12/ihavanna-bordercolor.png "ihavanna-bordercolor")
 
 加亮或变暗图片边缘，已增强 3d 效果
 
     $ convert -raise 9 image.jpg image.gif
 
-![ihavanna-raise](//cdn.09hd.com/images/2011/12/ihavanna-raise.png "ihavanna-raise")
+![ihavanna-raise](http://cdn.09hd.com/images/2011/12/ihavanna-raise.png "ihavanna-raise")
 
 在图片周围增加装饰性框架
 
     $ convert -mattecolor gray -frame 2×2 image.jpg image.gif
 
-![ihavanna-matte-color](//cdn.09hd.com/images/2011/12/ihavanna-mattecolor.png "ihavanna-mattecolor")
+![ihavanna-matte-color](http://cdn.09hd.com/images/2011/12/ihavanna-mattecolor.png "ihavanna-mattecolor")
 
 图片边缘增加升降斜角
 
     $ convert -mattecolor gray -frame 2×2+0+2 image.jpg image.gif
     $ convert -mattecolor gray -frame 2×2+2+0 image.jpg image.gif
 
-![ihavanna-0+2](//cdn.09hd.com/images/2011/12/ihavanna-0+2.png "ihavanna-0+2")
-![ihavanna-2+0](//cdn.09hd.com/images/2011/12/ihavanna-2+0.png "ihavanna-2+0")
+![ihavanna-0+2](http://cdn.09hd.com/images/2011/12/ihavanna-0+2.png "ihavanna-0+2")
+![ihavanna-2+0](http://cdn.09hd.com/images/2011/12/ihavanna-2+0.png "ihavanna-2+0")
 
 将gif动画分拆成一系列静态图片
 

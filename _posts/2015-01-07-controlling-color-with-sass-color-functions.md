@@ -32,7 +32,7 @@ darken($base, 10%);
 lighten($base, 10%);
 ```
 
-![Darken & lighten](//cdn.09hd.com/images/2015/01/darken-lighten.png)
+![Darken & lighten](http://cdn.09hd.com/images/2015/01/darken-lighten.png)
 
 #### Saturate & Desaturate
 
@@ -43,7 +43,7 @@ saturate($base, 20%);
 desaturate($base, 20%);
 ```
 
-![Saturate & Desaturate](//cdn.09hd.com/images/2015/01/saturate-desaturate.png)
+![Saturate & Desaturate](http://cdn.09hd.com/images/2015/01/saturate-desaturate.png)
 
 #### Adjust-hue
 
@@ -53,7 +53,7 @@ desaturate($base, 20%);
 adjust-hue($base, 20%);
 ```
 
-![adjust-hue](//cdn.09hd.com/images/2015/01/adjust-hue.png)
+![adjust-hue](http://cdn.09hd.com/images/2015/01/adjust-hue.png)
 
 #### Other
 
