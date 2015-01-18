@@ -10,7 +10,7 @@ description: "业余爱好的点滴记录，同时作为配置备份的存储地
 
 #### ChangeLog
 
-- 2015 年 1 月：   博客移除 keyword、description
+- 2015 年 1 月:    博客移除 keyword、description
 - 2015 年 1 月:    完善 archive 页面时间线，使得终端自适应
 - 2014 年 12 月:   因 GitCafe 某原因，及 name.gitcafe.io 跳转到 page 服务未完工，临时切换到 github pages
 - 2014 年 11 月:   样式 css 由 Jekyll 内置的 SASS 预处理器自动生成
