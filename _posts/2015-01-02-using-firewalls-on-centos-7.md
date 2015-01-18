@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "CentOS 7 下使用 Firewall"
-description: "介绍 CentOS 7 中的 Firewall 的一些简单使用"
-keywords: "CentOS, firewall, firewall-cmd, iptables"
 category: Linux
 tags: [Firewall, Usage]
 ---

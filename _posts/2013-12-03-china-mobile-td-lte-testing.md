@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "中国移动 TD-LTE 测试"
-description: ""
-keywords: "移动,td,lte"
 category: "Other"
 tags: [LTE]
 ---

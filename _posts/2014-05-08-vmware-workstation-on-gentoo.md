@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo 上安装 VMware Player"
-description: "Gentoo 上安装 VMware Player 的一些记录"
-keywords: "gentoo,vmware"
 category: Linux
 tags: [Gentoo, VMware]
 ---

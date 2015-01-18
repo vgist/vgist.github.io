@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Octopress 博客"
-description: "Octopress 是一个基于 Jekyll 的静态博客生成系统"
-keywords: octopress, wordpress, jekyll, 博客
 category: Internet
 tags: [Octopress, Wordpress, Jekyll]
 ---

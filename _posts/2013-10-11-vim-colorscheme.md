@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Vim 配色"
-description: "默认的 Xterm 只有 8 色，而一些 Vim 的漂亮的 colorscheme 基本都要 256 色"
-keywords: "vim, screen, xterm 配色, 主题"
 category: Linux
 tags: [Vim, Screen, Xterm]
 ---

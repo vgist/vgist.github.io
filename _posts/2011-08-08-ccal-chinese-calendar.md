@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "中国农历 ccal Ebuild"
-description: "简单的cli农历显示工具"
-keywords: ccal, ebuild, 农历, gentoo
 category: Linux
 tags: [ccal, Ebuild, Gentoo, Packager]
 ---

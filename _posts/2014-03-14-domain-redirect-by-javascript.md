@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "JavaScript 实现域名跳转"
-description: ""
-keywords: "javascript,重定向"
 category: Internet
 tags: [JavaScript]
 ---

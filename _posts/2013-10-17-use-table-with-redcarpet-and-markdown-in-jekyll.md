@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Markdown 之使用表格"
-description: "要在 markdown 中使用表格，需要 redcarpet 语法解释引擎"
-keywords: "markdown, 表格, table, redcarpet, jekyll"
 category: Internet
 tags: [Markdown, Jekyll, Redcarpet]
 ---

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Wordpress 更换域名"
-description: "域名更换为 Ihavanna.Org"
-keywords: ihavanna, org, 域名
 category: Internet
 tags: [Wordpress, Domain, SQL, Usage]
 ---

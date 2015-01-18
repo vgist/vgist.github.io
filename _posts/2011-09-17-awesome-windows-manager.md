@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Awesome 窗口管理器"
-description: "Awesome 是作用于 Xwindows 下的一个高度可定制的新一代窗口管理器。它运行快捷，扩展性强，遵循 GPLv2 发布。"
-keywords: awesome, 窗口, 管理器
 category: Linux
 tags: [Awesome, WM]
 ---

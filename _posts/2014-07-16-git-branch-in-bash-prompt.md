@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "让 Bash Prompt 显示 Git Branch"
-description: "配置 bash prompt 显示 git branch"
-keywords: "bash, prompt, git, branch"
 category: Linux
 tags: [Git, CLI]
 ---

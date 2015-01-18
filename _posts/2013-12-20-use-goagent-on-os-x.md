@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "OS X 上使用 GoAgent"
-description: "OS X 上如何使用 GoAgent"
-keywords: "goagent, osx"
 category: "MAC"
 tags: [GoAgent,Proxy]
 ---

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "我的工作笔记本"
-description: "不知何时起，对自己的工作机越来越不满"
-keywords: "笔记本,工作机,浏览器,台式机"
 category: "Other"
 tags: [Laptop]
 ---

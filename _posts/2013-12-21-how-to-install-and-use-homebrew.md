@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Homebrew 的安装与使用"
-description: "与 MacPorts 类似，OS X 下还有款包管理工具为 Homebrew，安装方法也很简单。"
-keywords: "brew, osx, homebrew, 方法"
 category: "MAC"
 tags: [Homebrew]
 ---

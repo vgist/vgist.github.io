@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "OS X 的一些技巧汇总"
-description: "刚上手 OS X，习惯正在慢慢培养中，下面记录一些使用过程中的小技巧"
-keywords: "os x, 技巧"
 category: "Mac"
 tags: [Tips]
 ---

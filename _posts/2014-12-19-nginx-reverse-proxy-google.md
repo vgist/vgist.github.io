@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Nginx 反向代理 Google"
-description: "介绍如何在 CentOS 下打包包含 google filter module 的 Nginx，并简单配置"
-keywords: "nginx, proxy, google"
 category: Linux
 tags: [Nginx, Proxy, Google]
 ---

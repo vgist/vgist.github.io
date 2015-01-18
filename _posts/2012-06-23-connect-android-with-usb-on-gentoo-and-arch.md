@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo & Arch 下通过 usb 连接 Android"
-description: "Gentoo & Arch 下通过 usb 连接 Android"
-keywords: gentoo, arch, android, usb
 category: Linux
 tags: [Gentoo, Arch, Android]
 ---

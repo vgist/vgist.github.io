@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Sass 色彩函数"
-description: "Sass 色彩函数介绍"
-keywords: "sass, color, function"
 category: Internet
 tags: [Sass]
 ---

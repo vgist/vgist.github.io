@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Adblock Plus 官方切换 ChinaList"
-description: "ChinaList 列表维护中止"
-keywords: "adblock, chinalist"
 category: Internet
 tags: [Adblock, ChinaList]
 ---

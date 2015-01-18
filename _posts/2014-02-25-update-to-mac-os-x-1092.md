@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "OS X 10.9.2 正式版发布，修复 SSL 漏洞"
-description: "OS X 10.9.2 在经过 7 个测试版后，终于迎来了正式版，在 SSL 安全漏洞引起大家恐慌的时候，苹果适时的退出了更新。"
-keywords: "os x, 10.9.2, ssl, 漏洞"
 category: Mac
 tags: [SSL]
 ---

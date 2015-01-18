@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "CentOS 下打包 shadowsocks-libev"
-description: "什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，一点都不利于扩散。"
-keywords: "centos, shadowsocks, libev, rpm, 打包"
 category: Linux
 tags: [Packager, Shadowsocks]
 ---

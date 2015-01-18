@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "GnuPG 介绍"
-description: "GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加密数据和做数字签名之用"
-keywords: "gnupg, pgp, 密钥, 公钥"
 category: Linux
 tags: [GnuPG, Keys, Public]
 ---

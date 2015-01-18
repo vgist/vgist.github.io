@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Jekyll 中的语法高亮：Pygments"
-description: "在 Jekyll 中的语法高亮：pygments"
-keywords: "jekyll, pygments, 语法, 高亮"
 category: Internet
 tags: [Jekyll, Pygments, Python]
 ---

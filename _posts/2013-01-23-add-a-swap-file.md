@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "制作 swap 文件"
-description: "制作 swap 文件"
-keywords: swap, 文件
 category: Linux
 tags: [Swap]
 ---

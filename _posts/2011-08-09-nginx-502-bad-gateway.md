@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Nginx 502 Bad Gateway 处理"
-description: "Nginx 502 Bad Gateway 处理"
-keywords: nginx, 502, bad gateway
 category: Internet
 tags: [Nginx]
 ---

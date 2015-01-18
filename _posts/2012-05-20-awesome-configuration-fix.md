@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Awesome 配置小改"
-description: "Awesome 配置小改"
-keywords: awesome, 配置
 category: Linux
 tags: [Awesome, Configuration, WM]
 ---

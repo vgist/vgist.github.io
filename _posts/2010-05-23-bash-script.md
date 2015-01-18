@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "写个简单的 Bash 脚本"
-description: "脚本是关于 lnmp 或者 llmp 的启动相关的，适用于 archlinux"
-keywords: "bash, 脚本, lnmp, arch, linux"
 category: Internet
 tags: [lnmp, CLI]
 ---

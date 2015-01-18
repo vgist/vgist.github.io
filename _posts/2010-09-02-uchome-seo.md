@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "UChome 2.0 SEO 优化"
-description: "UChome 2.0 SEO 优化"
-keywords: uchome, seo, 优化
 category: Internet
 tags: [UChome, SEO, Usage]
 ---
