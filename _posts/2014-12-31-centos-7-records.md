@@ -22,7 +22,7 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 
 不喜 root ssh，于是添加一个用户，因为用得到 sudo，故添加到 wheel 组
 
-    # useradd -m -G users,wheel -G havanna
+    # useradd -m -G users,wheel havanna
     # passwd havanna
 
 #### ssh
