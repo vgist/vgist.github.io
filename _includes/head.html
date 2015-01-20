@@ -29,7 +29,7 @@
   <script>
     var domain = "havee.me";
     var current = ["havee.gitcafe.com", "havee.gitcafe.io", "www.havee.me"];
-    for ( var i in current ) {
+    for ( var i = 0; i < current.length; i++ ) {
       if ( document.location.host == current[i] ) {
         document.location.href = "\/\/" + domain + this.location.pathname;
       }
