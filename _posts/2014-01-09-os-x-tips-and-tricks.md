@@ -111,21 +111,33 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 #### 八. 视频播放
 
-尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后定位在 [MPV](//mpv.io)，原汁原味的 Linux 下 Mplayer 的使用体验，强烈推荐，fork 自 mplayer2 与 Mplayer。
+尝试过 N 个播放器，包括收费的射手播放器在内都不太好用，最后确定以下几款视频播放器
+
+##### 1. [MPV](//mpv.io)
+
+原汁原味的 Linux 下 Mplayer 的使用体验，强烈推荐，fork 自 mplayer2 与 Mplayer。
 
 ![MPV screenshot](http://cdn.09hd.com/images/2014/01/mpv.png)
 
-[MPlayer OSX Extended](http://mplayerosx.ch) 也是个非常不错的视频播放器，使用过一段时间。
+##### 2. [MPlayer OSX Extended](//mplayerosx.ch) 
+
+Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时间。
 
 ![MPlayer OSX Extended](http://cdn.09hd.com/images/2014/01/mplayer-osx.png)
 
 ![MPlayer OSX Preferences](http://cdn.09hd.com/images/2014/01/mplayer-osx-preferences.png)
 
-当然，[MplayerX](//mplayerx.org) 也是另一个很好的选择。遗憾的是，播放蓝光 ISO 就不那么直观了。
+##### 3. [MplayerX](//mplayerx.org)
 
-于是再推荐个收费的 [Mac Blu-ray Player](//www.macblurayplayer.com)，与免费的 [XBMC](//kodi.tv/)。
+另一个很好的选择。
+
+##### 4. 蓝光播放
+
+###### a. 收费的 [Mac Blu-ray Player](//www.macblurayplayer.com)
 
 ![Mac Blu-ray Player](http://cdn.09hd.com/images/2014/01/mac-blu-ray-player.png)
+
+###### b. 免费的 [XBMC](//kodi.tv/)
 
 ![XBMC](http://cdn.09hd.com/images/2014/01/xbmc.png)
 
