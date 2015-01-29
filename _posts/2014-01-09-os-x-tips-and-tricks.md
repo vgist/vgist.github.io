@@ -181,4 +181,9 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
     $ defaults write com.apple.screencapture type png
     $ defaults write com.apple.screencapture type pdf
 
+#### 十四. Mail.app 撰写邮件附件显示
+
+    $ defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes/no
+    $ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true/false
+
 待更新……
