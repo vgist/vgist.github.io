@@ -111,79 +111,79 @@ int main(int argc, char **argv)
 
 - monokai
 
-![monokai](http://cdn.09hd.com/images/2013/08/pygments-monokai.png)
+![monokai](//cdn.09hd.com/images/2013/08/pygments-monokai.png)
 
 - manni
 
-![manni](http://cdn.09hd.com/images/2013/08/pygments-manni.png)
+![manni](//cdn.09hd.com/images/2013/08/pygments-manni.png)
 
 - rrt
 
-![rrt](http://cdn.09hd.com/images/2013/08/pygments-rrt.png)
+![rrt](//cdn.09hd.com/images/2013/08/pygments-rrt.png)
 
 - perldoc
 
-![perldoc](http://cdn.09hd.com/images/2013/08/pygments-perldoc.png)
+![perldoc](//cdn.09hd.com/images/2013/08/pygments-perldoc.png)
 
 - borland
 
-![borland](http://cdn.09hd.com/images/2013/08/pygments-borland.png)
+![borland](//cdn.09hd.com/images/2013/08/pygments-borland.png)
 
 - colorful
 
-![colorful](http://cdn.09hd.com/images/2013/08/pygments-colorful.png)
+![colorful](//cdn.09hd.com/images/2013/08/pygments-colorful.png)
 
 - default
 
-![default](http://cdn.09hd.com/images/2013/08/pygments-default.png)
+![default](//cdn.09hd.com/images/2013/08/pygments-default.png)
 
 - murphy
 
-![murphy](http://cdn.09hd.com/images/2013/08/pygments-murphy.png)
+![murphy](//cdn.09hd.com/images/2013/08/pygments-murphy.png)
 
 - vs
 
-![vs](http://cdn.09hd.com/images/2013/08/pygments-vs.png)
+![vs](//cdn.09hd.com/images/2013/08/pygments-vs.png)
 
 - trac
 
-![trac](http://cdn.09hd.com/images/2013/08/pygments-trac.png)
+![trac](//cdn.09hd.com/images/2013/08/pygments-trac.png)
 
 - tango
 
-![tango](http://cdn.09hd.com/images/2013/08/pygments-tango.png)
+![tango](//cdn.09hd.com/images/2013/08/pygments-tango.png)
 
 - fruity
 
-![fruity](http://cdn.09hd.com/images/2013/08/pygments-fruity.png)
+![fruity](//cdn.09hd.com/images/2013/08/pygments-fruity.png)
 
 - autumn
 
-![autumn](http://cdn.09hd.com/images/2013/08/pygments-autumn.png)
+![autumn](//cdn.09hd.com/images/2013/08/pygments-autumn.png)
 
 - bw
 
-![bw](http://cdn.09hd.com/images/2013/08/pygments-bw.png)
+![bw](//cdn.09hd.com/images/2013/08/pygments-bw.png)
 
 - emacs
 
-![emacs](http://cdn.09hd.com/images/2013/08/pygments-emacs.png)
+![emacs](//cdn.09hd.com/images/2013/08/pygments-emacs.png)
 
 - vim
 
-![vim](http://cdn.09hd.com/images/2013/08/pygments-vim.png)
+![vim](//cdn.09hd.com/images/2013/08/pygments-vim.png)
 
 - pastie
 
-![pastie](http://cdn.09hd.com/images/2013/08/pygments-pastie.png)
+![pastie](//cdn.09hd.com/images/2013/08/pygments-pastie.png)
 
 - friendly
 
-![friendly](http://cdn.09hd.com/images/2013/08/pygments-friendly.png)
+![friendly](//cdn.09hd.com/images/2013/08/pygments-friendly.png)
 
 - native
 
-![native](http://cdn.09hd.com/images/2013/08/pygments-native.png)
+![native](//cdn.09hd.com/images/2013/08/pygments-native.png)
 
 参考：
 
