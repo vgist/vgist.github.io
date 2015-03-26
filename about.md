@@ -10,21 +10,21 @@ description: "业余爱好的点滴记录，同时作为配置备份的存储地
 
 #### ChangeLog
 
-- 2015 年 3 月:     快成游客的留言测试场所了，故关闭游客留言
-- 2015 年 1 月:     因某些同学克隆模版后，经常忘记删掉鄙人文章，故博客重新转移至 GitCafe 私有仓库，模版还是去 GitHub 获取
-- 2015 年 1 月:     博客移除 keyword、description
-- 2015 年 1 月:     完善 archive 页面时间线，使得终端自适应
-- 2014 年 12 月:    因 GitCafe 某原因，及 name.gitcafe.io 跳转到 page 服务未完工，临时切换到 GitHub Pages
-- 2014 年 11 月:    样式 css 由 Jekyll 内置的 SASS 预处理器自动生成
-- 2014 年 8 月:     放弃 JB，转为 Jekyll，重新制作了模板 <https://github.com/Ihavee/ihavee.github.io>
-- 2014 年 8 月:     为了速度，砍掉华而不实的功能
-- 2014 年 3 月:     托管方由 GitHub 转向 GitCafe
-- 2014 年 2 月:     放弃支持低于 IE 9 的版本
-- 2013 年 9 月:     域名切换到 Havee.me
-- 2013 年 7 月:     由 Octopress + github 转为 Jekyll Bootstrap + github
-- 2013 年 1 月:     由 Wordpress 转为 Octopress + github
-- 2011 年 12 月:    域名切换为 Ihavanna.Org，并将发布其他平台的一些文章转回本博客
-- 2009 年 3月 :     建立博客，准备记录
+- 2015 年 03 月：   快成游客的留言测试场所了，故关闭游客留言
+- 2015 年 01 月：   因某些同学克隆模版后，经常忘记删掉鄙人文章，故博客重新转移至 GitCafe 私有仓库，模版还是去 GitHub 获取
+- 2015 年 01 月：   博客移除 keyword、description
+- 2015 年 01 月：   完善 archive 页面时间线，使得终端自适应
+- 2014 年 12 月：   因 GitCafe 某原因，及 name.gitcafe.io 跳转到 page 服务未完工，临时切换到 GitHub Pages
+- 2014 年 11 月：   样式 css 由 Jekyll 内置的 SASS 预处理器自动生成
+- 2014 年 08 月：   放弃 JB，转为 Jekyll，重新制作了模板 <https://github.com/Ihavee/ihavee.github.io>
+- 2014 年 08 月：   为了速度，砍掉华而不实的功能
+- 2014 年 03 月：   托管方由 GitHub 转向 GitCafe
+- 2014 年 02 月：   放弃支持低于 IE 9 的版本
+- 2013 年 09 月：   域名切换到 Havee.me
+- 2013 年 07 月：   由 Octopress + github 转为 Jekyll Bootstrap + github
+- 2013 年 01 月：   由 Wordpress 转为 Octopress + github
+- 2011 年 12 月：   域名切换为 Ihavanna.Org，并将发布其他平台的一些文章转回本博客
+- 2009 年 03 月：   建立博客，准备记录
 
 #### About me
 
