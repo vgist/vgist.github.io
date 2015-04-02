@@ -60,6 +60,10 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 
     # systemctl restart sshd
 
+确认下 sshd 服务
+
+    # ss -tnlp | grep sshd
+
 #### Timezone
 
     # timedatectl set-timezone Asia/Shanghai
