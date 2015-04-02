@@ -85,7 +85,7 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 
 #### Nginx
 
-    # rpm -ivh http://nginx.org/packages/centos/7/noarch/RPMS/nginx-release-centos-7-0.el7.ngx.noarch.rpm
+    # yum install epel-release
     # yum install nginx
 
 编辑 **/etc/nginx/nginx.conf**
