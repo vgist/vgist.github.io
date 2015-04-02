@@ -48,6 +48,14 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
     # chown havanna:havanna /home/havanna/authorized_keys
     # chmod 600 /home/havanna/authorized_keys
 
+安装一个 selinux 工具,并进行一些相关配置
+
+    # yum install policycoreutils-python
+    # semanage port -a -t ssh_port_t -p tcp yourport
+    # firewall-cmd --zone=public --permanent --add-port=yourport/tcp
+    # firewall-cmd --zone=public --permanent --remove-service=ssh
+    # firewall-cmd --reload
+
 然后重启下 sshd 服务
 
     # systemctl restart sshd
