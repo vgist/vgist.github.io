@@ -18,12 +18,35 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
     # hostnamectl set-hostname yourdomain
 
 <!-- more -->
+#### Timezone
+
+    # timedatectl set-timezone Asia/Shanghai
+
+查看时区
+
+    # timedatectl
+
 #### adduser
 
 不喜 root ssh，于是添加一个用户，因为用得到 sudo，故添加到 wheel 组
 
     # useradd -m -G users,wheel havanna
     # passwd havanna
+
+#### firewall
+
+    # systemctl start firewalld
+    # systemctl enable firewalld
+
+具体的方法可以阅读：[CentOS 7 下使用 Firewall]({% post_url 2015-01-02-using-firewalls-on-centos-7 %})，这里只添加基本的对外服务
+
+    # firewall-cmd --permanent --zone=public --add-service=http
+    # firewall-cmd --permanent --zone=public --add-service=https
+    # firewall-cmd --reload
+
+确认下
+
+    # firewall-cmd --permanent --zone=public --list-services
 
 #### ssh
 
@@ -48,7 +71,7 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
     # chown havanna:havanna /home/havanna/authorized_keys
     # chmod 600 /home/havanna/authorized_keys
 
-安装一个 selinux 工具,并进行一些相关配置
+如何更改了默认的端口，则安装一个 selinux 工具，并进行一些相关配置
 
     # yum install policycoreutils-python
     # semanage port -a -t ssh_port_t -p tcp yourport
@@ -63,29 +86,6 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 确认下 sshd 服务
 
     # ss -tnlp | grep sshd
-
-#### Timezone
-
-    # timedatectl set-timezone Asia/Shanghai
-
-查看时区
-
-    # timedatectl
-
-#### firewall
-
-    # systemctl start firewalld
-    # systemctl enable firewalld
-
-具体的方法可以阅读：[CentOS 7 下使用 Firewall]({% post_url 2015-01-02-using-firewalls-on-centos-7 %})，这里只添加基本的对外服务
-
-    # firewall-cmd --permanent --zone=public --add-service=http
-    # firewall-cmd --permanent --zone=public --add-service=https
-    # firewall-cmd --reload
-
-确认下
-
-    # firewall-cmd --permanent --zone=public --list-services
 
 #### Nginx
 
