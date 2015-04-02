@@ -91,6 +91,7 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
 
     # yum install epel-release
     # yum install nginx
+    # semanage permissive -a httpd_t
 
 编辑 **/etc/nginx/nginx.conf**
 
