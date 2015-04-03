@@ -71,7 +71,7 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips]
     # chown havanna:havanna /home/havanna/authorized_keys
     # chmod 600 /home/havanna/authorized_keys
 
-如何更改了默认的端口，则安装一个 selinux 工具，并进行一些相关配置
+因为更改了默认的 22 端口，安装一个 selinux 工具
 
     # yum install policycoreutils-python
     # semanage port -a -t ssh_port_t -p tcp yourport
