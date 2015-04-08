@@ -18,7 +18,7 @@ tags: [OpenVZ]
 
 心急的同学可以按照上游的 [patch](https://git.fedorahosted.org/cgit/initscripts.git/patch/?id=55a50ebc591ebd0f4cfbb8ecc204fa20ee6a7368) 直接去修改 **ifup-aliases** 以防重启后网络失败
 
-```
+```diff
 From 55a50ebc591ebd0f4cfbb8ecc204fa20ee6a7368 Mon Sep 17 00:00:00 2001
 From: Lukas Nykryn <lnykryn@redhat.com>
 Date: Sun, 5 Apr 2015 15:43:15 +0200
