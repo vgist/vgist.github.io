@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "升级到 CentOS 7.1 的众多 OpenVZ 的网络问题"
+title: "OpenVZ 在 CentOS 7.1 下的网络问题"
 category: Linux
 tags: [OpenVZ]
 ---
@@ -11,6 +11,7 @@ tags: [OpenVZ]
 
 我也是，提交了工单后，客服帮忙 `ifup venet0:0` 执行两次后取得网络。
 
+<!-- more -->
 有关于此的 bugzilla：
 
 <https://bugzilla.redhat.com/show_bug.cgi?id=1207975>
