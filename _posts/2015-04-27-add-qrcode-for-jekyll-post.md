@@ -32,6 +32,6 @@ tags: [Jekyll, QRCode]
 ```
 {% endraw %}
 
-说明下，`text: http:{{ site.url }}{{ page.url }}`，我这里只所以加上 **http:**，是因为很多手机无法识别 `//` 开头的网址，而我的 `_config.yml` 中的 **url** 是 `url: "//havee.me"`，所以看情况在 填写 text 变量。
+说明下，`text: http:{{ site.url }}{{ page.url }}`，我这里只所以加上 **http:**，是因为很多手机无法识别 `//` 开头的网址，而我的 `_config.yml` 中的 **url** 是 `url: "//havee.me"`，所以看情况填写 text 变量吧。
 
 完了，就那么简单。
