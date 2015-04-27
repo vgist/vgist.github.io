@@ -18,14 +18,18 @@ tags: [Jekyll, QRCode]
 
 然后再需要生成二维码的页面模板中的相关部分，添加：
 
-    <div id="code"></div>
+{% raw %}
+```html
+<div id="code"></div>
 
-    <script type="text/javascript">
-      $("#code").qrcode({
-        width: 150,
-        height: 150,
-        text: "http:{{ site.url }}{{ page.url }}"
-      });
-    </script>
+<script type="text/javascript">
+  $("#code").qrcode({
+    width: 150,
+    height: 150,
+    text: "http:{{ site.url }}{{ page.url }}"
+  });
+</script>
+```
+{% endraw %}
 
 完了，就那么简单。
