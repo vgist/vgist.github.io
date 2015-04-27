@@ -9,17 +9,11 @@ title : Sitemap
 
   {% for post in site.posts %}
   <url>
-    <loc>{{ site.url }}{{ post.url }}</loc>
+    <loc>http:{{ site.url }}{{ post.url }}</loc>
     <changefreq>daily</changefreq>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>
     <priority>0.8</priority>
   </url>
   {% endfor %}
-
-  <url>
-	<loc>{{ site.url }}</loc>
-    <changefreq>daily</changefreq>
-    <priority>0.5</priority>
-  </url>
 
 </urlset>

@@ -1,30 +1,36 @@
 # Site settings
 title: "Havee's Space"
 url: "//havee.me"
-highlighter: pygments
 paginate: 5
 author:
     name: Havee
-    github: registe
+    github:
     email:
-    gitcafe: Havee
+    gitcafe:
     twitter:
     facebook:
     googleplus:
-    weibo: Havanna
+    weibo:
 atom_path: /atom.xml
 rss_path: /rss.xml
 
 # Build settings
-markdown: redcarpet
-redcarpet:
-    extensions: ["fenced_code_blocks", "tables", "highlight", "strikethrough"]
+kramdown:
+    input: GFM
 permalink: /:categories/:year-:month/:title.html
-
+gems: [jekyll-paginate]
+exclude: [Gemfile, Gemfile.lock, qrsync, Rakefile]
 assets_path: /assets
+cdn: "//cdn.09hd.com"
 sass:
     sass_dir: assets/_sass
     style: :compressed
+
+# collections
+collections:
+    tools:
+        output: true
+        permalink: /:path/:title.html
 
 # comment
 comments:
@@ -37,8 +43,15 @@ comments:
             title: 0
             admin: 0
             length: 26
+
 # 网站统计
 analytics:
     baidu:
-        siteid: 707c49682d45342c4abaa7f2fbdd23dd        # 百度统计 js 代码后的字符串
-
+        siteid: 625169d97c95b10732a31bbe33aa305d        # 百度统计 js 代码后的字符串
+webmaster:
+    baidu:
+        verify: BvD3CNBzK6
+    google:
+        verify: oE8rOfWaq0A-pkv0HY170kkzgB1hM1j6zRTyRBgRw78
+    bing:
+        verify: FE0D1D87A075E1003B82C7446EE360ED
