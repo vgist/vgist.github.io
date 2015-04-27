@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "为 Jekyll 的每篇文章添加二维码"
+title: "为 Jekyll 文章添加二维码网址"
 category: Internet
 tags: [Jekyll, QRCode]
 ---
