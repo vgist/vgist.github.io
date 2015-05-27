@@ -47,7 +47,7 @@ nei'rong 内容
 
     ./rime_dict_manager -i luna_pinyin pyPhrase.org.dic
 
-该命令会升成 rime 的词库，名为 **luna_pinyin.userdb.kct**
+该命令会生成 rime 的词库，名为 **luna_pinyin.userdb.kct**
 
 将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 下，重新部属下 Rime 即可。
 
