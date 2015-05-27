@@ -11,11 +11,11 @@ tags: [OpenVZ]
 
 我也是，提交了工单后，客服帮忙 `ifup venet0:0` 执行两次后取得网络。
 
-<!-- more -->
 有关于此的 bugzilla：
 
 <https://bugzilla.redhat.com/show_bug.cgi?id=1207975>
 
+<!-- more -->
 心急的同学可以按照上游的 [patch](https://git.fedorahosted.org/cgit/initscripts.git/patch/?id=55a50ebc591ebd0f4cfbb8ecc204fa20ee6a7368) 直接去修改 **ifup-aliases** 以防重启后网络失败
 
 ```diff
