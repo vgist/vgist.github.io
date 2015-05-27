@@ -23,6 +23,7 @@ nei'rong 内容
 ```
 
 而如下才是我们需要的
+
 ```
 力量    li liang    1
 能力    neng li     1
@@ -31,7 +32,7 @@ nei'rong 内容
 ……
 ```
 
-可以看出，三列分别以 tab 制表符来分割，拼音之见以空格分割，那么就方便了
+可以看出，三列分别以 tab 制表符来分割，拼音之间以空格分割，那么就方便了
 
     awk -F" " 'BEGIN{OFS="\t"}{print $2,$1,"1"}' pyPhrase.org > sogou.dic
     sed -i '' "s/\'/ /g" ./sogou.dic
