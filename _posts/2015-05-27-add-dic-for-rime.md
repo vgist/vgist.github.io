@@ -47,4 +47,4 @@ nei'rong 内容
 
 当然有同学可能手上有其他词库，格式不同的话，对应的修改成我们需要的词库格式即可。
 
-同时推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
+最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
