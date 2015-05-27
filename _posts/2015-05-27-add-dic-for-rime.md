@@ -11,7 +11,7 @@ tags: [Rime]
 
 包含两个文件，转换工具文件（可能需要 `chmod +x file` 加上执行权限），以及词库文件。
 
-以下是 sogou for fcitx 的精简后的词库
+以下是 sogou for fcitx 的精简后的词库格式
 
 ```
 li'liang 力量
@@ -22,7 +22,7 @@ nei'rong 内容
 ```
 
 <!-- more -->
-而如下才是我们需要的
+而如下才是我们需要的格式
 
 ```
 力量    li liang    1
@@ -44,3 +44,5 @@ nei'rong 内容
 该命令会升成 rime 的词库，名为 **luna_pinyin.userdb.kct**
 
 将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 下，重新部属下 Rime 即可。
+
+当然有同学可能手上有其他词库，格式不同的话，对应的修改成我们需要的词库格式即可。
