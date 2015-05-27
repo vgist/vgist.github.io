@@ -40,12 +40,12 @@ nei'rong 内容
 
 可以看出，三列分别以 tab 制表符来分割，拼音之间以空格分割，那么就方便了
 
-    awk -F" " 'BEGIN{OFS="\t"}{print $2,$1,"1"}' pyPhrase.org > sogou.dic
-    sed -i '' "s/\'/ /g" ./sogou.dic
+    awk -F" " 'BEGIN{OFS="\t"}{print $2,$1,"1"}' pyPhrase.org > pyPhrase.org.dic
+    sed -i '' "s/\'/ /g" ./pyPhrase.org.dic
 
 随后就只剩下转换了
 
-    ./rime_dict_manager -i luna_pinyin fcitx.dic
+    ./rime_dict_manager -i luna_pinyin pyPhrase.org.dic
 
 该命令会升成 rime 的词库，名为 **luna_pinyin.userdb.kct**
 
