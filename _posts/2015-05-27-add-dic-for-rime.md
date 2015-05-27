@@ -11,7 +11,7 @@ tags: [Rime]
 
 包含两个文件，转换工具文件（可能需要 `chmod +x file` 加上执行权限），以及词库文件。
 
-实际上，转换工具 **rime_dict_manager** 是自带的，路径在 `/Library/Input Methods/Squirrel.app/Contents/MacOS` 下，可以写成 bash 脚本：
+实际上，转换工具 **rime\_dict\_manager** 是自带的，路径在 `/Library/Input Methods/Squirrel.app/Contents/MacOS` 下，可以写成 bash 脚本：
 
 ```bash
 DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Library/Input Methods/Squirrel.app/Contents/MacOS/rime_dict_manager" $@
