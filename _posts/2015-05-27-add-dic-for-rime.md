@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "给鼠须管添加第三方词库"
+title: "给 Rime 添加第三方词库"
 category: Mac
 tags: [Rime]
 ---
@@ -46,3 +46,5 @@ nei'rong 内容
 将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 下，重新部属下 Rime 即可。
 
 当然有同学可能手上有其他词库，格式不同的话，对应的修改成我们需要的词库格式即可。
+
+同时推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
