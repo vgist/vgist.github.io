@@ -7,11 +7,11 @@ tags: [Rime]
 
 #### 一、 添加词库
 
-介绍就不多说了，直入命题，转换词典需要三列数据，词汇，拼音，词频，我采用的是人家给 Fcitx 准备的搜狗词库，需要做一些转换。
+介绍就不多说了，直入命题，转换词典需要三列数据，词汇，拼音，词频，由于我的系统是 OS X & Linux，无法使用 [imewlconverter](https://github.com/studyzy/imewlconverter)，故我采用的是人家整理好的词库，需要做一些转换。
 
-工具和词库可以在此下载：[fcitx-sogou-phrase-small.zip](http://cdn.09hd.com/images/2015/05/fcitx-sogou-phrase-small.zip)
+工具可以在此下载：[rime_dict_manager.zip](http://cdn.09hd.com/images/2015/05/rime_dict_manager.zip)，你可能需要 `chmod +x file` 来加上执行权限。
 
-包含两个文件，转换工具文件（可能需要 `chmod +x file` 加上执行权限），以及词库文件。
+词库文件可以去这里下载：<https://code.google.com/p/hslinuxextra/downloads/list>
 
 实际上，转换工具 **rime\_dict\_manager** 是自带的，路径在 `/Library/Input Methods/Squirrel.app/Contents/MacOS` 下，可以写成 bash 脚本：
 
