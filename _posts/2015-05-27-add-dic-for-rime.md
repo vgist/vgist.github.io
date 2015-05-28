@@ -51,7 +51,7 @@ nei'rong 内容
 
 该命令会生成 rime 的词库，名为 **luna_pinyin.userdb.kct**
 
-将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 下，重新部属下 Rime 即可。
+将 **luna\_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 下，重新部属下 Rime 即可。
 
 当然有同学可能手上有其他词库，格式不同的话，对应的修改成我们需要的词库格式即可。
 
