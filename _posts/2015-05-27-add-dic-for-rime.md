@@ -42,7 +42,7 @@ nei'rong 内容
 
 可以看出，三列分别以 tab 制表符来分割，拼音之间以空格分割，那么就方便了
 
-    awk -F" " 'BEGIN{OFS="\t"}{print $2,$1,"1"}' pyPhrase.org > pyPhrase.org.dic
+    awk -F" " 'BEGIN{OFS="\t"}{print $2,$1}' pyPhrase.org > pyPhrase.org.dic
     sed -i '' "s/\'/ /g" ./pyPhrase.org.dic
 
 随后就只剩下转换了
@@ -65,7 +65,11 @@ nei'rong 内容
 - 新增方案配置文件 **sogou\_pinyin.schema.yaml** 文件（复制默认的 **luna_pinyin_simp.schema.yaml** 去修改，依样画葫芦）；
 - 修改 **default.custom.yaml** 全局配置文件，添加 **sogou\_pinyin** 输入方案。
 
-搜狗的词库上面已经说了，这里不再重复，下面给出剩下的两文件。
+##### sogou\_pinyin.userdb.kct
+
+搜狗的词库上面已经说了
+
+    ./rime_dict_manager -i sogou_pinyin pyPhrase.org.dic
 
 ##### sogou\_pinyin\_schema.yaml
 
