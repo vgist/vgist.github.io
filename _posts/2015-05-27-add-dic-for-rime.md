@@ -33,10 +33,10 @@ nei'rong 内容
 而如下才是我们需要的格式
 
 ```
-力量    li liang    1
-能力    neng li     1
-那你    na ni       1
-内容    nei rong    1
+力量    li liang
+能力    neng li
+那你    na ni
+内容    nei rong
 ……
 ```
 
