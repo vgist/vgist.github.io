@@ -57,17 +57,17 @@ nei'rong 内容
 
 #### 二、 自建输入方案
 
-为了跟默认的配置分开，这里还是建议添加自己的输入方案，当然词库合并进 luna\_pinyin 后的首选词总是感觉比较怪异也是另一原因。
+为了跟默认的配置分开，这里还是建议添加自己的输入方案，当然词库合并进 **luna\_pinyin** 后的首选词总是感觉比较怪异也是另一原因。
 
-这里就拿 sogou_pinyin 为例，自建输入方案需要新增两个必备的文件与修改一配置文件。
+这里就拿 **sogou\_pinyin** 为例，自建输入方案需要新增两个必备的文件与修改一配置文件。
 
-- 新增 sogou\_pinyin.userdb.kct 词库文件（此文件由上面 rime\_dict\_manager 得到）；
-- 新增配置文件 sogou\_pinyin.schema.yaml 文件（复制默认的 luna_pinyin_simp.schema.yaml 去修改，依样画葫芦）；
-- 修改 default.custom.yaml 文件，添加 sogou 输入方案。
+- 新增 **sogou\_pinyin.userdb.kct** 词库文件（此文件由上面 **rime\_dict\_manager** 得到）；
+- 新增配置文件 **sogou\_pinyin.schema.yaml** 文件（复制默认的 **luna_pinyin_simp.schema.yaml** 去修改，依样画葫芦）；
+- 修改 **default.custom.yaml** 文件，添加 **sogou\_pinyin** 输入方案。
 
 搜狗的词库上面已经说了，这里不再重复，下面给出剩下的两文件。
 
-sogou\_pinyin\_schema.yaml
+##### sogou\_pinyin\_schema.yaml
 
 ```yaml
 # Rime schema
@@ -168,7 +168,7 @@ recognizer:
   import_preset: default
 ```
 
-default.custom.yaml
+##### default.custom.yaml
 
 ```yaml
 patch:
