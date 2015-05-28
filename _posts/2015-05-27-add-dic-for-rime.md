@@ -62,8 +62,8 @@ nei'rong 内容
 这里就拿 **sogou\_pinyin** 为例，自建输入方案需要新增两个必备的文件与修改一配置文件。
 
 - 新增 **sogou\_pinyin.userdb.kct** 词库文件（此文件由上面 **rime\_dict\_manager** 得到）；
-- 新增配置文件 **sogou\_pinyin.schema.yaml** 文件（复制默认的 **luna_pinyin_simp.schema.yaml** 去修改，依样画葫芦）；
-- 修改 **default.custom.yaml** 文件，添加 **sogou\_pinyin** 输入方案。
+- 新增方案配置文件 **sogou\_pinyin.schema.yaml** 文件（复制默认的 **luna_pinyin_simp.schema.yaml** 去修改，依样画葫芦）；
+- 修改 **default.custom.yaml** 全局配置文件，添加 **sogou\_pinyin** 输入方案。
 
 搜狗的词库上面已经说了，这里不再重复，下面给出剩下的两文件。
 
