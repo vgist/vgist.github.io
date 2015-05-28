@@ -82,9 +82,9 @@ schema:
   name: 搜狗拼音
   version: "0.01"
   author:
-    - 搜狗
+    - sogou
   description: |
-    搜狗拼音，簡化字模式。
+    搜狗拼音。
 
 switches:
   - name: ascii_mode
@@ -160,7 +160,11 @@ simplifier:
   option_name: zh_simp
 
 punctuator:
-  import_preset: default
+  import_preset: symbols
+  full_shape:
+    "\\" : "、"
+  half_shape:
+    "\\" : "、"
 
 key_binder:
   import_preset: default
@@ -170,6 +174,9 @@ key_binder:
 
 recognizer:
   import_preset: default
+  patterns:
+    punct: "^/([A-Z|a-z]*|[0-9]|10)$"
+
 ```
 
 ##### default.custom.yaml
