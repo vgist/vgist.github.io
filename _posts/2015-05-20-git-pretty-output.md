@@ -5,7 +5,9 @@ category: Linux
 tags: [Git,Usage]
 ---
 
-看惯了 Git log 输出后，有点视觉疲劳，于是中午吃饭前改了下格式：
+之前写过另一篇：[《Git 进阶：color/diff》]({% post_url  2012-06-15-the-git-advanced-color-diff %})
+
+今天，看惯了 Git log 输出后，有点视觉疲劳，于是中午吃饭前改了下格式：
 
     git log --graph --pretty=format:'%C(yellow)%h%Creset -%C(cyan)%d%Creset %s %Cgreen(%an, %cr)' --abbrev-commit
 
