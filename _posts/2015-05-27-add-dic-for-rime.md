@@ -145,7 +145,7 @@ DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Li
 ……
 ```
 
-第三列是词频信息，可有可无。如果你得到的第三方词库文件名为 **pyPhrase.dic**，则转换：
+第三列是词频信息，可有可无，三列以 tab 制表符分割。如果你得到的第三方词库文件名为 **pyPhrase.dic**，则转换：
 
     ./rime_dict_manager -i luna_pinyin ./pyPhrase.dic
 
