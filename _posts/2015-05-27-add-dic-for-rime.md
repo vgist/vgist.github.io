@@ -185,7 +185,7 @@ import_tables:
 ...
 ```
 
-扩展词库文件，可以用网友整理的 [朙月拼音擴充詞庫](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。
+扩展词库文件，可以用网友整理的 [朙月拼音擴充詞庫](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。或者在这里下载整理好的 [sogou for rime](http://pan.baidu.com/s/1i3BxMXR)，提取码：u2hv
 
 当然你也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
 
