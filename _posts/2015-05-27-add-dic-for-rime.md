@@ -145,13 +145,14 @@ DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Li
 ……
 ```
 
-第三列是词频信息，可有可无，三列以 tab 制表符分割。如果你得到的第三方词库文件名为 **pyPhrase.dic**，则转换：
+第三列是词频信息，可有可无，三列以 tab 制表符分割。如果你得到的第三方词库文件名为 **pyPhrase.dic**，则可以通过 opencc 转化为繁体后在转换成 kct 词库文件：
 
-    ./rime_dict_manager -i luna_pinyin ./pyPhrase.dic
+    opencc -i ./pyPhrase.dic -o ./pyPhrase.dic.new
+    ./rime_dict_manager -i luna_pinyin ./pyPhrase.dic.new
 
-该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可，这种方式每次部署都需要重编码，每次时间都比较长，通过 rime_dict_manager 转换的方法不推荐。
+该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可。这种转换方式在 OS X 下重新部署 Rime 时，会在 **/Library/Rime/luna_pinyin.userdb** 文件夹下生成大量的 ldb 用户数据文件，通过 rime_dict_manager 转换的方法不推荐，因为在每次重新部署和同步的时候都需要花费大量的时间。
 
-如果格式正确，直接用 opencc (通过 `brew install opencc` 安装) 转化成繁体格式输出为 **luna_pinyin.yourname.dict.yaml**：
+如果词库的格式正确，推荐直接用 opencc (通过 `brew install opencc` 安装) 转化成繁体格式输出为 **luna_pinyin.yourname.dict.yaml**：
 
     opencc -i ./pyPhrase.dic -o ./luna_pinyin.yourname.dict.yaml
 
