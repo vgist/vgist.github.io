@@ -149,7 +149,7 @@ DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Li
 
 该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可，这种方式每次部署都需要重编码，每次时间都比较长。
 
-推荐直接改名为 **luna_pinyin.sogou.dict.yaml** (其中的 sogou 你可以改为其他名，譬如 other)，随后在 **luna_pinyin.extended.dict.yaml** 文件中的 `import_tables` 下按格式添加，这种方式需要按照文章开头概述中的第 3、4 步骤去做。
+推荐不要经过上面那步转换，如果格式正确，直接改名为 **luna_pinyin.sogou.dict.yaml** (其中的 sogou 你可以改为其他名，譬如 other)，随后在 **luna_pinyin.extended.dict.yaml** 文件中的 `import_tables` 下按格式添加，这种方式需要按照文章开头概述中的第 3、4 步骤去做。
 
 ```yaml
 ---
