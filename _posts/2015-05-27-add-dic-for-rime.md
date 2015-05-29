@@ -149,9 +149,29 @@ DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Li
 
     ./rime_dict_manager -i luna_pinyin ./pyPhrase.dic
 
-该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可，这种方式每次部署都需要重编码，每次时间都比较长。
+该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可，这种方式每次部署都需要重编码，每次时间都比较长，通过 rime_dict_manager 转换的方法不推荐。
 
-推荐不要经过上面那步转换，如果格式正确，直接改名为 **luna_pinyin.sogou.dict.yaml** (其中的 sogou 你可以改为其他名，譬如 other)，随后在 **luna_pinyin.extended.dict.yaml** 文件中的 `import_tables` 下按格式添加，这种方式需要按照文章开头概述中的第 3、4 步骤去做。
+如果格式正确，直接用 opencc (通过 `brew install opencc` 安装) 转化成繁体格式输出为 **luna_pinyin.yourname.dict.yaml**：
+
+    opencc -i ./pyPhrase.dic -o ./luna_pinyin.yourname.dict.yaml
+
+用文本编辑器编辑 **luna_pinyin.yourname.dict.yaml** 文件，头部添加
+
+```yaml
+---
+name: luna_pinyin.yourname
+version: "2015.05.27"
+sort: by_weight
+use_preset_vocabulary: true
+...
+
+釣魚島    diao yu dao      1
+黑瞎子島  hei xia zi dao   1
+南沙羣島  nan sha qun dao  1
+……
+```
+
+随后在 **luna_pinyin.extended.dict.yaml** 文件中的 `import_tables` 下引入自己制作的词库，这种方式需要按照文章开头概述中的第 3、4 步骤去做。
 
 ```yaml
 ---
@@ -161,12 +181,13 @@ sort: by_weight
 use_preset_vocabulary: true
 import_tables:
   - luna_pinyin
-  - luna_pinyin.sogou
-  - luna_pinyin.other
+  - luna_pinyin.yourname
 ...
 ```
 
-扩展词库文件，可以用网友整理的，也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
+扩展词库文件，可以用网友整理的 [朙月拼音擴充詞庫](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。
+
+当然你也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
 
 最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
 
