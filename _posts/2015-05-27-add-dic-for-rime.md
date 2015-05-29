@@ -9,11 +9,11 @@ tags: [Rime]
 
 介绍就不多说了，直入命题，转换词典需要三列数据，词汇，拼音，词频，由于我的系统是 OS X & Linux，无法使用 [imewlconverter](https://github.com/studyzy/imewlconverter)，故我采用的是人家整理好的词库，需要做一些转换。
 
-工具可以在此下载：[rime\_dict\_manager.zip](http://cdn.09hd.com/images/2015/05/rime_dict_manager.zip)，你可能需要 `chmod +x file` 来加上执行权限。
+工具可以在此下载：[rime_dict_manager.zip](http://cdn.09hd.com/images/2015/05/rime_dict_manager.zip)，你可能需要 `chmod +x file` 来加上执行权限。
 
 词库文件可以去这里下载：<https://code.google.com/p/hslinuxextra/downloads/list>
 
-实际上，转换工具 **rime\_dict\_manager** 是自带的，路径在 `/Library/Input Methods/Squirrel.app/Contents/MacOS` 下，可以写成 bash 脚本：
+实际上，转换工具 **rime_dict_manager** 是自带的，路径在 `/Library/Input Methods/Squirrel.app/Contents/MacOS` 下，可以写成 bash 脚本：
 
 ```bash
 DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Library/Input Methods/Squirrel.app/Contents/MacOS/rime_dict_manager" $@
@@ -51,27 +51,27 @@ nei'rong 内容
 
 该命令会生成 rime 的词库，名为 **luna_pinyin.userdb.kct**
 
-将 **luna\_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 下，重新部属下 Rime 即可。
+将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 下，重新部属下 Rime 即可。
 
 当然有同学可能手上有其他词库，格式不同的话，对应的修改成我们需要的词库格式即可。
 
 #### 二、 自建输入方案
 
-为了跟默认的配置分开，这里还是建议添加自己的输入方案，当然词库合并进 **luna\_pinyin** 后的首选词总是感觉比较怪异也是另一原因。
+为了跟默认的配置分开，这里还是建议添加自己的输入方案，当然词库合并进 **luna_pinyin** 后的首选词总是感觉比较怪异也是另一原因。
 
-这里就拿 **sogou\_pinyin** 为例，自建输入方案需要新增两个必备的文件与修改一配置文件。
+这里就拿 **sogou_pinyin** 为例，自建输入方案需要新增两个必备的文件与修改一配置文件。
 
-- 新增 **sogou\_pinyin.userdb.kct** 词库文件（此文件由上面 **rime\_dict\_manager** 得到）；
-- 新增方案配置文件 **sogou\_pinyin.schema.yaml** 文件（复制默认的 **luna\_pinyin\_simp.schema.yaml** 去修改，依样画葫芦）；
-- 修改 **default.custom.yaml** 全局配置文件，添加 **sogou\_pinyin** 输入方案。
+- 新增 **sogou_pinyin.userdb.kct** 词库文件（此文件由上面 **rime_dict_manager** 得到）；
+- 新增方案配置文件 **sogou_pinyin.schema.yaml** 文件（复制默认的 **luna_pinyin_simp.schema.yaml** 去修改，依样画葫芦）；
+- 修改 **default.custom.yaml** 全局配置文件，添加 **sogou_pinyin** 输入方案。
 
-##### sogou\_pinyin.userdb.kct
+##### sogou_pinyin.userdb.kct
 
 搜狗的词库上面已经说了
 
     ./rime_dict_manager -i sogou_pinyin pyPhrase.org.dic
 
-##### sogou\_pinyin\_schema.yaml
+##### sogou_pinyin_schema.yaml
 
 ```yaml
 # Rime schema
