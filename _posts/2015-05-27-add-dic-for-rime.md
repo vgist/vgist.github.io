@@ -189,6 +189,8 @@ import_tables:
 
 当然你也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
 
+当然完事后，不要忘记重新部署一下。
+
 最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
 
 参考：<https://github.com/rime/home/wiki/UserGuide>
