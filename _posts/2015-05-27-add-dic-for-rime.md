@@ -152,7 +152,7 @@ DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Li
 
 该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可。这种转换方式在 OS X 下重新部署 Rime 时，会在 **/Library/Rime/luna_pinyin.userdb** 文件夹下生成大量的 ldb 用户数据文件，通过 rime_dict_manager 转换的方法不推荐，因为在每次重新部署和同步的时候都需要花费大量的时间。
 
-如果词库的格式正确，推荐直接用 opencc 转化成繁体格式输出为 **luna_pinyin.yourname.dict.yaml**：
+如果词库的格式正确，推荐用外挂扩展词库的方式去实现，即直接用 opencc 转化成繁体格式输出为 **luna_pinyin.yourname.dict.yaml**：
 
     opencc -i ./pyPhrase.dic -o ./luna_pinyin.yourname.dict.yaml
 
