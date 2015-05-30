@@ -9,8 +9,11 @@ tags: [Rime]
 
 输入法是用户的基础工具，每天都用得到，但是现在的各类云输入法在方便用户的同时，敏感数据非加密传输等隐私问题就一直没有中断过，方便用户输入就是当今各商业输入法的一块遮羞布。最近一直看到圈里流传 Rime 输入法，就花了点时间折腾了一下。
 
+![Rime](http://cdn.09hd.com/images/2015/05/rime.png)
+
 OS X 下的用户配置文件在 **~/Library/Rime** 目录下，下面记录下使用 Rime 的一些个人配置。
 
+<!-- more -->
 ##### 1. installation.yaml
 
 ```yaml
@@ -23,7 +26,6 @@ sync_dir: "/Users/Havee/Documents"
 rime_version: 1.2.9
 ```
 
-<!-- more -->
 ##### 2. squirrel.custom.yaml
 
 ```yaml
