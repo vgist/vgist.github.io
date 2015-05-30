@@ -7,7 +7,7 @@ tags: [Rime]
 
 #### 一、 概述
 
-输入法是用户的基础工具，每天都用得到，但是现在的云在方便用户的同时，敏感数据为加密传输等隐私问题就一直没有中断过，方便用户输入就是当今各商业输入法的一块遮羞布。最近一直看到圈里流传 Rime 输入法，就花了点时间折腾了一下。
+输入法是用户的基础工具，每天都用得到，但是现在的各类云输入法在方便用户的同时，敏感数据非加密传输等隐私问题就一直没有中断过，方便用户输入就是当今各商业输入法的一块遮羞布。最近一直看到圈里流传 Rime 输入法，就花了点时间折腾了一下。
 
 OS X 下的用户配置文件在 **~/Library/Rime** 目录下，下面记录下使用 Rime 的一些个人配置。
 
@@ -186,7 +186,7 @@ import_tables:
 ...
 ```
 
-扩展词库文件，可以用网友整理的 [【朙月拼音擴充詞庫】](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。或者在这里下载整理好的 [【sogou for rime】](http://pan.baidu.com/s/1i3BxMXR)，提取码：u2hv
+扩展词库文件，可以用网友整理的 [【朙月拼音擴充詞庫】](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。或者在这里下载整理好的 [【sogou for rime】](http://pan.baidu.com/s/1jGrJbtc)。
 
 当然你也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
 
