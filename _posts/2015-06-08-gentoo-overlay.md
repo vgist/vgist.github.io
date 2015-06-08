@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gentoo overlay 的一些简单介绍"
+title: "Gentoo overlay 的简单介绍"
 category: Linux
 tags: [Gentoo]
 ---
