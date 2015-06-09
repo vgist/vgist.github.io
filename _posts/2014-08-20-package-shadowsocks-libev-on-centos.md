@@ -137,30 +137,12 @@ $ rpmbuild --showrc | grep centos
 #### 二、打包
 
 - **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
-- **srpm** 源码包: [shadowsocks-libev-1.6.1-1.el7.centos.src.rpm](//cdn.09hd.com/images/2014/08/shadowsocks-libev-1.6.1-1.el7.centos.src.rpm)  （源码包下载后修改commit与版本号到最新版）
 
-rpm 源码包适用于 CentOS 7，如果是 6.5 版本，请通过 spec 文件打包。
-
-##### 打包法一
-
-如果有 rpm 源码包，可以通过以下命令解压来查看
-
-```console
-$ rpm2cpio shadowsocks-libev-1.6.1-1.el7.centos.src.rpm | cpio -div
-shadowsocks-libev
-shadowsocks-libev-1.6.1-2a6c28e.tar.gz
-shadowsocks-libev.json
-shadowsocks-libev.spec
-ss-local.service
-ss-server.service
-4716 blocks
-```
-
-没有的话，就 clone 吧
+clone 下来
 
     $ git clone git://github.com/Ihavee/ihavee-rpm.git ./your/path
 
-将下面三个文件放入文件夹 `~/rpmbuild/SOURCES`
+将下面五个文件放入文件夹 `~/rpmbuild/SOURCES`
 
 - `ss-local.service`
 - `ss-server.service`
@@ -184,9 +166,24 @@ ss-server.service
 
     $ spectool -R -g shadowsocks-libev.spec
 
-##### 打包法二
+如果有多台的机子，可以打一个 rpm 源码包
 
-直接通过 rpm 源码包来制作两进制包
+    $ rpmbuild -bs shadowsocks-libev.spec
+
+rpm 源码包里包含了打包所需的全部文件
+
+```console
+$ rpm2cpio shadowsocks-libev-1.6.1-1.el7.centos.src.rpm | cpio -div
+shadowsocks-libev
+shadowsocks-libev-1.6.1-2a6c28e.tar.gz
+shadowsocks-libev.json
+shadowsocks-libev.spec
+ss-local.service
+ss-server.service
+4716 blocks
+```
+
+通过 rpm 源码包制作两进制包
 
     $ rpmbuild --rebuild /path/shadowsocks-libev-1.6.1-1.el7.centos.src.rpm
 
