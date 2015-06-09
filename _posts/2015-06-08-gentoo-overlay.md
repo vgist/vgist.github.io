@@ -5,7 +5,7 @@ category: Linux
 tags: [Gentoo]
 ---
 
-虽然一直在使用 Gentoo，但是对 Gentoo 知识点的记录非常少，惭愧，以下记录下 layman 的一些使用。
+由于接触 Gentoo 的时间比自建博客的时间早，故对 Gentoo 知识点的记录非常少，以下记录下 layman 的一些使用。
 
 layman 是 Gentoo 下的一款管理第三方 overlay 工具，通过 layman 可以方便的安装各社区创建的 overlay。
 
