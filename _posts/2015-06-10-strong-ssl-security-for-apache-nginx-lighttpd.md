@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "SSL 配置介绍"
+title: "服务端 SSL 配置"
 category: Linux
 tags: [SSL, Apache, Nginx, Lighttpd]
 ---
