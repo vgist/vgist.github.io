@@ -14,15 +14,21 @@ SSL cipher 依据你申请的证书来，譬如：WoSign 的免费证书是 AES1
     ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES128+EECDH:AES128+EDH";
 
 <!-- more -->
-而 SSL 的协议则推荐使用 **TLSv1 TLSv1.1 TLSv1.2**。Forward Secrecy 也加上，终端运行：
+而 SSL 的协议则推荐使用 **TLSv1 TLSv1.1 TLSv1.2**，Nginx 下如此：
+
+    ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
+
+Forward Secrecy 也加上，终端运行：
 
     openssl dhparam -out dhparam.pem 4096
 
-随后在 nginx 配置中加上
+随后在 nginx 配置中加上：
 
     ssl_dhparam /your/path/dhparam.pem;
 
 解释下 Forward Secrecy，客户端服务端协商一个永不重用密钥，在会话结束时销毁它。
+
+##### Apache、Nginx、Lighttpd 各配置
 
 ###### Apache
 
@@ -35,9 +41,9 @@ Header always set Strict-Transport-Security "max-age=63072000; includeSubdomains
 Header always set X-Frame-Options DENY
 Header always set X-Content-Type-Options nosniff
 # Requires Apache >= 2.4
-SSLCompression off 
-SSLUseStapling on 
-SSLStaplingCache "shmcb:logs/stapling-cache(150000)" 
+SSLCompression off
+SSLUseStapling on
+SSLStaplingCache "shmcb:logs/stapling-cache(150000)"
 ```
 
 ###### Nginx
