@@ -5,12 +5,15 @@ category: Linux
 tags: [SSL, Apache, Nginx, Lighttpd]
 ---
 
+![SSL LABS](//cdn.09hd.com/images/2015/06/SSL-LABS.png)
+
 快要步入全民 SSL 时代了，有必要记录下 SSL 的相关配置了。
 
 SSL cipher 依据你申请的证书来，譬如：WoSign 的免费证书是 AES128 加密的，则 Nginx 可以：
 
     ssl_ciphers "EECDH+AESGCM:EDH+AESGCM:AES128+EECDH:AES128+EDH";
 
+<!-- more -->
 而 SSL 的协议则推荐使用 **TLSv1 TLSv1.1 TLSv1.2**。Forward Secrecy 也加上，终端运行：
 
     openssl dhparam -out dhparam.pem 4096
@@ -21,7 +24,6 @@ SSL cipher 依据你申请的证书来，譬如：WoSign 的免费证书是 AES1
 
 解释下 Forward Secrecy，客户端服务端协商一个永不重用密钥，在会话结束时销毁它。
 
-<!-- more -->
 ###### Apache
 
 ```
