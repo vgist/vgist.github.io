@@ -19,6 +19,8 @@ SSL cipher 依据你申请的证书来，譬如：WoSign 的免费证书是 AES1
 
     ssl_dhparam /your/path/dhparam.pem;
 
+解释下 Forward Secrecy，客户端服务端协商一个永不重用密钥，在会话结束时销毁它。
+
 <!-- more -->
 ###### Apache
 
