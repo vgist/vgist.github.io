@@ -79,6 +79,11 @@ ssl.use-sslv2 = "disable"
 ssl.use-sslv3 = "disable"
 ```
 
+我使用的是 Nginx，在以上 Nginx 中加入如下即完成配置：
+
+    ssl_certificate /your/path/name.crt;
+    ssl_certificate_key /your/path/name.key;
+
 最后，你可以去 [SSL Labs](https://www.ssllabs.com/ssltest/) 跑下域名，过段时间回来看看你的 SSL Server 得分。
 
 参考：
