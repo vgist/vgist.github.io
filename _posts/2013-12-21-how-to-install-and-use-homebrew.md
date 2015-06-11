@@ -121,11 +121,11 @@ Uninstalling /usr/local/Cellar/htop-osx/0.8.2.1...
 
 默认 homebrew cask 安装 app 至 `/opt/homebrew-cask/Caskroom` 下，并链接到 `~/Applications` 目录。
 
-配置下，让 app 链接至 `~/Applications` 下
+配置下，让 app 链接至 `~/My Applications` 下
 
-    $ mkdir ~/Applications
-    $ touch ~/Applications/.localized
-    $ echo 'export HOMEBREW_CASK_OPTS="--appdir=~/Applications"' >> ~/.bash_profile
+    $ mkdir ~/My\ Applications
+    $ touch ~/My\ Applications/.localized
+    $ echo 'export HOMEBREW_CASK_OPTS="--appdir=~/My\ Applications"' >> ~/.bash_profile
     $ source ~/.bash_profile
 
 然后随便安装了
