@@ -21,14 +21,9 @@ description: "业余爱好的点滴记录，同时作为配置备份的存储地
 - 2013 年 09 月：   域名切换到 Havee.me
 - 2013 年 07 月：   由 Octopress + github 转为 Jekyll Bootstrap + github
 - 2013 年 01 月：   由 Wordpress 转为 Octopress + github
-- 2011 年 12 月：   域名切换为 Ihavanna.Org，并将发布其他平台的一些文章转回本博客
 - 2009 年 03 月：   建立博客，准备记录
 
 #### About me
-
-Havanna，借用03年左右混迹海外论坛时， 看到的一个ID，”Havanna”，于是，Havanna 就一直成为我2013年之前的英文名。
-
-在 2013 年 8 月份之前，思虑很久，决定注册 havee.me 域名，并与2013年9月份将域名从 ihavanna.org 切换到 havee.me。
 
 05 年开始初步接触 Linux，06年开始工作环境完全切换到 Linux，13 年末，厌倦了 Linux，遂工作环境切换到 OS X，至今。本博客，点滴记录，同时作为配置备份存储地，好记性不如滥笔头。
 
