@@ -73,3 +73,5 @@ server {
     }
 }
 ```
+
+有关 ssl 的更详细的配置可以查阅：[《服务端 SSL 配置》]({% post_url 2015-06-10-strong-ssl-security-for-apache-nginx-lighttpd %})
