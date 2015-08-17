@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "打包解包安卓 img 镜像"
+title: "打包与解包安卓 img 镜像"
 category: Linux
 tags: [Android]
 ---
