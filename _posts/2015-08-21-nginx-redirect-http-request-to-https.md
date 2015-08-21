@@ -11,31 +11,32 @@ tags: [Nginx]
 
 常见的写法有两种，即写两个 Server，这个没有什么异议，也不可能混淆，大家都会，即：
 
+<!-- more -->
 ```nginx
 server {
     listen 80;
-	server_name domain.com;
-	rewrite ^(.*) https://$server_name$1 permanent;
+    server_name domain.com;
+    rewrite ^(.*) https://$server_name$1 permanent;
 }
 server {
     listen 443 ssl;
-	server_name domain.com;
-	ssl on;
-	......
+    server_name domain.com;
+    ssl on;
+    ......
 }
 ```
 
 ```nginx
 server {
     listen 80;
-	server_name domain.com;
-	return 301 https://$server_name$request_uri;
+    server_name domain.com;
+    return 301 https://$server_name$request_uri;
 }
 server {
     listen 443 ssl;
-	server_name domain.com;
-	ssl on;
-	......
+    server_name domain.com;
+    ssl on;
+    ......
 }
 ```
 
@@ -48,8 +49,8 @@ server {
     listen 443 ssl;
     listen 80;
     server_name domain.com;
-	ssl on;
-	......
-	error_page 497 https://$server_name$request_uri;
+    ssl on;
+    ......
+    error_page 497 https://$server_name$request_uri;
 }
 ```
