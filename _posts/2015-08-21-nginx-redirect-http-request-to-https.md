@@ -11,7 +11,6 @@ tags: [Nginx]
 
 常见的写法有两种，即写两个 Server，大家都会，即：
 
-<!-- more -->
 ```nginx
 server {
     listen 80;
@@ -26,6 +25,7 @@ server {
 }
 ```
 
+<!-- more -->
 ```nginx
 server {
     listen 80;
