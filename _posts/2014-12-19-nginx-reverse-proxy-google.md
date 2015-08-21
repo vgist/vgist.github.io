@@ -52,13 +52,8 @@ server {
 
 ```nginx
 server {
-    listen 80;
-    server_name your.domain www.your.domain;
-    rewrite ^(.*) https://your.domain$1 permanent;
-}
-
-server {
     listen 443 ssl;
+    listen 80;
     server_name your.domain;
 
     ssl on;
@@ -71,6 +66,8 @@ server {
     location / {
         google on;
     }
+
+    error_page 497 https://$server_name$$request_uri;
 }
 ```
 
