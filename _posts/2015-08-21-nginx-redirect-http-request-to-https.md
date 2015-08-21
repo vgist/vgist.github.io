@@ -15,7 +15,7 @@ tags: [Nginx]
 server {
     listen 80;
     server_name domain.com;
-    rewrite ^(.*) https://$server_name$request_uri? permanent;
+    rewrite ^(.*) https://$server_name$1 permanent;
 }
 server {
     listen 443 ssl;
