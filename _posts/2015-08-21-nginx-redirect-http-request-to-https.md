@@ -40,7 +40,7 @@ server {
 }
 ```
 
-还有一种方法，不太常见，即利用 497 状态码。
+还有一种方法，非常规手段，即利用 497 状态码。
 
 当此虚拟机只允许 HTTPS 来访问时，用 HTTP 访问会让 Nginx 报 497 错误，然后利用 error_page 将链接重定向至 HTTPS 上，即：
 
@@ -52,5 +52,16 @@ server {
     ssl on;
     ......
     error_page 497 https://$server_name$request_uri;
+}
+```
+
+当然 497 一般用于非标准端口上，譬如 9443 端口默认使用使用 ssl
+
+```nginx
+server {
+    listen 9443 ssl;
+    server_name domain.com;
+    ......
+    error_page 497 https://$server_name$server_port$request_uri;
 }
 ```
