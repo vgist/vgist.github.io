@@ -5,7 +5,7 @@ category: Mac
 tags: [Pkgutil]
 ---
 
-刚用 OS X 的同学会发现，Mac OS X 的世界的 App 安装包，有两种形式，一种就是 .app，可以直接运行，类似于 Windows 下的绿色版；另一种是 .pkg 安装包，需要一路 next 安装好后才能使用。
+刚用 OS X 的同学会发现，Mac OS X 的 App 安装包，有两种形式，一种就是 .app，可以直接运行，类似于 Windows 下的绿色版；另一种是 .pkg 安装包，需要一路 next 安装好后才能使用。
 
 在 OS X 下，PKG 包的卸载非常不人性化，最讨厌的是，只要是个 pkg 安装包，基本都要请求 root 权限。
 
