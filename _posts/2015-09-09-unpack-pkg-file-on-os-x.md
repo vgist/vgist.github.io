@@ -86,7 +86,7 @@ tags: [Pkgutil]
 	x ./Contents/Resources/en.lproj
 	x ./Contents/Resources/en.lproj/InfoPlist.strings
 
-OK，到这里 我们得到了招商银行大众版网银插件 **CMBSecurity.plugin**，直接复制到 **~/Library/Internet Plug-Ins/** 目录下即可。
+OK，至此，我们得到了招商银行大众版网银插件 **CMBSecurity.plugin**，直接复制到 **~/Library/Internet Plug-Ins/** 目录下即可。
 
 总结下，三步走
 
