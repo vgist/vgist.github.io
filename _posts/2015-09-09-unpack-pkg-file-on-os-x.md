@@ -9,7 +9,7 @@ tags: [Pkgutil]
 
 在 OS X 下，PKG 包的卸载非常不人性化，最讨厌的是，只要是个 pkg 安装包，基本都要请求 root 权限。
 
-于是，网上溜达一圈，找到方法直接解包 pkg 文件获取有用不分来使用。
+于是，网上溜达一圈，找到直接解包 pkg 文件的方法，获取有用部分来使用。
 
 我们以招商银行的网银插件为例，下载获取 dmg 镜像文档：**CMBSecurityPlugin.dmg**，双击打开，将 **CMB Security Plugin.pkg** 文件拖出来。
 
