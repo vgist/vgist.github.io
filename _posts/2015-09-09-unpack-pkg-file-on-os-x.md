@@ -46,7 +46,7 @@ tags: [Pkgutil]
     $ file cmbsecurityplugin.pkg
     cmbsecurityplugin.pkg: directory
 
-是一个文件夹，进去
+是一个文件夹，进去：
 
     $ cd cmbsecurityplugin.pkg; ls -l
     total 304
@@ -54,16 +54,16 @@ tags: [Pkgutil]
     -rw-r--r--  1 havee  staff     216 12 25  2012 PackageInfo
     -rw-r--r--  1 havee  staff  114278 12 25  2012 Payload
 
-对三个文件分别查看下类型
+对三个文件分别查看下类型：
 
-    $ file Bom 
+    $ file Bom
     Bom: Mac OS X bill of materials (BOM) file
-    $ file PackageInfo 
+    $ file PackageInfo
     PackageInfo: ASCII text
-    $ file Payload 
+    $ file Payload
     Payload: gzip compressed data, from Unix
 
-可以看到，三个文件中 Payload 文件是一个 gzip 压缩包，解开看下
+可以看到，三个文件中 Payload 文件是一个 gzip 压缩包，解开看下：
 
     $ tar xvf Payload
     x .
@@ -90,7 +90,7 @@ tags: [Pkgutil]
 
 OK，至此，我们得到了招商银行大众版网银插件 **CMBSecurity.plugin**，直接复制到 **~/Library/Internet Plug-Ins/** 目录下即可。
 
-总结下，三步走
+总结下，三步走：
 
     $ pkgutil --expand "name.pkg" "name"
     $ cd name/package.pkg/
