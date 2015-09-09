@@ -31,6 +31,7 @@ tags: [MySQL, SQL]
 |binlog_cache_size|32K|4K|
 |binlog_stmt_cache_size|32K|4K|
 
+<!-- more -->
 你当然可以通过禁用 InnoDB 来节省内存，但一般不建议这么做，除非你的内存小到了极致。
 
 如此，我们针对便宜的小内存 vps 的 my.cnf 应该是如下：
