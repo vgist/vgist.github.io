@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "使用 mitmproxy 进行 http 协议抓包"
+title: "使用 mitmproxy 进行 HTTP 分析"
 category: Internet
 tags: [Proxy]
 ---
@@ -10,7 +10,7 @@ tags: [Proxy]
 ![mitmproxy 1](http://cdn.09hd.com/images/2015/09/mitmproxy-1.png)
 
 <!-- more -->
-mitmproxy 是一款基于 Python，支持 ssl 的中间人代理框架，他提供了一个控制台用于动态拦截和编辑 http/https 数据包。官方介绍：
+mitmproxy 是一款基于 Python，支持 ssl 的中间人代理框架，他提供了一个控制台用于动态拦截和编辑 HTTP/HTTPS 数据包。官方介绍：
 
 >An interactive console program that allows traffic flows to be intercepted, inspected, modified and replayed.
 
