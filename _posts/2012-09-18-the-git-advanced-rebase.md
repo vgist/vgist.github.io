@@ -31,3 +31,5 @@ tags: [Git, Usage]
     git rebase --abort
 
 来终止 rebase 的整个操作，恢复到 rebase 之前的状态。
+
+更多详情，可以参考：<http://git-scm.com/docs/git-rebase>
