@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Telnet 发新测试"
+title: "Telnet 发信测试"
 category: Linux
 tags: [Telnet]
 ---
