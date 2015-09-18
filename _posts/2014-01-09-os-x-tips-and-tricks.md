@@ -175,7 +175,11 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
 
     $ /System/Library/Frameworks/CoreServices.framework/Versions/A/Frameworks/LaunchServices.framework/Versions/A/Support/lsregister -kill -seed -r -f -v -domain local -domain user -domain system; killall Finder
 
-#### 十三. app 归类
+#### 十三. 重建 Launchpad
+
+    $ rm ~/Library/Application Support/Dock/*.db; killall Dock
+
+#### 十四. app 归类
 
 用了段时间会发现，app目录存在两个地方，一个是用户家目录 `~/Applications`，一个是根目录 `/Applications`。
 
@@ -183,7 +187,7 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
 
 同样，能直接在 app store 安装的就直接安装，其次使用 HomeBrew 去安装病自动 ln 到 `~/Applications` 目录。
 
-#### 十四. 截屏
+#### 十五. 截屏
 
 系统默认的快捷键 Shift + Command + 3/4 截屏会带上阴影，部分人觉得不爽，要去掉阴影。
 
@@ -201,9 +205,21 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
     $ defaults write com.apple.screencapture type png
     $ defaults write com.apple.screencapture type pdf
 
-#### 十五. Mail.app 撰写邮件附件显示
+#### 十六. Mail.app 撰写邮件附件显示
 
     $ defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes/no
     $ defaults write com.apple.mail DisableInlineAttachmentViewing -bool true/false
+
+#### 十七. 查看应用沙盒状态
+
+譬如查看 Mac App Store 安装的 QQ
+
+    $ codesign --display --entitlements - /Applications/QQ.app
+
+#### 十八. 黑果忽略一些硬件更新补丁
+
+黑苹果用的是模拟白苹果的方式，故一些针对白果硬件布丁，黑果可能一直在不断更新，那么忽略它吧，譬如上次的 Thunderbolt Firmware Update
+
+    $ sudo softwareupdate --ignore ThunderboltFirmwareUpdate1.2
 
 待更新……
