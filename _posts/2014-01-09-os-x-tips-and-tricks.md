@@ -86,9 +86,17 @@ tags: [Tips]
 
 Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，点击无线图标，则可以显示具体的无线网络状况。
 
-#### 六. 关掉调节音量时的提示声
+#### 六. 提示声
 
 按住 Shift 键再调节音量，即可临时静音调节
+
+开启充电提示音
+
+    $ defaults write com.apple.PowerChime ChimeOnAllHardware -bool true; open /System/Library/CoreServices/PowerChime.app
+
+关闭充电提示音
+
+    $ defaults write com.apple.PowerChime ChimeOnAllHardware -bool false; killall PowerChime
 
 #### 七. 刷新 DNS 缓存
 
