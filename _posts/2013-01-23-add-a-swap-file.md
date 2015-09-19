@@ -17,6 +17,12 @@ tags: [Swap]
 
 神马意思呢，意思是用 0 填充 swap 文件，块大小设定为 1M，总共创建 512 块，也就是 512M。
 
+有时我们认为此种方法创建大文件速度太慢，因此大部分使用以下三种方法来创建稀疏文件，任选其一
+
+    follocate -l 512M /swap
+    truncate -s 512M /swap
+    dd of=/swap bs=1 seek=512M count=0
+
 其次使用 `mkswap` 命令把这个文件制作成 swap
 
     mkswap /swap
