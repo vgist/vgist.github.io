@@ -5,9 +5,7 @@ category: Internet
 tags: [Nginx]
 ---
 
-前面已经介绍过 [服务端 SSL 配置]({% post_url 2015-06-10-strong-ssl-security-for-apache-nginx-lighttpd %})。
-
-今天有人问起，如何让 HTTP 自动跳转至 HTTPS 呢？
+前面已经介绍过 [服务端 SSL 配置]({% post_url 2015-06-10-strong-ssl-security-for-apache-nginx-lighttpd %})。今天有人问起，如何让 HTTP 自动跳转至 HTTPS 呢？抛开性能问题，nginx 的跳转有三种写法，即 `rewrite`、`return`、`error_page`。
 
 常见的写法有两种，即写两个 Server，大家都会，即：
 
