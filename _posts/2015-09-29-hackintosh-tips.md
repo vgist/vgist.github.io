@@ -41,3 +41,5 @@ tags: [OS X, Hackintosh]
 黑苹果用的是模拟白果硬件的方式，故一些针对白果的硬件补丁，在黑果上应该是安装不上的，表现形式就是一只更新，重启后又更新，不断更新。那么忽略它吧，譬如上次的 Thunderbolt Firmware Update
 
     $ sudo softwareupdate --ignore ThunderboltFirmwareUpdate1.2
+
+待续……
