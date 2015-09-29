@@ -222,10 +222,4 @@ OS X 10.11 中，Spotlight 可以移动位置，那么恢复默认位置的方�
 
     $ defaults delete com.apple.Spotlight userHasMovedWindow
 
-#### 十九. 黑果忽略一些硬件更新补丁
-
-黑苹果用的是模拟白苹果的方式，故一些针对白果硬件布丁，黑果可能一直在不断更新，那么忽略它吧，譬如上次的 Thunderbolt Firmware Update
-
-    $ sudo softwareupdate --ignore ThunderboltFirmwareUpdate1.2
-
 待更新……
