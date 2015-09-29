@@ -9,11 +9,14 @@ tags: [OS X, Hackintosh]
 
 之前写过一篇文章[OS X 的一些技巧汇总]({% post_url 2014-01-09-os-x-tips-and-tricks %})，今天再纪录下黑果的一些使用纪录。
 
-###### 重建内核缓存
+###### 重建内核扩展缓存
 
-    $ sudo kextcache -v 1 -t -m \
-    /System/Library/Caches/com.apple.kext.caches/Startup/Extensions.mkext \
-    /System/Library/Extensions
+    $ sudo touch /System/Library/Extensions
+    $ sudo kextcache -u /
+
+至于权限修复就不说了，就是 chmod & chown 的使用，譬如
+
+    $ sudo chown -R root:wheel /System/Library/Extensions/
 
 <!-- more -->
 ###### 修改显示机型
@@ -29,10 +32,9 @@ tags: [OS X, Hackintosh]
 
 ###### 制作 U 盘安装盘
 
-    $ sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia \
-    --volume /Volumes/U盘名 --applicationpath \
-    /Applications/Install\ OS\ X\ Yosemite.app \
-    --nointeraction
+譬如 OS X 10.10 的制作
+
+    $ sudo /Applications/Install\ OS\ X\ Yosemite.app/Contents/Resources/createinstallmedia --volume /Volumes/iPlaySoft --applicationpath /Applications/Install\ OS\ X\ Yosemite.app --nointeraction
 
 ###### 忽略一些硬件更新补丁
 
