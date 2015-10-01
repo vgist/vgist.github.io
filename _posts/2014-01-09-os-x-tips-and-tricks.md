@@ -222,4 +222,11 @@ OS X 10.11 中，Spotlight 可以移动位置，那么恢复默认位置的方�
 
     $ defaults delete com.apple.Spotlight userHasMovedWindow
 
+#### 十九. 关闭 MobileBackups
+
+你可能发现了，`/Volumes` 下挂载了 **MobileBackups**，去不去掉无所谓，这是快照的本地镜像，开启与关闭的方法
+
+    $ sudo tmutil disablelocal
+    $ sudo tmutil enablelocal
+
 待更新……
