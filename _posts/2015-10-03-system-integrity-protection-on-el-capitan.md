@@ -103,7 +103,7 @@ csrutil 的一些常用命令
 
 为了有助于我们的理解，看下表所示：
 
-|Configration|HEX|N/A|NVRAM|Dtrace|internal|Debug|PID|FS|Kext|HEX|Clover|
+|Configration|N/A|NVRAM|Dtrace|internal|Debug|PID|FS|Kext|HEX|Clover|
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
 |csrutil enable --no-internal|0|0|0|0|0|0|0|0|00|0x00|
 |csrutil enable|0|0|0|1|0|0|0|0|10|0x10|
