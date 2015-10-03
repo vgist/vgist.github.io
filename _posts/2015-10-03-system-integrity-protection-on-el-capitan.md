@@ -13,6 +13,7 @@ SIP 技术主要是用来限制 root 用户的权限，以提升系统的健壮�
 
     /System/Library/Sandbox/rootless.conf
 
+<!-- more -->
 不被保护的列表存储在
 
     /System/Library/Sandbox/Compatibility.bundle/Contents/Resources/paths
@@ -22,7 +23,6 @@ SIP 技术主要是用来限制 root 用户的权限，以提升系统的健壮�
     $ csrutil status
     System Integrity Protection status: enabled
 
-<!-- more -->
 然而，不用担心，Mac 并非将此扇门完全的关闭，她提供了内置 `csrutil` 配置来进行一些 SIP 的配置。
 
 可配置项如下，字面意思：
