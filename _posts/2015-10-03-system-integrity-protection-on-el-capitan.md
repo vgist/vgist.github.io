@@ -106,5 +106,6 @@ csrutil 的一些常用命令
 |csrutil disable (no internal)|67|0|1|1|0|0|1|1|1|0x67|
 
 参考：
+
 - <http://osxarena.com/2015/10/guide-details-apples-system-integrity-protection-sip-for-hackintosh/>
 - <http://bbs.pcbeta.com/viewthread-1605186-1-1.html>
