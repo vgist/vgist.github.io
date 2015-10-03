@@ -78,13 +78,13 @@ csrutil 的一些常用命令
 
 对于 **01110111**，每一位开启 SIP 的特定功能，从右至左 8 个位置我们以 B0-B7 表示：
 
-- B0: 允许加载不受信任的 kext，值为 1 等效于 `csrutil enable --without kext`
-- B1: 解锁文件系统限制，值为 1 等效于 `csrutil enable --without fs`
+- B0: 允许加载不受信任的 kext
+- B1: 解锁文件系统限制
 - B2: 允许 task_for_pid()调用
-- B3: 允许内核调试，值为 1 等效于 `csrutil enable --without debug`
+- B3: 允许内核调试
 - B4: Apple 内部保留位，值为 1 等效于 `csrutil enable`
-- B5: 解锁 DTrace，值为 1 等效于 `csrutil enable --without dtrace`
-- B6: 解锁 NVRAM，值为 1 等效于 `csrutil enable --without nvram`
+- B5: 解锁 DTrace
+- B6: 解锁 NVRAM
 - B7: 允许设备配置
 
 如此，我们很清楚了，如果我们只想加载修改的或第三方的 kext，只需 B0 位置值为 1，B4 位置也为 1，则整个两进制值为 **00010001**，转化为十六进制为 **11**，则 **CsrActiveConfig** 值为 **0x11**。
