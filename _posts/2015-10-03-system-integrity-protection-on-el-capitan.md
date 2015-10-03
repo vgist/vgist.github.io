@@ -7,7 +7,15 @@ tags: [OS X, SIP]
 
 这两天大家纷纷将 OS X 系统升级到了 El Capitan，然后发现，一些注入的工具无法使用了，某些系统目录无法使用了，第三方未签名的 kext 无法加载了，问题一堆堆的。这是因为，Mac OS X 在 10.11 中全面启用了 System Integrity Protection (SIP) —— 系统完整性保护技术。
 
-SIP 技术主要是用来限制 root 用户的权限，以提升系统的健壮性。具体哪些目录受到保护，可以查看文件 `/System/Library/Sandbox/rootless.conf`。
+SIP 技术主要是用来限制 root 用户的权限，以提升系统的健壮性。
+
+具体哪些目录受到保护，可以查看文件
+
+    /System/Library/Sandbox/rootless.conf
+
+不被保护的列表存储在
+
+    /System/Library/Sandbox/Compatibility.bundle/Contents/Resources/paths
 
 在默认情况下，SIP 是开启状态，你可以用一下指令查看
 
@@ -96,3 +104,5 @@ csrutil 的一些常用命令
 |csrutil enable --without nvram|50|0|1|0|1|0|0|0|0|0x50|
 |csrutil disable|77|0|1|1|1|0|1|1|1|0x77|
 |csrutil disable (no internal)|67|0|1|1|0|0|1|1|1|0x67|
+
+参考：<http://osxarena.com/2015/10/guide-details-apples-system-integrity-protection-sip-for-hackintosh/>
