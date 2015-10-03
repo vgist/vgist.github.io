@@ -53,7 +53,7 @@ csrutil 的一些常用命令
 
 1. 重启进入 Recovery mode
 2. 打开 Terminal.app，输入 `csrutil enable --without fs`
-3. 重启至正常系统下，打开 Terminal.app，输入 `sudo mkdir /usr/local && sudo chflags norestricted /usr/local && sudo chown $(whoami):admin /usr/local && sudo chown -R $(whoami):admin /usr/local`
+3. 重启至正常系统下，打开 Terminal.app，安装 homebrew
 4. 再次重启至 Recovery mode
 5. 打开 Terminal.app，输入 `csrutil enable`
 6. 重启
