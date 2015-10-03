@@ -59,14 +59,14 @@ csrutil 的一些常用命令
     <key>RtVariables</key>
     <dict>
         <key>CsrActiveConfig</key>
-        <string>0x1</string>
+        <string>0x11</string>
     </dict>
 
-跟 `<key>SMBIOS</key>` 同级，如下图
+`<key>RtVariables</key>` 跟 `<key>SMBIOS</key>` 同级，如下图
 
 ![Clover config.plist](http://cdn.09hd.com/images/2015/10/clover-config.png)
 
-其中 **CsrActiveConfig** 的值 0x 后跟的是十六进制，Clover 中我们完全开启的值是 0x<span color="red">77</span>span>，其中 77 转化为两进制为 **01110111**。
+其中 **CsrActiveConfig** 的值 0x 后跟的是十六进制，Clover 中我们完全开启的值是 **0x77**，其中 77 转化为两进制为 **01110111**。
 
 对于 **01110111**，每一位开启 SIP 的特定功能，从右至左 8 个位置我们以 B0-B7 表示：
 
