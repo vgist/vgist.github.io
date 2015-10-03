@@ -103,17 +103,17 @@ csrutil 的一些常用命令
 
 为了有助于我们的理解，看下表所示：
 
-|Configration|HEX|N/A|NVRAM|Dtrace|internal|Debug|PID|FS|Kext|Clover|
+|Configration|HEX|N/A|NVRAM|Dtrace|internal|Debug|PID|FS|Kext|HEX|Clover|
 |---|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|:---:|
-|csrutil enable --no-internal|00|0|0|0|0|0|0|0|0|0x00|
-|csrutil enable|10|0|0|0|1|0|0|0|0|0x10|
-|csrutil enable --without kext|11|0|0|0|1|0|0|0|1|0x11|
-|csrutil enable --without fs|12|0|0|0|1|0|0|1|0|0x12|
-|csrutil enable --without debug|14|0|0|0|1|0|1|0|0|0x14|
-|csrutil enable --without dtrace|30|0|0|1|1|0|0|0|0|0x30|
-|csrutil enable --without nvram|50|0|1|0|1|0|0|0|0|0x50|
-|csrutil disable|77|0|1|1|1|0|1|1|1|0x77|
-|csrutil disable (no internal)|67|0|1|1|0|0|1|1|1|0x67|
+|csrutil enable --no-internal|0|0|0|0|0|0|0|0|00|0x00|
+|csrutil enable|0|0|0|1|0|0|0|0|10|0x10|
+|csrutil enable --without kext|0|0|0|1|0|0|0|1|11|0x11|
+|csrutil enable --without fs|0|0|0|1|0|0|1|0|12|0x12|
+|csrutil enable --without debug|0|0|0|1|0|1|0|0|14|0x14|
+|csrutil enable --without dtrace|0|0|1|1|0|0|0|0|30|0x30|
+|csrutil enable --without nvram|0|1|0|1|0|0|0|0|50|0x50|
+|csrutil disable|0|1|1|1|0|1|1|1|77|0x77|
+|csrutil disable (no internal)|0|1|1|0|0|1|1|1|67|0x67|
 
 参考：
 
