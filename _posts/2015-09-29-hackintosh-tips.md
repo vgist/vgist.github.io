@@ -11,12 +11,18 @@ tags: [OS X, Hackintosh]
 
 ###### 重建内核扩展缓存
 
-    $ sudo touch /System/Library/Extensions
-    $ sudo kextcache -u /
-
-至于权限修复就不说了，就是 chmod & chown 的使用，譬如
+权限修复，就是 chmod & chown 的使用，譬如
 
     $ sudo chown -R root:wheel /System/Library/Extensions/
+
+不过这里建议一些第三方内核扩展放置于 `/Library/Extensions/` 目录下，那么权限方面就是
+
+    $ sudo chown -R root:wheel /Library/Extensions/
+
+随后重建内核扩展缓存
+
+    $ sudo touch /System/Library/Extensions
+    $ sudo kextcache -f -u /
 
 <!-- more -->
 ###### 修改显示机型
