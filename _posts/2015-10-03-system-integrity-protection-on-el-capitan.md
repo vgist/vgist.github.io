@@ -18,12 +18,10 @@ SIP 技术主要是用来限制 root 用户的权限，以提升系统的健壮�
 
     /System/Library/Sandbox/Compatibility.bundle/Contents/Resources/paths
 
-在默认情况下，SIP 是开启状态，你可以用一下指令查看
+然而，不用担心，Mac 并非将此扇门完全的关闭，她提供了内置 `csrutil` 配置来进行一些 SIP 的配置。在默认情况下，SIP 是开启状态，你可以用一下指令查看
 
     $ csrutil status
     System Integrity Protection status: enabled
-
-然而，不用担心，Mac 并非将此扇门完全的关闭，她提供了内置 `csrutil` 配置来进行一些 SIP 的配置。
 
 可配置项如下，字面意思：
 
