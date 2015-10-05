@@ -32,7 +32,7 @@ Mac 提供了内置 `csrutil` 配置来进行一些 SIP 的配置。在默认情
     DTrace Restrictions
     NVRAM Protections
 
-##### 白苹果用户
+#### 一. 白苹果用户
 
 上面已经说过，Mac 提供了内置的 `csrutil` 工具来让用户进行一些配置，不过，你需要重启进入到 Recovery mode (Cmd + R on boot) 下进行操作。
 
@@ -58,7 +58,7 @@ csrutil 的一些常用命令
 
 如果想安装第三方的 kext，那么建议装在目录 `/Library/Extensions/` 下。
 
-##### 黑苹果 Clover 用户
+#### 二. 黑苹果 Clover 用户
 
 这里只说 Clover 用户，你需要配置你的 Clover ，加入如下代码
 
