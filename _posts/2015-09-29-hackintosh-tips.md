@@ -48,4 +48,8 @@ tags: [OS X, Hackintosh]
 
     $ sudo softwareupdate --ignore ThunderboltFirmwareUpdate1.2
 
+##### 关闭 Core Storage
+
+    $ sudo diskutil corestorage revert /
+
 待续……
