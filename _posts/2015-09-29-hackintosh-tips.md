@@ -34,7 +34,7 @@ tags: [OS X, Hackintosh]
 
     $ sudo dmtest ensureRecoveryPartition / /Volumes/OS\ X\ Install\ ESD/BaseSystem.dmg 0 0 /Volumes/OS\ X\ Install\ ESD/BaseSystem.chunklist
 
-dmtest 下载：[dmtest_Lion.zip](http://cdn.09hd.com/images/2015/09/dmtest_Lion.zip)、[dmtest_Mavericks.zip](http://cdn.09hd.com/images/2015/09/dmtest_Mavericks.zip)
+dmtest 下载（任选其一）：[dmtest_Lion.zip](http://cdn.09hd.com/images/2015/09/dmtest_Lion.zip)、[dmtest_Mavericks.zip](http://cdn.09hd.com/images/2015/09/dmtest_Mavericks.zip)
 
 ##### 制作 U 盘安装盘
 
