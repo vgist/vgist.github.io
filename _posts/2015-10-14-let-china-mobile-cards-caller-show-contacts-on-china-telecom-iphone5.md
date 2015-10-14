@@ -10,7 +10,7 @@ tags: [iPhone, iOS]
 这里我们用到一个 OpenSSH 工具，手机及 PC 端都需要，由于已经越狱，手机端很方便的通过 **Cydia** 来搜索安装 OpenSSH，PC 端由于我现在使用的 OS X 系统，默认就自带的。这里要说明的是，手机端安装 OpenSSH 后，默认的 root 密码为 `alpine`，另外还有个用户 mobile 的密码也为 `alpine`，建议将这两个用户的密码都修改下，防止接入他人的 WiFi 下后被她们干坏事。
 
 <!-- more -->
-##### 解决 +86 问题，来电不显示通讯录名
+#### 解决 +86 问题，来电不显示通讯录名
 
 下载附件： [Default.phoneformat.zip](http://cdn.09hd.com/images/2015/10/Default.phoneformat.zip)，解压缩后替换掉 `/System/Library/PrivateFrameworks/AppSupport.framework/Default.phoneformat`。
 
