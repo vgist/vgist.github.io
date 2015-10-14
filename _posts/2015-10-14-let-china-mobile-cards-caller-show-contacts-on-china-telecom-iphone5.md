@@ -46,7 +46,7 @@ PC 再开一终端：
     plutil -convert xml1 file.plist    # 转换到 xml
     plutil -convert binary1 file.plist # 转换到两进制文件
 
-重新回到刚刚导出的 Info.plist，修改第十行的 `com.apple.CMCC_cn` 为 `com.apple.Vodafone_nl`。顺便把下面两组数字 21.0.0 和 21.0 也修改成 21.1.0 和 21.1。
+重新回到刚刚导出的 Info.plist，修改第十行的 `com.apple.CMCC_cn` 为 `com.apple.Vodafone_nl`。
 
 最后转换成两进制文件以后导入到原路径下：
 
