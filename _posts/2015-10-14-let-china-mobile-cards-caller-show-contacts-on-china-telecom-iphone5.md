@@ -18,7 +18,7 @@ tags: [iPhone, iOS]
     cd /System/Library/PrivateFrameworks/AppSupport.framework
     mv Default.phoneformat ./Default.phoneformat.1
 
-
+PC 端另开一终端：
 
     scp /pc-path/Default.phoneformat root@ip:/System/Library/PrivateFrameworks/AppSupport.framework/
 
