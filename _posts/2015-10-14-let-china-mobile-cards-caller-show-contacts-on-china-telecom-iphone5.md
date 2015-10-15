@@ -35,25 +35,27 @@ PC 再开一终端：
     ls
     Info.plist  carrier.plist  overrides_N41_N42.plist  overrides_N41_N42.pri  signatures  version.plist
 
-需要将 Info.plist 移动到 PC 中，通过 vim 来编辑
+需要将 Info.plist 移动到 PC 中，通过 vim 来编辑，PC 上再开一终端：
 
-    cp Info.plist /
-    exit
-    scp root@ip:/Info.plist ~/Desktop
+    scp root@ip:"/System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle/Info.plist" ~/Desktop
+
+这里注意，scp 下带空格的路径，需要转义符与双引号。
 
 由于 Info.plist 是二进制文件，直接用 vim 打开是乱码，可以通过 OS X 自带的 plutil 来转换，其用法
 
     plutil -convert xml1 file.plist    # 转换到 xml
     plutil -convert binary1 file.plist # 转换到两进制文件
 
-重新回到刚刚导出的 Info.plist，修改第十行的 `com.apple.CMCC_cn` 为 `com.apple.Vodafone_nl`。
+在这里便是：
+
+    plutil -convert xml1 ~/Desktop/Info.plist
+
+修改第十行的 `com.apple.CMCC_cn` 为 `com.apple.Vodafone_nl`。
 
 最后转换成两进制文件以后导入到原路径下：
 
-    scp Desktop/Info.plist root@ip:/      # 在我机子上，原路径中Carrier Bundles中间的空格不能使用 \ 来转义，故先导到根目录，在 mv 过去
-    ssh root@ip
-    cd /System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle
-    mv /Info.plist ./
+    plutil -convert binary1 ~/Desktop/Info.plist
+    scp Desktop/Info.plist root@ip:"/System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle/"
 
 随后注销或重启即可：
 
