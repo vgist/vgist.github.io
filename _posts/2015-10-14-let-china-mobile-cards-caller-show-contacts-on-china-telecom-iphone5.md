@@ -18,9 +18,9 @@ tags: [iPhone, iOS]
     cd /System/Library/PrivateFrameworks/AppSupport.framework
     mv Default.phoneformat ./Default.phoneformat.1
 
-PC 再开一终端：
 
-    scp /path/Default.phoneformat root@ip:/System/Library/PrivateFrameworks/AppSupport.framework/
+
+    scp /pc-path/Default.phoneformat root@ip:/System/Library/PrivateFrameworks/AppSupport.framework/
 
 #### 解决 iMessage & FaceTime 激活
 
@@ -35,7 +35,7 @@ PC 再开一终端：
     ls
     Info.plist  carrier.plist  overrides_N41_N42.plist  overrides_N41_N42.pri  signatures  version.plist
 
-需要将 Info.plist 移动到 PC 中，通过 vim 来编辑，PC 上再开一终端：
+需要将 Info.plist 移动到 PC 中，通过 vim 来编辑：
 
     scp root@ip:"/System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle/Info.plist" ~/Desktop
 
