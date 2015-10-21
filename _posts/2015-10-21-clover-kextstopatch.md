@@ -18,7 +18,7 @@ tags: [Clover]
 
 前面已经说过，**KextsToPatch** 是 **KernelAndKextPatches** 的一个子项，故修改的时候注意，他的大体格式如下
 
-```
+```xml
 <key>KernelAndKextPatches</key>
     <dict>
         ......
@@ -52,7 +52,7 @@ tags: [Clover]
 
 一切清楚明了，修改的是 AirPortAtheros40，Info.plist 位于 `/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents` 下，打开后可以看到如下的一些信息
 
-```
+```xml
 <key>IONameMatch</key>
 <array>
     <string>pci168c,30</string>
@@ -79,7 +79,7 @@ cGNpMTY4YywyYg==
 
 将之写入 Clover 的 config.plist 的 `KernelAndKextPatches` 子项之中
 
-```
+```xml
 <key>KernelAndKextPatches</key>
     <dict>
         ......
@@ -105,6 +105,42 @@ cGNpMTY4YywyYg==
     </dict>
 ```
 
-重启即生效。
+同时 Thinkpad X230 的蓝牙，默认也可以驱动，只是蓝牙版本是 3.0 的，同理，我们修改的是 BroadcomBluetoothHostControllerUSBTransport，Info.plist 位于 `/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/Contents` 目录下，找到 idVendor 为 **2652**的设备，并随便找一个 BT V3.0 的型号，譬如 `PID 8600 0x2198 VID 2652 0xA5C`，我们就拿它来开刀
+
+```
+→ ~ $ echo -n '8600' |base64
+ODYwMA==
+→ ~ $ echo -n '8678' |base64
+ODY3OA==
+```
+
+得到 base64 码后，写入 config.plist
+
+```xml
+<key>KernelAndKextPatches</key>
+    <dict>
+        ......
+        <key>KextsToPatch</key>
+        <array>
+            ...
+            <dict>
+                <key>Comment</key>
+                <string>inject_BCM20702A0</string>
+                <key>Find</key>
+                <data>
+                ODYwMA==
+                </data>
+                <key>InfoPlistPatch</key>
+                <true/>
+                <key>Name</key>
+                <string>BroadcomBluetoothHostControllerUSBTransport</string>
+                <key>Replace</key>
+                <data>
+                ODY3OA==
+                </data>
+            </dict>
+        </array>
+    </dict>
+```
 
 参考：<http://clover-wiki.zetam.org/Configuration/KernelAndKextPatches#kernelandkextpatches_kextstopatch>
