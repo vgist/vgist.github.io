@@ -44,11 +44,11 @@ tags: [Clover]
     </dict>
 ```
 
--. Name：是你用于修改的 kext 的文件名
--. Comment：值是一些便于你识别的信息
--. Find Data：顾名思义查找你用于替换的信息的 base64 编码
--. Replace Data：替换你的新信息的 base64 编码
--. InfoPlistPatch：给 Info.plist 打补丁
+- Name：          是你用于修改的 kext 的文件名
+- Comment：       值是一些便于你识别的信息
+- Find Data：     顾名思义查找你用于替换的信息的 base64 编码
+- Replace Data：  替换你的新信息的 base64 编码
+- InfoPlistPatch：给 Info.plist 打补丁
 
 一切清楚明了，Info.plist 位于 `/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents` 下，修改的是 AirPortAtheros40，打开 `AirPortAtheros40.kext/Contents` 下的 Info.plist 文件，可以看到如下的一些信息
 
