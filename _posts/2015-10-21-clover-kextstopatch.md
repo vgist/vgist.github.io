@@ -50,7 +50,7 @@ tags: [Clover]
 - Replace Data：替换你的新信息的 base64 编码
 - InfoPlistPatch：给 Info.plist 打补丁
 
-一切清楚明了，Info.plist 位于 `/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents` 下，修改的是 AirPortAtheros40，打开 `AirPortAtheros40.kext/Contents` 下的 Info.plist 文件，可以看到如下的一些信息
+一切清楚明了，修改的是 AirPortAtheros40，Info.plist 位于 `/System/Library/Extensions/IO80211Family.kext/Contents/PlugIns/AirPortAtheros40.kext/Contents` 下，打开后可以看到如下的一些信息
 
 ```
 <key>IONameMatch</key>
