@@ -177,7 +177,7 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
 
 #### 十三. 重建 Launchpad
 
-    $ rm ~/Library/Application Support/Dock/*.db; killall Dock
+    $ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
 #### 十四. app 归类
 
