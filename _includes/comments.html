@@ -1,5 +1,5 @@
 {% if site.comments.duoshuo.name %}
 <div id="comments">
-  <div class="ds-thread" data-thread-key="{{ page.id }}" data-title="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" data-url="{{ site.url }}{{ page.url }}"></div>
+  <div class="ds-thread" data-thread-key="{{ page.url | remove ".html" }}" data-title="{% if page.title %}{{ page.title }} - {% endif %}{{ site.title }}" data-url="{{ site.url }}{{ page.url }}"></div>
 </div>
 {% endif %}
