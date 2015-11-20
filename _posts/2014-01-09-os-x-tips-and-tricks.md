@@ -179,6 +179,18 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
 
     $ defaults write com.apple.dock ResetLaunchPad -bool true; killall Dock
 
+在我的 rMBP 上默认是横排 7 个，竖排5 个，感觉图片过大，小修改下
+
+    $ defaults write com.apple.dock springboard-rows -int 6
+    $ defaults write com.apple.dock springboard-columns -int 8
+    $ killall Dock
+
+空间一下就出来了，恢复方法
+
+    $ defaults delete com.apple.dock springboard-rows
+    $ defaults delete com.apple.dock springboard-columns
+    $ killall Dock
+
 #### 十四. app 归类
 
 用了段时间会发现，app目录存在两个地方，一个是用户家目录 `~/Applications`，一个是根目录 `/Applications`。
@@ -228,5 +240,3 @@ OS X 10.11 中，Spotlight 可以移动位置，那么恢复默认位置的方�
 
     $ sudo tmutil disablelocal
     $ sudo tmutil enablelocal
-
-待更新……
