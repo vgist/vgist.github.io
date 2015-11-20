@@ -7,7 +7,6 @@ description: "业余爱好的点滴记录，同时作为配置备份的存储地
 <div id="code" class="qrcode visible-lg"></div>
 #### ChangeLog
 
-- 2015 年 10 月：   因 gitcafe 经常性抽风，迁移至 github
 - 2015 年 09 月：   使用微搜索作为搜索引擎
 - 2015 年 04 月：   给每篇文章加了二维码显示
 - 2015 年 03 月：   快成游客的留言测试场所了，故关闭游客留言
