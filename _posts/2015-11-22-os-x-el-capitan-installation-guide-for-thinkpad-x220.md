@@ -7,6 +7,9 @@ tags: [ThinkPad]
 
 手上的 ThinkPad X220 黑苹果已经用了一段时间了，博客中关于黑苹果介绍的文章并不多，一直想写一篇，今天周末，正好有空，就开写。
 
+![X220 El Capitan](http://cdn.09hd.com/images/2015/11/x220_El_Capitan.png)
+
+<!-- more -->
 #### 一. BIOS 相关
 
 1. 升级官方 Lenovo BIOS 版本至 1.40，可以从如下官方地址下载：[Windows 1.40 Update Utility](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x220/downloads/DS018805) 或 [Bootable 1.40 CD Image](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x220/downloads/DS018807)
@@ -18,7 +21,6 @@ tags: [ThinkPad]
     - Security > Virtualization > Intel VT-d Feature > **Disabled**
     - Startup > UEFI/Legacy Boot > **Both**
 
-<!-- more -->
 #### CLOVER
 
 关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X OS X El Capitan EFI](http://pan.baidu.com/s/1bn7c4j1)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
