@@ -103,7 +103,7 @@ $ sudo rm AppleHDA
 $ sudo ln -sf /System/Library/Extensions/AppleHDA.kext/Contents/MacOS/AppleHDA
 ```
 
-##### 4. 重建缓存
+##### 4. 文件权限与重建内核扩展缓存
 
 ```
 $ sudo chown -R root:wheel /Library/Extensions/
