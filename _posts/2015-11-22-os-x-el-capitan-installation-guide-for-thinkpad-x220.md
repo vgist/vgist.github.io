@@ -21,15 +21,36 @@ tags: [ThinkPad]
     - Security > Virtualization > Intel VT-d Feature > **Disabled**
     - Startup > UEFI/Legacy Boot > **Both**
 
-#### CLOVER
+#### 二. CLOVER
 
 关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X OS X El Capitan EFI](http://pan.baidu.com/s/1bn7c4j1)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
 
-如果不确认 U 盘的 EFI 分区为哪个，可以通过 `diskutil list` 来查询，随后通过 `diskutil mount` 来挂载。
+如果不确认 U 盘的 EFI 分区为哪个，可以通过 `diskutil list` 来查询，随后通过 `diskutil mount` 来挂载。譬如：
+
+```
+$ diskutil list
+/dev/disk0 (internal, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *256.1 GB   disk0
+   1:                        EFI EFI                     209.7 MB   disk0s1
+   2:                  Apple_HFS Macintosh HD            255.2 GB   disk0s2
+   3:                 Apple_Boot Recovery HD             650.0 MB   disk0s3
+/dev/disk1 (external, physical):
+   #:                       TYPE NAME                    SIZE       IDENTIFIER
+   0:      GUID_partition_scheme                        *7.8 GB     disk1
+   1:                        EFI EFI                     209.7 MB   disk1s1
+   2:                  Apple_HFS Install OS X El Capitan 7.4 GB     disk1s2
+```
+
+显然，一看就了解，disk0 为系统磁盘，disk1 为 U 盘，那么，挂载 U 盘的 EFI 分区
+
+```
+$ diskutil mount /dev/disk1s1
+```
 
 系统安装完后，需要将 U 盘 EFI 的配置拷贝至系统磁盘的 EFI 分区，上面的命令来查询和挂载。
 
-##### EFI
+##### 1. EFI
 
 我提供的EFI的配置含如下
 
@@ -58,36 +79,36 @@ EFI
     └── tools
 ```
 
-注意：`EFI/CLOVER/kexts/LE` 下的文件，请移动至 `/Library/Extensions/` 目录下并重建缓存
+注意：`EFI/CLOVER/kexts/LE` 下的文件，请移动至 `/Library/Extensions/` 目录下。
 
-##### AppleHDA_20672
+##### 2. ssdt.aml
+
+最后，自己生成一个 CPU 的 ssdt.aml 文件：
+
+```
+$ curl -o ~/ssdtPRGen.sh https://raw.githubusercontent.com/Piker-Alpha/ssdtPRGen.sh/master/ssdtPRGen.sh
+$ chmod +x ~/ssdtPRGen.sh
+$ ./ssdtPRGen.sh
+```
+
+回答 N 至最后，ssdt.aml 自动保存至 `/Users/yourname/Library/ssdtPRGen` 目录下，将之移动至 `EFI/CLOVER/ACPI/patched/` 下，你的 CPU 就自动变频了。
+
+##### 3. AppleHDA_20672
 
 在文件拷贝至 `/Library/Extensions/` 后，针对 **AppleHDA_20672** 需要做如下操作
 
 ```
-cd /Library/Extensions/AppleHDA_20672.kext/Contents/MacOS
-sudo rm AppleHDA
-sudo ln -sf /System/Library/Extensions/AppleHDA.kext/Contents/MacOS/AppleHDA
+$ cd /Library/Extensions/AppleHDA_20672.kext/Contents/MacOS
+$ sudo rm AppleHDA
+$ sudo ln -sf /System/Library/Extensions/AppleHDA.kext/Contents/MacOS/AppleHDA
 ```
 
-##### 重建缓存
+##### 4. 重建缓存
 
 ```
-sudo chown -R root:wheel /Library/Extensions/
-sudo touch /System/Library/Extensions
-sudo kextcache -f -u /
+$ sudo chown -R root:wheel /Library/Extensions/
+$ sudo touch /System/Library/Extensions
+$ sudo kextcache -f -u /
 ```
-
-##### ssdt.aml
-
-最后，自己生成一个 CPU 的 ssdt.aml 文件，
-
-```
-curl -o ~/ssdtPRGen.sh https://raw.githubusercontent.com/Piker-Alpha/ssdtPRGen.sh/master/ssdtPRGen.sh
-chmod +x ~/ssdtPRGen.sh
-./ssdtPRGen.sh
-```
-
-回答 N 至最后，ssdt.aml 自动保存至 `/Users/yourname/Library/ssdtPRGen` 目录下，将之移动至 `EFI/CLOVER/ACPI/patched/` 下，你的 CPU 就自动变频了。
 
 参考：<http://x220.mcdonnelltech.com>
