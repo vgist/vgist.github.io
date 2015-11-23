@@ -23,7 +23,7 @@ tags: [ThinkPad, OS X]
 
 #### 二. CLOVER
 
-关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X OS X El Capitan EFI](http://pan.baidu.com/s/1bn7c4j1)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
+关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1c0oJHJU)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
 
 如果不确认 U 盘的 EFI 分区为哪个，可以通过 `diskutil list` 来查询，随后通过 `diskutil mount` 来挂载。譬如：
 
