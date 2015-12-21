@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "boot windows linux and hackintosh with clover uefi bootloader"
+title: "Clover 启动三系统"
 category: Linux
 tags: [Clover]
 ---
