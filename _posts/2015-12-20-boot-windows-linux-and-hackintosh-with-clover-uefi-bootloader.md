@@ -7,11 +7,13 @@ tags: [Clover, EFI]
 
 这两天花了点时间，将 windows 10 & Gentoo 所在的硬盘全部换成 gpt，然后全部由 Clover 来引导。我本机的情况是，windows 10 & Gentoo 共用一块 SSD，黑苹果单独一块 SSD。
 
+![Clover UEFI](http://cdn.09hd.com/images/2015/11/clover.jpg)
+
+<!-- more -->
 黑苹果不动，因为本身就是 Clover 引导的，Windows 10 则用 gpt 分区并重装了系统。而 Gentoo 的引导，有些复杂，因为 Clover 貌似不能直接启动 kernel （看到 [Archlinux Wiki](https://wiki.archlinux.org/index.php/Clover)）上的介绍，可惜不成功，Clover 中压根就不出现 linux 启动菜单。所以我的 Gentoo 引导的做法是 Clover -> Grub2 -> kernel。
 
 由于 Clover 能自动扫每块硬盘引导区，所以，不需要配置 Clover，唯一要做的，似乎也只剩下 grub2 UEFI 的安装了。
 
-<!-- more -->
 此时，出现一个问题，敝人的 Gentoo liveusb 是 mbr 的，chroot 进 Gentoo 后，无法完成 Grub2 UEFI 的安装。无奈，在 Windows 下用 [Rufus](http://rufus.akeo.ie) 制作了一个 ubuntu 的 UEFI 的 u 盘启动盘。启动后，chroot 进 Gentoo，才顺利完成 Grub UEFI 的安装。
 
 之前安装 windows 10 的时候是自动分区的，然后磁盘压缩一个空间给 Gentoo 使用，所以，那块 SSD 上的分区是这样的：
