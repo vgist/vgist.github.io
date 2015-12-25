@@ -9,7 +9,7 @@ tags: [EFI]
 
 实际上就是将引导参数编入内核，通过主板 (U)EFI 固件来直接启动内核，而开机启动项则可以通过 efibootmgr 命令来设置。为了让主板 (U)EFI 直接启动内核，需要一些内核参数。
 
-#### Kernel Config
+#### 1. Kernel Config
 
 ```
 Processor type and features  --->
@@ -73,7 +73,7 @@ $ make && make modules_install
 
 出一个新的内核。
 
-#### EFI edit
+#### 2. EFI edit
 
 接下来，将你硬盘 EFI 分区挂载到 `/boot` 上，因为我的是双系统，直接就使用了 Windows 10 的 EFI 分区。
 
@@ -90,7 +90,7 @@ $ mkdir /boot/EFI/gentoo
 $ cp /usr/src/linux/arch/x86_64/arch/boot/bzImage /boot/EFI/gentoo/gentoo.efi
 ```
 
-##### efibootmgr
+##### 2.1 efibootmgr
 
 最后通过 efibootmgr 来调整下主板 (U)EFI 固件，添加 Gentoo 的启动项，efibootmgr 并非是一个引导器，只是一个调整主板 (U)EFI 固件的工具，类似的工具很多，譬如 Windows 下的 EasyUEFI。
 
@@ -100,7 +100,7 @@ $ efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\gentoo\gentoo.efi"
 
 通过 `efibootmgr -v` 来确认下，是否添加进去了，详细的用法可以通过 `efibootmgr --help` 来查看。
 
-##### efi shell
+##### 2.2 efi shell
 
 当然，你也可以直接在 efi shell 下添加，在你进入 efi shell 后：
 
@@ -110,5 +110,6 @@ Shell> bcfg boot add 3 fs0:\EFI\gentoo\gentoo.efi "Gentoo Linux"
 ```
 
 参考：
+
 - <https://wiki.gentoo.org/wiki/EFI_stub_kernel>
 - <https://wiki.archlinux.org/index.php/Unified_Extensible_Firmware_Interface>
