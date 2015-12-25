@@ -11,7 +11,7 @@ tags: [EFI]
 
 #### Kernel Config
 
-｀｀｀
+```
 Processor type and features  --->
     [*] EFI runtime service support
     [*]   EFI stub support
@@ -19,7 +19,7 @@ Processor type and features  --->
     [*] Built-in kernel command line
     (root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro init=/usr/lib/systemd/systemd quiet)
     [*] Built-in command line overrides boot loader arguments
-｀｀｀
+```
 
 <!-- more -->
 ```
