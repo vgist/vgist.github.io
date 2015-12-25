@@ -15,7 +15,7 @@ tags: [EFI, Gentoo]
 Processor type and features  --->
     [*] EFI runtime service support
     [*]   EFI stub support
-    [*]   EFI mixed-mode support
+    [*]     EFI mixed-mode support
     [*] Built-in kernel command line
     (root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro init=/usr/lib/systemd/systemd quiet)
     [*] Built-in command line overrides boot loader arguments
@@ -24,26 +24,30 @@ Processor type and features  --->
 <!-- more -->
 ```
 Firmware Drivers  --->
-    <*> EFI Variable Support via sysfs
+    EFI (Extensible Firmware Interface) Support  --->
+        <*> EFI Variable Support via sysfs
+        [*] Export efi runtime maps to sysfs
 ```
 
 ```
 Device Drivers --->
     Graphics support --->
-        <*> Support for frame buffer devices --->
-        [*] EFI-based Framebuffer Support
+        Frame buffer Devices  --->
+            <*> Support for frame buffer devices --->
+            [*] EFI-based Framebuffer Support
 ```
 
 ```
 File systems --->
     Pseudo filesystems --->
         -*- /proc file system support
-        [*] /proc/kcore support
+        [*]   /proc/kcore support
         [*] Tmpfs virtual memory file system support (former shm fs)
-        [*] Tmpfs POSIX Access Control Lists
-        -*- Tmpfs extended attributes
+        [*]   Tmpfs POSIX Access Control Lists
+        -*-   Tmpfs extended attributes
         [*] HugeTLB file system support
         <*> Userspace-driven configuration filesystem
+        <*> EFI Variable filesystem
 ```
 
 其实 **Built-in kernel command line** 就是将一些原本 Grub、Syslinux 中的附加命令加进去。譬如我还增加了 radeon 卡的一些参数
