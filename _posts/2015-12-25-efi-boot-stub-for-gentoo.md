@@ -97,7 +97,7 @@ $ BOOT Microsoft
 
 ```
 $ mkdir /boot/EFI/gentoo
-$ cp /usr/src/linux/arch/x86_64/arch/boot/bzImage /boot/EFI/gentoo/gentoo.efi
+$ cp /usr/src/linux/arch/x86_64/boot/bzImage /boot/EFI/gentoo/gentoo.efi
 ```
 
 ##### 2.1 efibootmgr
