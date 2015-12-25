@@ -46,7 +46,13 @@ File systems --->
         <*> Userspace-driven configuration filesystem
 ```
 
-注意 `root=PARTUUID=?` ，可以在 `/dev/disk/by-partuuid` 获取你根分区所在：
+其实 **Built-in kernel command line** 就是将一些原本 Grub、Syslinux 中的附加命令加进去。譬如我还增加了 radeon 卡的一些参数
+
+```
+root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro radeon.audio=1 radeon.dpm=1 init=/usr/lib/systemd/systemd quiet
+```
+
+注意：如果你不是 systemd 的，则略去 `init=/usr/lib/systemd/systemd`；而 `root=PARTUUID=?` ，则可以在 `/dev/disk/by-partuuid` 获取你根分区所在：
 
 ```
 $ ls -l /dev/disk/by-partuuid
