@@ -2,7 +2,7 @@
 layout: post
 title: "Gentoo 不使用引导程序来启动 EFI kernel"
 category: Linux
-tags: [EFI]
+tags: [EFI, Gentoo]
 ---
 
 前几天，将所有的系统硬盘全部换成 GPT，于是研究了下 (U)EFI 相关的知识点，从而获知，原来在 (U)EFI 下，完全可以扔掉 Grub、Syslinux 等引导程序了。
