@@ -49,7 +49,7 @@ File systems --->
 注意 `root=PARTUUID=?` ，可以在 `/dev/disk/by-partuuid` 获取你根分区所在：
 
 ```
-ls -l /dev/disk/by-partuuid
+$ ls -l /dev/disk/by-partuuid
 ```
 
 此外，如下也检查下：
@@ -65,23 +65,29 @@ CONFIG_RD_LZO=y
 CONFIG_RD_LZ4=y
 ```
 
-随后，`make && make modules_install` 出一个新的内核。
+随后，
+
+```
+$ make && make modules_install
+```
+
+出一个新的内核。
 
 #### EFI edit
 
 接下来，将你硬盘 EFI 分区挂载到 `/boot` 上，因为我的是双系统，直接就使用了 Windows 10 的 EFI 分区。
 
 ```
-mount /dev/sda2 /boot
-ls /boot/EFI
-BOOT Microsoft
+$ mount /dev/sda2 /boot
+$ ls /boot/EFI
+$ BOOT Microsoft
 ```
 
 我们给 Gentoo 也建个文件夹，并将内核拷贝入其中（现在没人还在 32 位系统下了吧？）
 
 ```
-mkdir /boot/EFI/gentoo
-cp /usr/src/linux/arch/x86_64/arch/boot/bzImage /boot/EFI/gentoo/gentoo.efi
+$ mkdir /boot/EFI/gentoo
+$ cp /usr/src/linux/arch/x86_64/arch/boot/bzImage /boot/EFI/gentoo/gentoo.efi
 ```
 
 ##### efibootmgr
@@ -89,7 +95,7 @@ cp /usr/src/linux/arch/x86_64/arch/boot/bzImage /boot/EFI/gentoo/gentoo.efi
 最后通过 efibootmgr 来调整下主板 (U)EFI 固件，添加 Gentoo 的启动项，efibootmgr 并非是一个引导器，只是一个调整主板 (U)EFI 固件的工具，类似的工具很多，譬如 Windows 下的 EasyUEFI。
 
 ```
-efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\gentoo\gentoo.efi"
+$ efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\gentoo\gentoo.efi"
 ```
 
 通过 `efibootmgr -v` 来确认下，是否添加进去了，详细的用法可以通过 `efibootmgr --help` 来查看。
@@ -98,8 +104,10 @@ efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\gentoo\gentoo.efi"
 
 当然，你也可以直接在 efi shell 下添加，在你进入 efi shell 后：
 
+```
 Shell> bcfg boot dump -v
 Shell> bcfg boot add 3 fs0:\EFI\gentoo\gentoo.efi "Gentoo Linux"
+```
 
 参考：
 - <https://wiki.gentoo.org/wiki/EFI_stub_kernel>

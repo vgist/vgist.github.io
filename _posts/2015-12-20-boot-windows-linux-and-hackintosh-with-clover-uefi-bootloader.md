@@ -27,23 +27,23 @@ tags: [Clover, EFI]
 ubuntu 的 UEFI 启动 u 盘启动，选试用，启动到桌面，打开终端
 
 ```
-sudo su -
-mkdir /mnt/gentoo
-mount /dev/sda5 /mnt/gentoo
-mkdir /mnt/gentoo/boot/efi
-mount /dev/sda2 /mnt/gentoo/boot/efi
-mount -t proc proc /mnt/gentoo
-mount --rbind /sys /mnt/gentoo/sys
-mount --rbind /dev /mnt/gentoo/dev
-chroot /mnt/gentoo /bin/bash
-env-update && . /etc/profile
+$ sudo su -
+$ mkdir /mnt/gentoo
+$ mount /dev/sda5 /mnt/gentoo
+$ mkdir /mnt/gentoo/boot/efi
+$ mount /dev/sda2 /mnt/gentoo/boot/efi
+$ mount -t proc proc /mnt/gentoo
+$ mount --rbind /sys /mnt/gentoo/sys
+$ mount --rbind /dev /mnt/gentoo/dev
+$ chroot /mnt/gentoo /bin/bash
+$ env-update && . /etc/profile
 ```
 
 成功 chroot 进 Gentoo 环境后，通过 emerge 安装一个 grub，再编辑下 `/etc/default/grub` 与 `/etc/grub.d/40-custom` 后，生成配置文件，并安装：
 
 ```
-grub2-mkconfig -o /boot/grub/grub.cfg
-grub2-install --target=x86_64-efi --efi-directory=/boot/efi
+$ grub2-mkconfig -o /boot/grub/grub.cfg
+$ grub2-install --target=x86_64-efi --efi-directory=/boot/efi
 ```
 
 OK，基本差不多了，主板开机项多出一个 Gentoo 启动项，Clover UEFI 也能顺利识别。
