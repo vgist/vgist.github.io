@@ -56,11 +56,7 @@ File systems --->
 root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro radeon.audio=1 radeon.dpm=1 init=/usr/lib/systemd/systemd quiet
 ```
 
-注意：如果你不是 systemd 的，则略去 `init=/usr/lib/systemd/systemd`；而 `root=PARTUUID=?` ，则可以在 `/dev/disk/by-partuuid` 获取你根分区所在：
-
-```
-$ ls -l /dev/disk/by-partuuid
-```
+注意：如果你不是 systemd 的，则通过 `init=/usr/lib/systemd/systemd`；而 `root=PARTUUID=?` ，则可以在 `blkid` 命令来获取你根分区所在：
 
 此外，如下也检查下：
 
