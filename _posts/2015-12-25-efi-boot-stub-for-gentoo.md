@@ -102,11 +102,39 @@ $ efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\gentoo\gentoo.efi"
 
 ##### 2.2 efi shell
 
-当然，你也可以直接在 efi shell 下添加，在你进入 efi shell 后：
+当然，你也可以直接在 efi shell 下添加，譬如我要添加 Gentoo Linux 的 (U)EFI 启动项到第四的位置，则在你进入 efi shell 后：
 
 ```
 Shell> bcfg boot dump -v
 Shell> bcfg boot add 3 fs0:\EFI\gentoo\gentoo.efi "Gentoo Linux"
+```
+
+改变 Gentoo Linux 的启动项次序，从第四个改到第一
+
+```
+Shell> bcfg boot mv 3 0
+```
+
+删除第二个启动项
+
+```
+Shell> bcfg boot rm 1
+```
+
+查看 fs1 的 EFI 文件夹
+
+```
+Shell> fs1:
+FS1:\> cd \EFI\
+FS1:\EFI\> ls
+```
+
+efi shell 获取帮助命令
+
+```
+Shell> help bcfg -v -b
+or
+Shell> bcfg -? -v -b
 ```
 
 参考：
