@@ -7,7 +7,7 @@ tags: [Clover, EFI]
 
 这两天花了点时间，将 windows 10 & Gentoo 所在的硬盘全部换成 gpt，然后全部由 Clover 来引导。我本机的情况是，windows 10 & Gentoo 共用一块 SSD，黑苹果单独一块 SSD。
 
-![Clover UEFI](http://cdn.09hd.com/images/2015/11/clover.jpg)
+![Clover UEFI](http://cdn.09hd.com/images/2015/12/clover.jpg)
 
 <!-- more -->
 黑苹果不动，因为本身就是 Clover 引导的，Windows 10 则用 gpt 分区并重装了系统。而 Gentoo 的引导，有些复杂，因为 Clover 貌似不能直接启动 kernel （看到 [Archlinux Wiki](https://wiki.archlinux.org/index.php/Clover)）上的介绍，可惜不成功，Clover 中压根就不出现 linux 启动菜单。所以我的 Gentoo 引导的做法是 Clover -> Grub2 -> kernel。
