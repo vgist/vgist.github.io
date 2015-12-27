@@ -53,7 +53,7 @@ umask 表示，去掉的权限。
 
     /dev/sdb1 /mnt/data ntfs-3g uid=username,gid=users,fmask=133,dmask=022 0 0
 
-附录：
+#### 附录
 
 SUGO 中的 S，表示 suid、guid、sticky 之和，而 suid、guid、sticky 分别用 4、2、1 来表示相关权限。
 
