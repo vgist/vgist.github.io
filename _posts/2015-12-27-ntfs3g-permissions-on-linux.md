@@ -76,3 +76,8 @@ suid: 只能作用在可执行文件上，当其他用户运行改执行文件�
 sgid: 可以作用在目录或可执行文件上，也同样，临时拥有该文件或文件夹所有者的权限
 sticky: 只能作用在目录，可以用来防删除，一旦拥有 sticky 属性是，除了目录所有者与 root，其他任何人都无法删除该目录下文件或子目录。
 
+参考：
+
+- <https://wiki.archlinux.org/index.php/NTFS-3G#Basic_NTFS-3G_options>
+- <http://thegeekdiary.com/what-is-suid-sgid-and-sticky-bit/>
+
