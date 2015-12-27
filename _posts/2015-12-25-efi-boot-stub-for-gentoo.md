@@ -86,7 +86,7 @@ $ make && make modules_install
 ```
 $ mount /dev/sda2 /boot
 $ ls /boot/EFI
-$ BOOT Microsoft
+BOOT Microsoft
 ```
 
 我们给 Gentoo 也建个文件夹，并将内核拷贝入其中（现在没人还在 32 位系统下了吧？）
