@@ -9,7 +9,7 @@ tags: [NTFS]
 
 一般情况下，我们在 Linux 下挂载 ntfs，是安装 ntfs-3g 后进行的，即：
 
-    mount -t ntfs-3g -o /dev/sdb1 /mnt/data
+    mount -t ntfs-3g /dev/sdb1 /mnt/data
 
 这样临时解决下可以，但是会涉及到权限问题，就是说，/mnt/data 下的所有文件都必须 root 权限。于是我们加入一些参数让当前用户也可以访问修改：
 
