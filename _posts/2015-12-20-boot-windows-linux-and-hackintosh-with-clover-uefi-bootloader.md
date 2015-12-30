@@ -44,27 +44,27 @@ $ env-update && . /etc/profile
 <string>bootcamp</string>
 <key>Custom</key>           # GUI 的子项，与 Theme 并列
 <dict>
-<key>Entries</key>
-<array>
-<dict>
-<key>Disabled</key>
-<false/>
-<key>FullTitle</key>
-<string>Gentoo Linux</string>
-<key>Hidden</key>
-<false/>
-<key>Ignore</key>
-<false/>
-<key>Path</key>
-<string>\EFI\Gentoo\gentoo.efi</string>
-<key>Type</key>
-<string>Linux</string>
-<key>Volume</key>
-<string>EFI</string>
-<key>VolumeType</key>
-<string>Internal</string>
-</dict>
-</array>
+    <key>Entries</key>
+    <array>
+        <dict>
+            <key>Disabled</key>
+            <false/>
+            <key>FullTitle</key>
+            <string>Gentoo Linux</string>
+            <key>Hidden</key>
+            <false/>
+            <key>Ignore</key>
+            <false/>
+            <key>Path</key>
+            <string>\EFI\Gentoo\gentoo.efi</string>
+            <key>Type</key>
+            <string>Linux</string>
+            <key>Volume</key>
+            <string>EFI</string>
+            <key>VolumeType</key>
+            <string>Internal</string>
+        </dict>
+    </array>
 </dict>
 ```
 
