@@ -93,7 +93,7 @@ BOOT Microsoft
 
 ```
 $ mkdir /boot/EFI/gentoo
-$ cp /usr/src/linux/arch/x86_64/boot/bzImage /boot/EFI/gentoo/gentoo.efi
+$ cp /usr/src/linux/arch/x86_64/boot/bzImage /boot/EFI/Gentoo/gentoo.efi
 ```
 
 ##### 2.1 efibootmgr
@@ -101,10 +101,12 @@ $ cp /usr/src/linux/arch/x86_64/boot/bzImage /boot/EFI/gentoo/gentoo.efi
 最后通过 efibootmgr 来调整下主板 (U)EFI 固件，添加 Gentoo 的启动项，efibootmgr 并非是一个引导器，只是一个调整主板 (U)EFI 固件的工具，类似的工具很多，譬如 Windows 下的 EasyUEFI。
 
 ```
-$ efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\gentoo\gentoo.efi"
+$ efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\Gentoo\gentoo.efi"
 ```
 
 通过 `efibootmgr -v` 来确认下，是否添加进去了，详细的用法可以通过 `efibootmgr --help` 来查看。
+
+PS：在我这里测试，efibootmgr 的调整，貌似只有在 (U)EFI 启动系统后才可以，bios mbr 启动则不生效。
 
 ##### 2.2 efi shell
 
@@ -112,7 +114,7 @@ $ efibootmgr -c -d /dev/sda -p 2 -L "Gentoo Linux" -l "\EFI\gentoo\gentoo.efi"
 
 ```
 Shell> bcfg boot dump -v
-Shell> bcfg boot add 3 fs0:\EFI\gentoo\gentoo.efi "Gentoo Linux"
+Shell> bcfg boot add 3 fs0:\EFI\Gentoo\gentoo.efi "Gentoo Linux"
 ```
 
 改变 Gentoo Linux 的启动项次序，从第四个改到第一
