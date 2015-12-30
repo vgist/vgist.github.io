@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "EFI 直接启动 Gentoo Stub kernel"
+title: "UEFI 直接启动 Gentoo EFI Stub Kernel"
 category: Linux
 tags: [EFI, Gentoo]
 ---
