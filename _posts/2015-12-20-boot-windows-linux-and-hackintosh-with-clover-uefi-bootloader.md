@@ -37,7 +37,7 @@ $ chroot /mnt/gentoo /bin/bash
 $ env-update && . /etc/profile
 ```
 
-成功 chroot 进 Gentoo 环境后，按照文章 [Gentoo 不使用引导程序来启动 EFI kernel]({% post_url 2015-12-25-efi-boot-stub-for-gentoo %}) 进行生成一个 EFISTUB kernel，并拷贝到 EFI 所在分区的 `\EFI\Gentoo\gentoo.efi` 下，最后就是编辑下 Clover，适当位置添加如下：
+成功 chroot 进 Gentoo 环境后，按照文章 [EFI 直接启动 Gentoo Stub kernel]({% post_url 2015-12-25-efi-boot-stub-for-gentoo %}) 进行生成一个 EFISTUB kernel，并拷贝到 EFI 所在分区的 `\EFI\Gentoo\gentoo.efi` 下，最后就是编辑下 Clover，适当位置添加如下：
 
 ```
 <key>Theme</key>
