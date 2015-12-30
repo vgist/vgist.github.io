@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gentoo 不使用引导程序来启动 EFI kernel"
+title: "EFI 直接启动 Gentoo Stub kernel"
 category: Linux
 tags: [EFI, Gentoo]
 ---
