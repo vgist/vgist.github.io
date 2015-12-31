@@ -92,7 +92,7 @@ BOOT Microsoft
 我们给 Gentoo 也建个文件夹，并将内核拷贝入其中（现在没人还在 32 位系统下了吧？）
 
 ```
-$ mkdir /boot/EFI/gentoo
+$ mkdir /boot/EFI/Gentoo
 $ cp /usr/src/linux/arch/x86_64/boot/bzImage /boot/EFI/Gentoo/gentoo.efi
 ```
 
