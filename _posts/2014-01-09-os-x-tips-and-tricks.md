@@ -240,3 +240,22 @@ OS X 10.11 中，Spotlight 可以移动位置，那么恢复默认位置的方�
 
     $ sudo tmutil disablelocal
     $ sudo tmutil enablelocal
+
+#### 二十. 移除隐私定位中的残留项
+
+需要编辑文件 `/var/db/locationd/clients.plist`，防止意外，你可以现备份到另外地方，注意权限，location 文件夹属于 `_locationd` 的用户用户组。
+
+    $ sudo su -
+    # cd /var/db/locationd
+    # cp clients.plist ~/
+
+该文件是二进制的，需要转下
+
+    # plutil -convert xml1 clients.plist
+    # vim clients.plist
+
+用搜索定位到残留项位置，删除，随后再转为二进制，并重启定位服务：
+
+    # plutil -convert binary1 clients.plist
+    # killall locationd
+
