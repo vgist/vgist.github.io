@@ -7,7 +7,7 @@ tags: [EFI, Gentoo]
 
 前几天，将所有的系统硬盘全部换成 GPT，于是研究了下 (U)EFI 相关的知识点，从而获知，原来在 (U)EFI 下，完全可以扔掉 Grub、Syslinux 等引导程序了。
 
-实际上就是将引导参数编入内核，通过主板 (U)EFI 固件来直接启动内核，而 (U)EFI 启动项则可以通过 efi shell、efibootmgr 等工具来设置。为了让主板 (U)EFI 直接启动内核，需要一些内核参数。
+实际上就是将引导参数编入内核，通过主板 (U)EFI 固件来直接启动内核，而 (U)EFI 启动项则可以通过 efi shell、efibootmgr 等工具来设置。为了让主板 (U)EFI 直接启动内核，需要打开一些内核开关。
 
 #### 1. Kernel Config
 
@@ -50,13 +50,13 @@ File systems --->
         <*> EFI Variable filesystem
 ```
 
-其实 **Built-in kernel command line** 就是将一些原本 Grub、Syslinux 中的附加命令加进去。譬如我还增加了 radeon 卡的一些参数
+其实 **Built-in kernel command line** 就是将一些原本 Grub、Syslinux 中的附加命令加进去。譬如我的：
 
 ```
-root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro radeon.audio=1 radeon.dpm=1 init=/usr/lib/systemd/systemd quiet
+root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro init=/usr/lib/systemd/systemd quiet
 ```
 
-注意：如果你不是 systemd 的，则略过 `init=/usr/lib/systemd/systemd`；而 `root=PARTUUID=?` ，则可以在 `blkid` 命令来获取你根分区所在。
+注意：如果你不是 systemd 的，则略过 `init=/usr/lib/systemd/systemd`；而 `root=PARTUUID=?` ，则可以用 `blkid` 命令来获取你根分区所在。
 
 此外，如下也检查下：
 
