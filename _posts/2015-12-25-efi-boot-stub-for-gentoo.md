@@ -7,7 +7,7 @@ tags: [EFI, Gentoo]
 
 前几天，将所有的系统硬盘全部换成 GPT，于是研究了下 (U)EFI 相关的知识点，从而获知，原来在 (U)EFI 下，完全可以扔掉 Grub、Syslinux 等引导程序了。
 
-实际上就是将引导参数编入内核，通过主板 (U)EFI 固件来直接启动内核，而 (U)EFI 启动项则可以通过 efi shell、efibootmgr 等工具来设置。为了让主板 (U)EFI 直接启动内核，需要打开一些内核开关。
+实际上就是将内核启动参数编入内核，通过主板 (U)EFI 固件来直接启动内核，而 (U)EFI 启动项则可以通过 efi shell、efibootmgr 等工具来设置。为了让主板 (U)EFI 直接启动内核，需要打开一些内核开关。
 
 #### 1. Kernel Config
 
