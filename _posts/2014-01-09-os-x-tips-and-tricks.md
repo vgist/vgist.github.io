@@ -217,6 +217,16 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
     $ defaults write com.apple.screencapture type png
     $ defaults write com.apple.screencapture type pdf
 
+修改默认的截图名
+
+    $ defaults write com.apple.screencapture name "yourname"
+    $ killall SystemUIServer
+
+去掉默认截图名中的时间
+
+    $ defaults write com.apple.screencapture "include-date" 0
+    $ killall SystemUIServer
+
 #### 十六. Mail.app 撰写邮件附件显示
 
     $ defaults write com.apple.mail DisableInlineAttachmentViewing -bool yes/no
