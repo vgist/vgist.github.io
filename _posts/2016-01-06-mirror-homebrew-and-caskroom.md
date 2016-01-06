@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "homebrew 与 caskroom 的 gitcafe 镜像"
+title: "Homebrew 与 Caskroom 的 GitCafe 镜像"
 category: Mac
 tags: [Homebrew, Caskroom]
 ---
