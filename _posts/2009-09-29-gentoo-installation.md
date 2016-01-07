@@ -10,7 +10,7 @@ tags: [Gentoo, CLI, Lerning]
 
 由于是在vbox3中练手，所以只给了4个G的空间
 
-首先从网上下载 install-x86-minimal-20090912.iso
+首先从网上下载 install-x86-minimal-xxx.iso
 
 找最近日期的下载，mirrors.163.com 是个不错的源，速度很不错。
 
