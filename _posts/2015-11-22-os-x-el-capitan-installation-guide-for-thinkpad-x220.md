@@ -13,7 +13,7 @@ tags: [ThinkPad, OS X]
 #### 一. BIOS 相关
 
 1. 升级官方 Lenovo BIOS 版本至 1.40，可以从如下官方地址下载：[Windows 1.40 Update Utility](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x220/downloads/DS018805) 或 [Bootable 1.40 CD Image](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x220/downloads/DS018807)
-2. BIOS 白名单，肯定是必须的，因为要换 WIFI 模块，可以用这个工具 [patched BIOS version 1.40](http://pan.baidu.com/s/1eQ38Dbk) 去刷白名单
+2. BIOS 白名单，肯定是必须的，因为要换 WIFI 模块，可以用这个工具 [patched BIOS version 1.40](http://pan.baidu.com/s/1jHd5Ajs) 去刷白名单
 3. BIOS 设置
     - Config > Serial ATA(SATA) > **AHCI**
     - Security > Security Chip > **Disabled**
