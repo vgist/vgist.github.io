@@ -14,11 +14,17 @@ tags: [Homebrew, Caskroom]
 
 #### Homebrew
 
-##### homebrew
+homebrew 默认源，可以去用使用 mirrors.ustc.edu.cn
 
 ```
 cd /usr/local
-git remote set-url origin https://gitcafe.com/Homebrew/homebrew.git
+git remote set-url origin git://mirrors.ustc.edu.cn/homebrew.git
+```
+
+homebrew 两进制源也可以使用
+
+```
+echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bashrc
 ```
 
 ##### homebrew/dupes
