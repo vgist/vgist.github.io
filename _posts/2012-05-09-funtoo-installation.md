@@ -19,7 +19,7 @@ tags: [Funtoo, Installation]
 
 下面是具体的安装步骤
 
-发现，Funtoo 相比于 Gentoo 最大的区别就是简化了安装步骤，Portage 改为 Git 管理且包含了 Sunrise Overlay，以及 Grub、net 设置变简单了。如果是第一次安装，则推荐 Funtoo；如果已经用上最新 Portage 的 Gentoo，则完全没有必要切换到 Fentoo。
+发现，Funtoo 相比于 Gentoo 最大的区别就是简化了安装步骤，Portage 改为 Git 管理且包含了 Sunrise Overlay，以及 Grub、net 设置变简单了。如果是第一次安装，则推荐 Funtoo；如果已经用上最新 Portage 的 Gentoo，则完全没有必要切换到 Funtoo。
 
 ```
 Create ext4 filesystem with labels
