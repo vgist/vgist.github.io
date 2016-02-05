@@ -125,4 +125,9 @@ cp /etc/X11/Sessions/awesome ~/.xinitrc
 
 最后 startx，桌面起来了.......然后，又是漫长的各个软件的家目录配置。
 
+顺带提一下 ibus 的一个坑，如果你也在 gnome-shell 下使用 ibus 的话，会发现 ibus 配置无法保存的...
+
+    sudo dconf update
+    ibus-daemon -rdx
+
 END
