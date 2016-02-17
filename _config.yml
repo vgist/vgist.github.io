@@ -1,7 +1,7 @@
 # Site settings
 title: "Havee's Space"
 url: "//havee.me"
-highlighter: pygments
+highlighter: rouge
 paginate: 5
 author:
     name: Havee
