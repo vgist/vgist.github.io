@@ -1,4 +1,4 @@
-source "https://mirrors.ustc.edu.cn/rubygems"
+source "https://rubygems.org"
 
 gem "jekyll"
 gem "jekyll-paginate"
