@@ -19,18 +19,17 @@ rpm 打包需要特定的目录结构，准备工作：
     # yum install rpm-build rpmdevtools
 
 <!-- more -->
+
 目录结构
 
-```console
-$ tree ~/rpmbuild
-/home/havanna/rpmbuild
-├── BUILD
-├── BUILDROOT
-├── RPMS
-├── SOURCES
-├── SPECS
-└── SRPMS
-```
+    $ tree ~/rpmbuild
+    /home/havanna/rpmbuild
+    ├── BUILD
+    ├── BUILDROOT
+    ├── RPMS
+    ├── SOURCES
+    ├── SPECS
+    └── SRPMS
 
 打包 rpm 的核心就是 spec 文件，可以通过模板操作
 
@@ -38,92 +37,88 @@ $ tree ~/rpmbuild
 
 也可以通过其他工具来书写。给出 **shadowsocks-libev.spec** 文件
 
-```spec
-%global commit 2a6c28e185774addcf4d090662886b9433a7cefa
-%global shortcommit %(c=%{commit}; echo ${c:0:7})
+    %global commit 2a6c28e185774addcf4d090662886b9433a7cefa
+    %global shortcommit %(c=%{commit}; echo ${c:0:7})
 
-Name:		shadowsocks-libev
-Version:	1.6.1
-Release:	1%{?dist}
-License:	GPL-3
-Summary:	a lightweight secured scoks5 proxy for embedded devices and low end boxes.
-Url:		https://github.com/madeye/%{name}
-Group:		Applications/Internet
-Source0:	%{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
-Source1:	%{name}.json
-Source2:	ss-local.service
-Source3:	ss-server.service
-Source4:	%{name}
-Packager:	Havanna <registerdedicated(at)gmail.com>
-BuildRequires:	autoconf libtool gcc openssl-devel
-BuildRoot: 	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
+    Name:		shadowsocks-libev
+    Version:	1.6.1
+    Release:	1%{?dist}
+    License:	GPL-3
+    Summary:	a lightweight secured scoks5 proxy for embedded devices and low end boxes.
+    Url:		https://github.com/madeye/%{name}
+    Group:		Applications/Internet
+    Source0:	%{url}/archive/%{commit}/%{name}-%{version}-%{shortcommit}.tar.gz
+    Source1:	%{name}.json
+    Source2:	ss-local.service
+    Source3:	ss-server.service
+    Source4:	%{name}
+    Packager:	Havanna <registerdedicated(at)gmail.com>
+    BuildRequires:	autoconf libtool gcc openssl-devel
+    BuildRoot: 	%(mktemp -ud %{_tmppath}/%{name}-%{version}-%{release}-XXXX)
 
-%description
-shadowsocks-libev is a lightweight secured scoks5 proxy for embedded devices and low end boxes.
+    %description
+    shadowsocks-libev is a lightweight secured scoks5 proxy for embedded devices and low end boxes.
 
-%prep
-%setup -qn %{name}-%{commit}
+    %prep
+    %setup -qn %{name}-%{commit}
 
-%build
-export CFLAGS="-O2"
-%configure --prefix=%{_prefix}
-make %{?_smp_mflags}
+    %build
+    export CFLAGS="-O2"
+    %configure --prefix=%{_prefix}
+    make %{?_smp_mflags}
 
-%install
-rm -rf %{buildroot}
-make DESTDIR=%{buildroot} install
+    %install
+    rm -rf %{buildroot}
+    make DESTDIR=%{buildroot} install
 
-install -d %{buildroot}%{_sysconfdir}
-install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}
+    install -d %{buildroot}%{_sysconfdir}
+    install -m 0644 %{SOURCE1} %{buildroot}%{_sysconfdir}
 
-%if 0%{?rhel} >= 7
-	install -d %{buildroot}%{_unitdir}
-	install -m 0644 %{SOURCE2} %{buildroot}%{_unitdir}
-	install -m 0644 %{SOURCE3} %{buildroot}%{_unitdir}
-%endif
+    %if 0%{?rhel} >= 7
+    	install -d %{buildroot}%{_unitdir}
+    	install -m 0644 %{SOURCE2} %{buildroot}%{_unitdir}
+    	install -m 0644 %{SOURCE3} %{buildroot}%{_unitdir}
+    %endif
 
-%if 0%{?rhel} == 6
-	install -d %{buildroot}%{_initddir}
-	install -m 0755 %{SOURCE4} %{buildroot}%{_initddir}
-%endif
+    %if 0%{?rhel} == 6
+    	install -d %{buildroot}%{_initddir}
+    	install -m 0755 %{SOURCE4} %{buildroot}%{_initddir}
+    %endif
 
-%if 0%{?rhel} < 7
-%post
-/sbin/chkconfig --add %{name}
-%preun
-if [ $1 = 0 ]; then
-	/sbin/service %{name} stop
-	/sbin/chkconfig --del %{name}
-fi
-%endif
+    %if 0%{?rhel} < 7
+    %post
+    /sbin/chkconfig --add %{name}
+    %preun
+    if [ $1 = 0 ]; then
+    	/sbin/service %{name} stop
+    	/sbin/chkconfig --del %{name}
+    fi
+    %endif
 
-%files
-%defattr(-,root,root)
-%doc Changes README.md COPYING LICENSE
-%config %{_sysconfdir}
+    %files
+    %defattr(-,root,root)
+    %doc Changes README.md COPYING LICENSE
+    %config %{_sysconfdir}
 
-%{_bindir}/*
-%{_mandir}
+    %{_bindir}/*
+    %{_mandir}
 
-%if 0%{?rhel} >= 7
-	%config %{_unitdir}
-%endif
+    %if 0%{?rhel} >= 7
+    	%config %{_unitdir}
+    %endif
 
-%if 0%{?rhel} == 6
-	%config %{_initddir}
-%endif
+    %if 0%{?rhel} == 6
+    	%config %{_initddir}
+    %endif
 
-%changelog
-```
+    %changelog
 
 spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断系统版本
 
-```console
-$ rpmbuild --showrc | grep centos
--14: centos         7
--14: centos_ver     7
--14: dist           .el7.centos
-```
+    $ rpmbuild --showrc | grep centos
+    -14: centos         7
+    -14: centos_ver     7
+    -14: dist           .el7.centos
 
 小技巧
 
@@ -172,16 +167,14 @@ clone 下来
 
 rpm 源码包里包含了打包所需的全部文件
 
-```console
-$ rpm2cpio shadowsocks-libev-1.6.1-1.el7.centos.src.rpm | cpio -div
-shadowsocks-libev
-shadowsocks-libev-1.6.1-2a6c28e.tar.gz
-shadowsocks-libev.json
-shadowsocks-libev.spec
-ss-local.service
-ss-server.service
-4716 blocks
-```
+    $ rpm2cpio shadowsocks-libev-1.6.1-1.el7.centos.src.rpm | cpio -div
+    shadowsocks-libev
+    shadowsocks-libev-1.6.1-2a6c28e.tar.gz
+    shadowsocks-libev.json
+    shadowsocks-libev.spec
+    ss-local.service
+    ss-server.service
+    4716 blocks
 
 通过 rpm 源码包制作两进制包
 

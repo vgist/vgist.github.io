@@ -17,17 +17,15 @@ octopress 默认已经提供了关键字和描述，问题在于 `new_post` 不�
 
 <!-- more -->
 
-```
----
-layout: post
-title: "Octopress SEO"
-date: 2013-01-23 22:13
-comments: true
-categories: Internet
-keywords: octopress, seo, keywords, description
-description: Octopress 的 SEO 在默认情况下已经表现不错了，不过有个问题，`new_post` 不生成 meta description 和 keywords。
----
-```
+    ---
+    layout: post
+    title: "Octopress SEO"
+    date: 2013-01-23 22:13
+    comments: true
+    categories: Internet
+    keywords: octopress, seo, keywords, description
+    description: Octopress 的 SEO 在默认情况下已经表现不错了，不过有个问题，`new_post` 不生成 meta description 和 keywords。
+    ---
 
 ### Home Page
 
@@ -45,12 +43,10 @@ octopress 默认的在首页的描述是，最后一篇文章截取一定的长�
 修改 `.themes/classic/source/_includes/head.html` 文件，在 author tag 后面，用如下替换 description/keywords 代码
 
 {% raw %}
-```html
-<meta name="author" content="{{ site.author }}">
-{% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{%else%}{{ content | raw_content }}{% endif %}{% endcapture %}
-<meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
-{% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{%else%}<meta name="keywords" content="{{ site.keywords }}">{% endif %}
-```
+    <meta name="author" content="{{ site.author }}">
+    {% capture description %}{% if page.description %}{{ page.description }}{% elsif site.description %}{{ site.description }}{%else%}{{ content | raw_content }}{% endif %}{% endcapture %}
+    <meta name="description" content="{{ description | strip_html | condense_spaces | truncate:150 }}">
+    {% if page.keywords %}<meta name="keywords" content="{{ page.keywords }}">{%else%}<meta name="keywords" content="{{ site.keywords }}">{% endif %}
 {% endraw %}
 
 #### keywords & description
@@ -59,21 +55,19 @@ octopress 默认的在首页的描述是，最后一篇文章截取一定的长�
 
 看了下 `Rakefile` 文件，很简单嘛：
 
-```ruby
-  puts "Creating new post: #{filename}"
-  open(filename, 'w') do |post|
-    post.puts "---"
-    post.puts "layout: post"
-    post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
-    post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
-    post.puts "comments: true"
-    post.puts "categories: "
-    post.puts "keywords: "
-    post.puts "description: "
-    post.puts "---"
-```
+    puts "Creating new post: #{filename}"
+    open(filename, 'w') do |post|
+      post.puts "---"
+      post.puts "layout: post"
+      post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+      post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+      post.puts "comments: true"
+      post.puts "categories: "
+      post.puts "keywords: "
+      post.puts "description: "
+      post.puts "---"
 
-```ruby
+
     puts "Creating new page: #{file}"
     open(file, 'w') do |page|
       page.puts "---"
@@ -87,4 +81,3 @@ octopress 默认的在首页的描述是，最后一篇文章截取一定的长�
       page.puts "footer: true"
       page.puts "---"
     end
-```

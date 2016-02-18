@@ -20,11 +20,11 @@ Nginx 伪静态，我们一般使用 rewrite 来实现，通过 Nginx 提供的�
 
 一般用法
 
-```
-if(condition) {
-    statement
-}
-```
+    if(condition) {
+        statement
+    }
+
+<!-- more -->
 
 表示如果条件为真，则执行语句，其中，条件可以是一个变量或表达式。当为一个变量时，值为空或任何以 0 开头的字符串时，则都为 false，表达式可以直接使用 `=` 或 `!=` 来比较变量或内容，`~` 正则匹配，`~*` 匹配不区分大小写，`!~` 匹配区分大小写。
 
@@ -59,14 +59,12 @@ if(condition) {
 
 示例：http://localhost:8080/name1/name2/name.php?args=n
 
-```
-$host:              localhost
-$server_port:       8080
-$request_uri:       /name1/name2/name.php?args=n
-$document_uri:      /name1/name2/name.php
-$document_root:     /var/www/localhost
-$request_filename:  /var/www/localhost/name1/name2/name.php
-```
+    $host:              localhost
+    $server_port:       8080
+    $request_uri:       /name1/name2/name.php?args=n
+    $document_uri:      /name1/name2/name.php
+    $document_root:     /var/www/localhost
+    $request_filename:  /var/www/localhost/name1/name2/name.php
 
 ##### 正则
 
@@ -88,50 +86,42 @@ $request_filename:  /var/www/localhost/name1/name2/name.php
 
 ##### wordpress
 
-```nginx
-location / {
-  try_files $uri $uri/ /index.php?q=$uri&$args;
-}
-```
+    location / {
+      try_files $uri $uri/ /index.php?q=$uri&$args;
+    }
 
 ##### joomla
 
-<!-- more -->
-
-```nginx
-location / {
-  if ( $args ~ "mosConfig_[a-zA-Z_]{1,21}(=|\%3d)" ) {
-    set $args "";
-    rewrite ^.*$ http://$host/index.php last;
-  return 403;}
-  if ( $args ~ "base64_encode.*\(.*\)") {
-    set $args "";
-    rewrite ^.*$ http://$host/index.php last;
-  return 403;}
-  if ( $args ~ "(\<|%3C).*script.*(\>|%3E)") {
-    set $args "";
-    rewrite ^.*$ http://$host/index.php last;
-  return 403;}
-  if ( $args ~ "GLOBALS(=|\[|\%[0-9A-Z]{0,2})") {
-   set $args "";
-    rewrite ^.*$ http://$host/index.php last;
-  return 403;}
-  if ( $args ~ "_REQUEST(=|\[|\%[0-9A-Z]{0,2})") {
-    set $args "";
-    rewrite ^.*$ http://$host/index.php last;
-  return 403;}
-  if (!-e $request_filename) {
-    rewrite (/|\.php|\.html|\.htm|\.feed|\.pdf|\.raw|/[^.]*)$ /index.php last;
-    break;}
-}
-```
+    location / {
+      if ( $args ~ "mosConfig_[a-zA-Z_]{1,21}(=|\%3d)" ) {
+        set $args "";
+        rewrite ^.*$ http://$host/index.php last;
+      return 403;}
+      if ( $args ~ "base64_encode.*\(.*\)") {
+        set $args "";
+        rewrite ^.*$ http://$host/index.php last;
+      return 403;}
+      if ( $args ~ "(\<|%3C).*script.*(\>|%3E)") {
+        set $args "";
+        rewrite ^.*$ http://$host/index.php last;
+      return 403;}
+      if ( $args ~ "GLOBALS(=|\[|\%[0-9A-Z]{0,2})") {
+       set $args "";
+        rewrite ^.*$ http://$host/index.php last;
+      return 403;}
+      if ( $args ~ "_REQUEST(=|\[|\%[0-9A-Z]{0,2})") {
+        set $args "";
+        rewrite ^.*$ http://$host/index.php last;
+      return 403;}
+      if (!-e $request_filename) {
+        rewrite (/|\.php|\.html|\.htm|\.feed|\.pdf|\.raw|/[^.]*)$ /index.php last;
+        break;}
+    }
 
 ##### uchome
 
-```nginx
-location / {
-  rewrite ^/(space|network)\-(.+)\.html$ /$1.php?rewrite=$2 last;
-  rewrite ^/(space|network)\.html$ /$1.php last;
-  rewrite ^/([0-9]+)$ /space.php?uid=$1 last;
-}
-```
+    location / {
+      rewrite ^/(space|network)\-(.+)\.html$ /$1.php?rewrite=$2 last;
+      rewrite ^/(space|network)\.html$ /$1.php last;
+      rewrite ^/([0-9]+)$ /space.php?uid=$1 last;
+    }

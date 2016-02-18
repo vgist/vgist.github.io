@@ -10,6 +10,7 @@ tags: [Firewall, Usage]
 ![firewall stack](//cdn.09hd.com/images/2015/01/firewall_stack.png)
 
 <!-- more -->
+
 安装它，只需
 
     # yum install firewalld

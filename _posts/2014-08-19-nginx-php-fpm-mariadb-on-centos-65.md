@@ -10,6 +10,7 @@ letbox 上用优惠卷购置了一款 vps，最终 **$ 0.01** 成交，直接上
 废话不多说，ssh 进去:
 
 <!-- more -->
+
 #### 一. Nginx
 
 Nginx 的源直接由 nginx.org 来维护
@@ -53,13 +54,11 @@ mariadb.org 社区维护，增加一个 MariaDB.repo
 
 填入如下内容
 
-```
-[mariadb]
-name =MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos6-x86
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-```
+    [mariadb]
+    name =MariaDB
+    baseurl = http://yum.mariadb.org/10.0/centos6-x86
+    gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+    gpgcheck=1
 
 安装
 

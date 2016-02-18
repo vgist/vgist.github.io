@@ -9,20 +9,19 @@ tags: [Nginx]
 
 首先我对 Nginx 中 Gzip 的配置如下：
 
-```nginx
-gzip  on;
-gzip_min_length     1k;
-gzip_buffers        4 8k;
-gzip_http_version   1.0;
-gzip_comp_level     6;
-gzip_proxied        any;
-gzip_types          text/xml text/css text/javascript text/plain application/json \
-    application/x-javascript application/xml application/xml+rss;
-gzip_vary           on;
-gzip_disable        "MSIE [1-6]\.";
-```
+    gzip  on;
+    gzip_min_length     1k;
+    gzip_buffers        4 8k;
+    gzip_http_version   1.0;
+    gzip_comp_level     6;
+    gzip_proxied        any;
+    gzip_types          text/xml text/css text/javascript text/plain application/json \
+        application/x-javascript application/xml application/xml+rss;
+    gzip_vary           on;
+    gzip_disable        "MSIE [1-6]\.";
 
 <!-- more -->
+
 下面是我整理的参数的详细说明：
 
 表1：Gzip
@@ -61,16 +60,14 @@ gzip_disable        "MSIE [1-6]\.";
 
 如果包含下列字符串则表示 Gzip压缩开启成功
 
-```
-HTTP/1.1 200 OK
-Server: nginx/1.4.5
-Date: Wed, 09 Apr 2014 03:55:06 GMT
-Content-Type: text/html
-Last-Modified: Wed, 09 Apr 2014 03:54:26 GMT
-Connection: keep-alive
-Cache-Control: public
-Content-Encoding: gzip          # 内容压缩
-```
+    HTTP/1.1 200 OK
+    Server: nginx/1.4.5
+    Date: Wed, 09 Apr 2014 03:55:06 GMT
+    Content-Type: text/html
+    Last-Modified: Wed, 09 Apr 2014 03:54:26 GMT
+    Connection: keep-alive
+    Cache-Control: public
+    Content-Encoding: gzip          # 内容压缩
 
 参考：[http://nginx.org/en/docs/http/ngx\_http\_gzip\_module.html](http://nginx.org/en/docs/http/ngx_http_gzip_module.html)
 

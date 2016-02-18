@@ -18,6 +18,7 @@ tags: [Nginx, Proxy, Google]
     $ sudo yum install rpm-build rpmdevtools
 
 <!-- more -->
+
 我已经将打包所需文件 push 到 [github](https://github.com/Ihavee/ihavee-rpm/tree/master/nginx) 上，可以直接 clone 下来。
 
     $ git clone git://github.com/Ihavee/ihavee-rpm.git /path/to/ihavee-rpm
@@ -34,41 +35,37 @@ tags: [Nginx, Proxy, Google]
 
 然后享受简单配置下即可运行
 
-```nginx
-server {
-    listen 80;
-    server_name your.domain;
+    server {
+        listen 80;
+        server_name your.domain;
 
-    keepalive_timeout 60;
-    resolver 8.8.8.8;
+        keepalive_timeout 60;
+        resolver 8.8.8.8;
 
-    location / {
-        google on;
+        location / {
+            google on;
+        }
     }
-}
-```
 
 当然建议还是给自己的域名配个 ssl 证书，防止一些关键字触发防火墙。
 
-```nginx
-server {
-    listen 443 ssl;
-    listen 80;
-    server_name your.domain;
+    server {
+        listen 443 ssl;
+        listen 80;
+        server_name your.domain;
 
-    ssl on;
-    ssl_certificate /path/to/your.domain.crt;
-    ssl_certificate_key /path/to/your.domain.key;
+        ssl on;
+        ssl_certificate /path/to/your.domain.crt;
+        ssl_certificate_key /path/to/your.domain.key;
 
-    keepalive_time 60;
-    resolver 8.8.8.8;
+        keepalive_time 60;
+        resolver 8.8.8.8;
 
-    location / {
-        google on;
+        location / {
+            google on;
+        }
+
+        error_page 497 https://$server_name$$request_uri;
     }
-
-    error_page 497 https://$server_name$$request_uri;
-}
-```
 
 有关 ssl 的更详细的配置可以查阅：[《服务端 SSL 配置》]({% post_url 2015-06-10-strong-ssl-security-for-apache-nginx-lighttpd %})

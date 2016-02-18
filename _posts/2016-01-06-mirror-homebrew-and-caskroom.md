@@ -16,57 +16,41 @@ tags: [Homebrew, Caskroom]
 
 homebrew 默认源，可以去用使用 mirrors.ustc.edu.cn
 
-```
-cd /usr/local
-git remote set-url origin git://mirrors.ustc.edu.cn/homebrew.git
-```
+    cd /usr/local
+    git remote set-url origin git://mirrors.ustc.edu.cn/homebrew.git
 
 homebrew 两进制源也可以使用
 
-```
-echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bashrc
-```
+    echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bashrc
 
 ##### homebrew/dupes
 
-```
-cd /usr/local/Library/Taps/homebrew/homebrew-dupes
-git remote set-url origin https://gitcafe.com/Homebrew/homebrew-dupes.git
-```
+    cd /usr/local/Library/Taps/homebrew/homebrew-dupes
+    git remote set-url origin https://gitcafe.com/Homebrew/homebrew-dupes.git
 
 ##### homebrew/versions
 
-```
-cd /usr/local/Library/Taps/homebrew/homebrew-versions
-git remote set-url origin https://gitcafe.com/Homebrew/homebrew-versions.git
-```
+    cd /usr/local/Library/Taps/homebrew/homebrew-versions
+    git remote set-url origin https://gitcafe.com/Homebrew/homebrew-versions.git
 
 ##### homebrew/nginx
 
-```
-cd /usr/local/Library/Taps/homebrew/homebrew-nginx
-git remote set-url origin https://gitcafe.com/Homebrew/homebrew-nginx.git
-```
+    cd /usr/local/Library/Taps/homebrew/homebrew-nginx
+    git remote set-url origin https://gitcafe.com/Homebrew/homebrew-nginx.git
 
 ##### homebrew/php
 
-```
-cd /usr/local/Library/Taps/homebrew/homebrew-php
-git remote set-url origin https://gitcafe.com/Homebrew/homebrew-php.git
-```
+    cd /usr/local/Library/Taps/homebrew/homebrew-php
+    git remote set-url origin https://gitcafe.com/Homebrew/homebrew-php.git
 
 #### Caskroom
 
 ##### caskroom/cask
 
-```
-cd /usr/local/Library/Taps/caskroom/homebrew-cask
-git remote set-url origin https://gitcafe.com/Caskroom/homebrew-cask.git
-```
+    cd /usr/local/Library/Taps/caskroom/homebrew-cask
+    git remote set-url origin https://gitcafe.com/Caskroom/homebrew-cask.git
 
 ##### caskroom/versions
 
-```
-cd /usr/local/Library/Taps/caskroom/homebrew-versions
-git remote set-url origin https://gitcafe.com/Caskroom/homebrew-versions.git
-```
+    cd /usr/local/Library/Taps/caskroom/homebrew-versions
+    git remote set-url origin https://gitcafe.com/Caskroom/homebrew-versions.git

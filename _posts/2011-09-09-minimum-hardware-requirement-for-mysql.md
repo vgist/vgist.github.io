@@ -32,36 +32,34 @@ tags: [MySQL, SQL]
 |binlog_stmt_cache_size|32K|4K|
 
 <!-- more -->
+
 你当然可以通过禁用 InnoDB 来节省内存，但一般不建议这么做，除非你的内存小到了极致。
 
 如此，我们针对便宜的小内存 vps 的 my.cnf 应该是如下：
 
-```mysql
-# /etc/my.cnf:
-innodb_buffer_pool_size=5M
-innodb_log_buffer_size=256K
-query_cache_size=0
-max_connections=10
-key_buffer_size=8
-thread_cache_size=0
-host_cache_size=0
-innodb_ft_cache_size=1600000
-innodb_ft_total_cache_size=32000000
+    # /etc/my.cnf:
+    innodb_buffer_pool_size=5M
+    innodb_log_buffer_size=256K
+    query_cache_size=0
+    max_connections=10
+    key_buffer_size=8
+    thread_cache_size=0
+    host_cache_size=0
+    innodb_ft_cache_size=1600000
+    innodb_ft_total_cache_size=32000000
 
-# per thread or per operation settings
-thread_stack=131072
-sort_buffer_size=32K
-read_buffer_size=8200
-read_rnd_buffer_size=8200
-max_heap_table_size=16K
-tmp_table_size=1K
-bulk_insert_buffer_size=0
-join_buffer_size=128
-net_buffer_length=1K
-innodb_sort_buffer_size=64K
+    # per thread or per operation settings
+    thread_stack=131072
+    sort_buffer_size=32K
+    read_buffer_size=8200
+    read_rnd_buffer_size=8200
+    max_heap_table_size=16K
+    tmp_table_size=1K
+    bulk_insert_buffer_size=0
+    join_buffer_size=128
+    net_buffer_length=1K
+    innodb_sort_buffer_size=64K
 
-#settings that relate to the binary log (if enabled)
-binlog_cache_size=4K
-binlog_stmt_cache_size=4K
-
-```
+    #settings that relate to the binary log (if enabled)
+    binlog_cache_size=4K
+    binlog_stmt_cache_size=4K

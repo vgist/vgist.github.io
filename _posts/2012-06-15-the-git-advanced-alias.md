@@ -13,10 +13,8 @@ tags: [Git, Usage]
 
 或者直接编辑 `.gitconfig` 文件，格式如下
 
-```
-[alias]
-      alias= command
-```
+    [alias]
+          alias= command
 
 <!-- more -->
 
@@ -26,10 +24,8 @@ tags: [Git, Usage]
 
 或者
 
-```
-[alias]
-      s = status
-```
+    [alias]
+          s = status
 
 这只是一个很简单的例子，可能大家都用不上，那么下面来个 `git log` 的例子。
 
@@ -47,9 +43,7 @@ tags: [Git, Usage]
 
 那么以后只需 `git l` 即可得到你所需要的信息。上图现在很清晰明了了吧，什么？还是凌乱，看得头晕乎？那么再来个规则点的
 
-```
-git config --global alias.ll "log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset' --decorate --abbrev-commit --max-count=20"
-```
+    git config --global alias.ll "log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, %ar%Creset' --decorate --abbrev-commit --max-count=20"
 
 ![git ll](//cdn.09hd.com/images/2012/06/git-ll.png "git ll")
 
@@ -57,14 +51,12 @@ git config --global alias.ll "log --graph --all --pretty=format:'%C(yellow)%h%C(
 
 以下是在我的 `.gitconfig` 中的 alias 设置
 
-```
-[alias]
-    ll= log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(w    hite)- %an, %ar%Creset' --decorate --abbrev-commit --max-count=20
-    l = log --stat --decorate --abbrev-commit --max-count=3
-    sbi = submodule init
-    sbu = submodule update
-    sbp = submodule foreach git pull
-    sbc = submodule foreach git checkout master
-```
+    [alias]
+        ll= log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(w    hite)- %an, %ar%Creset' --decorate --abbrev-commit --max-count=20
+        l = log --stat --decorate --abbrev-commit --max-count=3
+        sbi = submodule init
+        sbu = submodule update
+        sbp = submodule foreach git pull
+        sbc = submodule foreach git checkout master
 
 参考资料：[https://git.wiki.kernel.org/index.php/Aliases](https://git.wiki.kernel.org/index.php/Aliases)

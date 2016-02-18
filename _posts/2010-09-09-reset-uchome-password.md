@@ -18,6 +18,7 @@ tags: [Internet]
     php > exit
 
 <!-- more -->
+
 随后进 mysql 更新新密码即可
 
     $ mysql -u user -p db_name

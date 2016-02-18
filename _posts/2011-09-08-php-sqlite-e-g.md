@@ -5,50 +5,46 @@ category: SQL
 tags: [PHP, SQLite, Usage]
 ---
 
-介绍下 SQLite API 所支持的重要方法，提供一个能够用在你开发中的简单脚本模板，从而告诉你如何使用 PHP 与 SQLite 数据库进行交互操作。假设你已经安装好了 (Apache|nginx) & PHP。
+介绍下 SQLite API 所支持的重要方法，提供一个能够用在你开发中的简单脚本模板，从而告诉你如何使用 PHP 与 SQLite 数据库进行交互操作。假设你已经安装好了 (Apache/nginx) & PHP。
 
 你的系统上并不是一定非要安装可交互的 SQLite 程序；但是为了能够简化创建本教程所需要的一系列初始表格，你应该下载和安装这个程序。然后，为你的 SQL 查询创建一个示例表格，方法是创建一个空白的文本文件，将该文件名作为下列命令（列表A）的参数在交互命令提示符下执行二进制程序：
 
-```sql
-sqlite> CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, country TEXT);
-sqlite> INSERT INTO users VALUES (1, 'john', 'IN');
-sqlite> INSERT INTO users VALUES (2, 'joe', 'UK');
-sqlite> INSERT INTO users VALUES (3, 'diana', 'US');
-```
+    sqlite> CREATE TABLE users (id INTEGER PRIMARY KEY, username TEXT, country TEXT);
+    sqlite> INSERT INTO users VALUES (1, 'john', 'IN');
+    sqlite> INSERT INTO users VALUES (2, 'joe', 'UK');
+    sqlite> INSERT INTO users VALUES (3, 'diana', 'US');
 
 <!-- more -->
 
 一旦表格创建好了，下面就是使用 PHP 的 SQLite 方法建立一个脚本模板。
 
-```php
-<?php
-// 使用的 DB 库
-$db = "users.db";
+    <?php
+    // 使用的 DB 库
+    $db = "users.db";
 
-// 打开 DB 连接，请确保 DB 的可读写性
-// make sure script has read/write permissions!
-$conn = sqlite_open($db) or die ("ERROR: Cannot open database");
+    // 打开 DB 连接，请确保 DB 的可读写性
+    // make sure script has read/write permissions!
+    $conn = sqlite_open($db) or die ("ERROR: Cannot open database");
 
-// 执行 insert 插入操作
-$sql = "INSERT INTO users (id, username, country) VALUES ('5', 'pierre', 'FR')";
-sqlite_query($conn, $sql) or die("Error in query execution: " .　sqlite_error_string(sqlite_last_error($conn)));
+    // 执行 insert 插入操作
+    $sql = "INSERT INTO users (id, username, country) VALUES ('5', 'pierre', 'FR')";
+    sqlite_query($conn, $sql) or die("Error in query execution: " .　sqlite_error_string(sqlite_last_error($conn)));
 
-// 执行 select 查询操作，并将结果传递给 $result
-$sql = "SELECT username, country FROM users";
-$result = sqlite_query($conn, $sql) or die("Error in query execution: " . sqlite_error_string(sqlite_last_error($conn)));
+    // 执行 select 查询操作，并将结果传递给 $result
+    $sql = "SELECT username, country FROM users";
+    $result = sqlite_query($conn, $sql) or die("Error in query execution: " . sqlite_error_string(sqlite_last_error($conn)));
 
-// 将 $result 数组化，并用数组的序号和索引来选择显示的内容，最后打印出
-// print if available
-if (sqlite_num_rows($result) --> 0) {
-    while($row = sqlite_fetch_array($result)) {
-        echo $row[0] . " (" . $row[1] . ") ";
+    // 将 $result 数组化，并用数组的序号和索引来选择显示的内容，最后打印出
+    // print if available
+    if (sqlite_num_rows($result) --> 0) {
+        while($row = sqlite_fetch_array($result)) {
+            echo $row[0] . " (" . $row[1] . ") ";
+        }
     }
-}
 
-// 关闭 DB 连接
-sqlite_close($conn);
-?>
-```
+    // 关闭 DB 连接
+    sqlite_close($conn);
+    ?>
 
 在使用 PHP 的 SQLite 扩展执行 SQL 查询的时候，要按照下列四个简单步骤进行：
 

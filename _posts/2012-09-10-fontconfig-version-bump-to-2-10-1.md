@@ -26,26 +26,22 @@ tags: [Fontconfig]
 
 配置文件中 `test` 标签不能包含多个 `string` 值，类似于
 
-```xml
-<test target="pattern" compare="contains" name="lang">
-  <string>zh</string>
-  <string>ja</string>
-  <string>ko</string>
-</test>
-```
+    <test target="pattern" compare="contains" name="lang">
+      <string>zh</string>
+      <string>ja</string>
+      <string>ko</string>
+    </test>
 
 修改为
 
-```xml
-<test target="pattern" compare="contains" name="lang">
-  <string>zh</string>
-</test>
-<test target="pattern" compare="contains" name="lang">
-  <string>ja</string>
-</test>
-<test target="pattern" compare="contains" name="lang">
-  <string>ko</string>
-</test>
-```
+    <test target="pattern" compare="contains" name="lang">
+      <string>zh</string>
+    </test>
+    <test target="pattern" compare="contains" name="lang">
+      <string>ja</string>
+    </test>
+    <test target="pattern" compare="contains" name="lang">
+      <string>ko</string>
+    </test>
 
 参考资料：[https://bbs.archlinux.org/viewtopic.php?pid=1157957#p1157957](https://bbs.archlinux.org/viewtopic.php?pid=1157957#p1157957)

@@ -13,6 +13,7 @@ Mac OS X 下的 GoAgentX 不太好用，也比较吃资源。况且一般情况�
     $ brew install goagent
 
 <!-- more -->
+
 Homebrew 扩展阅读：[Homebrew 的安装与使用]({% post_url 2013-12-21-how-to-install-and-use-homebrew %})
 
 安装完成后，按照说明

@@ -14,6 +14,7 @@ tags: [Jekyll, Usage, Sass]
 - 对 Sass 有一些了解
 
 <!-- more -->
+
 一般大家都喜欢将 Jekyll push 到 GitHub Pages 上，那么首先对比下 GitHub Pages 上对版本的要求吧：<https://pages.github.com/versions/>。
 
 一切准备就绪，下面开始安装 Sass：
@@ -30,9 +31,7 @@ tags: [Jekyll, Usage, Sass]
 
 最后只需在你的模版文件的 `<head>` 区域加入以下代码：
 
-```html
-<link rel="stylesheet" href="/css/style.css">
-```
+    <link rel="stylesheet" href="/css/style.css">
 
 某些同学，喜欢将 Scss 分割开，最后在 `style.scss` 中使用 `@import` 来引入，当然可以，你可以在 `_sass` 目录下写入你的 Scss，譬如：
 

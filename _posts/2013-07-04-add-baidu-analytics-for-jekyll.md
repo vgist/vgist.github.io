@@ -9,10 +9,8 @@ tags: [Jekyll, Baidu]
 
 其实也非常的简单，修改 `_config.yml` 成如下
 
-```yaml
-  analytics :
-    provider : custom
-```
+    analytics :
+      provider : custom
 
 <!-- more -->
 
@@ -22,19 +20,16 @@ tags: [Jekyll, Baidu]
 
 编辑 `analytics` 文件，填充你在百度站长平台获取到的统计代码，譬如
 
-```html
-<script>
-var _hmt = _hmt || [];
-(function() {
-  var hm = document.createElement("script");
-  hm.src = "//hm.baidu.com/hm.js?1fedf5827cc1b56fe29a9ce806f5114a";
-  var s = document.getElementsByTagName("script")[0]; 
-  s.parentNode.insertBefore(hm, s);
-})();
-</script>
-```
+    <script>
+    var _hmt = _hmt || [];
+    (function() {
+      var hm = document.createElement("script");
+      hm.src = "//hm.baidu.com/hm.js?1fedf5827cc1b56fe29a9ce806f5114a";
+      var s = document.getElementsByTagName("script")[0];
+      s.parentNode.insertBefore(hm, s);
+    })();
+    </script>
 
 搞定收工。
 
-- - -
 为什么一定要 `custom` 呢，因为尽量不要动 `_includes/JB/` 文件夹下的文件吧，以后升级方便....

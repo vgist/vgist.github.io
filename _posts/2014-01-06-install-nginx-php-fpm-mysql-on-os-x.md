@@ -15,6 +15,7 @@ tags: [Nginx, PHP-FPM, MariaDB]
     $ brew tap homebrew/php
 
 <!-- more -->
+
 现在我们可以开始安装了
 
     $ brew install --without-apache --with-fpm php54
@@ -23,11 +24,9 @@ tags: [Nginx, PHP-FPM, MariaDB]
 
 如果你用的到 PHP cli，你需要更新下你的环境变量 `~/.bash_profile`
 
-```bash
     if [ -d $(brew --prefix Cellar/php54) ]; then
         export PATH=$(brew --prefix opt/php54)/bin:$PATH
     fi
-```
 
 自启动，检查有无目录 `~/Library/LaunchAgents`，没有的话新建个目录
 
@@ -70,18 +69,16 @@ tags: [Nginx, PHP-FPM, MariaDB]
 
 测试下
 
-```
-$ curl -IL http://localhost:8080
-HTTP/1.1 200 OK
-Server: nginx/1.4.4
-Date: Mon, 06 Jan 2014 07:50:26 GMT
-Content-Type: text/html
-Content-Length: 612
-Last-Modified: Mon, 06 Jan 2014 07:45:10 GMT
-Connection: keep-alive
-ETag: "52ca5f06-264"
-Accept-Ranges: bytes
-```
+    $ curl -IL http://localhost:8080
+    HTTP/1.1 200 OK
+    Server: nginx/1.4.4
+    Date: Mon, 06 Jan 2014 07:50:26 GMT
+    Content-Type: text/html
+    Content-Length: 612
+    Last-Modified: Mon, 06 Jan 2014 07:45:10 GMT
+    Connection: keep-alive
+    ETag: "52ca5f06-264"
+    Accept-Ranges: bytes
 
 #### 四. 配置
 
@@ -92,105 +89,102 @@ Accept-Ranges: bytes
 
 编辑 `/usr/local/etc/nginx/nginx.conf`
 
-```nginx
-user yourname admin
-worker_processes  1;
 
-error_log   /usr/local/var/log/nginx/error.log debug;
-#error_log   logs/error.log notice;
-#error_log   logs/error.log info;
+    user yourname admin
+    worker_processes  1;
 
-events {
-    worker_connections 128;
-}
+    error_log   /usr/local/var/log/nginx/error.log debug;
+    #error_log   logs/error.log notice;
+    #error_log   logs/error.log info;
 
-http {
-    include mime.types;
-    default_type application/octet-stream;
+    events {
+        worker_connections 128;
+    }
 
-    log_format main
-        '$remote_addr - $remote_user [$time_local] '
-        '"$request" $status $bytes_sent '
-        '"$http_referer" "$http_user_agent" '
-        '"$gzip_ratio"';
+    http {
+        include mime.types;
+        default_type application/octet-stream;
 
-    access_log  /usr/local/var/log/nginx/access.log  main;
+        log_format main
+            '$remote_addr - $remote_user [$time_local] '
+            '"$request" $status $bytes_sent '
+            '"$http_referer" "$http_user_agent" '
+            '"$gzip_ratio"';
 
-    client_header_timeout 10m;
-    client_body_timeout 10m;
-    client_max_body_size 10m;
-    send_timeout 10m;
+        access_log  /usr/local/var/log/nginx/access.log  main;
 
-    client_body_in_file_only clean;
-    #client_body_temp_path /dev/shm 1 2;
-    fastcgi_param REQUEST_BODY_FILE $request_body_file;
+        client_header_timeout 10m;
+        client_body_timeout 10m;
+        client_max_body_size 10m;
+        send_timeout 10m;
 
-    connection_pool_size 256;
-    client_header_buffer_size 1k;
-    large_client_header_buffers 4 2k;
-    request_pool_size 4k;
+        client_body_in_file_only clean;
+        #client_body_temp_path /dev/shm 1 2;
+        fastcgi_param REQUEST_BODY_FILE $request_body_file;
 
-    gzip  on;
-    gzip_min_length  1024;
-    gzip_buffers     4 8k;
-    gzip_http_version 1.1;
-    gzip_comp_level 5;
-    gzip_proxied any;
-    gzip_types       text/html text/plain application/x-javascript text/css application/xml;
-    gzip_vary on;
-    gzip_disable     "MSIE [1-6]\.";
+        connection_pool_size 256;
+        client_header_buffer_size 1k;
+        large_client_header_buffers 4 2k;
+        request_pool_size 4k;
 
-    output_buffers 1 32k;
-    postpone_output 1460;
+        gzip  on;
+        gzip_min_length  1024;
+        gzip_buffers     4 8k;
+        gzip_http_version 1.1;
+        gzip_comp_level 5;
+        gzip_proxied any;
+        gzip_types       text/html text/plain application/x-javascript text/css application/xml;
+        gzip_vary on;
+        gzip_disable     "MSIE [1-6]\.";
 
-    sendfile on;
-    tcp_nopush on;
-    tcp_nodelay on;
+        output_buffers 1 32k;
+        postpone_output 1460;
 
-    keepalive_timeout 75 20;
+        sendfile on;
+        tcp_nopush on;
+        tcp_nodelay on;
 
-    ignore_invalid_headers on;
+        keepalive_timeout 75 20;
 
-    index index.html;
+        ignore_invalid_headers on;
 
-    include conf.d/*.conf;
-}
-```
+        index index.html;
+
+        include conf.d/*.conf;
+    }
 
 编辑 `/usr/local/etc/nignx/conf.d/localhost.conf`
 
-```nginx
-server {
-    listen          8080;
-    server_name     localhost;
-    root            html;
-    charset         UTF-8;
+    server {
+        listen          8080;
+        server_name     localhost;
+        root            html;
+        charset         UTF-8;
 
-    access_log      /usr/local/var/log/nginx/localhost.access.log;
-    error_log       /usr/local/var/log/nginx/localhost.error.log;
+        access_log      /usr/local/var/log/nginx/localhost.access.log;
+        error_log       /usr/local/var/log/nginx/localhost.error.log;
 
-    location ~ \.php$ {
-        fastcgi_pass    unix:/usr/local/var/run/php-fpm.sock;
-        fastcgi_index   index.php;
-        fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
-        include         fastcgi_params;
+        location ~ \.php$ {
+            fastcgi_pass    unix:/usr/local/var/run/php-fpm.sock;
+            fastcgi_index   index.php;
+            fastcgi_param   SCRIPT_FILENAME $document_root$fastcgi_script_name;
+            include         fastcgi_params;
+        }
+
+        location ~ /\.ht {
+            deny    all;
+        }
+
+        location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|ico)$ {
+            expires     30d;
+            access_log  off;
+        }
+
+        location ~ .*\.(js|css|html|htm)$ {
+            expires     12h;
+            access_log  off;
+        }
     }
-
-    location ~ /\.ht {
-        deny    all;
-    }
-
-    location ~ .*\.(gif|jpg|jpeg|png|bmp|swf|ico)$ {
-        expires     30d;
-        access_log  off;
-    }
-
-    location ~ .*\.(js|css|html|htm)$ {
-        expires     12h;
-        access_log  off;
-    }
-}
-```
 
 ##### 2. PHP-FPM 配置
 
@@ -210,87 +204,82 @@ server {
 
 第一次运行设置 root 密码
 
-```
-$ sudo mysql_secure_installation
-/usr/local/bin/mysql_secure_installation: line 379: find_mysql_client: command not found
+    $ sudo mysql_secure_installation
+    /usr/local/bin/mysql_secure_installation: line 379: find_mysql_client: command not found
 
-NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
-      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+    NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+          SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
 
-In order to log into MariaDB to secure it, we'll need the current
-password for the root user.  If you've just installed MariaDB, and
-you haven't set the root password yet, the password will be blank,
-so you should just press enter here.
+    In order to log into MariaDB to secure it, we'll need the current
+    password for the root user.  If you've just installed MariaDB, and
+    you haven't set the root password yet, the password will be blank,
+    so you should just press enter here.
 
-Enter current password for root (enter for none):
-OK, successfully used password, moving on...
+    Enter current password for root (enter for none):
+    OK, successfully used password, moving on...
 
-Setting the root password ensures that nobody can log into the MariaDB
-root user without the proper authorisation.
+    Setting the root password ensures that nobody can log into the MariaDB
+    root user without the proper authorisation.
 
-Set root password? [Y/n] y
-New password:
-Re-enter new password:
-Password updated successfully!
-Reloading privilege tables..
- ... Success!
+    Set root password? [Y/n] y
+    New password:
+    Re-enter new password:
+    Password updated successfully!
+    Reloading privilege tables..
+     ... Success!
 
 
-By default, a MariaDB installation has an anonymous user, allowing anyone
-to log into MariaDB without having to have a user account created for
-them.  This is intended only for testing, and to make the installation
-go a bit smoother.  You should remove them before moving into a
-production environment.
+    By default, a MariaDB installation has an anonymous user, allowing anyone
+    to log into MariaDB without having to have a user account created for
+    them.  This is intended only for testing, and to make the installation
+    go a bit smoother.  You should remove them before moving into a
+    production environment.
 
-Remove anonymous users? [Y/n] y
- ... Success!
+    Remove anonymous users? [Y/n] y
+     ... Success!
 
-Normally, root should only be allowed to connect from 'localhost'.  This
-ensures that someone cannot guess at the root password from the network.
+    Normally, root should only be allowed to connect from 'localhost'.  This
+    ensures that someone cannot guess at the root password from the network.
 
-Disallow root login remotely? [Y/n] y
- ... Success!
+    Disallow root login remotely? [Y/n] y
+     ... Success!
 
-By default, MariaDB comes with a database named 'test' that anyone can
-access.  This is also intended only for testing, and should be removed
-before moving into a production environment.
+    By default, MariaDB comes with a database named 'test' that anyone can
+    access.  This is also intended only for testing, and should be removed
+    before moving into a production environment.
 
-Remove test database and access to it? [Y/n] y
- - Dropping test database...
- ... Success!
- - Removing privileges on test database...
- ... Success!
+    Remove test database and access to it? [Y/n] y
+     - Dropping test database...
+     ... Success!
+     - Removing privileges on test database...
+     ... Success!
 
-Reloading the privilege tables will ensure that all changes made so far
-will take effect immediately.
+    Reloading the privilege tables will ensure that all changes made so far
+    will take effect immediately.
 
-Reload privilege tables now? [Y/n] y
- ... Success!
+    Reload privilege tables now? [Y/n] y
+     ... Success!
 
-Cleaning up...
+    Cleaning up...
 
-All done!  If you've completed all of the above steps, your MariaDB
-installation should now be secure.
+    All done!  If you've completed all of the above steps, your MariaDB
+    installation should now be secure.
 
-Thanks for using MariaDB!
-```
+    Thanks for using MariaDB!
 
 ##### 3. aliases
 
 为了后面管理方便，将命令 alias 下，`vim ~/.bash_aliases`
 
-```bash
-alias nginx.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
-alias nginx.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
-alias nginx.restart='nginx.stop && nginx.start'
-alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist"
-alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist"
-alias php-fpm.restart='php-fpm.stop && php-fpm.start'
-alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
-alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
-alias mysql.restart='mysql.stop && mysql.start'
-
-```
+    alias nginx.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+    alias nginx.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.nginx.plist'
+    alias nginx.restart='nginx.stop && nginx.start'
+    alias php-fpm.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist"
+    alias php-fpm.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.php54.plist"
+    alias php-fpm.restart='php-fpm.stop && php-fpm.start'
+    alias mysql.start="launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
+    alias mysql.stop="launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.mariadb.plist"
+    alias mysql.restart='mysql.stop && mysql.start'
 
 接着编辑 `~/.bash_profile` 文件，添加
 
