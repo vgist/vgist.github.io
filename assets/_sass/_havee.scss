@@ -3,18 +3,6 @@
 
 /* This is base content. */
 
-@mixin sans-serif {
-  font-family: Tahoma, Arial, Helvetica, sans-serif;
-}
-
-@mixin serif {
-  font-family: serif;
-}
-
-@mixin monospace {
-  font-family: Monaco, Consolas, Terminal, monospace;
-}
-
 @mixin text-shadow {
   text-shadow: 0 1px 0px $base07, 0 1px 1px rgba($base08, $alpha*3);
 }
