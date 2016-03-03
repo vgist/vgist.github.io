@@ -18,9 +18,10 @@ rss_path: /rss.xml
 # Build settings
 markdown: kramdown
 kramdown:
+    input: GFM
 permalink: /:categories/:year-:month/:title.html
 gems: [jekyll-paginate]
-
+exclude: [Gemfile, Gemfile.lock, qrsync, Rakefile]
 assets_path: /assets
 cdn: "//cdn.09hd.com"
 sass:
