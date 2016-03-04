@@ -25,7 +25,7 @@ tags: [Git, CLI]
 最后，`~/.bashrc` 中去组织你的 PS1，在适当的地方添加上 `$(__git_ps1)`，譬如我的
 
     if [ `id -u` -ne 500 ]; then
-        export GIT_PS_SHOWDIRTYSTATE=1
+        export GIT_PS1_SHOWDIRTYSTATE=1
         export PS1='\[\e[1;36m\]→\[\e[m\] \[\e[0;32m\]\w\[\e[0;35m\]$(__git_ps1)\[\e[1;32m\] \$\[\e[m\] '
     fi
 
