@@ -7,12 +7,6 @@ tags: [Jekyll]
 
 昨天收到 Github 的邮件，提示 GitHub Pages 将于 5 月 1 号以后只支持 kramdown。
 
->......
->You are currently using the 'redcarpet' Markdown engine, which will not be supported on GitHub Pages after May 1st. At that time, your site will use 'kramdown' for markdown rendering instead. To suppress this warning, remove the 'markdown' setting in your site's '_config.yml' file and confirm your site renders as expected. For more information, see https://help.github.com/articles/updating-your-markdown-processor-to-kramdown.
->......
-
-<!-- more -->
-
 马上翻到官网看了下，在 Jekyll 3 中，一些功能被剥离，成为插件，这意味着 `--safe` 模式下，一些 Jekyll 2 下的功能不被支持，如下：
 
 - jekyll-paginate
@@ -22,6 +16,8 @@ tags: [Jekyll]
 - redcarpet
 - toml
 - classifier-reborn
+
+<!-- more -->
 
 如果你托管于 Github Pages，可以在 5 月 1 日前后关注 <https://pages.github.com/versions/> 上的变化。
 
