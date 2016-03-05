@@ -23,13 +23,13 @@ tags: [Jekyll]
 
 好吧，动手进行版本升级吧。
 
-##### Upgrade
+#### Upgrade
 
     gem upgrade jekyll
 
 注意，Jekyll 3 需要 Ruby >= 2.0.0
 
-##### Kramdown
+#### Kramdown
 
 首先要做的，就是修改 markdown 解析引擎至 [Kramdown](http://kramdown.gettalong.org/)
 
@@ -41,7 +41,7 @@ kramdown:
   input: GFM
 ```
 
-##### Syntax Highlighting
+#### Syntax Highlighting
 
 语法高亮将仅支持 [**Rouge**](http://rouge.jneen.net/)
 
@@ -49,10 +49,17 @@ kramdown:
 
 可能，你模版的 style 也需要一些变动。
 
+#### Permalink
+
 ##### Relative Permalink
 
-- Jekyll 3 以后的版本，默认情况下，Permalink 中将不再支持相对路径，可以通过 `relative_permalinks: true` 来开启
-- Jekyll 3 以后的版本，Permalink 不再自动添加 trailing slash
+Jekyll 3 以后的版本，默认情况下，Permalink 中将不再支持相对路径，可以通过如下开启
+
+    relative_permalinks: true
+
+##### Trailing slash
+
+Jekyll 3 以后的版本，Permalink 不再自动添加 trailing slash
 
 譬如 `permalink: /:year-:month-:day-:title`
 
@@ -61,7 +68,7 @@ kramdown:
 
 所以，如果你想在 jekyll 3 中仍然目录形式，那么你需要修改成如此：`permalink: /:year-:month-:day-:title/`
 
-##### jekyll-paginate
+#### jekyll-paginate
 
 这个应该是一个基本功能，是在想不通，为什么 Jekyll 默认剥离
 
