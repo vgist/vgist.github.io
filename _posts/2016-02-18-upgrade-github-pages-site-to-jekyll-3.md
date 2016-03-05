@@ -36,6 +36,7 @@ tags: [Jekyll]
 - 移除 **_config.yml** 中的 `markdown: xxx`
 - 添加 kramdown 的 GFM 支持
 
+
     kramdown:
       input: GFM
 
