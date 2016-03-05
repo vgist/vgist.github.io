@@ -34,7 +34,7 @@ tags: [Jekyll]
 首先要做的，就是修改 markdown 解析引擎至 [Kramdown](http://kramdown.gettalong.org/)
 
 - 移除 **_config.yml** 中的 `markdown: xxx`
-- 添加 kramdown 的 GFM 支持
+- 添加 kramdown 的 GFM ，来支持 fenced code blocks
 
 ```
 kramdown:
