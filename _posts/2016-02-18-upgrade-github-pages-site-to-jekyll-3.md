@@ -37,8 +37,8 @@ tags: [Jekyll]
 - 添加 kramdown 的 GFM 支持
 
 ```
-    kramdown:
-      input: GFM
+kramdown:
+  input: GFM
 ```
 
 ##### Syntax Highlighting
