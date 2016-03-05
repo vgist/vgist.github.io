@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "托管于 Github Pages 的博客升级至 jekyll 3"
+title: "托管 Github Pages 的博客升级至 jekyll 3"
 category: Internet
 tags: [Jekyll]
 ---
