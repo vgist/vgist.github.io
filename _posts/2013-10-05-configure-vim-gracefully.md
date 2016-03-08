@@ -59,6 +59,10 @@ tags: [Vim]
         set other
     endif
 
+你当然可以通过如下查看具体的 feature-list
+
+    :help feature-list
+
 #### 检查
 
 你可以检查一些功能是否存在其本身的一些选项，譬如
