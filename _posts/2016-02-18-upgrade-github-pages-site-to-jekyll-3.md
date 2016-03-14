@@ -23,13 +23,13 @@ tags: [Jekyll]
 
 好吧，动手进行版本升级吧。
 
-#### Upgrade
+#### 1. Upgrade
 
     gem upgrade jekyll
 
 注意，Jekyll 3 需要 Ruby >= 2.0.0
 
-#### Kramdown
+#### 2. Kramdown
 
 首先要做的，就是修改 markdown 解析引擎至 [Kramdown](http://kramdown.gettalong.org/)
 
@@ -41,7 +41,7 @@ kramdown:
   input: GFM
 ```
 
-#### Syntax Highlighting
+#### 3. Syntax Highlighting
 
 语法高亮将仅支持 [**Rouge**](http://rouge.jneen.net/)
 
@@ -49,7 +49,7 @@ kramdown:
 
 理论上，Rouge 兼容 Pygments 生成的样式，如果你对你的 code 样式做过修改，那么可能，你模版的 style 也需要一些变动。
 
-##### Rouge
+#####  a. Rouge
 
 你可以使用 Rouge 重新为你的 Jekyll 生成样式：
 
@@ -73,15 +73,15 @@ kramdown:
 
     $ rougify style github > syntax.css
 
-#### Permalink
+#### 4. Permalink
 
-##### Relative Permalink
+##### a. Relative Permalink
 
 Jekyll 3 以后的版本，默认情况下，Permalink 中将不再支持相对路径，可以通过如下开启
 
     relative_permalinks: true
 
-##### Trailing slash
+##### b. Trailing slash
 
 Jekyll 3 以后的版本，Permalink 不再自动添加 trailing slash
 
@@ -92,7 +92,7 @@ Jekyll 3 以后的版本，Permalink 不再自动添加 trailing slash
 
 所以，如果你想在 jekyll 3 中仍然目录形式，那么你需要修改成如此：`permalink: /:year-:month-:day-:title/`
 
-#### jekyll-paginate
+#### 5. jekyll-paginate
 
 这个应该是一个基本功能，是在想不通，为什么 Jekyll 默认剥离
 
