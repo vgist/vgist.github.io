@@ -47,7 +47,31 @@ kramdown:
 
 - 移除 **_config.yml** 中的 `highlighter:xxx`
 
-可能，你模版的 style 也需要一些变动。
+理论上，Rouge 兼容 Pygments 生成的样式，如果你对你的 code 样式做过修改，那么可能，你模版的 style 也需要一些变动。
+
+##### Rouge
+
+你可以使用 Rouge 重新为你的 Jekyll 生成样式：
+
+    $ rougify style monokai > syntax.css
+
+同时，Rouge 内置了多个样式，可以用如下命令列出
+
+    $ rougify help style
+    usage: rougify style [<theme-name>] [<options>]
+
+    Print CSS styles for the given theme.  Extra options are
+    passed to the theme.  Theme defaults to thankful_eyes.
+
+    options:
+      --scope(default: .highlight) a css selector to scope by
+
+    available themes:
+    base16, base16.dark, base16.monokai, base16.monokai.light, base16.solarized, base16.solarized.dark, colorful, github, molokai, monokai, monokai.sublime, thankful_eyes
+
+如果你喜欢 Github 的默认样式，你可以这样生成
+
+    $ rougify style github > syntax.css
 
 #### Permalink
 
