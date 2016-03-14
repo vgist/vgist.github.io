@@ -47,7 +47,7 @@ kramdown:
 
 - 移除 **_config.yml** 中的 `highlighter:xxx`
 
-理论上，Rouge 兼容 Pygments 生成的样式，如果你对你的 code 样式做过修改，那么可能，你模版的 style 也需要一些变动。
+理论上，Rouge 100% 兼容 Pygments。
 
 #####  a. Rouge
 
