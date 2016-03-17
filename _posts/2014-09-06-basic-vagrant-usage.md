@@ -81,7 +81,7 @@ Linux local 3.10.7-gentoo-r1 #1 SMP Wed Oct 30 20:15:42 UTC 2013 i686 Intel(R) C
 
 ##### a. 基础设定
 
-```
+```ruby
 VAGRANTFILE_API_VERSION = "2"
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     config.vm.box = "gentoo"
@@ -99,7 +99,7 @@ end
 
 由于 VirtualBox 免费，且跨平台，安装方便，很多人都使用 VirtualBox。以 VirtualBox 为例：
 
-```
+```ruby
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ......
     config.vm.provider "virtualbox" do |vb|
@@ -115,7 +115,7 @@ end
 
 以上配置也是一目了然，VMWare Fusion 呢
 
-```
+```ruby
 Vagrant.configure(VAGRANTFILE_API_VERSION) do |config|
     ......
     config.vm.provider "vmware_fusion" do |vb|
@@ -133,7 +133,7 @@ end
 
 尽管我觉得多个 box 运行一个环境，非常的奢侈，与其跑多个虚拟机，倒不如用 docker 来管理。但谁知道大家的 cpu, ram 是否叼炸天呢。各有所好嘛......
 
-```
+```ruby
 config.vm.define :app1 do |app1|
     app1.vm.box = "app1"
     app1.vm.network "private_network", ip: "192.168.33.10"
