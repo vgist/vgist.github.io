@@ -19,9 +19,11 @@ tags: [Swap]
 
 有时我们认为此种方法创建大文件速度太慢，因此大部分使用以下三种方法来创建稀疏文件，任选其一
 
-    follocate -l 512M /swap
-    truncate -s 512M /swap
-    dd of=/swap bs=1 seek=512M count=0
+```
+follocate -l 512M /swap
+truncate -s 512M /swap
+dd of=/swap bs=1 seek=512M count=0
+```
 
 其次使用 `mkswap` 命令把这个文件制作成 swap
 

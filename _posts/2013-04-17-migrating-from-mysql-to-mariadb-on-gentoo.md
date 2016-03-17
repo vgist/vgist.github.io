@@ -10,11 +10,13 @@ tags: [MySQL, MariaDB, Gentoo]
 
 <!-- more -->
 
-    # /etc/init.d/mysql stop
-    # emerge -1 mariadb
-    # revdep-rebuild
-    # /etc/init.d/mysql start
-    # mysql_upgrade -u root -p
-    # mysqlcheck --repair --all-databases -u root -p
+```
+# /etc/init.d/mysql stop
+# emerge -1 mariadb
+# revdep-rebuild
+# /etc/init.d/mysql start
+# mysql_upgrade -u root -p
+# mysqlcheck --repair --all-databases -u root -p
+```
 
 OK，完工

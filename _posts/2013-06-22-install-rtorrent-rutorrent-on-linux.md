@@ -15,9 +15,11 @@ tags: [Rtorrent, Rutorrent, PT]
 
 下面是以 root 权限来安装的步骤：
 
-    cd ~
-    wget --no-check-certificate -O autodl-setup http://sourceforge.net/projects/autodl-irssi/files/autodl-setup/download
-    sh autodl-setup
+```
+cd ~
+wget --no-check-certificate -O autodl-setup http://sourceforge.net/projects/autodl-irssi/files/autodl-setup/download
+sh autodl-setup
+```
 
 脚本运行期间会提示你输入安装的组件、用户、密码、rutorrent 运行用户等。整个安装过程非常的简单，除了在添加完一个用户后就 `Enter` 结束添加用户这一点需要注意外，否则就会无限制的循环添加用户。
 

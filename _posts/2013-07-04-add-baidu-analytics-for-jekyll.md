@@ -9,10 +9,12 @@ tags: [Jekyll, Baidu]
 
 其实也非常的简单，修改 `_config.yml` 成如下
 
-    # 网站统计
-    analytics:
-        baidu:
-            siteid: xxxxxxxxxxxxxxxx        # 百度统计 js 代码后的字符串
+```yaml
+# 网站统计
+analytics:
+    baidu:
+        siteid: xxxxxxxxxxxxxxxx        # 百度统计 js 代码后的字符串
+```
 
 <!-- more -->
 

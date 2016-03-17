@@ -76,7 +76,7 @@ archlinux:
 
 生成的 html 高亮结果
 
-{% highlight c %}
+```c
 /* hello world demo */
 #include <stdio.h>
 int main(int argc, char **argv)
@@ -84,7 +84,7 @@ int main(int argc, char **argv)
     printf("Hello, World!\n");
     return 0;
 }
-{% endhighlight %}
+```
 
 #### 四. Pygments 样式
 

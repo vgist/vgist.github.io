@@ -24,17 +24,19 @@ tags: [Jekyll, Usage]
 
 一个基本的 **Jekyll** 站点结构通常如下所示：
 
-    .
-    |-- _config.yml
-    |-- _includes
-    |-- _layouts
-    |   |-- default.html
-    |   `-- post.html
-    |-- _posts
-    |   |-- 2007-10-29-why-every-programmer-should-play-nethack.textile
-    |   `-- 2009-04-26-barcamp-boston-4-roundup.textile
-    |-- _site
-    `-- index.html
+```
+.
+|-- _config.yml
+|-- _includes
+|-- _layouts
+|   |-- default.html
+|   `-- post.html
+|-- _posts
+|   |-- 2007-10-29-why-every-programmer-should-play-nethack.textile
+|   `-- 2009-04-26-barcamp-boston-4-roundup.textile
+|-- _site
+`-- index.html
+```
 
 每个文件的概述如下：
 

@@ -30,12 +30,14 @@ PHP 的 FastCGI 使你的所有 php 应用软件通过 mod_fastci 运行，而�
 
 编辑 /etc/nginx/nginx.conf
 
-    location ~ .*\.php$ {
-        fastcgi_pass   unix:/var/run/php-fpm.sock;
-        fastcgi_index  index.php;
-        fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
-        include        fastcgi_params;
-    }
+```nginx
+location ~ .*\.php$ {
+    fastcgi_pass   unix:/var/run/php-fpm.sock;
+    fastcgi_index  index.php;
+    fastcgi_param SCRIPT_FILENAME  $document_root$fastcgi_script_name;
+    include        fastcgi_params;
+}
+```
 
 #### lighttpd
 
@@ -46,15 +48,17 @@ PHP 的 FastCGI 使你的所有 php 应用软件通过 mod_fastci 运行，而�
 
 编辑 `/etc/lighttpd/mod_fastcgi.conf`
 
-    server.modules += ("mod_fastcgi")
-    fastcgi.server = ( ".php" =>
-        ( "localhost" =>
-            (
-                "socket"    => "/var/run/php-fpm.sock",
-            )
+```
+server.modules += ("mod_fastcgi")
+fastcgi.server = ( ".php" =>
+    ( "localhost" =>
+        (
+            "socket"    => "/var/run/php-fpm.sock",
         )
     )
-    fastcgi.map-extensions = ( ".php3" => ".php", ".php4" => ".php", ".php5" => ".php" )
+)
+fastcgi.map-extensions = ( ".php3" => ".php", ".php4" => ".php", ".php5" => ".php" )
+```
 
 #### apache
 
@@ -69,17 +73,21 @@ PHP 的 FastCGI 使你的所有 php 应用软件通过 mod_fastci 运行，而�
 
 编辑文件 `/etc/apache2/modules.d/70_mod_php5.conf`，告诉 apache2，php-fpm sock 的路径
 
-    <IfModule mod_mime.c>
-    #    AddHandler application/x-httpd-php .php .php5 .phtml
-    #    AddHandler application/x-httpd-php-source .phps
-        AddHandler fcgi:/var/run/php-fpm.sock .php .php5
-    </IfModule>
+```apache
+<IfModule mod_mime.c>
+#    AddHandler application/x-httpd-php .php .php5 .phtml
+#    AddHandler application/x-httpd-php-source .phps
+    AddHandler fcgi:/var/run/php-fpm.sock .php .php5
+</IfModule>
+```
 
 编辑文件 `/etc/apache2/modules.d/20_mod_fastcgi_handler.conf`
 
-    <IfDefine FASTCGI_HANDLER>
-    LoadModule fastcgi_handler_module modules/mod_fastcgi_handler.so
-    </IfDefine>
+```apache
+<IfDefine FASTCGI_HANDLER>
+LoadModule fastcgi_handler_module modules/mod_fastcgi_handler.so
+</IfDefine>
+```
 
 编辑文件 `/etc/conf.d/apache2`，在 `-D php5` 后面添加 `-D FASTCGI_HANDLER`，告诉 apache2 以 fastcgi-handler 模式启动，如下是我的配置
 

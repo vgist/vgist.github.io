@@ -41,46 +41,48 @@ Jekyll 能够让你用你能想象出的任何方式来构造你的网站。下�
 
 注意：在配置文件中你不能使用tabs键，这将会要么导致解析错误，要么将会使用默认设置。
 
-    safe:false
-    auto:false
-    server:false
-    server_port:4000
-    baseurl:/jekyll_demo
-    url:http://localhost:4000
+```yaml
+safe:false
+auto:false
+server:false
+server_port:4000
+baseurl:/jekyll_demo
+url:http://localhost:4000
 
-    source:.
-    destination:./_site
-    plugins:./_plugins
+source:.
+destination:./_site
+plugins:./_plugins
 
-    future:true
-    lsi:false
-    pygments:false
-    markdown:maruku
-    permalink:date
+future:true
+lsi:false
+pygments:false
+markdown:maruku
+permalink:date
 
-    maruku:
-    	use_tex:false
-    	use_divs:false
-    	use_engine:blathtex
-    	png_dir:images/latex
-    	png_url:/images/latex
+maruku:
+    use_tex:false
+    use_divs:false
+    use_engine:blathtex
+    png_dir:images/latex
+    png_url:/images/latex
 
-    rediscount:
-    	extension:[]
+rediscount:
+    extension:[]
 
-    kramdown:
-    	auto_ids:treu,
-    	footnote_nr:1
-    	entity_output:as_char
-    	toc_levels:1..6
-    	use_coderay:false
+kramdown:
+    auto_ids:treu,
+    footnote_nr:1
+    entity_output:as_char
+    toc_levels:1..6
+    use_coderay:false
 
-    coderat:
-    	caderay_wrap:div
-    	caderay_line_numbers:inline
-    	caderay_line_numbers_start:1
-    	caderay_tab_width:4
-    	caderay_bold_every:10
-    	caderay_css:style
+coderat:
+    caderay_wrap:div
+    caderay_line_numbers:inline
+    caderay_line_numbers_start:1
+    caderay_tab_width:4
+    caderay_bold_every:10
+    caderay_css:style
+```
 
 转自：[【译文】Jekyll的配置](http://zhouyichu.com/%E7%BF%BB%E8%AF%91/Jekyll-Wiki-Configuration.html)

@@ -9,10 +9,12 @@ tags: [Jekyll, duoshuo]
 
 首先按照如下格式编辑 `_config.yml`
 
-    comments :
-      provider : duoshuo
-      duoshuo :
-        short_name : havee
+```yaml
+comments :
+  provider : duoshuo
+  duoshuo :
+    short_name : havee
+```
 
 <!-- more -->
 
@@ -61,17 +63,21 @@ OK，完成手工。
 
 由于默认所有页面都加载了多说的相关 js，所以现在只需在相关模板位置添加如下代码
 
-    <section>
-      <h3>Latest Comments</h3>
-      <ul class="ds-recent-comments" data-num-items="10" data-show-avatars="0" data-show-time="0" data-show-title="0" data-show-admin="0" data-excerpt-length="18"></ul>
-    </section>
+```html
+<section>
+  <h3>Latest Comments</h3>
+  <ul class="ds-recent-comments" data-num-items="10" data-show-avatars="0" data-show-time="0" data-show-title="0" data-show-admin="0" data-excerpt-length="18"></ul>
+</section>
+```
 
 最新的访客呢？
 
-    <section style="width:250px;">
-      <h3>Recently Visitors</h3>
-      <ul class="ds-recent-visitors" data-num-items="4" data-avatar-size="45" style="margin-top:10px;"></ul>
-    </section>
+```
+<section style="width:250px;">
+  <h3>Recently Visitors</h3>
+  <ul class="ds-recent-visitors" data-num-items="4" data-avatar-size="45" style="margin-top:10px;"></ul>
+</section>
+```
 
 ##### Update:
 

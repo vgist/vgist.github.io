@@ -9,12 +9,14 @@ tags: [Joomla]
 
 拿到 **error.php** 文件
 
-    ...
-    2013-07-17	16:47:54	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-    2013-07-17	16:47:57	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-    2013-07-17	16:48:00	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-    2013-07-17	16:48:03	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-    ...
+```
+...
+2013-07-17	16:47:54	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+2013-07-17	16:47:57	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+2013-07-17	16:48:00	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+2013-07-17	16:48:03	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+...
+```
 
 <!-- more -->
 
@@ -26,25 +28,27 @@ tags: [Joomla]
 
 可读性不强，整理下
 
-    #!/bin/bash
+```shell
+#!/bin/bash
 
-    # 重启 iptables，系统路径可能有所不同
-    /etc/init.d/iptables restart
+# 重启 iptables，系统路径可能有所不同
+/etc/init.d/iptables restart
 
-    [[ -f /tmp/block ]] && rm /tmp/block
+[[ -f /tmp/block ]] && rm /tmp/block
 
-    # 取 error.php 第四个字段，排序后，打印序号大于 4 的行到 /tmp/black
-    awk '{print $4}' /var/www/YOURPATH/error.php | sort | uniq -c | sort -r \
-        | awk '($1>4) {print $2}' >> /tmp/block
+# 取 error.php 第四个字段，排序后，打印序号大于 4 的行到 /tmp/black
+awk '{print $4}' /var/www/YOURPATH/error.php | sort | uniq -c | sort -r \
+    | awk '($1>4) {print $2}' >> /tmp/block
 
-    # for 循环加入 ip 到 iptables
-    for i in `awk '{print $1}' /tmp/block`; do
-        iptables -I INPUT -p tcp -s $i -j DROP
-    done
+# for 循环加入 ip 到 iptables
+for i in `awk '{print $1}' /tmp/block`; do
+    iptables -I INPUT -p tcp -s $i -j DROP
+done
 
-    # 一些清理工作
-    rm /tmp/block
-    echo "" > /var/www/YOURPATH/error.php
+# 一些清理工作
+rm /tmp/block
+echo "" > /var/www/YOURPATH/error.php
+```
 
 存为 block 文件，加上执行权限 `chmod +x block`。
 

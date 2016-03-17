@@ -13,8 +13,10 @@ tags: [Git, Usage]
 
 或者直接编辑 `.gitconfig` 文件，格式如下
 
-    [alias]
-          alias= command
+```
+[alias]
+      alias= command
+```
 
 <!-- more -->
 
@@ -24,8 +26,10 @@ tags: [Git, Usage]
 
 或者
 
-    [alias]
-          s = status
+```
+[alias]
+      s = status
+```
 
 这只是一个很简单的例子，可能大家都用不上，那么下面来个 `git log` 的例子。
 
@@ -51,12 +55,14 @@ tags: [Git, Usage]
 
 以下是在我的 `.gitconfig` 中的 alias 设置
 
-    [alias]
-        ll= log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(w    hite)- %an, %ar%Creset' --decorate --abbrev-commit --max-count=20
-        l = log --stat --decorate --abbrev-commit --max-count=3
-        sbi = submodule init
-        sbu = submodule update
-        sbp = submodule foreach git pull
-        sbc = submodule foreach git checkout master
+```
+[alias]
+    ll= log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(w    hite)- %an, %ar%Creset' --decorate --abbrev-commit --max-count=20
+    l = log --stat --decorate --abbrev-commit --max-count=3
+    sbi = submodule init
+    sbu = submodule update
+    sbp = submodule foreach git pull
+    sbc = submodule foreach git checkout master
+```
 
 参考资料：[https://git.wiki.kernel.org/index.php/Aliases](https://git.wiki.kernel.org/index.php/Aliases)

@@ -11,41 +11,47 @@ tags: [Nginx,Domain]
 
 想到就做，将 **ihavanna.org** 解析到阿里云指定 IP：
 
-    $ dig ihavanna.org +nostats +nocomments +nocmd
+```
+$ dig ihavanna.org +nostats +nocomments +nocmd
 
-    ; <<>> DiG 9.9.2-P2 <<>> ihavanna.org +nostats +nocomments +nocmd
-    ;; global options: +cmd
-    ;ihavanna.org.                  IN      A
-    ihavanna.org.           3600    IN      A       111.111.111.111
+; <<>> DiG 9.9.2-P2 <<>> ihavanna.org +nostats +nocomments +nocmd
+;; global options: +cmd
+;ihavanna.org.                  IN      A
+ihavanna.org.           3600    IN      A       111.111.111.111
+```
 
 <!-- more -->
 
 将 **www.ihavanna.org** cname 到 **ihavanna.org**：
 
-    $ dig www.ihavanna.org +nostats +nocomments +nocmd
+```
+$ dig www.ihavanna.org +nostats +nocomments +nocmd
 
-    ; <<>> DiG 9.9.2-P2 <<>> www.ihavanna.org +nostats +nocomments +nocmd
-    ;; global options: +cmd
-    ;www.ihavanna.org.              IN      A
-    www.ihavanna.org.       3600    IN      CNAME   ihavanna.org.
-    ihavanna.org.           3600    IN      A       111.111.111.111
+; <<>> DiG 9.9.2-P2 <<>> www.ihavanna.org +nostats +nocomments +nocmd
+;; global options: +cmd
+;www.ihavanna.org.              IN      A
+www.ihavanna.org.       3600    IN      CNAME   ihavanna.org.
+ihavanna.org.           3600    IN      A       111.111.111.111
+```
 
 同时 ssh 到阿里云，创建个主机配置文件：
 
-    server {
-      listen                    80              default;
-      server_name    ihavanna.org;
-      index  index.html index.htm;
+```nginx
+server {
+  listen                    80              default;
+  server_name    ihavanna.org;
+  index  index.html index.htm;
 
-      loction /{
-        proxy_pass              http://ihavanna.github.com/;
-        proxy_redirect          off;
-        proxy_set_header        Host            $http_host;
-        proxy_set_header        X-Real-IP       $remote_addr;
-        proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
-        proxy_buffer_size       64k;
-        proxy_buffers           32              64k;
-      }
-    }
+  loction /{
+    proxy_pass              http://ihavanna.github.com/;
+    proxy_redirect          off;
+    proxy_set_header        Host            $http_host;
+    proxy_set_header        X-Real-IP       $remote_addr;
+    proxy_set_header        X-Forwarded-For $proxy_add_x_forwarded_for;
+    proxy_buffer_size       64k;
+    proxy_buffers           32              64k;
+  }
+}
+```
 
 OK，完工。

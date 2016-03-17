@@ -26,11 +26,13 @@ tags: [Fontconfig]
 
 配置文件中 `test` 标签不能包含多个 `string` 值，类似于
 
-    <test target="pattern" compare="contains" name="lang">
-      <string>zh</string>
-      <string>ja</string>
-      <string>ko</string>
-    </test>
+```xml
+<test target="pattern" compare="contains" name="lang">
+  <string>zh</string>
+  <string>ja</string>
+  <string>ko</string>
+</test>
+```
 
 修改为
 

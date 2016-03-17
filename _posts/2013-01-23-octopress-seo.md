@@ -17,15 +17,17 @@ octopress 默认已经提供了关键字和描述，问题在于 `new_post` 不�
 
 <!-- more -->
 
-    ---
-    layout: post
-    title: "Octopress SEO"
-    date: 2013-01-23 22:13
-    comments: true
-    categories: Internet
-    keywords: octopress, seo, keywords, description
-    description: Octopress 的 SEO 在默认情况下已经表现不错了，不过有个问题，`new_post` 不生成 meta description 和 keywords。
-    ---
+```
+---
+layout: post
+title: "Octopress SEO"
+date: 2013-01-23 22:13
+comments: true
+categories: Internet
+keywords: octopress, seo, keywords, description
+description: Octopress 的 SEO 在默认情况下已经表现不错了，不过有个问题，`new_post` 不生成 meta description 和 keywords。
+---
+```
 
 ### Home Page
 
@@ -35,8 +37,10 @@ octopress 默认的在首页的描述是，最后一篇文章截取一定的长�
 
 编辑 `_config.yml`，添加 keywords 和 description 变量，如下
 
-    keywords: linux, gentoo, httpd, browser, internet, media, sql, news, havanna
-    description: Havanna's Hobbies, Linux Tips Record。
+```
+keywords: linux, gentoo, httpd, browser, internet, media, sql, news, havanna
+description: Havanna's Hobbies, Linux Tips Record。
+```
 
 #### head.html
 
@@ -55,29 +59,31 @@ octopress 默认的在首页的描述是，最后一篇文章截取一定的长�
 
 看了下 `Rakefile` 文件，很简单嘛：
 
-    puts "Creating new post: #{filename}"
-    open(filename, 'w') do |post|
-      post.puts "---"
-      post.puts "layout: post"
-      post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
-      post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
-      post.puts "comments: true"
-      post.puts "categories: "
-      post.puts "keywords: "
-      post.puts "description: "
-      post.puts "---"
+```ruby
+puts "Creating new post: #{filename}"
+open(filename, 'w') do |post|
+  post.puts "---"
+  post.puts "layout: post"
+  post.puts "title: \"#{title.gsub(/&/,'&amp;')}\""
+  post.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+  post.puts "comments: true"
+  post.puts "categories: "
+  post.puts "keywords: "
+  post.puts "description: "
+  post.puts "---"
 
 
-    puts "Creating new page: #{file}"
-    open(file, 'w') do |page|
-      page.puts "---"
-      page.puts "layout: page"
-      page.puts "title: \"#{title}\""
-      page.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
-      page.puts "comments: true"
-      page.puts "keywords: "
-      page.puts "description: "
-      page.puts "sharing: true"
-      page.puts "footer: true"
-      page.puts "---"
-    end
+puts "Creating new page: #{file}"
+open(file, 'w') do |page|
+  page.puts "---"
+  page.puts "layout: page"
+  page.puts "title: \"#{title}\""
+  page.puts "date: #{Time.now.strftime('%Y-%m-%d %H:%M')}"
+  page.puts "comments: true"
+  page.puts "keywords: "
+  page.puts "description: "
+  page.puts "sharing: true"
+  page.puts "footer: true"
+  page.puts "---"
+end
+```

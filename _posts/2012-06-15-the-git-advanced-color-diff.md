@@ -14,26 +14,28 @@ Gentoo 默认的 git 真的很朴素，默认配置实在是太简单了。
 
 我们还是先将 git 的颜色部分配置好吧。
 
-    [color]
-        branch = auto
-        diff = auto
-        status = auto
-        grep = auto
-        ui = auto
-        interactive = auto
-    [color "branch"]
-        current = yellow reverse
-        local = yellow
-        remote = green
-    [color "diff"]
-        meta = yellow
-        frag = magenta
-        old = red
-        new = green
-    [color "status"]
-        added = yellow
-        changed = green
-        untracked = cyan
+```
+[color]
+    branch = auto
+    diff = auto
+    status = auto
+    grep = auto
+    ui = auto
+    interactive = auto
+[color "branch"]
+    current = yellow reverse
+    local = yellow
+    remote = green
+[color "diff"]
+    meta = yellow
+    frag = magenta
+    old = red
+    new = green
+[color "status"]
+    added = yellow
+    changed = green
+    untracked = cyan
+```
 
 现在操作 `git status/diff/branch` 时是否眼前一亮？再也不用在白茫茫的一片中寻找信息了。
 
