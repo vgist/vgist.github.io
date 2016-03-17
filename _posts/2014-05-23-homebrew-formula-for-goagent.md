@@ -26,9 +26,11 @@ Homebrew 扩展阅读：[Homebrew 的安装与使用]({% post_url 2013-12-21-how
 
 为了方便后面使用，可以使用 aliases
 
-    $ echo "alias goagent.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
-    $ echo "alias goagent.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
-    $ echo "alias goagent.restart='goagent.stop && goagent.start'" >> ~/.bashrc
+```
+$ echo "alias goagent.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
+$ echo "alias goagent.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
+$ echo "alias goagent.restart='goagent.stop && goagent.start'" >> ~/.bashrc
+```
 
 使用时就可以方便的使用命令行
 
@@ -63,8 +65,6 @@ Mozilla Firefox 用户，请使用 Firefox 自身的证书管理导入证书
 ![GoAgent Log](//cdn.09hd.com/images/2014/05/goagent-log.png)
 
 源码地址：[https://github.com/Ihavee/homebrew-havee](https://github.com/Ihavee/homebrew-havee)。
-
-
 
 **注意**：安装过程中可能会出现错误提示
 

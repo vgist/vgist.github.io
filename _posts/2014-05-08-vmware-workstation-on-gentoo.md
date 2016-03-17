@@ -33,23 +33,27 @@ Gentoo 的 Portage 系统本身就有 VMware Player 的 ebuild，安装很简单
 
 当然，期间因为 ati 闭源驱动更新，重新编译下 kernel。由于我的显卡是 radeon hd 7850，芯片代号为 **PITCAIRN**，于是
 
-    Device Drivers  --->
-        Generic Driver Options  --->
-            -*- Userspace firmware loading support
-                [*] Include in-kernel firmware blobs in kernel binary
-                    (radeon/<YOUR-MODEL>.bin)
-                    (/lib/firmware) Firmware blobs root directory
+```
+Device Drivers  --->
+    Generic Driver Options  --->
+        -*- Userspace firmware loading support
+            [*] Include in-kernel firmware blobs in kernel binary
+                (radeon/<YOUR-MODEL>.bin)
+                (/lib/firmware) Firmware blobs root directory
+```
 
 需要
 
-    /lib/firmware/radeon/PITCAIRN_ce.bin
-    /lib/firmware/radeon/PITCAIRN_mc2.bin
-    /lib/firmware/radeon/PITCAIRN_mc.bin
-    /lib/firmware/radeon/PITCAIRN_me.bin
-    /lib/firmware/radeon/PITCAIRN_pfp.bin
-    /lib/firmware/radeon/PITCAIRN_rlc.bin
-    /lib/firmware/radeon/PITCAIRN_smc.bin
-    /lib/firmware/radeon/TAHITI_uvd.bin
+```
+/lib/firmware/radeon/PITCAIRN_ce.bin
+/lib/firmware/radeon/PITCAIRN_mc2.bin
+/lib/firmware/radeon/PITCAIRN_mc.bin
+/lib/firmware/radeon/PITCAIRN_me.bin
+/lib/firmware/radeon/PITCAIRN_pfp.bin
+/lib/firmware/radeon/PITCAIRN_rlc.bin
+/lib/firmware/radeon/PITCAIRN_smc.bin
+/lib/firmware/radeon/TAHITI_uvd.bin
+```
 
 之前编译内核时，由于 `x11-drivers/radeon-ucode` 早期版本，缺了 `PITCAIRN_mc2.bin`，补上，最后 VMware Player 非常顺利，没遇到其他问题。
 

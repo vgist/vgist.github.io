@@ -18,31 +18,33 @@ tags: [Gentoo, Packager]
 
 很简单，当然 `equery b name.so` 是在线查询，有时网络环境不好的时候，需要耗费些时间很长，甚至返回空的查询结果。
 
-    #! /usr/bin/env sh
-    #
-    # depend.sh
-    # Copyright (C) 2014 Havee <registerdedicated(at)yeah.net>
-    #
-    # Distributed under terms of the GPLv3 license.
-    #
-    # Depends on app-portage/pfl
-    #
-    # use it on Gentoo
+```shell
+#! /usr/bin/env sh
+#
+# depend.sh
+# Copyright (C) 2014 Havee <registerdedicated(at)yeah.net>
+#
+# Distributed under terms of the GPLv3 license.
+#
+# Depends on app-portage/pfl
+#
+# use it on Gentoo
 
-    exefile=$1
-    tmpfile="/tmp/${exefile}.so.show"
+exefile=$1
+tmpfile="/tmp/${exefile}.so.show"
 
-    [[ -f ${tmpfile} ]] && rm -rf ${tmpfile}
+[[ -f ${tmpfile} ]] && rm -rf ${tmpfile}
 
-    for so in $(ldd ${exefile} | awk '{print $1}' | sort | uniq ); do
-        [[ ! -f $so ]] && echo $so >> /tmp/${exefile}.so
-    done
+for so in $(ldd ${exefile} | awk '{print $1}' | sort | uniq ); do
+    [[ ! -f $so ]] && echo $so >> /tmp/${exefile}.so
+done
 
-    for so in $(cat /tmp/${exefile}.so); do
-        echo  "$so need:"
-        equery b $so
-        echo ""
-    done >> ${tmpfile}
+for so in $(cat /tmp/${exefile}.so); do
+    echo  "$so need:"
+    equery b $so
+    echo ""
+done >> ${tmpfile}
 
-    rm /tmp/${exefile}.so
-    cat ${tmpfile}
+rm /tmp/${exefile}.so
+cat ${tmpfile}
+```

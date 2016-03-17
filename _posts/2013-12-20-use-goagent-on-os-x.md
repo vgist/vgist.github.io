@@ -19,28 +19,30 @@ tags: [GoAgent,Proxy]
 
 <!-- more -->
 
-    <?xml version="1.0" encoding="UTF-8"?>
-    <!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
-    <plist version="1.0">
-        <dict>
-            <key>RunAtLoad</key>
-            <true/>
-            <key>KeepAlive</key>
-            <true/>
-            <key>Label</key>
-            <string>com.goagent.localsrv</string>
-            <key>NetworkState</key>
-            <true/>
-            <key>ProgramArguments</key>
-                <array>
-                    <string>/usr/bin/python</string>
-                    <!--以下改为你GoAgent的proxy.py的路径，建议放到自己用户的路径下，这样不会有需要sudo的问题 -->
-                    <string>/Users/Havee/MyApps/goagent/local/proxy.py</string>
-                </array>
-            <key>ServiceDescription</key>
-            <string>GoAgent Local Service</string>
-        </dict>
-    </plist>
+```xml
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE plist PUBLIC "-//Apple//DTD PLIST 1.0//EN" "http://www.apple.com/DTDs/PropertyList-1.0.dtd">
+<plist version="1.0">
+    <dict>
+        <key>RunAtLoad</key>
+        <true/>
+        <key>KeepAlive</key>
+        <true/>
+        <key>Label</key>
+        <string>com.goagent.localsrv</string>
+        <key>NetworkState</key>
+        <true/>
+        <key>ProgramArguments</key>
+            <array>
+                <string>/usr/bin/python</string>
+                <!--以下改为你GoAgent的proxy.py的路径，建议放到自己用户的路径下，这样不会有需要sudo的问题 -->
+                <string>/Users/Havee/MyApps/goagent/local/proxy.py</string>
+            </array>
+        <key>ServiceDescription</key>
+        <string>GoAgent Local Service</string>
+    </dict>
+</plist>
+```
 
 自启动命令
 

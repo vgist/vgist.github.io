@@ -23,34 +23,36 @@ tags: [phpMyAdmin, MySQL]
 
 2. 编辑./config.inc.php
 
-        /*
-        * phpMyAdmin configuration storage settings.
-        */
+```
+/*
+* phpMyAdmin configuration storage settings.
+*/
 
-        /* User used to manipulate with storage */
-        // $cfg['Servers'][$i]['controlhost'] = '';
-        // $cfg['Servers'][$i]['controlport'] = '';
-        $cfg['Servers'][$i]['controluser'] = 'root';
-        $cfg['Servers'][$i]['controlpass'] = 'yourpassword';
+/* User used to manipulate with storage */
+// $cfg['Servers'][$i]['controlhost'] = '';
+// $cfg['Servers'][$i]['controlport'] = '';
+$cfg['Servers'][$i]['controluser'] = 'root';
+$cfg['Servers'][$i]['controlpass'] = 'yourpassword';
 
-        /* Storage database and tables */
-        $cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
-        $cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
-        $cfg['Servers'][$i]['relation'] = 'pma__relation';
-        $cfg['Servers'][$i]['table_info'] = 'pma__table_info';
-        $cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
-        $cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
-        $cfg['Servers'][$i]['column_info'] = 'pma__column_info';
-        $cfg['Servers'][$i]['history'] = 'pma__history';
-        $cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
-        $cfg['Servers'][$i]['tracking'] = 'pma__tracking';
-        $cfg['Servers'][$i]['designer_coords'] = 'pma__designer_coords';
-        $cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
-        $cfg['Servers'][$i]['recent'] = 'pma__recent';
-        $cfg['Servers'][$i]['users'] = 'pma__users';
-        $cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
-        $cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
-        /* Contrib / Swekey authentication */
-        // $cfg['Servers'][$i]['auth_swekey_config'] = '/etc/swekey-pma.conf';
+/* Storage database and tables */
+$cfg['Servers'][$i]['pmadb'] = 'phpmyadmin';
+$cfg['Servers'][$i]['bookmarktable'] = 'pma__bookmark';
+$cfg['Servers'][$i]['relation'] = 'pma__relation';
+$cfg['Servers'][$i]['table_info'] = 'pma__table_info';
+$cfg['Servers'][$i]['table_coords'] = 'pma__table_coords';
+$cfg['Servers'][$i]['pdf_pages'] = 'pma__pdf_pages';
+$cfg['Servers'][$i]['column_info'] = 'pma__column_info';
+$cfg['Servers'][$i]['history'] = 'pma__history';
+$cfg['Servers'][$i]['table_uiprefs'] = 'pma__table_uiprefs';
+$cfg['Servers'][$i]['tracking'] = 'pma__tracking';
+$cfg['Servers'][$i]['designer_coords'] = 'pma__designer_coords';
+$cfg['Servers'][$i]['userconfig'] = 'pma__userconfig';
+$cfg['Servers'][$i]['recent'] = 'pma__recent';
+$cfg['Servers'][$i]['users'] = 'pma__users';
+$cfg['Servers'][$i]['usergroups'] = 'pma__usergroups';
+$cfg['Servers'][$i]['navigationhiding'] = 'pma__navigationhiding';
+/* Contrib / Swekey authentication */
+// $cfg['Servers'][$i]['auth_swekey_config'] = '/etc/swekey-pma.conf';
+```
 
 参考：[http://wiki.phpmyadmin.net/pma/Configuration_storage](http://wiki.phpmyadmin.net/pma/Configuration_storage)

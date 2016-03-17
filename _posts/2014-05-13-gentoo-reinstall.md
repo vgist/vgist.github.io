@@ -17,33 +17,35 @@ tags: [Gentoo]
 
 liveusb 点亮机子，下载最新的 stage 与 portage 后，各种 mount 后 chroot
 
-    mkfs.ext4 /dev/sda2
-    mount /dev/sda2 /mnt/gentoo
-    mount -t proc proc /mnt/gentoo/proc
-    mount --rbind /sys /mnt/gentoo/sys
-    mount --rbind /dev /mnt/gentoo/dev
-    chroot /mnt/gentoo /bin/bash
-    env-update && . /etc/profile
-    emerge --sync
-    eselect profile list
-    echo "Asia/Shanghai" > /etc/timezone
-    emerge --config sys-libs/timezone-data
-    nano -w /etc/locale.gen
-    locale-gen
-    eselect locale list
-    eselect locale set n
-    nano -w /etc/env.d/02locale
-    env-update && . /etc/profile
-    nano -w /etc/conf.d/net
-    nano -w /etc/conf.d/hostname
-    ln -sf /etc/init.d/net.lo /etc/init.d/net.enp3s0
-    nano -w /etc/fstab
-    nano -w /etc/hosts
-    passwd root
-    emerge syslog-ng
-    rc-update add syslog-ng default
-    emerge mlocate
-    emerge dhcpcd
+```
+mkfs.ext4 /dev/sda2
+mount /dev/sda2 /mnt/gentoo
+mount -t proc proc /mnt/gentoo/proc
+mount --rbind /sys /mnt/gentoo/sys
+mount --rbind /dev /mnt/gentoo/dev
+chroot /mnt/gentoo /bin/bash
+env-update && . /etc/profile
+emerge --sync
+eselect profile list
+echo "Asia/Shanghai" > /etc/timezone
+emerge --config sys-libs/timezone-data
+nano -w /etc/locale.gen
+locale-gen
+eselect locale list
+eselect locale set n
+nano -w /etc/env.d/02locale
+env-update && . /etc/profile
+nano -w /etc/conf.d/net
+nano -w /etc/conf.d/hostname
+ln -sf /etc/init.d/net.lo /etc/init.d/net.enp3s0
+nano -w /etc/fstab
+nano -w /etc/hosts
+passwd root
+emerge syslog-ng
+rc-update add syslog-ng default
+emerge mlocate
+emerge dhcpcd
+```
 
 然后安装 syslinux
 
@@ -55,22 +57,24 @@ liveusb 点亮机子，下载最新的 stage 与 portage 后，各种 mount 后 
 
 创建 `/boot/extlinux/extlinux.conf`，内容
 
-    UI menu.c32
-    PROMPT 0
+```
+UI menu.c32
+PROMPT 0
 
-    MENU TITLE Boot Menu
-    TIMEOUT 50
-    DEFAULT gentoo
+MENU TITLE Boot Menu
+TIMEOUT 50
+DEFAULT gentoo
 
-    LABEL gentoo
-        MENU LABEL Gentoo Linux 3.14.3
-        LINUX /boot/3.14.3-gentoo
-        APPEND root=/dev/sda2 radeon.audio=1 radeon.dpm=1
+LABEL gentoo
+    MENU LABEL Gentoo Linux 3.14.3
+    LINUX /boot/3.14.3-gentoo
+    APPEND root=/dev/sda2 radeon.audio=1 radeon.dpm=1
 
-    LABEL windows
-        MENU LABEL Windows 7 Ultimate
-        COM32 chain.c32
-        APPEND hd0 1
+LABEL windows
+    MENU LABEL Windows 7 Ultimate
+    COM32 chain.c32
+    APPEND hd0 1
+```
 
 最后安装内核
 

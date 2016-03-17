@@ -23,15 +23,19 @@ tags: [Jekyll, Usage, Sass]
 
 在你的 `css` 目录下创建 `style.scss`：
 
-    ---
-    ---
-    // your scss here
+```
+---
+---
+// your scss here
+```
 
 那么，在 `$ jekyll build` 编译后，会自动将 `css/style.scss` 转化成 `_site/css/style.css`。
 
 最后只需在你的模版文件的 `<head>` 区域加入以下代码：
 
-    <link rel="stylesheet" href="/css/style.css">
+```html
+<link rel="stylesheet" href="/css/style.css">
+```
 
 某些同学，喜欢将 Scss 分割开，最后在 `style.scss` 中使用 `@import` 来引入，当然可以，你可以在 `_sass` 目录下写入你的 Scss，譬如：
 
@@ -40,29 +44,37 @@ tags: [Jekyll, Usage, Sass]
 
 在你的 `_config.yml` 中的适当地方添加如下：
 
-    sass:
-        sass_dir: _sass
+```yaml
+sass:
+    sass_dir: _sass
+```
 
 最后在 `css/style.scss` 中引入：
 
-    ---
-    ---
+```
+---
+---
 
-    //Imports
-    @import "one";
-    @import "two";
+//Imports
+@import "one";
+@import "two";
+```
 
 注意，两行的 `---` 是必须的，以便让 Jekyll 知晓该前置数据块的文件需要处理。可以详细了解下 [Jekyll 的 YAML 前置数据]({% post_url 2013-07-05-jekyll-yaml-front-matter %})。
 
 `_sass` 是 Jekyll 默认的目录，你可以设置到其他地方，只需 `_config.yml` 中声明好即可：
 
-    sass:
-        sass_dir: path/_lib
+```yaml
+sass:
+    sass_dir: path/_lib
+```
 
 顺便提一下，内置的 Sass 编译器支持压缩：
 
-    sass:
-        sass_dir: path/_lib
-        style: :compressed
+```yaml
+sass:
+    sass_dir: path/_lib
+    style: :compressed
+```
 
 参考：<http://jekyllrb.com/docs/assets/>

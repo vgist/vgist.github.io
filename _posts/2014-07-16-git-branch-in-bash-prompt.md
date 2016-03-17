@@ -17,17 +17,21 @@ tags: [Git, CLI]
 
 随后，在 `~/.bash_profile` 中
 
-    if [ -f $(xcode-select -p)/usr/share/git-core/git-completion.bash ]; then
-        . $(xcode-select -p)/usr/share/git-core/git-completion.bash
-        . $(xcode-select -p)/usr/share/git-core/git-prompt.sh
-    fi
+```shell
+if [ -f $(xcode-select -p)/usr/share/git-core/git-completion.bash ]; then
+    . $(xcode-select -p)/usr/share/git-core/git-completion.bash
+    . $(xcode-select -p)/usr/share/git-core/git-prompt.sh
+fi
+```
 
 最后，`~/.bashrc` 中去组织你的 PS1，在适当的地方添加上 `$(__git_ps1)`，譬如我的
 
-    if [ `id -u` -ne 500 ]; then
-        export GIT_PS1_SHOWDIRTYSTATE=1
-        export PS1='\[\e[1;36m\]→\[\e[m\] \[\e[0;32m\]\w\[\e[0;35m\]$(__git_ps1)\[\e[1;32m\] \$\[\e[m\] '
-    fi
+```shell
+if [ `id -u` -ne 500 ]; then
+    export GIT_PS1_SHOWDIRTYSTATE=1
+    export PS1='\[\e[1;36m\]→\[\e[m\] \[\e[0;32m\]\w\[\e[0;35m\]$(__git_ps1)\[\e[1;32m\] \$\[\e[m\] '
+fi
+```
 
 顺便，每次登陆 terminal，都提示 "Last login: xxxxx"，又不是服务器，匿了它
 
@@ -44,7 +48,9 @@ tags: [Git, CLI]
 
 随后在 `~/.bash_profile` 中 source
 
-    [[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh
+```shell
+[[ -f ~/.git-prompt.sh ]] && . ~/.git-prompt.sh
+```
 
 最后 `~/.bashrc` 中编辑你的 PS1，在其中某处添加 `$(__git_ps1)` 即可。
 

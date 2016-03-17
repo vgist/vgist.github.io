@@ -23,9 +23,11 @@ tags: [pip,Python]
 
 当然，这样安装的包，不在用户路径变量中，需要 export 下 PATH。编辑 `~/.bash_profile`，最后加入
 
-    if [ -d $HOME/Library/Python/2.7/bin ]; then
-        export PATH=$HOME/Library/Python/2.7/bin:$PATH
-    fi
+```
+if [ -d $HOME/Library/Python/2.7/bin ]; then
+    export PATH=$HOME/Library/Python/2.7/bin:$PATH
+fi
+```
 
 使用之前别忘记 `source ~/.bash_profile`
 
@@ -36,13 +38,15 @@ tags: [pip,Python]
 
 编辑 `~/.pip/pip.conf`
 
-    [global]
-    default-timeout = 60
-    download-cache = ~/.pip/cache
-    log-file = ~/.pip/pip.log
+```
+[global]
+default-timeout = 60
+download-cache = ~/.pip/cache
+log-file = ~/.pip/pip.log
 
-    [install]
-    index-url = http://pypi.douban.com/simple
+[install]
+index-url = http://pypi.douban.com/simple
+```
 
 如果你通过 homebrew 安装的 python，记得将 homebrew 下的 `site-packages` 路径加进去
 
