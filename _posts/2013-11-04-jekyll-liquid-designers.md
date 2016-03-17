@@ -115,7 +115,7 @@ tags: [Liquid,Jekyll]
 Raw 暂时性的禁用的标签的解析。这在需要展示一些可能产生冲突的内容（如本页面，要展示 liquid 语句，就需要包含在 raw 标签间，否则会被解析）时非常有用。
 
     {{ "{% raw " }}%}
-    In Handlebars, {% raw %}{{ this }}{% endraw %} will be HTML-escaped, but {% raw %}{{{ that }}}{% endraw %} will not.
+        In Handlebars, {% raw %}{{ this }}{% endraw %} will be HTML-escaped, but {% raw %}{{{ that }}}{% endraw %} will not.
     {{ "{% endraw " }}%}
 
 #### If/Else
