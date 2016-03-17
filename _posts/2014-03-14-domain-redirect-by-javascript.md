@@ -15,14 +15,12 @@ tags: [JavaScript]
 
 开始工作，首先将域名解析到 gitcafe 的 pages ip `117.79.146.98`
 
-```
-$ dig havee.me +nostats +nocomments +nocmd
+    $ dig havee.me +nostats +nocomments +nocmd
 
-; <<>> DiG 9.8.3-P1 <<>> havee.me +nostats +nocomments +nocmd
-;; global options: +cmd
-;havee.me.              IN          A
-havee.me.       60      IN          A       117.79.146.98
-```
+    ; <<>> DiG 9.8.3-P1 <<>> havee.me +nostats +nocomments +nocmd
+    ;; global options: +cmd
+    ;havee.me.              IN          A
+    havee.me.       60      IN          A       117.79.146.98
 
 JavaScript:
 
@@ -48,19 +46,18 @@ JavaScript:
 
 ![Completion](//cdn.09hd.com/images/2014/03/completion.png)
 
-```
-print(window.location.host);
-"havee.me"
-print(this.location.pathname);
-"/internet/2014-03/domain-redirect-by-javascript.html"
-```
+    print(window.location.host);
+    "havee.me"
+    print(this.location.pathname);
+    "/internet/2014-03/domain-redirect-by-javascript.html"
 
 #### Update 2014-03-14
 
 今天下午，该问题已被 GitCafe 解决
 
-```
-$ curl -IL havee.gitcafe.com
+    $ curl -IL havee.gitcafe.com
+
+```html
 HTTP/1.1 301 Moved Permanently
 Server: nginx/1.4.5
 Date: Fri, 14 Mar 2014 11:18:00 GMT
