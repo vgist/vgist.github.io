@@ -9,21 +9,17 @@ tags: [Vim, Screen, Xterm]
 
 首先确认你的终端
 
-```
-$ echo $TERM; tput colors
-xterm
-8
-```
+    $ echo $TERM; tput colors
+    xterm
+    8
 
 <!-- more -->
 
 我得到的结果是 xterm，8 色。进入 screen 下执行看看
 
-```
-$ echo $TERM; tput colors
-screen-256color
-256
-```
+    $ echo $TERM; tput colors
+    screen-256color
+    256
 
 是 256 色，此时在该 screen 下操作 vim ，还是 8 色的。哪怕在 screen 状态下执行 `export XTERM=xterm-256color`，screen 下 vim 的color 还是 8 色的。
 

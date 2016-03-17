@@ -9,14 +9,12 @@ tags: [Joomla]
 
 拿到 **error.php** 文件
 
-```
-...
-2013-07-17	16:47:54	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-2013-07-17	16:47:57	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-2013-07-17	16:48:00	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-2013-07-17	16:48:03	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
-...
-```
+    ...
+    2013-07-17	16:47:54	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+    2013-07-17	16:47:57	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+    2013-07-17	16:48:00	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+    2013-07-17	16:48:03	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
+    ...
 
 <!-- more -->
 

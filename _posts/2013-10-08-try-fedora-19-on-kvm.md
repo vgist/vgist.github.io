@@ -13,12 +13,10 @@ tags: [Fedora, KVM, LVM]
 
 首先安装一个工具 `fedup`，通过 fedup 来升级：
 
-```
-# yum install fedup -y
-# yum update
-# reboot
-# fedup-cli --reboot --network 19
-```
+    # yum install fedup -y
+    # yum update
+    # reboot
+    # fedup-cli --reboot --network 19
 
 <!-- more -->
 
@@ -58,13 +56,11 @@ Fedora 默认分区是采用 [LVM][4](Logical Volume Mnager) 的，由于我给 
 
 调整 lvm 分区前 root 只有 5.5GB 左右的空间，差点升级 Fedora19 的时候空间不足：
 
-```
-[root@localhost ~]# lvmdiskscan
- /dev/fedora/swap [       4.01 GiB]
- /dev/sda1        [     500.00 MiB]
- /dev/fedora/root [       5.48 GiB]
- /dev/sda2        [       9.51 GiB]
-```
+    [root@localhost ~]# lvmdiskscan
+     /dev/fedora/swap [       4.01 GiB]
+     /dev/sda1        [     500.00 MiB]
+     /dev/fedora/root [       5.48 GiB]
+     /dev/sda2        [       9.51 GiB]
 
 首先关闭swap：
 
@@ -83,13 +79,11 @@ Fedora 默认分区是采用 [LVM][4](Logical Volume Mnager) 的，由于我给 
 
 调整后的分区：
 
-```
-[root@localhost ~]# lvmdiskscan
- /dev/fedora/swap [     492.00 GiB]
- /dev/sda1        [     500.00 MiB]
- /dev/fedora/root [       9.03 GiB]
- /dev/sda2        [       9.51 GiB]
-```
+    [root@localhost ~]# lvmdiskscan
+     /dev/fedora/swap [     492.00 GiB]
+     /dev/sda1        [     500.00 MiB]
+     /dev/fedora/root [       9.03 GiB]
+     /dev/sda2        [       9.51 GiB]
 
 #### 一些细微的调整
 

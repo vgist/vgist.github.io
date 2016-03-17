@@ -9,7 +9,7 @@ tags: [Patch]
 
 Gentoo 中，最近升级 sys-kernel/linux-headers 到 3.5 后会出现 ppp-2.4.5-r2 编译不过的情况，具体的错误为
 
-```
+```make
 In file included from plugin.c:53:0:
 /usr/include/linux/if_pppox.h:84:26: error: field ‘pppol2tp’ has incomplete type
 /usr/include/linux/if_pppox.h:99:28: error: field ‘pppol2tp’ has incomplete type

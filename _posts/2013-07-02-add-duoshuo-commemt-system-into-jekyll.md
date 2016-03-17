@@ -72,7 +72,7 @@ OK，完成手工。
 
 最新的访客呢？
 
-```
+```html
 <section style="width:250px;">
   <h3>Recently Visitors</h3>
   <ul class="ds-recent-visitors" data-num-items="4" data-avatar-size="45" style="margin-top:10px;"></ul>

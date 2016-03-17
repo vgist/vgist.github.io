@@ -36,14 +36,16 @@ tags: [Fontconfig]
 
 修改为
 
-    <test target="pattern" compare="contains" name="lang">
-      <string>zh</string>
-    </test>
-    <test target="pattern" compare="contains" name="lang">
-      <string>ja</string>
-    </test>
-    <test target="pattern" compare="contains" name="lang">
-      <string>ko</string>
-    </test>
+```xml
+<test target="pattern" compare="contains" name="lang">
+  <string>zh</string>
+</test>
+<test target="pattern" compare="contains" name="lang">
+  <string>ja</string>
+</test>
+<test target="pattern" compare="contains" name="lang">
+  <string>ko</string>
+</test>
+```
 
 参考资料：[https://bbs.archlinux.org/viewtopic.php?pid=1157957#p1157957](https://bbs.archlinux.org/viewtopic.php?pid=1157957#p1157957)

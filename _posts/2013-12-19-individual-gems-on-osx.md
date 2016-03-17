@@ -7,12 +7,10 @@ tags: [Ruby, Gem]
 
 新订了本 macbook pro，一切的东东都陆续搬到 OS X 系统中，xcode 安装完后，兴匆匆的准备 `gem install jekyll`，果然出了问题了。
 
-```
-$ gem install jekyll
-Fetching: liquid-2.5.4.gem (100%)
-ERROR:  While executing gem ... (Gem::FilePermissionError)
-You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
-```
+    $ gem install jekyll
+    Fetching: liquid-2.5.4.gem (100%)
+    ERROR:  While executing gem ... (Gem::FilePermissionError)
+    You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
 
 <!-- more -->
 
@@ -24,7 +22,7 @@ You don't have write permissions for the /Library/Ruby/Gems/2.0.0 directory.
 
 然后在 `~/.profile` 中添加如下
 
-```
+```shell
 # gem home
 if [ -f /usr/bin/gem ]; then
     export GEM_HOME=$HOME/.gem

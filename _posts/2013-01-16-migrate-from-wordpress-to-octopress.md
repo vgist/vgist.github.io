@@ -44,15 +44,13 @@ tags: [Wordpress, Octopress, Jekyll]
 
 Github 的注册及 git 的使用方法就不多说了，资料漫天都是。我们来说说 Octopress 的安装。其实也很简单：
 
-```
-git clone git://github.com/imathis/octopress.git octopress
-cd octopress # If you use RVM, You'll be asked if you trust the .rvmrc file (say yes).
-ruby --version  # Should report Ruby 1.9.3
-gem install bundler
-rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
-bundle install
-rake install
-```
+    git clone git://github.com/imathis/octopress.git octopress
+    cd octopress # If you use RVM, You'll be asked if you trust the .rvmrc file (say yes).
+    ruby --version  # Should report Ruby 1.9.3
+    gem install bundler
+    rbenv rehash    # If you use rbenv, rehash to be able to run the bundle command
+    bundle install
+    rake install
 
 完工。其中 `rake install` == `rake install[classic]` == (`rake update_source[classic]` && `rake update_style[classic]`)
 
