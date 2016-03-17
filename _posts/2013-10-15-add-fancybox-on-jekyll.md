@@ -23,9 +23,11 @@ tags: [Jekyll, FancyBox, jQuery]
 
 我们如果要使用（譬如）FancyBox 的话，则需要如下的链接才可
 
-    <a href="url" id="id">
-      <img src="url">
-    </a>
+```html
+<a href="url" id="id">
+  <img src="url">
+</a>
+```
 
 我们当然可以直接在 markdown 文本写 html，但是实在不想这么做（当时从 Wordpress 转到 markdown 时吃尽苦头），还是用 jquery 来替换的好。既然目的明确，那么动手
 

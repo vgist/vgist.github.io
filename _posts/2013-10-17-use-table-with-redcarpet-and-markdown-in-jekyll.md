@@ -11,9 +11,11 @@ tags: [Markdown, Jekyll, Redcarpet]
 
 在 [Jekyll]({% post_url 2013-07-06-jekyll-install %}) 中使用，请修改 `_config.yml`
 
-    markdown: redcarpet
-    redcarpet:
-        extensions: ["tables"]
+```yaml
+markdown: redcarpet
+redcarpet:
+    extensions: ["tables"]
+```
 
 <!-- more -->
 
@@ -32,30 +34,32 @@ tags: [Markdown, Jekyll, Redcarpet]
 
 其最后输出的代码是
 
-    <table>
-      <thead>
-        <tr>
-          <th>head1 head1 head1</th>
-          <th align="left">head2 head2 head2</th>
-          <th align="center">head3 head3 head3</th>
-          <th align="right">head4 head4 head4</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr>
-          <td>row1text1</td>
-          <td align="left">row1text3</td>
-          <td align="center">row1text3</td>
-          <td align="right">row1text4</td>
-        </tr>
-        <tr>
-          <td>row2text1</td>
-          <td align="left">row2text3</td>
-          <td align="center">row2text3</td>
-          <td align="right">row2text4</td>
-        </tr>
-      </tbody>
-    </table>
+```html
+<table>
+  <thead>
+    <tr>
+      <th>head1 head1 head1</th>
+      <th align="left">head2 head2 head2</th>
+      <th align="center">head3 head3 head3</th>
+      <th align="right">head4 head4 head4</th>
+    </tr>
+  </thead>
+  <tbody>
+    <tr>
+      <td>row1text1</td>
+      <td align="left">row1text3</td>
+      <td align="center">row1text3</td>
+      <td align="right">row1text4</td>
+    </tr>
+    <tr>
+      <td>row2text1</td>
+      <td align="left">row2text3</td>
+      <td align="center">row2text3</td>
+      <td align="right">row2text4</td>
+    </tr>
+  </tbody>
+</table>
+```
 
 鄙人博客中添加 `table thead tobody th tr td` 样式后显示的效果是
 
@@ -66,9 +70,11 @@ tags: [Markdown, Jekyll, Redcarpet]
 
 redcarpet有很多选项可以开启，譬如我就开启了
 
-    markdown: redcarpet
-    redcarpet:
-        extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
+```yaml
+markdown: redcarpet
+redcarpet:
+    extensions: ["fenced_code_blocks", "tables", "highlight", "with_toc_data", "strikethrough", "underline"]
+```
 
 参考：
 

@@ -9,17 +9,21 @@ tags: [Vim, Screen, Xterm]
 
 首先确认你的终端
 
-    $ echo $TERM; tput colors
-    xterm
-    8
+```
+$ echo $TERM; tput colors
+xterm
+8
+```
 
 <!-- more -->
 
 我得到的结果是 xterm，8 色。进入 screen 下执行看看
 
-    $ echo $TERM; tput colors
-    screen-256color
-    256
+```
+$ echo $TERM; tput colors
+screen-256color
+256
+```
 
 是 256 色，此时在该 screen 下操作 vim ，还是 8 色的。哪怕在 screen 状态下执行 `export XTERM=xterm-256color`，screen 下 vim 的color 还是 8 色的。
 
@@ -29,19 +33,21 @@ tags: [Vim, Screen, Xterm]
 
 再在 .vimrc 中配置
 
-    " color
-    if $TERM =~ '^xterm' || $TERM =~ '^screen' || $TERM=~ '256color$'
-        "set t_Co=256
-        set background=dark
-        let g:solarized_termcolors = 256
-        colorscheme solarized
-    elseif has('gui_running')
-        set background=light
-        let g:solarized_termcolors = 256
-        colorscheme solarized
-    elseif $TERM =~ 'cons25'
-        colorscheme default
-    endif
+```viml
+" color
+if $TERM =~ '^xterm' || $TERM =~ '^screen' || $TERM=~ '256color$'
+    "set t_Co=256
+    set background=dark
+    let g:solarized_termcolors = 256
+    colorscheme solarized
+elseif has('gui_running')
+    set background=light
+    let g:solarized_termcolors = 256
+    colorscheme solarized
+elseif $TERM =~ 'cons25'
+    colorscheme default
+endif
+```
 
 于是，可以很好的在 xterm 下及 xterm screen 下使用同一 colorscheme，而在 tty 下，则使用 default colorscheme。
 
