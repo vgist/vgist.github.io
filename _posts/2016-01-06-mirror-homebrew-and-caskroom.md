@@ -16,46 +16,46 @@ tags: [Homebrew, Caskroom]
 
 ##### homebrew
 
-    cd /usr/local
-    git remote set-url origin https://git.coding.net/hae/homebrew.git
+    $ cd /usr/local
+    $ git remote set-url origin https://git.coding.net/hae/homebrew.git
 
 homebrew 两进制源可以使用 ustc 的
 
-    echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bashrc
+    $ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bashrc
 
 ##### homebrew/dupes
 
-    cd /usr/local/Library/Taps/homebrew/homebrew-dupes
-    git remote set-url origin https://git.coding.net/hae/homebrew-dupes.git
+    $ cd /usr/local/Library/Taps/homebrew/homebrew-dupes
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-dupes.git
 
 ##### homebrew/versions
 
-    cd /usr/local/Library/Taps/homebrew/homebrew-versions
-    git remote set-url origin https://git.coding.net/hae/homebrew-versions.git
+    $ cd /usr/local/Library/Taps/homebrew/homebrew-versions
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-versions.git
 
 ##### homebrew/nginx
 
-    cd /usr/local/Library/Taps/homebrew/homebrew-nginx
-    git remote set-url origin https://git.coding.net/hae/homebrew-nginx.git
+    $ cd /usr/local/Library/Taps/homebrew/homebrew-nginx
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-nginx.git
 
 ##### homebrew/php
 
-    cd /usr/local/Library/Taps/homebrew/homebrew-php
-    git remote set-url origin https://git.coding.net/hae/homebrew-php.git
+    $ cd /usr/local/Library/Taps/homebrew/homebrew-php
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-php.git
 
 #### Caskroom
 
 ##### caskroom/cask
 
-    cd /usr/local/Library/Taps/caskroom/homebrew-cask
-    git remote set-url origin https://git.coding.net/hae/homebrew-cask.git
+    $ cd /usr/local/Library/Taps/caskroom/homebrew-cask
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask.git
 
 ##### caskroom/versions
 
-    cd /usr/local/Library/Taps/caskroom/homebrew-versions
-    git remote set-url origin https://git.coding.net/hae/homebrew-cask-versions.git
+    $ cd /usr/local/Library/Taps/caskroom/homebrew-versions
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask-versions.git
 
 ##### caskroom/fonts
 
-    cd /usr/local/Library/Taps/caskroom/homebrew-fonts
-    git remote set-url origin https://git.coding.net/hae/homebrew-cask-fonts.git
+    $ cd /usr/local/Library/Taps/caskroom/homebrew-fonts
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask-fonts.git

@@ -25,7 +25,7 @@ tags: [Jekyll]
 
 #### 1. Upgrade
 
-    gem upgrade jekyll
+    $ gem upgrade jekyll
 
 注意，Jekyll 3 需要 Ruby >= 2.0.0
 
@@ -57,17 +57,19 @@ kramdown:
 
 同时，Rouge 内置了多个样式，可以用如下命令列出
 
-    $ rougify help style
-    usage: rougify style [<theme-name>] [<options>]
+```
+$ rougify help style
+usage: rougify style [<theme-name>] [<options>]
 
-    Print CSS styles for the given theme.  Extra options are
-    passed to the theme.  Theme defaults to thankful_eyes.
+Print CSS styles for the given theme.  Extra options are
+passed to the theme.  Theme defaults to thankful_eyes.
 
-    options:
-      --scope(default: .highlight) a css selector to scope by
+options:
+  --scope(default: .highlight) a css selector to scope by
 
-    available themes:
-    base16, base16.dark, base16.monokai, base16.monokai.light, base16.solarized, base16.solarized.dark, colorful, github, molokai, monokai, monokai.sublime, thankful_eyes
+available themes:
+base16, base16.dark, base16.monokai, base16.monokai.light, base16.solarized, base16.solarized.dark, colorful, github, molokai, monokai, monokai.sublime, thankful_eyes
+```
 
 如果你喜欢 Github 的默认样式，你可以这样生成
 

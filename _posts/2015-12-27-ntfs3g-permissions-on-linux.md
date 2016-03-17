@@ -9,16 +9,16 @@ tags: [NTFS]
 
 一般情况下，我们在 Linux 下挂载 ntfs，是安装 ntfs-3g 后进行的，即：
 
-    mount -t ntfs-3g /dev/sdb1 /mnt/data
+    # mount -t ntfs-3g /dev/sdb1 /mnt/data
 
 这样临时解决下可以，但是会涉及到权限问题，就是说，/mnt/data 下的所有文件都必须 root 权限。于是我们加入一些参数让当前用户也可以访问修改：
 
-    mount -t ntfs-3g -o uid=username,gid=users /dev/sdb1 /mnt/data      # uid 为当前用户名，gid 为users 用户组
+    # mount -t ntfs-3g -o uid=username,gid=users /dev/sdb1 /mnt/data      # uid 为当前用户名，gid 为users 用户组
 
 <!-- more -->
 一般人到此为止，临时需求嘛，不过强迫症表示，看到挂载的分区，所有文件都是 777 权限表示非常不爽，于是：
 
-    mount -t ntfs-3g -o uid=username,gid=users,umask=022 /dev/sdb1 /mnt/data
+    # mount -t ntfs-3g -o uid=username,gid=users,umask=022 /dev/sdb1 /mnt/data
 
 umask 表示，去掉的权限。
 
@@ -47,7 +47,7 @@ umask 表示，去掉的权限。
 
 现在清楚了，上文我们设置的 umask=022，实际上，所有文件文件夹的权限都被设置为 755 了，这对于拥有 wine 的用户来说，不是一个好消息，那么我们就分别来设置 fmask 与 dmask。
 
-    mount -t ntfs-3g -o uid=username,gid=users,fmask=133,dmask=022 /dev/sdb1 /mnt/data
+    # mount -t ntfs-3g -o uid=username,gid=users,fmask=133,dmask=022 /dev/sdb1 /mnt/data
 
 于是，我们最终得到的文件权限为 644，文件夹权限为 755，以上写入 fstab 中一开机就挂载的话，就是如此：
 
