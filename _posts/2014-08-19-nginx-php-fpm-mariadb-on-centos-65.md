@@ -54,13 +54,11 @@ mariadb.org 社区维护，增加一个 MariaDB.repo
 
 填入如下内容
 
-```
-[mariadb]
-name =MariaDB
-baseurl = http://yum.mariadb.org/10.0/centos6-x86
-gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
-gpgcheck=1
-```
+    [mariadb]
+    name =MariaDB
+    baseurl = http://yum.mariadb.org/10.0/centos6-x86
+    gpgkey=https://yum.mariadb.org/RPM-GPG-KEY-MariaDB
+    gpgcheck=1
 
 安装
 

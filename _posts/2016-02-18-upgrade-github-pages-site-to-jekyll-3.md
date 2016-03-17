@@ -36,7 +36,7 @@ tags: [Jekyll]
 - 移除 **_config.yml** 中的 `markdown: xxx`
 - 添加 kramdown 的 GFM ，来支持 fenced code blocks
 
-```
+```yaml
 kramdown:
   input: GFM
 ```
@@ -57,19 +57,17 @@ kramdown:
 
 同时，Rouge 内置了多个样式，可以用如下命令列出
 
-```
-$ rougify help style
-usage: rougify style [<theme-name>] [<options>]
+    $ rougify help style
+    usage: rougify style [<theme-name>] [<options>]
 
-Print CSS styles for the given theme.  Extra options are
-passed to the theme.  Theme defaults to thankful_eyes.
+    Print CSS styles for the given theme.  Extra options are
+    passed to the theme.  Theme defaults to thankful_eyes.
 
-options:
-  --scope(default: .highlight) a css selector to scope by
+    options:
+      --scope(default: .highlight) a css selector to scope by
 
-available themes:
-base16, base16.dark, base16.monokai, base16.monokai.light, base16.solarized, base16.solarized.dark, colorful, github, molokai, monokai, monokai.sublime, thankful_eyes
-```
+    available themes:
+    base16, base16.dark, base16.monokai, base16.monokai.light, base16.solarized, base16.solarized.dark, colorful, github, molokai, monokai, monokai.sublime, thankful_eyes
 
 如果你喜欢 Github 的默认样式，你可以这样生成
 

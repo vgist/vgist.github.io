@@ -15,28 +15,24 @@ tags: [Clover, EFI]
 
 之前安装 windows 10 的时候是自动分区的，然后磁盘压缩一个空间给 Gentoo 使用，所以，我的两块 SSD 上的分区是这样的：
 
-```
-/dev/sda1           Windows Recovery
-/dev/sda2           EFI
-/dev/sda3           Microsoft Reserved
-/dev/sda4           Windows 10
-/dev/sda5           Gentoo
-/dev/sdb1           EFI
-/dev/sdb2           Macintosh HD
-/dev/sdb3           Recovery HD
-```
+    /dev/sda1           Windows Recovery
+    /dev/sda2           EFI
+    /dev/sda3           Microsoft Reserved
+    /dev/sda4           Windows 10
+    /dev/sda5           Gentoo
+    /dev/sdb1           EFI
+    /dev/sdb2           Macintosh HD
+    /dev/sdb3           Recovery HD
 
 通过 Gentoo LiveUSB 启动后：
 
-```
-# mount /dev/sda5 /mnt/gentoo
-# mount /dev/sda2 /mnt/gentoo/boot
-# mount -t proc proc /mnt/gentoo
-# mount --rbind /sys /mnt/gentoo/sys
-# mount --rbind /dev /mnt/gentoo/dev
-# chroot /mnt/gentoo /bin/bash
-# env-update && . /etc/profile
-```
+    # mount /dev/sda5 /mnt/gentoo
+    # mount /dev/sda2 /mnt/gentoo/boot
+    # mount -t proc proc /mnt/gentoo
+    # mount --rbind /sys /mnt/gentoo/sys
+    # mount --rbind /dev /mnt/gentoo/dev
+    # chroot /mnt/gentoo /bin/bash
+    # env-update && . /etc/profile
 
 成功 chroot 进 Gentoo 环境后，按照文章 [《UEFI 固件启动 Gentoo EFI Stub kernel》]({% post_url 2015-12-25-efi-boot-stub-for-gentoo %}) 进行生成一个 EFISTUB kernel，并拷贝到 EFI 所在分区的 `\EFI\Gentoo\gentoo.efi`，即 `/boot/EFI/Gentoo/gentoo.efi`。最后，就是将 Clover 所在的硬盘的 EFI 挂载上，在我这里就是 `/dev/sdb1`，编辑下 Clover 配置，适当位置添加如下：
 

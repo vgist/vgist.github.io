@@ -11,45 +11,38 @@ tags: [EFI, Gentoo]
 
 #### 1. Kernel Config
 
-```
-Processor type and features  --->
-    [*] EFI runtime service support
-    [*]   EFI stub support
-    [*]     EFI mixed-mode support
-    [*] Built-in kernel command line
-    (root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro init=/usr/lib/systemd/systemd quiet)
-    [*] Built-in command line overrides boot loader arguments
-```
+    Processor type and features  --->
+        [*] EFI runtime service support
+        [*]   EFI stub support
+        [*]     EFI mixed-mode support
+        [*] Built-in kernel command line
+        (root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro init=/usr/lib/systemd/systemd quiet)
+        [*] Built-in command line overrides boot loader arguments
 
 <!-- more -->
 
-```
-Firmware Drivers  --->
-    EFI (Extensible Firmware Interface) Support  --->
-        <*> EFI Variable Support via sysfs
-        [*] Export efi runtime maps to sysfs
-```
+    Firmware Drivers  --->
+        EFI (Extensible Firmware Interface) Support  --->
+            <*> EFI Variable Support via sysfs
+            [*] Export efi runtime maps to sysfs
 
-```
-Device Drivers --->
-    Graphics support --->
-        Frame buffer Devices  --->
-            <*> Support for frame buffer devices --->
-            [*] EFI-based Framebuffer Support
-```
+    Device Drivers --->
+        Graphics support --->
+            Frame buffer Devices  --->
+                <*> Support for frame buffer devices --->
+                [*] EFI-based Framebuffer Support
 
-```
-File systems --->
-    Pseudo filesystems --->
-        -*- /proc file system support
-        [*]   /proc/kcore support
-        [*] Tmpfs virtual memory file system support (former shm fs)
-        [*]   Tmpfs POSIX Access Control Lists
-        -*-   Tmpfs extended attributes
-        [*] HugeTLB file system support
-        <*> Userspace-driven configuration filesystem
-        <*> EFI Variable filesystem
-```
+
+    File systems --->
+        Pseudo filesystems --->
+            -*- /proc file system support
+            [*]   /proc/kcore support
+            [*] Tmpfs virtual memory file system support (former shm fs)
+            [*]   Tmpfs POSIX Access Control Lists
+            -*-   Tmpfs extended attributes
+            [*] HugeTLB file system support
+            <*> Userspace-driven configuration filesystem
+            <*> EFI Variable filesystem
 
 其实 **Built-in kernel command line** 就是将一些原本 Grub、Syslinux 中的附加命令加进去。譬如我的：
 
@@ -59,16 +52,14 @@ File systems --->
 
 此外，如下也检查下：
 
-```
-CONFIG_BLK_DEV_INITRD=y
-CONFIG_INITRAMFS_SOURCE=""
-CONFIG_RD_GZIP=y
-CONFIG_RD_BZIP2=y
-CONFIG_RD_LZMA=y
-CONFIG_RD_XZ=y
-CONFIG_RD_LZO=y
-CONFIG_RD_LZ4=y
-```
+    CONFIG_BLK_DEV_INITRD=y
+    CONFIG_INITRAMFS_SOURCE=""
+    CONFIG_RD_GZIP=y
+    CONFIG_RD_BZIP2=y
+    CONFIG_RD_LZMA=y
+    CONFIG_RD_XZ=y
+    CONFIG_RD_LZO=y
+    CONFIG_RD_LZ4=y
 
 随后，
 

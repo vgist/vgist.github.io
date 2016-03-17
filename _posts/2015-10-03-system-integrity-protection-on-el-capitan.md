@@ -25,14 +25,12 @@ Mac 提供了内置 `csrutil` 配置来进行一些 SIP 的配置。在默认情
 
 可配置项如下，字面意思：
 
-```
-Apple Internal
-Kext Signing
-Filesystem Protections
-Debugging Restrictions
-DTrace Restrictions
-NVRAM Protections
-```
+    Apple Internal
+    Kext Signing
+    Filesystem Protections
+    Debugging Restrictions
+    DTrace Restrictions
+    NVRAM Protections
 
 #### 一. 白苹果用户
 
@@ -40,12 +38,10 @@ NVRAM Protections
 
 csrutil 的一些常用命令
 
-```
-csrutil clear           # 清除 SIP 用户配置，即开启默认的 SIP
-csrutil enable          # 开启 SIP
-csrutil disable         # 禁用 SIP
-csrutil status          # 查看当前 SIP 配置
-```
+    csrutil clear           # 清除 SIP 用户配置，即开启默认的 SIP
+    csrutil enable          # 开启 SIP
+    csrutil disable         # 禁用 SIP
+    csrutil status          # 查看当前 SIP 配置
 
 关于 `csrutil enable` 可用参数为
 

@@ -47,7 +47,7 @@ PRIMARY KEY (`id`)
 
 #### 再在上面那个文件里找到
 
-```html
+```javascript
 function register(id, result) {
 if(result) {
 $(’registersubmit’).disabled = true;

@@ -175,24 +175,26 @@ ctrl+z 后台运行
 
 下面是我个人的配置
 
-    #debug 3
-    set ftp:charset "gbk"
-    set sftp:charset "UTF-8"
-    set file:charset "UTF-8"
-    alias gbk "set ftp:charset gbk; set file:charset UTF-8"
-    alias utf8 "set ftp:charset UTF-8; set file:charset UTF-8"
-    alias passive "set ftp:passive-mode"
-    set ftp:ssl-auth TLS-P
-    set ftp:ssl-protect-data yes
-    set ftp:use-feat no
-    set ssl:verify-certificate no
-    set ftp:ssl-allow no
-    set ftp:ssl-force no
-    set ftp:passive-mode yes
-    set pget:default-n 1
-    #set persist-retries 5
-    set reconnect-interval-base 999
-    set reconnect-interval-multiplier 1
-    set net:limit-rate 61440,1024000
-    set prompt "\[\e[1;36m\]lftp\[\e[m\] \[\e[0;32m\]\S\? \u\@\h:\w>\[\e[m\] "
-    set ftp:list-empty-ok yes
+```
+#debug 3
+set ftp:charset "gbk"
+set sftp:charset "UTF-8"
+set file:charset "UTF-8"
+alias gbk "set ftp:charset gbk; set file:charset UTF-8"
+alias utf8 "set ftp:charset UTF-8; set file:charset UTF-8"
+alias passive "set ftp:passive-mode"
+set ftp:ssl-auth TLS-P
+set ftp:ssl-protect-data yes
+set ftp:use-feat no
+set ssl:verify-certificate no
+set ftp:ssl-allow no
+set ftp:ssl-force no
+set ftp:passive-mode yes
+set pget:default-n 1
+#set persist-retries 5
+set reconnect-interval-base 999
+set reconnect-interval-multiplier 1
+set net:limit-rate 61440,1024000
+set prompt "\[\e[1;36m\]lftp\[\e[m\] \[\e[0;32m\]\S\? \u\@\h:\w>\[\e[m\] "
+set ftp:list-empty-ok yes
+```

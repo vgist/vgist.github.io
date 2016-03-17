@@ -37,12 +37,10 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
 #### 二、使用方法
 
-```
-# systemctl start firewalld         # 启动,
-# systemctl enable firewalld        # 开机启动
-# systemctl stop firewalld          # 关闭
-# systemctl disable firewalld       # 取消开机启动
-```
+    # systemctl start firewalld         # 启动,
+    # systemctl enable firewalld        # 开机启动
+    # systemctl stop firewalld          # 关闭
+    # systemctl disable firewalld       # 取消开机启动
 
 具体的规则管理，可以使用 `firewall-cmd`，具体的使用方法可以
 
@@ -72,18 +70,16 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
 查看指定级别的所有信息，譬如 public
 
-```
-$ firewall-cmd --zone=public --list-all
-public (default, active)
-  interfaces: eth0
-  sources:
-  services: dhcpv6-client http ssh
-  ports:
-  masquerade: no
-  forward-ports:
-  icmp-blocks:
-  rich rules:
-```
+    $ firewall-cmd --zone=public --list-all
+    public (default, active)
+      interfaces: eth0
+      sources:
+      services: dhcpv6-client http ssh
+      ports:
+      masquerade: no
+      forward-ports:
+      icmp-blocks:
+      rich rules:
 
 查看所有级别被允许的信息
 
@@ -95,13 +91,11 @@ public (default, active)
 
 ##### 2. 管理规则
 
-``
-# firewall-cmd --panic-on           # 丢弃
-# firewall-cmd --panic-off          # 取消丢弃
-# firewall-cmd --query-panic        # 查看丢弃状态
-# firewall-cmd --reload             # 更新规则，不重启服务
-# firewall-cmd --complete-reload    # 更新规则，重启服务
-```
+    # firewall-cmd --panic-on           # 丢弃
+    # firewall-cmd --panic-off          # 取消丢弃
+    # firewall-cmd --query-panic        # 查看丢弃状态
+    # firewall-cmd --reload             # 更新规则，不重启服务
+    # firewall-cmd --complete-reload    # 更新规则，重启服务
 
 添加某接口至某信任等级，譬如添加 eth0 至 public，再永久生效
 

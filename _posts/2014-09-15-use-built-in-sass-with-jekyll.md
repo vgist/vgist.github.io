@@ -23,11 +23,8 @@ tags: [Jekyll, Usage, Sass]
 
 在你的 `css` 目录下创建 `style.scss`：
 
-```
----
----
-// your scss here
-```
+    ---
+    ---
 
 那么，在 `$ jekyll build` 编译后，会自动将 `css/style.scss` 转化成 `_site/css/style.css`。
 
@@ -51,14 +48,12 @@ sass:
 
 最后在 `css/style.scss` 中引入：
 
-```
----
----
+    ---
+    ---
 
-//Imports
-@import "one";
-@import "two";
-```
+    //Imports
+    @import "one";
+    @import "two";
 
 注意，两行的 `---` 是必须的，以便让 Jekyll 知晓该前置数据块的文件需要处理。可以详细了解下 [Jekyll 的 YAML 前置数据]({% post_url 2013-07-05-jekyll-yaml-front-matter %})。
 

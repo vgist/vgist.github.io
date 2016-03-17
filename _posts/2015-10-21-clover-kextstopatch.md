@@ -69,12 +69,10 @@ tags: [Clover]
 
 将 `pci168c,2a`、`pci168c,2b` 都进行 base64 编码，打开终端：
 
-```
-→ ~ $ echo -n 'pci168c,2a'|base64
-cGNpMTY4YywyYQ==
-→ ~ $ echo -n 'pci168c,2b'|base64
-cGNpMTY4YywyYg==
-```
+    → ~ $ echo -n 'pci168c,2a'|base64
+    cGNpMTY4YywyYQ==
+    → ~ $ echo -n 'pci168c,2b'|base64
+    cGNpMTY4YywyYg==
 
 注意，echo 需要加 -n 参数，防止编码时被加入回车字符。
 
@@ -108,12 +106,10 @@ cGNpMTY4YywyYg==
 
 同时 Thinkpad X230 的蓝牙，默认也可以驱动，只是蓝牙版本是 3.0 的，同理，我们修改的是 BroadcomBluetoothHostControllerUSBTransport，Info.plist 位于 `/System/Library/Extensions/IOBluetoothFamily.kext/Contents/PlugIns/BroadcomBluetoothHostControllerUSBTransport.kext/Contents` 目录下，找到 idVendor 为 **2652**的设备，并随便找一个 BT V3.0 的型号，譬如 `PID 8600 0x2198 VID 2652 0xA5C`，我们就拿它来开刀
 
-```
-→ ~ $ echo -n '8600' |base64
-ODYwMA==
-→ ~ $ echo -n '8678' |base64
-ODY3OA==
-```
+    → ~ $ echo -n '8600' |base64
+    ODYwMA==
+    → ~ $ echo -n '8678' |base64
+    ODY3OA==
 
 得到 base64 码后，写入 config.plist
 
