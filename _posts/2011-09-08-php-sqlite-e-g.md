@@ -18,33 +18,35 @@ tags: [PHP, SQLite, Usage]
 
 一旦表格创建好了，下面就是使用 PHP 的 SQLite 方法建立一个脚本模板。
 
-    <?php
-    // 使用的 DB 库
-    $db = "users.db";
+```php
+<?php
+// 使用的 DB 库
+$db = "users.db";
 
-    // 打开 DB 连接，请确保 DB 的可读写性
-    // make sure script has read/write permissions!
-    $conn = sqlite_open($db) or die ("ERROR: Cannot open database");
+// 打开 DB 连接，请确保 DB 的可读写性
+// make sure script has read/write permissions!
+$conn = sqlite_open($db) or die ("ERROR: Cannot open database");
 
-    // 执行 insert 插入操作
-    $sql = "INSERT INTO users (id, username, country) VALUES ('5', 'pierre', 'FR')";
-    sqlite_query($conn, $sql) or die("Error in query execution: " .　sqlite_error_string(sqlite_last_error($conn)));
+// 执行 insert 插入操作
+$sql = "INSERT INTO users (id, username, country) VALUES ('5', 'pierre', 'FR')";
+sqlite_query($conn, $sql) or die("Error in query execution: " .　sqlite_error_string(sqlite_last_error($conn)));
 
-    // 执行 select 查询操作，并将结果传递给 $result
-    $sql = "SELECT username, country FROM users";
-    $result = sqlite_query($conn, $sql) or die("Error in query execution: " . sqlite_error_string(sqlite_last_error($conn)));
+// 执行 select 查询操作，并将结果传递给 $result
+$sql = "SELECT username, country FROM users";
+$result = sqlite_query($conn, $sql) or die("Error in query execution: " . sqlite_error_string(sqlite_last_error($conn)));
 
-    // 将 $result 数组化，并用数组的序号和索引来选择显示的内容，最后打印出
-    // print if available
-    if (sqlite_num_rows($result) --> 0) {
-        while($row = sqlite_fetch_array($result)) {
-            echo $row[0] . " (" . $row[1] . ") ";
-        }
+// 将 $result 数组化，并用数组的序号和索引来选择显示的内容，最后打印出
+// print if available
+if (sqlite_num_rows($result) --> 0) {
+    while($row = sqlite_fetch_array($result)) {
+        echo $row[0] . " (" . $row[1] . ") ";
     }
+}
 
-    // 关闭 DB 连接
-    sqlite_close($conn);
-    ?>
+// 关闭 DB 连接
+sqlite_close($conn);
+?>
+```
 
 在使用 PHP 的 SQLite 扩展执行 SQL 查询的时候，要按照下列四个简单步骤进行：
 
