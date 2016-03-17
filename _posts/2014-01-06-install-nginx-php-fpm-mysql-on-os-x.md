@@ -70,15 +70,18 @@ tags: [Nginx, PHP-FPM, MariaDB]
 测试下
 
     $ curl -IL http://localhost:8080
-    HTTP/1.1 200 OK
-    Server: nginx/1.4.4
-    Date: Mon, 06 Jan 2014 07:50:26 GMT
-    Content-Type: text/html
-    Content-Length: 612
-    Last-Modified: Mon, 06 Jan 2014 07:45:10 GMT
-    Connection: keep-alive
-    ETag: "52ca5f06-264"
-    Accept-Ranges: bytes
+
+```html
+HTTP/1.1 200 OK
+Server: nginx/1.4.4
+Date: Mon, 06 Jan 2014 07:50:26 GMT
+Content-Type: text/html
+Content-Length: 612
+Last-Modified: Mon, 06 Jan 2014 07:45:10 GMT
+Connection: keep-alive
+ETag: "52ca5f06-264"
+Accept-Ranges: bytes
+```
 
 #### 四. 配置
 
@@ -193,13 +196,11 @@ server {
 
 编辑 `/usr/local/etc/php/5.4/php-fpm.conf`
 
-```
-;listen = 127.0.0.1:9000
-listen = /usr/local/var/run/php-fpm.sock
+    ;listen = 127.0.0.1:9000
+    listen = /usr/local/var/run/php-fpm.sock
 
-user = yourname
-group = admin
-```
+    user = yourname
+    group = admin
 
 编辑 `/usr/local/etc/php/5.4/php.ini`
 
@@ -344,8 +345,9 @@ alias mysql.restart='mysql.stop && mysql.start'
 
 当然一些路径配置成自己的，譬如 php-fpm 的 sock 路径，譬如 www 路径，随后启动 apache 与 php-fpm
 
-```
-$ curl -I localhost:8080
+    $ curl -I localhost:8080
+
+```thml
 HTTP/1.1 200 OK
 Date: Tue, 14 Oct 2014 01:30:21 GMT
 Server: Apache/2.4.10 (Unix) mod_fastcgi/2.4.6
