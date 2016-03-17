@@ -21,61 +21,57 @@ deepin-screenshot 是 deepin ( 深度 ) 出品的采用 python 写的截图工�
 
 使用方法：
 
-```
-Usage: deepin-screenshot [options] [arg]
+    Usage: deepin-screenshot [options] [arg]
 
-Options:
-  --version             show program's version number and exit
-  -h, --help            show this help message and exit
-  -f, --full            Taking the fullscreen shot
-  -w, --window          Taking the currently focused window
-  -d NUM, --delay=NUM   wait NUM seconds before taking a shot
-  -s FILE, --save=FILE  save screenshot to FILE
-```
+    Options:
+      --version             show program's version number and exit
+      -h, --help            show this help message and exit
+      -f, --full            Taking the fullscreen shot
+      -w, --window          Taking the currently focused window
+      -d NUM, --delay=NUM   wait NUM seconds before taking a shot
+      -s FILE, --save=FILE  save screenshot to FILE
 
 至于快捷键，因为桌面环境五花八门，还是自己通过控制中心绑定 deepin-screenshot 吧，ebuild 中就不给出了。
 
 闲话少说，给出gentoo ebuild：
 
-```
-# Copyright 1999-2012 Gentoo Foundation
-# Distributed under the terms of the GNU General Public License v3
-# $Header: $
+    # Copyright 1999-2012 Gentoo Foundation
+    # Distributed under the terms of the GNU General Public License v3
+    # $Header: $
 
-EAPI="4"
+    EAPI="4"
 
-inherit git-2
+    inherit git-2
 
-EGIT_REPO_URI="git://github.com/lovesnow/deepin-screenshot.git"
+    EGIT_REPO_URI="git://github.com/lovesnow/deepin-screenshot.git"
 
-DESCRIPTION="Snapshot tools for linux deepin."
-HOMEPAGE="https://github.com/lovesnow/deepin-screenshot"
+    DESCRIPTION="Snapshot tools for linux deepin."
+    HOMEPAGE="https://github.com/lovesnow/deepin-screenshot"
 
-LICENSE="LGPL-3"
-SLOT="0"
-KEYWORDS="~amd64 ~x86"
-IUSE=""
+    LICENSE="LGPL-3"
+    SLOT="0"
+    KEYWORDS="~amd64 ~x86"
+    IUSE=""
 
-RDEPEND="dev-lang/python:2.7
-    dev-python/pygtk:2
-    dev-python/python-xlib"
-DEPEND="${RDEPEND}"
+    RDEPEND="dev-lang/python:2.7
+        dev-python/pygtk:2
+        dev-python/python-xlib"
+    DEPEND="${RDEPEND}"
 
-src_prepare() {
-    sh updateTranslate.sh || die "failed to update Translate"
-    rm -rf po || die
-    rm -rf debian || die
-}
+    src_prepare() {
+        sh updateTranslate.sh || die "failed to update Translate"
+        rm -rf po || die
+        rm -rf debian || die
+    }
 
-src_install() {
-    dodoc AUTHORS ChangeLog README
+    src_install() {
+        dodoc AUTHORS ChangeLog README
 
-    insinto "/usr/share/deepin-screenshot"
-    doins -r ${S}/locale ${S}/src ${S}/theme
-    fperms 0755 /usr/share/deepin-screenshot/src/*
+        insinto "/usr/share/deepin-screenshot"
+        doins -r ${S}/locale ${S}/src ${S}/theme
+        fperms 0755 /usr/share/deepin-screenshot/src/*
 
-    dosym /usr/share/${PN}/src/${PN} /usr/bin/${PN}
-}
-```
+        dosym /usr/share/${PN}/src/${PN} /usr/bin/${PN}
+    }
 
 [https://github.com/Ihavee/overlay/blob/master/media-gfx/deepin-screenshot](https://github.com/Ihavee/overlay/blob/master/media-gfx/deepin-screenshot)

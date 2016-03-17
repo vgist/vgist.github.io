@@ -48,17 +48,15 @@ location ~ .*\.php$ {
 
 编辑 `/etc/lighttpd/mod_fastcgi.conf`
 
-```
-server.modules += ("mod_fastcgi")
-fastcgi.server = ( ".php" =>
-    ( "localhost" =>
-        (
-            "socket"    => "/var/run/php-fpm.sock",
+    server.modules += ("mod_fastcgi")
+    fastcgi.server = ( ".php" =>
+        ( "localhost" =>
+            (
+                "socket"    => "/var/run/php-fpm.sock",
+            )
         )
     )
-)
-fastcgi.map-extensions = ( ".php3" => ".php", ".php4" => ".php", ".php5" => ".php" )
-```
+    fastcgi.map-extensions = ( ".php3" => ".php", ".php4" => ".php", ".php5" => ".php" )
 
 #### apache
 

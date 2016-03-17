@@ -13,7 +13,7 @@ tags: [Git, Usage]
 
 或者直接编辑 `.gitconfig` 文件，格式如下
 
-```
+```ini
 [alias]
       alias= command
 ```
@@ -26,7 +26,7 @@ tags: [Git, Usage]
 
 或者
 
-```
+```ini
 [alias]
       s = status
 ```
@@ -55,7 +55,7 @@ tags: [Git, Usage]
 
 以下是在我的 `.gitconfig` 中的 alias 设置
 
-```
+```ini
 [alias]
     ll= log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(w    hite)- %an, %ar%Creset' --decorate --abbrev-commit --max-count=20
     l = log --stat --decorate --abbrev-commit --max-count=3
