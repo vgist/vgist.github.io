@@ -28,8 +28,8 @@ tags: [Liquid,Jekyll]
 下面是关于输出标记的简单实例：
 
 {% raw %}
-    Hello {{name}}
-    Hello {{user.name}}
+    Hello {{ name }}
+    Hello {{ user.name }}
     Hello {{ 'tobi' }}
 {% endraw %}
 
@@ -114,9 +114,9 @@ tags: [Liquid,Jekyll]
 
 Raw 暂时性的禁用的标签的解析。这在需要展示一些可能产生冲突的内容（如本页面，要展示 liquid 语句，就需要包含在 raw 标签间，否则会被解析）时非常有用。
 
-
-    {{ "{% raw " }}%} In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.{{ "{% endraw " }}%}
-
+{% raw %}
+    In Handlebars, {{ this }} will be HTML-escaped, but {{{ that }}} will not.
+{% endraw %}
 
 #### If/Else
 
