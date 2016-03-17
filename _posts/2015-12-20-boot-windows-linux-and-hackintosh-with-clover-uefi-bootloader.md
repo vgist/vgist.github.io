@@ -43,7 +43,7 @@ tags: [Clover, EFI]
 ```xml
 <key>Theme</key>
 <string>bootcamp</string>
-<key>Custom</key>           # GUI 的子项，与 Theme 并列
+<key>Custom</key>   <!--GUI 的子项，与 Theme 并列-->
 <dict>
     <key>Entries</key>
     <array>

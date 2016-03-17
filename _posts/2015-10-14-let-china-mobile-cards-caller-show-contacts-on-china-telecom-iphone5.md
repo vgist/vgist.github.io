@@ -15,54 +15,54 @@ tags: [iPhone, iOS]
 
 下载附件： [Default.phoneformat.zip](http://cdn.09hd.com/images/2015/10/Default.phoneformat.zip)，解压缩后替换掉 `/System/Library/PrivateFrameworks/AppSupport.framework/Default.phoneformat`。
 
-    ssh root@ip
-    cd /System/Library/PrivateFrameworks/AppSupport.framework
-    mv Default.phoneformat ./Default.phoneformat.1
+    $ ssh root@ip
+    # cd /System/Library/PrivateFrameworks/AppSupport.framework
+    # mv Default.phoneformat ./Default.phoneformat.1
 
 PC 端另开一终端：
 
-    scp /pc-path/Default.phoneformat root@ip:/System/Library/PrivateFrameworks/AppSupport.framework/
+    $ scp /pc-path/Default.phoneformat root@ip:/System/Library/PrivateFrameworks/AppSupport.framework/
 
 #### 解决 iMessage & FaceTime 激活
 
-    ssh root@ip
-    cd /System/Library/Carrier\ Bundles/iPhone
+    $ ssh root@ip
+    # cd /System/Library/Carrier\ Bundles/iPhone
 
 `ls` 可以看到很多运营商的配置，由于我现有插入卡贴后显示的运营商为 **vf nl 21.1**，对应目录下的 **Vodafone_nl.bundle**，ssh 进去备份下，同时将移动的配置复制过来。
 
-    mv Vodafone_nl.bundle ./Vodafone_nl.bundle.1
-    cp -r CMCC_cn.bundle ./Vodafone_nl.bundle
-    cd Vodafone_nl.bundle
-    ls
-    Info.plist  carrier.plist  overrides_N41_N42.plist  overrides_N41_N42.pri  signatures  version.plist
+    # mv Vodafone_nl.bundle ./Vodafone_nl.bundle.1
+    # cp -r CMCC_cn.bundle ./Vodafone_nl.bundle
+    # cd Vodafone_nl.bundle
+    # ls
+    # Info.plist  carrier.plist  overrides_N41_N42.plist  overrides_N41_N42.pri  signatures  version.plist
 
 需要将 Info.plist 移动到 PC 中，通过 vim 来编辑：
 
-    scp root@ip:"/System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle/Info.plist" ~/Desktop
+    $ scp root@ip:"/System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle/Info.plist" ~/Desktop
 
 这里注意，scp 下带空格的路径，需要转义符与双引号。
 
 由于 Info.plist 是二进制文件，直接用 vim 打开是乱码，可以通过 OS X 自带的 plutil 来转换，其用法
 
-    plutil -convert xml1 file.plist    # 转换到 xml
-    plutil -convert binary1 file.plist # 转换到两进制文件
+    $ plutil -convert xml1 file.plist    # 转换到 xml
+    $ plutil -convert binary1 file.plist # 转换到两进制文件
 
 在这里便是：
 
-    plutil -convert xml1 ~/Desktop/Info.plist
+    $ plutil -convert xml1 ~/Desktop/Info.plist
 
 修改第十行的 `com.apple.CMCC_cn` 为 `com.apple.Vodafone_nl`。
 
 最后转换成两进制文件以后导入到原路径下：
 
-    plutil -convert binary1 ~/Desktop/Info.plist
-    scp Desktop/Info.plist root@ip:"/System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle/"
+    $ plutil -convert binary1 ~/Desktop/Info.plist
+    $ scp Desktop/Info.plist root@ip:"/System/Library/Carrier\ Bundles/iPhone/Vodafone_nl.bundle/"
 
 随后注销或重启即可：
 
-    killall SpringBoard
+    # killall SpringBoard
     or
-    reboot
+    # reboot
 
 至此，完成，老人家再也不用担心来电不显示通讯录了，再也不用担心在通讯录不加 86 直接拨出去电话为空号了。
 

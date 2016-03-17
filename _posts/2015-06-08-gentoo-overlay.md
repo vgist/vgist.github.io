@@ -22,33 +22,39 @@ layman 的配置非常方便，几乎不用介入修改。譬如作为中文区�
 
 一些常用的参数如下，更多参数可以通过 `layman -h` 来查看：
 
-    -a <name>       # 添加一个的 overlay
-    -d <name>       # 删除一个的 overlay
-    -D <name>       # 关闭一个的 overlay
-    -E <name>       # 开启一个的 overlay
-    -f <name>       # 获取远程的 overlay 列表
-    -i <name>       # 显示一个 overlay 信息
-    -L <name>       # 显示远程 overlay 列表
-    -l              # 显示本地 overlay 列表
-    -s <name>       # 同步一个本地 overlay
-    -S              # 同步所有本地 overlay
+```
+-a <name>       # 添加一个的 overlay
+-d <name>       # 删除一个的 overlay
+-D <name>       # 关闭一个的 overlay
+-E <name>       # 开启一个的 overlay
+-f <name>       # 获取远程的 overlay 列表
+-i <name>       # 显示一个 overlay 信息
+-L <name>       # 显示远程 overlay 列表
+-l              # 显示本地 overlay 列表
+-s <name>       # 同步一个本地 overlay
+-S              # 同步所有本地 overlay
+```
 
 在 app-portage/layman-2.3.0 以及以后的版本，在通过 `layman -f -a <name>` 后会自动在 **/etc/portage/repos.conf/** 下生成一文件，譬如前面我们已经添加了 gentoo-zh overlay，则内容为：
 
-    [gentoo-zh]
-    priority = 50
-    location = /var/lib/layman/gentoo-zh
-    auto-sync = No
-    layman-type = git
+```
+[gentoo-zh]
+priority = 50
+location = /var/lib/layman/gentoo-zh
+auto-sync = No
+layman-type = git
+```
 
 如果你需要在更新 portage 树的同时也更新第三方的 overlay，那么只需将以上内容修改为如下即可：
 
-    [gentoo-zh]
-    priority = 50
-    location = /var/lib/layman/gentoo-zh
-    auto-sync = Yes
-    sync-type = git
-    sync-uri = git://github.com/microcai/gentoo-zh.git
+```
+[gentoo-zh]
+priority = 50
+location = /var/lib/layman/gentoo-zh
+auto-sync = Yes
+sync-type = git
+sync-uri = git://github.com/microcai/gentoo-zh.git
+```
 
 对于 app-portage/layman-2.3.0 之前升级上来的用户而言，如果之前就添加了各个 overlay，那么通过 `layman-updater -R` 重建一下即可。
 
@@ -58,19 +64,20 @@ layman 的配置非常方便，几乎不用介入修改。譬如作为中文区�
 
 当然 repositories.xml 必须包含如下的基本信息：
 
+```xml
 <?xml version="1.0" ?>
-
-    <repositories version="1.0">
-        <repo priority="50" quality="experimental" status="unofficial">
-        <name>Havee</name>
-        <description>Havee's gentoo overlay</description>
-        <homepage>http://github.com/Ihavee/overlay</homepage>
-        <owner>
-            <email>registerdedicated@yeah.net</email>
-        </owner>
-        <source type="git">git://github.com/Ihavee/overlay.git</source>
-        </repo>
-    </repositories>
+<repositories version="1.0">
+    <repo priority="50" quality="experimental" status="unofficial">
+    <name>Havee</name>
+    <description>Havee's gentoo overlay</description>
+    <homepage>http://github.com/Ihavee/overlay</homepage>
+    <owner>
+        <email>registerdedicated@yeah.net</email>
+    </owner>
+    <source type="git">git://github.com/Ihavee/overlay.git</source>
+    </repo>
+</repositories>
+```
 
 创建一个自己维护的 overlay，可以通过 **layman-overlay-maker** 命令，然后根据提示一步一步的去创建，最后通过 `layman -a <name>` 加进去。
 
