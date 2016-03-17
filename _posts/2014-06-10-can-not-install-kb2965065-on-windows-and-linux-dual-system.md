@@ -21,14 +21,12 @@ Grub2 用户非常简单，配置加一行让系统认为 Windows 8.1 分区是 
 
 msdos3 为你 Windows 8.1 所在的分区，最终的结果类似于
 
-```
-menuentry "Microsoft Windows 8.1" {
-    insmod chain
-    set root=(hd0,msdos3)
-    parttool (hd0,msdos3) boot+
-    chainloader +1
-}
-```
+    menuentry "Microsoft Windows 8.1" {
+        insmod chain
+        set root=(hd0,msdos3)
+        parttool (hd0,msdos3) boot+
+        chainloader +1
+    }
 
 然后重新生成下 Grub2 配置文件
 
@@ -52,12 +50,10 @@ menuentry "Microsoft Windows 8.1" {
 
 顺便说下，用 syslinux 引导 clover 黑苹果，也很简单。
 
-```
-LABLE macosx
-    MENU LABEL Mac OS X with Clover
-    com32 chain.c32
-    APPEND hd1 1
-```
+    LABLE macosx
+        MENU LABEL Mac OS X with Clover
+        com32 chain.c32
+        APPEND hd1 1
 
 很熟悉是不是，Syslinux 通过 BIOS 引导黑苹果所在硬盘的 mbr，从而启动 clover 来引导黑苹果。UEFI 则没尝试，有谁成功引导 win & mac 的可以告知下。
 

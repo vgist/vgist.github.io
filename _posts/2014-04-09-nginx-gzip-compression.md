@@ -9,7 +9,7 @@ tags: [Nginx]
 
 首先我对 Nginx 中 Gzip 的配置如下：
 
-```
+```nginx
 gzip  on;
 gzip_min_length     1k;
 gzip_buffers        4 8k;
@@ -62,7 +62,7 @@ gzip_disable        "MSIE [1-6]\.";
 
 如果包含下列字符串则表示 Gzip压缩开启成功
 
-```
+```http
 HTTP/1.1 200 OK
 Server: nginx/1.4.5
 Date: Wed, 09 Apr 2014 03:55:06 GMT

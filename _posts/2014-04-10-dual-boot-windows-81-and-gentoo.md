@@ -25,46 +25,36 @@ tags: [Windows, Gentoo]
 
 首先输入 `list disk` 列出可用磁盘
 
-```
-DISKPART> list disk
-磁盘 ###    状态            大小        可用        Dyn     Gpt
---------    -------------   -------     -------     ---     ---
-磁盘 0      联机            119 GB      0B
-磁盘 1      联机            931 GB      1024 KB
-```
+    DISKPART> list disk
+    磁盘 ###    状态            大小        可用        Dyn     Gpt
+    --------    -------------   -------     -------     ---     ---
+    磁盘 0      联机            119 GB      0B
+    磁盘 1      联机            931 GB      1024 KB
 
 选择磁盘 0
 
-```
-DISKPART> select disk 0
-磁盘 0 现在是所选磁盘。
-```
+    DISKPART> select disk 0
+    磁盘 0 现在是所选磁盘。
 
 列出磁盘 0 所有分区
 
-```
-DISKPART> list partition
-分区 ###        类型                大小        偏移量
--------------   ----------------    -------     -------
-分区    1       主要                100 MB      1024 KB
-分区    2       主要                 58 GB       101 MB
-分区    3       主要                 48 GB        58 GB
-分区    4       主要                 11 GB       107 GB
-```
+    DISKPART> list partition
+    分区 ###        类型                大小        偏移量
+    -------------   ----------------    -------     -------
+    分区    1       主要                100 MB      1024 KB
+    分区    2       主要                 58 GB       101 MB
+    分区    3       主要                 48 GB        58 GB
+    分区    4       主要                 11 GB       107 GB
 
 选择分区1
 
-```
-DISKPART> select partition 1
-分区 1 现在是所选分区。
-```
+    DISKPART> select partition 1
+    分区 1 现在是所选分区。
 
 删除隐藏分区
 
-```
-DISKPART> delete partition override
-DiskPart 成功删除了所选分区。
-```
+    DISKPART> delete partition override
+    DiskPart 成功删除了所选分区。
 
 好了，下面可以用 Gentoo 的 LiveUSB 工具去安装 Gentoo 了。
 

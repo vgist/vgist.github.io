@@ -26,11 +26,9 @@ Homebrew 扩展阅读：[Homebrew 的安装与使用]({% post_url 2013-12-21-how
 
 为了方便后面使用，可以使用 aliases
 
-```
-$ echo "alias goagent.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
-$ echo "alias goagent.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
-$ echo "alias goagent.restart='goagent.stop && goagent.start'" >> ~/.bashrc
-```
+    $ echo "alias goagent.start='launchctl load -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
+    $ echo "alias goagent.stop='launchctl unload -w ~/Library/LaunchAgents/homebrew.mxcl.goagent.plist'" >> ~/.bashrc
+    $ echo "alias goagent.restart='goagent.stop && goagent.start'" >> ~/.bashrc
 
 使用时就可以方便的使用命令行
 

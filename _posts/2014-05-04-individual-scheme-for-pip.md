@@ -23,7 +23,7 @@ tags: [pip,Python]
 
 当然，这样安装的包，不在用户路径变量中，需要 export 下 PATH。编辑 `~/.bash_profile`，最后加入
 
-```
+```shell
 if [ -d $HOME/Library/Python/2.7/bin ]; then
     export PATH=$HOME/Library/Python/2.7/bin:$PATH
 fi
@@ -38,7 +38,7 @@ fi
 
 编辑 `~/.pip/pip.conf`
 
-```
+```ini
 [global]
 default-timeout = 60
 download-cache = ~/.pip/cache
