@@ -7,12 +7,14 @@ tags: [UChome, SEO, Usage]
 
 首先在模板 `header.htm` 加上代码：
 
-    <!--{if $_TPL['keywords']}-->
-     <meta name="keywords" content="$_TPL['keywords']" />
-    <!--{/if}-->
-    <!--{if $_TPL['descriptions']}-->
-     <meta name="description" content="$_TPL['descriptions']" />
-    <!--{/if}-->
+```
+<!--{if $_TPL['keywords']}-->
+ <meta name="keywords" content="$_TPL['keywords']" />
+<!--{/if}-->
+<!--{if $_TPL['descriptions']}-->
+ <meta name="description" content="$_TPL['descriptions']" />
+<!--{/if}-->
+```
 
 <!-- more -->
 
@@ -22,7 +24,9 @@ tags: [UChome, SEO, Usage]
 
 `getstr($blog['message'], 180, 0, 0, 0, 0, -1)`这个是截取长度（官方函数库自带）。
 
-    <!--{eval $_TPL['keywords'] = implode(',', $blog['tag']);}-->
-    <!--{eval $content=str_replace("&nbsp;","",$blog['message']);}-->
-    <!--{eval $description=preg_replace("'([\r\n])[\s]+'","",$content);}-->
-    <!--{eval $_TPL['descriptions'] = getstr($description, 208, 0, 0, 0, 0, -1);}-->
+```
+<!--{eval $_TPL['keywords'] = implode(',', $blog['tag']);}-->
+<!--{eval $content=str_replace("&nbsp;","",$blog['message']);}-->
+<!--{eval $description=preg_replace("'([\r\n])[\s]+'","",$content);}-->
+<!--{eval $_TPL['descriptions'] = getstr($description, 208, 0, 0, 0, 0, -1);}-->
+```
