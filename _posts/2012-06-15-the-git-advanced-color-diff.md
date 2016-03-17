@@ -14,7 +14,7 @@ Gentoo 默认的 git 真的很朴素，默认配置实在是太简单了。
 
 我们还是先将 git 的颜色部分配置好吧。
 
-```
+```ini
 [color]
     branch = auto
     diff = auto

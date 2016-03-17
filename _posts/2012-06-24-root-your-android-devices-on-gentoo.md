@@ -26,16 +26,14 @@ tags: [Gentoo, Android]
 
 如果认到你的 Android 设备，那么就可以开始了
 
-```
-$ adb push /local/path/zergRush /data/local/tmp/
-$ adb shell chmod 6755 /data/local/tmp/zergRush
-$ adb shell ./data/local/tmp/zergRush
-$ adb shell mv /system/xbin/su /system/xbin/su.bak # 备份设备中原 su 文件
-$ adb push /local/path/su /system/xbin             # 把下载解压得到的 su 文件 推送到 android 设备中
-$ adb shell chmod 6755 /system/xbin/su             # 变更权限
-$ adb shell sync                                   # 同步缓存中的文件
-$ adb shell reboot                                 # 重启 android 设备
-```
+    $ adb push /local/path/zergRush /data/local/tmp/
+    $ adb shell chmod 6755 /data/local/tmp/zergRush
+    $ adb shell ./data/local/tmp/zergRush
+    $ adb shell mv /system/xbin/su /system/xbin/su.bak # 备份设备中原 su 文件
+    $ adb push /local/path/su /system/xbin             # 把下载解压得到的 su 文件 推送到 android 设备中
+    $ adb shell chmod 6755 /system/xbin/su             # 变更权限
+    $ adb shell sync                                   # 同步缓存中的文件
+    $ adb shell reboot                                 # 重启 android 设备
 
 接下来就可以从网上下载最新版的 Superuser.apk：
 
