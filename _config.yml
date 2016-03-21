@@ -26,6 +26,12 @@ sass:
     sass_dir: assets/_sass
     style: :compressed
 
+# collections
+collections:
+    tools:
+        output: true
+        permalink: /:path/:title.html
+
 # comment
 comments:
     duoshuo:
