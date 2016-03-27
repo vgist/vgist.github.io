@@ -110,7 +110,7 @@ tags: [CLI]
 常见的使用场景
 
     find /path/to/dir | cpio -ocvB > /path/to/name.cpio     # o 模式，打包目录成 cpio 档案
-    find /. | cpio -ocvB /path/to/system.cpio               # o 模式，备份整个系统
+    find /. | cpio -ocvB > /path/to/system.cpio             # o 模式，备份整个系统
     cpio -ivt < /path/to/name.cpio                          # i 模式，列出 name.cpio 的文件
     cpio -idmv < /path/to/name.cpio                         # i 模式，还原 cpio 档案
-    find /path/to/dir1 | cpio -pvd /path/to/dir2            # p 模式，直接复制文件到新目录
+    find /path/to/dir1 | cpio -pvd > /path/to/dir2          # p 模式，直接复制文件到新目录
