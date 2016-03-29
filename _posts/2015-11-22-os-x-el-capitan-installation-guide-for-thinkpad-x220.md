@@ -136,4 +136,4 @@ tags: [ThinkPad, OS X]
 - <http://x220.mcdonnelltech.com>
 - [https://www.reddit.com/](https://www.reddit.com/r/hackintosh/comments/2wohwn/getting_imessage_working_on_10102_generating/)
 
-- 2016.03.25: [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1dE3rbJ7) 更新 AppleHDA_20672.kext
+2016.03.25: [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1dE3rbJ7) 更新 AppleHDA_20672.kext
