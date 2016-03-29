@@ -114,8 +114,8 @@ tags: [ThinkPad, OS X]
 8. 在 Board SerialNumber 项中，填上上面魔术棒生成的序列号，自己再添加一个5位的随机数，最终是 17 位。
 9. 保存 config.plist
 10. 打开终端，运行如下命令
-    - defaults write com.apple.finder AppleShowAllFiles TRUE
-    - killall Finder
+    - `$ defaults write com.apple.finder AppleShowAllFiles TRUE`
+    - `$ killall Finder`
 11. 进入目录 **/Users/[Username]/Library/Caches**，删除所有以下字眼开头的文件或文件夹，如果没有就不用管
     - com.apple.Messages
     - com.apple.imfoundation.IMRemoteURLConnectionAgent
