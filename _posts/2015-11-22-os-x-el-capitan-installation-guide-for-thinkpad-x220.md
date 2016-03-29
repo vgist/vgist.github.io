@@ -127,8 +127,8 @@ tags: [ThinkPad, OS X]
 13. 进入目录 **/Users/[Username]/Library**，删除文件夹 **Messages**，如果没有则不用管
 14. 清空垃圾篓，如果提示文件仍在被使用，请重启再清空垃圾篓
 15. 重建缓存，完成后重启（PS：个人感觉，这一步不是必须的）
-    - `sudo touch /System/Library/Extensions`
-    - `sudo kextcache -f -u /`
+    - `$ sudo touch /System/Library/Extensions`
+    - `$ sudo kextcache -f -u /`
 16. 如果 iMessage 与 FaceTime 登陆 appid 后正常了，则可以重新隐藏默认隐藏的文件或文件夹了
 
 参考：
