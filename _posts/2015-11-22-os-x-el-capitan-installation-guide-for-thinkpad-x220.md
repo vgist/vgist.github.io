@@ -24,7 +24,7 @@ tags: [ThinkPad, OS X]
 
 #### 二. CLOVER
 
-关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1o72sOkE)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
+关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1dE3rbJ7)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
 
 如果不确认 U 盘的 EFI 分区为哪个，可以通过 `diskutil list` 来查询，随后通过 `diskutil mount` 来挂载。譬如：
 
@@ -100,6 +100,7 @@ tags: [ThinkPad, OS X]
     $ sudo touch /System/Library/Extensions
     $ sudo kextcache -f -u /
 
+<<<<<<< HEAD
 ##### 5. 白果三码
 
 以下方法我没有验证过，不过很多同学依照此方法正常使用 iMessage & FaceTime。
@@ -135,3 +136,8 @@ tags: [ThinkPad, OS X]
 
 - <http://x220.mcdonnelltech.com>
 - [https://www.reddit.com/](https://www.reddit.com/r/hackintosh/comments/2wohwn/getting_imessage_working_on_10102_generating/)
+=======
+参考：<http://x220.mcdonnelltech.com>
+
+- 2016.03.25: [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1dE3rbJ7) 更新 AppleHDA_20672.kext
+>>>>>>> 5b5a485d53af2506c5ce59860121636f4f020219
