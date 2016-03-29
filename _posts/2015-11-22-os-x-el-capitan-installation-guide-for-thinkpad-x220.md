@@ -100,4 +100,38 @@ tags: [ThinkPad, OS X]
     $ sudo touch /System/Library/Extensions
     $ sudo kextcache -f -u /
 
-参考：<http://x220.mcdonnelltech.com>
+##### 5. 白果三码
+
+以下方法我没有验证过，不过很多同学依照此方法正常使用 iMessage & FaceTime。
+
+- 1. 打开 Clover Configurator，挂载你的 EFI
+- 2. 在 Clover Configurator 中打开你的 config.plist
+- 3. 定位到 Rt Variables 段，清除该段所有信息
+- 4. 定位到 SMBIOS 段，点击魔术棒随机生成信息，多点击几次
+- 5. 去 <https://selfsolve.apple.com>，填入刚才生成的 serial number 来验证，如果得到错误提示，恭喜你，可以使用，如果错误，则回到上一步重新生成信息
+- 6. 打开终端，运行 `uuidgen`
+- 7. 复制刚才终端生成的 UUID 信息粘贴到 SMBIOS 段中的 SmUUID 中
+- 8. 在 Board SerialNumber 项中，填上上面魔术棒生成的序列号，自己再添加一个5位的随机数，最终是 17 位。
+- 9. 保存 config.plist
+- 10. 打开终端，运行如下命令
+    - defaults write com.apple.finder AppleShowAllFiles TRUE
+    - killall Finder
+- 11. 进入目录 **/Users/[Username]/Library/Caches**，删除所有以下字眼开头的文件或文件夹，如果没有就不用管
+    - com.apple.Messages
+    - com.apple.imfoundation.IMRemoteURLConnectionAgent
+- 12. 进入目录 **/Users/[Username]/Library/Preferences**，删除所有以下字眼开头的文件或文件夹，如果没有就不用管
+    - com.apple.iChat
+    - com.apple.imagent
+    - com.apple.imessage
+    - com.apple.imservice
+- 13. 进入目录 **/Users/[Username]/Library**，删除文件夹 **Messages**，如果没有则不用管
+- 14. 清空垃圾篓，如果提示文件仍在被使用，请重启再清空垃圾篓
+- 15. 重建缓存，完成后重启（PS：个人感觉，这一步不是必须的）
+    - `sudo touch /System/Library/Extensions`
+    - `sudo kextcache -f -u /`
+- 16. 如果 iMessage 与 FaceTime 登陆 appid 后正常了，则可以重新隐藏默认隐藏的文件或文件夹了
+
+参考：
+
+- <http://x220.mcdonnelltech.com>
+- [https://www.reddit.com/](https://www.reddit.com/r/hackintosh/comments/2wohwn/getting_imessage_working_on_10102_generating/)
