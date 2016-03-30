@@ -108,7 +108,7 @@ tags: [ThinkPad, OS X]
 2. 在 Clover Configurator 中打开你的 config.plist
 3. 定位到 Rt Variables 段，清除该段所有信息
 4. 定位到 SMBIOS 段，点击魔术棒随机生成信息，多点击几次
-5. 去 <https://selfsolve.apple.com>，填入刚才生成的 serial number 来验证，如果得到错误提示，恭喜你，可以使用，如果错误，则回到上一步重新生成信息
+5. 去 <https://selfsolve.apple.com>，填入刚才生成的 serial number 来验证，如果得到错误提示，恭喜你，可以使用，如果正确，则回到上一步重新生成信息
 6. 打开终端，运行 `uuidgen`
 7. 复制刚才终端生成的 UUID 信息粘贴到 SMBIOS 段中的 SmUUID 中
 8. 在 Board SerialNumber 项中，填上上面魔术棒生成的序列号，自己再添加一个5位的随机数，最终是 17 位。
