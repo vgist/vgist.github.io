@@ -48,4 +48,10 @@ comments:
 analytics:
     baidu:
         siteid: 625169d97c95b10732a31bbe33aa305d        # 百度统计 js 代码后的字符串
-
+webmaster:
+    baidu:
+        verify: BvD3CNBzK6
+    google:
+        verify: oE8rOfWaq0A-pkv0HY170kkzgB1hM1j6zRTyRBgRw78
+    bing:
+        verify: FE0D1D87A075E1003B82C7446EE360ED
