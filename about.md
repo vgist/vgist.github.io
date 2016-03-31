@@ -9,17 +9,17 @@ description: "业余爱好的点滴记录，同时作为配置备份的存储地
 #### ChangeLog
 
 - 2016 年 02 月
-      升级 Jekyll 至 v3 以上，一些小修改
+    - 升级 Jekyll 至 v3 以上，一些小修改
 - 2015 年 04 月
-      给每篇文章加了二维码显示
+    - 给每篇文章加了二维码显示
 - 2014 年 08 月
-      放弃 JB，转为 Jekyll
-      重新制作了模板 <https://github.com/iHavee/ihavee.github.io>
-      适配移动终端
+    - 放弃 JB，转为 Jekyll
+    - 重新制作了模板 <https://github.com/iHavee/ihavee.github.io>
+    - 适配移动终端
 - 2013 年 09 月
-      域名切换到 Havee.me
+    - 域名切换到 Havee.me
 - 2009 年 03 月
-      建立博客，准备记录
+    - 建立博客，准备记录
 
 #### About me
 
