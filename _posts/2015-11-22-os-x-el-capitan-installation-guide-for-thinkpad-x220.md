@@ -130,6 +130,8 @@ tags: [ThinkPad, OS X]
     - `$ sudo touch /System/Library/Extensions`
     - `$ sudo kextcache -f -u /`
 16. 如果 iMessage 与 FaceTime 登陆 appid 后正常了，则可以重新隐藏默认隐藏的文件或文件夹了
+    - `$ defaults write com.apple.finder AppleShowAllFiles`
+    - `killall Finder`
 
 参考：
 
