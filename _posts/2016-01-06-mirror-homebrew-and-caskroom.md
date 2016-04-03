@@ -14,10 +14,10 @@ tags: [Homebrew, Caskroom]
 
 #### Homebrew
 
-##### homebrew
+##### brew
 
     $ cd /usr/local
-    $ git remote set-url origin https://git.coding.net/hae/homebrew.git
+    $ git remote set-url origin https://git.coding.net/hae/brew.git
 
 homebrew 两进制源可以使用 ustc 的
 
