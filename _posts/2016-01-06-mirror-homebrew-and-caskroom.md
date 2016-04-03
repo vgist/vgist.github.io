@@ -23,6 +23,11 @@ homebrew 两进制源可以使用 ustc 的
 
     $ echo 'export HOMEBREW_BOTTLE_DOMAIN=https://mirrors.ustc.edu.cn/homebrew-bottles' >> ~/.bashrc
 
+##### homebrew/core
+
+    $ cd /usr/local/Library/Taps/homebrew/homebrew-core
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-core.git
+
 ##### homebrew/dupes
 
     $ cd /usr/local/Library/Taps/homebrew/homebrew-dupes
