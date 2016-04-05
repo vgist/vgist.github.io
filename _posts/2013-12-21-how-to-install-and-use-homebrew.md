@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Homebrew 的安装与使用"
-category: "MAC"
+category: "Mac"
 tags: [Homebrew]
 ---
 

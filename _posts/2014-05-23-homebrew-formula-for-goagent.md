@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "Homebrew 脚本 GoAgent"
-category: MAC
+category: Mac
 tags: [goagent, Homebrew]
 ---
 

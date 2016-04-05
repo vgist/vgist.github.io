@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "OS X 的 rubygems 用户目录"
-category: "MAC"
+category: "Mac"
 tags: [Ruby, Gem]
 ---
 
