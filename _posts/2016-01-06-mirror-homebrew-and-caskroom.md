@@ -53,14 +53,14 @@ homebrew 两进制源可以使用 ustc 的
 ##### caskroom/cask
 
     $ cd /usr/local/Library/Taps/caskroom/homebrew-cask
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask.git
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask-cask.git
 
 ##### caskroom/versions
 
     $ cd /usr/local/Library/Taps/caskroom/homebrew-versions
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask-versions.git
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-versions-cask.git
 
 ##### caskroom/fonts
 
     $ cd /usr/local/Library/Taps/caskroom/homebrew-fonts
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask-fonts.git
+    $ git remote set-url origin https://git.coding.net/hae/homebrew-fonts-cask.git
