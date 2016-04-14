@@ -19,11 +19,11 @@ title : {{ page.title | xml_escape }}
 
     {% for post in site.posts %}
     <entry>
-        <title>{{ post.title | xml_escape }}</title>
+        <title><![CDATA[{{ post.title | xml_escape }}]]></title>
         <link href="{{ site.url }}{{ post.url }}"/>
         <updated>{{ post.date | date_to_xmlschema }}</updated>
         <id>{{ site.url }}{{ post.id }}</id>
-        <content type="html">{{ post.content | strip_html | truncate:300 | xml_escape }}</content>
+        <content type="html"><![CDATA[{{ post.content | strip_html | truncate:300 | xml_escape }}]]></content>
     </entry>
     {% endfor %}
 
