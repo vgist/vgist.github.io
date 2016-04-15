@@ -25,7 +25,7 @@ tags: [Jekyll]
 
 #### 1. Upgrade
 
-    $ gem upgrade jekyll
+    $ gem update jekyll
 
 注意，Jekyll 3 需要 Ruby >= 2.0.0
 
