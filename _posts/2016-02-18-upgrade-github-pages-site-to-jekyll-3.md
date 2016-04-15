@@ -23,7 +23,7 @@ tags: [Jekyll]
 
 好吧，动手进行版本升级吧。
 
-#### 1. Upgrade
+#### 1. Update
 
     $ gem update jekyll
 
