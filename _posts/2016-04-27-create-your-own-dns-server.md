@@ -9,14 +9,14 @@ tags: [DNS, Gentoo, Centos]
 
 自建 DNS 的方案可以多种搭配，不过如果项目团队内部使用的话，个人还是推荐 Dnsmasq + DNSCrypt-proxy 方案，小巧，部署方便。
 
-<!-- more -->
-
 - Dnsmasq:
     - 提供 DNS 缓存和 DHCP 服务功能
 - DNSCrypt-proxy:
     - 在客户端与 DNS 服务端之间提供加密与认证
 
 工具清楚了，那么开始动手
+
+<!-- more -->
 
 #### DNSCrypt-proxy
 
@@ -69,8 +69,6 @@ CentOS
 
 没有的话则创建之，依次说明
 
-##### dnsmasq.conf
-
     dnssec
     conf-file=/usr/share/dnsmasq/trust-anchors.conf
     no-resolv
@@ -102,7 +100,7 @@ CentOS
 
 OK，大体就这么些，再在目录 `/etc/dnsmasq.d` 下常见个 personal.conf，写入自己的一些特殊配置。
 
-参考：
+#### 参考：
 
 - <https://wiki.gentoo.org/wiki/Dnsmasq>
 - <https://wiki.archlinux.org/index.php/dnsmasq>
