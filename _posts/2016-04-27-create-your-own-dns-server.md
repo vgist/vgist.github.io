@@ -80,7 +80,7 @@ CentOS
     addn-hosts=/etc/dnsmasq.hosts   # 启用自己的 hosts 配置
     conf-dir=/etc/dnsmasq.d/,*.conf # 引入 /etc/dnsmasq.d/ 下所有的以 conf 结尾的配置文件
 
-需要说明的是，CentOS 下，可能是版本过低，也可能是打包者没有开启某些开关，导致 dnssec 无法使用，所以，在 CentOS 下，需要注销两行
+需要说明的是，CentOS 下，可能是版本过低，也可能是打包者没有开启某些开关，导致 dnssec 无法使用，所以，在 CentOS 下，需要注释两行
 
     # dnssec
     # conf-file=/usr/share/dnsmasq/trust-anchors.conf
