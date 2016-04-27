@@ -2,7 +2,7 @@
 layout: post
 title: "CentOS 7 下使用 Firewall"
 category: Linux
-tags: [Firewall, Usage]
+tags: [Firewall, Usage, CentOS]
 ---
 
 在 CentOS 7 中，引入了一个新的服务，**Firewalld**，下面一张图，让大家明确的了解 Firewall 与 iptables 之间的关系与区别。

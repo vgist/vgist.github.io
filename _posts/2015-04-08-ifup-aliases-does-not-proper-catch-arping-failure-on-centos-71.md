@@ -2,7 +2,7 @@
 layout: post
 title: "OpenVZ 在 CentOS 7.1 下的网络问题"
 category: Linux
-tags: [OpenVZ]
+tags: [OpenVZ, CentOS]
 ---
 
 前几天手痒，yum update -y 后，看到那么多的更新包，想了下还是重启好了，结果...

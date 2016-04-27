@@ -2,7 +2,7 @@
 layout: post
 title: "CentOS 6.5 上安装 Nginx + PHP-FPM + MariaDB"
 category: Linux
-tags: [Nginx, PHP, PHP-FPM, MariaDB]
+tags: [Nginx, PHP, PHP-FPM, MariaDB, CentOS]
 ---
 
 letbox 上用优惠卷购置了一款 vps，最终 **$ 0.01** 成交，直接上 CentOS 6.5，想搭建一个 web 应用，结果发现，终于可以摆脱手动编译了，社区维护了各种源，一些紧急漏洞也不用担心了，再也不用去 diff 个补丁，然后苦逼的去编译，直接 yum update。

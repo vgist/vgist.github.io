@@ -2,7 +2,7 @@
 layout: post
 title: "CentOS 下打包 shadowsocks-libev"
 category: Linux
-tags: [Packager, Shadowsocks]
+tags: [Packager, Shadowsocks, CentOS]
 ---
 
 为什么要打 rpm 包，因为不打包就要自己去编译，特讨厌在 CentOS 上 blablabla... 的一篇又一篇自编译教程，一点都不环保，而且一点都不利于扩散嘛。
