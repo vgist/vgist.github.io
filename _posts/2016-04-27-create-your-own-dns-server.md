@@ -24,9 +24,9 @@ tags: [DNS, Gentoo, Centos]
 
     emerge -av net-dns/dnscrypt-proxy
 
-在 Centos 下，没有现成的包，搜了一圈都没有，于是自己写了打包脚本 [dnscrypt-proxy.spec](https://github.com/iHavee/ihavee-rpm/tree/master/dnscrypt-proxy)，方便部署。如何通过 SPEC 来打包，可以查阅这篇文章的第二部分： [CentOS 下打包 shadowsocks-libev]({% post_url 2014-08-20-package-shadowsocks-libev-on-centos %})，这里不再累述。
+在 Centos 下，没有现成的包，搜了一圈都没有，而我又是个洁癖症患者，非常不习惯直接 shell 脚本去编译安装，于是自己写了打包脚本 [dnscrypt-proxy.spec](https://github.com/iHavee/ihavee-rpm/tree/master/dnscrypt-proxy)，方便部署。如何通过 SPEC 来打包，可以查阅这篇文章的第二部分： [CentOS 下打包 shadowsocks-libev]({% post_url 2014-08-20-package-shadowsocks-libev-on-centos %})，这里不再累述。
 
-配置部分，比较简单，我打包的 CentOS 的配置文件地址在 `/etc/sysconfig/dnscrypt-proxy`，而 Gentoo 的配置文件地址在 `/etc/conf.d/dnscrypt-proxy`，打开后一目了然。两种配置方法，一种配置 resolver name，一种配置 resolver ip，将你选中的那种方案取消注视，再去 `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` 文件中找一个 ping 值低的公开的认证服务器即可。
+配置部分，比较简单，我打包的 CentOS 的配置文件地址在 `/etc/sysconfig/dnscrypt-proxy`，而 Gentoo 的配置文件地址在 `/etc/conf.d/dnscrypt-proxy`，打开后一目了然。两种配置方法，一种配置 resolver name，一种配置 resolver ip，将你选中的那种方案取消注释，再去 `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` 文件中找一个 ping 值低的公开的认证服务器即可。
 
 譬如我的：
 
