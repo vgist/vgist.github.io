@@ -24,7 +24,7 @@ tags: [ThinkPad, OS X]
 
 #### 二. CLOVER
 
-关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1dE3rbJ7)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
+关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 OS X El Capitan EFI](http://pan.baidu.com/s/1hszzvwC)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
 
 如果不确认 U 盘的 EFI 分区为哪个，可以通过 `diskutil list` 来查询，随后通过 `diskutil mount` 来挂载。譬如：
 
@@ -138,4 +138,5 @@ tags: [ThinkPad, OS X]
 - <http://x220.mcdonnelltech.com>
 - [https://www.reddit.com/](https://www.reddit.com/r/hackintosh/comments/2wohwn/getting_imessage_working_on_10102_generating/)
 
+2016.05.05: 经 @行走时光 提醒，配置中的 SIP 排除 nvram，有关 SIP 信息可以查看这篇文章：[El Capitan 中 SIP 介绍]({% post_url 2015-10-03-system-integrity-protection-on-el-capitan %})
 2016.03.25: 更新 AppleHDA_20672.kext，使之在 OS X 10.11.4 下正常。
