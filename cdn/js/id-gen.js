@@ -125,7 +125,6 @@ function YYYYMMDDstart(form,year,month,day)
           　　 for (var i=e.options.length; i>0; i--)
           　　 e.remove(i);
           　　}
-
           function ock(){
             var rNo = document.getElementById("rNo");
             var selp = document.getElementById("p");
@@ -141,8 +140,6 @@ function YYYYMMDDstart(form,year,month,day)
             d8= sely + selm + seld;
             rNo.innerHTML=Get_CarNo(selr,d8,selg,seln);
           }
-
-
           //获取num个身份证
           function Get_CarNo(d6,b8,sex,num){
             var i = 0;
@@ -166,7 +163,6 @@ function YYYYMMDDstart(form,year,month,day)
             }
             return reCarNo;
           }
-
           //获取radio选中值
           function GetRadioValue(RadioName){
             var obj;
@@ -181,8 +177,6 @@ function YYYYMMDDstart(form,year,month,day)
             }
             return null;
           }
-
-
           //不足位前面加 0
           function padLeft(str, lenght) {
             if (str.length >= lenght)
@@ -190,7 +184,6 @@ function YYYYMMDDstart(form,year,month,day)
             else
               return padLeft("0" + str, lenght);
           }
-
           function getRandom(m,n){
             return Math.round((Math.random()*(n-m)+m))
           }
@@ -245,7 +238,6 @@ function YYYYMMDDstart(form,year,month,day)
             }
             return str17+restr;
           }
-
           function clearDefaultText (el,message){
             var obj = el;
             var searchbox = document.getElementById('searchbox');
