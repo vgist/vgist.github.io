@@ -11,9 +11,23 @@ tags: [Rime]
 
 ![Rime](http://cdn.09hd.com/images/2015/05/rime.png)
 
-OS X 下的用户配置文件在 **~/Library/Rime** 目录下，下面记录下使用 Rime 的一些个人配置。
+RIME / 中州韵输入法引擎，是一个跨平台的输入法算法框架。
+
+基于这一框架，Rime 开发者与其他开源社区的参与者在 Windows、Mac OS X、Linux、Android 平台上创造了不同的输入法前端实现。
 
 <!-- more -->
+
+- Windows
+    - Weasel 小狼毫
+- Mac OS X
+    - Squirrel 鼠须管
+- Linux
+    - ibus-rime 基于 IBus 输入法框架
+    - fcitx-rime 基于 Fcitx 输入法框架
+- Android
+    - Tongwen Rime 同文
+
+OS X 下的用户配置文件在 **~/Library/Rime** 目录下，下面记录下使用 Rime 的一些个人配置。
 
 ##### 1. installation.yaml
 
@@ -182,6 +196,37 @@ patch:
 当然你也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
 
 当然完事后，不要忘记重新部署一下。
+
+##### 词库总结
+
+关于词库写的比较繁琐，这里总结下简要步骤，以简体中文为例。
+
+###### 1. 创建 luna_pinyin_simp.custom.yaml
+
+注意文件最后的
+
+    translator:
+      dictionary: luna_pinyin.extended
+
+###### 2. 准备词库文件 luna_pinyin.extended.dict.yaml
+
+    ---
+    name: luna_pinyin.extended
+    version: "your version"
+    sort: by_weight
+    use_preset_vocabulary: true
+    inport_tables:
+      - luna_pinyin
+      - luna_pinyin.sogou
+      ...
+
+###### 3. 准备 sogou 词库文件
+
+譬如下载我整理好的： [【sogou for rime】](http://pan.baidu.com/s/1jGrJbtc)
+
+如果不使用除 sogou 以外的所有扩展词库，那么直接略去第二步。同时，第一步的 dictionary 为 luna_pinyin.sogou，再加上第三步即可。
+
+#### 三、最后
 
 最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
 
