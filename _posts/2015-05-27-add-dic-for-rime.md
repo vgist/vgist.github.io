@@ -228,6 +228,20 @@ patch:
 
 #### 三、最后
 
+关于 Rime 同步，我是直接用的 iCloud Drive，iCloud Drive 在用户目录的路径为 `~/Library/Mobile Documents/`。
+
+注意，创建同步目录的时候不能直接在 `~/Library/Mobile Documents/` 下创建，无法识别乃至无法同步的，正确的做法是：
+
+- 1. Finder 侧边栏的 iCloud Drive 中创建一个 Rime 的同步文件夹 RimeSync
+- 2. 以上创建同步文价夹后的路径在 `~/Library/Mobile Documents/com~apple~CloudDocs/` 下
+
+由此，打开 Rime 配置文件 installation.yaml，添加两行内容来同步。
+
+    installation_id: "RimeSync"
+    sync_dir: "/Users/Havee/Library/Mobile Documents/com~apple~CloudDocs"
+
+点击输入法鼠须管菜单下的同步用户数据，立即开始同步。
+
 最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
 
 参考：<https://github.com/rime/home/wiki/UserGuide>
