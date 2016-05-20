@@ -332,7 +332,7 @@ OK，重新部署，以及同步吧。
 
 最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
 
-如果你想看我的配置，前往 <https://github.com/iHavee/rime-files>
+如果你想看我的配置，前往 <https://github.com/iHavee/rime-files>，你可以直接采用，不过需要注意的是 `installation.yaml` 中的一些配置修改成你自己的。
 
 参考：<https://github.com/rime/home/wiki/UserGuide>
 
