@@ -36,8 +36,8 @@ distribution_code_name: Squirrel
 distribution_name: "鼠鬚管"
 distribution_version: 0.9.26.1
 install_time: "Mon May 27 10:56:16 2015"
-installation_id: "Rime-Sync"
-sync_dir: "/opt/Rime"
+installation_id: "Rime"
+#sync_dir: "/Users/Havee/Documents"
 rime_version: 1.2.9
 ```
 
@@ -314,19 +314,18 @@ patch:
 - 1. Finder 侧边栏的 iCloud Drive 中创建一个 Rime 的同步文件夹 RimeSync
 - 2. 以上创建同步文价夹后的路径在 `~/Library/Mobile Documents/com~apple~CloudDocs/` 下
 
-由此，打开 Rime 配置文件 installation.yaml，添加两行内容来同步。
+由此，打开 Rime 配置文件 installation.yaml，添加一行内容。
 
-    installation_id: "Rime-Sync"
-    sync_dir: "/opt/Rime"
+    installation_id: "Rime"
 
-恩，同步路径怎么不对，不着急，我是为了在不同 Mac OS X 之间同步，才如此的
+默认的同步文件夹即为 `~/Library/Rime/sync/`，你也可以添加 `sync_dir` 来自定义路径（绝对路径）。`installation_id: Rime` 为 `sync_dir` 的相对路径，在这里配置的最终路径为 `/Users/Havee/Library/Rime/sync/Rime`。
 
-    sudo mkdir /opt/Rime
-    sudo chown -R yourname:yourgroup /opt/Rime                                              # 注意更改成你自己的用户与用户组
-    mkdir /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime-Sync              # 更改成你自己的同步盘地址，我使用的是 iCloud Drive
-    ln -s /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime-Sync /opt/Rime/   # 软链接到 installation.yaml 中的 sync_dir 地址
+随后，我们在 iCloud Drive 建立一个 `Rime` 文件夹，并软链接到 `/Users/Havee/Library/Rime/sync/`。
 
-OK，重新部署，以及同步吧。
+    mkdir /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime
+    ln -s /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime /Users/Havee/Library/Rime/sync/
+
+OK，重新部署，以及同步吧。如果你在同一个 Apple ID 的不同 OS X 之间同步，那么在其他不同 OS X 上只需要创建软链接一步即可，不过路径要换成自己的。
 
 #### 最后
 
