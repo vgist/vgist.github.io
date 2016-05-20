@@ -236,11 +236,27 @@ patch:
 - 2. 以上创建同步文价夹后的路径在 `~/Library/Mobile Documents/com~apple~CloudDocs/` 下
 
 由此，打开 Rime 配置文件 installation.yaml，添加两行内容来同步。
-
+同步
     installation_id: "RimeSync"
     sync_dir: "/Users/Havee/Library/Mobile Documents/com~apple~CloudDocs"
 
 点击输入法鼠须管菜单下的同步用户数据，立即开始同步。
+
+有同学发现 Rime 非常不错，准备不同电脑之间同步，譬如 Mac && Linux 之间同步，担心 sync_dir 的不同导致错乱，其实不必担心，不论你使用 dropbox，还是其他，最终都软链接到一个固定的地址即可。
+
+譬如我是这样做的，installation.yaml 中：
+
+    installation_id: "Rime-Sync"
+    sync_dir: "/opt/Rime"
+
+随后去 icloud drive 创建一个文件夹 Rime-Sync，再将 Rime-Sync 软链接到 /opt/Rime 下，注意权限。
+
+    sudo mkdir /opt/Rime
+    sudo chown -R yourname:yourgroup /opt/Rime                                              # 注意更改成你自己的用户与用户组
+    mkdir /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime-Sync              # 更改成你自己的同步盘地址，我使用的是 iCloud Drive
+    ln -s /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime-Sync /opt/Rime/   # 软链接到 installation.yaml 中的 sync_dir 地址
+
+OK，重新部署，以及同步吧。
 
 最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
 
