@@ -81,4 +81,8 @@ Convert 是 ImageMagick 中的一个常用组件。
     $ convert -font monospace -fill black -pointsize 16 -draw 'text 4,14 "youremail@yourdomain"' email.png email.png
     $ convert -font monospace -fill red -pointsize 16 -draw \'text 3,13 \"youremail@yourdomain\"\' email.png email.png
 
+svg 导出至 png，且放大
+
+    $ convert -density 3600 old.svg new.png
+
 注意：文中的乘号可以用小写x替代
