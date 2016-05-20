@@ -36,8 +36,8 @@ distribution_code_name: Squirrel
 distribution_name: "鼠鬚管"
 distribution_version: 0.9.26.1
 install_time: "Mon May 27 10:56:16 2015"
-installation_id: "RimeSync"
-sync_dir: "/Users/Havee/Documents"
+installation_id: "Rime-Sync"
+sync_dir: "/opt/Rime"
 rime_version: 1.2.9
 ```
 
@@ -45,33 +45,39 @@ rime_version: 1.2.9
 
 ```yaml
 patch:
-  us_keyboard_layout: true                 # 美式键盘布局
   show_notifications_via_notification_center: true
-  style/color_scheme: light                # 选择配色方案
-  style/horizontal: true                   # 候选条横向显示
-  style/inline_preedit: true               # 启用内嵌编码模式，候选条首行不显示拼音
-  style/corner_radius: 5                   # 窗口圆角半径
-  style/border_height: 7                   # 窗口边界高度，大于圆角半径才生效
-  style/border_width: 7                    # 窗口边界宽度，大于圆角半径才生效
-  #style/line_spacing: 1                    # 候选词的行间距
-  #style/spacing: 5                         # 非内嵌编码模式下，预编辑与候选词的间距
-  #font_face: "Lucida Grande"               # 预选栏文字字体
-  #style/label_font_face: "Lucida Grande"   # 预选栏编号字体
-  style/font_point: 18                     # 预选栏文字字号
-  style/label_font_point: 14               # 预选栏编号字号
+  us_keyboard_layout: true                               # 美式键盘布局
+  show_notifications_when: appropriate                   # 状态通知，适当，也可设为全开（always）全关（never）
+
+
+  style:
+    color_scheme: light                                  # 配色方案名称
 
   preset_color_schemes:
-    light:                                                # 配色方案名称
-      name: Register                                      # 作者名字
-      author: "register <registerdedicated@gmail.com>"    # 作者
-      text_color: 0x000000                                # 拼音行文字颜色，24位色值，16进制，BGR顺序
-      candidate_text_color: 0x000000                      # 预选项文字颜色
-      back_color: 0xFFFFFF                                # 背景色
-      border_color: 0xE0B693                              # 边框色
-      hilited_text_color: 0xFF6941                        # 高亮拼音 (需要开启内嵌编码)
-      hilited_candidate_back_color: 0xFFFFFF              # 第一候选项背景背景色
-      hilited_candidate_text_color: 0xFF6941              # 第一候选项文字颜色
-      hilited_comment_text_color: 0xFF6941                # 注解文字高亮
+    light:
+      name: register                                     # 作者名
+      author: "register <registerdedicated@gmail.com>"   # 作者
+
+      horizontal: true                                   # 候选条横向显示
+      inline_preedit: true                               # 启用内嵌编码模式，候选条首行不显示拼音
+      candidate_format: "%c\u2005%@\u2005"               # 用 1/6 em 空格 U+2005 来控制编号 %c 和候选词 %@ 前后的空间。
+
+      corner_radius: 5                                   # 候选条圆角半径
+      border_height: 7                                   # 窗口边界高度，大于圆角半径才生效
+      border_width: 7                                    # 窗口边界宽度，大于圆角半径才生效
+      back_color: 0xFFFFFF                               # 候选条背景色
+      border_color: 0xE0B693                             # 边框色
+      font_face: "PingFangSC-Regular"                    # 候选词字体
+      font_point: 18                                     # 预选栏文字字号
+      label_font_face: "PingFangSC-Light"                # 候选词编号字体
+      label_font_point: 14                               # 预选栏编号字号
+      candidate_text_color: 0x000000                     # 预选项文字颜色
+      text_color: 0x000000                               # 拼音行文字颜色，24位色值，16进制，BGR顺序
+      comment_text_color: 0x999999                       # 拼音等提示文字颜色
+      hilited_text_color: 0xFF6941                       # 高亮拼音 (需要开启内嵌编码)
+      hilited_candidate_text_color: 0xFF6941             # 第一候选项文字颜色
+      hilited_candidate_back_color: 0xFFFFFF             # 第一候选项背景背景色
+      hilited_comment_text_color: 0xFF6941               # 注解文字高亮
 
   app_options:
     com.blacktree.Quicksilver: &a
@@ -87,17 +93,91 @@ patch:
 
 ```yaml
 patch:
-  punctuator:
+  switches:
+    - name: ascii_mode
+      reset: 0
+      states: ["中文", "西文"]
+    - name: full_shape
+      states: ["半角", "全角"]
+    - name: extended_charset
+      states: ["通用", "增廣"]
+    - name: zh_simp
+      reset: 1
+      states: ["漢字", "汉字"]
+    - name: ascii_punct
+      states: ["。，", "．，"]
+
+  simplifier:
+    option_name: zh_simp
+
+  engine:
+    processors:
+      - ascii_composer
+      - recognizer
+      - key_binder
+      - speller
+      - punctuator
+      - selector
+      - navigator
+      - express_editor
+    segmentors:
+      - ascii_segmentor
+      - matcher
+      - abc_segmentor
+      - punct_segmentor
+      - fallback_segmentor
+    translators:
+      - punct_translator
+      - table_translator@custom_phrase
+      - reverse_lookup_translator
+      - script_translator
+    filters:
+      - simplifier
+      - uniquifier
+      - cjk_minifier                                     #過濾拼音輸入法中的罕用字
+  translator:
+    enable_charset_filter: true                          #启用罕见字過濾
+
+  "schema/dependencies/@next": easy_en                   # 加載 easy_en 依賴
+  "engine/translators/@next": table_translator@english   # 載入翻譯英文的碼表翻譯器，取名爲 english
+
+  english:                                               # english 翻譯器的設定項
+    dictionary: easy_en
+    spelling_hints: 9
+    enable_completion: false
+    enable_sentence: false
+    initial_quality: -3
+
+  translator:
+    dictionary: luna_pinyin.extended
+  speller:
+    "algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
+
+  punctuator:                                            # 符号快速输入和部分符号的快速上屏
     import_preset: symbols
     full_shape:
       "\\": "、"
     half_shape:
-      "\\": "、"
+      "#": "#"
+      "`": "`"
+      "~": "~"
+      "@": "@"
+      "=": "="
+      "/": ["/", "÷"]
+      '\': "、"
+      "'": {pair: ["「", "」"]}
+      "[": ["【", "["]
+      "]": ["】", "]"]
+      "$": ["¥", "$", "€", "£", "¢", "¤"]
+      "<": ["《", "〈", "«", "<"]
+      ">": ["》", "〉", "»", ">"]
 
   recognizer:
-    import_preset: default
     patterns:
-      punct: "^/([0-9]+[a-z]*|[a-z]+)$"
+      email: "^[A-Za-z][-_.0-9A-Za-z]*@.*$"
+      uppercase: "[A-Z][-_+.'0-9A-Za-z]*$"
+      url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
+      punct: "^/([a-z]+|[0-9]0?)$"
       reverse_lookup: "`[a-z]*'?$"
 
   reverse_lookup:
@@ -110,10 +190,6 @@ patch:
     prefix: "`"
     suffix: "'"
     tips: "〔筆畫〕"
-
-  translator:
-    dictionary: luna_pinyin.extended
-  "speller/algebra/@before 0": xform/^([b-df-np-z])$/$1_/
 ```
 
 ##### 4. luna_pinyin.extended.dict.yaml
@@ -126,7 +202,7 @@ patch:
     import_tables:
       - luna_pinyin
 
-**import_tables_** 是添加扩展词库用的，可以添加第三方的词库文件，譬如 **luna_pinyin.sogou.dict.yaml**，则添加格式如下
+**import_tables_** 是添加扩展词库用的，可以添加第三方的词库文件，譬如 **luna_pinyin.name.dict.yaml**，则添加格式如下
 
     ---
     name: luna_pinyin.extended
@@ -135,8 +211,11 @@ patch:
     use_preset_vocabulary: true
     import_tables:
       - luna_pinyin
-      - luna_pinyin.sogou
-    ...
+      - luna_pinyin.hanyu
+      - luna_pinyin.poetry
+      - luna_pinyin.cn_en
+      - luna_pinyin.emoji
+      ...
 
 #### 二、 添加词库
 
@@ -253,4 +332,8 @@ OK，重新部署，以及同步吧。
 
 最后推荐一个 OS X 下的 Rime 设置工具：<https://github.com/neolee/SCU>
 
+如果你想看我的配置，前往 <https://github.com/iHavee/rime-files>
+
 参考：<https://github.com/rime/home/wiki/UserGuide>
+
+- 2016-05-20: 更新一些过时的做法
