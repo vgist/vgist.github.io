@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "创建你自己的 DNS 服务器"
+title: "创建你自己的 DNS 缓存服务器"
 category: Linux
 tags: [DNS, Gentoo, Centos]
 ---
