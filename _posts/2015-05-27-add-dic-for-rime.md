@@ -37,7 +37,6 @@ distribution_name: "鼠鬚管"
 distribution_version: 0.9.26.1
 install_time: "Mon May 27 10:56:16 2015"
 installation_id: "Rime"
-#sync_dir: "/Users/Havee/Documents"
 rime_version: 1.2.9
 ```
 
@@ -99,8 +98,6 @@ patch:
       states: ["中文", "西文"]
     - name: full_shape
       states: ["半角", "全角"]
-    - name: extended_charset
-      states: ["通用", "增廣"]
     - name: zh_simp
       reset: 1
       states: ["漢字", "汉字"]
@@ -110,48 +107,14 @@ patch:
   simplifier:
     option_name: zh_simp
 
-  engine:
-    processors:
-      - ascii_composer
-      - recognizer
-      - key_binder
-      - speller
-      - punctuator
-      - selector
-      - navigator
-      - express_editor
-    segmentors:
-      - ascii_segmentor
-      - matcher
-      - abc_segmentor
-      - punct_segmentor
-      - fallback_segmentor
-    translators:
-      - punct_translator
-      - table_translator@custom_phrase
-      - reverse_lookup_translator
-      - script_translator
-    filters:
-      - simplifier
-      - uniquifier
-      - cjk_minifier                                     #過濾拼音輸入法中的罕用字
+  "engine/filters/@next": cjk_minifier
+  "engine/translators/@next": reverse_lookup_translator
   translator:
     enable_charset_filter: true                          #启用罕见字過濾
 
-  "schema/dependencies/@next": easy_en                   # 加載 easy_en 依賴
-  "engine/translators/@next": table_translator@english   # 載入翻譯英文的碼表翻譯器，取名爲 english
-
-  english:                                               # english 翻譯器的設定項
-    dictionary: easy_en
-    spelling_hints: 9
-    enable_completion: false
-    enable_sentence: false
-    initial_quality: -3
-
   translator:
     dictionary: luna_pinyin.extended
-  speller:
-    "algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
+  "speller/algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
 
   punctuator:                                            # 符号快速输入和部分符号的快速上屏
     import_preset: symbols
@@ -213,8 +176,6 @@ patch:
       - luna_pinyin
       - luna_pinyin.hanyu
       - luna_pinyin.poetry
-      - luna_pinyin.cn_en
-      - luna_pinyin.emoji
       ...
 
 #### 二、 添加词库
@@ -309,21 +270,16 @@ patch:
 
 关于 Rime 同步，我是直接用的 iCloud Drive，iCloud Drive 在用户目录的路径为 `~/Library/Mobile Documents/`。
 
-注意，创建同步目录的时候不能直接在 `~/Library/Mobile Documents/` 下创建，无法识别乃至无法同步的，正确的做法是：
-
-- 1. Finder 侧边栏的 iCloud Drive 中创建一个 Rime 的同步文件夹 RimeSync
-- 2. 以上创建同步文价夹后的路径在 `~/Library/Mobile Documents/com~apple~CloudDocs/` 下
-
-由此，打开 Rime 配置文件 installation.yaml，添加一行内容。
+打开 Rime 配置文件 installation.yaml，添加一行内容。
 
     installation_id: "Rime"
 
-默认的同步文件夹即为 `~/Library/Rime/sync/`，你也可以添加 `sync_dir` 来自定义路径（绝对路径）。`installation_id: Rime` 为 `sync_dir` 的相对路径，在这里配置的最终路径为 `/Users/Havee/Library/Rime/sync/Rime`。
+默认的同步文件夹即为 `~/Library/Rime/sync/`，你也可以添加 `sync_dir` 来自定义路径（绝对路径）。`installation_id: Rime` 为 `sync_dir` 的相对路径，在这里配置的最终路径为 `~/Library/Rime/sync/Rime`。
 
-随后，我们在 iCloud Drive 建立一个 `Rime` 文件夹，并软链接到 `/Users/Havee/Library/Rime/sync/`。
+随后，我们在 iCloud Drive 建立一个 `Rime` 文件夹，并软链接到 `~/Library/Rime/sync/`。
 
-    mkdir /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime
-    ln -s /Users/Havee/Library/Mobile\ Documents/com~apple~CloudDocs/Rime /Users/Havee/Library/Rime/sync/
+    mkdir ~/Library/Mobile\ Documents/com~apple~CloudDocs/Rime
+    ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Rime ~/Library/Rime/sync/
 
 OK，重新部署，以及同步吧。如果你在同一个 Apple ID 的不同 OS X 之间同步，那么在其他不同 OS X 上只需要创建软链接一步即可，不过路径要换成自己的。
 
