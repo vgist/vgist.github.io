@@ -114,6 +114,7 @@ patch:
 
   translator:
     dictionary: luna_pinyin.extended
+
   "speller/algebra/@before 0": xform/^([b-df-hj-np-tv-z])$/$1_/
 
   punctuator:                                            # 符号快速输入和部分符号的快速上屏
