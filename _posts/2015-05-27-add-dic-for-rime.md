@@ -267,6 +267,8 @@ patch:
 
 如果不使用除 sogou 以外的所有扩展词库，那么直接略去第二步。同时，第一步的 dictionary 为 luna_pinyin.sogou，再加上第三步即可。
 
+忠告：词库并非越大越全越好，否则你准备生僻词翻N页后再开始选字吧。
+
 #### 三、同步
 
 关于 Rime 同步，我是直接用的 iCloud Drive，iCloud Drive 在用户目录的路径为 `~/Library/Mobile Documents/`。
