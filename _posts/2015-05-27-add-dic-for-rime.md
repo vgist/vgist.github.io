@@ -232,7 +232,7 @@ patch:
       - luna_pinyin.yourname
     ...
 
-扩展词库文件，可以用网友整理的 [【朙月拼音擴充詞庫】](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。或者在这里下载整理好的 [【sogou for rime】](http://pan.baidu.com/s/1jGrJbtc)。
+扩展词库文件，可以用网友整理的 [【朙月拼音擴充詞庫】](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。
 
 当然你也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
 
@@ -263,7 +263,7 @@ patch:
 
 ###### 3. 准备 sogou 词库文件
 
-譬如下载我整理好的： [【sogou for rime】](http://pan.baidu.com/s/1jGrJbtc)
+譬如下载我整理好的搜狗 40 万标准大词库： [【sogou for rime】](http://pan.baidu.com/s/1qYN6C3a)
 
 如果不使用除 sogou 以外的所有扩展词库，那么直接略去第二步。同时，第一步的 dictionary 为 luna_pinyin.sogou，再加上第三步即可。
 
