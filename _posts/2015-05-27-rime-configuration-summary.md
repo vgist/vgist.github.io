@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "给 Rime 添加第三方词库"
+title: "Rime 输入法配置小结"
 category: Mac
 tags: [Rime]
 ---
