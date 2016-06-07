@@ -40,7 +40,39 @@ installation_id: "Rime"
 rime_version: 1.2.9
 ```
 
-##### 2. squirrel.custom.yaml
+##### 2. default.custom.yaml
+
+```yaml
+patch:
+  switcher:
+    abbreviate_options: true
+    caption: 〔切换〕
+    fold_options: true
+    hotkeys:
+      - "Control+grave"                                  # control + `
+      - "Control+s"                                      # 添加 Ctrl+s
+    save_options:
+      - full_shape
+      - ascii_punct
+      - simplification
+      - extended_charset
+  menu:
+    page_size: 5                                         # 候选词数量
+
+  schema_list:                                           # 激活的输入方案选单，这里只保留朙月拼音・简化字
+    - schema: luna_pinyin_simp
+
+  ascii_composer:
+    switch_key:
+      Caps_Lock: noop
+      Control_L: noop
+      Control_R: noop
+      Eisu_toggle: clear
+      Shift_L: commit_code
+      Shift_R: commit_code
+```
+
+##### 3. squirrel.custom.yaml
 
 ```yaml
 patch:
@@ -88,7 +120,7 @@ patch:
     com.apple.Terminal: *a
 ```
 
-##### 3. luna_pinyin_simp.custom.yaml
+##### 4. luna_pinyin_simp.custom.yaml
 
 ```yaml
 patch:
@@ -143,20 +175,9 @@ patch:
       url: "^(www[.]|https?:|ftp[.:]|mailto:|file:).*$|^[a-z]+[.].+$"
       punct: "^/([a-z]+|[0-9]0?)$"
       reverse_lookup: "`[a-z]*'?$"
-
-  reverse_lookup:
-    comment_format:
-      - "xform/([nl])v/$1ü/"
-    dictionary: stroke
-    enable_completion: true
-    preedit_format:
-      - "xlit/hspnz/一丨丿丶乙/"
-    prefix: "`"
-    suffix: "'"
-    tips: "〔筆畫〕"
 ```
 
-##### 4. luna_pinyin.extended.dict.yaml
+##### 5. luna_pinyin.extended.dict.yaml
 
     ---
     name: luna_pinyin.extended
@@ -165,6 +186,7 @@ patch:
     use_preset_vocabulary: true
     import_tables:
       - luna_pinyin
+    ...
 
 **import_tables_** 是添加扩展词库用的，可以添加第三方的词库文件，譬如 **luna_pinyin.name.dict.yaml**，则添加格式如下
 
@@ -177,7 +199,7 @@ patch:
       - luna_pinyin
       - luna_pinyin.hanyu
       - luna_pinyin.poetry
-      ...
+    ...
 
 #### 二、 添加词库
 
@@ -189,11 +211,10 @@ patch:
 
 需要的最终词库格式如下：
 
-    力量    li liang    1
-    能力    neng li     1
-    那你    na ni       1
-    内容    nei rong    1
-    ...
+    力量    li liang
+    能力    neng li
+    那你    na ni
+    内容    nei rong
 
 第三列是词频信息，可有可无，三列以 tab 制表符分割。如果你得到的第三方词库文件名为 **pyPhrase.dic**，则可以通过 opencc (通过 brew install opencc 安装) 转化为繁体后在转换成 kct 词库文件：
 
@@ -215,11 +236,6 @@ patch:
     use_preset_vocabulary: true
     ...
 
-    釣魚島    diao yu dao      1
-    黑瞎子島  hei xia zi dao   1
-    南沙羣島  nan sha qun dao  1
-        ...
-
 随后在 **luna_pinyin.extended.dict.yaml** 文件中的 `import_tables` 下引入自己制作的词库，这种方式需要按照文章开头概述中的第 3、4 步骤去做。
 
     ---
@@ -232,7 +248,7 @@ patch:
       - luna_pinyin.yourname
     ...
 
-扩展词库文件，可以用网友整理的 [【朙月拼音擴充詞庫】](https://bintray.com/rime-aca/dictionaries/luna_pinyin.dict)。
+扩展词库文件，可以用我整理的 [【朙月拼音・简化字】擴充詞庫](https://github.com/iHavee/rime-files)。
 
 当然你也可以自己在虚拟机中用工具 [imewlconverter](https://github.com/studyzy/imewlconverter) 去下载搜狗、百度的词库，再自己去转换。
 
@@ -265,7 +281,7 @@ patch:
 
 譬如下载我整理好的搜狗 40 万标准大词库： [【sogou for rime】](http://pan.baidu.com/s/1qYN6C3a)
 
-如果不使用除 sogou 以外的所有扩展词库，那么直接略去第二步。同时，第一步的 dictionary 为 luna_pinyin.sogou，再加上第三步即可。
+上面 **词库总结** 示例中 1 - 3 的结果为内置词库 + 搜狗扩展词库。
 
 忠告：词库并非越大越全越好，否则你准备生僻词翻N页后再开始选字吧。
 
