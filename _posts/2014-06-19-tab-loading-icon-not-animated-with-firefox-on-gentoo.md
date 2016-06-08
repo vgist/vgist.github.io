@@ -11,9 +11,11 @@ tags: [Firefox]
 
 <!-- more -->
 
-Archlinux 的 bug report 上的解决方案是在 userChrome.css 中替换个 loading.png 的图片，鄙人依样画葫芦从 OS X 下的 Firefox 中提取了 loading.png，base64 编码后放入 userChrome.css 中。
+Archlinux 的 bug report 上的解决方案是在 userChrome.css 中替换个 loading.png 的图片，下载下面的图片，并置入 Firefox 的 profiles 下的 chrome 文件夹中。
 
-![tab loading icon](http://cdn.09hd.com/images/2014/06/firefox-tab-loading-icon.gif)
+[tab loading icon](http://cdn.09hd.com/images/2014/06/firefox-loading.png)
+
+编辑 userChrome.css 文件，添加如下：
 
 ```css
 /* fix tab loading icon */
