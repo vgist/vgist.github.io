@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "Gentoo 修复 Firefox loading.png 动画"
+title: "Gentoo 下修复 Firefox loading.png 动画"
 category: Linux
 tags: [Firefox]
 ---
