@@ -215,6 +215,7 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
     $ defaults write com.apple.screencapture type jpg
     $ defaults write com.apple.screencapture type gif
     $ defaults write com.apple.screencapture type png
+    $ defaults write com.apple.screencapture type tiff
     $ defaults write com.apple.screencapture type pdf
 
 修改默认的截图名
