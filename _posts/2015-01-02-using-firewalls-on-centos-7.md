@@ -65,9 +65,9 @@ Firewall 能将不同的网络连接归类到不同的信任级别，Zone 提供
 
     $ firewall-cmd --help
 
-- --zone=NAME                           # 指定 zone
-- --permanent                           # 永久修改，--reload 后生效
-- --timeout=seconds                     # 持续效果，到期后自动移除，用于调试，不能与 --permanent 同时使用
+    --zone=NAME                         # 指定 zone
+    --permanent                         # 永久修改，--reload 后生效
+    --timeout=seconds                   # 持续效果，到期后自动移除，用于调试，不能与 --permanent 同时使用
 
 ##### 1. 查看规则
 
