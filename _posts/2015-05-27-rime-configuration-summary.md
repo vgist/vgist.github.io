@@ -211,17 +211,19 @@ patch:
 
 需要的最终词库格式如下：
 
-    力量    li liang
-    能力    neng li
-    那你    na ni
-    内容    nei rong
+    力量
+    能力
+    那你
+    内容
 
-第三列是词频信息，可有可无，三列以 tab 制表符分割。如果你得到的第三方词库文件名为 **pyPhrase.dic**，则可以通过 opencc (通过 brew install opencc 安装) 转化为繁体后在转换成 kct 词库文件：
+词频信息，可有可无，如果需要词频，则需要以 tab 制表符来分割。如果你得到的第三方词库文件名为 **pyPhrase.dic**，则可以通过 opencc (通过 brew install opencc 安装) 转化为繁体后在转换成 kct 词库文件：
 
     opencc -i ./pyPhrase.dic -o ./pyPhrase.dic.new
     ./rime_dict_manager -i luna_pinyin ./pyPhrase.dic.new
 
 该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可。这种转换方式在 OS X 下重新部署 Rime 时，会在 **/Library/Rime/luna_pinyin.userdb** 文件夹下生成大量的 ldb 用户数据文件，通过 rime_dict_manager 转换的方法不推荐，因为在每次重新部署和同步的时候都需要花费大量的时间。
+
+##### 外挂词库
 
 如果词库的格式正确，推荐用外挂扩展词库的方式去实现，即直接用 opencc 转化成繁体格式输出为 **luna_pinyin.yourname.dict.yaml**：
 
@@ -280,8 +282,6 @@ patch:
 ###### 3. 准备 sogou 词库文件
 
 譬如下载我整理好的搜狗 40 万标准大词库： [【sogou for rime】](http://pan.baidu.com/s/1qYN6C3a)
-
-上面 **词库总结** 示例中 1 - 3 的结果为内置词库 + 搜狗扩展词库。
 
 忠告：词库并非越大越全越好，否则你准备生僻词翻N页后再开始选字吧。
 
