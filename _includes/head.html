@@ -27,10 +27,11 @@
 
   <script>
     var domain = "havee.me";
+    var targetProtocal = "https";
     var current = ["www.havee.me", "hae.coding.me"];
     for ( var i = 0; i < current.length; i++ ) {
-      if ( document.location.host == current[i] ) {
-        document.location.href = "\/\/" + domain + this.location.pathname;
+      if ( document.location.host == current[i] || document.location.protocal != targetProtocol ) {
+        document.location.href = targetProtocal + domain + this.location.pathname;
       }
     }
   </script>
