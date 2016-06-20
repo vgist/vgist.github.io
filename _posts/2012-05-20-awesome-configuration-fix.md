@@ -5,7 +5,7 @@ category: Linux
 tags: [Awesome, Configuration, WM]
 ---
 
-![Awesome](//cdn.09hd.com/images/2012/05/awesome.png "Awesome")
+![Awesome](//o003ltpbd.qnssl.com/images/2012/05/awesome.png "Awesome")
 
 小改了下 Awesome 的 rc.lua，如今好看多了，呵呵
 

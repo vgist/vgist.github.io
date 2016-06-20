@@ -5,7 +5,7 @@ category: Linux
 tags: [Screenshot, Gentoo, Ebuild, Deepin, Packager]
 ---
 
-![Deapin-Screenshot](//cdn.09hd.com/images/2012/05/deepin-screenshot.png "Deapin-Screenshot")
+![Deapin-Screenshot](//o003ltpbd.qnssl.com/images/2012/05/deepin-screenshot.png "Deapin-Screenshot")
 
 gentoo 的 ebuild 还是不丰富啊，凡事总得自己动手才能丰衣足食。
 
