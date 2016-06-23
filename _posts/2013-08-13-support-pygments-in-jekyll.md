@@ -104,79 +104,79 @@ Pygments 样式默认提供了 monokai、manni、rrt、perldoc、borland、color
 
 - monokai
 
-![monokai](//o003ltpbd.qnssl.com/images/2013/08/pygments-monokai.png)
+![monokai](//cdn.09hd.com/images/2013/08/pygments-monokai.png)
 
 - manni
 
-![manni](//o003ltpbd.qnssl.com/images/2013/08/pygments-manni.png)
+![manni](//cdn.09hd.com/images/2013/08/pygments-manni.png)
 
 - rrt
 
-![rrt](//o003ltpbd.qnssl.com/images/2013/08/pygments-rrt.png)
+![rrt](//cdn.09hd.com/images/2013/08/pygments-rrt.png)
 
 - perldoc
 
-![perldoc](//o003ltpbd.qnssl.com/images/2013/08/pygments-perldoc.png)
+![perldoc](//cdn.09hd.com/images/2013/08/pygments-perldoc.png)
 
 - borland
 
-![borland](//o003ltpbd.qnssl.com/images/2013/08/pygments-borland.png)
+![borland](//cdn.09hd.com/images/2013/08/pygments-borland.png)
 
 - colorful
 
-![colorful](//o003ltpbd.qnssl.com/images/2013/08/pygments-colorful.png)
+![colorful](//cdn.09hd.com/images/2013/08/pygments-colorful.png)
 
 - default
 
-![default](//o003ltpbd.qnssl.com/images/2013/08/pygments-default.png)
+![default](//cdn.09hd.com/images/2013/08/pygments-default.png)
 
 - murphy
 
-![murphy](//o003ltpbd.qnssl.com/images/2013/08/pygments-murphy.png)
+![murphy](//cdn.09hd.com/images/2013/08/pygments-murphy.png)
 
 - vs
 
-![vs](//o003ltpbd.qnssl.com/images/2013/08/pygments-vs.png)
+![vs](//cdn.09hd.com/images/2013/08/pygments-vs.png)
 
 - trac
 
-![trac](//o003ltpbd.qnssl.com/images/2013/08/pygments-trac.png)
+![trac](//cdn.09hd.com/images/2013/08/pygments-trac.png)
 
 - tango
 
-![tango](//o003ltpbd.qnssl.com/images/2013/08/pygments-tango.png)
+![tango](//cdn.09hd.com/images/2013/08/pygments-tango.png)
 
 - fruity
 
-![fruity](//o003ltpbd.qnssl.com/images/2013/08/pygments-fruity.png)
+![fruity](//cdn.09hd.com/images/2013/08/pygments-fruity.png)
 
 - autumn
 
-![autumn](//o003ltpbd.qnssl.com/images/2013/08/pygments-autumn.png)
+![autumn](//cdn.09hd.com/images/2013/08/pygments-autumn.png)
 
 - bw
 
-![bw](//o003ltpbd.qnssl.com/images/2013/08/pygments-bw.png)
+![bw](//cdn.09hd.com/images/2013/08/pygments-bw.png)
 
 - emacs
 
-![emacs](//o003ltpbd.qnssl.com/images/2013/08/pygments-emacs.png)
+![emacs](//cdn.09hd.com/images/2013/08/pygments-emacs.png)
 
 - vim
 
-![vim](//o003ltpbd.qnssl.com/images/2013/08/pygments-vim.png)
+![vim](//cdn.09hd.com/images/2013/08/pygments-vim.png)
 
 - pastie
 
-![pastie](//o003ltpbd.qnssl.com/images/2013/08/pygments-pastie.png)
+![pastie](//cdn.09hd.com/images/2013/08/pygments-pastie.png)
 
 - friendly
 
-![friendly](//o003ltpbd.qnssl.com/images/2013/08/pygments-friendly.png)
+![friendly](//cdn.09hd.com/images/2013/08/pygments-friendly.png)
 
 - native
 
-![native](//o003ltpbd.qnssl.com/images/2013/08/pygments-native.png)
+![native](//cdn.09hd.com/images/2013/08/pygments-native.png)
 
 参考：
 

@@ -5,7 +5,7 @@ category: Linux
 tags: [Awesome, WM]
 ---
 
-![Awesome](//o003ltpbd.qnssl.com/images/2011/09/awesome.png "awesome")
+![Awesome](//cdn.09hd.com/images/2011/09/awesome.png "awesome")
 
 <!-- more -->
 

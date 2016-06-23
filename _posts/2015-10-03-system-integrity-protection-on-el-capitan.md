@@ -72,7 +72,7 @@ csrutil 的一些常用命令
 
 `<key>RtVariables</key>` 跟 `<key>SMBIOS</key>` 同级，如下图
 
-![Clover config.plist](//o003ltpbd.qnssl.com/images/2015/10/clover-config.png)
+![Clover config.plist](//cdn.09hd.com/images/2015/10/clover-config.png)
 
 其中 **CsrActiveConfig** 的值 0x 后跟的是十六进制，Clover 中我们完全开启的值是 **0x77**，其中 77 转化为两进制为 **01110111**。
 

@@ -62,7 +62,7 @@ tags: [Tips]
 
 下载一个 app，[CursorSense](http://plentycom.jp/en/cursorsense/download.php "CursorSense")
 
-![CursorSense](//o003ltpbd.qnssl.com/images/2014/01/CursorSense.png)
+![CursorSense](//cdn.09hd.com/images/2014/01/CursorSense.png)
 
 #### 四. GoAgent
 
@@ -125,15 +125,15 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
 原汁原味的 Linux 下 Mplayer 的使用体验，强烈推荐，fork 自 mplayer2 与 Mplayer。
 
-![MPV screenshot](//o003ltpbd.qnssl.com/images/2014/01/mpv.png)
+![MPV screenshot](//cdn.09hd.com/images/2014/01/mpv.png)
 
 ##### 2. [MPlayer OSX Extended](//mplayerosx.ch) 
 
 Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时间。
 
-![MPlayer OSX Extended](//o003ltpbd.qnssl.com/images/2014/01/mplayer-osx.png)
+![MPlayer OSX Extended](//cdn.09hd.com/images/2014/01/mplayer-osx.png)
 
-![MPlayer OSX Preferences](//o003ltpbd.qnssl.com/images/2014/01/mplayer-osx-preferences.png)
+![MPlayer OSX Preferences](//cdn.09hd.com/images/2014/01/mplayer-osx-preferences.png)
 
 ##### 3. [MplayerX](//mplayerx.org)
 
@@ -143,11 +143,11 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
 
 ###### a. 收费的 [Mac Blu-ray Player](//www.macblurayplayer.com)
 
-![Mac Blu-ray Player](//o003ltpbd.qnssl.com/images/2014/01/mac-blu-ray-player.png)
+![Mac Blu-ray Player](//cdn.09hd.com/images/2014/01/mac-blu-ray-player.png)
 
 ###### b. 免费的 [XBMC](//kodi.tv/)
 
-![XBMC](//o003ltpbd.qnssl.com/images/2014/01/xbmc.png)
+![XBMC](//cdn.09hd.com/images/2014/01/xbmc.png)
 
 #### 十. 生僻的快捷键
 
