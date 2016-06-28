@@ -13,6 +13,8 @@ tags: [Windows]
 
     ed2k://|file|en_windows_thin_pc_x86_697681.iso|1576980480|2D0E6A048EB3F314F556B4F0834A95E2|/
 
+<!-- more -->
+
 我使用的就是英文版，不过如果想使用中文版的话，就需要单独安装简体中文包： [Chinese (Simplified) Language Pack - Windows Embedded Standard 7 SP1](http://download.microsoft.com/download/8/6/1/8616D57C-1163-45FB-832A-15FA60571002/SP1/Chinese (Simplified) Language Pack - Windows Embedded Standard 7 SP1/lp.cab)。
 
 假设我们下载的语言包就放置在 C 盘目录下，那么以管理员身份运行 CMD：
