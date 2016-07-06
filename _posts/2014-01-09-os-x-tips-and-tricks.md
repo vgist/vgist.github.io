@@ -201,6 +201,16 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
 
 #### 十五. 截屏
 
+- Command + Shift + 3：全屏截取
+- Command + Shift + 4：窗口截图
+
+针对窗口截图有一些小技巧，即在 Command + Shift + 4 以后：
+
+- 直接鼠标拖动一个矩形区域
+- 按下空格来选取窗口
+- 拖动一个区域不松手，按住 Shift，来根据 X 或 Y 轴进行拖动
+- 拖动一个区域不松手，按住 Option，来按照圆心进行放大缩小
+
 系统默认的快捷键 Shift + Command + 3/4 截屏会带上阴影，部分人觉得不爽，要去掉阴影。
 
     $ defaults write com.apple.screencapture disable-shadow -bool true
