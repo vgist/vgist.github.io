@@ -133,6 +133,10 @@ tags: [ThinkPad, OS X]
     - `$ defaults write com.apple.finder AppleShowAllFiles`
     - `killall Finder`
 
+三. 已知问题
+
+- 关机变重启
+
 参考：
 
 - <http://x220.mcdonnelltech.com>
