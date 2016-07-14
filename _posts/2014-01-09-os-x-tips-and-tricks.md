@@ -281,3 +281,16 @@ OS X 10.11 中，Spotlight 可以移动位置，那么恢复默认位置的方�
     # plutil -convert binary1 clients.plist
     # killall locationd
 
+#### 二十一. HostName 修改
+
+用了一段时间，偶尔发现，HostName 多了个后缀，譬如原来的 HostName 设置为 Havee，一段时间后变成了 Havee-2，一直搞不清为什么会这样，于是打开终端设置下
+
+    $ scutil --set ComputerName "your-name"
+    $ scutil --set LocalHostName "your-name"
+    $ scutil --set HostName "your-name"
+
+注意，LocalHostName 与 HostName 的 your-name 中不能有空格。设置完成后，检查下
+
+    $ scutil --get ComputerName
+    $ scutil --get LocalHostName
+    $ scutil --get HostName
