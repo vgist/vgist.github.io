@@ -104,7 +104,6 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
     $ sudo lookupd -flushcache
 
-
 针对 OS X 10.6
 
     $ sudo dscacheutil -flushcache
@@ -113,9 +112,13 @@ Option 键，顾名思义，具体选项的键，譬如按住 Option 键后，�
 
     $ sudo killall -HUP mDNSResponder
 
-针对 OS X 10.10
+针对 OS X 10.10 至 10.10.3
 
-    $ sudo dscacheutil -flushcache
+    $ sudo discoveryutil mdnsflushcache
+
+针对 OS X 10.10.4 以及以后的所有版本
+
+    $ sudo killall -HUP mDNSResponder
 
 #### 九. 视频播放
 
