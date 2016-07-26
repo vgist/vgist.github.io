@@ -21,7 +21,7 @@ permalink: /:categories/:year-:month/:title.html
 gems: [jekyll-paginate]
 exclude: [Gemfile, Gemfile.lock, qrsync, Rakefile, README.md]
 assets_path: /assets
-cdn: "//cdn.09hd.com"
+cdn: "//o003ltpbd.qnssl.com"
 sass:
     sass_dir: assets/_sass
     style: :compressed
