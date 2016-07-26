@@ -27,13 +27,13 @@
 
   <script>
     var domain = "havee.me";
-    //var targetProtocol = "https:"
-    var current = ["www.havee.me", "hae.coding.me"];
+    var targetProtocol = "https:"
+    //var current = ["www.havee.me", "hae.coding.me"];
     for ( var i = 0; i < current.length; i++ ) {
-      //if ( document.location.host == current[i] || document.location.protocol != targetProtocol ) {
-        //document.location.href = targetProtocol + "\/\/" + domain + this.location.pathname;
-      if ( document.location.host == current[i] ) {
-        document.location.href = "\/\/" + domain + this.location.pathname;
+      if ( document.location.host == current[i] || document.location.protocol != targetProtocol ) {
+        document.location.href = targetProtocol + "\/\/" + domain + this.location.pathname;
+      //if ( document.location.host == current[i] ) {
+        //document.location.href = "\/\/" + domain + this.location.pathname;
       }
     }
   </script>
