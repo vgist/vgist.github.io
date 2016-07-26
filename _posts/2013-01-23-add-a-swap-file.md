@@ -11,7 +11,7 @@ tags: [Swap]
 
     dd if=/dev/zero of=/swap bs=1M count=512
 
-![dd swap](//o003ltpbd.qnssl.com/images/2013/01/swap-dd.png "dd swap")
+![dd swap](//cdn.09hd.com/images/2013/01/swap-dd.png "dd swap")
 
 <!-- more -->
 
@@ -27,13 +27,13 @@ tags: [Swap]
 
     mkswap /swap
 
-![make swap](//o003ltpbd.qnssl.com/images/2013/01/swap-mk.png "make swap")
+![make swap](//cdn.09hd.com/images/2013/01/swap-mk.png "make swap")
 
 最后使之生效
 
     swapon /swap
 
-![swapon](//o003ltpbd.qnssl.com/images/2013/01/swap-on.png "swapon")
+![swapon](//cdn.09hd.com/images/2013/01/swap-on.png "swapon")
 
 如果想开机即生效，那么就写入 `/etc/fstab` 内
 

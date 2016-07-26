@@ -5,7 +5,7 @@ category: Linux
 tags: [CLI, Weather]
 ---
 
-![Weather](//o003ltpbd.qnssl.com/images/2011/08/11.png "weather")
+![Weather](//cdn.09hd.com/images/2011/08/11.png "weather")
 
 保存为weather.sh
 
