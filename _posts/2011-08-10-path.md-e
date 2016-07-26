@@ -1,0 +1,13 @@
+---
+layout: post
+title: "PATH 设定"
+category: Linux
+tags: [PATH]
+---
+
+随着自用的 shell script 的增多，简单的直接 alias 下就可以用了，复杂的就专门在家目录下建了个 Bash 目录，这时就需要用到 `$PATH` 了
+
+    echo "export PATH=$PATH:$HOME/Bash" >> ~/.bashrc
+    source ~/.bashrc
+
+OK完成

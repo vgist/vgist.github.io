@@ -1,0 +1,28 @@
+---
+layout: post
+title: "Proxy Pac"
+category: "Internet"
+tags: [Proxy]
+---
+
+朝内网民的基本功正变得越来越扎实，在求知欲旺盛的年代，翻墙成为必不可少的基本功。
+
+用什么翻墙不说了，只给出一段代码用 pac 文件来智能翻墙.
+
+<!-- more -->
+
+    function FindProxyForURL(url, host){
+        var NoProxy = "DIRECT";
+        var GoProxy = "PROXY 127.0.0.1:8087";
+
+        var WHITELIST = new Array(
+            ".google.com",
+            ".googlemail.com",
+        );
+
+        for (i in WHITELIST) {
+            if(shExpMatch(url.toLowerCase(),"*" + WHITELIST[i].toLowerCase() + "*")){return GoProxy;};
+        };
+
+        return "DIRECT";
+        };
