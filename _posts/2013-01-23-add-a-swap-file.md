@@ -21,7 +21,7 @@ tags: [Swap]
 
     fallocate -l 512M /swap
 
-其次设置正确的权限，并使用 `mkswap` 命令把这个文件制作成 swap
+其次设置正确的权限，并使用 `mkswap` 命令把这个文件制格式化成 swap
 
     chmod 600 /swap
     mkswap /swap
