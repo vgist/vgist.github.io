@@ -20,6 +20,7 @@ tags: [Tips]
     $ defaults write ~/Library/Preferences/com.apple.finder.plist AppleShowAllFiles -bool true/false
 
 <!-- more -->
+
 ##### 2. 显示和隐藏普通文件
 
     $ chflags hidden/nohidden file or directory
