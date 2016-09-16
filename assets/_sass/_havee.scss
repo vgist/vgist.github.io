@@ -261,7 +261,7 @@ table {
     vertical-align: middle;
     padding: 8px;
     border: 1px solid rgba(darken($base05, 15%), $alpha * 2);
-	&:hover {
+    &:hover {
       background-color: rgba(darken($base05, 20%), $alpha * 2);
     }
   }
