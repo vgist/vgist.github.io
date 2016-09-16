@@ -137,24 +137,26 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 
 - FROM：Dockerfile 文件的第一条指令，当前镜像构建于哪个镜像，现在一般以 apline 即基础镜像。
 - MAINTAINER：指定维护者信息。
-- ENV：环境变量，被后续 RUN 等指令使用，并在容器运行时保持
-- RUN：构建镜像的详细指令，每多一条 RUN 指令即多一层 layer
-- COPY：复制 Dockerfile 文件所在目录中的文件或目录到容器中
-- ADD：复制 Dockerfile 所在目录中的文件到容器中，也可以是一个 URL，还可以自动解压 tar
-- EXPOSE：指定暴露给 Host 的端口号，可以如下几种形式，第三种是指定端口范围
+- ENV：环境变量，被后续 RUN 等指令使用，并在容器运行时保持。
+- RUN：构建镜像的详细指令，每多一条 RUN 指令即多一层 layer。
+- COPY：复制 Dockerfile 文件所在目录中的文件或目录到容器中。
+- ADD：复制 Dockerfile 所在目录中的文件到容器中，也可以是一个 URL，还可以自动解压 tar。
+- EXPOSE：指定暴露给 Host 的端口号，可以如下几种形式，第三种是指定端口范围：
     - EXPOSE port1 port2
     - EXPOSE port1/tcp port2/udp
     - EXPOSE port1:port2
-- VOLUME：创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等
-- USER：指定运行容器时的用户名或 UID，后续的 RUN 也会使用指定用户。当服务不需要管理员权限时，可以通过该命令指定运行用户
-- WORKDIR：为后续的指令指定工作目录
-- ENTRYPOINT：指定容器启动后的命令，不可被 docker run 提供的参数覆盖，有两种格式
+- VOLUME：创建一个可以从本地主机或其他容器挂载的挂载点，一般用来存放数据库和需要保持的数据等。
+- USER：指定运行容器时的用户名或 UID，后续的 RUN 也会使用指定用户。当服务不需要管理员权限时，可以通过该命令指定运行用户。
+- WORKDIR：为后续的指令指定工作目录。
+- ENTRYPOINT：指定容器启动后的命令，不可被 docker run 提供的参数覆盖，有两种格式：
     - ENTRYPOINT ["executable", "param1", "param2"]
     - ENTRYPOINT command param1 param2
-- CMD：指定容器服务运行时的命令，有三种格式
+- CMD：指定容器服务运行时的命令，有三种格式：
     - CMD ["executable","param1","param2"]
     - CMD command param1 param2
     - CMD ["param1","param2"] 提供给 ENTRYPOINT 的默认参数
+
+最后通过在 Dockerfile 目录执行 `docker build .` 来构建镜像。
 
 未完待续......
 
