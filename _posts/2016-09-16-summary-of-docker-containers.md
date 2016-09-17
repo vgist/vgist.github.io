@@ -65,7 +65,7 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
     $ docker run -it alpine sh
     / # uname -a
     Linux f35ec3b5e253 4.4.15-moby #1 SMP Thu Jul 28 22:03:07 UTC 2016 x86_64 Linux
-    / # cat /etc/alpine-release 
+    / # cat /etc/alpine-release
     3.4.0
     / # exit
     $ docker ps -a
@@ -89,11 +89,11 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
     $ docker run --name my-nginx -d gists/nginx:stable
     Unable to find image 'gists/nginx:stable' locally
     stable: Pulling from gists/nginx
-    e110a4a17941: Pull complete 
-    617dca60f103: Pull complete 
-    b397f6ce6faa: Pull complete 
-    09010597eddf: Pull complete 
-    8ee5e0c70a8d: Pull complete 
+    e110a4a17941: Pull complete
+    617dca60f103: Pull complete
+    b397f6ce6faa: Pull complete
+    09010597eddf: Pull complete
+    8ee5e0c70a8d: Pull complete
     Digest: sha256:f8ed78c176be524fdb3e4193d6b6d36126745ab950b8f5e9d62186e598bd2660
     Status: Downloaded newer image for gists/nginx:stable
     72073c6d85cf3904201ccaff5fc9eb70525b5f57d010f43961047f4f03fb922b
