@@ -158,6 +158,8 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 
 最后通过在 Dockerfile 目录执行 `docker build .` 来构建镜像。
 
+说到这里，提一下我构建镜像的方法，我现在基本是以 Alpine Linux 为基础镜像，`docker run -it --name test alpine:3.4 sh` 进入交互模式，将需要安装的服务在 shell 下一步一步去安装去配置，一切顺利后，再将步骤写入 Dockerfile 的 RUN 指令中。再 `docker build .` 与 `docker run ..` 跑一遍，确认无误后，才会 push，最后通过 docker hub 的自动构建镜像。
+
 未完待续......
 
 参考：<https://docs.docker.com>
