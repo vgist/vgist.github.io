@@ -37,6 +37,8 @@ umask 表示，去掉的权限。
 
 如此就明了，`644` 表示 U(User) 拥有读写权限，G(Group) 拥有只读权限，O(Other) 拥有只读权限。
 
+至于如何 `chmod` 可以参考：[chmod 命令详解]({% post_url 2009-08-17-chmod %})
+
 #### umask、fmask、dmask
 
 - umask -- 过滤目录与文件的权限
@@ -75,8 +77,6 @@ SUGO 中的 S，表示 SUID、SGID、Sticky bit 之和，而 SUID、SGID、Stick
 - SUID: 只能作用在可执行文件上，当其他用户运行改执行文件时，会临时拥有该文件所有者的权限
 - SGID: 可以作用在目录或可执行文件上，也同样，临时拥有该文件或文件夹所有者的权限
 - Sticky bit: 只能作用在目录，可以用来防删除，一旦拥有 Sticky bit 属性是，除了目录所有者与 root，其他任何人都无法删除该目录下文件或子目录。
-
-至于如何 `chmod` 可以参考：[chmod 命令详解]({% post_url 2009-08-17-chmod %})
 
 参考：
 
