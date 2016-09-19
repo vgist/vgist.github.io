@@ -55,26 +55,26 @@ umask 表示，去掉的权限。
 
 #### 附录
 
-SUGO 中的 S，表示 suid、guid、sticky 之和，而 suid、guid、sticky 分别用 4、2、1 来表示相关权限。
+SUGO 中的 S，表示 SUID、SGID、Sticky bit 之和，而 SUID、SGID、Sticky bit 分别用 4、2、1 来表示相关权限。
 
 即：
 
-|suid+guid+sticky|之和|表示|
+|SUID+SGID+Sticky bit|之和|表示|
 |:---:|:---:|---|
-|4 + 2 + 1|7|suid + guid + sticky|
-|4 + 2 + 0|6|suid + guid|
-|4 + 0 + 1|5|suid + sticky|
-|4 + 0 + 0|4|suid|
-|0 + 2 + 1|3|guid + sticky|
-|0 + 2 + 0|2|guid|
-|0 + 0 + 1|1|sticky|
+|4 + 2 + 1|7|SUID + SGID + Sticky bit|
+|4 + 2 + 0|6|SUID + SGID|
+|4 + 0 + 1|5|SUID + Sticky bit|
+|4 + 0 + 0|4|SUID|
+|0 + 2 + 1|3|SGID + Sticky bit|
+|0 + 2 + 0|2|SGID|
+|0 + 0 + 1|1|Sticky bit|
 |0 + 0 + 0|0|无|
 
 应用场景很多人都提过的，/etc/shadow 为 root 读写，普通用户也可以使用 `passwd` 来更改自己密码的原因。
 
-- suid: 只能作用在可执行文件上，当其他用户运行改执行文件时，会临时拥有该文件所有者的权限
-- sgid: 可以作用在目录或可执行文件上，也同样，临时拥有该文件或文件夹所有者的权限
-- sticky: 只能作用在目录，可以用来防删除，一旦拥有 sticky 属性是，除了目录所有者与 root，其他任何人都无法删除该目录下文件或子目录。
+- SUID: 只能作用在可执行文件上，当其他用户运行改执行文件时，会临时拥有该文件所有者的权限
+- SGID: 可以作用在目录或可执行文件上，也同样，临时拥有该文件或文件夹所有者的权限
+- Sticky bit: 只能作用在目录，可以用来防删除，一旦拥有 Sticky bit 属性是，除了目录所有者与 root，其他任何人都无法删除该目录下文件或子目录。
 
 参考：
 
