@@ -119,6 +119,3 @@ edit `~/.bashrc`
 最后 `source ~/.bashrc` 即可
 
 PS：由于 Slackware 不能很好的处理依赖，对一些选择安装的同学，经常出现某某包不存在的情况，给个连接，缺少的包去哪里找包名：[ftp://slackbuilds.org/14.1/TAGS.txt](ftp://slackbuilds.org/14.1/TAGS.txt)
-
-
-PS：什么时候才能将自己的台机转成UEFI + LVM ( Windows8 + Gentoo ) 方案呢，最近在考虑方案中。主要是当前 Gentoo 的N年的数据问题。
