@@ -108,8 +108,9 @@ edit `/etc/slackpkg/slackpkg.conf`
 
 配置自己常用的 prompt，单独拿出来说，主要是 Slackware 默认的 git 居然不包含 git-promt.sh。需要单独下载并 source 它
 
-    wget https://raw.github.com/git/git/master/conrtib/completion/git-promt.sh -O .bash_git
-    echo ". ~/.bash_git" >> ~/.bashrc
+    $ curl -o .bash_git https://raw.github.com/git/git/master/conrtib/completion/git-promt.sh
+    $ echo ". ~/.bash_git" >> ~/.bashrc
+    $ . .bashrc
 
 edit `~/.bashrc`
 
