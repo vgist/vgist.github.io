@@ -34,7 +34,7 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 - Mac: Docker for Mac
 - Windows: Docker for Windows
 
-##### 运行
+##### 试运行
 
 我们在 Docker 容器中运行一个 echo 试试，首先拉取一个远程的 apline 镜像，其次容器中输出 "Hello World!"。
 
@@ -161,6 +161,30 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 说到这里，提一下我构建镜像的方法，我现在基本是以 Alpine Linux 为基础镜像，`docker run -it --name test alpine:3.4 sh` 进入交互模式，将需要安装的服务在 shell 下一步一步去安装去配置，一切顺利后，再将步骤写入 Dockerfile 的 RUN 指令中。再 `docker build .` 与 `docker run ..` 跑一遍，确认无误后，才会 push，最后通过 docker hub 的自动构建镜像。
 
 目前，个人制作的公开镜像地址：<https://hub.docker.com/r/gists/>
+
+#### 运行时资源限制
+
+|选项|描述
+|:---|:---
+|`-m`,`--memory=""`|物理内存限制，单位 b、k、m 或 g，最小值 4m
+|`--memory-swap=""`|内存限制（memory + swap），同上，当值等于 `--memory` 时，表示禁用 swap，值为 -1 时表示不限制
+|`--memory-reservation=""`|内存软限制，单位同上
+|`--kernel-memory=""`|内核内存限制，单位同上，最小值 4m
+|`-c`, `--cpu-shares=0`| CPU 利用率权重，0 为忽略，默认为单核 1024
+|`--cpu-period=0`|指定多长时间内（μs 微秒）的 CPU 的使用需要重新分配一次，最小值 1000，默认值 100000
+|`--cpuset-cpus=""`|设置容器允许使用的cpu，譬如允许容器使用双核，`--cpuset-cpus="0,1"`
+|`--cpuset-mems="0-2"`|应用于 numa 架构的 CPU，允许执行存储器节点 (0,1,2)
+|`--cpu-quota=0`|指定 `--cpu-period=""` 的时间周期内有多少时间（μs 微秒）运行，默认值 -1，即不做控制
+|`--blkio-weight=0`|容器默认磁盘IO的加权值，有效值范围为10-1000
+|`--blkio-weight-device=""`|针对特定设备的IO加权控制。其格式为 **DEVICE_NAME:WEIGHT**
+|`--device-read-bps=""`|限制此设备上的读速度，单位 kb、mb 或 gb
+|`--device-write-bps=""`|限制此设备上的写速度，单位 kb、mb 或 gb
+|`--device-read-iops=""`|通过每秒读 IO 次数来限制指定设备的读速度
+|`--device-write-iops=""`|通过每秒写 IO 次数来限制指定设备的写速度
+|`--oom-kill-disable=false`|是否允许 OOM Killer
+|`--oom-score-adj=0`|配置 OOM (-1000 to 1000)
+|`--memory-swappiness=""`|控制进程将物理内存交换到 swap 的意向，越小越倾向于使用物理内存，当为 0 时，表示不加任何限制，而不是禁用swap
+|`--shm-size=""`|`/dev/shm` 大小，单位 b、k、m、g，值必须为大于 0
 
 未完待续......
 
