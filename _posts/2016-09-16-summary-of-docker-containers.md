@@ -175,8 +175,8 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 |`--cpuset-cpus=""`|设置容器允许使用的cpu，譬如允许容器使用双核，`--cpuset-cpus="0,1"`
 |`--cpuset-mems="0-2"`|应用于 numa 架构的 CPU，允许执行存储器节点 (0,1,2)
 |`--cpu-quota=0`|指定 `--cpu-period=""` 的时间周期内有多少时间（μs 微秒）运行，默认值 -1，即不做控制
-|`--blkio-weight=0`|容器默认磁盘IO的加权值，有效值范围为10-1000
-|`--blkio-weight-device=""`|针对特定设备的IO加权控制。其格式为 **DEVICE_NAME:WEIGHT**
+|`--blkio-weight=0`|容器默认磁盘 IO 的加权值，有效值范围为 10-1000
+|`--blkio-weight-device=""`|针对特定设备的 IO 加权控制。其格式为 **DEVICE_NAME:WEIGHT**
 |`--device-read-bps=""`|限制此设备上的读速度，单位 kb、mb 或 gb
 |`--device-write-bps=""`|限制此设备上的写速度，单位 kb、mb 或 gb
 |`--device-read-iops=""`|通过每秒读 IO 次数来限制指定设备的读速度
