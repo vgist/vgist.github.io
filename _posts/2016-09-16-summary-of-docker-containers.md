@@ -171,10 +171,10 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 |`--memory-reservation=""`|内存软限制，单位同上
 |`--kernel-memory=""`|内核内存限制，单位同上，最小值 4m
 |`-c`, `--cpu-shares=0`| CPU 利用率权重，0 为忽略，默认为单核 1024
-|`--cpu-period=0`|指定多长时间内（μs 微秒）的 CPU 的使用需要重新分配一次，最小值 1000，默认值 100000
+|`--cpu-period=0`|指定时钟周期内（μs 微秒）的 CPU 的使用需要重新分配一次，最小值 1000，默认值 100000
 |`--cpuset-cpus=""`|设置容器允许使用的cpu，譬如允许容器使用双核，`--cpuset-cpus="0,1"`
 |`--cpuset-mems="0-2"`|应用于 numa 架构的 CPU，允许执行存储器节点 (0,1,2)
-|`--cpu-quota=0`|指定 `--cpu-period=""` 的时间周期内有多少时间（μs 微秒）运行，默认值 -1，即不做控制
+|`--cpu-quota=0`|指定 `--cpu-period=""` 的时钟周期内有多少时间（μs 微秒）运行，默认值 -1，即不做控制
 |`--blkio-weight=0`|容器默认磁盘 IO 的加权值，有效值范围为 10-1000
 |`--blkio-weight-device=""`|针对特定设备的 IO 加权控制。其格式为 **DEVICE_NAME:WEIGHT**
 |`--device-read-bps=""`|限制此设备上的读速度，单位 kb、mb 或 gb
