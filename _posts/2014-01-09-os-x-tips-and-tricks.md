@@ -298,3 +298,9 @@ OS X 10.11 中，Spotlight 可以移动位置，那么恢复默认位置的方�
     $ scutil --get ComputerName
     $ scutil --get LocalHostName
     $ scutil --get HostName
+
+#### 二十二. Safari 显示 status bar
+
+开启原生 Safari 状态栏
+
+    $ defaults write com.apple.Safari ShowStatusBar -boolean true
