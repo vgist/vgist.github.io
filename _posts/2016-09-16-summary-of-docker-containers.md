@@ -11,7 +11,7 @@ tags: [Docker]
 
 Docker 是一个开源的应用容器引擎，使用轻量级的容器虚拟化技术，开发者可以方便的打包他们的应用以及依赖包到一个可移植的容器中，来发布到任何流行的 Linux 发行版上。
 
-- 命名空间： Docker 引擎采用 namespaces 来提供一个隔离的工作区，通过 kernel 的 pid、net、ipc、mnt、uts 等 namespaces 实现对进程、网络、消息、文件系统与内核版本的隔离。
+- 命名空间： Docker 引擎采用 namespaces 来提供一个隔离的工作区，通过 kernel 的 pid、net、ipc、mnt、uts 等 namespaces 实现对进程、网络、消息、文件系统以及 HostName/DomainName 的隔离。
 - 资源配置：通过 cgroups 来控制容器的硬件资源。
 - 文件系统：利用 UnionFS，通过创建图层来实现对容器的轻量与快速更新。Docker 引擎可以使用多个 UnionFS 的变种，包括 AUFS、btrfs、vfs 与 DeviceMapper。
 - 容器格式：Docker 引擎结合 namespaces、cgroups、UnionFS 一起组成 libcontainer 容器格式，将来或许会支持更多的譬如 BSD Jails、Solaris Zones 容器格式。
