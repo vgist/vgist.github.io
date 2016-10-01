@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "ThinkPad X220 安装黑苹果 OS X El Capitan"
+title: "ThinkPad X220 安装黑苹果 macOS"
 category: Mac
 tags: [ThinkPad, OS X]
 ---
