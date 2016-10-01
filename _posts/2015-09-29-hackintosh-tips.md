@@ -2,7 +2,7 @@
 layout: post
 title: "黑苹果的一些技巧汇总"
 category: Mac
-tags: [OS X, Hackintosh]
+tags: [Hackintosh]
 ---
 
 白果虽然省心，但是如果要性能的话，那么就必须要 Mac Pro 了，移动的 U 不是用来干重力活的。可是吊丝一枚，囊中羞涩，所以，几乎黑苹果几乎是接下来的唯一选择。
