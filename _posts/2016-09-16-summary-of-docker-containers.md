@@ -186,6 +186,47 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 |`--memory-swappiness=""`|控制进程将物理内存交换到 swap 的意向，越小越倾向于使用物理内存，当为 0 时，表示不加任何限制，而不是禁用swap
 |`--shm-size=""`|`/dev/shm` 大小，单位 b、k、m、g，值必须为大于 0
 
+#### 运行 GUI 镜像
+
+Docker 当然可以运行 GUI 镜像，譬如 Firefox，让我们直观的认识下 Firefox 的 Dockerfile：
+
+    FROM alpine:edge
+
+    RUN set -xe && \
+        echo "http://dl-cdn.alpinelinux.org/alpine/edge/testing" >> /etc/apk/repositories && \
+        apk add --no-cache \
+                        firefox \
+                        libcanberra-gtk3 \
+                        dbus-x11 \
+                        libstdc++ \
+                        libgcc \
+                        musl \
+                        ttf-dejavu && \
+        addgroup -g 1000 -S firefox && \
+        adduser -u 1000 -G firefox -h /home/firefox -D firefox
+
+    USER firefox
+
+    CMD ["/usr/bin/firefox", "-new-instance"]
+
+这是我写的一个简单的 Firefox 的 Dockerfile，如何运行呢
+
+    docker run \
+        -d \
+        --name firefox \
+        -e DISPLAY=$DISPLAY \
+        -v /tmp/.X11-unix:/tmp/.X11-unix
+        -v /dev/snd:/dev/snd
+        gists/firefox
+
+注意：运行 docker run 之前，你需要允许 docker 用户的 X server 权限
+
+    xhost +local:docker
+
+CentOS 下，docker 是以 root 运行的，所以需要
+
+    xhost +local:root
+
 未完待续......
 
 参考：<https://docs.docker.com>
