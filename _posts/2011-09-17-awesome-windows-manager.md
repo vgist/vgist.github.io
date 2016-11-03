@@ -5,7 +5,7 @@ category: Linux
 tags: [Awesome, WM]
 ---
 
-![Awesome](//cdn.09hd.com/images/2011/09/awesome.png "awesome")
+![Awesome]({{ site.cdn }}/images/2011/09/awesome.png "awesome")
 
 <!-- more -->
 
