@@ -227,6 +227,19 @@ CentOS 下，docker 是以 root 运行的，所以需要
 
     xhost +local:root
 
+##### xhost 一些衍生
+
+xhost 是用来控制 X server 访问权限的。通常当你从 hostA 登陆到 hostB 上运行 hostB 上的应用程序时，做为应用程序来说，hostA 是 client，但是对图形来说，是在 hostA 上显示的，需要使用 hostA 的 Xserver，所以 hostA 是 server。因此在登陆到 hostB 前，需要在 hostA 上运行 xhost +user 来使其它用户能够访问 hostA 的 Xserver。
+
+具体用法：
+
+    xhost +/- Name，Name 语法：family:name
+    xhost +: 是使所有用户都能访问 Xserver
+    xhost +ip: 使 ip 上的用户能够访问 Xserver
+    xhost +nis:user@domain: 使 domain 上的 nis 用户 user 能够访问
+    xhost +inet:user@domain: 使 domain 上的 inet 用户能够访问
+    xhost +local:wheel: 使本地用户wheel 能够访问
+
 未完待续......
 
 参考：<https://docs.docker.com>
