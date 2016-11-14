@@ -16,8 +16,8 @@ tags: [Homebrew, Caskroom]
 
 ##### brew
 
-    $ cd /usr/local
-    $ git remote set-url origin https://git.coding.net/hae/brew.git
+    $ cd $(brew --repo)
+    $ git remote set-url origin git://git.coding.net/hae/brew.git
 
 homebrew 两进制源可以使用 ustc 的
 
@@ -25,42 +25,12 @@ homebrew 两进制源可以使用 ustc 的
 
 ##### homebrew/core
 
-    $ cd /usr/local/Library/Taps/homebrew/homebrew-core
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-core.git
-
-##### homebrew/dupes
-
-    $ cd /usr/local/Library/Taps/homebrew/homebrew-dupes
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-dupes.git
-
-##### homebrew/versions
-
-    $ cd /usr/local/Library/Taps/homebrew/homebrew-versions
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-versions.git
-
-##### homebrew/nginx
-
-    $ cd /usr/local/Library/Taps/homebrew/homebrew-nginx
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-nginx.git
-
-##### homebrew/php
-
-    $ cd /usr/local/Library/Taps/homebrew/homebrew-php
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-php.git
+    $ cd $(brew --repo)/Library/Taps/homebrew/homebrew-core
+    $ git remote set-url origin git://git.coding.net/hae/homebrew-core.git
 
 #### Caskroom
 
 ##### caskroom/cask
 
-    $ cd /usr/local/Library/Taps/caskroom/homebrew-cask
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-cask-cask.git
-
-##### caskroom/versions
-
-    $ cd /usr/local/Library/Taps/caskroom/homebrew-versions
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-versions-cask.git
-
-##### caskroom/fonts
-
-    $ cd /usr/local/Library/Taps/caskroom/homebrew-fonts
-    $ git remote set-url origin https://git.coding.net/hae/homebrew-fonts-cask.git
+    $ cd $(brew --repo)/Library/Taps/caskroom/homebrew-cask
+    $ git remote set-url origin git://git.coding.net/hae/homebrew-cask.git
