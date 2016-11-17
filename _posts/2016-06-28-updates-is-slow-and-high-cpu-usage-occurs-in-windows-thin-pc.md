@@ -33,6 +33,9 @@ tags: [Windows]
 
 即点击查找更新后进度条一直跑，无法完成，且 svchost.exe 占有 100% 的 CPU，今天早上直接去微软知识库关键字搜索后才发现，必须先安装一个补丁才可以顺利更新：<https://support.microsoft.com/en-us/kb/3102810>。
 
-微软官方补丁地址：<https://www.microsoft.com/zh-CN/download/details.aspx?id=49545>
+微软官方补丁地址：
+
+- x86: <https://www.microsoft.com/zh-CN/download/details.aspx?id=49545>
+- x64: <https://www.microsoft.com/en-us/download/details.aspx?id=49547>
 
 安装以后，就可以顺利的进行一些安全更新的操作。
