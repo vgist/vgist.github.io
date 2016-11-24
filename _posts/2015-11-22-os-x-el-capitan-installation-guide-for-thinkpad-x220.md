@@ -146,3 +146,5 @@ tags: [ThinkPad]
 - 2016.10.01：国庆空闲下来，更新下 Clover EFI，顺便直升 macOS 10.12。
 - 2016.05.05：经 @行走时光 提醒，配置中的 SIP 排除 nvram，有关 SIP 信息可以查看这篇文章：[El Capitan 中 SIP 介绍]({% post_url 2015-10-03-system-integrity-protection-on-el-capitan %})，顺便将部分驱动更新下。
 - 2016.03.25：更新 AppleHDA_20672.kext，使之在 OS X 10.11.4 下正常。
+
+#### 已跟人兑换 X230，故本文不再更新！
