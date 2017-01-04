@@ -62,4 +62,8 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
 
     lsmod | grep tcp_bbr
 
+#### 题外话
+
+只说下体验，kimsufi 法国的盒子，本来上行在 4MB 以下，现在基本维持在 8MB 以上。
+
 参考：<https://www.ostechnix.com/install-linux-kernel-4-9-centos-ubuntu/>
