@@ -7,7 +7,7 @@ tags: [CentOS, BBR]
 
 #### 介绍
 
-Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带来了一些令人激动的特性以及一些驱动的更新。Linux 稳定内核维护者 Greg Kroah-Hartman 也早已宣布下一个长期支持版（LTS）内核将是 Linux 4.9。来自 Google 的 BBR TCP 拥塞控制算法也在这个版本并入了主线。为了体验 BBR，迫不及待的需要将 CentOS 7 的内核升级至该版本。具体的更新可以查阅：[Linux Kernel 4.9 release notes](https://lkml.org/lkml/2016/12/11/102)。
+Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带来了一些令人激动的特性以及一些驱动的更新。Linux 稳定内核维护者 Greg Kroah-Hartman 也早已宣布下一个长期支持版（LTS）内核将是 Linux 4.9。来自 Google 的 TCP BBR 拥塞控制算法也在这个版本并入了主线。为了体验 TCP BBR，迫不及待的需要将 CentOS 7 的内核升级至该版本。具体的更新可以查阅：[Linux Kernel 4.9 release notes](https://lkml.org/lkml/2016/12/11/102)。
 
 #### 安装
 
@@ -48,12 +48,12 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
     $ uname -a
     Linux box 4.9.0-1.el7.elrepo.x86_64 #1 SMP Sun Dec 11 15:43:54 EST 2016 x86_64 x86_64 x86_64 GNU/Linux
 
-#### 开启 BBR
+#### 开启 TCP BBR
 
     echo "net.core.default_qdisc=fq" >> /etc/sysctl.conf
     echo "net.ipv4.tcp_congestion_control=bbr" >> /etc/sysctl.conf
 
-重启后，首先 `uname -a` 看下内核是否切换到 4.9，然后执行下面明亮查看内核是否开启 BBR
+重启后，首先 `uname -a` 看下内核是否切换到 4.9，然后执行下面明亮查看内核是否开启 TCP BBR
 
     sysctl net.ipv4.tcp_available_congestion_control
     sysctl net.ipv4.tcp_congestion_control
