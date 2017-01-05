@@ -1,6 +1,6 @@
 ---
 layout: post
-title: "CentOS 7 升级内核版本至 4.9"
+title: "升级 CentOS 内核至 4.9"
 category: Linux
 tags: [CentOS, BBR]
 ---
