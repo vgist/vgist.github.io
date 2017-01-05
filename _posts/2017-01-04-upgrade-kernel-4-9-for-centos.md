@@ -66,4 +66,6 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
 
 只说下体验，kimsufi 法国的盒子，本来上行在 4MB 以下，现在基本维持在 8MB 以上。
 
+同时说一下，阿里云的 vps，CentOS 7 可以升级到 kernel 4.9，其他的发行版没试过。
+
 参考：<https://www.ostechnix.com/install-linux-kernel-4-9-centos-ubuntu/>
