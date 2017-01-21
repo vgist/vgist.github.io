@@ -53,12 +53,12 @@ OK，找到了
 
 > container init caused "rootfs_linux.go:53: mounting "cgroup" to rootfs "/var/lib/docker/overlay/700b3203dc8c3f997c72ab6fcb10000b5d9a64401c0ec7524cfb1ca4a7b7a876/merged" at /sys/fs/cgroup caused "no subsystem for mount"
 
-以此为关键词，找到问题根源，是最新的 systemd 232，以 cgroup v２　结构挂载导致 runc 出现错误提示　"no subsystem for mount"，[systemd/systemd#3965](https://github.com/systemd/systemd/pull/3965)。
+以此为关键词，找到问题根源，是最新的 systemd 232，以 cgroup v２ 结构挂载导致 runc 出现错误提示 “no subsystem for mount”，[systemd/systemd#3965](https://github.com/systemd/systemd/pull/3965)。
 
 #### 解决方案
 
 既然根源找到了，那么坚决方案也就明了了。共两种解决方案，人选其一：
 
 - 所有 container 启动时添加一个参数 `-v /sys/fs/cgroup:/sys/fs/cgroup:ro`
-- 添加 `systemd.legacy_systemd_cgroup_controller=yes` 到你的 grub2 | syslinux 等启动器的内核启动参数中
+- 添加 `systemd.legacy_systemd_cgroup_controller=yes` 到你的 grub2、syslinux 等启动器的内核启动参数中
 
