@@ -38,6 +38,8 @@ Jan 21 13:52:32 Home dockerd[16269]: time="2017-01-21T13:52:32.823493109+08:00" 
 Jan 21 13:52:33 Home dockerd[16269]: time="2017-01-21T13:52:33.150447827+08:00" level=error msg="Handler for POST /v1.21/containers/a863dc7a53c2ad23020187161f8f782072061550a7834b2a542e7d5a05584e47/start returned error: containerd: container not started"
 ```
 
+<!-- more -->
+
 看不出错误，只有一个警告，直接 docker run 看输出
 
 ```
