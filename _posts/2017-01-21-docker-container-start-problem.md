@@ -10,8 +10,8 @@ tags: [Systemd, Docker]
 近期又一次在 Gentoo 下做了一个升级维护，遇到一个问题，Docker container 死活启动不起来
 
     $ docker-compose up -d
-    Creating ss
-    
+    Creating redis
+
     ERROR: for shadowsocks  Cannot start service redis: containerd: container not started
     ERROR: Encountered errors while bringing up the project.
 
