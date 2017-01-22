@@ -62,3 +62,7 @@ OK，找到了
 - 所有 container 启动时添加一个参数 `-v /sys/fs/cgroup:/sys/fs/cgroup:ro`
 - 添加 `systemd.legacy_systemd_cgroup_controller=yes` 到你的 grub2、syslinux 等启动器的内核启动参数中
 
+参考：
+
+- <https://github.com/docker/docker/issues/28109>
+- <https://github.com/systemd/systemd/pull/3965>
