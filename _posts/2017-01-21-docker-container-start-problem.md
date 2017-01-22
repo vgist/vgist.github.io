@@ -7,7 +7,9 @@ tags: [Systemd, Docker]
 
 #### 问题
 
-近期又一次在 Gentoo 下做了一个升级维护，遇到一个问题，Docker container 死活启动不起来，有点懵逼了。
+近期又一次在 Gentoo 下做了一个升级维护，期间遇到了一个问题，Docker container 死活启动不起来，有点懵逼。
+
+回想近期做的维护更新，无非 kernel 从 4.4.* LTS 升级到 4.9.* LTS，docker 从 1.11 升级到 1.13，还有一些系统级的维护。发生这个问题，有点让人猝不及防。问题总是要解决的，于是一点点排查起来。
 
     $ docker-compose up -d
     Creating redis
@@ -38,7 +40,7 @@ OK，找到了，十有八九是 cgroup 问题：
 
 > container init caused "rootfs_linux.go:53: mounting "cgroup" to rootfs "/var/lib/docker/overlay/700b3203dc8c3f997c72ab6fcb10000b5d9a64401c0ec7524cfb1ca4a7b7a876/merged" at /sys/fs/cgroup caused "no subsystem for mount"
 
-以此为关键词，放狗出来，终于找到问题根源，果然是最新的 systemd 232，以 cgroup v２ 结构层次挂载导致 runc 出现错误提示 **“no subsystem for mount”**，[systemd/systemd#3965](https://github.com/systemd/systemd/pull/3965)。
+以此为关键词，直接去 github issues 搜，终于找到问题根源，果然是最新的 systemd 232 的问题，然后才想到这次维护中有 systemd 的更新，具体来说，就是 systemd v32 以 cgroup v２ 结构层次挂载导致 runc 出现错误提示 **“no subsystem for mount”**，[systemd/systemd#3965](https://github.com/systemd/systemd/pull/3965)。
 
 #### 解决方案
 
