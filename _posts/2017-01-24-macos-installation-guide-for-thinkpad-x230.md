@@ -11,11 +11,11 @@ tags: [ThinkPad]
 
 #### 一. BIOS 设置
 
-<!-- more -->
-
 首先，直接去官网下载最新版的 BIOS 来升级：[BIOS Update Utility V2.67](http://support.lenovo.com/us/zh/products/Laptops-and-netbooks/ThinkPad-X-Series-laptops/ThinkPad-X230/downloads/DS029187)
 
 然后按照如下 BIOS 设置：
+
+<!-- more -->
 
 ```
 Config
