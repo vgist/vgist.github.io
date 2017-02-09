@@ -131,11 +131,11 @@ spec 文件中变量，可以通过 `rpmbuild --showrc` 来查看，譬如判断
 
 #### 二、打包
 
-- **GitHub**: [https://github.com/Ihavee/ihavee-rpm](https://github.com/Ihavee/ihavee-rpm)
+- **GitHub**: [https://github.com/Ihavee/rpmbuild](https://github.com/Ihavee/rpmbuild)
 
 clone 下来
 
-    $ git clone git://github.com/Ihavee/ihavee-rpm.git ./your/path
+    $ git clone git://github.com/Ihavee/rpmbuild.git ./your/path
 
 将下面五个文件放入文件夹 `~/rpmbuild/SOURCES`
 
