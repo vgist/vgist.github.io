@@ -227,9 +227,23 @@ eth0 存在与 public zone，将该网卡添加至 work zone，并将之从 publ
 
 当然，我们仍然可以通过 ipset 来封禁 ip
 
-    # ipset create blacklist hash:ip hashsize 4096
-    # ipset restore -f /path/blacklist.txt
-    # firewall-cmd --permanent --zone=public --direct --add-rule ipv4 filter INPUT 0 -m set --match-set blacklist src -j DROP
+封禁 ip
+
+    # firewall-cmd --permanent --zone=public --new-ipset=blacklist --type=hash:ip
+    # firewall-cmd --permanent --zone=public --ipset=blacklist --add-entry=222.222.222.222
+
+封禁网段
+
+    # firewall-cmd --permanent --zone=public --new-ipset=blacklist --type=hash:net
+    # firewall-cmd --permanent --zone=public --ipset=blacklist --add-entry=222.222.222.0/24
+
+倒入 ipset 规则
+
+    # firewall-cmd --permanent --zone=public --new-ipset-from-file=/path/blacklist.xml
+    # firewall-cmd --permanent --zone=public --add-rich-rule='rule source ipset=blacklist drop'
+
+重新载入
+
     # firewall-cmd --reload
 
 以上都是一些常用方法，更多高级方法，请参考：
