@@ -240,9 +240,12 @@ eth0 存在与 public zone，将该网卡添加至 work zone，并将之从 publ
 倒入 ipset 规则
 
     # firewall-cmd --permanent --zone=public --new-ipset-from-file=/path/blacklist.xml
+
+然后封禁 blacklist
+
     # firewall-cmd --permanent --zone=public --add-rich-rule='rule source ipset=blacklist drop'
 
-重新载入
+重新载入以生效
 
     # firewall-cmd --reload
 
