@@ -28,3 +28,8 @@ $line-height: 1;
 @mixin monospace {
   font-family: Monaco, "Dejavu Sans Mono", Consolas, Terminal, monospace;
 }
+
+/* text shadow */
+@mixin text-shadow {
+  text-shadow: 0 1px 0 $base07, 0 1px 1px rgba($base08, $alpha * 3)
+}
