@@ -18,11 +18,11 @@ $line-height: 1;
 
 /* font-family */
 @mixin sans-serif {
-  font-family: "PingFang SC", Tahoma, "Microsoft Yahei", sans-serif;
+  font-family: "PingFang SC", sans-serif;
 }
 
 @mixin serif {
-  font-family: serif;
+  font-family: Georgia, serif;
 }
 
 @mixin monospace {
