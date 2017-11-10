@@ -56,7 +56,7 @@ Startup
 
 #### 二. CLOVER
 
-同样，usb安装盘的制作以及如何安装就不说了，太多的文章。Clover 相关的配置，可以直接从这里提取：[EFI for macOS Sierra on ThinkPad X230](https://pan.baidu.com/s/1eSomrqq)，解压开，将EFI 目录直接拷贝至你的 U 盘安装盘的 EFI 分区，或者拷贝至你系统盘的 EFI 分区。
+同样，usb安装盘的制作以及如何安装就不说了，太多的文章。Clover 相关的配置，可以直接从这里提取：[EFI for macOS Sierra on ThinkPad X230](https://pan.baidu.com/s/1pLLZGRD)（2017-11-10 更新），解压开，将EFI 目录直接拷贝至你的 U 盘安装盘的 EFI 分区，或者拷贝至你系统盘的 EFI 分区。
 
 ##### EFI
 
@@ -65,8 +65,13 @@ Startup
 ```
 EFI
 ├── BOOT
+│   └── BOOTX64.efi
 └── CLOVER
     ├── ACPI
+    │   ├── WINDOWS
+    │   ├── origin
+    │   │   ├── Clean DSDT.dsl
+    │   │   └── ssdt.dsl
     │   └── patched
     │       ├── DSDT.aml
     │       └── SSDT.aml
@@ -79,21 +84,21 @@ EFI
     │       ├── ACPISensors.kext
     │       ├── AppleALC.kext
     │       ├── AppleIntelE1000e.kext
-    │       ├── BrcmFirmwareData.kext
+    │       ├── BrcmFirmwareRepo.kext
     │       ├── BrcmPatchRAM2.kext
     │       ├── CPUSensors.kext
     │       ├── FakeSMC.kext
     │       ├── GPUSensors.kext
-    │       ├── IntelBacklight.kext
+    │       ├── HibernationFixup.kext
+    │       ├── IntelGraphicsFixup.kext
     │       ├── LPCSensors.kext
+    │       ├── Lilu.kext
     │       └── VoodooPS2Controller.kext
     ├── themes
     │   └── embedded
     └── tools
 ```
 
-其中，AppleALC.kext 采用的是 vit9696 的驱动：<https://github.com/vit9696/AppleALC>，layoutID 为 28。
-
-待续...
+暂停更新...
 
 参考：<https://github.com/Bizzaro/x230-osx/>
