@@ -14,7 +14,7 @@ tags: [ThinkPad]
 #### 一. BIOS 相关
 
 1. 升级官方 Lenovo BIOS 版本至 1.40，可以从如下官方地址下载：[Windows 1.40 Update Utility](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x220/downloads/DS018805) 或 [Bootable 1.40 CD Image](http://support.lenovo.com/us/en/products/laptops-and-netbooks/thinkpad-x-series-laptops/thinkpad-x220/downloads/DS018807)
-2. BIOS 白名单，肯定是必须的，因为要换 WIFI 模块，可以用这个工具 [patched BIOS version 1.40](http://pan.baidu.com/s/1dEyLJCP) 去刷白名单
+2. BIOS 白名单，肯定是必须的，因为要换 WIFI 模块，可以用工具 patched BIOS version 1.40 去刷白名单。
 3. BIOS 设置
     - Config > Serial ATA(SATA) > **AHCI**
     - Security > Security Chip > **Disabled**
@@ -22,9 +22,11 @@ tags: [ThinkPad]
     - Security > Virtualization > Intel VT-d Feature > **Disabled**
     - Startup > UEFI/Legacy Boot > **Both**
 
+相关下载：[X230 相关](https://pan.baidu.com/s/1o8zHhRs)
+
 #### 二. CLOVER
 
-关于 USB 安装盘的制作与安装就不多说了， CLOVER 的相关配置可以从这里获取 [ThinkPad x220 macOS Sierra EFI](https://pan.baidu.com/s/1pKSPa4r)，解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
+关于 USB 安装盘的制作与安装就不多说了，将 EFI.zip 解压开，将 EFI 目录拷贝至 U 盘的 EFI 分区。
 
 如果不确认 U 盘的 EFI 分区为哪个，可以通过 `diskutil list` 来查询，随后通过 `diskutil mount` 来挂载。譬如：
 

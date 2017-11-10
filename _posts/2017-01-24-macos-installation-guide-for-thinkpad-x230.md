@@ -56,7 +56,7 @@ Startup
 
 #### 二. CLOVER
 
-同样，usb安装盘的制作以及如何安装就不说了，太多的文章。Clover 相关的配置，可以直接从这里提取：[EFI for macOS Sierra on ThinkPad X230](https://pan.baidu.com/s/1pLLZGRD)（2017-11-10 更新），解压开，将EFI 目录直接拷贝至你的 U 盘安装盘的 EFI 分区，或者拷贝至你系统盘的 EFI 分区。
+同样，usb安装盘的制作以及如何安装就不说了，太多的文章。Clover 相关的配置，可以直接从这里提取：[EFI for macOS Sierra on ThinkPad X230](https://pan.baidu.com/s/1nuPR0It)（2017-11-10 更新），解压开，将EFI 目录直接拷贝至你的 U 盘安装盘的 EFI 分区，或者拷贝至你系统盘的 EFI 分区。
 
 ##### EFI
 
