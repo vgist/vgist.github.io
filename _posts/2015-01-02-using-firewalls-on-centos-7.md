@@ -237,9 +237,15 @@ eth0 存在与 public zone，将该网卡添加至 work zone，并将之从 publ
     # firewall-cmd --permanent --zone=public --new-ipset=blacklist --type=hash:net
     # firewall-cmd --permanent --zone=public --ipset=blacklist --add-entry=222.222.222.0/24
 
-倒入 ipset 规则
+导入 ipset 的 blacklist 规则
 
     # firewall-cmd --permanent --zone=public --new-ipset-from-file=/path/blacklist.xml
+
+如果已经存 blacklist，则需要先删除
+
+    # firewall-cmd --get-ipsets
+    blacklist
+    # firewall-cmd --permanent --zone=public --delete-ipset=blacklist
 
 然后封禁 blacklist
 
@@ -248,6 +254,10 @@ eth0 存在与 public zone，将该网卡添加至 work zone，并将之从 publ
 重新载入以生效
 
     # firewall-cmd --reload
+
+查看 blacklist
+
+    # firewall-cmd --ipset=blacklist --get-entries
 
 以上都是一些常用方法，更多高级方法，请参考：
 
