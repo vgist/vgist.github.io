@@ -43,6 +43,14 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
 
     grub2-set-default 0
 
+以后升级内核默认启用 kernel-ml，编辑文件 `/etc/sysconfig/kernel`
+
+    DEFAULTKERNEL=kernel-ml
+
+同时编辑文件 `/etc/sysconfig/kernel`，在 `[elrepo-kernel]` 下
+
+    enabled=1
+
 重启后，通过 `uname -a` 查看内核是否切换到 4.9，譬如我的
 
     $ uname -a
