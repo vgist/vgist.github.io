@@ -51,7 +51,7 @@ Gentoo 什么都好，就是一旦完成了 no-multilib，就再也无法简单�
 
 一般情况下，问题至此解决。
 
-不过呢，实际情况是非常复杂的，譬如 stage 3 的 keywords 并非 `x86 amd64`，而你的系统都是 `~x86 ~amd64`，版本不一致。没关系，chroot 之前当作安装全新的 Gentoo 那样去操作，chroot 之后升级到最新版本呢，然后提取相关二进制包。
+不过呢，实际情况是非常复杂的，譬如 stage 3 的 keywords 并非 `~x86 ~amd64`，而你的系统可能就是 `~x86 ~amd64`，版本不一致。没关系，chroot 之前当作安装全新的 Gentoo 那样去操作，chroot 之后升级到最新版本呢，然后提取相关二进制包。
 
 创建chroot临时目录，下载最新的 stage 3 与 portage。
 
