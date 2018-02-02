@@ -29,6 +29,7 @@ Gentoo 什么都好，就是一旦完成了 no-multilib，就再也无法简单�
     tar xvpf stage3-amd64-systemd-20180113.tar.bz2
     chroot /mnt/gentoo /bin/bash
     quickpkg sys-devel/gcc
+    exit
 
 ##### 安装二进制 GCC
 
@@ -43,6 +44,7 @@ Gentoo 什么都好，就是一旦完成了 no-multilib，就再也无法简单�
 选择刚才安装的 GCC，并且重建下工具链，呃，这一步之前，可能需要重新编译下 `sys-apps/sandbox`。
 
     gcc-config -l
+    gcc-config N
     source /etc/profile
     FEATURES='-sandbox -usersandbox' emerge -1 sys-apps/sandbox
     emerge -1 sys-devel/libtool sys-devel/binutils sys-libs/glibc
@@ -51,7 +53,7 @@ Gentoo 什么都好，就是一旦完成了 no-multilib，就再也无法简单�
 
 一般情况下，问题至此解决。
 
-不过呢，实际情况是非常复杂的，譬如 stage 3 的 keywords 并非 `x86 amd64`，而你的系统都是 `~x86 ~amd64`，版本不一致。没关系，chroot 之前当作安装全新的 Gentoo 那样去操作，chroot 之后升级到最新版本呢，然后提取相关二进制包。
+不过呢，实际情况是非常复杂的，譬如 stage 3 的 keywords 并非 `~x86 ~amd64`，而你的系统可能就是 `~x86 ~amd64`，版本不一致。没关系，chroot 之前当作安装全新的 Gentoo 那样去操作，chroot 之后升级到最新版本呢，然后提取相关二进制包。
 
 创建chroot临时目录，下载最新的 stage 3 与 portage。
 
@@ -65,9 +67,9 @@ Gentoo 什么都好，就是一旦完成了 no-multilib，就再也无法简单�
 拷贝一些必要的文件，为了 USE flage 一致。
 
     cp -rf /etc/portage /mnt/gentoo/etc/
-    cp -L /etc/resolv.conf /mnt/gentoo/etc
+    cp -L /etc/resolv.conf /mnt/gentoo/etc/
 
-挂在必要的目录，否则一些包可能无法顺利编译，譬如 **sys-libs/glibc**
+挂载必要的目录，否则一些包可能无法顺利编译，譬如 **sys-libs/glibc**
 
     mount -t proc none /mnt/gentoo/proc
     mount --rbind /sys /mnt/gentoo/sys
@@ -82,7 +84,7 @@ chroot 之后呢，可以将对应的版本升级到最新版。
     emerge --sync
     emerge -avu sys-devel/gcc
     gcc-config -l
-    gcc-config n
+    gcc-config N
     source /etc/profile
 
 是的，按照全新系统的步骤去操作，可以更新整个 portage 到最新，编译你需要的工具链版本，打包二进制。当然，你可以一次性的在这里将其他的包也变异成二进制，譬如 **sys-apps/sandbox**，**sys-devel/libtool**，**sys-devel/binutils**，**sys-libs/glibc**等。
@@ -90,4 +92,4 @@ chroot 之后呢，可以将对应的版本升级到最新版。
     emerge -1 sys-apps/sandbox sys-devel/libtool sys-devel/binutils sys-libs/glibc
     quickpkg sys-devel/gcc sys-apps/sandbox sys-devel/libtool sys-devel/binutils sys-libs/glibc
 
-随后，拷贝到原系统中，通过 `--usepkgonly` 安装到原系统中即可。
+随后，推出 chroot 环境，将二进制包拷贝到原系统中，通过 `--usepkgonly` 安装到原系统中即可。
