@@ -55,7 +55,7 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
 
     DEFAULTKERNEL=kernel-ml
 
-同时编辑文件 `/etc/sysconfig/kernel`，在 `[elrepo-kernel]` 下
+同时编辑文件 `/etc/yum.repo.d/elrepo.repo`，在 `[elrepo-kernel]` 下
 
     enabled=1
 
