@@ -304,3 +304,10 @@ OS X 10.11 中，Spotlight 可以移动位置，那么恢复默认位置的方�
 是否开启原生 Safari 状态栏
 
     $ defaults write com.apple.Safari ShowStatusBar -bool true/false
+
+#### 二十三. 打开 terminal.app 缓慢
+
+清理下日志
+
+    $ sudo rm /private/var/log/asl/*.asl
+
