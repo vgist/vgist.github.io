@@ -47,7 +47,7 @@ comments:
 # 网站统计
 analytics:
     baidu:
-        siteid: 625169d97c95b10732a31bbe33aa305d        # 百度统计 js 代码后的字符串
+        siteid:         # 百度统计 js 代码后的字符串
 webmaster:
     baidu:
         verify: BvD3CNBzK6
