@@ -87,7 +87,7 @@ chroot 之后呢，可以将对应的版本升级到最新版。
     gcc-config N
     source /etc/profile
 
-是的，按照全新系统的步骤去操作，可以更新整个 portage 到最新，编译你需要的工具链版本，打包二进制。当然，你可以一次性的在这里将其他的包也变异成二进制，譬如 **sys-apps/sandbox**，**sys-devel/libtool**，**sys-devel/binutils**，**sys-libs/glibc**等。
+是的，按照全新系统的步骤去操作，可以更新整个 portage 到最新，编译你需要的工具链版本，打包二进制。当然，你可以一次性的在这里将其他的包也编译成二进制，譬如 **sys-apps/sandbox**，**sys-devel/libtool**，**sys-devel/binutils**，**sys-libs/glibc**等。
 
     emerge -1 sys-apps/sandbox sys-devel/libtool sys-devel/binutils sys-libs/glibc
     quickpkg sys-devel/gcc sys-apps/sandbox sys-devel/libtool sys-devel/binutils sys-libs/glibc
