@@ -21,18 +21,18 @@ tags: [GitHub]
 
 1. 打开你浏览器的 javascript console，我这里用的是firefox 的 web console，点击 Net，
 
-    ![follow 1]({{ site.cdn }}/images/2012/06/follow-1.png "follow 1")
+    ![follow 1](/cdn/images/2012/06/follow-1.png "follow 1")
 
 2. 输入代码
 
-    ![follow 2]({{ site.cdn }}/images/2012/06/follow-2.png "follow 2")
+    ![follow 2](/cdn/images/2012/06/follow-2.png "follow 2")
 
 3. 回车后查看结果
 
-    ![follow 3]({{ site.cdn }}/images/2012/06/follow-3.png "follow 3")
+    ![follow 3](/cdn/images/2012/06/follow-3.png "follow 3")
 
 4. 刷新页面检查
 
-    ![follow 4]({{ site.cdn }}/images/2012/06/follow-4.png "follow 4")
+    ![follow 4](/cdn/images/2012/06/follow-4.png "follow 4")
 
 参考资料：[http://www.ailis.de/~k/archives/71-How-to-follow-an-organization-on-GitHub.html](http://www.ailis.de/~k/archives/71-How-to-follow-an-organization-on-GitHub.html)

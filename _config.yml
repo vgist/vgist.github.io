@@ -21,7 +21,7 @@ permalink: /:categories/:year-:month/:title.html
 gems: [jekyll-paginate]
 exclude: [Gemfile, Gemfile.lock, qrsync, Rakefile, README.md, docker-compose.yml]
 assets_path: /assets
-cdn: "//cdn.09hd.com"
+cdn:
 sass:
     sass_dir: assets/_sass
     style: :compressed
