@@ -22,7 +22,7 @@ Docker 已经成熟并被大量的应用到生产环境，所以概念部分就�
 
 Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devops，后者则是为了统一开发环境。Docker 是一个容器，底层的实现是利用下层操作系统内核提供的功能，是进程级别的。而 VM 则是完全的虚拟化，底层则基本是虚拟机，下图是一个极简的对比图。
 
-![Docker VS VM](/cdn/images/2010/09/docker-vs-vm.png)
+![Docker VS VM](/cdn/images/2016/09/docker-vs-vm.png)
 
 #### 使用方法
 
