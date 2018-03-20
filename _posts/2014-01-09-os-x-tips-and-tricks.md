@@ -163,7 +163,20 @@ MacOS 终端默认也是使用 emacs 编辑模式，如果想尝试 vi 编辑模
     $ echo $SHELLOPTS
     braceexpand:hashall:histexpand:history:interactive-comments:monitor:vi
 
-当然，MacOS 的键盘为非标准键盘，meta 键需要用 Esc 键来替换。详细的 MacOS 终端快捷键，可以访问官网：<https://support.apple.com/zh-cn/guide/terminal/trmlshtcts/mac>
+emacs 编辑模式下一些常用的快捷键
+
+|命令|说明|命令|说明
+|Ctrl + a|移动到行首|Ctrl + e|移动到行尾
+|Ctrl + f|按字符右移|Ctrl + b|按字符左移
+|Esc + f|按单词右移|Option + b|按单词左移
+|Ctrl + u|从光标处剪切至行首|Ctrl +k| 从光标处剪切至行尾
+|Ctrl + w|从光标处向左剪切单词|Option + d|从光标处向右剪切单词
+|Ctrl + d|删除光标处的字符|Ctrl + h|删除光标签的字符
+|Ctrl + ]|从光标处向后搜索字符|Ctrl + Option + ]|从当前光标处向前搜索字符
+|Ctrl + y|粘贴至光标后|!$|显示系统最近的一条参数
+|↑(Ctrl + p)|显示上一条命令|↓(Ctrl + n)|显示下一条命令
+
+MacOS 的键盘为非标准键盘，需要在Apple Terminal的设置面板里将“使用option键作为meta键”勾上。详细的 MacOS 终端快捷键，可以访问官网：<https://support.apple.com/zh-cn/guide/terminal/trmlshtcts/mac>
 
 #### 十一.  特殊符号
 
