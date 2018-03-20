@@ -153,18 +153,17 @@ Mplayer OSX Extended 是个非常不错的视频播放器，使用过一段时�
 
 ![XBMC](/cdn/images/2014/01/xbmc.png)
 
-#### 十. 生僻的快捷键
+#### 十. 终端快捷键
 
-- Ctrl + a/e：移动至行首/尾
-- Ctrl + l：清除屏幕
-- Ctrl + u：清除当前行
-- Ctrl + k：清除至当前行尾
-- Ctrl + w：向前删除一个单词
-- Ctrl + y：粘贴用 Ctrl + w/k/u 删除的单词
-- Option + right/left：向右/左移动一个单词
-- Fn + up/down：相当于 Page up/down
-- Ctrl + Command + f：全屏，仅支持右上角双箭头的窗口
-- Ctrl + Command + d：取词翻译
+MacOS 终端默认也是使用 emacs 编辑模式，如果想尝试 vi 编辑模式，可以通过 `set -o vi`来设置。
+
+    $ echo $SHELLOPTS
+    braceexpand:emacs:hashall:histexpand:history:interactive-comments:monitor
+    $ set -o vi
+    $ echo $SHELLOPTS
+    braceexpand:hashall:histexpand:history:interactive-comments:monitor:vi
+
+当然，MacOS 的键盘为非标准键盘，meta 键需要用 Esc 键来替换。详细的 MacOS 终端快捷键，可以访问官网：<https://support.apple.com/zh-cn/guide/terminal/trmlshtcts/mac>
 
 #### 十一.  特殊符号
 
