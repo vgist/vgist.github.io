@@ -18,7 +18,7 @@ rss_path: /rss.xml
 kramdown:
     input: GFM
 permalink: /:categories/:year-:month/:title.html
-gems: [jekyll-paginate]
+plugins: [jekyll-paginate]
 exclude: [Gemfile, Gemfile.lock, qrsync, Rakefile, README.md, docker-compose.yml]
 assets_path: /assets
 cdn:
