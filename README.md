@@ -1,4 +1,5 @@
-[![Build Status](https://travis-ci.org/iHavee/iHavee.github.io.svg?branch=sources)](https://travis-ci.org/iHavee/iHavee.github.io)
+[![Build Status](https://travis-ci.org/vgist/vgist.github.io.svg?branch=sources)](https://travis-ci.org/vgist/vgist.github.io)
+
 
 ### Generic
 
