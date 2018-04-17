@@ -15,6 +15,8 @@ tags: [Bash]
 
     unset HISTFILE; exit
 
+<!-- more -->
+
 #### 杀掉 console
 
     kill -9 $$
