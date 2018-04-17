@@ -122,4 +122,4 @@ ajaxget(’r_checkmail.php?mail=’+mail+’&time=’+new Date().getTime()+’&a
 
 下载：[codefile](/cdn/images/2010/09/codefile.zip)
 
-转自：[被注册机困扰的问题 - uchome吧](http://www.uchome8.com/127)
+转自：被注册机困扰的问题 - uchome吧 (链接已失效)
