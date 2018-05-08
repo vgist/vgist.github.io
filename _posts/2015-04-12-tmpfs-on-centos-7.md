@@ -5,7 +5,7 @@ category: Linux
 tags: [tmpfs, CentOS]
 ---
 
-大家对于 tmpfs 都不会陌生，相关的介绍也很多。当 tmpfs 被卸载、系统重启或者电源被切断，tmpfs 中所有的内容会消失。在 CentOS 7 中，也有 tmpfs 的一些应用。通过 `df -Th` 我们可以看到：
+大家对于 tmpfs 都不会陌生，相关的介绍也很多。tmpfs 有着显著的优缺点，优点就是速度，因为存储在内存之中，速度非常快。缺点就是，当 tmpfs 被卸载、系统重启或者电源被切断，tmpfs 中所有的内容会消失。在 CentOS 7 中，也有 tmpfs 的一些应用。通过 `df -Th` 我们可以看到：
 
 ```
 Filesystem     Type      Size  Used Avail Use% Mounted on
