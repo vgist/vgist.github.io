@@ -1,3 +1,2 @@
 User-agent: *
-#Disallow: /page*
 Sitemap: https://havee.me/sitemap.xml
