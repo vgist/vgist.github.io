@@ -140,8 +140,8 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips, CentOS]
 手动清理日志
 
     # journalctl --vacuum-time=1d
-    # journalctl --vacuum-size=50M
+    # journalctl --vacuum-size=100M
 
 写入配置 **/etc/systemd/journald.conf**
 
-    SystemMaxUse=50M
+    SystemMaxUse=100M

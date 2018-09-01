@@ -71,7 +71,6 @@ tags: [Tips]
 
 - [Homebrew 脚本 GoAgent ]({% post_url 2014-05-23-homebrew-formula-for-goagent %})
 - [OS X 上使用 GoAgent]({% post_url 2013-12-20-use-goagent-on-os-x %})
-- [CentOS 下打包 shadowsocks-libev]({% post_url 2014-08-20-package-shadowsocks-libev-on-centos %})
 
 #### 五. 开源软件
 
