@@ -80,7 +80,9 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
 
 #### 重新生成 rescue 镜像
 
-确认下 '/usr/lib/dracut/dracut.conf.d/02-rescue.conf' 中的 'dracut_rescue_image' 是否为 'yes'
+这一步不是必须的。
+
+确认下 `/usr/lib/dracut/dracut.conf.d/02-rescue.conf` 中的 `dracut_rescue_image` 是否为 `yes`，然后：
 
     rm -f /boot/vmlinuz-0-rescue-* /boot/initramfs-0-rescue-*.img
     /etc/kernel/postinst.d/51-dracut-rescue-postinst.sh $(uname -r) /boot/vmlinuz-$(uname -r)
