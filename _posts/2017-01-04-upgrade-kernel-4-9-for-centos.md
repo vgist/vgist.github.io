@@ -78,6 +78,13 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
 
     lsmod | grep tcp_bbr
 
+#### 重新生成 rescue 镜像
+
+确认下 '/usr/lib/dracut/dracut.conf.d/02-rescue.conf' 中的 'dracut_rescue_image' 是否为 'yes'
+
+    rm -f /boot/vmlinuz-0-rescue-* /boot/initramfs-0-rescue-*.img
+    /etc/kernel/postinst.d/51-dracut-rescue-postinst.sh $(uname -r) /boot/vmlinuz-$(uname -r)
+
 ##### Gentoo Kernel
 
 打开 BBR TCP 开关，并将默认 TCP 拥塞控制设为 BBR：
