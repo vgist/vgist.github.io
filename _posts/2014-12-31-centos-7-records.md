@@ -145,3 +145,11 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips, CentOS]
 写入配置 **/etc/systemd/journald.conf**
 
     SystemMaxUse=100M
+
+#### ulimits on systemd
+
+编辑 /etc/systemd/system.conf 或 /etc/systemd/user.conf，依据 unit 文件在哪个目录。
+
+    DefaultLimitNOFILE=51200
+    DefaultLimitNPROC=51200
+
