@@ -33,6 +33,6 @@
     <li><a href="http://weibo.com/{{ site.author.weibo }}" target="_blank" title="微博" rel="nofollow"><span class="fa fa-weibo fa-2x"></span></a></li>
     {% endif %}
 
-    <li><a href="{{ '/rss.xml' }}" target="_blank" title="订阅" rel="nofollow"><span class='fa fa-rss fa-2x'></span></a></li>
+    <li><a href="{{ site.rss_path | prepend: site.url }}" target="_blank" title="订阅" rel="nofollow"><span class='fa fa-rss fa-2x'></span></a></li>
   </ul>
 </header>
