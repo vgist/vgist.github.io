@@ -34,8 +34,8 @@ octopress 默认的在首页的描述是，最后一篇文章截取一定的长�
 
 编辑 `_config.yml`，添加 keywords 和 description 变量，如下
 
-    keywords: linux, gentoo, httpd, browser, internet, media, sql, news, havanna
-    description: Havanna's Hobbies, Linux Tips Record。
+    keywords: linux, gentoo, httpd, browser, internet, media, sql, news, yourname
+    description: yourname's Hobbies, Linux Tips Record。
 
 #### head.html
 

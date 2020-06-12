@@ -26,7 +26,11 @@ Convert 是 ImageMagick 中的一个常用组件。
 
 给图片增加注释
 
-    $ convert -font monospace -fill red -pointsize 36 -draw 'text 10,50 "ihavanna.org"' Shanghai.jpg comment.jpg
+    $ convert -font DejaVu-Sans-Mono-Oblique -fill red -pointsize 36 -draw 'text 10,50 "domain.com"' Shanghai.jpg comment.jpg
+
+convert -font 所用字体
+
+    $ convert -list font | grep Font:
 
 特殊效果
 
@@ -38,38 +42,38 @@ Convert 是 ImageMagick 中的一个常用组件。
 
 对图片的边缘的处理
 
-首先创建一个固定宽高比，白色背景的图片，并写上 “ihavanna.org”
+首先创建一个固定宽高比，白色背景的图片，并写上 “domain.com”
 
-    $ convert -size 97×19 null:white ihavanna.png
-    $ convert -font dejavu -fill black -pointsize 16 -draw “text 4,14 ‘ihavanna.org’” ihavanna.png ihavanna.png
+    $ convert -size 110x19 null:white domain.png
+    $ convert -font DejaVu-Sans-Oblique -fill black -pointsize 16 -draw "text 4,14 'domain.com'" domain.png domain.png
 
-![Ihavanna]({{ site.cdn }}/images/2011/12/ihavanna.png "ihavanna")
+![domain](/cdn/images/2011/12/domain.png "domain")
 
 增加色变
 
-    $ convert -bordercolor red -border 2×2 image.jpg image.gif
+    $ convert -bordercolor red -border 2x2 domain.png domain-bordercolor.png
 
-![ihavanna-border-color]({{ site.cdn }}/images/2011/12/ihavanna-bordercolor.png "ihavanna-bordercolor")
+![domain-border-color](/cdn/images/2011/12/domain-bordercolor.png "domain-bordercolor")
 
 加亮或变暗图片边缘，已增强 3d 效果
 
     $ convert -raise 9 image.jpg image.gif
 
-![ihavanna-raise]({{ site.cdn }}/images/2011/12/ihavanna-raise.png "ihavanna-raise")
+![domain-raise](/cdn/images/2011/12/domain-raise.png "domain-raise")
 
 在图片周围增加装饰性框架
 
-    $ convert -mattecolor gray -frame 2×2 image.jpg image.gif
+    $ convert -mattecolor gray -frame 2x2 image.jpg image.gif
 
-![ihavanna-matte-color]({{ site.cdn }}/images/2011/12/ihavanna-mattecolor.png "ihavanna-mattecolor")
+![domain-matte-color](/cdn/images/2011/12/domain-mattecolor.png "domain-mattecolor")
 
 图片边缘增加升降斜角
 
-    $ convert -mattecolor gray -frame 2×2+0+2 image.jpg image.gif
-    $ convert -mattecolor gray -frame 2×2+2+0 image.jpg image.gif
+    $ convert -mattecolor gray -frame 2x2+0+2 image.jpg image.gif
+    $ convert -mattecolor gray -frame 2x2+2+0 image.jpg image.gif
 
-![ihavanna-0+2]({{ site.cdn }}/images/2011/12/ihavanna-0+2.png "ihavanna-0+2")
-![ihavanna-2+0]({{ site.cdn }}/images/2011/12/ihavanna-2+0.png "ihavanna-2+0")
+![domain-0+2](/cdn/images/2011/12/domain-0+2.png "domain-0+2")
+![domain-2+0](/cdn/images/2011/12/domain-2+0.png "domain-2+0")
 
 将gif动画分拆成一系列静态图片
 
@@ -78,11 +82,10 @@ Convert 是 ImageMagick 中的一个常用组件。
 生成 png 格式的 email 图片
 
     $ convert -size 185x19 null:white email.png
-    $ convert -font monospace -fill black -pointsize 16 -draw 'text 4,14 "youremail@yourdomain"' email.png email.png
-    $ convert -font monospace -fill red -pointsize 16 -draw \'text 3,13 \"youremail@yourdomain\"\' email.png email.png
+    $ convert -font DejaVu-Sans-Oblique -fill black -pointsize 16 -draw 'text 4,14 "youremail@yourdomain"' email.png email.png
+    $ convert -font DejaVu-Sans-Oblique -fill red -pointsize 16 -draw 'text 3,13 "youremail@yourdomain"' email.png email.png
 
 svg 导出至 png，且放大
 
     $ convert -density 3600 old.svg new.png
 
-注意：文中的乘号可以用小写x替代

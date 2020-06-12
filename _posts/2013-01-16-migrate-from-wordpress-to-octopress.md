@@ -7,7 +7,7 @@ tags: [Wordpress, Octopress, Jekyll]
 
 ### 前言
 
-不知道在想什么，忽然心血来潮想备案下 [Ihavanna.org](http://ihavanna.org) 的域名，于是就有了接下来的一些事。
+不知道在想什么，忽然心血来潮想备案下 [havee.me](http://havee.me) 的域名，于是就有了接下来的一些事。
 
 由于备案期间，域名要求下线，且只能cname别名解析到指定的一个接入商的二级域名上。想想时间总不能浪费吧，想起之前 [WordPress](http://wordpress.org) 程序的强大且臃肿，一个想法总是缠绕心中，遂将 Wordpress 内容转到 [Octopress](http://octopress.org) 吧。
 

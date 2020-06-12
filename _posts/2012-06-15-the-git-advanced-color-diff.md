@@ -5,14 +5,13 @@ category: Linux
 tags: [Git, Usage]
 ---
 
-![git diff]({{ site.cdn }}/images/2012/06/git-diff.png "git diff")
-
 Gentoo 默认的 git 真的很朴素，默认配置实在是太简单了。
 
-<!-- more -->
 譬如 diff，譬如 color，
 
 我们还是先将 git 的颜色部分配置好吧。
+
+<!-- more -->
 
 ```ini
 [color]

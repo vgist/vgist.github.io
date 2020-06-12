@@ -5,8 +5,6 @@ category: Linux
 tags: [KVM, Kernel, Virtual]
 ---
 
-![kvm-xp]({{ site.cdn }}/images/2011/08/kvm-xp.png "kvm-xp")
-
 KVM(Kernel-based Virtual Machine) 是一个全虚拟化的解决方案，它自 2.6.20 以后正式成为 Linux 内核的一部分，也就是说，它是 Linux 内核官方支持的一个虚拟化方案。KVM 的硬件需求是 CPU 必须支持虚拟化，对于 Intel CPU 来说是 Intel VT，AMD CPU 则是 AMD-V。
 
 视频是我本地的 kvm guest 中的 winxp ，用的 rdesktop 连接
@@ -47,8 +45,6 @@ qcow2:
 Raw：
 
     dd if=/dev/zero of=/path/to/winxp.img bs=1024K count=4000
-
-![kvm-gentoo]({{ site.cdn }}/images/2011/08/kvm-gentoo.png "kvm-gentoo")
 
 - qemu-img： qemu 磁盘文件程序,主要用来创建、检查、转换等。
 - creat： 创建一个新的磁盘文件。
@@ -126,7 +122,7 @@ XP 安装很快，20 分钟左右就可以安装好。下面开始以下后面�
 现在可以 rdesktop 进行访问了，下面是 rdesktop 的参数：
 
     rdesktop localhost:3389:3389 -u username -p password -g 1024×600 \
-    -D -r sound:remote -z -r disk:Public=/home/havanna/Public -clipboard
+    -D -r sound:remote -z -r disk:Public=/home/havee/Public -clipboard
 
 这里 -z 参数可以保证鼠标运行速度不缓迟，-f 表示全屏，具体的可以 rdesktop -h 查看。
 

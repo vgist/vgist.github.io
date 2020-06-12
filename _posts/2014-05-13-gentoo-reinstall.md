@@ -103,9 +103,9 @@ liveusb 点亮机子，下载最新的 stage 与 portage 后，各种 mount 后 
 
 我使用的是 awesome，发现 .xinitrc 文件压根不用我们自己写了，现成的
 
-    useradd -m -G users havanna
-    passwd havanna
-    su - havanna
+    useradd -m -G users yourname
+    passwd yourname
+    su - yourname
     cp /etc/X11/Sessions/awesome ~/.xinitrc
 
 默认没有 `ctrl_alt_bksp` 回退到控制台的

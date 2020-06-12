@@ -41,7 +41,7 @@ git show 显示 tag 说明，以及 commit 资料
 
     $ git show v0.3
     tag v0.3
-    Tagger: Havanna <skykiss_2000@163.com>
+    Tagger: yourname <name@domain.com>
     Date:   Fri Jun 15 12:21:48 2012 +0800
 
     v0.3
@@ -58,28 +58,28 @@ git show 显示 tag 说明，以及 commit 资料
     +++ b/README
     @@ -1 +1 @@
     -my
-    +Havanna's vimwiki
+    +yourname's vimwiki
 
 上传 tag 到远端
 
     $ git push origin v0.3
-    Enter passphrase for key '/home/havanna/.ssh/id_rsa':
+    Enter passphrase for key '/home/yourname/.ssh/id_rsa':
     Counting objects: 1, done.
     Writing objects: 100% (1/1), 155 bytes, done.
     Total 1 (delta 0), reused 0 (delta 0)
-    To git@github.com:Havanna/wiki.ihavanna.org.git
+    To git@github.com:yourname/wiki.domain.com.git
      * [new tag]         v0.3 -> v0.3
 
 将所有 tag 一次全上传上去
 
     $ git push --tags
-    Enter passphrase for key '/home/havanna/.ssh/id_rsa':
+    Enter passphrase for key '/home/yourname/.ssh/id_rsa':
     Counting objects: 3, done.
     Delta compression using up to 2 threads.
     Compressing objects: 100% (3/3), done.
     Writing objects: 100% (3/3), 402 bytes, done.
     Total 3 (delta 0), reused 0 (delta 0)
-    To git@github.com:Havanna/wiki.ihavanna.org.git
+    To git@github.com:yourname/wiki.domain.com.git
      * [new tag]         v0.1 -> v0.1
      * [new tag]         v0.2 -> v0.2
      * [new tag]         v0.4 -> v0.4
@@ -92,8 +92,8 @@ git show 显示 tag 说明，以及 commit 资料
 删除远端 tag
 
     $ git push origin :refs/tags/v0.1
-    Enter passphrase for key '/home/havanna/.ssh/id_rsa':
-    To git@github.com:Havanna/wiki.ihavanna.org.git
+    Enter passphrase for key '/home/yourname/.ssh/id_rsa':
+    To git@github.com:yourname/wiki.domain.com.git
      - [deleted]         v0.1
 
 参考资料：[http://www.kernel.org/pub/software/scm/git/docs/git-tag.html](http://www.kernel.org/pub/software/scm/git/docs/git-tag.html)
