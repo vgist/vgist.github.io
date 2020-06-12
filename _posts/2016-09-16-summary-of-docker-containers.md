@@ -240,6 +240,61 @@ xhost 是用来控制 X server 访问权限的。通常当你从 hostA 登陆到
     xhost +inet:user@domain: 使 domain 上的 inet 用户能够访问
     xhost +local:wheel: 使本地用户wheel 能够访问
 
+#### 镜像导入导出
+
+    docker save imageID -o name.tar
+    docker load -i name.tar
+    docker tag imageID name:tag
+
+#### 容器导入导出
+
+    docker export containerID > name.tar
+    docker import name.tar
+    docker tag imageID name:tag
+
+
+
+#### 群集模式
+
+swarm 在现在的 docker 中是内建的，直接可以开启
+
+创建
+
+    docker swarm init
+    docker swarm join-token worker
+    docker swarm join-token manager
+
+让其他 docker 加入该集群，可以按照提示操作，可以选择加入 worker 还是 manager
+
+如果有防火墙，注意开启如下防火墙端口
+
+| 协议 | 端口 | 描述 |
+|:----|:-----|:-------------|
+| tcp | 2377 | 集群管理通信 |
+| tcp & udp  | 7946 | 节点间通信 |
+| udp | 4789 | overlay 网络 |
+| esp | all  | overlay 加密网络 |
+
+    iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m tcp --dport 2377 -j ACCEPT
+    iptables -A INPUT -p udp -m conntrack --ctstate NEW -m udp --dport 4789 -j ACCEPT
+    iptables -A INPUT -p tcp -m conntrack --ctstate NEW -m tcp --dport 7946 -j ACCEPT
+    iptables -A INPUT -p udp -m conntrack --ctstate NEW -m udp --dport 7946 -j ACCEPT
+    iptables -A INPUT -p esp -j ACCEPT
+
+#### dockerhub
+
+登陆 dockerhub 网站，获取 access tokens 后
+
+    echo xxxxxxxxxxxxxxxx | docker login -u username --password-stdin
+
+打开试验性功能，方便 buildx 等试验性功能
+
+    ~/.docker/config.json
+    {
+        "experimental": "enabled"
+    }
+
+
 未完待续......
 
-参考：<https://docs.docker.com>
+参考： <https://docs.docker.com>

@@ -7,13 +7,11 @@ tags: [GnuPG, Keys, Public]
 
 #### 一、介绍
 
-![Mutt GnuPG](/cdn/images/2012/07/mutt-gnupg.png "Mutt GnuPG")
-
 PGP（Pretty Good Privacy），是一个基于 RSA 公钥加密体系的邮件加密软件。它不但可以对用户的数据保密以防止非授权者阅读，还能对用户的邮件加上数字签名从而使收 信人确信邮件是由该用户发出。让人们可以安全地和从未见过的人们通信，而事先不需要任何保密的渠道用来传递密钥。PGP 采用了审慎的密钥管理，一种 RSA 和传统加密的杂合算法，用于数字签名的邮件文摘算法，加密前压缩等。它功能强大，速度很快。
 
-<!-- more -->
-
 GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加密数据和做数字签名之用。在功能上，它和 PGP 是 一样的。由于 PGP 使用了 IDEA 专利算法，所以使用 PGP 会有许可证的麻烦。但是 GnuPG 并没有使用这个算法，所以对用户来说使用 GnuPG 没有任何 限制。GnuPG 使用非对称加密算法，安全程度比较高。GnuPG 主要有以下特点：
+
+<!-- more -->
 
 1. 完全兼容 PGP
 2. 没有使用任何专利算法，没有专利问题
@@ -32,33 +30,39 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
 ##### 创建密钥对
 
     $ gpg --gen-key                                             # 生成密钥对
+    # or
+    $ gpg --default-new-key-algo rsa4096 --gen-key
     $ gpg --gen-revoke ID                                       # 为 ID 生成吊销密钥
+
+#### 显示密钥ID
+
+    $ gpg -K --keyid-form LONG                                  # or
+    $ gpg -K --keyid-format LONG
+    $ git config --global user.signingkey XXXXXXXXXXXXXXXX      # git 中添加签名密钥
 
 ##### 公钥处理
 
-    $ gpg --armor --output filename.asc --export Havanna        # 导出公钥
-    $ gpg -a -o filename.asc --export Havanna                   # -a 选项是以 ASSCII 码方式导出
-    $ gpg --list-public-keys                                    # 显示所有公钥
+    $ gpg --armor --output filename.asc --export Havee          # ASCII 格式导出公钥
+    $ gpg --list-public-keys                                    # 显示所有公钥，或
     $ gpg -k
     $ gpg --check-sig                                           # 监测公钥环中公钥的签名信息
-    $ gpg --fingerprint Havanna                                 # 查看公钥指纹信息
+    $ gpg --fingerprint Havee                                   # 查看公钥指纹信息
 
 ##### 私钥处理
 
-    $ gpg --output filename.asc --export-secret-keys Havanna    # 导出用户标志为 Havanna 的私钥，不加用户标志，则导出所有私钥
-    $ gpg -o filename -a --export-secret-keys Havanna           # 以 ASSCII 码方式导出
-    $ gpg --list-secret-keys                                    # 显示所有私钥
+    $ gpg --armor --output filename.asc --export-secret-keys Havee  # 导出用户标志为 Havee 的私钥，不加用户标志，则导出所有私钥
+    $ gpg --list-secret-keys                                        # 显示所有私钥，或
     $ gpg -K
 
 ##### 其他
 
-    $ gpg --import Havanna.asc                                  # 导入私钥或公钥
-    $ gpg --delete-secret-and-public-key Havanna                # 删除私钥和公钥
-    $ gpg --delete-secret-key Havanna                           # 删除私钥
-    $ gpg --delete-key Havanna                                  # 删除公钥
+    $ gpg --import Havee.asc                                    # 导入私钥或公钥
+    $ gpg --delete-secret-and-public-key Havee                  # 删除私钥和公钥
+    $ gpg --delete-secret-key Havee                             # 删除私钥
+    $ gpg --delete-key Havee                                    # 删除公钥
 
 
-    $ gpg --edit-key Havanna  # 编辑密钥，要帮助输入 help
+    $ gpg --edit-key Havee  # 编辑密钥，要帮助输入 help
            1）list:列出密钥和用户标识
            2）addkey:添加一个子密钥
            3）delkey:删除选中的子密钥
@@ -85,28 +89,28 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
 
 ##### 加密与解密
 
-    $ gpg -e -r Havanna.asc filename                            # 使用 Havanna 的公钥对 filename 加密，生成二进制 filename.pgp
-    $ gpg -ea -r Havanna filename -o filename.asc               # 同上，不过已 ASCII 方式输入结果，并输出 asc 文件
+    $ gpg -e -r Havee.asc filename                              # 使用 Havee 的公钥对 filename 加密，生成二进制 filename.pgp
+    $ gpg -ea -r Havee filename -o filename.asc                 # 同上，不过已 ASCII 方式输入结果，并输出 asc 文件
     $ gpg -d filename.pgp -o filename                           # 对 filename.pgp 解密，保存为 filename
 
 ##### 打包方式进行签名与验证
 
     $ gpg -s filename                                           # 使用默认的用户对 filename 进行打包方式的签名
-    $ gpg -u Havanna -s filename -o filename.sig                # 使用指定的用户 Havanna 对 filename 进行签名
+    $ gpg -u Havee -s filename -o filename.sig                  # 使用指定的用户 Havee 对 filename 进行签名
     $ gpg --verify filename.gpg                                 # 验证签名
     $ gpg -d filename.gpg -o filename                           # 解包并验证签名
 
 ##### 分离方式进行签名与验证
 
     $ gpg -sb filename
-    $ gpg -u Havanna -sb filename
-    $ gpg -u Havanna -o filename.sig -sb filename
+    $ gpg -u Havee -sb filename
+    $ gpg -u Havee -o filename.sig -sb filename
     $ gpg --verify filename.gpg filename
 
 ##### 签名并加密
 
-    $ gpg -es -r Havanna -u Havanna -o filename.gpg filename    # 使用 Havanna 的公钥进行加密，并使用 Havanna 的私钥进行签名，生成的二进制文件是 filename.gpg
-    $ gpg -esa -r Havanna -u Havanna -o filename.asc filename   # 同上，加上以 ASCII 编码
+    $ gpg -es -r Havee -u Havee -o filename.gpg filename        # 使用 Havee 的公钥进行加密，并使用 Havee 的私钥进行签名，生成的二进制文件是 filename.gpg
+    $ gpg -esa -r Havee -u Havee -o filename.asc filename       # 同上，加上以 ASCII 编码
 
 ##### mutt 中的使用
 
@@ -127,7 +131,7 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
     set pgp_autosign=yes
     set pgp_replysign=yes
     set pgp_replyencrypt=yes
-    set pgp_sign_as=BB34888A                                    #你自己的公钥标志 ID
+    set pgp_sign_as=BB34888A                                    # 你自己的公钥标志 ID
     set pgp_timeout=60
     set pgp_verify_sig=yes
 
