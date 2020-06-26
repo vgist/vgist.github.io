@@ -87,3 +87,4 @@ jobs:
 - <https://help.github.com/en/github/authenticating-to-github/creating-a-personal-access-token-for-the-command-line>
 - <https://developer.github.com/v3/repos/#create-a-repository-dispatch-event>
 - <https://developer.github.com/v3/media/#request-specific-version>
+- <https://goobar.io/2019/12/07/manually-trigger-a-github-actions-workflow/>
