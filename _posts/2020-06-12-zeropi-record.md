@@ -36,6 +36,18 @@ Armbian 默认是启用 Network Manager 来管理网络，armbian-config 中的�
     iface eth0 inet dhcp
       hwaddress ether 12:23:34:45:56:67
 
+不要自动配置 nameserver
+
+    dpkg-reconfigure resolvconf         # answer no
+
+编辑 `/etc/resolvconf/resolv.conf.d/head`
+
+    nameserver your-dns
+
+最后更新 nameserver
+
+    resolvconf -u
+
 我有一个 N 年前购入的小米无线网卡，所以我增加了无线部分的设置，便于在断开网线的时候，也可以接入网络。
 
     iface wlxfc0123456789 inet dhcp
