@@ -1,6 +1,6 @@
 ### Generic
 
-#### require:
+#### Requirement:
 
 - jekyll >= 3.0.3
 - jekyll-paginate >= 1.1.0
@@ -15,7 +15,7 @@
 
     rake page name='about.html'
 
-#### Define your color
+#### Define colour
 
 Edit the file:  `assets/_sass/_custom.scss`
 
@@ -34,7 +34,7 @@ Then, follow tips to do
     docker exec -ti jekyll rake post title='A Title'
     or
     docker exec -ti jekyll rake post title="A Title" [date="2012-02-09"] [tags=[tag1,tag2]] [category="category"]
-    ...
+    
 
 #### License
 
