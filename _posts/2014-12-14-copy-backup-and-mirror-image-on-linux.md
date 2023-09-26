@@ -96,21 +96,22 @@ tags: [CLI]
 - -i: input 模式，还原备份档
 - -o: output 模式，建立备份档
 - -p: Pass-through 模式，直接将文件复制到目的目录
-    - -t: 查看档案文件，仅使用在 i 模式下
-    - -c: 使用旧的 POSIX portable 方式存储，o 模式专用
-    - -v: 将存取过程打印到屏幕上
-    - -d: 自动建立目录，i & p 模式专用
-    - -A: 追加文件到备份档，o 模式专用
-    - -B: 存取块大小设置成 5120 byte，o 模式专用
-    - -C: 存取块大小，单位是 byte，O 模式专用
-    - -L: 若存在软链接档案，则链接档案的属性，而非链接本身，o & p 模式专用
-    - -m: 创建文件时，保留以前文件的修改时间，i & p 模式专用
-    - -u: 置换所有文件，不论日期时间的新旧与否，皆不予询问而直接覆盖
+- -t: 查看档案文件，仅使用在 i 模式下
+- -a: 重新设置文件的存取时间
+- -c: 使用旧的 POSIX portable 方式存储，o 模式专用
+- -d: 自动建立目录，i & p 模式专用
+- -m: 创建文件时，保留以前文件的修改时间，i & p 模式专用
+- -u: 置换所有文件，不论日期时间的新旧与否，皆不予询问而直接覆盖
+- -v: 将存取过程打印到屏幕上
+- -A: 追加文件到备份档，o 模式专用
+- -B: 存取块大小设置成 5120 byte，o 模式专用
+- -C: 存取块大小，单位是 byte，O 模式专用
+- -L: 若存在软链接档案，则链接档案的属性，而非链接本身，o & p 模式专用
 
 常见的使用场景
 
-    find /path/to/dir | cpio -ocvB > /path/to/name.cpio     # o 模式，打包目录成 cpio 档案
-    find /. | cpio -ocvB > /path/to/system.cpio             # o 模式，备份整个系统
-    cpio -ivt < /path/to/name.cpio                          # i 模式，列出 name.cpio 的文件
-    cpio -idmv < /path/to/name.cpio                         # i 模式，还原 cpio 档案
-    find /path/to/dir1 | cpio -pvd > /path/to/dir2          # p 模式，直接复制文件到新目录
+    find /path/to/dir -print0 | cpio --null -oacvB > /path/to/name.cpio # o 模式，打包目录成 cpio 档案
+    find /. | cpio -oacvB > /path/to/system.cpio                        # o 模式，备份整个系统
+    cpio -ivt < /path/to/name.cpio                                      # i 模式，列出 name.cpio 的文件
+    cpio -idmuv < /path/to/name.cpio                                    # i 模式，还原 cpio 档案
+    find /path/to/dir -print0 | cpio --null -pvd /path/to/dir1          # p 模式，直接复制文件到新目录

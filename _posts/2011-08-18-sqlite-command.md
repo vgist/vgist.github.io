@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "SQLite 命令"
-category: SQL
+category: Other
 tags: [SQLite, CLI, Usage]
 ---
 

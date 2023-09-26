@@ -184,9 +184,8 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips, CentOS]
 
 #### zram
 
-swap 频繁交换会极大的影响主机性能，现在一般对小内存主机，使用 zram，不过 CentOS 7 并没有提供管理脚本，自己创建一个，以来 `bc`
+swap 频繁交换会极大的影响主机性能，现在一般对小内存主机，使用 zram，不过 CentOS 7 并没有提供管理脚本，自己创建一个
 
-    # yum install bc
     # touch /etc/init.d/zramswap
     # chmod +x /etc/init.d/zramswap
 
@@ -194,99 +193,62 @@ swap 频繁交换会极大的影响主机性能，现在一般对小内存主机
 
 ```
 #!/bin/bash
-### BEGIN INIT INFO
-# Provides: zram
-# Required-Start:
-# Required-Stop:
-# Default-Start: 2 3 4 5
-# Default-Stop: 0 1 6
-# Short-Description: Virtual Swap Compressed in RAM
-# Description: Virtual Swap Compressed in RAM
-### END INIT INFO
+
+NUM_CPUS=$(nproc)
+[ "$NUM_CPUS" != 0 ] || NUM_CPUS=1
+NUM_DEVS=$NUM_CPUS
+FACTOR=50 # percentage
+TOTALRAM=$(grep MemTotal /proc/meminfo | awk ' { print $2 } ')
+DISK_SIZE=$(($TOTALRAM/$NUM_CPUS*$FACTOR/100*1024))
+
+# show supported compression algorithms: `cat /sys/block/zram*/comp_algorithm`
+# select your compression algorithm, lzo is the default
+# speed: lz4 > zstd > lzo
+# compression: zstd > lzo > lz4
+COMP_ALGORITHMS=lzo
+
+#Defaults for vm.overcommit_memory, vm.page-cluster, vm.swappiness
+OVERCOMMIT_MEMORY=0
+PAGE_CLUSTER=3
+SWAPPINESS=100
+
 
 start() {
-    # get the number of CPUs
-    num_cpus=$(grep -c processor /proc/cpuinfo)
-    # if something goes wrong, assume we have 1
-    [ "$num_cpus" != 0 ] || num_cpus=1
+  [ ! -e /sys/module/zram ] && modprobe zram num_devices=$NUM_DEVS || modprobe -r zram && modprobe zram num_devices=$NUM_DEVS
+  for i in /sys/block/zram*; do
+    /usr/bin/echo $COMP_ALGORITHMS > ${i}/comp_algorithm;
+    /usr/bin/echo $DISK_SIZE > ${i}/disksize;
+  done
 
-    # set decremented number of CPUs
-    decr_num_cpus=$((num_cpus - 1))
+  for i in /dev/zram*; do
+    /usr/sbin/mkswap ${i};
+    /usr/sbin/swapon -d -p100 ${i};
+  done
 
-    # get the amount of memory in the machine
-    mem_total_kb=$(grep MemTotal /proc/meminfo | grep -E --only-matching '[[:digit:]]+')
-
-    #we will only assign 50% of system memory to zram
-    mem_total_kb=$((mem_total_kb / 2))
-
-    mem_total=$((mem_total_kb * 1024))
-
-    # load dependency modules
-    modprobe zram num_devices=$num_cpus
-
-    # initialize the devices
-    for i in $(seq 0 $decr_num_cpus); do
-    echo $((mem_total / num_cpus)) > /sys/block/zram$i/disksize
-    done
-
-    # Creating swap filesystems
-    for i in $(seq 0 $decr_num_cpus); do
-    mkswap /dev/zram$i
-    done
-
-    # Switch the swaps on
-    for i in $(seq 0 $decr_num_cpus); do
-    swapon -p 100 /dev/zram$i
-    done
+  echo 1 > /proc/sys/vm/overcommit_memory
+  echo 0 > /proc/sys/vm/page-cluster
+  echo 100 > /proc/sys/vm/swappiness
 }
 
 stop() {
-    for i in $(grep '^/dev/zram' /proc/swaps | awk '{ print $1 }'); do
-        swapoff "$i"
-    done
+  [ ! -e /sys/module/zram ] && exit 0
 
-    if grep -q "^zram " /proc/modules; then
-        sleep 1
-        rmmod zram
-    fi
+  echo $OVERCOMMIT_MEMORY > /proc/sys/vm/overcommit_memory
+  echo $PAGE_CLUSTER > /proc/sys/vm/page-cluster
+  echo $SWAPPINESS > /proc/sys/vm/swappiness
+
+  for i in /dev/zram*; do
+    /usr/sbin/swapoff ${i};
+  done
+
+  for i in /sys/block/zram*; do
+    /usr/bin/echo 1 > ${i}/reset;
+  done
+  [ -e /sys/module/zram ] && modprobe -r zram
 }
 
-status() {
-        ls /sys/block/zram* > /dev/null 2>&1 || exit 0
-        echo -e "-------\nzram Compression Stats:\n-------"
-        for i in /sys/block/zram*; do
-            compr=$(< $i/compr_data_size)
-        orig=$(< $i/orig_data_size)
-        ratio=0
-        if [ $compr -gt 0 ]; then
-            ratio=$(echo "scale=2; $orig*100/$compr" | bc -q)
-        fi
-        echo -e "/dev/${i/*\/}:\t$ratio% ($orig -> $compr)"
-        done
-        echo -e "-------\nSWAP Stats:\n-------"
-        swapon -s | grep zram
-        echo -e "-------\nMemory Stats:\n-------"
-        free -m -l -t
-}
-
-case "$1" in
-    start)
-        start
-        ;;
-    stop)
-        stop
-        ;;
-    restart)
-        stop
-        sleep 3
-        start
-        ;;
-    status)
-        status
-        ;;
-    *)
-        echo "Usage: $0 {start|stop|restart|status}"
-        RETVAL=1
+case $1 in
+  (start|stop) "$1" ;;
 esac
 ```
 
@@ -322,56 +284,28 @@ Linux Tovalds 于 2016 年 12 月 11 日发布了 Kernel 4.9 正式版本，带�
 
 ##### 安装
 
-要在 CentOS 上安装最新的内核版本，我们需要增加一个 [ELRepo](http://elrepo.org/tiki/tiki-index.php) 源。
+现在升级内核，没有那么复杂，也无需安装第三方源，在 CentOS-7.3.1611 之后用自带 repo 的即可，只需一行命令
 
-首先，让我们添加 ELRepo GPG key：
+    # yum --enablerepo=centos-kernel update
 
-    rpm --import https://www.elrepo.org/RPM-GPG-KEY-elrepo.org
-
-为 RHEL-6，SL-7，CentOS-7 源：
-
-    rpm -Uvh http://www.elrepo.org/elrepo-release-7.0-2.el7.elrepo.noarch.rpm
-
-老版本也可以享受 kernel 4.9，譬如为 RHEL-6，SL-6，CentOS-6 添加 ELRepo 源：
-
-    rpm -Uvh http://www.elrepo.org/elrepo-release-6-6.el6.elrepo.noarch.rpm
-
-为 RHEL-5，SL-5，CentOS-5 添加 ELRepo 源：
-
-    rpm -Uvh http://www.elrepo.org/elrepo-release-5-5.el5.elrepo.noarch.rpm
-
-当然，别忘了 fastestmirror 还是需要的
-
-    yum install yum-plugin-fastestmirror
-
-最后，安装 kernel 4.9
-
-    yum --enablerepo=elrepo-kernel install kernel-ml
-
-当然，将 kernel-ml 选为第一启动，首先查看系统的内核以及顺序
-
-    awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg
-
-看下你当前默认启动项
-
-    grub2-editenv list
-
-将 kernel-ml 版本的内核设置为默认启动内核
-
-    grub2-set-default N
-
-以后升级内核默认启用 kernel-ml，编辑文件 `/etc/sysconfig/kernel`
-
-    DEFAULTKERNEL=kernel-ml
-
-同时编辑文件 `/etc/yum.repo.d/elrepo.repo`，在 `[elrepo-kernel]` 下
+或者编辑文件 `/etc/yum.repos.d/CentOS-x86_64-kernel.repo `，在 `[centos-kernel]` 下
 
     enabled=1
 
-重启后，通过 `uname -a` 查看内核是否切换到 4.9，譬如我的
+再更新系统
+
+    # yum update
+
+更新完成后重启，通过 `uname -a` 查看内核版本，譬如我的
 
     $ uname -a
-    Linux box 4.9.0-1.el7.elrepo.x86_64 #1 SMP Sun Dec 11 15:43:54 EST 2016 x86_64 x86_64 x86_64 GNU/Linux
+    Linux CentOS 4.9.13-203.el7.x86_64 #1 SMP Wed Mar 08 13:39:54 EST 2017 x86_64 x86_64 x86_64 GNU/Linux
+
+一些 grub 操作内核的相关命令，可能用得到
+
+    awk -F\' '$1=="menuentry " {print i++ " : " $2}' /etc/grub2.cfg     # 查看 grub 中内核版本以及顺序
+    grub2-editenv list      # 当前默认的启动项
+    grub2-set-default N     # 设置你需要的内核版本为默认启动内核
 
 ##### 开启 BBR TCP
 

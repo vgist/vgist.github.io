@@ -75,6 +75,11 @@ tags: [EFI, Gentoo]
     # ls /boot/EFI
     BOOT Microsoft
 
+如果新装，你可能需要先格式化下 EFI 分区再挂载
+
+    # mkfs.fat -v -F 32 -n "ESP" /dev/sda1
+    # mount /dev/sda1 /boot
+
 我们给 Gentoo 也建个文件夹，并将内核拷贝入其中（现在没人还在 32 位系统下了吧？）
 
     # mkdir /boot/EFI/Gentoo
@@ -88,11 +93,19 @@ tags: [EFI, Gentoo]
 
 通过 `efibootmgr -v` 来确认下，是否添加进去了，详细的用法可以通过 `efibootmgr --help` 来查看。
 
-PS：在我这里测试，efibootmgr 的调整，貌似只有在 (U)EFI 启动系统后才可以，bios mbr 启动则不生效。
+请确保使用 efibootmgr 操作 (U)EFI 时，已经处于 (U)EFI 启动模式下，且 `/sys/firmware/efi/efivars` 处于可读写状态，可以通过如下来确认：
+
+    # mount | grep efivars
+
+如果结果返回只读 ro，则尝试重新挂载下：
+
+    # mount -o rw,remount /sys/firmware/efi/efivars
+
+如果结果返回为空，则你需要一个支持 (U)EFI 启动的 livecd 来辅助。
 
 ##### 2.2 efi shell
 
-当然，你也可以直接在 efi shell 下添加，譬如我要添加 Gentoo Linux 的 (U)EFI 启动项到第四的位置，则在你进入 efi shell 后：
+如果你主板内建 efi shell，你也可以直接在 efi shell 下添加，譬如我要添加 Gentoo Linux 的 (U)EFI 启动项到第四的位置，则在你进入 efi shell 后：
 
     Shell> bcfg boot dump -v
     Shell> bcfg boot add 3 fs0:\EFI\Gentoo\gentoo.efi "Gentoo Linux"

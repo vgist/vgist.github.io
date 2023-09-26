@@ -71,10 +71,12 @@ Gentoo 什么都好，就是一旦完成了 no-multilib，就再也无法简单�
 
 挂载必要的目录，否则一些包可能无法顺利编译，譬如 **sys-libs/glibc**
 
-    mount -t proc none /mnt/gentoo/proc
-    mount --rbind /sys /mnt/gentoo/sys
-    mount --rbind /dev /mnt/gentoo/dev
-    chroot /mnt/gentoo /bin/bash
+    mount /dev/sda2 /mnt/gentoo                 # 你的根目录所在
+    mount -t proc /proc /mnt/gentoo/proc
+    mount -R /sys /mnt/gentoo/sys
+    mount --make-rslave /mnt/gentoo/sys         # 如果想调整 systemd
+    mount -R /dev /mnt/gentoo/dev
+    mount --make-rslave /mnt/gentoo/dev         # 如果想调整 systemd
 
 chroot 之后呢，可以将对应的版本升级到最新版。
 

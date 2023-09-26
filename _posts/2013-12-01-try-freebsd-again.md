@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "再次尝试 FreeBSD"
-category: "BSD"
+category: "Other"
 tags: [freebsd]
 ---
 

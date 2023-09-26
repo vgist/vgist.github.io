@@ -21,7 +21,9 @@ liveusb 点亮机子，下载最新的 stage 与 portage 后，各种 mount 后 
     mount /dev/sda2 /mnt/gentoo
     mount -t proc proc /mnt/gentoo/proc
     mount --rbind /sys /mnt/gentoo/sys
+    mount --make-rslave /mnt/gentoo/sys
     mount --rbind /dev /mnt/gentoo/dev
+    mount --make-rslave /mnt/gentoo/dev
     chroot /mnt/gentoo /bin/bash
     env-update && . /etc/profile
     emerge --sync
@@ -40,9 +42,6 @@ liveusb 点亮机子，下载最新的 stage 与 portage 后，各种 mount 后 
     nano -w /etc/fstab
     nano -w /etc/hosts
     passwd root
-    emerge syslog-ng
-    rc-update add syslog-ng default
-    emerge mlocate
     emerge dhcpcd
 
 然后安装 syslinux

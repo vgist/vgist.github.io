@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PHP SQLite 函数库"
-category: SQL
+category: Other
 tags: [PHP, SQLite, Function]
 ---
 

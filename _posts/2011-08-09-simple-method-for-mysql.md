@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "MySQL 简单操作 (笔记)"
-category: SQL
+category: Other
 tags: [MySQL, CLI]
 ---
 
@@ -244,23 +244,23 @@ or
 
 备份molyx到文件molyx.sql
 
-    mysqldump -uroot -p  molyx > /your/path/molyx.sql
+    mysqldump -uusername -ppassword molyx > /your/path/molyx.sql
 
 备份全部数据
 
-    mysqldump -uroot -p --all-databases > /your/path/backup.sql
+    mysqldump -uroot -ppassword --all-databases > /your/path/backup.sql
 
 备份molyx并压缩
 
-    mysqldump -u root -p  molyx | gzip > /your/path/molyx.sql.gz
+    mysqldump -uusername -ppassword molyx | gzip > /your/path/molyx.sql.gz
 
 将molyx.sql导入到数据库
 
-    mysqlimport -uroot -p < /your/path/molyx.sql
+    mysql -uusername -ppassword molyx < /your/path/molyx.sql
 
 将压缩文件molyx.sql.gz中数据恢复到molyx库
 
-    gzip < molyx.sql.gz | mysql -uroot -p --database molyx
+    gzip < molyx.sql.gz | mysql -uusername -ppassword molyx
 
 将文本数据导入数据库:
 

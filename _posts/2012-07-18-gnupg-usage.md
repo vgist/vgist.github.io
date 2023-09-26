@@ -21,7 +21,7 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
 6. 支持多种加密算法
 7. 支持扩展模块
 8. 用户标识遵循标准结构
-9. 多语言支持（尚未支持中文）
+9. 多语言支持
 10. 支持匿名信息接收
 11. 支持HKP密钥服务
 
@@ -34,7 +34,7 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
 - \[A\]: 用于身份认证
 - \[C\]: 主密钥特有，用于认证子密钥
 
-密钥算法，其中 ECC 算法，需要在生成密钥对命令时添加参数 --expert，顾名思义，专家模式
+密钥算法
 
 - RSA
 - ElGamal
@@ -43,6 +43,8 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
 - ECDSA
 - EdDSA
 - ...
+
+ECC 算法，在版本 2.1.0 ，支持 ed25519 数字签名，在版本 2.1.7 ，支持 curve25519 加密，需要在操作时时添加参数 `--expert`，顾名思义，专家模式
 
 #### 二、命令
 
@@ -79,17 +81,17 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
 ##### 私钥处理
 
     $ gpg --armor --output filename.asc --export-secret-keys KEY_ID         # 导出 ID 的主私钥，不加用户标志，则导出所有主私钥
-    $ gpg --armor --output filename.asc --export-secret-subkeys SUBKEY_ID   # 导出 sub ID 的子密钥私钥
+    $ gpg --armor --output filename.asc --export-secret-subkeys SUBKEY_ID!  # 导出 sub ID 的子密钥私钥
     $ gpg --list-secret-keys|-K                                             # 显示所有私钥
 
 ##### 其他
 
-    $ gpg --import Havee.asc                    # 导入私钥或公钥
+    $ gpg --import filename.asc                 # 导入私钥或公钥
     $ gpg --delete-secret-and-public-key KEY_ID # 删除私钥和公钥
     $ gpg --delete-secret-key KEY_ID            # 删除私钥
     $ gpg --delete-key KEY_ID                   # 删除公钥
 
-    $ gpg --edit-key Havee  # 编辑密钥，要帮助输入 help
+    $ gpg --edit-key KEY_ID  # 编辑密钥，要帮助输入 help
     gpg> help
     quit        退出此菜单
     save        保存并退出
@@ -140,38 +142,86 @@ GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加�
 
 ##### 加密与解密
 
-    $ gpg -e -r Havee.asc filename              # 使用 Havee 的公钥文件对 filename 加密，生成二进制 filename.pgp
-    $ gpg -ea -r Havee filename -o filename.asc # 同上，不过以 ASCII 方式输入结果，并输出 asc 文件
-    $ gpg -d filename.pgp -o filename           # 对 filename.pgp 解密，保存为 filename
+    $ gpg -r filename.asc -e filename               # 使用公钥文件对 filename 加密，生成二进制 filename.pgp
+    $ gpg -r KEY_ID -o filename.asc -ea filename    # 同上，不过以 ASCII 方式输入结果，并输出 asc 文件
+    $ gpg -o filename -d filename.pgp               # 对 filename.pgp 解密，保存为 filename
 
 ##### 打包方式进行签名与验证
 
-    $ gpg -s filename                           # 使用默认的用户对 filename 进行打包方式的签名
-    $ gpg -u Havee -s filename -o filename.sig  # 使用指定的用户 Havee 对 filename 进行签名
-    $ gpg --verify filename.gpg                 # 验证签名
-    $ gpg -d filename.gpg -o filename           # 解包并验证签名
+    $ gpg -s filename                   # 使用默认的用户对 filename 进行打包方式的签名
+    $ gpg -u KEY_ID -s filename         # 使用指定的用户 KEY_ID  对 filename 进行签名
+    $ gpg --verify filename.gpg         # 验证签名
+    $ gpg -o filename -d filename.gpg   # 解包并验证签名
 
 ##### 分离方式进行签名与验证
 
     $ gpg -sb filename
-    $ gpg -u Havee -sb filename
-    $ gpg -u Havee -o filename.sig -sb filename
-    $ gpg --verify filename.gpg filename
+    $ gpg -u KEY_ID -sb filename
+    $ gpg --verify filename.sig filename
 
 ##### 签名并加密
 
-    $ gpg -es -r Havee -u Havee -o filename.gpg filename    # 使用 Havee 的公钥进行加密，并使用 Havee 的私钥进行签名，生成的二进制文件是 filename.gpg
-    $ gpg -esa -r Havee -u Havee -o filename.asc filename   # 同上，加上以 ASCII 编码
+    $ gpg -r KEY_ID -es filename                    # 使用指定的公钥进行加密并签名，生成的二进制文件是 filename.gpg
+    $ gpg -r KEY_ID -o filename.asc -esa filename   # 同上，加上以 ASCII 编码
+
+###### 签名加密时常用参数
+
+     -s, --sign                 # 签名
+     -b, --detach-sign          # 分离式签名，文件与签名分开
+     -e, --encrypt              # 加密
+     -d, --decrypt              # 解密
+     -a, --armor                # ascii 编码输出，一般与 -o file 搭配
+     -o, --output FILE          # 输出文件
+     -r, --recipient USER-ID    # 以特定的 ID 去加密
+     -u, --local-user USER-ID   # 以特定的 ID 去签名或解密
+
+##### 作为 ssh 公钥
+
+如果想将 gpg 作为 ssh 公钥，则在创建子钥的时候，需要创建一个 [A] 用途的专用子钥。
+
+编辑 **~/.gnupg/gpg-agent.conf**，加入
+
+    enable-ssh-support
+
+编辑你的 **~/.bashrc** 或 **~/.zshrc**，加入如下，并最后重新载入下 **source ~/.bashrc** 或 **source ~/.zshrc**，原本写入 ssh-agent 相关的内容，也可以注释掉了
+
+    [[ -f /usr/bin/gpg-agent ]] && export GPG_TTY=$(tty)
+    [[ -n "$SSH_CONNECTION" ]] && export PINENTRY_USER_DATA="USE_CURSES=1"
+    unset SSH_AGENT_PID
+    if [ "${gnupg_SSH_AUTH_SOCK_by:-0}" -ne $$ ]; then
+        export SSH_AUTH_SOCK=$(gpgconf --list-dirs agent-ssh-socket)
+    fi
+
+编辑 **~/.ssh/config**，加入
+
+    Match host * exec "gpg-connect-agent updatestartuptty /bye > /dev/null"
+
+获取子钥的 keygrip
+
+    $ gpg --with-keygrip --list-key KEY_ID
+
+将对应子匙的 keygrip 插入到 **~/.gnupg/sshcontrol** 中
+
+    $ echo xxxxxxyour-keygripxxxxxx >> ~/.gnupg/sshcontrol
+
+重启下 gpg-agent
+
+    $ gpg-connect-agent reloadagent /bye
+
+接下来就可以检查下，ssh 验证列表中，是否存在公钥了
+
+    $ ssh-add -l
+
+最后将上面的公钥添加到你的远程服务器，或 github 的 gpg 列表中即可
+
+###### 针对 github
+
+如果有多个项目处于 github 的不同账户中，你可能需要针对不同项目配置不同的密钥
+
+    gpg --export-ssh-key subkey! > .ssh/repo-1
+    git config --local core.sshCommand "ssh -i ~/.ssh/repo-1"   # 项目文件夹内执行
 
 ##### mutt 中的使用
-
-编辑 `~/.gnupg/gpg.conf`，注销下面两行
-
-    ...
-    keyserver hkp://keys.gnupg.net
-    ...
-    keyserver-options auto-key-retrieve
-    ...
 
 复制 mutt 示例配置文件至 mutt 配置目录
 

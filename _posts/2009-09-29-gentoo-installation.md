@@ -112,9 +112,7 @@ OK，准备工作完成。
     en_US ISO-8859-1
     en_US.UTF-8 UTF-8425
     zh_CN.GB18030 GB18030
-    zh_CN.GBK GBK
     zh_CN.UTF-8 UTF-8
-    zh_CN GB2312
 
 更新环境
 

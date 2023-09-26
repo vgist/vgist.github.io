@@ -1,7 +1,7 @@
 ---
 layout: post
 title: "PHP SQLite 示例"
-category: SQL
+category: Other
 tags: [PHP, SQLite, Usage]
 ---
 
