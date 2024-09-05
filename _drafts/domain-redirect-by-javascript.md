@@ -15,18 +15,18 @@ tags: [JavaScript]
 
 开始工作，首先将域名解析到 gitcafe 的 pages ip `117.79.146.98`
 
-    $ dig havee.me +nostats +nocomments +nocmd
+    $ dig havee.cc +nostats +nocomments +nocmd
 
-    ; <<>> DiG 9.8.3-P1 <<>> havee.me +nostats +nocomments +nocmd
+    ; <<>> DiG 9.8.3-P1 <<>> havee.cc +nostats +nocomments +nocmd
     ;; global options: +cmd
-    ;havee.me.              IN          A
-    havee.me.       60      IN          A       117.79.146.98
+    ;havee.cc.              IN          A
+    havee.cc.       60      IN          A       117.79.146.98
 
 JavaScript:
 
 ```javascript
 <script>
-  var url = "havee.me";
+  var url = "havee.cc";
   var other = "havee.gitcafe.com";
   if( window.location.host == other ) {
       document.location.href = "\/\/" + url + this.location.pathname;
@@ -47,7 +47,7 @@ JavaScript:
 ![Completion](/cdn/images/2014/03/completion.png)
 
     print(window.location.host);
-    "havee.me"
+    "havee.cc"
     print(this.location.pathname);
     "/internet/2014-03/domain-redirect-by-javascript.html"
 
@@ -64,7 +64,7 @@ Date: Fri, 14 Mar 2014 11:18:00 GMT
 Content-Type: text/html
 Content-Length: 184
 Connection: keep-alive
-Location: http://havee.me/
+Location: http://havee.cc/
 Cache-Control: public
 
 HTTP/1.1 200 OK

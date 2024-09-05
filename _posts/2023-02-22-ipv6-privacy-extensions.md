@@ -5,13 +5,22 @@ category: Linux
 tags: [Network]
 ---
 
-DHCPv6 方式管理 IPv6 不在本文讨论之列，这篇文章主要是介绍通过 SLAAC (Stateless Address Autoconfiguration) 来生成 IPv6 后，打开 IPv6 隐私扩展。
+DHCPv6 方式管理 IPv6 不在本文讨论之列，这篇文章主要是介绍通过 SLAAC (Stateless Address Autoconfiguration) 来生成 IPv6 后，打开 IPv6 隐私扩展。以及如何生成稳定的隐私地址。
 
-未打开 IPv6 隐私扩展前，SLAAC 生成的 v6 地址，其后缀可以通过一些方法算出 MAC 地址。默认 SLAAC 本身就是通过 IPv6 前缀 + MAC 地址来生成的。这对服务器而言是无所谓的，但是对个人用户来说，有隐私方面的问题。所以我们需要打开 IPv6 隐私扩展，来生成一个随机的临时 v6 地址，且远程连接时优先选用这个临时 v6 地址。
+- 隐私扩展 [RFC 4941](https://www.rfc-editor.org/rfc/rfc4941) 通过 “隐私地址” 允许出站连接使用临时的、随机生成的地址（每隔几个小时/几天刷新一次地址）。
+- 稳定私有地址 [RFC 7217](https://www.rfc-editor.org/rfc/rfc7217) 允许从不透明哈希值来生成私有静态地址。
+
+未打开 IPv6 隐私扩展前，IPv6 地址是通过设备 MAC 地址来作为 EUI64 来生成的。 方法是 IPv6 前缀 + MAC 地址(中间插入FFFE)。
+
+譬如 IPv6 前缀 `2409:11:11:11`，mac地址是 `11:11:11:11:11:11`，那么生成的 IPv6 为 `2409:11:11:11:1111:11ff:fe11:1111`
 
 <!-- more -->
 
-#### 一. 内核参数
+这对服务器而言是无所谓的，但是对个人用户来说，有隐私方面的问题。所以我们需要打开 IPv6 隐私扩展，来生成一个随机的临时 v6 地址，且远程连接时优先选用这个临时 v6 地址。
+
+#### 一. 隐私扩展 (RFC 4941)
+
+##### 1. 内核参数
 
 首先将内核参数打开，尽管 systemd-networkd 默认选择不遵守内核参数。
 
@@ -30,7 +39,7 @@ DHCPv6 方式管理 IPv6 不在本文讨论之列，这篇文章主要是介绍�
 
     sysctl -w net.ipv6.conf.eth1.use_tempaddr=2
 
-#### 二. NetworkManager
+##### 2. NetworkManager
 
 默认配置下，NetworkManager 会根据内核参数来决定是否开启隐私扩展。如果你已经做了内核参数哪一步，那么这里可以省略。如果不想动内核参数，那么你需要告诉 NetworkManager 来明确启用 IPv6 隐私扩展。
 
@@ -46,7 +55,7 @@ DHCPv6 方式管理 IPv6 不在本文讨论之列，这篇文章主要是介绍�
     ip6-privacy=2
     ...
 
-#### 三. systemd-networkd
+##### 3. systemd-networkd
 
 前面说过，systemd-network 的 IPv6 隐私扩展，默认选项不遵守内核参数。
 
@@ -75,8 +84,49 @@ DHCPv6 方式管理 IPv6 不在本文讨论之列，这篇文章主要是介绍�
     ...
     IPv6PrivacyExtensions=kernel
 
+#### 二. 稳定的私有地址 (RFC 7217)
+
+##### 1. 内核参数
+
+让内核生成一个密钥
+
+    sysctl net.ipv6.conf.wlan0.addr_gen_mode=3
+
+内核会生成 128 位密钥，通过如下命令输出
+
+    sysctl net.ipv6.conf.wlan0.stable_secret
+    net.ipv6.conf.wlan0.stable_secret = 2f2e:bfe6:8abc:dec1:fff5:fed0:eecd:6ee3
+
+持久化密钥，写入 `/etc/sysctl.d/40-ipv6.conf`
+
+    # Enable IPv6 stable privacy mode
+    net.ipv6.conf.wlan0.stable_secret = 2f2e:bfe6:8abc:dec1:fff5:fed0:eecd:6ee3
+    net.ipv6.conf.wlan0.addr_gen_mode = 2
+
+##### 2. NetworkManager
+
+NetworkManager 无视内核参数，不过 NetworkManager 默认使用稳定的私有地址，你当然可以修改
+
+    nmcli con modify "ProfileName" ipv6.addr-gen-mode eui64
+    nmcli con modify "ProfileName" ipv6.addr-gen-mode stable-privacy
+
+“ProfileName” 为目录 `/etc/NetworkManager/system-connections/` 下面去掉后缀的文件名
+
+##### 3. systemd-networkd
+
+比较简单，编辑 **/etc/systemd/network/wlan0.network**
+
+    [IPv6AcceptRA]
+    Token=prefixstable
+
+你也可以让你网卡的链接地址使用稳定的私有地址
+
+    [Network]
+    ...
+    IPv6LinkLocalAddressGenerationMode=stable-privacy
+
 参考：
 
 - [NetworkManager](https://developer-old.gnome.org/NetworkManager/stable/NetworkManager.conf.html)
-- [networkd.conf](https://www.freedesktop.org/software/systemd/man/latest/networkd.conf.html#IPv6PrivacyExtensions=)
-- [systemd.network](https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html#IPv6PrivacyExtensions=)
+- [networkd.conf](https://www.freedesktop.org/software/systemd/man/latest/networkd.conf.html)
+- [systemd.network](https://www.freedesktop.org/software/systemd/man/latest/systemd.network.html)

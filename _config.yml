@@ -1,6 +1,6 @@
 # Site settings
 title: "Havee's Space"
-url: "https://havee.me"
+url: "https://havee.cc"
 paginate: 5
 author:
     name: Havee
@@ -32,16 +32,16 @@ collections:
         permalink: /:path/:title.html
 
 # comment
-comments:
-    duoshuo:
-        name:
-        rcomments:
-            num: 10
-            avatar: 0
-            time: 0
-            title: 0
-            admin: 0
-            length: 26
+#comments:
+#    duoshuo:
+#        name:
+#        rcomments:
+#            num: 10
+#            avatar: 0
+#            time: 0
+#            title: 0
+#            admin: 0
+#            length: 26
 
 # 网站统计
 analytics:
@@ -49,8 +49,8 @@ analytics:
         siteid:         # 百度统计 js 代码后的字符串
 webmaster:
     baidu:
-        verify: BvD3CNBzK6
+        verify: codeva-p2lf6v9SJF
     google:
-        verify: oE8rOfWaq0A-pkv0HY170kkzgB1hM1j6zRTyRBgRw78
+        verify:
     bing:
         verify: FE0D1D87A075E1003B82C7446EE360ED

@@ -58,7 +58,7 @@ gzip_disable        "MSIE [1-6]\.";
 
 可以用以下命令判断服务器 Nginx 是否开启 Gzip 压缩
 
-    curl -IL -H "Accept-Encoding: gzip, deflate" "havee.me"
+    curl -IL -H "Accept-Encoding: gzip, deflate" "havee.cc"
 
 如果包含下列字符串则表示 Gzip压缩开启成功
 

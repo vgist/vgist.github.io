@@ -96,10 +96,10 @@ led 的内核触发控制一般在 `/sys/class/leds`中。
         ATTR{trigger}=="none rc-feedback kbd-scrolllock kbd-numlock kbd-capslock kbd-kanalock kbd-shiftlock kbd-altgrlock kbd-ctrllock kbd-altlock kbd-shiftllock kbd-shiftrlock kbd-ctrlllock kbd-ctrlrlock usbport disk-activity disk-read disk-write ide-disk mtd nand-disk heartbeat cpu cpu0 cpu1 cpu2 cpu3 activity default-on panic [mmc0] rfkill-any rfkill-none 0.2:07:link 0.2:07:1Gbps 0.2:07:100Mbps 0.2:07:10Mbps phy0rx phy0tx phy0assoc phy0radio rfkill0"
 
 
-参数都呈现了，那么直接创建文件来修改了 `/etc/udev/rules.d/90-power-leds.rulesi`
+参数都呈现了，那么直接创建文件来修改了 `/etc/udev/rules.d/90-nanopi-leds.rules`
 
-    KERNEL=="nanopi:blue:status", SUBSYSTEM=="leds", ACTION=="add", DRIVER=="", ATTR{trigger}=="default-on"
-    KERNEL=="nanopi:green:pwr", SUBSYSTEM=="leds", ACTION=="add", DRIVER=="", ATTR{trigger}=="mmc0"
+    KERNEL=="nanopi:blue:status", SUBSYSTEM=="leds", ACTION=="add", DRIVER=="", ATTR{trigger}="default-on"
+    KERNEL=="nanopi:green:pwr", SUBSYSTEM=="leds", ACTION=="add", DRIVER=="", ATTR{trigger}="mmc0"
 
 手动测试下是否有错误
 

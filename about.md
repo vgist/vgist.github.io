@@ -6,6 +6,8 @@ description: "业余爱好的点滴记录，同时作为配置备份的存储地
 
 <div id="code" class="qrcode visible-lg"></div>
 
+- 2025 年 01 月
+    - 切换域名至 havee.cc
 - 2023 年 01 月
     - 逐步脱离 MacOS/iOS 生态
 - 2016 年 02 月

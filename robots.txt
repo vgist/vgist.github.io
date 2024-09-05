@@ -1,2 +1,2 @@
 User-agent: *
-Sitemap: https://havee.me/sitemap.xml
+Sitemap: https://havee.cc/sitemap.xml

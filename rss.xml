@@ -18,7 +18,7 @@ title: {{ page.title | xml_escscape }}
         <item>
             <title>{{ post.title | xml_escape }}</title>
             <link>{{ post.url | prepend: site.url }}</link>
-            <description>{{ post.content | escape | truncate: '400' }}</description>
+            <description>{{ post.content | xml_escape | truncate: '500' }}</description>
             <guid>{{ post.id | prepend: site.url }}</guid>
             <category>{{ post.category | xml_escape }}</category>
             <pubDate>{{ post.date | date_to_rfc822 }}</pubDate>
