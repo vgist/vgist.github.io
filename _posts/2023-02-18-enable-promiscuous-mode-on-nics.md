@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "打开网卡的 promiscuous 模式"
-category: Linux
-tags: [Network]
 ---
 
 如果需要桥接网络设备，或者尝试 docker 的 macvlan 网络，那么势必要打开网卡的 promiscuous 模式。
@@ -13,11 +11,10 @@ tags: [Network]
 
 只是绝大多数时候我们需要永久打开 promiscuous 模式。那么我们可能根据自己系统选择合适的方法。
 
-<!-- more -->
 
 #### 一. NetworkManager
 
-如果你的网络管理操作是 **NetworkManager**，那么可以试试 NetworkManager-dispatcher，根据你自己的发行版，自行安装 NetworkManager-dispatcher，随后，创建 `/etc/NetworkManager/dispatcher.d/60-promisc`，根据你自己的网卡名，填入如下内容：
+如果你的网络管理操作是 NetworkManager，那么可以试试 NetworkManager-dispatcher，根据你自己的发行版，自行安装 NetworkManager-dispatcher，随后，创建 /etc/NetworkManager/dispatcher.d/60-promisc，根据你自己的网卡名，填入如下内容：
 
     #! /usr/bin/env bash
     case "$2" in
@@ -34,7 +31,7 @@ tags: [Network]
 
 #### 二. systemd
 
-创建一个 systemd service 在 network-online.target 后开始运行，创建文件 `/etc/systemd/system/nics-promisc.service`
+创建一个 systemd service 在 network-online.target 后开始运行，创建文件 /etc/systemd/system/nics-promisc.service
 
     [Unit]
     Description=enable promiscuous mode after network online
@@ -52,7 +49,7 @@ tags: [Network]
 
 #### 三. systemd-networkd
 
-有些朋友使用 systemd-networkd 来管理网络。编辑 `/etc/systemd/network/eth0.network`，根据你自己的设备来
+有些朋友使用 systemd-networkd 来管理网络。编辑 /etc/systemd/network/eth0.network，根据你自己的设备来
 
     [Match]
     Name=eth0

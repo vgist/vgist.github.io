@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "DeadBeef v0.5.1 GB18030 补丁"
-category: Linux
-tags: [DeadBeef, Patch]
 ---
 
 ![DeadBeef](/cdn/images/2011/11/deadbeef.png "DeadBeef")
@@ -13,7 +11,6 @@ tags: [DeadBeef, Patch]
 
 不论 cue 文件还是音乐的 id 信息，均兼容。
 
-<!-- more -->
 
 用 Gentoo 的同学可以直接去下载 ebuild 文件及补丁
 

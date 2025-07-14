@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "phpMyAdmin 扩展功能"
-category: SQL
-tags: [phpMyAdmin, MySQL]
 ---
 
 一直没有使用过 phpMyAdmin，今天通过 `brew install phpmyadmin` 安装了下，发现 phpMyAdmin 多了些新特性，需要激活使用。
@@ -11,7 +9,6 @@ tags: [phpMyAdmin, MySQL]
 
 对于运行低于版本 3.0 的 phpMyadmin，或低于版本 4.1.2 的 MySQL，需要注意的事项。
 
-<!-- more -->
 
 - MySQL 版本低于 4.1.2，使用 `./scripts/create_tables.sql`。
     - phpMyAdmin 3.0 以及以后的版本，将不支持低于 4.1.2 版本的 MySQL。

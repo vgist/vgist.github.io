@@ -1,15 +1,12 @@
 ---
 layout: post
 title: "Jekyll 的配置"
-category: Internet
-tags: [Jekyll, Configuration, Usage]
 ---
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/configuration](https://github.com/mojombo/jekyll/wiki/configuration)
 
 Jekyll 能够让你用你能想象出的任何方式来构造你的网站。下面是一个现在所支持的配置选项的列表。这些设置均能够通过在根目录下的 `_config.yml` 文件指定。**Jekyll** 同样可以在命令行中指定这些选项。当配置出现矛盾时，它们的优先关系是：
 
-<!-- more -->
 
 1. 命令行中的参数
 2. 配置文件中的设置

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Git Alias 引起的权限问题"
-category: Linux
-tags: [Git]
 ---
 
     ^_^ ~/Documents/git/overlay $ git ll
@@ -12,7 +10,6 @@ tags: [Git]
     log --graph --all --pretty=format:'%C(yellow)%h%C(cyan)%d%Creset %s %C(white)- %an, \
     %ar%Creset' --decorate --abbrev-commit --max-count=25
 
-<!-- more -->
 
 解决办法
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Octopress 的 SEO 优化"
-category: Internet
-tags: [Octopress, SEO, Usage]
 ---
 
 Octopress 的 SEO 在默认情况下已经表现不错了，不过有个问题，`new_post` 不生成 meta description 和 keywords。
@@ -15,7 +13,6 @@ octopress 默认已经提供了关键字和描述，问题在于 `new_post` 不�
 
 每次添加一篇文章的时候都要添加 keywords & description，如下
 
-<!-- more -->
     ---
     layout: post
     title: "Octopress SEO"

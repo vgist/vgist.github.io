@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "修改固定大小的 VDI 虚拟磁盘"
-category: Other
-tags: [VirtialBox]
 ---
 
 空间紧张，故给 VirtualBox 下的 Windows 8.1 分配的虚拟磁盘是固定大小的 20GB，今天给 Windows 8.1 打补丁的时候，终于出现磁盘空间不足的警告了，不得不给虚拟磁盘扩容。
@@ -11,7 +9,6 @@ tags: [VirtialBox]
 
 首先固定大小的虚拟磁盘是不能扩容的
 
-<!-- more -->
 
     /Users/cnhavee/Documents/Virtual Machines.localized/Windows 8.1 $ VBoxManage modifyhd Windows\ 8.1.vdi --resize 31480
     0%...

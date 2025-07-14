@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Homebrew 的安装与使用"
-category: "Mac"
-tags: [Homebrew]
 ---
 
 与 MacPorts 类似，OS X 下还有款包管理工具为 [Homebrew](http://brew.sh)，安装方法也很简单。
@@ -27,7 +25,6 @@ tags: [Homebrew]
 - brew -h               # 帮助
 - brew versions formula # 列出软件包的版本
 
-<!-- more -->
 
 具体的用法可以 `man brew`。
 

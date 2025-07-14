@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Git 进阶：Submodule"
-category: Linux
-tags: [Git, Usage]
 ---
 
 >Git has something called submodule support. This allows you to specify one or more other git repositories within another – a bit like svn:externals (except trickier, but more powerful of course :).
@@ -15,7 +13,6 @@ tags: [Git, Usage]
 
     $ git submodule add git@domain.com:another_project.git another_project
 
-<!-- more -->
 
 该命令会在你的项目 Repository 下产生一个 .gitmodules 文件，来记录你的 Submodule 信息，同时 another_project项目也clone下来，此时观察你的 Repo
 

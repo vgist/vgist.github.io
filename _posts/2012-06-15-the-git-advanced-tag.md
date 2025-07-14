@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Git 进阶：tag"
-category: Linux
-tags: [Git, Usage]
 ---
 
 Git Tag 功能就如同 Cvs Tag 是一样的，您可以在目录树里面随意的增减 Tag,方便您记录讯息，一般用来标记版本的发布点。
@@ -21,7 +19,6 @@ Git Tag 功能就如同 Cvs Tag 是一样的，您可以在目录树里面随意
      v1.4.2.3
      v1.4.2.4
 
-<!-- more -->
 
 新增标签
 

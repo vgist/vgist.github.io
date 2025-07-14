@@ -1,48 +1,21 @@
 <!DOCTYPE html>
-<html>
-
-  {% include head.html %}
-
-  <body>
-    <div class="container">
-      {% include header.html %}
-
-      <article class="wrapper clearfix">
+<html lang="{{ page.lang | default: "en" }}">
+  {%- include head.html -%}
+  <body a="{{ site.theme_config.appearance | default: "auto" }}">
+    <main class="page-content" aria-label="Content">
+      <div class="w">
         {{ content }}
-      </article>
+      </div>
+    </main>
 
-      {% include footer.html %}
-    </div>
+    {%-if site.goat_counter and jekyll.environment == "production"-%}
+      {%-include goat_counter.html-%}
+    {%-endif-%}
 
-    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/jquery.min.js"></script>
-    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/bootstrap.min.js"></script>
-    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/webcore.js"></script>
-    <script src="{% if site.cdn %}{{ site.cdn }}{% else %}{{ site.assets_path }}{% endif %}/js/jquery.qrcode.min.js"></script>
-
-    <script>
-      $("#code").qrcode({
-        width: 100,
-        height: 100,
-        text: "{{ site.url }}{{ page.url }}"
-      });
-    </script>
-
-    {% include baidu-analytics.html %}
-
-    {% if site.comments.duoshuo.name %}
-    <!-- duoshuo Begin -->
-    <script>
-      var duoshuoQuery = {short_name:"{{ site.comments.duoshuo.name }}"};
-      (function() {
-        var ds = document.createElement('script');
-        ds.type = 'text/javascript';ds.async = true;
-        ds.src = (document.location.protocol == 'https:' ? 'https:' : 'http:') + '//static.duoshuo.com/embed.js';
-        ds.charset = 'UTF-8';
-        (document.getElementsByTagName('head')[0] ||
-        document.getElementsByTagName('body')[0]).appendChild(ds);
-      })();
-    </script>
-    <!-- duoshuo End -->
+    {% if page.custom_js %}
+      {% for js_file in page.custom_js %}
+        <script type="text/javascript" src="{{ site.baseurl }}/assets/js/{{ js_file }}.js"></script>
+      {% endfor %}
     {% endif %}
   </body>
 </html>

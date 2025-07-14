@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Etag 和 Expires"
-category: Internet
-tags: [Etag, Expires, Cache, Client, Server, Nginx, Lighttpd, Apache, Usage]
 ---
 
 题记：本文对页面中 `Etag` 和 `Expires` 标识处理，使得页面更加有效被 Cache。
@@ -17,7 +15,6 @@ tags: [Etag, Expires, Cache, Client, Server, Nginx, Lighttpd, Apache, Usage]
 
 在客户端通过浏览器发出第一次请求某一个 URL 时，根据 HTTP 协议的规定，浏览器会向服务器传送报头 (Http Request Header)，服务器端响应同时记录相关属性标记 (Http Reponse Header)，服务器端的返回状态会是 200，格式类似如下：
 
-<!-- more -->
 
     HTTP/1.1 200 OK
     Date: Tue, 03 Mar 2009 04:58:40 GMT
@@ -217,7 +214,6 @@ HTTP 协议规格说明定义 `ETag` 为“被请求变量的实体标记” （
 
 - etag.use-size: 是否使用文件大小作为 Etag
 
-- static-file.etags: 是否启用 Etag 的功能
 
 第四个参数肯定是要 `enable` 的， 前面三个就看实际的需要来选吧，推荐使用修改时间
 

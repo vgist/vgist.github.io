@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Ctrl_Alt_Bksp 无法退回 TTY"
-category: Linux
-tags: [TTY]
 ---
 
 两个方法：

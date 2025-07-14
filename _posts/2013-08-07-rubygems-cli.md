@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "RubyGems 常用命令"
-category: Linux
-tags: [Usage, Ruby, Gem]
 ---
 
 **查看 ruby 版本**
@@ -17,7 +15,6 @@ tags: [Usage, Ruby, Gem]
 
     gem -v
 
-<!-- more -->
 
 **更新所有包**
 

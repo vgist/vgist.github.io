@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo 下 root 你的 Android 设备"
-category: Linux
-tags: [Gentoo, Android]
 ---
 
 购了 Android 设备，当然要 root 了，否则很多功能用不到，譬如简单的截屏也需要 root 后的设备才行，更不要说修改 hosts 等文件了。
@@ -11,7 +9,6 @@ tags: [Gentoo, Android]
 
 首先在 Gentoo 下搭建 android sdk 平台，请参阅这篇文章：[Gentoo 下通过 usb 连接 Android]({% post_url 2012-06-23-connect-android-with-usb-on-gentoo-and-arch %})
 
-<!-- more -->
 
 其次，去这个网址下载最新版本的 `su-bin` 并解压：[http://androidsu.com/superuser/](http://androidsu.com/superuser/)
 

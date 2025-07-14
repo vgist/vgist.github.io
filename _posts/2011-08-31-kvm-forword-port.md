@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "KVM 端口转发"
-category: Linux
-tags: [KVM, Virtual]
 ---
 
 
@@ -14,7 +12,6 @@ tags: [KVM, Virtual]
 
 通过指定 "hostaddr"，可以绑定到主机某个特点的接口上
 
-<!-- more -->
 
 例如
 

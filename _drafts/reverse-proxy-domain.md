@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "域名反向代理"
-category: Internet
-tags: [Nginx,Domain]
 ---
 
 最近，忽然又想重新拿起博客域名，想备案了，拿到阿里云上，等待 4 天左右，拿到备案号。
@@ -18,7 +16,6 @@ tags: [Nginx,Domain]
     ;ihavanna.org.                  IN      A
     ihavanna.org.           3600    IN      A       111.111.111.111
 
-<!-- more -->
 
 将 **www.ihavanna.org** cname 到 **ihavanna.org**：
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "CSS 的预处理器 Sass"
-category: Internet
-tags: [Sass]
 ---
 
 最近经常接触 [Jekyll](http://jekyllrb.com/)，进而又认识到 [Sass](http://sass-lang.com/)（从 Sass 3 开始的新语法规则被称为 SCSS，即 Sassy CSS） 这个 CSS 的处理器，同时 [Compass](http://compass-style.org/) 又是一个高效的开发 Sass 的利器。
@@ -12,7 +10,6 @@ tags: [Sass]
     $ gem install sass
     $ gem install compass
 
-<!-- more -->
 
 创建一个新项目
 

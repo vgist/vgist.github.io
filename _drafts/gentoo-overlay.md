@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo overlay 的简单介绍"
-category: Linux
-tags: [Gentoo]
 ---
 
 由于接触 Gentoo 的时间比自建博客的时间早，故对 Gentoo 知识点的记录非常少，以下记录下 layman 的一些使用。
@@ -15,7 +13,6 @@ layman 是 Gentoo 下的一款管理第三方 overlay 工具，通过 layman 可
 
 具体需要开启哪些 use flag，完全是根据各 overlay 用哪种工具维护的，譬如 git、cvs、subversion、mercurial 等等。
 
-<!-- more -->
 layman 的配置非常方便，几乎不用介入修改。譬如作为中文区用户，安装 layman 以后，基本都会增加一个 overlay：
 
     layman -f -a gentoo-zh

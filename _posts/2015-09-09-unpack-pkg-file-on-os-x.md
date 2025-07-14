@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "OS X 解包 pkg"
-category: Mac
-tags: [Pkgutil]
 ---
 
 刚用 OS X 的同学会发现，Mac OS X 的 App 安装包，有两种形式，一种就是 .app，可以直接运行，类似于 Windows 下的绿色版；另一种是 .pkg 安装包，需要一路 next 安装好后才能使用。
@@ -13,7 +11,6 @@ tags: [Pkgutil]
 
 我们以招商银行的网银插件为例，下载获取 dmg 镜像文档：**CMBSecurityPlugin.dmg**，双击打开，将 **CMB Security Plugin.pkg** 文件拖出来。
 
-<!-- more -->
 在文章 [OS X 下卸载 pkg 包]({% post_url 2014-11-01-uninstall-apple-pkg-package %}) 中已经介绍过 pkgutil 的用法，现在我们来解包：
 
     $ pkgutil --expand CMB\ Security\ Plugin.pkg CMB\ Security\ Plugin

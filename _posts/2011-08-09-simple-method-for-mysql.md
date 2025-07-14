@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "MySQL 简单操作 (笔记)"
-category: Other
-tags: [MySQL, CLI]
 ---
 
 #### 一、安装后
@@ -15,7 +13,6 @@ tags: [MySQL, CLI]
 
     mysqladmin -uroot -p password 'newpassword'
 
-<!-- more -->
 
 重设 root 密码
 

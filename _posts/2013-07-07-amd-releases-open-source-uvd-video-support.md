@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "AMD 的开源 UVD 支持"
-category: Linux
-tags: [Radeon, Kernel, Firmware]
 ---
 
 早在今年4月2号，[Phoronix](http://www.phoronix.com/scan.php?page=article&item=amd_opensource_uvd&num=1) 就爆出了 AMD 开源 UVD 驱动支持的新闻，懒惰的我直到这个周末，才开始正式开始加入这次变动，也很顺利的将自己的 Kernel 加入了 **Radeon HD 7850** 的 UVD 支持。
@@ -15,7 +13,6 @@ tags: [Radeon, Kernel, Firmware]
 4. 安装最新版 `media-libs/mesa`、`x11-drivers/radeon-ucode`
 5. 最后编译 portage 中最新版 kernel
 
-<!-- more -->
 
 主要是 kernel 配置说明下
 

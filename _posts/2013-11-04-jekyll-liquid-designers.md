@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Jekyll 扩展的 Liquid 设计"
-category: "Internet"
-tags: [Liquid,Jekyll]
 ---
 
 > 原文地址：https://github.com/shopify/liquid/wiki/liquid-for-designers
@@ -21,7 +19,6 @@ tags: [Liquid,Jekyll]
       {% 成对的花括号和百分号中 %}
     {% endraw %}
 
-<!-- more -->
 
 ### Output
 

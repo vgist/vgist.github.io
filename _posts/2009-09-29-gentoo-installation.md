@@ -2,8 +2,6 @@
 layout: post
 title: "Gentoo学习笔记"
 description: "记录 Gentoo 安装过程"
-category: Linux
-tags: [Gentoo, CLI, Lerning]
 ---
 
 > 本人曾记录于网易博客，现转回自己博客。
@@ -16,7 +14,6 @@ tags: [Gentoo, CLI, Lerning]
 
 启动安装光盘，F1,比较讨厌 FB，更是由于在 vbox 中安装，所以选择启动 gentoo-nofb
 
-<!-- more -->
 
 接下来网络，net-setup eth0，回答几个问题，网络就上去了，测试网络ping -c 3 www.baidu.com
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Jekyll 扩展的 Liquid 模板"
-category: Internet
-tags: [Jekyll, Liquid, Usage]
 ---
 
 > 原文地址:[https://github.com/mojombo/jekyll/wiki/Liquid-Extensions](https://github.com/mojombo/jekyll/wiki/Liquid-Extensions)
@@ -19,7 +17,6 @@ Jekyll 使用 [Liquid](http://liquidmarkup.org/) 来处理模板数据。除了 
     {{ site.time | date_to_xmlschema }} => 2008-11-17T13:07:54-08:00
 {% endraw %}
 
-<!-- more -->
 
 **日期-字符串**
 

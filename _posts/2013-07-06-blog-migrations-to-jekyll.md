@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "迁移博客至 Jekyll"
-category: Internet
-tags: [Jekyll, Usage]
 ---
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Blog-Migrations](https://github.com/mojombo/jekyll/wiki/Blog-Migrations)
@@ -18,7 +16,6 @@ tags: [Jekyll, Usage]
 3. `gem install sequel mysqlplus`
 4. 分别独立地运行下面的命令。
 
-<!-- more -->
 
 ### 从 WordPress 迁移
 

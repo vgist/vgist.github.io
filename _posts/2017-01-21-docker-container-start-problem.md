@@ -1,11 +1,9 @@
 ---
 layout: post
 title: "Systemd 232 导致 Docker container 启动问题"
-category: Linux
-tags: [Systemd, Docker]
 ---
 
-#### 问题
+### 问题
 
 近期又一次在 Gentoo 下做了一个升级维护，期间遇到了一个问题，Docker container 死活启动不起来，有点懵逼。
 
@@ -19,7 +17,6 @@ tags: [Systemd, Docker]
 
 查看一下日志 `systemctl status docker`：
 
-<!-- more -->
 
     ......
     Jan 21 13:52:32 iMac dockerd[16269]: time="2017-01-21T13:52:32.431087496+08:00" level=warning msg="failed to retrieve docker-init version: unknown output format: tini version 0.13.2\n"
@@ -42,12 +39,12 @@ OK，找到了，十有八九是 cgroup 问题：
 
 以此为关键词，直接去 github issues 搜，终于找到问题根源，果然是最新的 systemd 232 的问题，然后才想到这次维护中有 systemd 的更新，具体来说，就是 systemd v32 以 cgroup v２ 结构层次挂载导致 runc 出现错误提示 **“no subsystem for mount”**，[systemd/systemd#3965](https://github.com/systemd/systemd/pull/3965)。
 
-#### 解决方案
+### 解决方案
 
 既然根源找到了，那么解决方案也就明确了。共两种解决方案，任选其一：
 
-- 所有 container 启动时添加一个参数 `-v /sys/fs/cgroup:/sys/fs/cgroup:ro`
-- 添加 `systemd.legacy_systemd_cgroup_controller=yes` 到你的 grub2、syslinux 等启动器的内核启动参数中
+- 所有 container 启动时添加一个参数 **-v /sys/fs/cgroup:/sys/fs/cgroup:ro**
+- 添加 *systemd.legacy_systemd_cgroup_controller=yes* 到你的 grub2、syslinux 等启动器的内核启动参数中
 
 我使用的是第二种方案。
 

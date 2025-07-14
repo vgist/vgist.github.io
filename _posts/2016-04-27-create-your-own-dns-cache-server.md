@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "创建你自己的 DNS 缓存服务器"
-category: Linux
-tags: [DNS, Gentoo, Centos]
 ---
 
 好长时间没写文章了，琢磨着写些啥。正好今天有个一个需求，需要自建 DNS 来避免污染。于是今天花了些时间，研究了下自建 DNS。也正好将一些过程与心得写下来，期间在两个发行版 ( CentOS 7、Gentoo ) 上尝试了下，正常使用。
@@ -16,15 +14,14 @@ tags: [DNS, Gentoo, Centos]
 
 工具清楚了，那么开始动手
 
-<!-- more -->
 
-#### DNSCrypt-proxy
+### DNSCrypt-proxy
 
 在 Gentoo 下，已经有了现成的包，可以直接安装。
 
     emerge -av net-dns/dnscrypt-proxy
 
-配置部分，比较简单,Gentoo 的配置文件地址在 `/etc/conf.d/dnscrypt-proxy`，打开后一目了然。两种配置方法，一种配置 resolver name，一种配置 resolver ip，将你选中的那种方案取消注释，再去 `/usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv` 文件中找一个 ping 值低的公开的认证服务器即可。
+配置部分，比较简单,Gentoo 的配置文件地址在 /etc/conf.d/dnscrypt-proxy，打开后一目了然。两种配置方法，一种配置 resolver name，一种配置 resolver ip，将你选中的那种方案取消注释，再去 /usr/share/dnscrypt-proxy/dnscrypt-resolvers.csv 文件中找一个 ping 值低的公开的认证服务器即可。
 
 譬如：
 
@@ -46,7 +43,7 @@ tags: [DNS, Gentoo, Centos]
     systemctl start dnscrypt-proxy.service
     systemctl enable dnscrypt-proxy.service
 
-#### Dnsmasq
+### Dnsmasq
 
 Gentoo 与 CentOS 都提供现成的，可以直接安装：
 
@@ -83,9 +80,9 @@ CentOS
     # dnssec
     # conf-file=/usr/share/dnsmasq/trust-anchors.conf
 
-OK，大体就这么些，再在目录 `/etc/dnsmasq.d` 下创建个个 personal.conf，写入自己的一些特殊配置，获取着去网上找人家的特殊配置都可。
+OK，大体就这么些，再在目录 /etc/dnsmasq.d 下创建个个 personal.conf，写入自己的一些特殊配置，获取着去网上找人家的特殊配置都可。
 
-#### 参考：
+### 参考：
 
 - <https://wiki.gentoo.org/wiki/Dnsmasq>
 - <https://wiki.archlinux.org/index.php/dnsmasq>

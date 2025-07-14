@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "OS X 的一些技巧汇总"
-category: "Mac"
-tags: [Tips]
 ---
 
 刚上手 OS X，习惯正在慢慢培养中，下面记录一些使用过程中的小技巧，不断补充
@@ -19,7 +17,6 @@ tags: [Tips]
 
     $ defaults write ~/Library/Preferences/com.apple.finder.plist AppleShowAllFiles -bool true/false
 
-<!-- more -->
 
 ##### 2. 显示和隐藏普通文件
 

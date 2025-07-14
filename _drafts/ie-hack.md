@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "IE Hack"
-category: Internet
-tags: [IE]
 ---
 
 纯记录下

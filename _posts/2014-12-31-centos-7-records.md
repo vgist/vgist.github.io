@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "CentOS 7 配置记录"
-category: Linux
-tags: [Nginx, PHP, PHP-FPM, SQL, Tips, CentOS]
 ---
 
 几个 vps 逐步的升级到 CentOS 7，老是忘记一些配置，于是动手纪录下。首先当然是更新到最新的包
@@ -15,7 +13,6 @@ tags: [Nginx, PHP, PHP-FPM, SQL, Tips, CentOS]
     # hostname yourdomain
     # hostnamectl set-hostname yourdomain
 
-<!-- more -->
 
 #### Timezone
 

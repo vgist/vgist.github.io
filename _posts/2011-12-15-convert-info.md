@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Convert 常用方法"
-category: Linux
-tags: [Convert, Media, Usage]
 ---
 
 Convert 是 ImageMagick 中的一个常用组件。
@@ -22,7 +20,6 @@ Convert 是 ImageMagick 中的一个常用组件。
     $ convert -charcoal 2 input.png output.jgp #形成炭笔或者说是铅笔画的效果
     $ convert -fill color -font font -pointsize 20 -draw "text 10,20 'hello'" input.png output.png
 
-<!-- more -->
 
 给图片增加注释
 

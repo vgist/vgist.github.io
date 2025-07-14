@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo 中打包确定依赖"
-category: Linux
-tags: [Gentoo, Packager]
 ---
 
 - 通过objdump去获取库信息，过滤

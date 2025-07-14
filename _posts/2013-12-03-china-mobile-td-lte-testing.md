@@ -1,15 +1,12 @@
 ---
 layout: post
 title: "中国移动 TD-LTE 测试"
-category: "Other"
-tags: [LTE]
 ---
 
 今天中午到手了一张中国移动（上海）的 TD-LTE 测试卡。这与我当初申请的时候有些出入，依稀记得当初是申请 MI-FI 设备的。
 
 ![LTE 1](/cdn/images/2013/12/lte1.jpg)
 
-<!-- more -->
 
 ![LTE 2](/cdn/images/2013/12/lte2.jpg)
 

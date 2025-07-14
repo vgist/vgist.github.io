@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Jekyll 中的语法高亮：Pygments"
-category: Internet
-tags: [Jekyll, Pygments, Python]
 ---
 
 Jekyll 原生支持语法高亮工具 [Pygments](http://pygments.org/) ，Pygments 支持[多种语言高亮](http://pygments.org/docs/lexers/)。
@@ -21,7 +19,6 @@ archlinux:
 
     $ pip install pygments --user
 
-<!-- more -->
 
 ##### 2. 安装 pygments.rb
 

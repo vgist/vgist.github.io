@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Jekyll 的使用"
-category: Internet
-tags: [Jekyll, Usage]
 ---
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/usage](https://github.com/mojombo/jekyll/wiki/usage)
@@ -16,7 +14,6 @@ tags: [Jekyll, Usage]
 3. 在本地运行并查看你的网站效果
 4. 部署你的网站
 
-<!-- more -->
 
 ### 基础结构
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Vagrant 简单使用"
-category: Other
-tags: [Vagrant, Virtual]
 ---
 
 #### 一. 安装
@@ -13,7 +11,6 @@ Vagrant 的安装非常简单，各个 linux 发行版可以直接通过包管�
 
     $ brew cask install vagrant
 
-<!-- more -->
 
 建立你自己的 Vagrant 也非常简单，
 

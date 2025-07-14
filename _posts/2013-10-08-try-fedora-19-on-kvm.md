@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "尝试 Fedora 19"
-category: Linux
-tags: [Fedora, KVM, LVM]
 ---
 
 重做记录，因上月重做系统的时候，[zim][1] 记录的笔记忘记备份而全部遗失。-_-!!
@@ -18,7 +16,6 @@ tags: [Fedora, KVM, LVM]
     # reboot
     # fedup-cli --reboot --network 19
 
-<!-- more -->
 
 期间会提示重启系统，重启后直接进入 fedup 引导，升级，按 `Esc` 可以查看升级进度。
 

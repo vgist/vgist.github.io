@@ -1,56 +1,28 @@
-# Site settings
-title: "Havee's Space"
-url: "https://havee.cc"
-paginate: 5
-author:
-    name: Havee
-    github:
-    email:
-    gitcafe:
-    twitter:
-    facebook:
-    googleplus:
-    weibo:
-rss_path: /rss.xml
+title: "Havee's snippets" # name of the site
+author:  # name of site's author
+email:  # email of site's author
+url: https://havee.cc # root address of the site
+baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
+#description: # description of the site (multiple lines allowed)
 
-# Build settings
-kramdown:
-    input: GFM
-permalink: /:categories/:year-:month/:title.html
-plugins: [jekyll-paginate]
-exclude: [Gemfile, Gemfile.lock, qrsync, Rakefile, README.md, docker-compose.yml]
-assets_path: /assets
-cdn:
+permalink: /:title.html
+
+favicon: "favicon.png" # name+extension of favicon (which must be put on the root folder)
+
+remote_theme: riggraz/no-style-please # if you are using GitHub Pages, change it to remote_theme: riggraz/no-style-please
+
+theme_config:
+  appearance: "auto" # can be "light", "dark" or "auto"
+  back_home_text: ".." # customize text for homepage link in post layout
+  date_format: "%Y-%m-%d" # customize how date is formatted
+  show_description: false # show blog description in home page
+  lowercase_titles: false # show titles in lowercase in lists
+
+exclude: [Gemfile, Gemfile.lock, Rakefile, README.md]
+
 sass:
-    sass_dir: assets/_sass
-    style: :compressed
+  style: compressed
 
-# collections
-collections:
-    tools:
-        output: true
-        permalink: /:path/:title.html
-
-# comment
-#comments:
-#    duoshuo:
-#        name:
-#        rcomments:
-#            num: 10
-#            avatar: 0
-#            time: 0
-#            title: 0
-#            admin: 0
-#            length: 26
-
-# 网站统计
-analytics:
-    baidu:
-        siteid:         # 百度统计 js 代码后的字符串
-webmaster:
-    baidu:
-        verify: codeva-p2lf6v9SJF
-    google:
-        verify:
-    bing:
-        verify: FE0D1D87A075E1003B82C7446EE360ED
+plugins:
+  - jekyll-feed
+  - jekyll-seo-tag

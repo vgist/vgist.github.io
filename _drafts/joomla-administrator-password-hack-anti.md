@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "防 Joomla 后台被暴力猜解"
-category: Internet
-tags: [Joomla]
 ---
 
 今天朋友吐糟，最近他的 **Joomla** 后台老被境外的 IP **暴力破解**密码，烦不胜烦，特别是他们并非一秒钟几十次猜解，而是几秒钟猜解一次，结果就是 **logs/error.php** 日志大小成上升态势。
@@ -16,7 +14,6 @@ tags: [Joomla]
     2013-07-17	16:48:03	INFO	213.203.234.132	Joomla FAILURE: 	Username and password do not match or you do not have an account yet.
     ...
 
-<!-- more -->
 
 仔细看了下，确实是几秒一次猜解，文档很大，IP 基本每分钟就变换下，传统的 netstat 统计 IP 再屏蔽方式已经不适用，考虑到 **Joomla** 平台 本身就有 logs 系统，为何不就对 **error.php** 动一些脑筋呢
 

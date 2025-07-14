@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Nginx 打开 Gzip 压缩"
-category: Internet
-tags: [Nginx]
 ---
 
 折腾无止境，最近重新看了下之前对 [Nginx](http://nginx.org) 中的 Gzip 模块的配置，很多参数都是不求甚解。今天整理下，作为笔记来记录。
@@ -22,7 +20,6 @@ gzip_vary           on;
 gzip_disable        "MSIE [1-6]\.";
 ```
 
-<!-- more -->
 
 下面是我整理的参数的详细说明：
 

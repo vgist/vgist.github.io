@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Vsftpd Chroot 错误"
-category: Linux
-tags: [Vsftpd, Chroot,]
 ---
 
 其实早已解决，只是记录下，让更多人知道如何处理吧。
@@ -17,7 +15,6 @@ vsftpd 2.3.5 的 changelog 如下：
 > root directory inside a chroot(). This may bite people who carelessly turned
 > on chroot_local_user but such is life.
 
-<!-- more -->
 
 解决方法有两种
 

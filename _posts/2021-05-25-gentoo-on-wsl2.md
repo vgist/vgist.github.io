@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "WSL 2 中安装 Gentoo"
-category: Linux
-tags: [Gentoo, WSL]
 ---
 
 首先要启用 WSL 2 组件，打开 powershell
@@ -15,9 +13,8 @@ tags: [Gentoo, WSL]
 
     PS C:\Users\yourname> wsl --set-default-version 2
 
-<!-- more -->
 
-你可能想限制 Gentoo 使用的内存，cpu 线程等，在 Windows 的用户目录 **%HOMEPATH%** 创建文件 `%HOMEPATH%\.wslconfig`
+你可能想限制 Gentoo 使用的内存，cpu 线程等，在 Windows 的用户目录 %HOMEPATH% 创建文件 %HOMEPATH%\.wslconfig
 
     [wsl2]
     memory=8GB
@@ -64,9 +61,9 @@ tags: [Gentoo, WSL]
 
     PS C:\Users\yourname> wsl -d Gentoo -u yourname
 
-打开注册表，编辑 `HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\{GUID}`，找到有 Gentoo 键值的 **GUID**，编辑里面的 **DefaultUid**，设置其十进制值为 1000 ( 十六进制为 03e8 )，以便开启 Gentoo 的时候，默认登陆用户为 uid=1000 的用户。
+打开注册表，编辑 HKCU\SOFTWARE\Microsoft\Windows\CurrentVersion\Lxss\{GUID}，找到有 Gentoo 键值的 GUID，编辑里面的 DefaultUid，设置其十进制值为 1000 ( 十六进制为 03e8 )，以便开启 Gentoo 的时候，默认登陆用户为 uid=1000 的用户。
 
-你可能想在进入 Gentoo 后自动挂载宿主机的盘符，Gentoo 中创建文件 `/etc/wsl.conf`
+你可能想在进入 Gentoo 后自动挂载宿主机的盘符，Gentoo 中创建文件 /etc/wsl.conf
 
     [automount]
     enable = true
@@ -82,7 +79,7 @@ tags: [Gentoo, WSL]
     enabled = false
     appendWindowsPath = false
 
-顺便，/tmp 还是用 tmpfs 吧 `/etc/fstab`
+顺便，/tmp 还是用 tmpfs 吧 /etc/fstab
 
     tmpfs /tmp tmpfs rw,nosuid,noatime,nodev,size=512M,mode=1777 0 1
 

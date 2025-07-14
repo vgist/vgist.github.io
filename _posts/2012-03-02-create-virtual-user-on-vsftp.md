@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Vsftpd 建立虚拟用户"
-category: Linux
-tags: [Vsftpd, Virtual]
 ---
 
 centos 需要安装一下两个软件包
@@ -17,7 +15,6 @@ centos 需要安装一下两个软件包
     user2
     passwd2
 
-<!-- more -->
 
 生成虚拟用户
 

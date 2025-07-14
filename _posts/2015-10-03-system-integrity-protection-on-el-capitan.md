@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "El Capitan 中 SIP 介绍"
-category: Mac
-tags: [SIP, Clover]
 ---
 
 这两天大家纷纷将 OS X 系统升级到了 El Capitan，然后发现，一些注入的工具无法使用了，某些系统目录无法使用了，第三方未签名的 kext 无法加载了，问题一堆堆的。这是因为，Mac OS X 在 10.11 中全面启用了 System Integrity Protection (SIP) —— 系统完整性保护技术。
@@ -13,12 +11,11 @@ SIP 技术主要是用来限制 root 用户的权限，以提升系统的健壮�
 
     /System/Library/Sandbox/rootless.conf
 
-<!-- more -->
 不被保护的列表存储在
 
     /System/Library/Sandbox/Compatibility.bundle/Contents/Resources/paths
 
-Mac 提供了内置 `csrutil` 配置来进行一些 SIP 的配置。在默认情况下，SIP 是开启状态，你可以用一下指令查看
+Mac 提供了内置 csrutil 命令来进行一些 SIP 的配置。在默认情况下，SIP 是开启状态，你可以用一下指令查看
 
     $ csrutil status
     System Integrity Protection status: enabled
@@ -34,7 +31,7 @@ Mac 提供了内置 `csrutil` 配置来进行一些 SIP 的配置。在默认情
 
 #### 一. 白苹果用户
 
-上面已经说过，Mac 提供了内置的 `csrutil` 工具来让用户进行一些配置，不过，你需要重启进入到 Recovery mode (Cmd + R on boot) 下进行操作。
+上面已经说过，Mac 提供了内置的 csrutil 工具来让用户进行一些配置，不过，你需要重启进入到 Recovery mode (Cmd + R on boot) 下进行操作。
 
 csrutil 的一些常用命令
 
@@ -43,11 +40,11 @@ csrutil 的一些常用命令
     csrutil disable         # 禁用 SIP
     csrutil status          # 查看当前 SIP 配置
 
-关于 `csrutil enable` 可用参数为
+常用参数为
 
     csrutil enable --no-internal --without kext --without fs --without fs --without debug --without dtrace --without nvram
 
-譬如说，如果你需要某系统目录的读写权限，譬如 homebrew 全新安装的时候，需要创建 `/usr/local` 目录，那么你需要
+譬如说，如果你需要某系统目录的读写权限，譬如 homebrew 全新安装的时候，需要创建 /usr/local 目录，那么你需要
 
 1. 重启进入 Recovery mode
 2. 打开 Terminal.app，输入 `csrutil enable --without fs`
@@ -56,13 +53,13 @@ csrutil 的一些常用命令
 5. 打开 Terminal.app，输入 `csrutil enable`
 6. 重启
 
-如果想安装第三方的 kext，那么建议装在目录 `/Library/Extensions/` 下。
+如果想安装第三方的 kext，那么建议装在目录 /Library/Extensions/ 下。
 
 #### 二. 黑苹果 Clover 用户
 
 这里只说 Clover 用户，你需要配置你的 Clover ，加入如下代码
 
-```xml
+```
 <key>RtVariables</key>
 <dict>
     <key>CsrActiveConfig</key>
@@ -70,7 +67,7 @@ csrutil 的一些常用命令
 </dict>
 ```
 
-`<key>RtVariables</key>` 跟 `<key>SMBIOS</key>` 同级，如下图
+\<key>RtVariables\</key> 跟 \<key>SMBIOS\</key> 同级，如下图
 
 ![Clover config.plist](/cdn/images/2015/10/clover-config.png)
 

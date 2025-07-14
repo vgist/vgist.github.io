@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Nginx 伪静态"
-category: Internet
-tags: [Nginx, Rewrite, Wordpress, Joomla, UChome]
 ---
 
 #### 介绍
@@ -26,7 +24,6 @@ if(condition) {
 }
 ```
 
-<!-- more -->
 
 表示如果条件为真，则执行语句，其中，条件可以是一个变量或表达式。当为一个变量时，值为空或任何以 0 开头的字符串时，则都为 false，表达式可以直接使用 `=` 或 `!=` 来比较变量或内容，`~` 正则匹配，`~*` 匹配不区分大小写，`!~` 匹配区分大小写。
 

@@ -1,17 +1,14 @@
 ---
 layout: post
 title: "Docker 中运行 OpenWrt"
-category: Linux
-tags: [Docker, OpenWrt]
 ---
 
-在尝试过各种 x86/arm 路由，各种开发版，各种盒子。一圈下来，最后还是回到 OneCloud (玩客云)刷 Armbian，其内安装 Docker 跑 OpenWrt 作旁路网关为结局。
+在尝试过各种 x86/arm 路由，各种开发版，各种盒子。一圈下来，最后还是回到 OneCloud (玩客云)刷 Armbian，其内安装 Docker 跑 OpenWrt 作旁路网关为最终方案（已弃用该方案，转而使用 armbian + nftables + xxx）。
 
 作为家用，性能足够，价格也足够便宜，到写这篇文章时，海鲜市场的价格大概 30 块左右包邮。
 
 如何短接触点刷机，如何刷 Armbian， 略过不表。这篇文章只是用来记录，在 Armbian (Debian) 下将 OpenWrt 运行起来的流水账。
 
-<!-- more -->
 
 ### 安装 Docker
 
@@ -19,33 +16,33 @@ tags: [Docker, OpenWrt]
 
 卸载掉 Debian 社区版 Docker
 
-    $ for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
+    for pkg in docker.io docker-doc docker-compose podman-docker containerd runc; do sudo apt-get remove $pkg; done
 
 添加 Docker 的官方 GPG key:
 
-    $ sudo apt-get update
-    $ sudo apt-get install ca-certificates curl
-    $ sudo install -m 0755 -d /etc/apt/keyrings
-    $ sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
-    $ sudo chmod a+r /etc/apt/keyrings/docker.asc
+    sudo apt-get update
+    sudo apt-get install ca-certificates curl
+    sudo install -m 0755 -d /etc/apt/keyrings
+    sudo curl -fsSL https://download.docker.com/linux/debian/gpg -o /etc/apt/keyrings/docker.asc
+    sudo chmod a+r /etc/apt/keyrings/docker.asc
 
 添加 apt 源，这里我换成了国内上交大的源
 
-    $ echo \
-      "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] \
-      https://mirror.sjtu.edu.cn/docker-ce/linux/debian \
-      $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
-      sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
-    $ sudo apt-get update
+    echo \
+    "deb [arch=$(dpkg --print-architecture) signed-by=/etc/apt/keyrings/docker.asc] \
+    https://mirror.sjtu.edu.cn/docker-ce/linux/debian \
+    $(. /etc/os-release && echo "$VERSION_CODENAME") stable" | \
+    sudo tee /etc/apt/sources.list.d/docker.list > /dev/null
+
+    sudo apt-get update
 
 接下来安装 Docker
 
-    $ sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
-    $ sudo docker info
+    sudo apt-get install docker-ce docker-ce-cli containerd.io docker-buildx-plugin docker-compose-plugin
+    sudo docker info
 
-我需要打开 Docker IPv6，以及替换 Docker 镜像源为国内上交大源。编辑文件 **/etc/docker/daemon.json**，没有的话创建它。
+我需要打开 Docker IPv6，以及替换 Docker 镜像源为国内上交大源。编辑文件 /etc/docker/daemon.json，没有的话创建它。
 
-    $ vi /etc/docker/daemon.json
     {
         "experimental": true,
         "ip6tables": true,
@@ -53,7 +50,10 @@ tags: [Docker, OpenWrt]
             "https://docker.mirrors.sjtug.sjtu.edu.cn"
         ]
     }
-    $ sudo systemctl restart docker.service
+
+重启下服务
+
+    sudo systemctl daemon-reload && sudo systemctl restart docker.service
 
 至此，Docker 准备工作完成。
 
@@ -61,13 +61,12 @@ tags: [Docker, OpenWrt]
 
 内核参数也需要打开 IPv6 的转发
 
-临时
+临时生效
 
-    $ for nic in default eth0 all; do sudo sysctl -w net.ipv6.conf.$nic.forwarding=1; sudo sysctl -w net.ipv6.conf.$nic.accept_ra=2; done
+    for nic in default eth0 all; do sudo sysctl -w net.ipv6.conf.$nic.forwarding=1; sudo sysctl -w net.ipv6.conf.$nic.accept_ra=2; done
 
-持久
+持久生效，编辑 /etc/sysctl.conf
 
-    $ sudo vi /etc/sysctl.conf
     ...
     net.ipv6.conf.default.forwarding = 1
     net.ipv6.conf.all.forwarding = 1
@@ -81,11 +80,10 @@ tags: [Docker, OpenWrt]
 
 临时打开的方式
 
-    $ sudo ip link set dev eth0 promisc on
+    sudo ip link set dev eth0 promisc on
 
-永久打开的方式，如果你的网络管理器为 NetworkManager 的话
+永久打开的方式，如果你的网络管理器为 NetworkManager 的话，编辑 /etc/NetworkManager/dispatcher.d/50-promisc
 
-    $ vim /etc/NetworkManager/dispatcher.d/50-promisc
     #!/usr/bin/env bash
     #
     case "$2" in
@@ -95,7 +93,10 @@ tags: [Docker, OpenWrt]
             fi
             ;;
     esac
-    $ sudo chmod +x /etc/NetworkManager/dispatcher.d/50-promisc
+
+加上可执行权限
+
+    sudo chmod +x /etc/NetworkManager/dispatcher.d/50-promisc
 
 systemd 管理网络的可以看这里：[打开网卡的 promiscuous 模式]({% post_url 2023-02-18-enable-promiscuous-mode-on-nics %})
 
@@ -107,29 +108,29 @@ systemd 管理网络的可以看这里：[打开网卡的 promiscuous 模式]({%
 
 #### 挂载 img
 
-    $ gzip -d openwrt-meson-meson8b-thunder-onecloud-ext4-sdcard.img.gz
-    $ sudo losetup -fP openwrt-meson-meson8b-thunder-onecloud-ext4-sdcard.img
+    gzip -d openwrt-meson-meson8b-thunder-onecloud-ext4-sdcard.img.gz
+    sudo losetup -fP openwrt-meson-meson8b-thunder-onecloud-ext4-sdcard.img
     # 确认下是哪个 loop 设备
-    $ sudo losetup -a
+    sudo losetup -a
     # 譬如是loop0，准备挂载吧
-    $ sudo mkdir -p /mnt/img; sudo mount /dev/loop0p2 /mnt/img
+    sudo mkdir -p /mnt/img; sudo mount /dev/loop0p2 /mnt/img
 
 #### 复制，打包 rootfs
 
-    $ sudo mkdir -p /mnt/openwrt; sudo cp -rpf /mnt/img/* /mnt/openwrt/
-    $ sudo tar cvf /mnt/rootfs.tar -C /mnt/openwrt .
+    sudo mkdir -p /mnt/openwrt; sudo cp -rpf /mnt/img/* /mnt/openwrt/
+    sudo tar cvf /mnt/rootfs.tar -C /mnt/openwrt .
 
 #### 导入 Docker 镜像
 
-    $ sudo docker import /mnt/rootfs.tar openwrt:onecloud
-    $ sudo docker images -a
+    sudo docker import /mnt/rootfs.tar openwrt:onecloud
+    sudo docker images -a
 
 #### 收尾
 
 最后终归要分离挂载与loop
 
-    $ sudo umount /mnt/img
-    $ sudo losetup -d /dev/loop0
+    sudo umount /mnt/img
+    sudo losetup -d /dev/loop0
 
 至此，镜像已经准备好。
 
@@ -139,26 +140,30 @@ systemd 管理网络的可以看这里：[打开网卡的 promiscuous 模式]({%
 
 下面终于开始进入最终环节了，让我们先创建个 macvlan 网络，这里我打开 ipv6 支持
 
-    $ sudo docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 --ipv6 --subnet=fd00::/80 -o parent=eth0 openwrt_macvlan
+    sudo docker network create -d macvlan --subnet=192.168.1.0/24 --gateway=192.168.1.1 --ipv6 --subnet=fd00::/80 -o parent=eth0 openwrt_macvlan
 
 可以查看是否创建正确
 
-    $ sudo docker network inspect openwrt_macvlan
+    sudo docker network inspect openwrt_macvlan
 
 #### 创建容器
 
-    $ sudo docker run -d --restart=on-failure:3 --name openwrt --network openwrt_macvlan --cap-add=NET_ADMIN --device=/dev/net/tun openwrt:onecloud /sbin/init
+    sudo docker run -d --restart=on-failure:3 --name openwrt --network openwrt_macvlan --cap-add=NET_ADMIN --device=/dev/net/tun openwrt:onecloud /sbin/init
 
 有些固件，带某功能的，可能需要 privileged 模式
 
-    $ sudo docker run -d --restart=on-failure:3 --name openwrt --network openwrt_macvlan --privileged --device=/dev/net/tun openwrt:onecloud /sbin/init
+    sudo docker run -d --restart=on-failure:3 --name openwrt --network openwrt_macvlan --privileged --device=/dev/net/tun openwrt:onecloud /sbin/init
 
 #### 容器设置
 
 根据固件获取 ip 方式的不同，需要进容器做一些设置，譬如 IPv4 IPv6。
 
-    $ sudo docker exec -it openwrt sh
-    # vi /etc/config/network
+先 attach 容器
+
+    sudo docker exec -it openwrt sh
+
+然后编辑容器内的 /etc/config/network
+
     ...
     config interface 'lan'
     	option device 'eth0'
@@ -218,18 +223,18 @@ systemd 管理网络的可以看这里：[打开网卡的 promiscuous 模式]({%
 
 运行一下看看
 
-    $ sudo docker compose up -d
+    sudo docker compose up -d
 
 #### 保存容器
 
 稳定几天后，为了下一次不再重复设置，将当前的容器存储为镜像
 
-    $ sudo docker ps -a
-    $ sudo docker commit xxxxxxxxxxxx openwrt:onecloud
+    sudo docker ps -a
+    sudo docker commit xxxxxxxxxxxx openwrt:onecloud
 
 #### 备份镜像
 
-    $ sudo docker save openwrt:onecloud -o rootfs-onecloud.tar
+    sudo docker save openwrt:onecloud -o rootfs-onecloud.tar
 
 参考：
 

@@ -1,15 +1,12 @@
 ---
 layout: post
 title: "Gcc 4.6.3 打开 Ofast 后"
-category: Linux
-tags: [Gcc, Ofast]
 ---
 
 gcc 4.6.3 带来了新的特性，特别是 `-Ofast` 开关很是猥亵。昨晚将 gcc 升级到了 4.6.3，俺也第一时间尝试了 `-Ofast`。
 
 今早，心里不踏实，起来尝试将一些库重编译下，譬如 sqlite3，哈哈，问题果然出现。
 
-<!-- more -->
 
 ```make
 sqlite3.c: In function 'sqlite3IsNaN':

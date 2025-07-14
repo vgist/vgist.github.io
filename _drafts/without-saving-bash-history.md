@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "不要记录 bash 操作历史"
-category: Linux
-tags: [Bash]
 ---
 
 很多时候，我们可能不想记录某一个登陆进程中的 bash 操作历史。
@@ -17,7 +15,6 @@ tags: [Bash]
 
     unset HISTFILE; exit
 
-<!-- more -->
 
 ##### 杀掉 console
 

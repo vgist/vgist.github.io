@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Mysql 最小化资源配置"
-category: Linux
-tags: [MySQL, SQL]
 ---
 
 小内存 vps 很多，有时我们只是用来安装一个博客而已，但是 MySQL 默认的配置比较迟资源
@@ -31,7 +29,6 @@ tags: [MySQL, SQL]
 |binlog_cache_size|32K|4K|
 |binlog_stmt_cache_size|32K|4K|
 
-<!-- more -->
 
 你当然可以通过禁用 InnoDB 来节省内存，但一般不建议这么做，除非你的内存小到了极致。
 

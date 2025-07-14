@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Arch 升级 Filesystem 的小问题"
-category: Linux
-tags: [Arch, Filesystem]
 ---
 
 首先，昨晚已经注意到 Arch 官方的新闻，升级 filesystem-2012-6-2 将要面对的一些问题。
@@ -17,7 +15,6 @@ tags: [Arch, Filesystem]
 
     rm -rf /var/run /var/lock && pacman -Syu && reboot
 
-<!-- more -->
 
 然而本人在升级的过程中却发生了意外的情况
 

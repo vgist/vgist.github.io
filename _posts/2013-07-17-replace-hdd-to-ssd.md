@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "替换机械盘到固态盘"
-category: Linux
-tags: [SSD]
 ---
 
 又给机子加了 16G DDR3 2133 内存，同时购置了款 120GB 的三星 840 pro SSD。网上搜了一大圈，明确操作步骤后进行。
@@ -20,7 +18,6 @@ tags: [SSD]
 
 然后就简单了，**Windows 7** 安装完毕,这里有个小修改，默认 **Windows 7** 将 **Bootmgr** 等启动所需文件置入 100MB 的那个系统保留分区了（即 **/dev/sda1**），以管理员权限运行 **cmd**,进入 **C:\Windows\system32** 目录
 
-<!-- more -->
 
     bcdedit /set {bootmgr} device partition=C:
     bcdedit /set {default} device partition=C:

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "lftp 使用方法"
-category: Linux
-tags: [Lftp, Usage, Configuration, CLI]
 ---
 
 首先，所有的 lftp 终端内的命令，都可以用
@@ -19,7 +17,6 @@ tags: [Lftp, Usage, Configuration, CLI]
 
 也可以先不带用户名登录，然后在接口界面下用login命令来用指定账号登录，密码不显示。
 
-<!-- more -->
 
 #### 查看文件与改变目录
 

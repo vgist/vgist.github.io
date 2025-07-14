@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Fontconfig 升级到 2.10.1 后"
-category: Linux
-tags: [Fontconfig]
 ---
 
 首先，按照 [https://www.archlinux.org/news/fontconfig-2101-update-manual-intervention-required/](https://www.archlinux.org/news/fontconfig-2101-update-manual-intervention-required/) 提示处理，重新创建一些你使用的字体配置的软链接。
@@ -16,7 +14,6 @@ tags: [Fontconfig]
     mkdir $XDG_CONFIG_HOME/fontconfig
     mv .fonts.conf $XDG_CONFIG_HOME/fontconfig/fonts.conf
 
-<!-- more -->
 
 神马意思呢，fontconfig2 告诉你，它的配置文件路径是符合 XDG 标准的，`$HOME` 下的 `.fonts.conf` 快快移到 `$XDG_CONFIG_HOME` 下吧。
 

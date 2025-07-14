@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "迁移 Wordpress 至 Octopress"
-category: Internet
-tags: [Wordpress, Octopress, Jekyll]
 ---
 
 ### 前言
@@ -11,7 +9,6 @@ tags: [Wordpress, Octopress, Jekyll]
 
 由于备案期间，域名要求下线，且只能cname别名解析到指定的一个接入商的二级域名上。想想时间总不能浪费吧，想起之前 [WordPress](http://wordpress.org) 程序的强大且臃肿，一个想法总是缠绕心中，遂将 Wordpress 内容转到 [Octopress](http://octopress.org) 吧。
 
-<!-- more -->
 
 当初在 Octopress 与 Jeckyll 之间徘徊，不知该选择那个，想想反正两个的书写格式都是遵循 markdown，先上手 Octopress 吧，以后如再有机会的话，随时可以转到 jeckyll。Octopress 可以看作是加了一些 Plugins 的 jeckyll。
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "OS X 下卸载 pkg 包"
-category: Mac
-tags: [Pkgutil]
 ---
 
 好久没写记录了，昨晚在 OS X 下卸载一堆 pkg 安装的软件包，特意放狗搜了下网络，遂做下记录，免得遗忘。以下所说的只适用于 OS X Yosemite 下，之前的版本不做考虑。
@@ -14,7 +12,6 @@ tags: [Pkgutil]
     /Library/Receipts/InstallHistory.plist
     /private/var/db/receipts
 
-<!-- more -->
 
 下面介绍的是一个命令工具：**pkgutil**。
 

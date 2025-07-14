@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Linux 上的复制、备份与镜像"
-category: Linux
-tags: [CLI]
 ---
 
 今天逛社区，偶尔发现有人询问大量小文件的移动复制与备份的问题，第一反应就是 `cpio`。因为以前备份 Gentoo 的时候，都是直接 `cpio` 来处理的，当然，tar、cp、dd 也可。至于 dump & restore 则由于文件系统适应性基本被放弃。
@@ -11,7 +9,6 @@ tags: [CLI]
 
 `cp` 是常见的复制文件或目录的命令，是 **copy** 的缩写。譬如：
 
-<!-- more -->
 复制文件
 
     cp /path/a /path/b

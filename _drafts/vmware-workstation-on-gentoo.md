@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo 上安装 VMware Player"
-category: Linux
-tags: [Gentoo, VMware]
 ---
 
 在 Mac OS X 上分别体验了 VirtualBox 与 VMware Fusion，结果 VMware Fusion 的显卡性能确实是高于 VirtualBox，今晚决定在台式机 Gentoo 上也准备体验下 VMware Player。
@@ -13,7 +11,6 @@ tags: [Gentoo, VMware]
 
 Gentoo 的 Portage 系统本身就有 VMware Player 的 ebuild，安装很简单。期间可能会出现一些错误。譬如我就出现了 `app-emulation/vmware-tools` 安装失败的情况
 
-<!-- more -->
 
     /inode.c:49:4: warning: (near initialization for ‘RootInodeOps.lookup’) [enabled by default]
     /var/tmp/portage/app-emulation/vmware-modules-279.2/work/vmblock-only/linux/inode.c: In function ‘InodeOpFollowlink’:

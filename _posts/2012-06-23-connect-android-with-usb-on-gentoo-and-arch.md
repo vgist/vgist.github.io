@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo & Arch 下通过 usb 连接 Android"
-category: Linux
-tags: [Gentoo, Arch, Android]
 ---
 
 作为叼丝的一员，手机当然用的 Android 系统了，Gentoo Portage 中已经提供了 Android 的开发工具
@@ -13,7 +11,6 @@ tags: [Gentoo, Arch, Android]
 
 接下来将你的用户名加入 android 用户组
 
-<!-- more -->
 
     $ sudo sh -c "gpasswd -a <user> android"
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "初试 Slackware"
-category: "Linux"
-tags: [Slackware]
 ---
 
 又是周五了，享受没有饭局的时光，不过也着实无聊了点，遂拿起 [Slackware](http://www.slackware.com/) 尝试了下，做下记录。
@@ -17,7 +15,6 @@ lilo 默认等待 2 分钟，够夸张的，编辑 `/etc/lilo.conf`
 
     timeout = 30            # 3 秒钟
 
-<!-- more -->
 
 随后运行以下命令使之生效
 

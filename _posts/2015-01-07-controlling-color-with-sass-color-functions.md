@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Sass 色彩函数"
-category: Internet
-tags: [Sass]
 ---
 
 最近迷上了 [Sass]({% post_url 2013-08-07-convert-scss-to-css %})，加上 Jekyll 2.4.0 开始已经内置 Sass 预处理器，于是将自己博客的样式彻底的换成 Sass，期间遇到颜色相关的部分，查阅资料后，纪录下来。
@@ -15,7 +13,6 @@ Sass 色彩相关的函数非常强大，当你定下页面基调色彩变量后
 $base: chocolate;
 ```
 
-<!-- more -->
 
 这样定义由两个好处：
 

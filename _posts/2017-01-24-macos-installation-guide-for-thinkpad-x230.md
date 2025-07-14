@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "ThinkPad X230 安装黑苹果"
-category: Mac
-tags: [ThinkPad]
 ---
 
 用 [ThinkPad X220]({% post_url 2015-11-22-os-x-el-capitan-installation-guide-for-thinkpad-x220 %}) 跟人家替换了 ThinkPad X230，也有一段时间了，这不，快年底了，终于闲下来，然而耐不住骚动的心，又开始入了黑苹果的坑。
@@ -15,7 +13,6 @@ tags: [ThinkPad]
 
 然后按照如下 BIOS 设置：
 
-<!-- more -->
 
 ```
 Config

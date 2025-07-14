@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "在GitHub 上对他人发起的 Pull Request 做一些修改"
-category: Linux
-tags: [GitHub, CLI]
 ---
 
 
@@ -12,13 +10,12 @@ tags: [GitHub, CLI]
 
 这一切的前提是，你是项目主，或拥有项目的 commit 权限。
 
-<!-- more -->
 
 假设你已经在本地拥有项目的克隆。那么首先需要在本地将贡献者的 fork 仓库加入远程列表中。
 
     git remote add contributor https://github.com/contributor/repo.git
 
-现在，你有了两个远程地址，**origin** 和 **contributor**。你可以通过 `git remote -v` 来获得已经加入成功的确认。
+现在，你有了两个远程地址，origin 和 contributor。你可以通过 `git remote -v` 来获得已经加入成功的确认。
 
 获取贡献者仓库，并切换到贡献者做提交的那个分支，譬如 fix-xxx 到本地的 contributor-fix-xxx 分支
 
@@ -37,7 +34,7 @@ tags: [GitHub, CLI]
 
 如此，你做的提交就会出现在 pr 页。
 
-注：`:` 在 pull 和 push 时的不同用法
+注：**:** 在 pull 和 push 时的不同用法
 
     git pull origin remote-branch:local-branch
     git push origin local-branch:remote-branch

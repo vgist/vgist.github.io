@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Jekyll 固定链接"
-category: Internet
-tags: [Jekyll, Usage]
 ---
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Permalinks](https://github.com/mojombo/jekyll/wiki/Permalinks)
@@ -11,7 +9,6 @@ tags: [Jekyll, Usage]
 
 **注意**：即使 `--auto` 选项被打开了，当你在 Jekyll 运行时修改其固定链接的风格，你需要重新启动 Jekyll 才能使新的风格生效。
 
-<!-- more -->
 
 ### 模板变量
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Linux 系统的 NTFS-3G 权限"
-category: Linux
-tags: [NTFS]
 ---
 
 这个知识点居然没有记录，果然时间长久以后就会遗忘，遂记录。
@@ -15,16 +13,15 @@ tags: [NTFS]
 
     # mount -t ntfs-3g -o uid=username,gid=users /dev/sdb1 /mnt/data      # uid 为当前用户名，gid 为users 用户组
 
-<!-- more -->
 一般人到此为止，临时需求嘛，不过强迫症表示，看到挂载的分区，所有文件都是 777 权限表示非常不爽，于是：
 
     # mount -t ntfs-3g -o uid=username,gid=users,umask=022 /dev/sdb1 /mnt/data
 
 umask 表示，去掉的权限。
 
-#### SUGO
+### SUGO
 
-说到这里，补充下 Linux 的权限表示为 **SUGO**，第一位 s 表示 `SUID`、`SGID`、`Sticky bit`,一般用不到，后面附录顺带提一下，这里说下 **UGO**，三个位置，每个都用 `rwx` 来表示所拥有的权限，`rwx` 分别表示，读、写、执行（访问），分别用数字 4、2、1来表示，对应关系如下：
+说到这里，补充下 Linux 的权限表示为 **SUGO**，第一位 s 表示 SUID、SGID、Sticky bit,一般用不到，后面附录顺带提一下，这里说下 **UGO**，三个位置，每个都用 rwx 来表示所拥有的权限，rwx 分别表示，读、写、执行（访问），分别用数字 4、2、1来表示，对应关系如下：
 
 |拥有者(U)|群组(G)|其他(O)|相应数字权限|
 |:---:|:---:|:---:|:---:|
@@ -35,11 +32,11 @@ umask 表示，去掉的权限。
 |4  2  1|0  0  0|0  0  0|700|
 |4  2  0|4  0  0|4  0  0|644|
 
-如此就明了，`644` 表示 U(User) 拥有读写权限，G(Group) 拥有只读权限，O(Other) 拥有只读权限。
+如此就明了，644 表示 U(User) 拥有读写权限，G(Group) 拥有只读权限，O(Other) 拥有只读权限。
 
-至于如何 `chmod` 可以参考：[chmod 命令详解]({% post_url 2009-08-17-chmod %})
+至于如何 chmod 可以参考：[chmod 命令详解]({% post_url 2009-08-17-chmod %})
 
-#### umask、fmask、dmask
+### umask、fmask、dmask
 
 - umask -- 过滤目录与文件的权限
 - fmask -- 过滤文件的权限
@@ -55,7 +52,7 @@ umask 表示，去掉的权限。
 
     /dev/sdb1 /mnt/data ntfs-3g uid=username,gid=users,fmask=133,dmask=022 0 0
 
-#### 附录
+### 附录
 
 SUGO 中的 S，表示 SUID、SGID、Sticky bit 之和，而 SUID、SGID、Sticky bit 分别用 4、2、1 来表示相关权限。
 
@@ -72,7 +69,7 @@ SUGO 中的 S，表示 SUID、SGID、Sticky bit 之和，而 SUID、SGID、Stick
 |0 + 0 + 1|1|Sticky bit|
 |0 + 0 + 0|0|无|
 
-应用场景很多人都提过的，/etc/shadow 为 root 读写，普通用户也可以使用 `passwd` 来更改自己密码的原因。
+应用场景很多人都提过的，/etc/shadow 为 root 读写，普通用户也可以使用 passwd 来更改自己密码的原因。
 
 - SUID: 只能作用在可执行文件上，当其他用户运行改执行文件时，会临时拥有该文件所有者的权限
 - SGID: 可以作用在目录或可执行文件上，也同样，临时拥有该文件或文件夹所有者的权限

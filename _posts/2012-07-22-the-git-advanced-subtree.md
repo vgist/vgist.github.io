@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Git 进阶：Subtree"
-category: Linux
-tags: [Git, Usage]
 ---
 
 在 git 版本 1.7.9.4 中，引入了 git-subtree，基本是 用于替换 git-submodule。因为在 git-submodule 中，你只能引用别人的仓库，对于修改 git-submodule 下的子项目的代码非常麻烦，git-subtree 因此应运而生。git 官方也推荐尽量采用 git-subtree。
@@ -15,7 +13,6 @@ tags: [Git, Usage]
 - 再也不用删除 submodule 时的费劲
 - 团队下，不需要另外 fork，然后 push 了
 
-<!-- more -->
 
 下面说下 git-subtree 的一些基本操作。
 

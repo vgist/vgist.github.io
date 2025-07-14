@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "GnuPG 介绍"
-category: Linux
-tags: [GnuPG, Keys, Public]
 ---
 
 #### 一、介绍
@@ -11,7 +9,6 @@ PGP（Pretty Good Privacy），是一个基于 RSA 公钥加密体系的邮件�
 
 GnuPG 是实现安全通信和数据存储的一系列工具集，可以做加密数据和做数字签名之用。在功能上，它和 PGP 是 一样的。由于 PGP 使用了 IDEA 专利算法，所以使用 PGP 会有许可证的麻烦。但是 GnuPG 并没有使用这个算法，所以对用户来说使用 GnuPG 没有任何 限制。GnuPG 使用非对称加密算法，安全程度比较高。GnuPG 主要有以下特点：
 
-<!-- more -->
 
 1. 完全兼容 PGP
 2. 没有使用任何专利算法，没有专利问题

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Windows 8.1 和 Gentoo 双启动"
-category: Linux
-tags: [Windows, Gentoo]
 ---
 
 昨晚折腾了下 Windows 8.1 与 Gentoo 的双系统启动，采用的是 Syslinux，过程中出现一些问题，主要是记录下 Diskpart 的一些用法。
@@ -12,7 +10,6 @@ tags: [Windows, Gentoo]
 - 先安装 Windows 8.1，其次安装 Gentoo
 - 先安装 Gentoo，其次安装 Windows 8.1
 
-<!-- more -->
 
 #### 一、 先 Windows 8.1，后 Gentoo
 

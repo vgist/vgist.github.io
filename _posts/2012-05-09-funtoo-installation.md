@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Funtoo 快速安装"
-category: Linux
-tags: [Funtoo, Installation]
 ---
 
 [Funtoo](http://www.funtoo.org)，由 Gentoo 创始人 Daniel Robbins 亲手定制，是 Gentoo 的变种。它提供了以下不同于 Gentoo 的特点和优势：
@@ -15,7 +13,6 @@ tags: [Funtoo, Installation]
 6. 增强型网络配置 ( core-network )；
 7. 使用 Funtoo 的 Metro 构建工具构造最新的稳定与不稳定的 Stages，支持多种处器型号：x86, i686, amd64, athlon-xp, pentium4, core2 ，core2_32, opteron,opteron_32。
 
-<!-- more -->
 
 下面是具体的安装步骤
 

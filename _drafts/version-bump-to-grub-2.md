@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "将 Grub 升级到 2.00"
-category: Linux
-tags: [Grub, Gentoo, Configuration]
 ---
 
 老实说之前一直用的 Grub 0.97，就一个启动界面嘛，何必搞的那么复杂。今天 Gentoo 中 `eix-sync` 后，grub 自动升级到了 2.00，为了防止后面意外发生，遂今天努力读了下 grub2 的文档，也顺便 install 到了 `/dev/sda`。
@@ -23,7 +21,6 @@ tags: [Grub, Gentoo, Configuration]
     #GRUB_DISABLE_LINUX_UUID=true                         #uuid
     #GRUB_DISABLE_RECOVERY=true                           #recovery模式
 
-<!-- more -->
 
 这里我将倒计时设置到了 0，因为很少启动到 windows 下，懒得等待。
 

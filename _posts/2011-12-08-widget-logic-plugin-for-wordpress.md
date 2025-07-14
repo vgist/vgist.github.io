@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Wordpress 的 Widget Logic 插件"
-category: Internet
-tags: [Wordpress, Widget]
 ---
 
 #### 插件简介
@@ -11,7 +9,6 @@ Widget Logic 插件给每个 widget 一个扩展控制 Widget logic，你可以�
 
 #### 插件使用方法
 
-<!-- more -->
 
 1. 首先在本页下方链接下载 Widget Logic 插件，安装到您的博客上并激活。
 2. 激活后进入 外观>小工具 里面发现在可用小工具的最下方多出了一项：Widget Logic options ，勾选 Widget Logic options 这个后面的复选框点击保存。

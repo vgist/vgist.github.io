@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "为 Jekyll 添加多说评论系统"
-category: Internet
-tags: [Jekyll, duoshuo]
 ---
 
 在做以下步骤之前，先去 [duoshuo.com](http://duoshuo.com) 上注册一个帐号，获取 `short_name`
@@ -16,7 +14,6 @@ comments :
     short_name : havee
 ```
 
-<!-- more -->
 
 其次进入 `_includes/` 目录创建目录 `custom` 以及在刚创建的 `custom` 目录下创建文件 `duoshuo`
 

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "UChome 防注册机"
-category: Internet
-tags: [UChome, RI, Usage]
 ---
 
 ![uchome](/cdn/images/2010/09/uchome.png "uchome")
@@ -11,7 +9,6 @@ tags: [UChome, RI, Usage]
 
 解决这个问题的办法，直接采用的就是邮箱验证，为的就是提高用户质量，如果一个真正想注册用的户是不会在意去打开邮箱，拿到验证码的。
 
-<!-- more -->
 
 解决的过程很简单，这里就简单公布下代码和一个通用的邮件程序，即使你的服务器没装或没开通邮件服务，也可以借助像 `qq mail` 这样的第三方发送邮件，好了，废话不多说了，详细内容看下面：
 

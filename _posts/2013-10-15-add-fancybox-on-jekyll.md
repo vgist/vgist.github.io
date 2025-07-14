@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "给 Jekyll 添加 FancyBox"
-category: Internet 
-tags: [Jekyll, FancyBox, jQuery]
 ---
 
 这是一篇介绍无 jekyll 插件的形式来使用 **FancyBox**。
@@ -11,7 +9,6 @@ tags: [Jekyll, FancyBox, jQuery]
 
 ![FancyBox](/cdn/images/2013/10/fancybox.png "FancyBox")
 
-<!-- more -->
 
 其中有个问题，[**Markdown**]({% post_url 2013-07-02-markdown-syntax %}) 语法中的图片我们一般是如此写法
 

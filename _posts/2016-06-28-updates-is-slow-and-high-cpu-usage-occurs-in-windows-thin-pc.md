@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "解决 Windows Thin PC 中无法更新的问题"
-category: Windows
-tags: [Windows]
 ---
 
 虚拟机几乎已经变成必备工具，只不过，开启虚拟客户机的次数越来越少，到最后，唯有在网银支付的时候才会开启虚拟机应付一下。之前我的虚拟客户机 Windows XP 切换到 Windows 10，看着这个笨重的家伙，固态盘上占用的恐怖的体积，促使我寻找一个轻量级的虚拟客户机。
@@ -13,7 +11,6 @@ tags: [Windows]
 
     ed2k://|file|en_windows_thin_pc_x86_697681.iso|1576980480|2D0E6A048EB3F314F556B4F0834A95E2|/
 
-<!-- more -->
 
 我使用的就是英文版，不过如果想使用中文版的话，就需要单独安装简体中文包： [Chinese (Simplified) Language Pack - Windows Embedded Standard 7 SP1](http://download.microsoft.com/download/8/6/1/8616D57C-1163-45FB-832A-15FA60571002/SP1/Chinese (Simplified) Language Pack - Windows Embedded Standard 7 SP1/lp.cab)。
 
@@ -27,7 +24,7 @@ tags: [Windows]
 
     Control Panel -> Change display language -> Keyboards and Languages -> Choose a display language -> 简体中文 -> Apply
 
-激活的话，可以采用证书方式激活，下载证书： [WinTPC 证书.zip](http://pan.baidu.com/s/1hrSsdrI)，解压开的两个文件复制到 `C:\Windows\System32\spp\tokens\skus\Security-SPP-Component-SKU-Embedded`，最后管理员权限运行 `slmgr.vbs /rilc`
+激活的话，可以采用证书方式激活，下载证书： [WinTPC 证书.zip](http://pan.baidu.com/s/1hrSsdrI)，解压开的两个文件复制到 C:\Windows\System32\spp\tokens\skus\Security-SPP-Component-SKU-Embedded，最后管理员权限运行 `slmgr.vbs /rilc`
 
 以上内容，百度搜索一大堆，这里仅做一个备份，下面内容是解决 Windows Thin PC 无法更新的问题。
 

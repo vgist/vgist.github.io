@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Screen 状态栏配置"
-category: Linux
-tags: [Screen, Configuration]
 ---
 
 GNU 的 screen 是一个很好的工具。如果需要经常或者大量的登录 linux 服务器进行操作，screen 或许还是一个不可或缺的好工具。
@@ -13,7 +11,6 @@ GNU 的 screen 是一个很好的工具。如果需要经常或者大量的登�
 
 此 status bar 能够用来显示很多的东西，内容可以自己定制。本文主要讨论如何自己来定制下面的这样一个 `hardstatus` 栏或者 `caption` 栏。
 
-<!-- more -->
 
 ![Screen](/cdn/images/2011/08/screen.png "screen")
 

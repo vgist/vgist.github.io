@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "KVM 内核虚拟化"
-category: Linux
-tags: [KVM, Kernel, Virtual]
 ---
 
 KVM(Kernel-based Virtual Machine) 是一个全虚拟化的解决方案，它自 2.6.20 以后正式成为 Linux 内核的一部分，也就是说，它是 Linux 内核官方支持的一个虚拟化方案。KVM 的硬件需求是 CPU 必须支持虚拟化，对于 Intel CPU 来说是 Intel VT，AMD CPU 则是 AMD-V。
@@ -13,7 +11,6 @@ KVM(Kernel-based Virtual Machine) 是一个全虚拟化的解决方案，它自 
 
     egrep '(vmx|svm)' /proc/cpuinfo
 
-<!-- more -->
 
 vmx 是Intel CPU 的，svm 则是 AMD CPU 的。我的 CPU 返回如下：
 

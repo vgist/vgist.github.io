@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "托管 Github Pages 的博客升级至 jekyll 3"
-category: Internet
-tags: [Jekyll]
 ---
 
 昨天收到 Github 的邮件，提示 GitHub Pages 将于 5 月 1 号以后只支持 kramdown。
@@ -17,7 +15,6 @@ tags: [Jekyll]
 - toml
 - classifier-reborn
 
-<!-- more -->
 
 如果你托管于 Github Pages，可以在 5 月 1 日前后关注 <https://pages.github.com/versions/> 上的变化。
 

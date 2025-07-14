@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "grub2 或 syslinux 启动失败后"
-category: Linux
-tags: [Grub, Syslinux]
 ---
 
 经常升级内核的情况下，偶尔还是会出现一些问题的。
@@ -15,7 +13,6 @@ tags: [Grub, Syslinux]
 
 等等。
 
-<!-- more -->
 
 此时就需要手动在 bootloader 界面去输入了
 

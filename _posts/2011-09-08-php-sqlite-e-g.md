@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "PHP SQLite 示例"
-category: Other
-tags: [PHP, SQLite, Usage]
 ---
 
 介绍下 SQLite API 所支持的重要方法，提供一个能够用在你开发中的简单脚本模板，从而告诉你如何使用 PHP 与 SQLite 数据库进行交互操作。假设你已经安装好了 (Apache/nginx) & PHP。
@@ -14,7 +12,6 @@ tags: [PHP, SQLite, Usage]
     sqlite> INSERT INTO users VALUES (2, 'joe', 'UK');
     sqlite> INSERT INTO users VALUES (3, 'diana', 'US');
 
-<!-- more -->
 
 一旦表格创建好了，下面就是使用 PHP 的 SQLite 方法建立一个脚本模板。
 

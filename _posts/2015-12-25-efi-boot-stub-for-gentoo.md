@@ -1,15 +1,13 @@
 ---
 layout: post
 title: "UEFI 固件启动 Gentoo EFI Stub Kernel"
-category: Linux
-tags: [EFI, Gentoo]
 ---
 
 前几天，将所有的系统硬盘全部换成 GPT，于是研究了下 (U)EFI 相关的知识点，从而获知，原来在 (U)EFI 下，kernel 3.3 以后，完全可以扔掉 Grub、Syslinux 等引导程序了。
 
 实际上就是将内核启动参数编入内核，通过主板 (U)EFI 固件来直接启动内核，而 (U)EFI 启动项则可以通过 efi shell、efibootmgr 等工具来设置。为了让主板 (U)EFI 直接启动内核，需要打开一些内核开关。
 
-#### 1. Kernel Config
+### 1. Kernel Config
 
     Processor type and features  --->
         [*] EFI runtime service support
@@ -19,7 +17,6 @@ tags: [EFI, Gentoo]
         (root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro init=/usr/lib/systemd/systemd quiet)
         [*] Built-in command line overrides boot loader arguments
 
-<!-- more -->
 
     Firmware Drivers  --->
         EFI (Extensible Firmware Interface) Support  --->
@@ -48,7 +45,7 @@ tags: [EFI, Gentoo]
 
     root=PARTUUID=B91236D2-25B4-4763-875B-A9C52A67957C ro init=/usr/lib/systemd/systemd quiet
 
-注意：如果你不是 systemd 的，则略过 `init=/usr/lib/systemd/systemd`；而 `root=PARTUUID=?` ，则可以用 `blkid` 命令来获取你根分区所在。
+注意：如果你不是 systemd 的，则略过 init=/usr/lib/systemd/systemd；而 root=PARTUUID=? ，则可以用 blkid 命令来获取你根分区所在。
 
 此外，如下也检查下：
 
@@ -67,9 +64,9 @@ tags: [EFI, Gentoo]
 
 出一个新的内核。
 
-#### 2. EFI edit
+### 2. EFI edit
 
-接下来，将你硬盘 EFI 分区挂载到 `/boot` 上，因为我的是双系统，直接就使用了 Windows 10 的 EFI 分区。
+接下来，将你硬盘 EFI 分区挂载到 /boot 上，因为我的是双系统，直接就使用了 Windows 10 的 EFI 分区。
 
     # mount /dev/sda2 /boot
     # ls /boot/EFI
@@ -85,7 +82,7 @@ tags: [EFI, Gentoo]
     # mkdir /boot/EFI/Gentoo
     # cp /usr/src/linux/arch/x86_64/boot/bzImage /boot/EFI/Gentoo/gentoo.efi
 
-##### 2.1 efibootmgr
+#### 2.1 efibootmgr
 
 最后通过 efibootmgr 来调整下主板 (U)EFI 固件，添加 Gentoo 的启动项，efibootmgr 并非是一个引导器，只是一个调整主板 (U)EFI 固件的工具，类似的工具很多，譬如 Windows 下的 EasyUEFI。
 
@@ -93,7 +90,7 @@ tags: [EFI, Gentoo]
 
 通过 `efibootmgr -v` 来确认下，是否添加进去了，详细的用法可以通过 `efibootmgr --help` 来查看。
 
-请确保使用 efibootmgr 操作 (U)EFI 时，已经处于 (U)EFI 启动模式下，且 `/sys/firmware/efi/efivars` 处于可读写状态，可以通过如下来确认：
+请确保使用 efibootmgr 操作 (U)EFI 时，已经处于 (U)EFI 启动模式下，且 /sys/firmware/efi/efivars 处于可读写状态，可以通过如下来确认：
 
     # mount | grep efivars
 
@@ -103,7 +100,7 @@ tags: [EFI, Gentoo]
 
 如果结果返回为空，则你需要一个支持 (U)EFI 启动的 livecd 来辅助。
 
-##### 2.2 efi shell
+#### 2.2 efi shell
 
 如果你主板内建 efi shell，你也可以直接在 efi shell 下添加，譬如我要添加 Gentoo Linux 的 (U)EFI 启动项到第四的位置，则在你进入 efi shell 后：
 

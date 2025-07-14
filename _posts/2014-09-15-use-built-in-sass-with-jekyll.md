@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "使用 Jekyll 内置的 Sass 预处理器"
-category: Internet
-tags: [Jekyll, Usage, Sass]
 ---
 
 之前有介绍过 [CSS 的预处理器 Sass]({% post_url 2013-08-07-convert-scss-to-css %})，今天翻阅 Jekyll 官网发现，Jekyll 本身就内置 Sass 的编译，一些小修改，就剔除了 compass 工具，完美的使用，顺便记录下，希望本文能帮到大家。
@@ -13,7 +11,6 @@ tags: [Jekyll, Usage, Sass]
 - 你本地的 Jekyll 版本高于或等于 2.4.0
 - 对 Sass 有一些了解
 
-<!-- more -->
 
 一般大家都喜欢将 Jekyll push 到 GitHub Pages 上，那么首先对比下 GitHub Pages 上对版本的要求吧：<https://pages.github.com/versions/>。
 

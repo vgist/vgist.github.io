@@ -1,0 +1,23 @@
+# For documentation on this file, see:
+# https://github.com/riggraz/no-style-please#customize-the-menu
+
+entries:
+#  - title: info
+#    entries:
+#      - title: a (nearly) no-CSS, fast, minimalist Jekyll theme.
+#      - title: github repo
+#        url: https://github.com/riggraz/no-style-please
+#      - title: "used by <a href='https://riggraz.dev'>riggraz.dev</a> and <a href='https://github.com/riggraz/no-style-please/network/dependents'>many others</a>"
+
+  - title: latest posts
+    post_list:
+      limit: 10
+      show_more: true
+      show_more_text: More...
+      show_more_url: archive.html
+
+  - title: about
+    url: about.html
+
+  - title: rss
+    url: feed.xml

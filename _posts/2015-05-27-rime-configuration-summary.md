@@ -1,11 +1,9 @@
 ---
 layout: post
 title: "Rime 输入法配置小结"
-category: Mac
-tags: [Rime]
 ---
 
-#### 一、 概述
+## 一、 概述
 
 输入法是用户的基础工具，每天都用得到，但是现在的各类云输入法在方便用户的同时，敏感数据非加密传输等隐私问题就一直没有中断过，方便用户输入就是当今各商业输入法的一块遮羞布。最近一直看到圈里流传 Rime 输入法，就花了点时间折腾了一下。
 
@@ -15,7 +13,6 @@ RIME / 中州韵输入法引擎，是一个跨平台的输入法算法框架。
 
 基于这一框架，Rime 开发者与其他开源社区的参与者在 Windows、Mac OS X、Linux、Android 平台上创造了不同的输入法前端实现。
 
-<!-- more -->
 
 - Windows
     - Weasel 小狼毫
@@ -29,9 +26,9 @@ RIME / 中州韵输入法引擎，是一个跨平台的输入法算法框架。
 
 OS X 下的用户配置文件在 **~/Library/Rime** 目录下，下面记录下使用 Rime 的一些个人配置。
 
-##### 1. installation.yaml
+### 1. installation.yaml
 
-```yaml
+```
 distribution_code_name: Squirrel
 distribution_name: "鼠鬚管"
 distribution_version: 0.9.26.1
@@ -40,9 +37,9 @@ installation_id: "Rime"
 rime_version: 1.2.9
 ```
 
-##### 2. default.custom.yaml
+### 2. default.custom.yaml
 
-```yaml
+```
 patch:
   switcher:
     abbreviate_options: true
@@ -66,9 +63,9 @@ patch:
   ascii_composer/switch_key/Shift_R: clear
 ```
 
-##### 3. squirrel.custom.yaml
+### 3. squirrel.custom.yaml
 
-```yaml
+```
 patch:
   show_notifications_via_notification_center: true
   us_keyboard_layout: true                              # 美式键盘布局
@@ -114,9 +111,9 @@ patch:
     com.apple.Terminal: *a
 ```
 
-##### 4. luna_pinyin_simp.custom.yaml
+### 4. luna_pinyin_simp.custom.yaml
 
-```yaml
+```
 patch:
   switches:
     - name: ascii_mode
@@ -171,7 +168,7 @@ patch:
       reverse_lookup: "`[a-z]*'?$"
 ```
 
-##### 5. luna_pinyin.extended.dict.yaml
+### 5. luna_pinyin.extended.dict.yaml
 
     ---
     name: luna_pinyin.extended
@@ -195,19 +192,19 @@ patch:
       - luna_pinyin.poetry
     ...
 
-##### 6. 特别说明 ibus-rime
+### 6. 特别说明 ibus-rime
 
 后选框样式需要文件 ibus_rime.custom.yaml
 
     patch:
       style/horizontal: true
 
-###### 7. 基本概念
+#### 7. 基本概念
 
 建议配置文件采用对默认配置 patch 的方式，注意以下亮点
 
 - 如果对原配置 name.yaml 进行自定义配置，则创建文件 name.custom.yml，再在新文件中修改
-- 文件中第一行，以 `patch:` 开头
+- 文件中第一行，以 patch: 开头
 
 譬如修改 default.yaml，则创建 default.custom.yaml
 如果要修改左右 shift 键行为，则在 default.custom.yaml 添加
@@ -216,11 +213,11 @@ patch:
       ascii_composer/switch_key/Shift_L: clear
       ascii_composer/switch_key/Shift_R: clear
 
-这里用到了 `\` 将 key 折叠起来，折叠与不折叠的区别在于， `key1/key2/key3` 只 patch key3，否则就直接 patch key1。所以是否折叠机遇自己需求。
+这里用到了 \\ 将 key 折叠起来，折叠与不折叠的区别在于， key1/key2/key3 只 patch key3，否则就直接 patch key1。所以是否折叠机遇自己需求。
 
 #### 二、 添加词库
 
-词库转换工具 **rime_dict_manager** 是自带的，路径在 `/Library/Input Methods/Squirrel.app/Contents/MacOS` 下，可以写成 bash 脚本：
+词库转换工具 **rime_dict_manager** 是自带的，路径在 /Library/Input Methods/Squirrel.app/Contents/MacOS 下，可以写成 bash 脚本：
 
     DYLD_LIBRARY_PATH="/Library/Input Methods/Squirrel.app/Contents/Frameworks" "/Library/Input Methods/Squirrel.app/Contents/MacOS/rime_dict_manager" $@
 
@@ -240,7 +237,7 @@ patch:
 
 该命令会生成 Rime 的词库，名为 **luna_pinyin.userdb.kct**，将 **luna_pinyin.userdb.kct** 拷贝到 **~/Library/Rime** 目录下下，重新部属下 Rime 即可。这种转换方式在 OS X 下重新部署 Rime 时，会在 **/Library/Rime/luna_pinyin.userdb** 文件夹下生成大量的 ldb 用户数据文件，通过 rime_dict_manager 转换的方法不推荐，因为在每次重新部署和同步的时候都需要花费大量的时间。
 
-##### 外挂词库
+### 外挂词库
 
 如果词库的格式正确，推荐用外挂扩展词库的方式去实现，即直接用 opencc 转化成繁体格式输出为 **luna_pinyin.yourname.dict.yaml**：
 
@@ -255,7 +252,7 @@ patch:
     use_preset_vocabulary: true
     ...
 
-随后在 **luna_pinyin.extended.dict.yaml** 文件中的 `import_tables` 下引入自己制作的词库，这种方式需要按照文章开头概述中的第 3、4 步骤去做。
+随后在 **luna_pinyin.extended.dict.yaml** 文件中的 import_tables 下引入自己制作的词库，这种方式需要按照文章开头概述中的第 3、4 步骤去做。
 
     ---
     name: luna_pinyin.extended
@@ -273,18 +270,18 @@ patch:
 
 当然完事后，不要忘记重新部署一下。
 
-##### 词库总结
+### 词库总结
 
 关于词库写的比较繁琐，这里总结下简要步骤，以简体中文为例。
 
-###### 1. 创建 luna_pinyin_simp.custom.yaml
+#### 1. 创建 luna_pinyin_simp.custom.yaml
 
 注意文件最后的
 
     translator:
       dictionary: luna_pinyin.extended
 
-###### 2. 准备词库文件 luna_pinyin.extended.dict.yaml
+#### 2. 准备词库文件 luna_pinyin.extended.dict.yaml
 
     ---
     name: luna_pinyin.extended
@@ -296,23 +293,23 @@ patch:
       - luna_pinyin.sogou
       ...
 
-###### 3. 准备 sogou 词库文件
+#### 3. 准备 sogou 词库文件
 
 譬如下载我整理好的搜狗 40 万标准大词库： [【sogou for rime】](http://pan.baidu.com/s/1qYN6C3a)
 
 忠告：词库并非越大越全越好，否则你准备生僻词翻N页后再开始选字吧。
 
-#### 三、同步
+## 三、同步
 
-关于 Rime 同步，我是直接用的 iCloud Drive，iCloud Drive 在用户目录的路径为 `~/Library/Mobile Documents/`。
+关于 Rime 同步，我是直接用的 iCloud Drive，iCloud Drive 在用户目录的路径为 ~/Library/Mobile Documents/。
 
 打开 Rime 配置文件 installation.yaml，添加一行内容。
 
     installation_id: "Rime"
 
-默认的同步文件夹即为 `~/Library/Rime/sync/`，你也可以添加 `sync_dir` 来自定义路径（绝对路径）。`installation_id: Rime` 为 `sync_dir` 的相对路径，在这里配置的最终路径为 `~/Library/Rime/sync/Rime`。
+默认的同步文件夹即为 ~/Library/Rime/sync/，你也可以添加 sync_dir 来自定义路径（绝对路径）。installation_id: Rime 为 sync_dir 的相对路径，在这里配置的最终路径为 ~/Library/Rime/sync/Rime。
 
-随后，我们在 iCloud Drive 建立一个 `Rime` 文件夹，并软链接到 `~/Library/Rime/sync/`。
+随后，我们在 iCloud Drive 建立一个 Rime 文件夹，并软链接到 ~/Library/Rime/sync/。
 
     mkdir ~/Library/Mobile\ Documents/com~apple~CloudDocs/Rime
     ln -s ~/Library/Mobile\ Documents/com~apple~CloudDocs/Rime ~/Library/Rime/sync/

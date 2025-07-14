@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Vim 配色"
-category: Linux
-tags: [Vim, Screen, Xterm]
 ---
 
 **Gentoo** 下，默认的 **Xterm** 只有 8 色，而一些 **Vim** 的漂亮的 **colorscheme** 基本都要 256 色。之前通过在 `vimrc` 设置 `set t_Co=256` 来避免 colorscheme 的不堪入目。直到有一次在 `screen` 下 vim 编辑一些文件才发现，仅仅如此还不行，需要重新配置颜色相关。
@@ -13,7 +11,6 @@ tags: [Vim, Screen, Xterm]
     xterm
     8
 
-<!-- more -->
 
 我得到的结果是 xterm，8 色。进入 screen 下执行看看
 

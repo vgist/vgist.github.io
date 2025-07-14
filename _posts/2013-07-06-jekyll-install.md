@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Jekyll 的安装"
-category: Internet
-tags: [Jekyll, Installation]
 ---
 
 > 原文地址：[https://github.com/mojombo/jekyll/wiki/Install](https://github.com/mojombo/jekyll/wiki/Install "Install")
@@ -13,7 +11,6 @@ Jekyll 最好的安装方法就是通过 RubyGems 来安装:
 
     gem install jekyll
 
-<!-- more -->
 
 Jekyll 需要以下的 gems: `directory_watcher`,`liquid`,`open4`,`maruku`和`classifier`。这些组件将会在 gem 的安装命令之后自动安装。
 

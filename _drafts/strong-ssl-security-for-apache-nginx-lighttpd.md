@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "服务端 SSL 配置"
-category: Linux
-tags: [SSL, Apache, Nginx, Lighttpd]
 ---
 
 快要步入全民 SSL 时代了，有必要记录下 SSL 的相关配置了。
@@ -15,7 +13,6 @@ SSL cipher 依据你申请的证书来，譬如：WoSign 的免费证书是 AES1
 
     ssl_protocols TLSv1 TLSv1.1 TLSv1.2;
 
-<!-- more -->
 Forward Secrecy 也加上，终端运行：
 
     openssl dhparam -out dhparam.pem 4096

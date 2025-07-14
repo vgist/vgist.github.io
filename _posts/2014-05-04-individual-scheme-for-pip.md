@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "OS X 上的 pip 使用 User Installs"
-category: Mac
-tags: [pip,Python]
 ---
 
 可能还是使用 Gentoo 后带来的洁癖使然，在 Mac OS X 上也想将 `pip install package` 默认安装到用户目录，随便一搜，都是 `sudo`，难道大家都习惯直接拿根目录开刀的？今天上午查询了下资料，搞定将 pip 安装的包默认安装在用户目录。
@@ -15,7 +13,6 @@ tags: [pip,Python]
 
     python setup.py install --home=<dir>
 
-<!-- more -->
 
 同理使用 pip 安装时只需
 

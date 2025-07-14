@@ -1,13 +1,11 @@
 ---
 layout: post
 title: "Docker 容器使用小结"
-category: Linux
-tags: [Docker]
 ---
 
 目前也已经将生产环境中所有服务运行在 Docker 容器中，从一年前就一直想写一篇有关 Docker 的文章，可是年初以来一直没有时间，趁着这个中秋节假期，终于开始着笔。
 
-#### 介绍
+### 介绍
 
 Docker 是一个开源的应用容器引擎，使用轻量级的容器虚拟化技术，开发者可以方便的打包他们的应用以及依赖包到一个可移植的容器中，来发布到任何流行的 Linux 发行版上。
 
@@ -18,23 +16,22 @@ Docker 是一个开源的应用容器引擎，使用轻量级的容器虚拟化�
 
 Docker 已经成熟并被大量的应用到生产环境，所以概念部分就不阐述了，针对与 Virtual Machines 的区别说一下。
 
-<!-- more -->
 
 Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devops，后者则是为了统一开发环境。Docker 是一个容器，底层的实现是利用下层操作系统内核提供的功能，是进程级别的。而 VM 则是完全的虚拟化，底层则基本是虚拟机，下图是一个极简的对比图。
 
 ![Docker VS VM](/cdn/images/2016/09/docker-vs-vm.png)
 
-#### 使用方法
+### 使用方法
 
 很多人对概念部分不感冒，还是让我们直接进入使用环节，详细的参数，可以通过 `docker COMMAND --help` 来获取详细信息。
 
-##### 安装
+#### 安装
 
 - Linux: 使用各发行版的包管理工具即可安装
 - Mac: Docker for Mac
 - Windows: Docker for Windows
 
-##### 试运行
+#### 试运行
 
 我们在 Docker 容器中运行一个 echo 试试，首先拉取一个远程的 apline 镜像，其次容器中输出 "Hello World!"。
 
@@ -112,7 +109,7 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
     / # exit
     $
 
-#### 构建镜像
+### 构建镜像
 
 还是让我们直接以 Dockerfile 来入门讲解：
 
@@ -162,7 +159,7 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 
 目前，个人制作的公开镜像地址：<https://hub.docker.com/r/gists/>
 
-#### 运行时资源限制
+### 运行时资源限制
 
 |选项|描述
 |:---|:---
@@ -186,7 +183,7 @@ Docker 的出现，并非是为了取代 Virtual Machine，前者是为了 devop
 |`--memory-swappiness=""`|控制进程将物理内存交换到 swap 的意向，越小越倾向于使用物理内存，当为 0 时，表示不加任何限制，而不是禁用swap
 |`--shm-size=""`|`/dev/shm` 大小，单位 b、k、m、g，值必须为大于 0
 
-#### 运行 GUI 镜像
+### 运行 GUI 镜像
 
 Docker 当然可以运行 GUI 镜像，譬如 Firefox，让我们直观的认识下 Firefox 的 Dockerfile：
 
@@ -227,7 +224,7 @@ CentOS 下，docker 是以 root 运行的，所以需要
 
     xhost +local:root
 
-##### xhost 一些衍生
+#### xhost 一些衍生
 
 xhost 是用来控制 X server 访问权限的。通常当你从 hostA 登陆到 hostB 上运行 hostB 上的应用程序时，做为应用程序来说，hostA 是 client，但是对图形来说，是在 hostA 上显示的，需要使用 hostA 的 Xserver，所以 hostA 是 server。因此在登陆到 hostB 前，需要在 hostA 上运行 xhost +user 来使其它用户能够访问 hostA 的 Xserver。
 
@@ -240,13 +237,13 @@ xhost 是用来控制 X server 访问权限的。通常当你从 hostA 登陆到
     xhost +inet:user@domain: 使 domain 上的 inet 用户能够访问
     xhost +local:wheel: 使本地用户wheel 能够访问
 
-#### 镜像导入导出
+### 镜像导入导出
 
     docker save imageID -o name.tar
     docker load -i name.tar
     docker tag imageID name:tag
 
-#### 容器导入导出
+### 容器导入导出
 
     docker export containerID > name.tar
     docker import name.tar
@@ -254,7 +251,7 @@ xhost 是用来控制 X server 访问权限的。通常当你从 hostA 登陆到
 
 
 
-#### 群集模式
+### 群集模式
 
 <https://docs.docker.com/engine/reference/commandline/swarm/>
 
@@ -293,27 +290,27 @@ swarm 在现在的 docker 中是内建的，直接可以开启
     nft add rule inet filter input udp dport 7946 accept
     nft add rule inet filter input ip protocol esp accept
 
-##### stack
+#### stack
 
     docker stack deploy -c ./docker-compose.yml name
     docker stack rm name
 
 more: <https://docs.docker.com/engine/reference/commandline/stack/>
 
-##### node
+#### node
 
     docker node update --label-add zone=name node_id
     docker node update --label-rm zone=name node_id
 
 more: <https://docs.docker.com/engine/reference/commandline/node/>
 
-###### service update
+#### service update
 
     docker service update --replicas=3 service_name
 
 more: <https://docs.docker.com/engine/reference/commandline/service/>
 
-#### dockerhub
+### dockerhub
 
 登陆 dockerhub 网站，获取 access tokens 后
 

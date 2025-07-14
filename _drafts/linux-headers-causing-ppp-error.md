@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "linux-headers 升级到 3.5 后 ppp 问题"
-category: Linux
-tags: [Patch]
 ---
 
 **ppp-2.4.5-r3已经解决该情况**
@@ -26,7 +24,6 @@ emake failed
 
 给之打一个补丁即可解决。[http://www.city-fan.org/tips/PaulHowarth/Blog/2012-05-29](http://www.city-fan.org/tips/PaulHowarth/Blog/2012-05-29) 给出的补丁打不上，是因为 Gentoo 的补丁包已经包含了其中的一部分，下面我重新 diff 了一个 patch，供有相同问题的同学使用。
 
-<!-- more -->
 
 ```diff
 --- include/linux/if_pppol2tp.h.old 2012-08-05 07:25:38.665533862 +0800

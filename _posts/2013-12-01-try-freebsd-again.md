@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "再次尝试 FreeBSD"
-category: "Other"
-tags: [freebsd]
 ---
 
 自从 06 年初试 [FreeBSD](http://www.freebsd.org) 后，随即转向 Gentoo 阵营。对 FreeBSD 只有一点点的印象，只知道 Gentoo 的 portage 系统是由 BSD 家族的 port 演变来的，最近升级了家用台式机，遂拿起 FreeBSD 出来折腾折腾。
@@ -13,7 +11,6 @@ tags: [freebsd]
 
     sm_meta[xxx]: My unqualified host name (hostname) unknown; sleeping for retry
 
-<!-- more -->
 
 按 `ctrl_c` 后继续，这个只需在 `/etc/hosts` 中 alias 下即可，譬如
 

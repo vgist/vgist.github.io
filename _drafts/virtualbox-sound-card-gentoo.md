@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Gentoo 下 VirtualBox 声卡独占"
-category: Linux
-tags: [Gentoo, VirtualBox, Alsa, Virtual]
 ---
 
 不知道为什么，去年 2 月份以来这个问题就一直存在，解决方案也早已提供，但 Gentoo 官方为什么一直不修复
@@ -11,7 +9,6 @@ tags: [Gentoo, VirtualBox, Alsa, Virtual]
 
 调 VirtualBox 的 guest 声卡为 oss or pulseaudio 来驱动，则 VirtualBox 中的客户机启动后，host 机的一切程序都不能使用 alsa.
 
-<!-- more -->
 
 解决方案为
 

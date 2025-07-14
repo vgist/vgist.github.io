@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "ccal 升级到 2.5.3"
-category: Linux
-tags: [ccal, Gentoo, Ebuild, Packager]
 ---
 
 ![Ccal](/cdn/images/2012/03/ccal.png "ccal")
@@ -13,7 +11,6 @@ tags: [ccal, Gentoo, Ebuild, Packager]
 - 将 size_t 改为int以避免某些 64 位系统的问题。
 - 据林原志先生建议，在字符输出时在非 Windows 系统上当天日期用 ANSI 反色显示。
 
-<!-- more -->
 
 上 gentoo ebuild [https://github.com/Ihavee/overlay/blob/master/app-misc/ccal](https://github.com/Ihavee/overlay/blob/master/app-misc/ccal)
 

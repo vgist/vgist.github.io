@@ -1,13 +1,10 @@
 ---
 layout: post
 title: "MuPDF文件浏览器"
-category: Linux
-tags: [MuPDF]
 ---
 
 ![MuPDF](/cdn/images/2011/10/Mupdf.png "Mupdf")
 
-<!-- more -->
 
 MuPDF is a lightweight PDF viewer and toolkit written in portable C.
 

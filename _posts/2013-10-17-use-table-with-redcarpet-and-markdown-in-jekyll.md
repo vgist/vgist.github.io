@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Markdown 之使用表格"
-category: Internet
-tags: [Markdown, Jekyll, Redcarpet]
 ---
 
 看到人家在 [Markdown]({% post_url 2013-07-02-markdown-syntax %}) 文件中随意的书写表格，但在我自己的博客中却怎么也无法输出表格样式，最后还是通过 Google 才找到答案，需要语法解释引擎 [Redcarpet](https://github.com/vmg/redcarpet)，且开启 **tables** 选项。
@@ -17,7 +15,6 @@ redcarpet:
     extensions: ["tables"]
 ```
 
-<!-- more -->
 
 随后
 

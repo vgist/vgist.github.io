@@ -1,15 +1,12 @@
 ---
 layout: post
 title: "Python 学习笔记：基础知识"
-category: Other
-tags: [learning, Python]
 ---
 
 终于静下心来，花了一天的时间来阅读 [Python](http://www.python.org) 相关的知识。Python 是一种语法简洁有没，面向对象的，内置高级数据结构，支持模块和包，支持多种平台，可扩展的解释性通用编程语言。
 
 学习 Python 与学习其他编程语言一样，需要掌握其基本的语法结构，其包含：
 
-<!-- more -->
 
 - 变量与数据类型
     - 变量

@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Nginx HTTP 跳转至 HTTPS"
-category: Internet
-tags: [Nginx]
 ---
 
 前面已经介绍过 [服务端 SSL 配置]({% post_url 2015-06-10-strong-ssl-security-for-apache-nginx-lighttpd %})。
@@ -27,7 +25,6 @@ server {
 }
 ```
 
-<!-- more -->
 
 ```nginx
 server {

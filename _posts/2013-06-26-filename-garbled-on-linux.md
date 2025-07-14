@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Linux 解决文件名乱码"
-category: Linux
-tags: [Garbled]
 ---
 
 
@@ -16,7 +14,6 @@ tags: [Garbled]
     2428 -rw-r--r-- 1 name users 0 Jun 26 11:24 ????.mp3
     $ find . -inum 2428 -exec rm {} +
 
-<!-- more -->
 
 or
 

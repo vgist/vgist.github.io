@@ -1,8 +1,6 @@
 ---
 layout: post
 title: "Markdown 语法说明"
-category: Internet
-tags: [Markdown, Syntax, Usage]
 ---
 
 *   [概述](#overview)
@@ -17,7 +15,6 @@ tags: [Markdown, Syntax, Usage]
     *   [代码区块](#precode)
     *   [分隔线](#hr)
 
-<!-- more -->
 
 *   [区段元素](#span)
     *   [链接](#link)
@@ -30,7 +27,6 @@ tags: [Markdown, Syntax, Usage]
 *   [感谢](#acknowledgement)
 *	[Markdown 免费编辑器](#editor)
 
-<!-- more -->
 
 * * *
 
