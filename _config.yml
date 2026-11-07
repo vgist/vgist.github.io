@@ -3,13 +3,12 @@ author:  # name of site's author
 email:  # email of site's author
 url: https://havee.cc # root address of the site
 baseurl: "" # subpath of the site, e.g. "/blog" (leave it blank "" if you're site shouldn't use a subpath)
+lang: "zh-CN" # default site language
 #description: # description of the site (multiple lines allowed)
 
 permalink: /:title.html
 
 favicon: "favicon.png" # name+extension of favicon (which must be put on the root folder)
-
-remote_theme: riggraz/no-style-please # if you are using GitHub Pages, change it to remote_theme: riggraz/no-style-please
 
 theme_config:
   appearance: "auto" # can be "light", "dark" or "auto"
@@ -18,7 +17,15 @@ theme_config:
   show_description: false # show blog description in home page
   lowercase_titles: false # show titles in lowercase in lists
 
-exclude: [Gemfile, Gemfile.lock, Rakefile, README.md]
+exclude:
+  - Gemfile
+  - Gemfile.lock
+  - Rakefile
+  - README.md
+  - no-style-please.gemspec
+  - COPYING
+  - .DS_Store
+  - vendor
 
 sass:
   style: compressed

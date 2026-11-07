@@ -1,101 +1,103 @@
-// -------------- THEME SWITCHER -------------- //
-@mixin dark-appearance {
-  filter: invert(1);
-  img {
-    filter: invert(1);
-
-    &.ioda { filter: invert(0); }
-  }
-  .emoji { filter: invert(1); }
-  iframe {
-    filter: invert(1);
-  }
+// -------------- THEME COLORS -------------- //
+:root {
+  --bg: whitesmoke;
+  --fg: #222;
+  --fg-muted: #666;
+  --code-bg: #dbe0e6;
+  --code-fg: #111827;
+  --border: #e0e0e0;
+  color-scheme: light dark;
 }
 
-body[a="dark"] { @include dark-appearance; }
-
+@mixin dark-appearance {
+  --bg: #141618;
+  --fg: #e0e0e0;
+  --fg-muted: #9096a0;
+  --code-bg: #272c35;
+  --code-fg: #f3f4f6;
+  --border: #2d333b;
+  --img-brightness: 0.85;
+  color-scheme: dark;
+}
 
 @media (prefers-color-scheme: dark) {
-  body[a="auto"] { @include dark-appearance; }
+  :root { @include dark-appearance; }
 }
-// -------------------------------------------- //
 
-// bg color is also needed in html in order to
-// block body's background propagation
-// see: https://stackoverflow.com/a/61265706
-html, body { background: whitesmoke; }
+:root[a="dark"], body[a="dark"] {
+  @include dark-appearance;
+}
+// ------------------------------------------ //
 
-html { height: 100%; scroll-behavior: smooth; }
+html, body {
+  background: var(--bg);
+  color: var(--fg);
+}
 
 body {
-  color: #222;
-  font-family: sans-serif;
-  font-size: 16px;
-  line-height: 1.4;
+  font-family: system-ui, sans-serif;
+  line-height: 1.7;
   margin: 0;
-  min-height: 100%;
   overflow-wrap: break-word;
 }
 
+.post-meta, .post-date {
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
 .post-meta { text-align: right; }
-
-h2, h3, h4, h5, h6 { margin-top: 3rem; }
-
-hr { margin: 2rem 0; }
-
-p { margin: 1rem 0; }
-
-li { margin: 0.4rem 0; }
-
-*:target { background: yellow; }
+.post-date { margin-right: 0.5rem; }
 
 .w {
   max-width: 640px;
   margin: 0 auto;
-  padding: 4rem 2rem;
+  padding: 2.5rem 1.25rem;
 }
 
-hr {
-  text-align: center;
-  border: 0;
-
-  &:before { content: '/////' }
-  &:after { content: attr(data-content) '/////' }
+@media (min-width: 640px) {
+  .w { padding: 4rem 2rem; }
 }
 
 table {
-  width: 90%;
-  margin: auto;
+  display: block;
+  width: 100%;
+  overflow-x: auto;
+  border-collapse: collapse;
 }
 
 table, th, td {
-  border-bottom: thin solid black;
-  border-collapse: collapse;
+  border-bottom: thin solid var(--border);
   padding: 0.4rem;
 }
 
-code {
-  color: whitesmoke;
-  background: #222;
-  font-family: monospace;
+pre, code {
+  font-family: ui-monospace, monospace;
   font-size: 14px;
 }
 
-div.highlighter-rouge code {
-  display: block;
-  overflow-x: auto;
-  padding: 1rem;
+code {
+  color: var(--code-fg);
+  background: var(--code-bg);
+  padding: 0.15em 0.35em;
 }
 
-blockquote {
-  font-style: italic;
-  padding: 1rem;
+pre {
+  background: var(--code-bg);
+  color: var(--code-fg);
+  margin: 1.2rem 0;
+  padding: 0.9rem 1.1rem;
+  overflow-x: auto;
+  line-height: 1.5;
 
-  p { margin: 0; }
+  code {
+    background: none;
+    padding: 0;
+  }
 }
 
 img {
   max-width: 100%;
-  display: block;
-  margin: 0 auto;
+  height: auto;
+  filter: brightness(var(--img-brightness, 1));
 }
